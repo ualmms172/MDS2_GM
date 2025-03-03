@@ -1,0 +1,5 @@
+package interfaz;
+
+public class ListaHashtagsFamososAdministrador_item extends ListaHashtagsgeneralAdministrador_item {
+	public ListaHashtagsFamososAdministrador _listaHashtagsFamososAdministrador;
+}

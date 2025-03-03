@@ -1,0 +1,5 @@
+package interfaz;
+
+public class ListahashtagsfamososUsuarioNoRegistrado_item extends ListahashtagsgeneralUsuarioNoRegistrado_item {
+	public ListahashtagsfamososUsuarioNoRegistrado _listahashtagsfamososUsuarioNoRegistrado;
+}

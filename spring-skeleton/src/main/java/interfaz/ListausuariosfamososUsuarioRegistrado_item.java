@@ -1,0 +1,5 @@
+package interfaz;
+
+public class ListausuariosfamososUsuarioRegistrado_item extends ListaUsuariosGeneralUsuarioRegistrado_item {
+	public ListausuariosfamososUsuarioRegistrado _listausuariosfamososUsuarioRegistrado;
+}
