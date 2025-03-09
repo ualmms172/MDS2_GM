@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.Vector;
+import gallardoMartinez.MainView;
 
 public class UsuarioRegistrado extends Logueado {
 	private int _id_user;
@@ -17,4 +18,9 @@ public class UsuarioRegistrado extends Logueado {
 	public Vector<Contenido> _meGusta = new Vector<Contenido>();
 	public Vector<Hashtag> _creaHashtag = new Vector<Hashtag>();
 	public Vector<Contenido> _escribe = new Vector<Contenido>();
+	
+	UsuarioRegistrado(MainView MainView) {
+		super(MainView);
+		this.getButtonBaneados().setVisible(false);
+		}
 }

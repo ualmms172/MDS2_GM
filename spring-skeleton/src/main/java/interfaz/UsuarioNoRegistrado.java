@@ -1,8 +1,11 @@
 package interfaz;
 
+import vistas.VistaUsuarionoregistrado;
+import gallardoMartinez.MainView;
+
 //import basededatos.iUsuarioNoRegistrado;
 
-public class UsuarioNoRegistrado {
+public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	//private Label _listaUsuarios;
 	//private Label _litaHashtags;
 	//private Image _fotoAplicacion;
@@ -17,6 +20,11 @@ public class UsuarioNoRegistrado {
 	public VerListaCompletaUsuariosUsuarioNoRegistrado _verListaCompletaUsuariosUsuarioNoRegistrado;
 	public Registrar _registrar;
 	public ListahashtagsfamososUsuarioNoRegistrado _listahashtagsfamososUsuarioNoRegistrado;
+	
+	MainView MainView;
+	UsuarioNoRegistrado(MainView MainView) {
+	this.MainView = MainView;
+	}
 
 	public void IniciarSesin() {
 		throw new UnsupportedOperationException();
