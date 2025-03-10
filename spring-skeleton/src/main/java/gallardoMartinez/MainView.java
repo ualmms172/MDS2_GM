@@ -44,7 +44,7 @@ public class MainView extends VerticalLayout {
     public MainView(@Autowired GreetService service) {
 
     
-    	UsuarioNoRegistrado admin = new UsuarioNoRegistrado(this); 
+    	UsuarioRegistrado admin = new UsuarioRegistrado(this); 
      
      add(admin); 
      this.addClickListener(event->Notification.show("Hola"));

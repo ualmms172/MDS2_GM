@@ -24,7 +24,7 @@ export class VistaLogueado extends LitElement {
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1;" id="horizontalLayout-ListaUsuariosMasFamosos">
     <label style="height: 20%; width: 100%; flex-grow: 1; margin: var(--lumo-space-xs);" id="label-ListaUsuariosMasFamosos">Lista de usuarios más famosos</label>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; height: 75%; width: 100%;" id="horizontalLayout-ListaUsuariosMasFamosos2"></vaadin-horizontal-layout>
+   <vaadin-horizontal-layout style="flex-grow: 1; height: 75%; width: 100%;" id="horizontalLayout-ListaUsuariosMasFamosos2"></vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1;" id="horizontalLayout-VerMasUsuarios">
     <vaadin-button style="flex-grow: 1; padding: var(--lumo-space-m); margin-left: var(--lumo-space-m); margin-bottom: var(--lumo-space-s); align-self: flex-start;" tabindex="0" id="button-VerMasUsuarios">
       Ver más usuarios 
@@ -33,11 +33,11 @@ export class VistaLogueado extends LitElement {
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 50%;" id="verticalLayout-central">
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; height: 60%;" id="horizontalLayout-centralSuperior">
-    <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 15%;" id="verticalLayout-CerrarSesionNotificaciones">
-     <vaadin-button style="flex-grow: 1; width: auto; max-height: 5.5%; max-width: none; margin-top: var(--lumo-space-l); align-self: flex-start; flex-shrink: 1; height: 20%; Margin-top : 30px;" tabindex="0" id="button-CerrarSesion">
+    <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 15%;margin-top: 23px;" id="verticalLayout-CerrarSesionNotificaciones">
+     <vaadin-button style="flex-grow: 1; max-height: 5.5%; max-width: none; align-self: flex-start; width: 120%; Height:30px;" tabindex="0" id="button-CerrarSesion">
        Cerrar Sesión 
      </vaadin-button>
-     <vaadin-button style="flex-grow: 1; max-height: 5.5%; max-width: none; align-self: flex-start; width: auto; Height:30px;" tabindex="0" id="button-Notificaciones">
+     <vaadin-button style="flex-grow: 1; max-height: 5.5%; max-width: none; align-self: flex-start; width: 127%; Height:30px;" tabindex="0" id="button-Notificaciones">
        Notificaciones 
      </vaadin-button>
     </vaadin-vertical-layout>
