@@ -1,6 +1,7 @@
 package interfaz;
 
 import vistas.VistaUsuarionoregistrado;
+
 import gallardoMartinez.MainView;
 
 //import basededatos.iUsuarioNoRegistrado;
@@ -22,7 +23,10 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	public ListahashtagsfamososUsuarioNoRegistrado _listahashtagsfamososUsuarioNoRegistrado;
 	
 	MainView MainView;
-	UsuarioNoRegistrado(MainView MainView) {
+	
+	
+	
+	public UsuarioNoRegistrado(MainView MainView) {
 	this.MainView = MainView;
 	}
 

@@ -1,6 +1,7 @@
 package interfaz;
 
 import vistas.VistaLogueado;
+
 import gallardoMartinez.MainView;
 
 public class Logueado extends VistaLogueado{

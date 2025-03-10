@@ -15,462 +15,357 @@ import com.vaadin.flow.component.html.Div;
 @JsModule("./views/vista-logueado.ts")
 public class VistaLogueado extends LitTemplate {
 
-    @Id("vaadinHorizontalLayout")
+	
+	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("label")
-	private Label label;
-	@Id("label-ListaUsuariosMasFamosos")
-	private HorizontalLayout labelListaUsuariosMasFamosos;
-	@Id("verticalLayout-Izquierdo")
+	@Id("verticalLayout-izquierdo")
 	private Element verticalLayoutIzquierdo;
-	@Id("horizontalLayout-listaUsuariosMasFamosos")
+	@Id("horizontalLayout-ListaUsuariosMasFamosos")
 	private HorizontalLayout horizontalLayoutListaUsuariosMasFamosos;
-	@Id("vaadinHorizontalLayout3")
-	private HorizontalLayout vaadinHorizontalLayout3;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
+	@Id("label-ListaUsuariosMasFamosos")
+	private Label labelListaUsuariosMasFamosos;
+	@Id("horizontalLayout-ListaUsuariosMasFamosos2")
+	private HorizontalLayout horizontalLayoutListaUsuariosMasFamosos2;
+	@Id("horizontalLayout-VerMasUsuarios")
+	private HorizontalLayout horizontalLayoutVerMasUsuarios;
 	@Id("button-VerMasUsuarios")
 	private Button buttonVerMasUsuarios;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
-	@Id("vaadinVerticalLayout2")
-	private Element vaadinVerticalLayout2;
+	@Id("verticalLayout-central")
+	private Element verticalLayoutCentral;
+	@Id("horizontalLayout-centralSuperior")
+	private HorizontalLayout horizontalLayoutCentralSuperior;
+	@Id("verticalLayout-CerrarSesionNotificaciones")
+	private Element verticalLayoutCerrarSesionNotificaciones;
+	@Id("button-CerrarSesion")
+	private Button buttonCerrarSesion;
 	@Id("button-Notificaciones")
 	private Button buttonNotificaciones;
-	@Id("button-cerrarSesion")
-	private Button buttonCerrarSesion;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("vaadinHorizontalLayout4")
-	private HorizontalLayout vaadinHorizontalLayout4;
+	@Id("verticalLayout-imagenPerfil")
+	private Element verticalLayoutImagenPerfil;
+	@Id("horizontalLayout-ImagenPerfil")
+	private HorizontalLayout horizontalLayoutImagenPerfil;
+	@Id("img-PortadaTwitter")
+	private Image imgPortadaTwitter;
+	@Id("horizontalLayout-centralImagen")
+	private HorizontalLayout horizontalLayoutCentralImagen;
+	@Id("verticalLayout-BaneadoVerperfil")
+	private Element verticalLayoutBaneadoVerperfil;
+	@Id("horizontalLayout-Baneados")
+	private HorizontalLayout horizontalLayoutBaneados;
 	@Id("button-Baneados")
 	private Button buttonBaneados;
-	@Id("vaadinHorizontalLayout6")
-	private HorizontalLayout vaadinHorizontalLayout6;
-	@Id("vaadinVerticalLayout3")
-	private Element vaadinVerticalLayout3;
-	@Id("vaadinHorizontalLayout5")
-	private HorizontalLayout vaadinHorizontalLayout5;
-	@Id("img")
-	private Image img;
-	@Id("button-EscribirTweet")
-	private Button buttonEscribirTweet;
+	@Id("img-PerfilUsuario")
+	private Image imgPerfilUsuario;
+	@Id("horizontalLayout-VerPerfilEscribirTweet")
+	private HorizontalLayout horizontalLayoutVerPerfilEscribirTweet;
+	@Id("verticalLayout-VerPerfilEscribirTweet")
+	private Element verticalLayoutVerPerfilEscribirTweet;
 	@Id("button-VerPerfil")
 	private Button buttonVerPerfil;
-	@Id("vaadinVerticalLayout4")
-	private Element vaadinVerticalLayout4;
-	@Id("vaadinHorizontalLayout7")
-	private HorizontalLayout vaadinHorizontalLayout7;
-	@Id("img1")
-	private Image img1;
-	@Id("vaadinVerticalLayout5")
-	private Element vaadinVerticalLayout5;
-	@Id("vaadinHorizontalLayout8")
-	private HorizontalLayout vaadinHorizontalLayout8;
-	@Id("vaadinVerticalLayout6")
-	private Element vaadinVerticalLayout6;
+	@Id("button-EscribirTweet")
+	private Button buttonEscribirTweet;
+	@Id("horizontalLayout-inferior")
+	private HorizontalLayout horizontalLayoutInferior;
+	@Id("verticalLayout-inferior")
+	private Element verticalLayoutInferior;
+	@Id("verticalLayout-derecho")
+	private Element verticalLayoutDerecho;
+	@Id("horizontalLayout-ListaHashtagsUsados")
+	private HorizontalLayout horizontalLayoutListaHashtagsUsados;
+	@Id("verticalLayout-listaHashtagsMasUsados")
+	private Element verticalLayoutListaHashtagsMasUsados;
 	@Id("label-ListaDeHashtagsMasUsados")
 	private Div labelListaDeHashtagsMasUsados;
-	@Id("lablel-ListaHashtagsMasUsados")
-	private Element lablelListaHashtagsMasUsados;
-	@Id("vaadinHorizontalLayout9")
-	private HorizontalLayout vaadinHorizontalLayout9;
-	@Id("button-VerMasHashtags")
-	private Button buttonVerMasHashtags;
-	@Id("verticaLayout-VerMásHashTags")
-	private Element verticaLayoutVerMásHashTags;
-	@Id("vaadinHorizontalLayout10")
-	private HorizontalLayout vaadinHorizontalLayout10;
 	@Id("horizontalLayout-HashtagsMasUsados")
 	private HorizontalLayout horizontalLayoutHashtagsMasUsados;
-	
-	
+	@Id("horizontalLayout-VerMasHashtags")
+	private HorizontalLayout horizontalLayoutVerMasHashtags;
+	@Id("verticaLayout-VerMásHashTags")
+	private Element verticaLayoutVerMásHashTags;
+	@Id("button-VerMasHashtags")
+	private Button buttonVerMasHashtags;
 
 	public VistaLogueado() {
         // You can initialise any data required for the connected UI components here.
     }
 
-
-
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
 	}
-
-
 
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
-
-
 	public HorizontalLayout getVaadinHorizontalLayout1() {
 		return vaadinHorizontalLayout1;
 	}
-
-
 
 	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
 		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
 	}
 
-
-
-	public Label getLabel() {
-		return label;
-	}
-
-
-
-	public void setLabel(Label label) {
-		this.label = label;
-	}
-
-
-
-	public HorizontalLayout getLabelListaUsuariosMasFamosos() {
-		return labelListaUsuariosMasFamosos;
-	}
-
-
-
-	public void setLabelListaUsuariosMasFamosos(HorizontalLayout labelListaUsuariosMasFamosos) {
-		this.labelListaUsuariosMasFamosos = labelListaUsuariosMasFamosos;
-	}
-
-
-
 	public Element getVerticalLayoutIzquierdo() {
 		return verticalLayoutIzquierdo;
 	}
-
-
 
 	public void setVerticalLayoutIzquierdo(Element verticalLayoutIzquierdo) {
 		this.verticalLayoutIzquierdo = verticalLayoutIzquierdo;
 	}
 
-
-
 	public HorizontalLayout getHorizontalLayoutListaUsuariosMasFamosos() {
 		return horizontalLayoutListaUsuariosMasFamosos;
 	}
-
-
 
 	public void setHorizontalLayoutListaUsuariosMasFamosos(HorizontalLayout horizontalLayoutListaUsuariosMasFamosos) {
 		this.horizontalLayoutListaUsuariosMasFamosos = horizontalLayoutListaUsuariosMasFamosos;
 	}
 
-
-
-	public HorizontalLayout getVaadinHorizontalLayout3() {
-		return vaadinHorizontalLayout3;
+	public Label getLabelListaUsuariosMasFamosos() {
+		return labelListaUsuariosMasFamosos;
 	}
 
-
-
-	public void setVaadinHorizontalLayout3(HorizontalLayout vaadinHorizontalLayout3) {
-		this.vaadinHorizontalLayout3 = vaadinHorizontalLayout3;
+	public void setLabelListaUsuariosMasFamosos(Label labelListaUsuariosMasFamosos) {
+		this.labelListaUsuariosMasFamosos = labelListaUsuariosMasFamosos;
 	}
 
-
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public HorizontalLayout getHorizontalLayoutListaUsuariosMasFamosos2() {
+		return horizontalLayoutListaUsuariosMasFamosos2;
 	}
 
-
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setHorizontalLayoutListaUsuariosMasFamosos2(HorizontalLayout horizontalLayoutListaUsuariosMasFamosos2) {
+		this.horizontalLayoutListaUsuariosMasFamosos2 = horizontalLayoutListaUsuariosMasFamosos2;
 	}
 
+	public HorizontalLayout getHorizontalLayoutVerMasUsuarios() {
+		return horizontalLayoutVerMasUsuarios;
+	}
 
+	public void setHorizontalLayoutVerMasUsuarios(HorizontalLayout horizontalLayoutVerMasUsuarios) {
+		this.horizontalLayoutVerMasUsuarios = horizontalLayoutVerMasUsuarios;
+	}
 
 	public Button getButtonVerMasUsuarios() {
 		return buttonVerMasUsuarios;
 	}
 
-
-
 	public void setButtonVerMasUsuarios(Button buttonVerMasUsuarios) {
 		this.buttonVerMasUsuarios = buttonVerMasUsuarios;
 	}
 
-
-
-	public HorizontalLayout getVaadinHorizontalLayout2() {
-		return vaadinHorizontalLayout2;
+	public Element getVerticalLayoutCentral() {
+		return verticalLayoutCentral;
 	}
 
-
-
-	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
-		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	public void setVerticalLayoutCentral(Element verticalLayoutCentral) {
+		this.verticalLayoutCentral = verticalLayoutCentral;
 	}
 
-
-
-	public Element getVaadinVerticalLayout2() {
-		return vaadinVerticalLayout2;
+	public HorizontalLayout getHorizontalLayoutCentralSuperior() {
+		return horizontalLayoutCentralSuperior;
 	}
 
-
-
-	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
-		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
+	public void setHorizontalLayoutCentralSuperior(HorizontalLayout horizontalLayoutCentralSuperior) {
+		this.horizontalLayoutCentralSuperior = horizontalLayoutCentralSuperior;
 	}
 
-
-
-	public Button getButtonNotificaciones() {
-		return buttonNotificaciones;
+	public Element getVerticalLayoutCerrarSesionNotificaciones() {
+		return verticalLayoutCerrarSesionNotificaciones;
 	}
 
-
-
-	public void setButtonNotificaciones(Button buttonNotificaciones) {
-		this.buttonNotificaciones = buttonNotificaciones;
+	public void setVerticalLayoutCerrarSesionNotificaciones(Element verticalLayoutCerrarSesionNotificaciones) {
+		this.verticalLayoutCerrarSesionNotificaciones = verticalLayoutCerrarSesionNotificaciones;
 	}
-
-
 
 	public Button getButtonCerrarSesion() {
 		return buttonCerrarSesion;
 	}
 
-
-
 	public void setButtonCerrarSesion(Button buttonCerrarSesion) {
 		this.buttonCerrarSesion = buttonCerrarSesion;
 	}
 
-
-
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
+	public Button getButtonNotificaciones() {
+		return buttonNotificaciones;
 	}
 
-
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	public void setButtonNotificaciones(Button buttonNotificaciones) {
+		this.buttonNotificaciones = buttonNotificaciones;
 	}
 
-
-
-	public HorizontalLayout getVaadinHorizontalLayout4() {
-		return vaadinHorizontalLayout4;
+	public Element getVerticalLayoutImagenPerfil() {
+		return verticalLayoutImagenPerfil;
 	}
 
-
-
-	public void setVaadinHorizontalLayout4(HorizontalLayout vaadinHorizontalLayout4) {
-		this.vaadinHorizontalLayout4 = vaadinHorizontalLayout4;
+	public void setVerticalLayoutImagenPerfil(Element verticalLayoutImagenPerfil) {
+		this.verticalLayoutImagenPerfil = verticalLayoutImagenPerfil;
 	}
 
+	public HorizontalLayout getHorizontalLayoutImagenPerfil() {
+		return horizontalLayoutImagenPerfil;
+	}
 
+	public void setHorizontalLayoutImagenPerfil(HorizontalLayout horizontalLayoutImagenPerfil) {
+		this.horizontalLayoutImagenPerfil = horizontalLayoutImagenPerfil;
+	}
+
+	public Image getImgPortadaTwitter() {
+		return imgPortadaTwitter;
+	}
+
+	public void setImgPortadaTwitter(Image imgPortadaTwitter) {
+		this.imgPortadaTwitter = imgPortadaTwitter;
+	}
+
+	public HorizontalLayout getHorizontalLayoutCentralImagen() {
+		return horizontalLayoutCentralImagen;
+	}
+
+	public void setHorizontalLayoutCentralImagen(HorizontalLayout horizontalLayoutCentralImagen) {
+		this.horizontalLayoutCentralImagen = horizontalLayoutCentralImagen;
+	}
+
+	public Element getVerticalLayoutBaneadoVerperfil() {
+		return verticalLayoutBaneadoVerperfil;
+	}
+
+	public void setVerticalLayoutBaneadoVerperfil(Element verticalLayoutBaneadoVerperfil) {
+		this.verticalLayoutBaneadoVerperfil = verticalLayoutBaneadoVerperfil;
+	}
+
+	public HorizontalLayout getHorizontalLayoutBaneados() {
+		return horizontalLayoutBaneados;
+	}
+
+	public void setHorizontalLayoutBaneados(HorizontalLayout horizontalLayoutBaneados) {
+		this.horizontalLayoutBaneados = horizontalLayoutBaneados;
+	}
 
 	public Button getButtonBaneados() {
 		return buttonBaneados;
 	}
 
-
-
 	public void setButtonBaneados(Button buttonBaneados) {
 		this.buttonBaneados = buttonBaneados;
 	}
 
-
-
-	public HorizontalLayout getVaadinHorizontalLayout6() {
-		return vaadinHorizontalLayout6;
+	public Image getImgPerfilUsuario() {
+		return imgPerfilUsuario;
 	}
 
-
-
-	public void setVaadinHorizontalLayout6(HorizontalLayout vaadinHorizontalLayout6) {
-		this.vaadinHorizontalLayout6 = vaadinHorizontalLayout6;
+	public void setImgPerfilUsuario(Image imgPerfilUsuario) {
+		this.imgPerfilUsuario = imgPerfilUsuario;
 	}
 
-
-
-	public Element getVaadinVerticalLayout3() {
-		return vaadinVerticalLayout3;
+	public HorizontalLayout getHorizontalLayoutVerPerfilEscribirTweet() {
+		return horizontalLayoutVerPerfilEscribirTweet;
 	}
 
-
-
-	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
-		this.vaadinVerticalLayout3 = vaadinVerticalLayout3;
+	public void setHorizontalLayoutVerPerfilEscribirTweet(HorizontalLayout horizontalLayoutVerPerfilEscribirTweet) {
+		this.horizontalLayoutVerPerfilEscribirTweet = horizontalLayoutVerPerfilEscribirTweet;
 	}
 
-
-
-	public HorizontalLayout getVaadinHorizontalLayout5() {
-		return vaadinHorizontalLayout5;
+	public Element getVerticalLayoutVerPerfilEscribirTweet() {
+		return verticalLayoutVerPerfilEscribirTweet;
 	}
 
-
-
-	public void setVaadinHorizontalLayout5(HorizontalLayout vaadinHorizontalLayout5) {
-		this.vaadinHorizontalLayout5 = vaadinHorizontalLayout5;
+	public void setVerticalLayoutVerPerfilEscribirTweet(Element verticalLayoutVerPerfilEscribirTweet) {
+		this.verticalLayoutVerPerfilEscribirTweet = verticalLayoutVerPerfilEscribirTweet;
 	}
-
-
-
-	public Image getImg() {
-		return img;
-	}
-
-
-
-	public void setImg(Image img) {
-		this.img = img;
-	}
-
-
-
-	public Button getButtonEscribirTweet() {
-		return buttonEscribirTweet;
-	}
-
-
-
-	public void setButtonEscribirTweet(Button buttonEscribirTweet) {
-		this.buttonEscribirTweet = buttonEscribirTweet;
-	}
-
-
 
 	public Button getButtonVerPerfil() {
 		return buttonVerPerfil;
 	}
 
-
-
 	public void setButtonVerPerfil(Button buttonVerPerfil) {
 		this.buttonVerPerfil = buttonVerPerfil;
 	}
 
-
-
-	public Element getVaadinVerticalLayout4() {
-		return vaadinVerticalLayout4;
+	public Button getButtonEscribirTweet() {
+		return buttonEscribirTweet;
 	}
 
-
-
-	public void setVaadinVerticalLayout4(Element vaadinVerticalLayout4) {
-		this.vaadinVerticalLayout4 = vaadinVerticalLayout4;
+	public void setButtonEscribirTweet(Button buttonEscribirTweet) {
+		this.buttonEscribirTweet = buttonEscribirTweet;
 	}
 
-
-
-	public HorizontalLayout getVaadinHorizontalLayout7() {
-		return vaadinHorizontalLayout7;
+	public HorizontalLayout getHorizontalLayoutInferior() {
+		return horizontalLayoutInferior;
 	}
 
-
-
-	public void setVaadinHorizontalLayout7(HorizontalLayout vaadinHorizontalLayout7) {
-		this.vaadinHorizontalLayout7 = vaadinHorizontalLayout7;
+	public void setHorizontalLayoutInferior(HorizontalLayout horizontalLayoutInferior) {
+		this.horizontalLayoutInferior = horizontalLayoutInferior;
 	}
 
-
-
-	public Image getImg1() {
-		return img1;
+	public Element getVerticalLayoutInferior() {
+		return verticalLayoutInferior;
 	}
 
-
-
-	public void setImg1(Image img1) {
-		this.img1 = img1;
+	public void setVerticalLayoutInferior(Element verticalLayoutInferior) {
+		this.verticalLayoutInferior = verticalLayoutInferior;
 	}
 
-
-
-	public Element getVaadinVerticalLayout5() {
-		return vaadinVerticalLayout5;
+	public Element getVerticalLayoutDerecho() {
+		return verticalLayoutDerecho;
 	}
 
-
-
-	public void setVaadinVerticalLayout5(Element vaadinVerticalLayout5) {
-		this.vaadinVerticalLayout5 = vaadinVerticalLayout5;
+	public void setVerticalLayoutDerecho(Element verticalLayoutDerecho) {
+		this.verticalLayoutDerecho = verticalLayoutDerecho;
 	}
 
-
-
-	public HorizontalLayout getVaadinHorizontalLayout8() {
-		return vaadinHorizontalLayout8;
+	public HorizontalLayout getHorizontalLayoutListaHashtagsUsados() {
+		return horizontalLayoutListaHashtagsUsados;
 	}
 
-
-
-	public void setVaadinHorizontalLayout8(HorizontalLayout vaadinHorizontalLayout8) {
-		this.vaadinHorizontalLayout8 = vaadinHorizontalLayout8;
+	public void setHorizontalLayoutListaHashtagsUsados(HorizontalLayout horizontalLayoutListaHashtagsUsados) {
+		this.horizontalLayoutListaHashtagsUsados = horizontalLayoutListaHashtagsUsados;
 	}
 
-
-
-	public Element getVaadinVerticalLayout6() {
-		return vaadinVerticalLayout6;
+	public Element getVerticalLayoutListaHashtagsMasUsados() {
+		return verticalLayoutListaHashtagsMasUsados;
 	}
 
-
-
-	public void setVaadinVerticalLayout6(Element vaadinVerticalLayout6) {
-		this.vaadinVerticalLayout6 = vaadinVerticalLayout6;
+	public void setVerticalLayoutListaHashtagsMasUsados(Element verticalLayoutListaHashtagsMasUsados) {
+		this.verticalLayoutListaHashtagsMasUsados = verticalLayoutListaHashtagsMasUsados;
 	}
-
-
 
 	public Div getLabelListaDeHashtagsMasUsados() {
 		return labelListaDeHashtagsMasUsados;
 	}
 
-
-
 	public void setLabelListaDeHashtagsMasUsados(Div labelListaDeHashtagsMasUsados) {
 		this.labelListaDeHashtagsMasUsados = labelListaDeHashtagsMasUsados;
 	}
 
-
-
-	public Element getLablelListaHashtagsMasUsados() {
-		return lablelListaHashtagsMasUsados;
+	public HorizontalLayout getHorizontalLayoutHashtagsMasUsados() {
+		return horizontalLayoutHashtagsMasUsados;
 	}
 
-
-
-	public void setLablelListaHashtagsMasUsados(Element lablelListaHashtagsMasUsados) {
-		this.lablelListaHashtagsMasUsados = lablelListaHashtagsMasUsados;
+	public void setHorizontalLayoutHashtagsMasUsados(HorizontalLayout horizontalLayoutHashtagsMasUsados) {
+		this.horizontalLayoutHashtagsMasUsados = horizontalLayoutHashtagsMasUsados;
 	}
 
-
-
-	public HorizontalLayout getVaadinHorizontalLayout9() {
-		return vaadinHorizontalLayout9;
+	public HorizontalLayout getHorizontalLayoutVerMasHashtags() {
+		return horizontalLayoutVerMasHashtags;
 	}
 
-
-
-	public void setVaadinHorizontalLayout9(HorizontalLayout vaadinHorizontalLayout9) {
-		this.vaadinHorizontalLayout9 = vaadinHorizontalLayout9;
+	public void setHorizontalLayoutVerMasHashtags(HorizontalLayout horizontalLayoutVerMasHashtags) {
+		this.horizontalLayoutVerMasHashtags = horizontalLayoutVerMasHashtags;
 	}
 
+	public Element getVerticaLayoutVerMásHashTags() {
+		return verticaLayoutVerMásHashTags;
+	}
 
+	public void setVerticaLayoutVerMásHashTags(Element verticaLayoutVerMásHashTags) {
+		this.verticaLayoutVerMásHashTags = verticaLayoutVerMásHashTags;
+	}
 
 	public Button getButtonVerMasHashtags() {
 		return buttonVerMasHashtags;
 	}
-
-
 
 	public void setButtonVerMasHashtags(Button buttonVerMasHashtags) {
 		this.buttonVerMasHashtags = buttonVerMasHashtags;
@@ -478,40 +373,6 @@ public class VistaLogueado extends LitTemplate {
 
 
 
-	public Element getVerticaLayoutVerMásHashTags() {
-		return verticaLayoutVerMásHashTags;
-	}
-
-
-
-	public void setVerticaLayoutVerMásHashTags(Element verticaLayoutVerMásHashTags) {
-		this.verticaLayoutVerMásHashTags = verticaLayoutVerMásHashTags;
-	}
-
-
-
-	public HorizontalLayout getVaadinHorizontalLayout10() {
-		return vaadinHorizontalLayout10;
-	}
-
-
-
-	public void setVaadinHorizontalLayout10(HorizontalLayout vaadinHorizontalLayout10) {
-		this.vaadinHorizontalLayout10 = vaadinHorizontalLayout10;
-	}
-
-
-
-	public HorizontalLayout getHorizontalLayoutHashtagsMasUsados() {
-		return horizontalLayoutHashtagsMasUsados;
-	}
-
-
-
-	public void setHorizontalLayoutHashtagsMasUsados(HorizontalLayout horizontalLayoutHashtagsMasUsados) {
-		this.horizontalLayoutHashtagsMasUsados = horizontalLayoutHashtagsMasUsados;
-	}
-	
 	
 	
 
