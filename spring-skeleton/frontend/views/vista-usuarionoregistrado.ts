@@ -31,7 +31,7 @@ export class VistaUsuarionoregistrado extends LitElement {
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 50%;" id="verticalLayout-central">
   <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; height: 60%;" id="horizontalLayout-centralSuperior">
-   <img style="flex-grow: 1; width: 100%; height: 60%; align-self: center; margin-top: var(--lumo-space-xl);" src=".\img\PortadaTwitter.jpeg" id="image-IconoTwitter">
+   <img style="flex-grow: 1; width: 100%; height: 80%; align-self: center; margin-top: var(--lumo-space-xl);" src=".\img\PortadaTwitter.jpeg" id="image-IconoTwitter">
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;" id="horizontalLayout-CentrarInferior">
    <vaadin-vertical-layout theme="spacing" style="width: 100%; flex-grow: 1;" id="verticalLayout-centralInferior">

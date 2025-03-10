@@ -34,10 +34,10 @@ export class VistaLogueado extends LitElement {
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 50%;" id="verticalLayout-central">
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; height: 60%;" id="horizontalLayout-centralSuperior">
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 15%;" id="verticalLayout-CerrarSesionNotificaciones">
-     <vaadin-button style="flex-grow: 1; width: 100%; max-height: 10%; max-width: 90%; margin-top: var(--lumo-space-l); align-self: flex-start; flex-shrink: 1; height: 30%;" tabindex="0" id="button-CerrarSesion">
+     <vaadin-button style="flex-grow: 1; width: auto; max-height: 5.5%; max-width: none; margin-top: var(--lumo-space-l); align-self: flex-start; flex-shrink: 1; height: 20%; Margin-top : 30px;" tabindex="0" id="button-CerrarSesion">
        Cerrar Sesión 
      </vaadin-button>
-     <vaadin-button style="flex-grow: 1; max-height: 10%; max-width: 90%; align-self: flex-start; width: 100%;" tabindex="0" id="button-Notificaciones">
+     <vaadin-button style="flex-grow: 1; max-height: 5.5%; max-width: none; align-self: flex-start; width: auto; Height:30px;" tabindex="0" id="button-Notificaciones">
        Notificaciones 
      </vaadin-button>
     </vaadin-vertical-layout>
@@ -49,17 +49,17 @@ export class VistaLogueado extends LitElement {
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 15%; max-height: 25%;" id="verticalLayout-BaneadoVerperfil">
      <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; margin-top: var(--lumo-space-l); max-height: 50%;" id="horizontalLayout-Baneados">
-      <vaadin-button tabindex="0" style="flex-grow: 1; width: 100%; align-self: flex-start;" id="button-Baneados">
+      <vaadin-button tabindex="0" style="flex-grow: 1; width: 300%; align-self: flex-start;  Height:30px;" id="button-Baneados">
         Baneados 
       </vaadin-button>
-      <img style="flex-grow: 1; width: 50%; height: 20%;" src=".\img\FotoPerfilEjemplo.jpg" id="img-PerfilUsuario">
+      <img style="flex-grow: 1; width: 100%; height: 100%;" src=".\img\FotoPerfilEjemplo.jpg" id="img-PerfilUsuario">
      </vaadin-horizontal-layout>
      <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1;" id="horizontalLayout-VerPerfilEscribirTweet">
       <vaadin-vertical-layout theme="spacing" id="verticalLayout-VerPerfilEscribirTweet">
-       <vaadin-button style="flex-grow: 1;" tabindex="0" id="button-VerPerfil">
+       <vaadin-button style="flex-grow: 1; Height:30px;" tabindex="0" id="button-VerPerfil">
          Ver perfil 
        </vaadin-button>
-       <vaadin-button style="flex-grow: 1; width: 100%;" tabindex="0" id="button-EscribirTweet">
+       <vaadin-button style="flex-grow: 1; width: 100%; Height:30px;" tabindex="0" id="button-EscribirTweet">
          Escribir tweet 
        </vaadin-button>
       </vaadin-vertical-layout>

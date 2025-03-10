@@ -13,6 +13,7 @@ import com.vaadin.flow.router.Route;
 
 import interfaz.Administrador;
 import interfaz.UsuarioNoRegistrado;
+import interfaz.UsuarioRegistrado;
 
 /**
  * A sample Vaadin view class.
@@ -43,10 +44,10 @@ public class MainView extends VerticalLayout {
     public MainView(@Autowired GreetService service) {
 
     
-     Administrador admin = new Administrador(this); 
+    	UsuarioNoRegistrado admin = new UsuarioNoRegistrado(this); 
      
      add(admin); 
-
+     this.addClickListener(event->Notification.show("Hola"));
     		  
     }
 

@@ -19,7 +19,7 @@ public class UsuarioRegistrado extends Logueado {
 	public Vector<Hashtag> _creaHashtag = new Vector<Hashtag>();
 	public Vector<Contenido> _escribe = new Vector<Contenido>();
 	
-	UsuarioRegistrado(MainView MainView) {
+	public UsuarioRegistrado(MainView MainView) {
 		super(MainView);
 		this.getButtonBaneados().setVisible(false);
 		}
