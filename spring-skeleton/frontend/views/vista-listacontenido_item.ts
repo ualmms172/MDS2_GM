@@ -3,6 +3,7 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/horizontal-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vertical-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/button/src/vaadin-button.js';
+import '@polymer/iron-icon/iron-icon.js';
 
 @customElement('vista-listacontenido_item')
 export class VistaListacontenido_item extends LitElement {
@@ -22,12 +23,12 @@ export class VistaListacontenido_item extends LitElement {
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;">
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; height: 15%;">
     <img style="flex-grow: 1; width: 38%; height: 100%; margin-top: var(--lumo-space-s); margin-left: var(--lumo-space-s);">
-    <label style="flex-grow: 1; width: 100%; margin-top: var(--lumo-space-xl);">Label</label>
+    <label style="flex-grow: 1; width: 100%; margin-top: var(--lumo-space-xl);">Nombre Usuario</label>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; height: 70%; width: 100%;">
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;">
      <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;">
-      <label style="flex-grow: 1; margin-top: var(--lumo-space-m); margin-left: var(--lumo-space-m);">Label</label>
+      <label style="flex-grow: 1; margin-top: var(--lumo-space-m); margin-left: var(--lumo-space-m);">Texto tweet</label>
      </vaadin-horizontal-layout>
      <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;">
       <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;">
@@ -44,13 +45,21 @@ export class VistaListacontenido_item extends LitElement {
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;">
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 20%;">
      <vaadin-button style="flex-grow: 1; align-self: flex-start; width: 30%; margin-left: var(--lumo-space-m);" tabindex="0">
-       Button 
+      Retweetear
+     </vaadin-button>
+     <vaadin-button style="flex-grow: 1; align-self: flex-start; width: 30%; margin-left: var(--lumo-space-m);" tabindex="0">
+      Borrar
      </vaadin-button>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;"></vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 20%;">
-     <label style="flex-grow: 1;">Label</label>
-     <img style="flex-grow: 1;">
+     <vaadin-horizontal-layout theme="spacing">
+      <label style="flex-grow: 1;">Num Me gusta</label>
+      <img style="flex-grow: 1;">
+      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 1;" tabindex="0">
+       <iron-icon icon="lumo:plus"></iron-icon>
+      </vaadin-button>
+     </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
