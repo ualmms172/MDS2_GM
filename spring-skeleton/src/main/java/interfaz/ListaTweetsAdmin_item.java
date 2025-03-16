@@ -4,6 +4,8 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 	ListaTweetsAdmin_item(ListaContenido lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		this.getButtonMeGusta().setVisible(false);
+		this.getButtonRetweet().setVisible(false);
 	}
 
 	//private event _borrarTweet;

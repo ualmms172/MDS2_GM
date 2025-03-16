@@ -4,6 +4,9 @@ public class ListaUsuariosFamosos_item extends ListaUsuariosGeneralUsuarioNoRegi
 	public ListaUsuariosFamosos_item(ListaUsuariosGeneral lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		this.getLabelNumSeguidores().setVisible(false);
+		this.getLabelNumSeguidos().setVisible(false);
+		this.getLabelNumTweets().setVisible(false);
 	}
 
 	public ListaUsuariosFamosos _listaUsuariosFamosos;

@@ -4,6 +4,7 @@ public class ListahashtagsgeneralUsuarioNoRegistrado_item extends ListaHashtagsG
 	public ListahashtagsgeneralUsuarioNoRegistrado_item(ListaHashtagsGeneral lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		this.getButtonEscribirTweet().setVisible(false);
 	}
 
 	public ListahashtagsgeneralUsuarioNoRegistrado _listahashtagsgeneralUsuarioNoRegistrado;

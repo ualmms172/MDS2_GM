@@ -4,6 +4,7 @@ public class ListaUsuariosAdministrador_item extends ListaUsuariosGeneralAdminis
 	public ListaUsuariosAdministrador_item(ListaUsuariosGeneral lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		this.get
 	}
 
 	//private Label _numSeguidores;

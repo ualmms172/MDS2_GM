@@ -4,6 +4,8 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 	MostrartweetspropiosUsuarioRegistrado_item(ListaContenido lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		this.getButtonBorrar().setVisible(false);
+		this.getButtonMeGusta().setVisible(false);
 	}
 
 	//private Button _retweetear;

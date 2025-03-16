@@ -4,6 +4,9 @@ public class ListaUsuariosGeneralUsuarioNoRegistrado_item extends ListaUsuariosG
 	public ListaUsuariosGeneralUsuarioNoRegistrado_item(ListaUsuariosGeneral lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		this.getButtonSeguir().setVisible(false);
+		this.getLabelSeguido_NoSeguido().setVisible(false);
+		this.getButtonBanear().setVisible(false);
 	}
 
 	public ListaUsuariosGeneralUsuarioNoRegistrado _listaUsuariosGeneralUsuarioNoRegistrado;

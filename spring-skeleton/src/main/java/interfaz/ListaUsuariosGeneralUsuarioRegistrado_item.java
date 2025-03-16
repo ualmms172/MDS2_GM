@@ -4,6 +4,7 @@ public class ListaUsuariosGeneralUsuarioRegistrado_item extends ListaUsuariosGen
 	public ListaUsuariosGeneralUsuarioRegistrado_item(ListaUsuariosGeneral lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		this.getButtonBanear().setVisible(false);
 	}
 
 	public ListaUsuariosGeneralUsuarioRegistrado _listaUsuariosGeneralUsuarioRegistrado;
