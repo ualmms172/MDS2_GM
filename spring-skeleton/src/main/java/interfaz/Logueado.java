@@ -9,7 +9,7 @@ public class Logueado extends VistaLogueado{
 	private String _contrasena;
 	
 	MainView MainView;
-	Logueado(MainView MainView) {
+	public Logueado(MainView MainView) {
 	this.MainView = MainView;
 	}
 	

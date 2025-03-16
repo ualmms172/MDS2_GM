@@ -16,13 +16,13 @@ export class VistaUsuariosbaneados_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;">
-  <img style="flex-grow: 1; align-self: center;">
-  <label style="flex-grow: 1; align-self: center;">Nick</label>
-  <label style="align-self: center; flex-grow: 1;">NumSeguidores</label>
-  <vaadin-button style="align-self: center; flex-grow: 1;" tabindex="0">
-    Button 
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vertical-usuariosbaneados_item">
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;" id="horizontal-usuariosbaneados_item">
+  <img style="flex-grow: 1; align-self: center;" id="img-PerfilUsuarioBaneado">
+  <label style="flex-grow: 1; align-self: center;" id="label-Nick">Nick</label>
+  <label style="align-self: center; flex-grow: 1;" id="label-NumSeguidores">NumSeguidores</label>
+  <vaadin-button style="align-self: center; flex-grow: 1;" tabindex="0" id="button-Desbanear">
+   Desbanear 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

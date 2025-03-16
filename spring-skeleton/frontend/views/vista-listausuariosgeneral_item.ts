@@ -16,19 +16,19 @@ export class VistaListausuariosgeneral_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;">
-  <label style="flex-grow: 1; align-self: center; margin-left: var(--lumo-space-s);">Nick</label>
-  <label style="flex-grow: 1; align-self: center;">Num Seguidores</label>
-  <label style="flex-grow: 1; align-self: center;">Num Seguidos</label>
-  <label style="flex-grow: 1; align-self: center;">Num Tweets</label>
-  <label style="flex-grow: 1; align-self: center;">Te sigue o no</label>
-  <vaadin-button style="align-self: center; flex-grow: 1;" tabindex="0">
-   Banear
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vertical-listausuariosgeneral_item">
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;" id="horizontal-listausuariosgeneral_item">
+  <label style="flex-grow: 1; align-self: center; margin-left: var(--lumo-space-s);" id="label-Nick">Nick</label>
+  <label style="flex-grow: 1; align-self: center;" id="label-NumSeguidores">Num Seguidores</label>
+  <label style="flex-grow: 1; align-self: center;" id="label-NumSeguidos">Num Seguidos</label>
+  <label style="flex-grow: 1; align-self: center;" id="label-NumTweets">Num Tweets</label>
+  <label style="flex-grow: 1; align-self: center;" id="label-Seguido/NoSeguido">Te sigue o no</label>
+  <vaadin-button style="align-self: center; flex-grow: 1;" tabindex="0" id="button-Banear">
+    Banear 
   </vaadin-button>
-  <img style="flex-grow: 1; align-self: center;">
-  <vaadin-button style="flex-grow: 1; align-self: center; margin-right: var(--lumo-space-s);" tabindex="0">
-   Seguir
+  <img style="flex-grow: 1; align-self: center;" id="img-PerfilUsuario">
+  <vaadin-button style="flex-grow: 1; align-self: center; margin-right: var(--lumo-space-s);" tabindex="0" id="button-Seguir">
+    Seguir 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

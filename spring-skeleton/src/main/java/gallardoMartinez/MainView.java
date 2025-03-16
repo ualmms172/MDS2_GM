@@ -12,6 +12,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
 import interfaz.Administrador;
+import interfaz.Logueado;
 import interfaz.UsuarioNoRegistrado;
 import interfaz.UsuarioRegistrado;
 
@@ -44,10 +45,9 @@ public class MainView extends VerticalLayout {
     public MainView(@Autowired GreetService service) {
 
     
-    	UsuarioRegistrado admin = new UsuarioRegistrado(this); 
+     UsuarioNoRegistrado usu = new UsuarioNoRegistrado(this); 
      
-     add(admin); 
-     this.addClickListener(event->Notification.show("Hola"));
+     add(usu); 
     		  
     }
 

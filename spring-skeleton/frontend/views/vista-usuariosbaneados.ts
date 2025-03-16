@@ -15,8 +15,8 @@ export class VistaUsuariosbaneados extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;position:absolute;">
- <vaadin-vertical-layout theme="spacing" style="width: 100%; flex-grow: 1;"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%;position:absolute;" id="vertical-listausuariosbaneados">
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; flex-grow: 1;" id="verticalInterno-listausuariosbaneados"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

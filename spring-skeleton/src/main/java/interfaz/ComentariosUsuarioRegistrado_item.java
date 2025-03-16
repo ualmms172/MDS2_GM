@@ -1,6 +1,11 @@
 package interfaz;
 
 public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
+	ComentariosUsuarioRegistrado_item(ListaContenido lista) {
+		super(lista);
+		// TODO Auto-generated constructor stub
+	}
+
 	//private event _darlikeacomentario;
 	//private Button _meGusta;
 	public ComentariosUsuarioRegistrado _comentariosUsuarioRegistrado;

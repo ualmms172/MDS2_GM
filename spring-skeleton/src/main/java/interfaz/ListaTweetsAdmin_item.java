@@ -1,6 +1,11 @@
 package interfaz;
 
 public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
+	ListaTweetsAdmin_item(ListaContenido lista) {
+		super(lista);
+		// TODO Auto-generated constructor stub
+	}
+
 	//private event _borrarTweet;
 	//private Button _borrarTweetB;
 	public ListaTweetsAdmin _listaTweetsAdmin;

@@ -1,6 +1,8 @@
 package interfaz;
 
-public class ListaContenido_item {
+import vistas.VistaListacontenido_item;
+
+public class ListaContenido_item extends VistaListacontenido_item {
 	//private Label _nombreUsuario;
 	//private Label _textoTweet;
 	//private Label _numMeGustas;
@@ -9,4 +11,11 @@ public class ListaContenido_item {
 	//private Image _fotoTweet;
 	//private Button _accederUsuario;
 	//public ListaContenido _listaContenido;
+	public ListaContenido _lista;
+	
+	
+	ListaContenido_item(ListaContenido lista) {
+	_lista = lista;
+	}
+	
 }

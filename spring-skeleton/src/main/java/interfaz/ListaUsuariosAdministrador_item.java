@@ -1,6 +1,11 @@
 package interfaz;
 
 public class ListaUsuariosAdministrador_item extends ListaUsuariosGeneralAdministrador_item {
+	public ListaUsuariosAdministrador_item(ListaUsuariosGeneral lista) {
+		super(lista);
+		// TODO Auto-generated constructor stub
+	}
+
 	//private Label _numSeguidores;
 	//private Label _numSeguidos;
 	//private Label _numTweets;
