@@ -89,14 +89,14 @@ public class MainView extends VerticalLayout {
     
     //Comentariospropios lista = new Comentariospropios();
     	
-    	ListaRetweetsNotificados lista = new ListaRetweetsNotificados(null);  
+    	ListausuariosfamososUsuarioRegistrado lista = new ListausuariosfamososUsuarioRegistrado(null);  
     
-    	ListaRetweetsNotificados_item item1 = new ListaRetweetsNotificados_item(lista);
-    	ListaRetweetsNotificados_item item2 = new ListaRetweetsNotificados_item(lista);
+    	ListausuariosfamososUsuarioRegistrado_item item1 = new ListausuariosfamososUsuarioRegistrado_item(lista);
+    	ListausuariosfamososUsuarioRegistrado_item item2 = new ListausuariosfamososUsuarioRegistrado_item(lista);
 
 
-    lista.getVerticalListaretweetsnotificados().as(VerticalLayout.class).add(item1);
-    lista.getVerticalListaretweetsnotificados().as(VerticalLayout.class).add(item2);
+    lista.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item1);
+    lista.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item2);
 
     add(lista); 
     
