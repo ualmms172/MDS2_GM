@@ -15,5 +15,7 @@ public class Administrador extends Logueado {
 		this.getImgPerfilUsuario().setVisible(false);
 		this.getButtonEscribirTweet().setVisible(false);
 		this.getButtonVerPerfil().setVisible(false);
+	
 		}
+	
 }

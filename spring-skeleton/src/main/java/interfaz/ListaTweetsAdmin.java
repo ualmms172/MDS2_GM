@@ -7,4 +7,11 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 	public VerPerfilAdministrador _verPerfilAdministrador;
 	public VerHashtagAdministrador _verHashtagAdministrador;
 	public Vector<ListaTweetsAdmin_item> _item = new Vector<ListaTweetsAdmin_item>();
+	
+	public ListaTweetsAdmin(Administrador admin) {
+		
+		_administrador = admin; 
+	}
+	
+	
 }

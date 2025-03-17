@@ -6,4 +6,9 @@ public class Listatweets extends ListaTweetsGeneral {
 	public VerHashtagUsuarioNoRegistrado _verHashtagUsuarioNoRegistrado;
 	public VerperfilUsuarioNoRegistrado _verperfilUsuarioNoRegistrado;
 	public Vector<Listatweets_item> _item = new Vector<Listatweets_item>();
+	
+	public Listatweets(VerperfilUsuarioNoRegistrado perfil) {
+		
+		_verperfilUsuarioNoRegistrado = perfil; 
+	}
 }

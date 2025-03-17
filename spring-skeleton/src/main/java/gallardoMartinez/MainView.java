@@ -12,6 +12,8 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
 import interfaz.Administrador;
+import interfaz.ListaComentariosAdministrador;
+import interfaz.ListausuariosfamososUsuarioRegistrado;
 import interfaz.Logueado;
 import interfaz.UsuarioNoRegistrado;
 import interfaz.UsuarioRegistrado;
@@ -45,9 +47,18 @@ public class MainView extends VerticalLayout {
     public MainView(@Autowired GreetService service) {
 
     
-     UsuarioNoRegistrado usu = new UsuarioNoRegistrado(this); 
+     UsuarioRegistrado usu = new UsuarioRegistrado(this); 
+     ListausuariosfamososUsuarioRegistrado usuario = new ListausuariosfamososUsuarioRegistrado(usu); 
      
-     add(usu); 
+     add(usu);
+     add(usuario);
+     
+     
+     
+     
+     
+     
+     
     		  
     }
 
