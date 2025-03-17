@@ -13,6 +13,7 @@ import com.vaadin.flow.router.Route;
 
 import interfaz.Administrador;
 import interfaz.ListaComentariosAdministrador;
+import interfaz.ListaComentariosAdministrador_item;
 import interfaz.ListausuariosfamososUsuarioRegistrado;
 import interfaz.Logueado;
 import interfaz.UsuarioNoRegistrado;
@@ -47,9 +48,11 @@ public class MainView extends VerticalLayout {
     public MainView(@Autowired GreetService service) {
 
     
-     UsuarioRegistrado usu = new UsuarioRegistrado(this); 
-     ListausuariosfamososUsuarioRegistrado usuario = new ListausuariosfamososUsuarioRegistrado(usu); 
+     ListaComentariosAdministrador l= new ListaComentariosAdministrador(null);
      
+     ListaComentariosAdministrador_item li1 = new ListaComentariosAdministrador_item(l);
+     ListaComentariosAdministrador_item li2 = new ListaComentariosAdministrador_item(l);
+     l.
      add(usu);
      add(usuario);
      
