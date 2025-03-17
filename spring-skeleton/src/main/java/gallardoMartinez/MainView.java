@@ -52,16 +52,9 @@ public class MainView extends VerticalLayout {
      
      ListaComentariosAdministrador_item li1 = new ListaComentariosAdministrador_item(l);
      ListaComentariosAdministrador_item li2 = new ListaComentariosAdministrador_item(l);
-     l.
-     add(usu);
-     add(usuario);
-     
-     
-     
-     
-     
-     
-     
+     l.getVerticalListacontenido().as(VerticalLayout.class).add(li1);
+     l.getVerticalListacontenido().as(VerticalLayout.class).add(li2);
+     add(l); 
     		  
     }
 

@@ -67,8 +67,7 @@ public class VistaListacontenido_item extends LitTemplate {
 	@Id("button-MeGusta")
 	private Button buttonMeGusta;
 	@Id("icon-MeGusta")
-	private IronIcon iconMeGusta;
-
+	private Button iconMeGusta;
 	public VistaListacontenido_item() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -273,13 +272,15 @@ public class VistaListacontenido_item extends LitTemplate {
 		this.buttonMeGusta = buttonMeGusta;
 	}
 
-	public IronIcon getIconMeGusta() {
+	public Button getIconMeGusta() {
 		return iconMeGusta;
 	}
 
-	public void setIconMeGusta(IronIcon iconMeGusta) {
+	public void setIconMeGusta(Button iconMeGusta) {
 		this.iconMeGusta = iconMeGusta;
 	}
+
+
 	
 	
 

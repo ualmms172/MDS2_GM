@@ -16,7 +16,7 @@ export class VistaListanuevosseguidores_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vertical-listanuevosseguidores_item">
+<vaadin-vertical-layout id="vertical-listanuevosseguidores_item">
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;" id="horizontal-listanuevosseguidores_item">
   <label style="flex-grow: 1; align-self: center;" id="Label-TextoSeguir">Label</label>
   <vaadin-button style="flex-grow: 1; align-self: center;" id="button-Seguir/NoSeguir" tabindex="0">

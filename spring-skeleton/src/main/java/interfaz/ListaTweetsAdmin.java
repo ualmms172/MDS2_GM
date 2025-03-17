@@ -12,6 +12,6 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 		
 		_administrador = admin; 
 	}
-	
+	 
 	
 }

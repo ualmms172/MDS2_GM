@@ -12,8 +12,7 @@ public class VistaListacontenido extends LitTemplate {
 
     @Id("vertical-listacontenido")
 	private Element verticalListacontenido;
-	@Id("verticalInterno-listacontenido")
-	private Element verticalInternoListacontenido;
+	
 
 	public VistaListacontenido() {
         // You can initialise any data required for the connected UI components here.
@@ -27,13 +26,7 @@ public class VistaListacontenido extends LitTemplate {
 		this.verticalListacontenido = verticalListacontenido;
 	}
 
-	public Element getVerticalInternoListacontenido() {
-		return verticalInternoListacontenido;
-	}
 
-	public void setVerticalInternoListacontenido(Element verticalInternoListacontenido) {
-		this.verticalInternoListacontenido = verticalInternoListacontenido;
-	}
 	
 	
 

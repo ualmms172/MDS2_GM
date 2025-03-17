@@ -3,7 +3,6 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/horizontal-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vertical-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/button/src/vaadin-button.js';
-import '@polymer/iron-icon/iron-icon.js';
 
 @customElement('vista-listacontenido_item')
 export class VistaListacontenido_item extends LitElement {
@@ -18,7 +17,7 @@ export class VistaListacontenido_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; background-color: #cdc8c8;" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="vaadinVerticalLayout1">
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; height: 15%;" id="horizontalLayout-Cabecera">
@@ -57,7 +56,9 @@ export class VistaListacontenido_item extends LitElement {
       <label style="flex-grow: 1;" id="label-MeGusta">Num Me gusta</label>
       <img style="flex-grow: 1;" id="img-MeGusta">
       <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 1;" tabindex="0" id="button-MeGusta">
-       <iron-icon icon="lumo:plus" id="icon-MeGusta"></iron-icon>
+       <vaadin-button id="icon-MeGusta" tabindex="0">
+        Me gusta 
+       </vaadin-button>
       </vaadin-button>
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>

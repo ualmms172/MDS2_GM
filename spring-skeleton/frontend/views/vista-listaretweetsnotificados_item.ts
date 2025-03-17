@@ -15,7 +15,7 @@ export class VistaListaretweetsnotificados_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vertical-listaretweetsnotificados_item">
+<vaadin-vertical-layout id="vertical-listaretweetsnotificados_item">
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;" id="horizontal-listaretweetsnotificados_item">
   <label style="flex-grow: 1; align-self: center;" id="label-TextoRetweetNotificado">Label</label>
  </vaadin-horizontal-layout>

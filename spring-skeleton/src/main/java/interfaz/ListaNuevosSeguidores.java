@@ -2,7 +2,9 @@ package interfaz;
 
 import java.util.Vector;
 
-public class ListaNuevosSeguidores {
+import vistas.VistaListanuevosseguidores;
+
+public class ListaNuevosSeguidores extends VistaListanuevosseguidores {
 	public Notificaciones _notificaciones;
 	public Vector<ListaNuevosSeguidores_item> _item = new Vector<ListaNuevosSeguidores_item>();
 	
