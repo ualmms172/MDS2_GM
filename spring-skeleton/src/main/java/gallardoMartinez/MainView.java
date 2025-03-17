@@ -31,13 +31,29 @@ import interfaz.ListaMencionesRecibidas;
 import interfaz.ListaMencionesRecibidas_item;
 import interfaz.ListaNuevosSeguidores;
 import interfaz.ListaNuevosSeguidores_item;
+import interfaz.ListaRetweetsNotificados;
+import interfaz.ListaRetweetsNotificados_item;
+import interfaz.ListaTweetsAdmin;
+import interfaz.ListaTweetsAdmin_item;
+import interfaz.ListaUsuariosAdministrador;
+import interfaz.ListaUsuariosAdministrador_item;
+import interfaz.ListaUsuariosFamosos;
+import interfaz.ListaUsuariosFamososAdministrador;
+import interfaz.ListaUsuariosFamososAdministrador_item;
+import interfaz.ListaUsuariosFamosos_item;
+import interfaz.ListaUsuariosUsuarionoRegistrado;
+import interfaz.ListaUsuariosUsuarionoRegistrado_item;
 import interfaz.ListahashtagfamososUsuarioRegistrado;
 import interfaz.ListahashtagfamososUsuarioRegistrado_item;
 import interfaz.ListahashtagsUsuarioRegistrado_item;
 import interfaz.ListahashtagsfamososUsuarioNoRegistrado_item;
 import interfaz.ListahashtagsgeneralUsuarioNoRegistrado_item;
 import interfaz.ListahashtagsgeneralUsuarioRegistrado_item;
+import interfaz.Listatweets;
+import interfaz.ListausuariosUsuarioRegistrado;
+import interfaz.ListausuariosUsuarioRegistrado_item;
 import interfaz.ListausuariosfamososUsuarioRegistrado;
+import interfaz.ListausuariosfamososUsuarioRegistrado_item;
 import interfaz.Logueado;
 import interfaz.UsuarioNoRegistrado;
 import interfaz.UsuarioRegistrado;
@@ -72,15 +88,15 @@ public class MainView extends VerticalLayout {
 
     
     //Comentariospropios lista = new Comentariospropios();
-    ListaNuevosSeguidores lista = new ListaNuevosSeguidores(null);  
+    	
+    	ListaRetweetsNotificados lista = new ListaRetweetsNotificados(null);  
     
-    ListaNuevosSeguidores_item item1 = new ListaNuevosSeguidores_item (lista);
-    ListaNuevosSeguidores_item item2 = new ListaNuevosSeguidores_item (lista);
+    	ListaRetweetsNotificados_item item1 = new ListaRetweetsNotificados_item(lista);
+    	ListaRetweetsNotificados_item item2 = new ListaRetweetsNotificados_item(lista);
 
 
-
-    lista.getVerticalListanuevoseguidores().as(VerticalLayout.class).add(item1);
-    lista.getVerticalListanuevoseguidores().as(VerticalLayout.class).add(item2);
+    lista.getVerticalListaretweetsnotificados().as(VerticalLayout.class).add(item1);
+    lista.getVerticalListaretweetsnotificados().as(VerticalLayout.class).add(item2);
 
     add(lista); 
     

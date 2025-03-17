@@ -23,6 +23,6 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 		
 		_verHashtagAdministrador = hashtag; 
 	}
-	 
+	
 	
 }

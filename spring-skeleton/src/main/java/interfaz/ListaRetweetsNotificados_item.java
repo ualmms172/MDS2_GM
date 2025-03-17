@@ -1,8 +1,8 @@
 package interfaz;
 
-import vistas.VistaListaretweetsnotificados;
+import vistas.VistaListaretweetsnotificados_item;
 
-public class ListaRetweetsNotificados_item extends VistaListaretweetsnotificados {
+public class ListaRetweetsNotificados_item extends VistaListaretweetsnotificados_item {
 	//private Label _informacion;
 	public ListaRetweetsNotificados _listaRetweetsNotificados;
 	
