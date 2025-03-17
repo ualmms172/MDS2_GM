@@ -12,9 +12,7 @@ public class VistaListaretweetsnotificados extends LitTemplate {
 
     @Id("vertical-listaretweetsnotificados")
 	private Element verticalListaretweetsnotificados;
-	@Id("verticalInterno-listaretweetsnotificados")
-	private Element verticalInternoListaretweetsnotificados;
-
+    
 	public VistaListaretweetsnotificados() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -27,13 +25,6 @@ public class VistaListaretweetsnotificados extends LitTemplate {
 		this.verticalListaretweetsnotificados = verticalListaretweetsnotificados;
 	}
 
-	public Element getVerticalInternoListaretweetsnotificados() {
-		return verticalInternoListaretweetsnotificados;
-	}
-
-	public void setVerticalInternoListaretweetsnotificados(Element verticalInternoListaretweetsnotificados) {
-		this.verticalInternoListaretweetsnotificados = verticalInternoListaretweetsnotificados;
-	}
 	
 	
 

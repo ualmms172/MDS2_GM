@@ -12,8 +12,6 @@ public class VistaListahashtagsgeneral extends LitTemplate {
 
     @Id("vertical-listahastagsgeneral")
 	private Element verticalListahastagsgeneral;
-	@Id("verticalInterno-listahashtagsgeneral")
-	private Element verticalInternoListahashtagsgeneral;
 
 	public VistaListahashtagsgeneral() {
         // You can initialise any data required for the connected UI components here.
@@ -27,13 +25,6 @@ public class VistaListahashtagsgeneral extends LitTemplate {
 		this.verticalListahastagsgeneral = verticalListahastagsgeneral;
 	}
 
-	public Element getVerticalInternoListahashtagsgeneral() {
-		return verticalInternoListahashtagsgeneral;
-	}
-
-	public void setVerticalInternoListahashtagsgeneral(Element verticalInternoListahashtagsgeneral) {
-		this.verticalInternoListahashtagsgeneral = verticalInternoListahashtagsgeneral;
-	}
 	
 	
 

@@ -12,8 +12,6 @@ public class VistaListamencionesrecibidas extends LitTemplate {
 
     @Id("vertical-listamencionesrecibidas")
 	private Element verticalListamencionesrecibidas;
-	@Id("verticalInterno-listamencionesrecibidas")
-	private Element verticalInternoListamencionesrecibidas;
 
 	public VistaListamencionesrecibidas() {
         // You can initialise any data required for the connected UI components here.
@@ -27,14 +25,6 @@ public class VistaListamencionesrecibidas extends LitTemplate {
 		this.verticalListamencionesrecibidas = verticalListamencionesrecibidas;
 	}
 
-	public Element getVerticalInternoListamencionesrecibidas() {
-		return verticalInternoListamencionesrecibidas;
-	}
-
-	public void setVerticalInternoListamencionesrecibidas(Element verticalInternoListamencionesrecibidas) {
-		this.verticalInternoListamencionesrecibidas = verticalInternoListamencionesrecibidas;
-	}
-	
 	
 	
 

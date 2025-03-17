@@ -1,6 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vertical-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-usuariosbaneados')
 export class VistaUsuariosbaneados extends LitElement {
@@ -15,9 +15,7 @@ export class VistaUsuariosbaneados extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;position:absolute;" id="vertical-listausuariosbaneados">
- <vaadin-vertical-layout theme="spacing" style="width: 100%; flex-grow: 1;" id="verticalInterno-listausuariosbaneados"></vaadin-vertical-layout>
-</vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%; position:absolute; align-items: stretch;" id="vertical-listausuariosbaneados"></vaadin-vertical-layout>
 `;
   }
 

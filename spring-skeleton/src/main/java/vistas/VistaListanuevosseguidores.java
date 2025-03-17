@@ -12,8 +12,6 @@ public class VistaListanuevosseguidores extends LitTemplate {
 
     @Id("vertical-listanuevoseguidores")
 	private Element verticalListanuevoseguidores;
-	@Id("verticalInterno-listanuevoseguidores")
-	private Element verticalInternoListanuevoseguidores;
 
 	public VistaListanuevosseguidores() {
         // You can initialise any data required for the connected UI components here.
@@ -27,13 +25,6 @@ public class VistaListanuevosseguidores extends LitTemplate {
 		this.verticalListanuevoseguidores = verticalListanuevoseguidores;
 	}
 
-	public Element getVerticalInternoListanuevoseguidores() {
-		return verticalInternoListanuevoseguidores;
-	}
-
-	public void setVerticalInternoListanuevoseguidores(Element verticalInternoListanuevoseguidores) {
-		this.verticalInternoListanuevoseguidores = verticalInternoListanuevoseguidores;
-	}
 	
 	
 

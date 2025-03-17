@@ -12,8 +12,6 @@ public class VistaUsuariosbaneados extends LitTemplate {
 
     @Id("vertical-listausuariosbaneados")
 	private Element verticalListausuariosbaneados;
-	@Id("verticalInterno-listausuariosbaneados")
-	private Element verticalInternoListausuariosbaneados;
 
 	public VistaUsuariosbaneados() {
         // You can initialise any data required for the connected UI components here.
@@ -25,14 +23,6 @@ public class VistaUsuariosbaneados extends LitTemplate {
 
 	public void setVerticalListausuariosbaneados(Element verticalListausuariosbaneados) {
 		this.verticalListausuariosbaneados = verticalListausuariosbaneados;
-	}
-
-	public Element getVerticalInternoListausuariosbaneados() {
-		return verticalInternoListausuariosbaneados;
-	}
-
-	public void setVerticalInternoListausuariosbaneados(Element verticalInternoListausuariosbaneados) {
-		this.verticalInternoListausuariosbaneados = verticalInternoListausuariosbaneados;
 	}
 	
 	
