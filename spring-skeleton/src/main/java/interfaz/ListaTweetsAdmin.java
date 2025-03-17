@@ -12,6 +12,17 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 		
 		_administrador = admin; 
 	}
+	
+	
+	public ListaTweetsAdmin(VerPerfilAdministrador perfil) {
+		
+		_verPerfilAdministrador = perfil; 
+	}
+	
+	public ListaTweetsAdmin(VerHashtagAdministrador hashtag) {
+		
+		_verHashtagAdministrador = hashtag; 
+	}
 	 
 	
 }

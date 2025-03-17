@@ -11,4 +11,16 @@ public class Listatweets extends ListaTweetsGeneral {
 		
 		_verperfilUsuarioNoRegistrado = perfil; 
 	}
+	
+	public Listatweets(VerHashtagUsuarioNoRegistrado hashtag) {
+		
+		_verHashtagUsuarioNoRegistrado = hashtag; 
+	}
+	
+	
+	
+	
+	
+	
+	
 }

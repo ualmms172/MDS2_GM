@@ -1,7 +1,9 @@
 package interfaz;
 
 public class ListaComentariosUsuarioNoRegistrado_item extends ListaComentariosGeneral_item {
-	ListaComentariosUsuarioNoRegistrado_item(ListaContenido lista) {
+	
+	
+	public ListaComentariosUsuarioNoRegistrado_item(ListaContenido lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
 		this.getButtonMeGusta().setVisible(false);

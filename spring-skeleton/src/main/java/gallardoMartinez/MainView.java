@@ -12,8 +12,31 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
 import interfaz.Administrador;
+import interfaz.ComentariosUsuarioRegistrado_item;
+import interfaz.Comentariospropios;
+import interfaz.Comentariospropios_item;
 import interfaz.ListaComentariosAdministrador;
 import interfaz.ListaComentariosAdministrador_item;
+import interfaz.ListaComentariosGeneral_item;
+import interfaz.ListaComentariosUsuarioNoRegistrado_item;
+import interfaz.ListaContenido;
+import interfaz.ListaContenido_item;
+import interfaz.ListaHashtagsAdministrador_item;
+import interfaz.ListaHashtagsFamososAdministrador_item;
+import interfaz.ListaHashtagsGeneral;
+import interfaz.ListaHashtagsGeneral_item;
+import interfaz.ListaHashtagsUsuarioNoRegistrado_item;
+import interfaz.ListaHashtagsgeneralAdministrador_item;
+import interfaz.ListaMencionesRecibidas;
+import interfaz.ListaMencionesRecibidas_item;
+import interfaz.ListaNuevosSeguidores;
+import interfaz.ListaNuevosSeguidores_item;
+import interfaz.ListahashtagfamososUsuarioRegistrado;
+import interfaz.ListahashtagfamososUsuarioRegistrado_item;
+import interfaz.ListahashtagsUsuarioRegistrado_item;
+import interfaz.ListahashtagsfamososUsuarioNoRegistrado_item;
+import interfaz.ListahashtagsgeneralUsuarioNoRegistrado_item;
+import interfaz.ListahashtagsgeneralUsuarioRegistrado_item;
 import interfaz.ListausuariosfamososUsuarioRegistrado;
 import interfaz.Logueado;
 import interfaz.UsuarioNoRegistrado;
@@ -48,14 +71,19 @@ public class MainView extends VerticalLayout {
     public MainView(@Autowired GreetService service) {
 
     
-     ListaComentariosAdministrador l= new ListaComentariosAdministrador(null);
-     
-     ListaComentariosAdministrador_item li1 = new ListaComentariosAdministrador_item(l);
-     ListaComentariosAdministrador_item li2 = new ListaComentariosAdministrador_item(l);
-     l.getVerticalListacontenido().as(VerticalLayout.class).add(li1);
-     l.getVerticalListacontenido().as(VerticalLayout.class).add(li2);
-     add(l); 
-    		  
+    //Comentariospropios lista = new Comentariospropios();
+    ListaNuevosSeguidores lista = new ListaNuevosSeguidores(null);  
+    
+    ListaNuevosSeguidores_item item1 = new ListaNuevosSeguidores_item (lista);
+    ListaNuevosSeguidores_item item2 = new ListaNuevosSeguidores_item (lista);
+
+
+
+    lista.getVerticalListanuevoseguidores().as(VerticalLayout.class).add(item1);
+    lista.getVerticalListanuevoseguidores().as(VerticalLayout.class).add(item2);
+
+    add(lista); 
+    
     }
 
 }

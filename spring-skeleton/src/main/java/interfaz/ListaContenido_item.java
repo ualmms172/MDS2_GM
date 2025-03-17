@@ -14,7 +14,7 @@ public class ListaContenido_item extends VistaListacontenido_item {
 	public ListaContenido _lista;
 	
 	
-	ListaContenido_item(ListaContenido lista) {
+	public ListaContenido_item(ListaContenido lista) {
 	_lista = lista;
 	}
 	

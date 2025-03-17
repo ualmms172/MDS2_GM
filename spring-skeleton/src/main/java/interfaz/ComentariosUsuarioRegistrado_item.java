@@ -1,7 +1,7 @@
 package interfaz;
 
 public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
-	ComentariosUsuarioRegistrado_item(ListaContenido lista) {
+	public ComentariosUsuarioRegistrado_item(ListaContenido lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
 		this.getButtonBorrar().setVisible(false);
