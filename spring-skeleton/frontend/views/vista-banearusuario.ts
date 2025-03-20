@@ -1,4 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/text-field/src/vaadin-text-field.js';
+import '@vaadin/button/src/vaadin-button.js';
+import '@vaadin/horizontal-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vertical-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-banearusuario')
 export class VistaBanearusuario extends LitElement {
@@ -12,7 +17,30 @@ export class VistaBanearusuario extends LitElement {
   }
 
   render() {
-    return html``;
+    return html`
+<vaadin-vertical-layout style="width: 100%; height: 100%;">
+ <label style="flex-grow: 1; margin-top: var(--lumo-space-xl); width: 100%40%; margin-left: var(--lumo-space-xl); align-self: center;">BANEAR</label>
+ <label style="flex-grow: 1; align-self: center; margin-left: var(--lumo-space-xl);">Esta a punto de banear al usuario: [Nombre de usuario]</label>
+ <label style="flex-grow: 1; align-self: center; margin-left: var(--lumo-space-xl);">Seleccione el tipo de baneo que desea realizar</label>
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 40%;"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%;">
+  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; height: 40%; align-self: flex-end;">
+   <vaadin-button style="flex-grow: 1; align-self: center; width: 20%; height: 10%;" tabindex="0">
+    Indefinido
+   </vaadin-button>
+  </vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;">
+   <vaadin-text-field label="Label" placeholder="Placeholder" style="flex-grow: 1; align-self: center;" type="text"></vaadin-text-field>
+   <vaadin-button style="flex-grow: 1; align-self: center;" tabindex="0">
+    Temporal
+   </vaadin-button>
+  </vaadin-vertical-layout>
+ </vaadin-horizontal-layout>
+ <vaadin-button style="flex-grow: 1; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-xl); height: 3%; width: 8%;" tabindex="0">
+  Atrás 
+ </vaadin-button>
+</vaadin-vertical-layout>
+`;
   }
 
   // Remove this method to render the contents of this view inside Shadow DOM
