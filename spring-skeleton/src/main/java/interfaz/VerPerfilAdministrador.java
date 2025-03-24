@@ -10,23 +10,42 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	
 	public VerPerfilAdministrador(ListaUsuariosGeneralAdministrador_item listaUsuariosGeneralAdministrador) {
 		_listaUsuariosGeneralAdministrador = listaUsuariosGeneralAdministrador; 
-
+		this.getButtonBloquear().setVisible(false);
+		this.getButtonEliminarCuenta().setVisible(false);
+		this.getButtonModidicarDatos().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getLabelAvisoBloqueo().setVisible(false);
 	}
 	
 	public VerPerfilAdministrador(ListaTweetsAdmin_item listaTweetsAdmin ) {
 		
 		_listaTweetsAdmin = listaTweetsAdmin; 
+		this.getButtonBloquear().setVisible(false);
+		this.getButtonEliminarCuenta().setVisible(false);
+		this.getButtonModidicarDatos().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getLabelAvisoBloqueo().setVisible(false);
 	}
 	
 	public VerPerfilAdministrador(VerTweetAdministrador verTweetAdministrador) {
 		
 		_verTweetAdministrador = verTweetAdministrador; 
+		this.getButtonBloquear().setVisible(false);
+		this.getButtonEliminarCuenta().setVisible(false);
+		this.getButtonModidicarDatos().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getLabelAvisoBloqueo().setVisible(false);
 	}
 	
 
 	public VerPerfilAdministrador(ListaComentariosAdministrador_item listaComentariosAdministrador) {
 		
 		_listaComentariosAdministrador = listaComentariosAdministrador; 
+		this.getButtonBloquear().setVisible(false);
+		this.getButtonEliminarCuenta().setVisible(false);
+		this.getButtonModidicarDatos().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getLabelAvisoBloqueo().setVisible(false);
 	}
 	
 	

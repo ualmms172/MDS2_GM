@@ -18,16 +18,28 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 	
 	public Verperfilbloqueado(MostrartweetsUsuarioRegistrado mostrartweetsUsuarioRegistrado) {
 		super(mostrartweetsUsuarioRegistrado);
+		this.getButtonEliminarCuenta().setVisible(false);
+		this.getButtonModidicarDatos().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getVerticalLayoutInferior().setVisible(false);
 		// TODO Auto-generated constructor stub
 	}
 	
 	public Verperfilbloqueado(ListaUsuariosGeneralUsuarioRegistrado_item listaUsuariosGeneralUsuarioRegistrado) {
 		super(listaUsuariosGeneralUsuarioRegistrado);
+		this.getButtonEliminarCuenta().setVisible(false);
+		this.getButtonModidicarDatos().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getVerticalLayoutInferior().setVisible(false);
 		// TODO Auto-generated constructor stub
 	}
 	
 	public Verperfilbloqueado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado) {
 		super(vertweetgeneralUsuarioRegistrado);
+		this.getButtonEliminarCuenta().setVisible(false);
+		this.getButtonModidicarDatos().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getVerticalLayoutInferior().setVisible(false);
 		// TODO Auto-generated constructor stub
 	}
 	

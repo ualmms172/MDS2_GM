@@ -10,11 +10,17 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	public VerTweetAdministrador(ListaTweetsAdmin_item listaTweetsAdmin) {
 		
 		_listaTweetsAdmin = listaTweetsAdmin; 
+		this.getButtonComentar().setVisible(false);
+		this.getButtonMeGusta().setVisible(false);
+		this.getButtonRetweet().setVisible(false);
 	}
 	
 	public VerTweetAdministrador(VerPerfilAdministrador verPerfilAdministrador) {
 		
 		_verPerfilAdministrador = verPerfilAdministrador; 
+		this.getButtonComentar().setVisible(false);
+		this.getButtonMeGusta().setVisible(false);
+		this.getButtonRetweet().setVisible(false);
 	}
 	
 	

@@ -50,6 +50,8 @@ public class VistaVerperfilgeneral extends LitTemplate {
 	private HorizontalLayout horizontalLayoutInferior;
 	@Id("verticalLayout-Inferior")
 	private Element verticalLayoutInferior;
+	@Id("label-AvisoBloqueo")
+	private Label labelAvisoBloqueo;
 
 	public VistaVerperfilgeneral() {
         // You can initialise any data required for the connected UI components here.
@@ -197,6 +199,14 @@ public class VistaVerperfilgeneral extends LitTemplate {
 
 	public void setVerticalLayoutInferior(Element verticalLayoutInferior) {
 		this.verticalLayoutInferior = verticalLayoutInferior;
+	}
+	
+	public Label getLabelAvisoBloqueo() {
+		return labelAvisoBloqueo;
+	}
+
+	public void setLabelAvisoBloqueo(Label labelAvisoBloqueo) {
+		this.labelAvisoBloqueo = labelAvisoBloqueo;
 	}
 	
 	

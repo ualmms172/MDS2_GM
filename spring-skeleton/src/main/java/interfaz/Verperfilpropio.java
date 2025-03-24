@@ -13,20 +13,32 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	public Verperfilpropio(MostrartweetsUsuarioRegistrado mostrartweetsUsuarioRegistrado) {
 		super(mostrartweetsUsuarioRegistrado);
 		// TODO Auto-generated constructor stub
+		this.getButtonBloquear().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getLabelAvisoBloqueo().setVisible(false);
 	}
 	
 	public Verperfilpropio(UsuarioRegistrado usuarioregistrado) {
 		 
-		_usuarioregistrado  = usuarioregistrado; 	
+		_usuarioregistrado  = usuarioregistrado; 
+		this.getButtonBloquear().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getLabelAvisoBloqueo().setVisible(false);
 	}
 	
 	public Verperfilpropio(ListaUsuariosGeneralUsuarioRegistrado_item listaUsuariosGeneralUsuarioRegistrado) {
 		super(listaUsuariosGeneralUsuarioRegistrado);
 		// TODO Auto-generated constructor stub
+		this.getButtonBloquear().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getLabelAvisoBloqueo().setVisible(false);
 	}
 	
 	public Verperfilpropio(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado) {
 		super(vertweetgeneralUsuarioRegistrado);
+		this.getButtonBloquear().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getLabelAvisoBloqueo().setVisible(false);
 		// TODO Auto-generated constructor stub
 	}
 
