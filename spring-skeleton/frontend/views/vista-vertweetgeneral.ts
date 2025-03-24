@@ -17,9 +17,9 @@ export class VistaVertweetgeneral extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 88%; background-color: #cdc8c8; align-self: center;" id="vaadinHorizontalLayout">
-  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="vaadinVerticalLayout1">
+<vaadin-vertical-layout id="verticalLayout-VentanaCompleta">
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 88%; background-color: #cdc8c8; align-self: center;" id="horizontalLayout-tweetCompleto">
+  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="verticalLayout-TweetCompleto">
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; height: 15%;" id="horizontalLayout-Cabecera">
     <img style="flex-grow: 1; width: 38%; height: 100%; margin-top: var(--lumo-space-s); margin-left: var(--lumo-space-s);" id="img-FotoPerfilTweet">
     <label style="flex-grow: 1; width: 100%; margin-top: var(--lumo-space-xl);" id="label-NombreUsuario">Nombre Usuario</label>
@@ -43,8 +43,8 @@ export class VistaVertweetgeneral extends LitElement {
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;" id="horizontalLayout-Opciones">
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 20%;" id="verticalLayout-RetweetBorrar">
-     <vaadin-button style="flex-grow: 1; align-self: flex-start; width: 30%; margin-left: var(--lumo-space-m);" tabindex="0">
-      Comentar
+     <vaadin-button style="flex-grow: 1; align-self: flex-start; width: 30%; margin-left: var(--lumo-space-m);" tabindex="0" id="vaadinButton">
+       Comentar 
      </vaadin-button>
      <vaadin-button style="flex-grow: 1; align-self: flex-start; width: 30%; margin-left: var(--lumo-space-m);" tabindex="0" id="button-Retweet">
        Retweetear 
@@ -68,7 +68,7 @@ export class VistaVertweetgeneral extends LitElement {
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-grow: 1; width: 60%;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-grow: 1; width: 60%;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

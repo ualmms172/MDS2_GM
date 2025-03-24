@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Notificaciones {
+import vistas.VistaNotificaciones;
+
+public class Notificaciones extends VistaNotificaciones {
 	//private Label _titulo;
 	//private Label _retweetsRecibidos;
 	//private Label _seguidoresObtenidos;
@@ -9,6 +11,15 @@ public class Notificaciones {
 	public ListaRetweetsNotificados _listaRetweetsNotificados;
 	public ListaNuevosSeguidores _listaNuevosSeguidores;
 	public ListaMencionesRecibidas _listaMencionesRecibidas;
+	
+	
+	
+	public Notificaciones(UsuarioRegistrado usuarioregistrado) {
+		
+		_usuarioregistrado = usuarioregistrado; 
+	}
+	
+		
 
 	public void ListaRetweetsNotificados() {
 		throw new UnsupportedOperationException();

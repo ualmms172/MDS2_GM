@@ -18,23 +18,23 @@ export class VistaValidarcorreo extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;">
-  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: flex-end;">
-   <label>Se le ha enviado un correo con un código de confirmación</label>
-   <label style="align-self: center;">Ingreselo para validar su cuenta</label>
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="verticalLayout-VentanaCompleta">
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;" id="horizontalLayout-EnviarCorreo">
+  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: flex-end;" id="verticalLayout-TextoInformativo">
+   <label id="label-Notificacion">Se le ha enviado un correo con un código de confirmación</label>
+   <label style="align-self: center;" id="label-Ingreso">Ingreselo para validar su cuenta</label>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;">
-  <vaadin-text-field style="flex-grow: 1; align-self: center;" type="text"></vaadin-text-field>
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;" id="horizontalLayout-CampoTexto">
+  <vaadin-text-field style="flex-grow: 1; align-self: center;" type="text" id="textField-Cuenta"></vaadin-text-field>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;">
-  <vaadin-button style="align-self: flex-start; margin-left: 80px;" tabindex="0">
-   Atrás
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;" id="HorizontalLayout-AtrasValidar">
+  <vaadin-button style="align-self: flex-start; margin-left: 80px;" tabindex="0" id="button-Atras">
+    Atrás 
   </vaadin-button>
-  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;"></vaadin-vertical-layout>
-  <vaadin-button style="align-self: flex-start; margin-right: 80px;" tabindex="0">
-   Validar
+  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="verticalLayout-Central"></vaadin-vertical-layout>
+  <vaadin-button style="align-self: flex-start; margin-right: 80px;" tabindex="0" id="button-Validar">
+    Validar 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

@@ -1,5 +1,9 @@
 package interfaz;
 
-public class VerHashtagGeneral {
+import vistas.VistaVerhashtaggeneral;
+
+public class VerHashtagGeneral extends VistaVerhashtaggeneral {
+	
+	
 	//private Label _titulo;
 }

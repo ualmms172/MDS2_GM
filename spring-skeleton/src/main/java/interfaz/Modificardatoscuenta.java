@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Modificardatoscuenta {
+import vistas.VistaModificardatoscuenta;
+
+public class Modificardatoscuenta extends VistaModificardatoscuenta {
 	//private event _modificar;
 	//private Label _nick;
 	//private Label _fotoPerfil;
@@ -17,6 +19,12 @@ public class Modificardatoscuenta {
 	//private Button _continuar;
 	public Verperfilpropio _verperfilpropio;
 
+	public Modificardatoscuenta(Verperfilpropio verperfilpropio) {
+		
+		_verperfilpropio = verperfilpropio; 
+	}
+	
+	
 	public void Modificar() {
 		throw new UnsupportedOperationException();
 	}

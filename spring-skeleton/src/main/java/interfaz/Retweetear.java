@@ -6,6 +6,25 @@ public class Retweetear extends CrearContenido {
 	//private event _usarHashtag;
 	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
 	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
+	
+	
+	public Retweetear (MostrartweetspropiosUsuarioRegistrado_item mostrartweetspropiosUsuarioRegistrado) {
+		
+		_mostrartweetspropiosUsuarioRegistrado = mostrartweetspropiosUsuarioRegistrado; 
+		
+	}
+	
+	public Retweetear (VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado) {
+		
+		_vertweetgeneralUsuarioRegistrado = vertweetgeneralUsuarioRegistrado; 
+		
+	}
+	
+	
+	
+	
+	
+	
 
 	public void Publicarretweet() {
 		throw new UnsupportedOperationException();

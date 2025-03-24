@@ -18,41 +18,41 @@ export class VistaIniciarsesin extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-grow: 1;">
-  <label style="align-self: center;">Iniciar Sesión</label>
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="verticalLayout-Ventana">
+ <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-grow: 1;" id="horizontalLayout-IniciaSesion">
+  <label style="align-self: center;" id="label-IniciarSesion">Iniciar Sesión</label>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;">
-  <label>Correo/Nick</label>
-  <vaadin-text-field type="text"></vaadin-text-field>
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;" id="horizontalLayout-CorreoNick">
+  <label id="label-Correo">Correo/Nick</label>
+  <vaadin-text-field type="text" id="textField-Correo"></vaadin-text-field>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;">
-  <label>Contraseña</label>
-  <vaadin-text-field type="text"></vaadin-text-field>
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;" id="horizontalLayout-Contraseña">
+  <label id="label-Contraseña">Contraseña</label>
+  <vaadin-text-field type="text" id="textField-contraseña"></vaadin-text-field>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-grow: 1;">
-  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;">
-   <label>¿Has olvidado tu contraseña? Recuperala aquí: </label>
-   <vaadin-button tabindex="0">
-    Recuperar contraseña
+ <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-grow: 1;" id="verticalLayout-IniciarSesion">
+  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;" id="horizontalLayout-RecuperarContraseña">
+   <label id="label-OlvidarContraseña">¿Has olvidado tu contraseña? Recuperala aquí: </label>
+   <vaadin-button tabindex="0" id="button-RecuperarContraseña">
+     Recuperar contraseña 
    </vaadin-button>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;">
-   <label style="align-self: flex-start;">o</label>
+  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;" id="horizontalLayout-Central">
+   <label style="align-self: flex-start;" id="label-central">o</label>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;">
-   <vaadin-button style="align-self: flex-start;" tabindex="0">
-    Iniciar con Google
+  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;" id="horizontalLayout-IniciarSesion">
+   <vaadin-button style="align-self: flex-start;" tabindex="0" id="button-IniciarSesionConGoogle">
+     Iniciar con Google 
    </vaadin-button>
-   <img>
+   <img id="img-IniciarSesion">
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;">
-  <vaadin-button tabindex="0">
-   Atras
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;" id="horizontalLayout-AtrasContinuar">
+  <vaadin-button tabindex="0" id="button-Atras">
+    Atras 
   </vaadin-button>
-  <vaadin-button style="margin-left: 400px;" tabindex="0">
-   Continuar
+  <vaadin-button style="margin-left: 400px;" tabindex="0" id="button-Continuar">
+    Continuar 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

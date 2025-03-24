@@ -18,41 +18,41 @@ export class VistaCrearcontenido extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;">
- <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;">
-  <img style="flex-grow: 1; align-self: center;">
-  <label style="flex-grow: 1; align-self: center;">Previsualización Foto</label>
+<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;" id="horizontalLayout-Completo ">
+ <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="verticalLayout-PrevisualizacionFoto">
+  <img style="flex-grow: 1; align-self: center;" id="img-Imagen">
+  <label style="flex-grow: 1; align-self: center;" id="label-PrevisualizacionFoto">Previsualización Foto</label>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 40%;">
-  <label style="flex-grow: 1; align-self: center; margin-top: var(--lumo-space-xl);">Crear [CONTENIDO]</label>
-  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%;">
-   <label style="flex-grow: 1; margin-left: var(--lumo-space-xl);">Texto</label>
-   <vaadin-text-field style="flex-grow: 1; margin-right: var(--lumo-space-xl);" type="text"></vaadin-text-field>
+ <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 40%;" id="verticalLayout-CrearContenido ">
+  <label style="flex-grow: 1; align-self: center; margin-top: var(--lumo-space-xl);" id="label-CrearContenido">Crear [CONTENIDO]</label>
+  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%;" id="horizontalLayout-Texto">
+   <label style="flex-grow: 1; margin-left: var(--lumo-space-xl);" id="label-Texto">Texto</label>
+   <vaadin-text-field style="flex-grow: 1; margin-right: var(--lumo-space-xl);" type="text" id="textField-CampoTexto"></vaadin-text-field>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%;">
-   <label style="flex-grow: 1; margin-left: var(--lumo-space-xl);">Foto</label>
-   <vaadin-text-field style="flex-grow: 1; margin-right: var(--lumo-space-xl);" type="text"></vaadin-text-field>
+  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%;" id="horizontalLayout-Foto">
+   <label style="flex-grow: 1; margin-left: var(--lumo-space-xl);" id="label-Foto">Foto</label>
+   <vaadin-text-field style="flex-grow: 1; margin-right: var(--lumo-space-xl);" type="text" id="textField-UrlFoto"></vaadin-text-field>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%;">
-   <label style="flex-grow: 1; margin-left: var(--lumo-space-xl);">Video</label>
-   <vaadin-text-field style="flex-grow: 1; margin-right: var(--lumo-space-xl);" type="text"></vaadin-text-field>
+  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%;" id="horizontalLayout-Video">
+   <label style="flex-grow: 1; margin-left: var(--lumo-space-xl);" id="label-Video">Video</label>
+   <vaadin-text-field style="flex-grow: 1; margin-right: var(--lumo-space-xl);" type="text" id="textField-textoVideo"></vaadin-text-field>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%;">
-   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;">
-    <vaadin-button style="flex-grow: 1; align-self: flex-start;" tabindex="0">
-     Atrás
+  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%;" id="horizontalLayout-AtrasPublicar">
+   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="verticalLayout-Atras">
+    <vaadin-button style="flex-grow: 1; align-self: flex-start;" tabindex="0" id="button-Atras">
+      Atrás 
     </vaadin-button>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;">
-    <vaadin-button style="flex-grow: 1; align-self: flex-end;" tabindex="0">
-     Publicar
+   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="verticalLayout-Publicar">
+    <vaadin-button style="flex-grow: 1; align-self: flex-end;" tabindex="0" id="button-Publicar">
+      Publicar 
     </vaadin-button>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;">
-  <img style="flex-grow: 1;">
-  <label style="flex-grow: 1; align-self: center;">Previsualización Video</label>
+ <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="verticalLayout-PrevisualizacionVideo">
+  <img style="flex-grow: 1;" id="img-Video">
+  <label style="flex-grow: 1; align-self: center;" id="label-PrevisualizacionVideo">Previsualización Video</label>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>
 `;

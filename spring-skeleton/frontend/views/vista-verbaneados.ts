@@ -15,9 +15,9 @@ export class VistaVerbaneados extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <label style="align-self: center; margin: var(--lumo-space-xl);">Usuarios Baneados</label>
- <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 70%;"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="verticalLayout-VentanaCompleta">
+ <label style="align-self: center; margin: var(--lumo-space-xl);" id="label-UsuariosBaneados">Usuarios Baneados</label>
+ <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 70%;" id="verticalLayout-Lista"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

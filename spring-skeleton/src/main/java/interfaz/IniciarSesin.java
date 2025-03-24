@@ -1,6 +1,8 @@
 package interfaz;
 
-public class IniciarSesin {
+import vistas.VistaIniciarsesin;
+
+public class IniciarSesin extends VistaIniciarsesin {
 	//private event _autentificarse;
 	//private Button _iniciarConGoogle;
 	//private Button _recuperarContrase�a;
@@ -17,6 +19,27 @@ public class IniciarSesin {
 	public Gestordecorreo _gestordecorreo;
 	public APIDeGoogle _aPIDeGoogle;
 	public IniciarsesinconGoogle _iniciarsesinconGoogle;
+
+	public IniciarSesin(UsuarioNoRegistrado usuarioNoRegistrado) {
+		
+		usuarioNoRegistrado = usuarioNoRegistrado;
+	}
+	
+	public IniciarSesin(Gestordecorreo gestordecorreo) {
+		
+		_gestordecorreo = gestordecorreo; 
+	}
+	
+	public IniciarSesin(APIDeGoogle aPIDeGoogle) {
+		
+		_aPIDeGoogle = aPIDeGoogle; 
+	}
+	
+	public IniciarSesin (IniciarsesinconGoogle iniciarsesinconGoogle) {
+		
+		_iniciarsesinconGoogle = iniciarsesinconGoogle; 
+	}
+	
 
 	public void Validardatos() {
 		throw new UnsupportedOperationException();

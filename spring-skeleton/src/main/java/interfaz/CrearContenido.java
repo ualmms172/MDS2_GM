@@ -1,6 +1,8 @@
 package interfaz;
 
-public class CrearContenido {
+import vistas.VistaCrearcontenido;
+
+public class CrearContenido extends VistaCrearcontenido {
 	//private Label _titulo;
 	//private Label _foto;
 	//private Label _video;

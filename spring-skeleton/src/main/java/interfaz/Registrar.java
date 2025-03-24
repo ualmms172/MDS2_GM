@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Registrar {
+import vistas.VistaRegistrar;
+
+public class Registrar extends VistaRegistrar {
 	//private Label _titulo;
 	//private Label _nickT;
 	//private Label _correoT;
@@ -20,6 +22,22 @@ public class Registrar {
 	//private Button _continuar;
 	public UsuarioNoRegistrado _usuarioNoRegistrado;
 	public ValidarCorreo _validarCorreo;
+	
+	public Registrar (UsuarioNoRegistrado usuarioNoRegistrado) {
+		
+		_usuarioNoRegistrado = usuarioNoRegistrado; 
+
+	}
+	
+	public Registrar(ValidarCorreo validarCorreo) {
+		
+		_validarCorreo = validarCorreo;
+	}
+	
+	
+	
+	
+	
 
 	public void Comprobarsihaydatosrepetidos() {
 		throw new UnsupportedOperationException();
