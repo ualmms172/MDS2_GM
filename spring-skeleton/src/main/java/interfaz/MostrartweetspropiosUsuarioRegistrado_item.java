@@ -10,8 +10,8 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 
 	//private Button _retweetear;
 	public MostrartweetspropiosUsuarioRegistrado _mostrartweetspropiosUsuarioRegistrado;
-	public VerTweetUsuarioRegistrado _verTweetUsuarioRegistrado;
-	public VerperfilUsuarioRegistrado _verperfilUsuarioRegistrado;
+	public VertweetgeneralUsuarioRegistrado _verTweetUsuarioRegistrado;
+	public VerperfilgeneralUsuarioRegistrado _verperfilUsuarioRegistrado;
 
 	public void Retweetear() {
 		throw new UnsupportedOperationException();

@@ -10,10 +10,26 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		throw new UnsupportedOperationException();
 	}
 	
-	public VerperfilUsuarioNoRegis
+	public VerperfilUsuarioNoRegistrado(VertweetUsuarioNoRegistrado vertweetUsuarioNoRegistrado) {
+		
+		
+		_vertweetUsuarioNoRegistrado = vertweetUsuarioNoRegistrado; 
+	}
 	
+	public VerperfilUsuarioNoRegistrado(ListaComentariosUsuarioNoRegistrado_item listaComentariosUsuarioNoRegistrado) {
 	
+	_listaComentariosUsuarioNoRegistrado = listaComentariosUsuarioNoRegistrado;
+	}
 	
+	public VerperfilUsuarioNoRegistrado(ListaUsuariosGeneralUsuarioNoRegistrado_item listaUsuariosGeneralUsuarioNoRegistrado) {
+		
+		_listaUsuariosGeneralUsuarioNoRegistrado = listaUsuariosGeneralUsuarioNoRegistrado; 
+	}
+	
+	public VerperfilUsuarioNoRegistrado(Listatweets_item listatweets) {
+		
+		_listatweets = listatweets; 
+	}
 	
 	
 	

@@ -1,6 +1,6 @@
 package interfaz;
 
-public class VerperfilUsuarioRegistrado {
+ /* public class VerperfilUsuarioRegistrado {
 	public ListaUsuariosGeneralUsuarioRegistrado_item _listaUsuariosGeneralUsuarioRegistrado;
 	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
 	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
@@ -16,3 +16,7 @@ public class VerperfilUsuarioRegistrado {
 		throw new UnsupportedOperationException();
 	}
 }
+
+*/
+
+

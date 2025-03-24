@@ -1,4 +1,4 @@
-package interfaz;
+/* package interfaz;
 
 public class VerTweetUsuarioRegistrado {
 	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
@@ -13,3 +13,6 @@ public class VerTweetUsuarioRegistrado {
 		throw new UnsupportedOperationException();
 	}
 }
+
+*/
+

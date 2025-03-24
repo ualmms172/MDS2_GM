@@ -8,7 +8,7 @@ public class ListaUsuariosGeneralUsuarioRegistrado_item extends ListaUsuariosGen
 	}
 
 	public ListaUsuariosGeneralUsuarioRegistrado _listaUsuariosGeneralUsuarioRegistrado;
-	public VerperfilUsuarioRegistrado _verperfilUsuarioRegistrado;
+	public VerperfilgeneralUsuarioRegistrado _verperfilUsuarioRegistrado;
 
 	public void VerperfilUsuarioRegistrado() {
 		throw new UnsupportedOperationException();

@@ -47,8 +47,8 @@ export class VistaVerperfilgeneral extends LitElement {
   </vaadin-vertical-layout>
   <label style="flex-grow: 1;" id="label-Descripcion">Descripción: </label>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-self: flex-start;" id="horizontalLayout-Inferior">
-  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%;" id="verticalLayout-Inferior"></vaadin-vertical-layout>
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-self: flex-start; flex-grow: 1;" id="horizontalLayout-Inferior">
+  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%; height: 100%;" id="verticalLayout-Inferior"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

@@ -1,6 +1,8 @@
 package interfaz;
 
-public class VertweetGeneral {
+import vistas.VistaVertweetgeneral;
+
+public class VertweetGeneral extends VistaVertweetgeneral {
 	//private Label _nombreUsuario;
 	//private Label _textoTweet;
 	//private Label _numComentarios;

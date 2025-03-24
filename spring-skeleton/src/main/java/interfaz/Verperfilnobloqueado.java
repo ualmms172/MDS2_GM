@@ -1,10 +1,33 @@
 package interfaz;
 
 public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
-	public Verperfilnobloqueado(interfaz.MostrartweetsUsuarioRegistrado mostrartweetsUsuarioRegistrado) {
+	
+	public ListaUsuariosGeneralUsuarioRegistrado_item _listaUsuariosGeneralUsuarioRegistrado;
+	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
+	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
+	public ComentariosUsuarioRegistrado_item _comentariosUsuarioRegistrado;
+	
+	
+
+	public Verperfilnobloqueado(MostrartweetsUsuarioRegistrado mostrartweetsUsuarioRegistrado) {
 		super(mostrartweetsUsuarioRegistrado);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Verperfilnobloqueado(ListaUsuariosGeneralUsuarioRegistrado_item listaUsuariosGeneralUsuarioRegistrado) {
+		super(listaUsuariosGeneralUsuarioRegistrado);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Verperfilnobloqueado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado) {
+		super(vertweetgeneralUsuarioRegistrado);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+	
+	
 
 	//private event _seguirUsuario;
 	//private event _bloquear;
@@ -12,14 +35,8 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	//private event _desbloquear;
 	//private Button _seguir;
 	//private Button _bloquearB;
-	public Verperfilajeno _verperfilajeno;
-	
-	public Verperfilnobloqueado(Verperfilajeno verperfilajeno) {
-		
-		_verperfilajeno = verperfilajeno; 
-	}
-	
-	
+
+	//public VerperfilUsuarioRegistrado _verperfilUsuarioRegistrado;
 	
 
 	public void SeguirUsuario() {
