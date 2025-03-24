@@ -13,22 +13,51 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	public VerperfilUsuarioNoRegistrado(VertweetUsuarioNoRegistrado vertweetUsuarioNoRegistrado) {
 		
 		
-		_vertweetUsuarioNoRegistrado = vertweetUsuarioNoRegistrado; 
+		_vertweetUsuarioNoRegistrado = vertweetUsuarioNoRegistrado;
+		this.getButtonBloquear().setVisible(false);
+		this.getButtonEliminarCuenta().setVisible(false);
+		this.getButtonModidicarDatos().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getButtonBanear().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
+	
 	
 	public VerperfilUsuarioNoRegistrado(ListaComentariosUsuarioNoRegistrado_item listaComentariosUsuarioNoRegistrado) {
 	
 	_listaComentariosUsuarioNoRegistrado = listaComentariosUsuarioNoRegistrado;
+	this.getButtonBloquear().setVisible(false);
+	this.getButtonEliminarCuenta().setVisible(false);
+	this.getButtonModidicarDatos().setVisible(false);
+	this.getButtonSeguir().setVisible(false);
+	this.getLabelAvisoBloqueo().setVisible(false);
+	this.getButtonBanear().setVisible(false);
+	this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
 	
 	public VerperfilUsuarioNoRegistrado(ListaUsuariosGeneralUsuarioNoRegistrado_item listaUsuariosGeneralUsuarioNoRegistrado) {
 		
 		_listaUsuariosGeneralUsuarioNoRegistrado = listaUsuariosGeneralUsuarioNoRegistrado; 
+		this.getButtonBloquear().setVisible(false);
+		this.getButtonEliminarCuenta().setVisible(false);
+		this.getButtonModidicarDatos().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getButtonBanear().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
 	
 	public VerperfilUsuarioNoRegistrado(Listatweets_item listatweets) {
 		
 		_listatweets = listatweets; 
+		this.getButtonBloquear().setVisible(false);
+		this.getButtonEliminarCuenta().setVisible(false);
+		this.getButtonModidicarDatos().setVisible(false);
+		this.getButtonSeguir().setVisible(false);
+		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getButtonBanear().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
 	
 	

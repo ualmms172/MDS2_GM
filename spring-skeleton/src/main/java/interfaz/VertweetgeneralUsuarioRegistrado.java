@@ -10,12 +10,14 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	public VertweetgeneralUsuarioRegistrado (VerperfilgeneralUsuarioRegistrado verperfilUsuarioRegistrado ) {
 		
 		_verperfilUsuarioRegistrado = verperfilUsuarioRegistrado; 
+		this.getButtonBorrar().setVisible(false);
 	}
 	
 	
 public VertweetgeneralUsuarioRegistrado (MostrartweetspropiosUsuarioRegistrado_item mostrartweetspropiosUsuarioRegistrado_item ) {
 		
 	_mostrartweetspropiosUsuarioRegistrado = mostrartweetspropiosUsuarioRegistrado_item; 
+	this.getButtonBorrar().setVisible(false);
 	}
 	
 
