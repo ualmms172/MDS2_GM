@@ -16,7 +16,7 @@ export class VistaNotificaciones extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="verticalLayout-Notificaciones">
+<vaadin-vertical-layout style="width: 100%; height: 100%;position:absolute;" id="verticalLayout-Notificaciones">
  <label style="align-self: center; flex-grow: 1; margin-top: var(--lumo-space-l);" id="label-Notificaciones">Notificaciones</label>
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%; height: 60%;" id="horizontalLayout-CajasNotificaciones">
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; margin-left: var(--lumo-space-m);" id="verticalLayout-RetweetsRecibidos">

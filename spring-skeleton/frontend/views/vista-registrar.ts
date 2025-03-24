@@ -18,7 +18,7 @@ export class VistaRegistrar extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;" id="horizontalLayout-Completo">
+<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;position:absolute;" id="horizontalLayout-Completo">
  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="verticalLayout-PrevisualizacionFotoPerfil">
   <img style="flex-grow: 1; align-self: center;" id="img-Perfil">
   <label style="flex-grow: 1; align-self: center;" id="label-PrevisualizacionFotoPerfil"> Previsualización Foto Perfil</label>

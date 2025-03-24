@@ -15,7 +15,7 @@ export class VistaVerlistacompletahashtagusuarioregistrado extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="verticalLayout-VentanaCompleta">
+<vaadin-vertical-layout style="width: 100%; height: 100%; position:absolute;" id="verticalLayout-VentanaCompleta">
  <label style="align-self: center; margin: var(--lumo-space-xl);" id="label-Hashtags">Hashtags</label>
  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 94%;" id="verticalLayout-ListaHashtags"></vaadin-vertical-layout>
 </vaadin-vertical-layout>

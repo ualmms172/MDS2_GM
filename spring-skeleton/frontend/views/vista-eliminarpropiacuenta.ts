@@ -18,7 +18,7 @@ export class VistaEliminarpropiacuenta extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="verticalLayout-Principal">
+<vaadin-vertical-layout style="width: 100%; height: 100%;position:absolute;" id="verticalLayout-Principal">
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; align-self: center;" id="horizontalLayout-Aviso">
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: center;" id="verticalLayout-Aviso">
    <label style="flex-grow: 1; align-self: center;" id="label-Aviso">¿Estas seguro de que quieres eliminar tu cuenta?</label>
