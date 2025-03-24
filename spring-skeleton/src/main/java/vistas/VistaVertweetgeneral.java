@@ -49,8 +49,6 @@ public class VistaVertweetgeneral extends LitTemplate {
 	private HorizontalLayout horizontalLayoutOpciones;
 	@Id("verticalLayout-RetweetBorrar")
 	private Element verticalLayoutRetweetBorrar;
-	@Id("vaadinButton")
-	private Button vaadinButton;
 	@Id("button-Retweet")
 	private Button buttonRetweet;
 	@Id("button-Borrar")
@@ -212,14 +210,6 @@ public class VistaVertweetgeneral extends LitTemplate {
 
 	public void setVerticalLayoutRetweetBorrar(Element verticalLayoutRetweetBorrar) {
 		this.verticalLayoutRetweetBorrar = verticalLayoutRetweetBorrar;
-	}
-
-	public Button getVaadinButton() {
-		return vaadinButton;
-	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
 	}
 
 	public Button getButtonRetweet() {

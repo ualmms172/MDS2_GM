@@ -20,7 +20,9 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getButtonBanear().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
+	
 	
 	public VerperfilUsuarioNoRegistrado(ListaComentariosUsuarioNoRegistrado_item listaComentariosUsuarioNoRegistrado) {
 	
@@ -31,6 +33,7 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	this.getButtonSeguir().setVisible(false);
 	this.getLabelAvisoBloqueo().setVisible(false);
 	this.getButtonBanear().setVisible(false);
+	this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
 	
 	public VerperfilUsuarioNoRegistrado(ListaUsuariosGeneralUsuarioNoRegistrado_item listaUsuariosGeneralUsuarioNoRegistrado) {
@@ -42,6 +45,7 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getButtonBanear().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
 	
 	public VerperfilUsuarioNoRegistrado(Listatweets_item listatweets) {
@@ -53,6 +57,7 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getButtonBanear().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
 	
 	

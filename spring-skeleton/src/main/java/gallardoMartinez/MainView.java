@@ -12,6 +12,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
 import interfaz.Administrador;
+import interfaz.Comentar;
 import interfaz.ComentariosUsuarioRegistrado_item;
 import interfaz.Comentariospropios;
 import interfaz.Comentariospropios_item;
@@ -57,6 +58,17 @@ import interfaz.ListausuariosfamososUsuarioRegistrado_item;
 import interfaz.Logueado;
 import interfaz.UsuarioNoRegistrado;
 import interfaz.UsuarioRegistrado;
+import interfaz.VerHashtagAdministrador;
+import interfaz.VerPerfilAdministrador;
+import interfaz.VerTweetAdministrador;
+import interfaz.Verlistacompletahashtags;
+import interfaz.VerperfilUsuarioNoRegistrado;
+import interfaz.Verperfilbloqueado;
+import interfaz.Verperfilnobloqueado;
+import interfaz.Verperfilpropio;
+import interfaz.VertweetUsuarioNoRegistrado;
+import interfaz.Vertweetajeno;
+import interfaz.Vertweetpropio;
 
 /**
  * A sample Vaadin view class.
@@ -89,16 +101,9 @@ public class MainView extends VerticalLayout {
     
     //Comentariospropios lista = new Comentariospropios();
     	
-    	ListausuariosfamososUsuarioRegistrado lista = new ListausuariosfamososUsuarioRegistrado(null);  
-    
-    	ListausuariosfamososUsuarioRegistrado_item item1 = new ListausuariosfamososUsuarioRegistrado_item(lista);
-    	ListausuariosfamososUsuarioRegistrado_item item2 = new ListausuariosfamososUsuarioRegistrado_item(lista);
+    	Verlistacompletahashtags com = new Verlistacompletahashtags(null);
 
-
-    lista.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item1);
-    lista.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item2);
-
-    add(lista); 
+    add(com); 
     
     }
 

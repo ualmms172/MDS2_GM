@@ -14,14 +14,17 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 	public Verperfilnobloqueado(ListaUsuariosGeneralUsuarioRegistrado_item listaUsuariosGeneralUsuarioRegistrado) {
 		super(listaUsuariosGeneralUsuarioRegistrado);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -30,6 +33,7 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		// TODO Auto-generated constructor stub
 	}
 	

@@ -16,7 +16,10 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
+	
+	
 	
 	public Verperfilpropio(UsuarioRegistrado usuarioregistrado) {
 		 
@@ -24,6 +27,7 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
 	
 	public Verperfilpropio(ListaUsuariosGeneralUsuarioRegistrado_item listaUsuariosGeneralUsuarioRegistrado) {
@@ -32,6 +36,7 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
 	
 	public Verperfilpropio(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado) {
@@ -39,8 +44,10 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		// TODO Auto-generated constructor stub
 	}
+
 
 	
 	public void Eliminarpropiacuenta() {

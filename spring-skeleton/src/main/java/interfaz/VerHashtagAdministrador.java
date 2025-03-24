@@ -7,4 +7,8 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 	public void ListaTweetsAdmin() {
 		throw new UnsupportedOperationException();
 	}
+	
+	public VerHashtagAdministrador(ListaHashtagsgeneralAdministrador_item listaHashtagsgeneralAdministrador) {
+		_listaHashtagsgeneralAdministrador = listaHashtagsgeneralAdministrador;
+	}
 }

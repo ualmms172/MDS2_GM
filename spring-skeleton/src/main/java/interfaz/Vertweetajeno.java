@@ -15,10 +15,12 @@ public class Vertweetajeno extends VertweetgeneralUsuarioRegistrado {
 	}
 
 	
+	
     public Vertweetajeno (VerperfilgeneralUsuarioRegistrado verperfilUsuarioRegistrado ) {
 		
        super(verperfilUsuarioRegistrado); 
 }
+
 
 	
 	

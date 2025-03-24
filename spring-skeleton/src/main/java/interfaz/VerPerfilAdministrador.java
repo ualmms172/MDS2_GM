@@ -15,7 +15,9 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
+	
 	
 	public VerPerfilAdministrador(ListaTweetsAdmin_item listaTweetsAdmin ) {
 		
@@ -25,6 +27,7 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
 	
 	public VerPerfilAdministrador(VerTweetAdministrador verTweetAdministrador) {
@@ -35,6 +38,7 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
 	
 
@@ -46,6 +50,7 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
+		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	}
 	
 	
