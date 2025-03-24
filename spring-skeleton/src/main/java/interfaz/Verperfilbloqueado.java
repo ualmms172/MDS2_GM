@@ -6,6 +6,11 @@ public class Verperfilbloqueado extends VerPerfilGeneral {
 	//private Label _bloqueo;
 	//private Button _bloquearB;
 	public Verperfilajeno _verperfilajeno;
+	
+	public Verperfilbloqueado(Verperfilajeno verperfilajeno) {
+		
+		_verperfilajeno = verperfilajeno; 
+	}
 
 	public void Desbloquear() {
 		throw new UnsupportedOperationException();

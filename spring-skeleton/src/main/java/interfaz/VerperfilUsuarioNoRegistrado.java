@@ -9,4 +9,12 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	public void Listatweets() {
 		throw new UnsupportedOperationException();
 	}
+	
+	public VerperfilUsuarioNoRegis
+	
+	
+	
+	
+	
+	
 }

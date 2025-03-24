@@ -1,6 +1,11 @@
 package interfaz;
 
 public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
+	public Verperfilpropio(interfaz.MostrartweetsUsuarioRegistrado mostrartweetsUsuarioRegistrado) {
+		super(mostrartweetsUsuarioRegistrado);
+		// TODO Auto-generated constructor stub
+	}
+
 	//private Button _eliminarCuenta;
 	//private Button _modificarDatos;
 	//public UsuarioRegistrado _usuarioregistrado; //Usuarioregistrado
