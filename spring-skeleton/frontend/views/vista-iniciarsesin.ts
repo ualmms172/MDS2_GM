@@ -18,7 +18,7 @@ export class VistaIniciarsesin extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="verticalLayout-Ventana">
+<vaadin-vertical-layout style="width: 100%; height: 100%;position:absolute;" id="verticalLayout-Ventana">
  <vaadin-horizontal-layout theme="spacing" style="align-self: center; flex-grow: 1;" id="horizontalLayout-IniciaSesion">
   <label style="align-self: center;" id="label-IniciarSesion">Iniciar Sesión</label>
  </vaadin-horizontal-layout>

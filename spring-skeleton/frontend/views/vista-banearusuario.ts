@@ -18,7 +18,7 @@ export class VistaBanearusuario extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="verticalLayout-Ventana">
+<vaadin-vertical-layout style="width: 100%; height: 100%;position:absolute;" id="verticalLayout-Ventana">
  <label style="flex-grow: 1; margin-top: var(--lumo-space-xl); width: 100%40%; margin-left: var(--lumo-space-xl); align-self: center;" id="label-Banear">BANEAR</label>
  <label style="flex-grow: 1; align-self: center; margin-left: var(--lumo-space-xl);" id="label-AvisoBaneo">Esta a punto de banear al usuario: [Nombre de usuario]</label>
  <label style="flex-grow: 1; align-self: center; margin-left: var(--lumo-space-xl);" id="label-SeleccionTipoBaneo">Seleccione el tipo de baneo que desea realizar</label>

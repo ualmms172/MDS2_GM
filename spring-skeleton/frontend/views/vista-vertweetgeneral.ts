@@ -17,8 +17,8 @@ export class VistaVertweetgeneral extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout id="verticalLayout-VentanaCompleta">
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 88%; background-color: #cdc8c8; align-self: center;" id="horizontalLayout-tweetCompleto">
+<vaadin-vertical-layout id="verticalLayout-VentanaCompleta" style="height: 100%; width: 100%; position:absolute;">
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 88%; background-color: #cdc8c8; align-self: center; " id="horizontalLayout-tweetCompleto">
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="verticalLayout-TweetCompleto">
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; height: 15%;" id="horizontalLayout-Cabecera">
     <img style="flex-grow: 1; width: 38%; height: 100%; margin-top: var(--lumo-space-s); margin-left: var(--lumo-space-s);" id="img-FotoPerfilTweet">

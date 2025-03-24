@@ -18,7 +18,7 @@ export class VistaValidarcorreo extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="verticalLayout-VentanaCompleta">
+<vaadin-vertical-layout style="width: 100%; height: 100%; position:absolute;" id="verticalLayout-VentanaCompleta">
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center;" id="horizontalLayout-EnviarCorreo">
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: flex-end;" id="verticalLayout-TextoInformativo">
    <label id="label-Notificacion">Se le ha enviado un correo con un código de confirmación</label>
