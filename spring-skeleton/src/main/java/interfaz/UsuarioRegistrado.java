@@ -1,6 +1,9 @@
 package interfaz;
 
 import java.util.Vector;
+
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import gallardoMartinez.MainView;
 
 public class UsuarioRegistrado extends Logueado {
@@ -19,8 +22,32 @@ public class UsuarioRegistrado extends Logueado {
 	public Vector<Hashtag> _creaHashtag = new Vector<Hashtag>();
 	public Vector<Contenido> _escribe = new Vector<Contenido>();
 	
+	
+	public MostrartweetspropiosUsuarioRegistrado _mostrartweetspropiosUsuarioRegistrado;
+	public ListausuariosfamososUsuarioRegistrado _listausuariosfamososUsuarioRegistrado;
+	public ListahashtagfamososUsuarioRegistrado _listahashtagfamososUsuarioRegistrado;
+	
 	public UsuarioRegistrado(MainView MainView) {
 		super(MainView);
 		this.getButtonBaneados().setVisible(false);
+		
+		MostrartweetspropiosUsuarioRegistrado();
+		ListausuariosfamososUsuarioRegistrado();
+		ListahashtagfamososUsuarioRegistrado();
 		}
+	
+	public void MostrartweetspropiosUsuarioRegistrado() {
+		_mostrartweetspropiosUsuarioRegistrado = new MostrartweetspropiosUsuarioRegistrado(this);
+		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_mostrartweetspropiosUsuarioRegistrado);
+	}
+	
+	public void ListausuariosfamososUsuarioRegistrado() {
+		_listausuariosfamososUsuarioRegistrado = new ListausuariosfamososUsuarioRegistrado(this);
+		this.getHorizontalLayoutListaUsuariosMasFamosos2().add(_listausuariosfamososUsuarioRegistrado);
+	}
+	
+	public void ListahashtagfamososUsuarioRegistrado() {
+		_listahashtagfamososUsuarioRegistrado = new ListahashtagfamososUsuarioRegistrado(this);
+		this.getHorizontalLayoutHashtagsMasUsados().add(_listahashtagfamososUsuarioRegistrado);
+	}
 }

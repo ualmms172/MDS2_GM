@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaVerlistacompletausuariosadministrador;
 
 public class VerListaCompletaUsuariosAdministrador extends VistaVerlistacompletausuariosadministrador {
@@ -10,12 +12,15 @@ public class VerListaCompletaUsuariosAdministrador extends VistaVerlistacompleta
 	public VerListaCompletaUsuariosAdministrador(Administrador administrador) {
 		
 		_administrador = administrador; 
+		
+		ListaUsuariosAdministrador();
 	}
 	
 	
 	
 	
 	public void ListaUsuariosAdministrador() {
-		throw new UnsupportedOperationException();
+		_listaUsuariosAdministrador = new ListaUsuariosAdministrador(this);
+		this.getVerticalLayoutListaUsuarios().as(VerticalLayout.class).add(_listaUsuariosAdministrador);
 	}
 }

@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaVerlistacompletausuariosusuarionoregistrado;
 
 public class VerListaCompletaUsuariosUsuarioNoRegistrado extends VistaVerlistacompletausuariosusuarionoregistrado {
@@ -10,6 +12,8 @@ public class VerListaCompletaUsuariosUsuarioNoRegistrado extends VistaVerlistaco
 	public VerListaCompletaUsuariosUsuarioNoRegistrado(UsuarioNoRegistrado usuarioNoRegistrado) {
 		
 		_usuarioNoRegistrado = usuarioNoRegistrado; 
+		
+		ListaUsuariosUsuarionoRegistrado();
 	}
 	
 	
@@ -17,6 +21,7 @@ public class VerListaCompletaUsuariosUsuarioNoRegistrado extends VistaVerlistaco
 	
 	
 	public void ListaUsuariosUsuarionoRegistrado() {
-		throw new UnsupportedOperationException();
+		_listaUsuariosUsuarionoRegistrado = new ListaUsuariosUsuarionoRegistrado(this);
+		this.getVerticalLayoutListaUsuarios().as(VerticalLayout.class).add(_listaUsuariosUsuarionoRegistrado);
 	}
 }

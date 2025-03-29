@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	public MostrartweetsUsuarioRegistrado _mostrartweetsUsuarioRegistrado;
 	public ListaUsuariosGeneralUsuarioRegistrado_item _listaUsuariosGeneralUsuarioRegistrado;
@@ -9,6 +11,8 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 		
 		_mostrartweetsUsuarioRegistrado = mostrartweetsUsuarioRegistrado; 
 		this.getButtonBanear().setVisible(false);
+		
+		MostrartweetsUsuarioRegistrado();
 	}
 	
 	
@@ -16,6 +20,8 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 		
 		_listaUsuariosGeneralUsuarioRegistrado = listaUsuariosGeneralUsuarioRegistrado; 
 		this.getButtonBanear().setVisible(false);
+		
+		MostrartweetsUsuarioRegistrado();
 	}
 	
 	public VerperfilgeneralUsuarioRegistrado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado ) {
@@ -23,6 +29,8 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 		
 		_vertweetgeneralUsuarioRegistrado = vertweetgeneralUsuarioRegistrado; 
 		this.getButtonBanear().setVisible(false);
+		
+		MostrartweetsUsuarioRegistrado();
 	}
 	
 	
@@ -33,6 +41,7 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 
 
 	public void MostrartweetsUsuarioRegistrado() {
-		throw new UnsupportedOperationException();
+		_mostrartweetsUsuarioRegistrado = new MostrartweetsUsuarioRegistrado(this);
+		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_mostrartweetsUsuarioRegistrado);
 	}
 }

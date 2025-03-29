@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	//private Button _comentar;
 	//private Button _retweetear;
@@ -11,18 +13,23 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 		
 		_verperfilUsuarioRegistrado = verperfilUsuarioRegistrado; 
 		this.getButtonBorrar().setVisible(false);
+		
+		ComentariosUsuarioRegistrado();
 	}
 	
 	
-public VertweetgeneralUsuarioRegistrado (MostrartweetspropiosUsuarioRegistrado_item mostrartweetspropiosUsuarioRegistrado_item ) {
+	public VertweetgeneralUsuarioRegistrado (MostrartweetspropiosUsuarioRegistrado_item mostrartweetspropiosUsuarioRegistrado_item ) {
 		
-	_mostrartweetspropiosUsuarioRegistrado = mostrartweetspropiosUsuarioRegistrado_item; 
-	this.getButtonBorrar().setVisible(false);
+		_mostrartweetspropiosUsuarioRegistrado = mostrartweetspropiosUsuarioRegistrado_item; 
+		this.getButtonBorrar().setVisible(false);
+	
+		ComentariosUsuarioRegistrado();
 	}
 	
 
 	public void ComentariosUsuarioRegistrado() {
-		throw new UnsupportedOperationException();
+		_comentariosUsuarioRegistrado = new ComentariosUsuarioRegistrado(this);
+		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_comentariosUsuarioRegistrado);
 	}
 
 	public void Comentar() {

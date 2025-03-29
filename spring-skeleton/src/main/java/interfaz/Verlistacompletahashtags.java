@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaVerlistacompletahashtags;
 
 public class Verlistacompletahashtags extends VistaVerlistacompletahashtags{
@@ -12,6 +14,8 @@ public class Verlistacompletahashtags extends VistaVerlistacompletahashtags{
 		
 		_usuarioNoRegistrado = usuarioNoRegistrado; 
 		
+		ListaHashtagsUsuarioNoRegistrado();
+		
 	}
 	
 	
@@ -20,7 +24,8 @@ public class Verlistacompletahashtags extends VistaVerlistacompletahashtags{
 	
 	
 	public void ListaHashtagsUsuarioNoRegistrado() {
-		throw new UnsupportedOperationException();
+		_listaHashtagsUsuarioNoRegistrado = new ListaHashtagsUsuarioNoRegistrado(this);
+		this.getVerticalLayoutListaHashtags().as(VerticalLayout.class).add(_listaHashtagsUsuarioNoRegistrado);
 	}
 	
 	

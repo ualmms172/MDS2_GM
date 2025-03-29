@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaVerlistacompletahashtagsadmin;
 
 public class VerlistaCompletaHashtagsAdmin extends VistaVerlistacompletahashtagsadmin {
@@ -11,9 +13,12 @@ public class VerlistaCompletaHashtagsAdmin extends VistaVerlistacompletahashtags
 	public VerlistaCompletaHashtagsAdmin(Administrador administrador) {
 		
 		_administrador = administrador; 
+		
+		ListaHashtagsAdministrador();
 	}
 	
 	public void ListaHashtagsAdministrador() {
-		throw new UnsupportedOperationException();
+		_listaHashtagsAdministrador = new ListaHashtagsAdministrador(this);
+		this.getVerticalLayoutListaHashtags().as(VerticalLayout.class).add(_listaHashtagsAdministrador);
 	}
 }

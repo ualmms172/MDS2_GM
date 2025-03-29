@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 	public Listatweets_item _listatweets;
 	public ListaComentariosUsuarioNoRegistrado _listaComentariosUsuarioNoRegistrado;
@@ -12,6 +14,8 @@ public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 		this.getButtonMeGusta().setVisible(false);
 		this.getButtonRetweet().setVisible(false);
 		this.getButtonComentar().setVisible(false);
+		
+		this.ListaComentariosUsuarioNoRegistrado();
 	}
 	
 	
@@ -22,12 +26,15 @@ public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 		this.getButtonMeGusta().setVisible(false);
 		this.getButtonRetweet().setVisible(false);
 		this.getButtonComentar().setVisible(false);
+		
+		this.ListaComentariosUsuarioNoRegistrado();
 	}
 	
 
 	
 	public void ListaComentariosUsuarioNoRegistrado() {
-		throw new UnsupportedOperationException();
+		_listaComentariosUsuarioNoRegistrado = new ListaComentariosUsuarioNoRegistrado(this);
+		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_listaComentariosUsuarioNoRegistrado);
 	}
 
 	public void VerperfilUsuarioNoRegistrado() {

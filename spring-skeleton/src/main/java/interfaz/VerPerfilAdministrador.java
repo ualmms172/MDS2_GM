@@ -1,9 +1,12 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class VerPerfilAdministrador extends VerPerfilGeneral {
 	//private Button _banear;
 	public ListaUsuariosGeneralAdministrador_item _listaUsuariosGeneralAdministrador;
-	public ListaTweetsAdmin_item _listaTweetsAdmin;
+	public ListaTweetsAdmin_item _listaTweetsAdmin_item;
+	public ListaTweetsAdmin _listaTweetsAdmin; //Creado por Miguel
 	public VerTweetAdministrador _verTweetAdministrador;
 	public ListaComentariosAdministrador_item _listaComentariosAdministrador;
 	public BanearUsuario _banearUsuario;
@@ -16,18 +19,22 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
+		
+		ListaTweetsAdmin();
 	}
 	
 	
 	public VerPerfilAdministrador(ListaTweetsAdmin_item listaTweetsAdmin ) {
 		
-		_listaTweetsAdmin = listaTweetsAdmin; 
+		_listaTweetsAdmin_item = listaTweetsAdmin; 
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
+		
+		ListaTweetsAdmin();
 	}
 	
 	public VerPerfilAdministrador(VerTweetAdministrador verTweetAdministrador) {
@@ -39,6 +46,8 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
+		
+		ListaTweetsAdmin();
 	}
 	
 
@@ -51,6 +60,8 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
+		
+		ListaTweetsAdmin();
 	}
 	
 	
@@ -67,6 +78,7 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	}
 
 	public void ListaTweetsAdmin() {
-		throw new UnsupportedOperationException();
+		_listaTweetsAdmin = new ListaTweetsAdmin(this);
+		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_listaTweetsAdmin);
 	}
 }

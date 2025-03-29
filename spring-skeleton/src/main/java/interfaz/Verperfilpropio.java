@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	
 
@@ -8,6 +10,7 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	public UsuarioRegistrado _usuarioregistrado; //Usuarioregistrado
 	public Eliminarpropiacuenta _eliminarpropiacuenta;
 	public Modificardatoscuenta _modificardatoscuenta;
+	
 	
 	
 	public Verperfilpropio(MostrartweetsUsuarioRegistrado mostrartweetsUsuarioRegistrado) {
@@ -57,4 +60,6 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	public void Modificardatoscuenta() {
 		throw new UnsupportedOperationException();
 	}
+	
+	
 }
