@@ -89,7 +89,7 @@ import interfaz.Vertweetpropio;
 public class MainView extends VerticalLayout {
 
     /**
-     * Construct a new Vaadin view.
+     * Construct  a new Vaadin view.
      * <p>
      * Build the initial UI state for the user accessing the application.
      *
