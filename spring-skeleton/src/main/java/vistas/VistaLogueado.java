@@ -48,8 +48,9 @@ public class VistaLogueado extends LitTemplate {
 	private HorizontalLayout horizontalLayoutImagenPerfil;
 	@Id("img-PortadaTwitter")
 	private Image imgPortadaTwitter;
+	/*
 	@Id("horizontalLayout-centralImagen")
-	private HorizontalLayout horizontalLayoutCentralImagen;
+	private HorizontalLayout horizontalLayoutCentralImagen;*/
 	@Id("verticalLayout-BaneadoVerperfil")
 	private Element verticalLayoutBaneadoVerperfil;
 	@Id("horizontalLayout-Baneados")
@@ -66,8 +67,8 @@ public class VistaLogueado extends LitTemplate {
 	private Button buttonVerPerfil;
 	@Id("button-EscribirTweet")
 	private Button buttonEscribirTweet;
-	@Id("horizontalLayout-inferior")
-	private HorizontalLayout horizontalLayoutInferior;
+	/*@Id("horizontalLayout-inferior")
+	private HorizontalLayout horizontalLayoutInferior; */
 	@Id("verticalLayout-inferior")
 	private Element verticalLayoutInferior;
 	@Id("verticalLayout-derecho")
@@ -218,7 +219,7 @@ public class VistaLogueado extends LitTemplate {
 	public void setImgPortadaTwitter(Image imgPortadaTwitter) {
 		this.imgPortadaTwitter = imgPortadaTwitter;
 	}
-
+/*
 	public HorizontalLayout getHorizontalLayoutCentralImagen() {
 		return horizontalLayoutCentralImagen;
 	}
@@ -226,6 +227,7 @@ public class VistaLogueado extends LitTemplate {
 	public void setHorizontalLayoutCentralImagen(HorizontalLayout horizontalLayoutCentralImagen) {
 		this.horizontalLayoutCentralImagen = horizontalLayoutCentralImagen;
 	}
+	*/
 
 	public Element getVerticalLayoutBaneadoVerperfil() {
 		return verticalLayoutBaneadoVerperfil;
@@ -290,7 +292,7 @@ public class VistaLogueado extends LitTemplate {
 	public void setButtonEscribirTweet(Button buttonEscribirTweet) {
 		this.buttonEscribirTweet = buttonEscribirTweet;
 	}
-
+/*
 	public HorizontalLayout getHorizontalLayoutInferior() {
 		return horizontalLayoutInferior;
 	}
@@ -298,7 +300,7 @@ public class VistaLogueado extends LitTemplate {
 	public void setHorizontalLayoutInferior(HorizontalLayout horizontalLayoutInferior) {
 		this.horizontalLayoutInferior = horizontalLayoutInferior;
 	}
-
+*/
 	public Element getVerticalLayoutInferior() {
 		return verticalLayoutInferior;
 	}

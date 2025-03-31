@@ -15,7 +15,7 @@ export class VistaListacontenido extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; position:absolute; align-items: stretch;" id="vertical-listacontenido"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="position:absolute; align-items: stretch; width: 100%; height: 100%;" id="vertical-listacontenido"></vaadin-vertical-layout>
 `;
   }
 

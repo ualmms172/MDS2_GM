@@ -18,7 +18,7 @@ export class VistaListacontenido_item extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; background-color: #cdc8c8;" id="vaadinHorizontalLayout">
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 60%; background-color: #cdc8c8;" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="vaadinVerticalLayout1">
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; height: 15%;" id="horizontalLayout-Cabecera">
     <img style="flex-grow: 1; width: 38%; height: 100%; margin-top: var(--lumo-space-s); margin-left: var(--lumo-space-s);" id="img-FotoPerfilTweet">
