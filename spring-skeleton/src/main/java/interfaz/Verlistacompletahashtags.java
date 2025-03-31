@@ -16,6 +16,9 @@ public class Verlistacompletahashtags extends VistaVerlistacompletahashtags{
 		
 		ListaHashtagsUsuarioNoRegistrado();
 		
+		
+		
+		
 	}
 	
 	

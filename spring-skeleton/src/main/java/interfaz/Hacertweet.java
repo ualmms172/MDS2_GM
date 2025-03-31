@@ -9,7 +9,13 @@ public class Hacertweet extends CrearContenido {
 	
 	public Hacertweet(UsuarioRegistrado usuarioregistrado) {
 		
-		_usuarioregistrado = usuarioregistrado; 
+		_usuarioregistrado = usuarioregistrado;
+		
+		this.getButtonAtras().addClickListener(event -> {
+			
+			this._usuarioregistrado.MainView.removeAll(); 
+		    this._usuarioregistrado.MainView.add(_usuarioregistrado); 
+		}); 
 		
 	}
 	
@@ -20,9 +26,6 @@ public class Hacertweet extends CrearContenido {
 	}
 	
 	
-	
-	
-
 	public void Publicartweet() {
 		throw new UnsupportedOperationException();
 	}

@@ -16,6 +16,7 @@ import interfaz.Comentar;
 import interfaz.ComentariosUsuarioRegistrado_item;
 import interfaz.Comentariospropios;
 import interfaz.Comentariospropios_item;
+import interfaz.IniciarSesin;
 import interfaz.ListaComentariosAdministrador;
 import interfaz.ListaComentariosAdministrador_item;
 import interfaz.ListaComentariosGeneral_item;
@@ -97,9 +98,14 @@ public class MainView extends VerticalLayout {
      *            The message service. Automatically injected Spring managed
      *            bean.
      */
+	
+	
+    UsuarioNoRegistrado usu = new UsuarioNoRegistrado(this); 
+
     public MainView(@Autowired GreetService service) {
 
-  
+     IniciarSesin iniciarSesion = new IniciarSesin(usu); 
+     add(usu); 
    
     }
 

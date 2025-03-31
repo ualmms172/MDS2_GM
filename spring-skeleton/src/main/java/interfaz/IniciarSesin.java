@@ -22,12 +22,18 @@ public class IniciarSesin extends VistaIniciarsesin {
 
 	public IniciarSesin(UsuarioNoRegistrado usuarioNoRegistrado) {
 		
-		usuarioNoRegistrado = usuarioNoRegistrado;
-	}
+		_usuarioNoRegistrado = usuarioNoRegistrado;
+		this.getButtonAtras().addClickListener(event -> {
+			
+			this._usuarioNoRegistrado.MainView.removeAll(); 
+			this._usuarioNoRegistrado.MainView.add(this._usuarioNoRegistrado);
+		});
+		
+		this.getButtonContinuar().addClickListener(event -> Autentificarse()); 
+		
+		}
 	
-	
-	
-
+		
 	public void Validardatos() {
 		throw new UnsupportedOperationException();
 	}
@@ -41,6 +47,19 @@ public class IniciarSesin extends VistaIniciarsesin {
 	}
 
 	public void Autentificarse() {
-		throw new UnsupportedOperationException();
+	  /*  //Autentificación UsuarioRegistrado
+		this._usuarioNoRegistrado.MainView.removeAll();
+		UsuarioRegistrado usuario = new UsuarioRegistrado(this._usuarioNoRegistrado.MainView); 
+		this._usuarioNoRegistrado.MainView.add(usuario);
+		
+		*/
+		
+		//Autentificación Administrador
+		
+		this._usuarioNoRegistrado.MainView.removeAll();
+		Administrador admin = new Administrador(this._usuarioNoRegistrado.MainView); 
+		this._usuarioNoRegistrado.MainView.add(admin);
+		
+		
 	}
 }

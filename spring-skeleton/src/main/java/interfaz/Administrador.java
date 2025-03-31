@@ -14,6 +14,13 @@ public class Administrador extends Logueado {
 	public ListaTweetsAdmin _listaTweetsAdmin;
 	public ListaUsuariosFamososAdministrador _listaUsuariosFamososAdministrador;
 	public ListaHashtagsFamososAdministrador _listaHashtagsFamososAdministrador;
+	VerListaCompletaUsuariosAdministrador _VerListaCompletaUsuariosAdministrador;
+	VerlistaCompletaHashtagsAdmin _VerlistaCompletaHashtagsAdmin;
+	Verbaneados _Verbaneados;
+
+
+
+	
 	
 	public Administrador(MainView MainView) {
 		super(MainView);
@@ -22,9 +29,14 @@ public class Administrador extends Logueado {
 		this.getButtonEscribirTweet().setVisible(false);
 		this.getButtonVerPerfil().setVisible(false);
 		
+		this.getButtonVerMasUsuarios().addClickListener(Event -> VerListaCompletaUsuariosAdministrador()); 
+		this.getButtonVerMasHashtags().addClickListener(Event -> VerlistaCompletaHashtagsAdmin()); 
+		this.getButtonBaneados().addClickListener(Event -> Verbaneados()); 
+		
 		ListaTweetsAdmin();
 		ListaUsuariosFamososAdministrador();
 		ListaHashtagsFamososAdministrador();
+		
 		}
 	
 	public void ListaTweetsAdmin() {
@@ -50,5 +62,44 @@ public class Administrador extends Logueado {
 
 	
 	}
+	
+	public void VerListaCompletaUsuariosAdministrador() {
+		// TODO - implement Administrador.VerListaCompletaUsuariosAdministrador
+		_VerListaCompletaUsuariosAdministrador = new VerListaCompletaUsuariosAdministrador(this); 
+		MainView.removeAll();
+		MainView.add(_VerListaCompletaUsuariosAdministrador);
+		
+		
+	}
+
+	public void Verbaneados() {
+	   _Verbaneados = new Verbaneados(this); 
+	   MainView.removeAll();
+	   MainView.add(_Verbaneados);	
+		
+		
+	}
+
+	public void VerlistaCompletaHashtagsAdmin() {
+
+		_VerlistaCompletaHashtagsAdmin = new VerlistaCompletaHashtagsAdmin (this); 
+		MainView.removeAll();
+		MainView.add(_VerlistaCompletaHashtagsAdmin);
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

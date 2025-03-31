@@ -26,14 +26,15 @@ public class Registrar extends VistaRegistrar {
 	public Registrar (UsuarioNoRegistrado usuarioNoRegistrado) {
 		
 		_usuarioNoRegistrado = usuarioNoRegistrado; 
-
+		this.getButtonAtras().addClickListener(event -> {
+			
+			this._usuarioNoRegistrado.MainView.removeAll(); 
+			this._usuarioNoRegistrado.MainView.add(this._usuarioNoRegistrado); 
+				
+		});
 	}
 	
 	
-	
-	
-	
-
 	public void Comprobarsihaydatosrepetidos() {
 		throw new UnsupportedOperationException();
 	}
