@@ -1,14 +1,19 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class VerHashtagAdministrador extends VerHashtagGeneral {
 	public ListaHashtagsgeneralAdministrador_item _listaHashtagsgeneralAdministrador;
 	public ListaTweetsAdmin _listaTweetsAdmin;
 
 	public void ListaTweetsAdmin() {
-		throw new UnsupportedOperationException();
+		_listaTweetsAdmin = new ListaTweetsAdmin(this);
+		this.getVerticalLayoutListaHashtags().as(VerticalLayout.class).add(_listaTweetsAdmin);
 	}
 	
 	public VerHashtagAdministrador(ListaHashtagsgeneralAdministrador_item listaHashtagsgeneralAdministrador) {
 		_listaHashtagsgeneralAdministrador = listaHashtagsgeneralAdministrador;
+		
+		ListaTweetsAdmin();
 	}
 }

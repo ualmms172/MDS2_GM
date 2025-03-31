@@ -2,6 +2,8 @@ package interfaz;
 
 import vistas.VistaUsuarionoregistrado;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import gallardoMartinez.MainView;
 
 //import basededatos.iUsuarioNoRegistrado;
@@ -25,9 +27,11 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	MainView MainView;
 	
 	
-	
 	public UsuarioNoRegistrado(MainView MainView) {
 	this.MainView = MainView;
+	
+	ListahashtagsfamososUsuarioNoRegistrado();
+	ListaUsuariosFamosos();
 	}
 
 	public void IniciarSesin() {
@@ -39,7 +43,8 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	}
 
 	public void ListaUsuariosFamosos() {
-		throw new UnsupportedOperationException();
+		_listaUsuariosFamosos = new ListaUsuariosFamosos(this);
+		this.getHorizontalLayoutListaUsuariosFamosos().add(_listaUsuariosFamosos);
 	}
 
 	public void VerListaCompletaUsuariosUsuarioNoRegistrado() {
@@ -51,6 +56,7 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	}
 
 	public void ListahashtagsfamososUsuarioNoRegistrado() {
-		throw new UnsupportedOperationException();
+		_listahashtagsfamososUsuarioNoRegistrado = new ListahashtagsfamososUsuarioNoRegistrado(this);
+		this.getHorizontallayoutListaDeHashtagMasUsados().add(_listahashtagsfamososUsuarioNoRegistrado);
 	}
 }

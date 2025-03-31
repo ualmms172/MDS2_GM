@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	
 	public ListaUsuariosGeneralUsuarioRegistrado_item _listaUsuariosGeneralUsuarioRegistrado;
@@ -67,4 +69,5 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	public void Desbloquear() {
 		throw new UnsupportedOperationException();
 	}
+	
 }

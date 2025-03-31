@@ -22,6 +22,8 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getVerticalLayoutInferior().setVisible(false);
+		
+		this.MostrartweetsUsuarioRegistrado();
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -31,6 +33,8 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getVerticalLayoutInferior().setVisible(false);
+		
+		this.MostrartweetsUsuarioRegistrado();
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -40,6 +44,8 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getVerticalLayoutInferior().setVisible(false);
+		
+		this.MostrartweetsUsuarioRegistrado();
 		// TODO Auto-generated constructor stub
 	}
 	

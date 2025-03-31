@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class VerTweetAdministrador extends VertweetGeneral {
 	//private event _borrarTweet;
 	//private Button _borrarTweetB;
@@ -13,6 +15,8 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		this.getButtonComentar().setVisible(false);
 		this.getButtonMeGusta().setVisible(false);
 		this.getButtonRetweet().setVisible(false);
+		
+		ListaComentariosAdministrador();
 	}
 	
 	public VerTweetAdministrador(VerPerfilAdministrador verPerfilAdministrador) {
@@ -21,6 +25,8 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		this.getButtonComentar().setVisible(false);
 		this.getButtonMeGusta().setVisible(false);
 		this.getButtonRetweet().setVisible(false);
+		
+		ListaComentariosAdministrador();
 	}
 	
 	
@@ -31,7 +37,8 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	}
 
 	public void ListaComentariosAdministrador() {
-		throw new UnsupportedOperationException();
+		_listaComentariosAdministrador = new ListaComentariosAdministrador(this);
+		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_listaComentariosAdministrador);
 	}
 
 	public void VerPerfilAdministrador() {
