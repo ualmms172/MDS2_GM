@@ -11,6 +11,20 @@ public class Logueado extends VistaLogueado{
 	MainView MainView;
 	public Logueado(MainView MainView) {
 	this.MainView = MainView;
+	
+	this.getButtonCerrarSesion().addClickListener(event -> Cerrarsesin()); 
+	
+	
 	}
+	
+	
+	public void Cerrarsesin() {
+		
+		UsuarioNoRegistrado usuario =  new UsuarioNoRegistrado(MainView); 
+		usuario.MainView.removeAll();
+		usuario.MainView.add(usuario);
+		
+	}
+
 	
 }

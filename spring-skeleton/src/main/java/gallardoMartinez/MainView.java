@@ -16,6 +16,7 @@ import interfaz.Comentar;
 import interfaz.ComentariosUsuarioRegistrado_item;
 import interfaz.Comentariospropios;
 import interfaz.Comentariospropios_item;
+import interfaz.IniciarSesin;
 import interfaz.ListaComentariosAdministrador;
 import interfaz.ListaComentariosAdministrador_item;
 import interfaz.ListaComentariosGeneral_item;
@@ -89,7 +90,7 @@ import interfaz.Vertweetpropio;
 public class MainView extends VerticalLayout {
 
     /**
-     * Construct a new Vaadin view.
+     * Construct  a new Vaadin view.
      * <p>
      * Build the initial UI state for the user accessing the application.
      *
@@ -97,15 +98,14 @@ public class MainView extends VerticalLayout {
      *            The message service. Automatically injected Spring managed
      *            bean.
      */
+	
+	
+    UsuarioNoRegistrado usu = new UsuarioNoRegistrado(this); 
+
     public MainView(@Autowired GreetService service) {
 
-    
-    //Comentariospropios lista = new Comentariospropios();
-    	
-    	
-    	Administrador admin = new Administrador(this); 
-    
-    	this.add(admin);
+     IniciarSesin iniciarSesion = new IniciarSesin(usu); 
+     add(usu); 
    
     }
 

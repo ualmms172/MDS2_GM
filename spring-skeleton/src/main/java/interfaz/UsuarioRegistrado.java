@@ -21,19 +21,31 @@ public class UsuarioRegistrado extends Logueado {
 	public Vector<Contenido> _meGusta = new Vector<Contenido>();
 	public Vector<Hashtag> _creaHashtag = new Vector<Hashtag>();
 	public Vector<Contenido> _escribe = new Vector<Contenido>();
-	
-	
+	Notificaciones _Notificaciones;
+	VerlistacompletahashtagUsuarioRegistrado _VerlistacompletahashtagUsuarioRegistrado;
+	Hacertweet _Hacertweet;
 	public MostrartweetspropiosUsuarioRegistrado _mostrartweetspropiosUsuarioRegistrado;
 	public ListausuariosfamososUsuarioRegistrado _listausuariosfamososUsuarioRegistrado;
 	public ListahashtagfamososUsuarioRegistrado _listahashtagfamososUsuarioRegistrado;
+	VerlistacompletausuariosUsuarioRegistrado _VerlistacompletausuariosUsuarioRegistrado;
+	Verperfilpropio _Verperfilpropio;
+
+
 	
 	public UsuarioRegistrado(MainView MainView) {
 		super(MainView);
 		this.getButtonBaneados().setVisible(false);
+		this.getButtonNotificaciones().addClickListener(event -> Notificaciones()); 
+		this.getButtonVerMasHashtags().addClickListener(event -> VerlistacompletahashtagUsuarioRegistrado());
+		this.getButtonEscribirTweet().addClickListener(event -> Hacertweet()); 
+		this.getButtonVerMasUsuarios().addClickListener(event -> VerlistacompletausuariosUsuarioRegistrado()); 
+		this.getButtonVerPerfil().addClickListener(event -> Verperfilpropio()); 
 		
 		MostrartweetspropiosUsuarioRegistrado();
 		ListausuariosfamososUsuarioRegistrado();
 		ListahashtagfamososUsuarioRegistrado();
+		
+		
 		}
 	
 	public void MostrartweetspropiosUsuarioRegistrado() {
@@ -50,4 +62,52 @@ public class UsuarioRegistrado extends Logueado {
 		_listahashtagfamososUsuarioRegistrado = new ListahashtagfamososUsuarioRegistrado(this);
 		this.getHorizontalLayoutHashtagsMasUsados().add(_listahashtagfamososUsuarioRegistrado);
 	}
+	
+	public void Notificaciones() {
+		
+		_Notificaciones = new Notificaciones(this); 
+		MainView.removeAll();
+		MainView.add(_Notificaciones);
+		
+	}
+
+	public void VerlistacompletahashtagUsuarioRegistrado() {
+		
+		_VerlistacompletahashtagUsuarioRegistrado = new VerlistacompletahashtagUsuarioRegistrado(this); 
+		MainView.removeAll();
+		MainView.add(_VerlistacompletahashtagUsuarioRegistrado);
+		
+	}
+
+	public void Hacertweet() {
+		
+		_Hacertweet = new Hacertweet(this); 
+		MainView.removeAll();
+		MainView.add(_Hacertweet);
+		
+		
+	}
+
+	public void VerlistacompletausuariosUsuarioRegistrado() {
+		// TODO - implement Usuarioregistrado.VerlistacompletausuariosUsuarioRegistrado
+		
+		_VerlistacompletausuariosUsuarioRegistrado = new VerlistacompletausuariosUsuarioRegistrado(this); 
+		MainView.removeAll();
+		MainView.add(_VerlistacompletausuariosUsuarioRegistrado);
+		
+	}
+	
+
+	public void Verperfilpropio() {
+		_Verperfilpropio = new Verperfilpropio(this); 
+		MainView.removeAll();
+		MainView.add(_Verperfilpropio);
+		
+	}
+
+	
+	
+	
+	
+	
 }

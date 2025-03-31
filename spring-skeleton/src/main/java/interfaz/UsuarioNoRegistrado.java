@@ -32,14 +32,29 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	
 	ListahashtagsfamososUsuarioNoRegistrado();
 	ListaUsuariosFamosos();
+	this.getButtonIniciarSesion().addClickListener(event -> IniciarSesin()); 
+	this.getButtonRegistrarse().addClickListener(event -> Registrar()); 
+	this.getButtonVerMasHashtags().addClickListener(event -> Verlistacompletahashtags()); 
+	this.getButtonVerMasUsuarios().addClickListener(event -> VerListaCompletaUsuariosUsuarioNoRegistrado()); 
+	
+	
+	
+	
 	}
 
 	public void IniciarSesin() {
-		throw new UnsupportedOperationException();
+		
+		_iniciarSesin = new IniciarSesin(this); 
+		MainView.removeAll();
+		MainView.add(_iniciarSesin); 
+
 	}
 
 	public void Verlistacompletahashtags() {
-		throw new UnsupportedOperationException();
+		_verlistacompletahashtags = new Verlistacompletahashtags(this); 
+		MainView.removeAll();
+		MainView.add(_verlistacompletahashtags);
+		
 	}
 
 	public void ListaUsuariosFamosos() {
@@ -48,11 +63,19 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	}
 
 	public void VerListaCompletaUsuariosUsuarioNoRegistrado() {
-		throw new UnsupportedOperationException();
+
+		_verListaCompletaUsuariosUsuarioNoRegistrado = new VerListaCompletaUsuariosUsuarioNoRegistrado(this); 
+		MainView.removeAll();
+		MainView.add(_verListaCompletaUsuariosUsuarioNoRegistrado);
+	
 	}
 
 	public void Registrar() {
-		throw new UnsupportedOperationException();
+		
+		_registrar = new Registrar(this); 
+		MainView.removeAll();
+		MainView.add(_registrar);
+		
 	}
 
 	public void ListahashtagsfamososUsuarioNoRegistrado() {
