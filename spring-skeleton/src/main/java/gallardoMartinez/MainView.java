@@ -99,13 +99,7 @@ public class MainView extends VerticalLayout {
      */
     public MainView(@Autowired GreetService service) {
 
-    
-    //Comentariospropios lista = new Comentariospropios();
-    	
-    	
-    	Administrador admin = new Administrador(this); 
-    
-    	this.add(admin);
+  
    
     }
 
