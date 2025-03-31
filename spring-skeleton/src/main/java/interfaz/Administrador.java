@@ -30,16 +30,25 @@ public class Administrador extends Logueado {
 	public void ListaTweetsAdmin() {
 		_listaTweetsAdmin = new ListaTweetsAdmin(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_listaTweetsAdmin);
+		ListaTweetsAdmin_item item_tweets = new ListaTweetsAdmin_item(_listaTweetsAdmin);
+		_listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public void ListaUsuariosFamososAdministrador() {
 		_listaUsuariosFamososAdministrador = new ListaUsuariosFamososAdministrador(this);
 		this.getHorizontalLayoutListaUsuariosMasFamosos2().add(_listaUsuariosFamososAdministrador);
+  	    ListaUsuariosFamososAdministrador_item listaUsuariosFamososAdministradorItem = new ListaUsuariosFamososAdministrador_item(_listaUsuariosFamososAdministrador); 
+  	    _listaUsuariosFamososAdministrador.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(listaUsuariosFamososAdministradorItem);
+
 	}
 	
 	public void ListaHashtagsFamososAdministrador() {
 		_listaHashtagsFamososAdministrador = new ListaHashtagsFamososAdministrador(this);
 		this.getHorizontalLayoutHashtagsMasUsados().add(_listaHashtagsFamososAdministrador);
+  	    ListaHashtagsFamososAdministrador_item listaHashtagsFamososAdministradorItem = new ListaHashtagsFamososAdministrador_item(_listaHashtagsFamososAdministrador);
+  	    _listaHashtagsFamososAdministrador.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(listaHashtagsFamososAdministradorItem);
+
+	
 	}
 	
 }

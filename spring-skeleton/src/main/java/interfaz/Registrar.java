@@ -29,11 +29,6 @@ public class Registrar extends VistaRegistrar {
 
 	}
 	
-	public Registrar(ValidarCorreo validarCorreo) {
-		
-		_validarCorreo = validarCorreo;
-	}
-	
 	
 	
 	

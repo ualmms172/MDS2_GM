@@ -25,20 +25,7 @@ public class IniciarSesin extends VistaIniciarsesin {
 		usuarioNoRegistrado = usuarioNoRegistrado;
 	}
 	
-	public IniciarSesin(Gestordecorreo gestordecorreo) {
-		
-		_gestordecorreo = gestordecorreo; 
-	}
 	
-	public IniciarSesin(APIDeGoogle aPIDeGoogle) {
-		
-		_aPIDeGoogle = aPIDeGoogle; 
-	}
-	
-	public IniciarSesin (IniciarsesinconGoogle iniciarsesinconGoogle) {
-		
-		_iniciarsesinconGoogle = iniciarsesinconGoogle; 
-	}
 	
 
 	public void Validardatos() {

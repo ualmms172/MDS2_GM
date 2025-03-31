@@ -23,10 +23,10 @@ public class BanearUsuario extends VistaBanearusuario{
 		_listaUsuariosAdministrador = listaUsuariosAdministrador; 
 	}
 	
-	public BanearUsuario(VerPerfilAdministrador verPerfilAdministrador) {
+	//public BanearUsuario(VerPerfilAdministrador verPerfilAdministrador) {
 		
-		_verPerfilAdministrador = verPerfilAdministrador; 
-	}
+		//_verPerfilAdministrador = verPerfilAdministrador; 
+	//}
 	
 	
 	

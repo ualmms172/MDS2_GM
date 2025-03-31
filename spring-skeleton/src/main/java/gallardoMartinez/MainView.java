@@ -23,6 +23,7 @@ import interfaz.ListaComentariosUsuarioNoRegistrado_item;
 import interfaz.ListaContenido;
 import interfaz.ListaContenido_item;
 import interfaz.ListaHashtagsAdministrador_item;
+import interfaz.ListaHashtagsFamososAdministrador;
 import interfaz.ListaHashtagsFamososAdministrador_item;
 import interfaz.ListaHashtagsGeneral;
 import interfaz.ListaHashtagsGeneral_item;
@@ -101,10 +102,11 @@ public class MainView extends VerticalLayout {
     
     //Comentariospropios lista = new Comentariospropios();
     	
-    	Verlistacompletahashtags com = new Verlistacompletahashtags(null);
-
-    add(com); 
+    	
+    	Administrador admin = new Administrador(this); 
     
+    	this.add(admin);
+   
     }
 
 }
