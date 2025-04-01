@@ -17,7 +17,7 @@ export class VistaListausuariosgeneral_item extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout id="vertical-listausuariosgeneral_item">
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;" id="horizontal-listausuariosgeneral_item">
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 80%; align-self: center; justify-content: space-around; background-color: #cdc8c8;" id="horizontal-listausuariosgeneral_item">
   <label style="flex-grow: 1; align-self: center; margin-left: var(--lumo-space-s);" id="label-Nick">Nick</label>
   <label style="flex-grow: 1; align-self: center;" id="label-NumSeguidores">Num Seguidores</label>
   <label style="flex-grow: 1; align-self: center;" id="label-NumSeguidos">Num Seguidos</label>

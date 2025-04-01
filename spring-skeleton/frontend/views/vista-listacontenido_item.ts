@@ -18,7 +18,7 @@ export class VistaListacontenido_item extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 60%; background-color: #cdc8c8;" id="vaadinHorizontalLayout">
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; background-color: #cdc8c8; align-self: center; width: 70%;" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="vaadinVerticalLayout1">
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; height: 15%;" id="horizontalLayout-Cabecera">
     <img style="flex-grow: 1; width: 38%; height: 100%; margin-top: var(--lumo-space-s); margin-left: var(--lumo-space-s);" id="img-FotoPerfilTweet">
@@ -43,10 +43,10 @@ export class VistaListacontenido_item extends LitElement {
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;" id="horizontalLayout-Opciones">
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 20%;" id="verticalLayout-RetweetBorrar">
-     <vaadin-button style="flex-grow: 1; align-self: flex-start; width: 30%; margin-left: var(--lumo-space-m);" tabindex="0" id="button-Retweet">
+     <vaadin-button style="flex-grow: 1; align-self: flex-start; width: 50%; margin-left: var(--lumo-space-m);" tabindex="0" id="button-Retweet">
        Retweetear 
      </vaadin-button>
-     <vaadin-button style="flex-grow: 1; align-self: flex-start; width: 30%; margin-left: var(--lumo-space-m);" tabindex="0" id="button-Borrar">
+     <vaadin-button style="flex-grow: 1; align-self: flex-start; width: 40%; margin-left: var(--lumo-space-m);" tabindex="0" id="button-Borrar">
        Borrar 
      </vaadin-button>
     </vaadin-vertical-layout>

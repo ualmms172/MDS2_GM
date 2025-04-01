@@ -17,7 +17,7 @@ export class VistaVerlistacompletausuariosusuarioregistrado extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; position:absolute;" id="verticalLayout-VentanaCompleta">
  <label style="align-self: center; margin: var(--lumo-space-xl);" id="label-Usuarios">Usuarios</label>
- <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 94%;" id="verticalLayout-ListaUsuarios"></vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 80%; align-items: stretch;" id="verticalLayout-ListaUsuarios"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

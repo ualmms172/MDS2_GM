@@ -44,6 +44,7 @@ import interfaz.ListaUsuariosFamosos;
 import interfaz.ListaUsuariosFamososAdministrador;
 import interfaz.ListaUsuariosFamososAdministrador_item;
 import interfaz.ListaUsuariosFamosos_item;
+import interfaz.ListaUsuariosGeneralAdministrador_item;
 import interfaz.ListaUsuariosGeneralUsuarioRegistrado_item;
 import interfaz.ListaUsuariosUsuarionoRegistrado;
 import interfaz.ListaUsuariosUsuarionoRegistrado_item;
@@ -61,6 +62,7 @@ import interfaz.ListausuariosfamososUsuarioRegistrado;
 import interfaz.ListausuariosfamososUsuarioRegistrado_item;
 import interfaz.Logueado;
 import interfaz.MostrartweetspropiosUsuarioRegistrado_item;
+import interfaz.Notificaciones;
 import interfaz.UsuarioNoRegistrado;
 import interfaz.UsuarioRegistrado;
 import interfaz.VerHashtagAdministrador;
@@ -119,8 +121,10 @@ public class MainView extends VerticalLayout {
 
      //IniciarSesin iniciarSesion = new IniciarSesin(usu); 
      //add(usu);
-    	Listatweets_item aux = new Listatweets_item(null);
-    	VertweetUsuarioNoRegistrado u = new VertweetUsuarioNoRegistrado(aux);
+    	
+    	//Listatweets_item aux = new Listatweets_item(null);
+    	
+    	Verbaneados u = new Verbaneados(null);
     add(u);
     	
      

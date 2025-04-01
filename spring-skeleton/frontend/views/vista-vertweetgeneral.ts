@@ -68,7 +68,7 @@ export class VistaVertweetgeneral extends LitElement {
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-grow: 1; width: 60%;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-grow: 1; width: 60%; align-items: stretch;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

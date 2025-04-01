@@ -15,7 +15,7 @@ export class VistaListanuevosseguidores extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; position:absolute; align-items: stretch;" id="vertical-listanuevoseguidores"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: stretch;" id="vertical-listanuevoseguidores"></vaadin-vertical-layout>
 `;
   }
 

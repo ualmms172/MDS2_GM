@@ -17,7 +17,7 @@ export class VistaListahashtagsgeneral_item extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout id="vertical-hashtagsgeneral_item">
- <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;" id="horizontal-listahashtagsgeneral_item">
+ <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; background-color: #cdc8c8; justify-content: space-evenly; width: 70%;" id="horizontal-listahashtagsgeneral_item">
   <label style="flex-grow: 1; align-self: center; margin-left: var(--lumo-space-s);" id="label-Hashtag">Hashtag</label>
   <label style="flex-grow: 1; align-self: center;" id="label-NumTweets">Num Tweets</label>
   <label style="flex-grow: 1; align-self: center;" id="label-Creador">Creador</label>

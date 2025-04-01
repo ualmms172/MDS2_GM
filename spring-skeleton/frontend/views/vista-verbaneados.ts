@@ -17,7 +17,7 @@ export class VistaVerbaneados extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; position:absolute;" id="verticalLayout-VentanaCompleta">
  <label style="align-self: center; margin: var(--lumo-space-xl);" id="label-UsuariosBaneados">Usuarios Baneados</label>
- <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 70%;" id="verticalLayout-Lista"></vaadin-vertical-layout>
+ <vaadin-vertical-layout style="flex-grow: 1; align-self: flex-start; align-items: flex-start; flex-direction: column;" id="verticalLayout-Lista"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

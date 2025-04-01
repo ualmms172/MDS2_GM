@@ -60,6 +60,9 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	public void ListaUsuariosFamosos() {
 		_listaUsuariosFamosos = new ListaUsuariosFamosos(this);
 		this.getHorizontalLayoutListaUsuariosFamosos().add(_listaUsuariosFamosos);
+		
+		ListaUsuariosFamosos_item item_tweets = new ListaUsuariosFamosos_item(_listaUsuariosFamosos);
+		_listaUsuariosFamosos.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 
 	public void VerListaCompletaUsuariosUsuarioNoRegistrado() {
@@ -81,5 +84,8 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	public void ListahashtagsfamososUsuarioNoRegistrado() {
 		_listahashtagsfamososUsuarioNoRegistrado = new ListahashtagsfamososUsuarioNoRegistrado(this);
 		this.getHorizontallayoutListaDeHashtagMasUsados().add(_listahashtagsfamososUsuarioNoRegistrado);
+		
+		ListahashtagsfamososUsuarioNoRegistrado_item item_tweets = new ListahashtagsfamososUsuarioNoRegistrado_item(_listahashtagsfamososUsuarioNoRegistrado);
+		_listahashtagsfamososUsuarioNoRegistrado.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 }
