@@ -49,18 +49,26 @@ public class UsuarioRegistrado extends Logueado {
 		}
 	
 	public void MostrartweetspropiosUsuarioRegistrado() {
+
 		_mostrartweetspropiosUsuarioRegistrado = new MostrartweetspropiosUsuarioRegistrado(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_mostrartweetspropiosUsuarioRegistrado);
+		MostrartweetspropiosUsuarioRegistrado_item item_tweets = new MostrartweetspropiosUsuarioRegistrado_item(_mostrartweetspropiosUsuarioRegistrado);
+		_mostrartweetspropiosUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
+		
 	}
 	
 	public void ListausuariosfamososUsuarioRegistrado() {
 		_listausuariosfamososUsuarioRegistrado = new ListausuariosfamososUsuarioRegistrado(this);
 		this.getHorizontalLayoutListaUsuariosMasFamosos2().add(_listausuariosfamososUsuarioRegistrado);
+		ListausuariosfamososUsuarioRegistrado_item item_tweets = new ListausuariosfamososUsuarioRegistrado_item(_listausuariosfamososUsuarioRegistrado);
+		_listausuariosfamososUsuarioRegistrado.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public void ListahashtagfamososUsuarioRegistrado() {
 		_listahashtagfamososUsuarioRegistrado = new ListahashtagfamososUsuarioRegistrado(this);
 		this.getHorizontalLayoutHashtagsMasUsados().add(_listahashtagfamososUsuarioRegistrado);
+		ListahashtagfamososUsuarioRegistrado_item item_tweets = new ListahashtagfamososUsuarioRegistrado_item(_listahashtagfamososUsuarioRegistrado);
+		_listahashtagfamososUsuarioRegistrado.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public void Notificaciones() {

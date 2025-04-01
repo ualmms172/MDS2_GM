@@ -22,5 +22,7 @@ public class Verbaneados extends VistaVerbaneados {
 	public void UsuariosBaneados() {
 		_usuariosBaneados = new UsuariosBaneados(this);
 		this.getVerticalLayoutLista().as(VerticalLayout.class).add(_usuariosBaneados);
+		UsuariosBaneados_item item_tweets = new UsuariosBaneados_item(_usuariosBaneados);
+		_usuariosBaneados.getVerticalListausuariosbaneados().as(VerticalLayout.class).add(item_tweets);
 	}
 }

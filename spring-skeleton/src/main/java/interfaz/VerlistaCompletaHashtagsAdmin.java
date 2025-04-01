@@ -20,5 +20,8 @@ public class VerlistaCompletaHashtagsAdmin extends VistaVerlistacompletahashtags
 	public void ListaHashtagsAdministrador() {
 		_listaHashtagsAdministrador = new ListaHashtagsAdministrador(this);
 		this.getVerticalLayoutListaHashtags().as(VerticalLayout.class).add(_listaHashtagsAdministrador);
+		
+		ListaHashtagsAdministrador_item item_tweets = new ListaHashtagsAdministrador_item(_listaHashtagsAdministrador);
+		_listaHashtagsAdministrador.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 }

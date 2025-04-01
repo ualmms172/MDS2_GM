@@ -80,5 +80,8 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	public void ListaTweetsAdmin() {
 		_listaTweetsAdmin = new ListaTweetsAdmin(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_listaTweetsAdmin);
+		
+		ListaTweetsAdmin_item item_tweets = new ListaTweetsAdmin_item(_listaTweetsAdmin);
+		_listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 }

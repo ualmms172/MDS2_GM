@@ -30,6 +30,9 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	public void ComentariosUsuarioRegistrado() {
 		_comentariosUsuarioRegistrado = new ComentariosUsuarioRegistrado(this);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_comentariosUsuarioRegistrado);
+		
+		ComentariosUsuarioRegistrado_item item_tweets = new ComentariosUsuarioRegistrado_item(_comentariosUsuarioRegistrado);
+		_comentariosUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 
 	public void Comentar() {

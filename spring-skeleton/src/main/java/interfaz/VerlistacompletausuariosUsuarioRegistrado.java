@@ -22,5 +22,8 @@ public class VerlistacompletausuariosUsuarioRegistrado extends VistaVerlistacomp
 	public void ListausuariosUsuarioRegistrado() {
 		_listausuariosUsuarioRegistrado = new ListausuariosUsuarioRegistrado(this);
 		this.getVerticalLayoutListaUsuarios().as(VerticalLayout.class).add(_listausuariosUsuarioRegistrado);
+		
+		ListausuariosUsuarioRegistrado_item item_tweets = new ListausuariosUsuarioRegistrado_item(_listausuariosUsuarioRegistrado);
+		_listausuariosUsuarioRegistrado.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 }

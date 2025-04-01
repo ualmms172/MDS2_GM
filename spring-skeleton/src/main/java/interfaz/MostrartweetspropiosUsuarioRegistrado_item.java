@@ -1,7 +1,7 @@
 package interfaz;
 
 public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGeneral_item {
-	MostrartweetspropiosUsuarioRegistrado_item(ListaContenido lista) {
+	public MostrartweetspropiosUsuarioRegistrado_item(ListaContenido lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
 		this.getButtonBorrar().setVisible(false);

@@ -44,6 +44,7 @@ import interfaz.ListaUsuariosFamosos;
 import interfaz.ListaUsuariosFamososAdministrador;
 import interfaz.ListaUsuariosFamososAdministrador_item;
 import interfaz.ListaUsuariosFamosos_item;
+import interfaz.ListaUsuariosGeneralUsuarioRegistrado_item;
 import interfaz.ListaUsuariosUsuarionoRegistrado;
 import interfaz.ListaUsuariosUsuarionoRegistrado_item;
 import interfaz.ListahashtagfamososUsuarioRegistrado;
@@ -53,23 +54,35 @@ import interfaz.ListahashtagsfamososUsuarioNoRegistrado_item;
 import interfaz.ListahashtagsgeneralUsuarioNoRegistrado_item;
 import interfaz.ListahashtagsgeneralUsuarioRegistrado_item;
 import interfaz.Listatweets;
+import interfaz.Listatweets_item;
 import interfaz.ListausuariosUsuarioRegistrado;
 import interfaz.ListausuariosUsuarioRegistrado_item;
 import interfaz.ListausuariosfamososUsuarioRegistrado;
 import interfaz.ListausuariosfamososUsuarioRegistrado_item;
 import interfaz.Logueado;
+import interfaz.MostrartweetspropiosUsuarioRegistrado_item;
 import interfaz.UsuarioNoRegistrado;
 import interfaz.UsuarioRegistrado;
 import interfaz.VerHashtagAdministrador;
+import interfaz.VerHashtagUsuarioNoRegistrado;
+import interfaz.VerHashtagUsuarioRegistrado;
+import interfaz.VerListaCompletaUsuariosAdministrador;
+import interfaz.VerListaCompletaUsuariosUsuarioNoRegistrado;
 import interfaz.VerPerfilAdministrador;
 import interfaz.VerTweetAdministrador;
+import interfaz.Verbaneados;
+import interfaz.VerlistaCompletaHashtagsAdmin;
+import interfaz.VerlistacompletahashtagUsuarioRegistrado;
 import interfaz.Verlistacompletahashtags;
+import interfaz.VerlistacompletausuariosUsuarioRegistrado;
 import interfaz.VerperfilUsuarioNoRegistrado;
 import interfaz.Verperfilbloqueado;
+import interfaz.VerperfilgeneralUsuarioRegistrado;
 import interfaz.Verperfilnobloqueado;
 import interfaz.Verperfilpropio;
 import interfaz.VertweetUsuarioNoRegistrado;
 import interfaz.Vertweetajeno;
+import interfaz.VertweetgeneralUsuarioRegistrado;
 import interfaz.Vertweetpropio;
 
 /**
@@ -104,8 +117,13 @@ public class MainView extends VerticalLayout {
 
     public MainView(@Autowired GreetService service) {
 
-     IniciarSesin iniciarSesion = new IniciarSesin(usu); 
-     add(usu); 
+     //IniciarSesin iniciarSesion = new IniciarSesin(usu); 
+     //add(usu);
+    	Listatweets_item aux = new Listatweets_item(null);
+    	VertweetUsuarioNoRegistrado u = new VertweetUsuarioNoRegistrado(aux);
+    add(u);
+    	
+     
    
     }
 

@@ -43,5 +43,8 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	public void MostrartweetsUsuarioRegistrado() {
 		_mostrartweetsUsuarioRegistrado = new MostrartweetsUsuarioRegistrado(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_mostrartweetsUsuarioRegistrado);
+		
+		MostrartweetsUsuarioRegistrado_item item_tweets = new MostrartweetsUsuarioRegistrado_item(_mostrartweetsUsuarioRegistrado);
+		_mostrartweetsUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 }

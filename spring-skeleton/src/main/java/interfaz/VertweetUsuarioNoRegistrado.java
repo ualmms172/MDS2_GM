@@ -35,6 +35,9 @@ public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 	public void ListaComentariosUsuarioNoRegistrado() {
 		_listaComentariosUsuarioNoRegistrado = new ListaComentariosUsuarioNoRegistrado(this);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_listaComentariosUsuarioNoRegistrado);
+		
+		ListaComentariosUsuarioNoRegistrado_item item_tweets = new ListaComentariosUsuarioNoRegistrado_item(_listaComentariosUsuarioNoRegistrado);
+		_listaComentariosUsuarioNoRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 
 	public void VerperfilUsuarioNoRegistrado() {
