@@ -124,9 +124,10 @@ public class MainView extends VerticalLayout {
     	
     	//Listatweets_item aux = new Listatweets_item(null);
     	
-    	Verbaneados u = new Verbaneados(null);
-    add(u);
-    	
+    	//Verbaneados u = new Verbaneados(null);
+        //add(u);
+
+    	add(usu); 
      
    
     }

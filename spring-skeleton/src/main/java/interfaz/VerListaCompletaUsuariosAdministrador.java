@@ -17,8 +17,6 @@ public class VerListaCompletaUsuariosAdministrador extends VistaVerlistacompleta
 	}
 	
 	
-	
-	
 	public void ListaUsuariosAdministrador() {
 		_listaUsuariosAdministrador = new ListaUsuariosAdministrador(this);
 		this.getVerticalLayoutListaUsuarios().as(VerticalLayout.class).add(_listaUsuariosAdministrador);

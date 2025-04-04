@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import interfaz.ListaUsuariosAdministrador_item;
 import interfaz.VerPerfilAdministrador;
 import vistas.VistaBanearusuario;
@@ -20,7 +22,29 @@ public class BanearUsuario extends VistaBanearusuario{
 	
 	public BanearUsuario(ListaUsuariosAdministrador_item listaUsuariosAdministrador) {
 		
-		_listaUsuariosAdministrador = listaUsuariosAdministrador; 
+		_listaUsuariosAdministrador = listaUsuariosAdministrador;
+		
+		this.getButtonAtras().addClickListener(event -> {
+			
+			ListaUsuariosAdministrador lu = (ListaUsuariosAdministrador) _listaUsuariosAdministrador._listaUsuariosGeneral;
+			
+			VerListaCompletaUsuariosAdministrador vista= new VerListaCompletaUsuariosAdministrador(lu._verListaCompletaUsuariosAdministrador._administrador); 
+			
+			
+			lu._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll(); 
+			
+			
+	        lu._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(vista);
+			
+			
+				
+		});
+		
+		
+		
+		
+		
+		
 	}
 	
 	//public BanearUsuario(VerPerfilAdministrador verPerfilAdministrador) {

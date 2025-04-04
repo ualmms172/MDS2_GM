@@ -17,6 +17,7 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		this.getButtonRetweet().setVisible(false);
 		
 		ListaComentariosAdministrador();
+		this.getImgFotoPerfilTweet().addClickListener(event -> VerPerfilAdministrador()); 
 	}
 	
 	public VerTweetAdministrador(VerPerfilAdministrador verPerfilAdministrador) {
@@ -30,8 +31,6 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	}
 	
 	
-	
-
 	public void BorrarTweet() {
 		throw new UnsupportedOperationException();
 	}
@@ -45,6 +44,49 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	}
 
 	public void VerPerfilAdministrador() {
-		throw new UnsupportedOperationException();
+		
+		VerPerfilAdministrador perfil = new VerPerfilAdministrador(this); 
+		
+		if(_listaTweetsAdmin != null) {
+			
+			
+			
+			if(_listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador != null) {
+				
+				_listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+				_listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil);
+
+				
+				
+			}
+			
+			else if(_listaTweetsAdmin._listaTweetsAdmin._administrador != null) {
+				
+				
+				_listaTweetsAdmin._listaTweetsAdmin._administrador.MainView.removeAll();
+				_listaTweetsAdmin._listaTweetsAdmin._administrador.MainView.add(perfil);
+		
+			}
+			
+			
+			else {
+				
+				_listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+				_listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil);
+			
+			}
+		
+		
+	   }
+		
+		else {
+			
+			_verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+			_verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil);
+
+		}
+		
 	}
 }
+	
+	

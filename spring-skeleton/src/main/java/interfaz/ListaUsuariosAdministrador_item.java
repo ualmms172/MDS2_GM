@@ -1,9 +1,13 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class ListaUsuariosAdministrador_item extends ListaUsuariosGeneralAdministrador_item {
-	public ListaUsuariosAdministrador_item(ListaUsuariosGeneral lista) {
+	public ListaUsuariosAdministrador_item(ListaUsuariosAdministrador lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		
+		this.getButtonBanear().addClickListener(event -> BanearUsuario()); 
 	    
 	}
 
@@ -15,6 +19,13 @@ public class ListaUsuariosAdministrador_item extends ListaUsuariosGeneralAdminis
 	public BanearUsuario _banearUsuario;
 
 	public void BanearUsuario() {
-		throw new UnsupportedOperationException();
+		
+		ListaUsuariosAdministrador l = (ListaUsuariosAdministrador) this._listaUsuariosGeneral;   
+
+        l._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+        _banearUsuario = new BanearUsuario(this); 
+        l._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_banearUsuario);
+		
+	
 	}
 }
