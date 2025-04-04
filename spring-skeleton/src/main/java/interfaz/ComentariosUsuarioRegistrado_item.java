@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 	public ComentariosUsuarioRegistrado_item(ListaContenido lista) {
 		super(lista);
@@ -12,12 +14,28 @@ public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 	//private Button _meGusta;
 	public ComentariosUsuarioRegistrado _comentariosUsuarioRegistrado;
 	public VerperfilgeneralUsuarioRegistrado _verperfilUsuarioRegistrado;
+	public boolean dado=false;
 
 	public void Darlikeacomentario() {
-		throw new UnsupportedOperationException();
+		
+		if(!dado) {
+		this.getButtonMeGusta().getStyle().set("color", "red");
+		this.getButtonMeGusta().setText("Quitar");
+		Comentariospropios la = (Comentariospropios) _lista;
+		la._item.add(this);
+		}
+		
+		else {
+			this.getButtonMeGusta().getStyle().set("color", "gray");
+			this.getButtonMeGusta().setText("Dar me gusta");
+			Comentariospropios la = (Comentariospropios) _lista;
+			la._item.add(this);
+			}
 	}
 
 	public void VerperfilUsuarioRegistrado() {
-		throw new UnsupportedOperationException();
+		_verperfilUsuarioRegistrado = new Verperfilnobloqueado(this._comentariosUsuarioRegistrado._vertweetgeneralUsuarioRegistrado);
+		this._comentariosUsuarioRegistrado._vertweetgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+		this._comentariosUsuarioRegistrado._vertweetgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verperfilUsuarioRegistrado);
 	}
 }

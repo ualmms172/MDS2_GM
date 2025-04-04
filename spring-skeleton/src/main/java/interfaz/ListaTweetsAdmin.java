@@ -3,6 +3,7 @@ package interfaz;
 import java.util.Vector;
 
 public class ListaTweetsAdmin extends ListaTweetsGeneral {
+	
 	public Administrador _administrador;
 	public VerPerfilAdministrador _verPerfilAdministrador;
 	public VerHashtagAdministrador _verHashtagAdministrador;

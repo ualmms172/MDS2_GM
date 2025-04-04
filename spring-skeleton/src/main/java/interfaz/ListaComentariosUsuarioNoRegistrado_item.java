@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class ListaComentariosUsuarioNoRegistrado_item extends ListaComentariosGeneral_item {
 	
 	
@@ -14,6 +16,8 @@ public class ListaComentariosUsuarioNoRegistrado_item extends ListaComentariosGe
 	public VerperfilUsuarioNoRegistrado _verperfilUsuarioNoRegistrado;
 
 	public void VerperfilUsuarioNoRegistrado() {
-		throw new UnsupportedOperationException();
+		_verperfilUsuarioNoRegistrado = new VerperfilUsuarioNoRegistrado(this);
+		this._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+		this._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verperfilUsuarioNoRegistrado);
 	}
 }

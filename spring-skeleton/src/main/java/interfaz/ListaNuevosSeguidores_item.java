@@ -17,10 +17,17 @@ public class ListaNuevosSeguidores_item extends VistaListanuevosseguidores_item 
 	
 
 	public void SeguirUsuario() {
-		throw new UnsupportedOperationException();
+			this.getButtonSeguir_NoSeguir().getStyle().set("color", "red");
+			this.getButtonSeguir_NoSeguir().setText("Dejar de seguir");
+			ListaNuevosSeguidores la =  _listaNuevosSeguidores;
+			la._item.add(this);
+			
 	}
 
 	public void Dejardeseguirausuario() {
-		throw new UnsupportedOperationException();
+		this.getButtonSeguir_NoSeguir().getStyle().set("color", "gray");
+		this.getButtonSeguir_NoSeguir().setText("Seguir");
+		ListaNuevosSeguidores la =  _listaNuevosSeguidores;
+		la._item.add(this);
 	}
 }

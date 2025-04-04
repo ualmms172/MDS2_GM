@@ -60,6 +60,31 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 	}
 
 	public void VerPerfilAdministrador() {
-		throw new UnsupportedOperationException();
+		_verPerfilAdministrador = new VerPerfilAdministrador(this);
+		
+		if(_listaTweetsAdmin._verHashtagAdministrador != null) {
+			
+			_listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+			_listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verPerfilAdministrador);
+
+			
+			
+		}
+		
+		else if(_listaTweetsAdmin._administrador != null) {
+			
+			
+			_listaTweetsAdmin._administrador.MainView.removeAll();
+			_listaTweetsAdmin._administrador.MainView.add(_verPerfilAdministrador);
+	
+		}
+		
+		
+		else {
+			
+			_listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+			_listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verPerfilAdministrador);
+		
+		}
 	}
 }

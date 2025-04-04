@@ -27,7 +27,9 @@ public class Hacertweet extends CrearContenido {
 	
 	
 	public void Publicartweet() {
-		throw new UnsupportedOperationException();
+		UsuarioRegistrado user = new UsuarioRegistrado(this._usuarioregistrado.MainView);
+		this._usuarioregistrado.MainView.removeAll();
+		this._usuarioregistrado.MainView.add(user);
 	}
 
 	public void Mencionar() {

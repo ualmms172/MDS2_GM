@@ -3,13 +3,15 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
+	
 	public MostrartweetsUsuarioRegistrado _mostrartweetsUsuarioRegistrado;
+	public MostrartweetsUsuarioRegistrado_item _mostrartweetsUsuarioRegistrado_item;
 	public ListaUsuariosGeneralUsuarioRegistrado_item _listaUsuariosGeneralUsuarioRegistrado;
 	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
 	
-	public VerperfilgeneralUsuarioRegistrado(MostrartweetsUsuarioRegistrado mostrartweetsUsuarioRegistrado) {
+	public VerperfilgeneralUsuarioRegistrado(MostrartweetsUsuarioRegistrado_item mostrartweetsUsuarioRegistrado) {
 		
-		_mostrartweetsUsuarioRegistrado = mostrartweetsUsuarioRegistrado; 
+		_mostrartweetsUsuarioRegistrado_item = mostrartweetsUsuarioRegistrado; 
 		this.getButtonBanear().setVisible(false);
 		
 		MostrartweetsUsuarioRegistrado();

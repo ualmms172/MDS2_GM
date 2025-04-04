@@ -16,7 +16,7 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 	
 	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
 	
-	public Verperfilbloqueado(MostrartweetsUsuarioRegistrado mostrartweetsUsuarioRegistrado) {
+	public Verperfilbloqueado(MostrartweetsUsuarioRegistrado_item mostrartweetsUsuarioRegistrado) {
 		super(mostrartweetsUsuarioRegistrado);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);

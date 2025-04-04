@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class Listatweets_item extends ListaTweetsGeneral_item {
 	public Listatweets_item(ListaContenido lista) {
 		super(lista);
@@ -7,6 +9,7 @@ public class Listatweets_item extends ListaTweetsGeneral_item {
 		this.getButtonBorrar().setVisible(false);
 		this.getButtonMeGusta().setVisible(false);
 		this.getButtonRetweet().setVisible(false);
+		_listatweets = (Listatweets) _lista;
 	}
 
 	public Listatweets _listatweets;
@@ -14,10 +17,26 @@ public class Listatweets_item extends ListaTweetsGeneral_item {
 	public VerperfilUsuarioNoRegistrado _verperfilUsuarioNoRegistrado;
 
 	public void VertweetUsuarioNoRegistrado() {
-		throw new UnsupportedOperationException();
+		_vertweetUsuarioNoRegistrado = new VertweetUsuarioNoRegistrado(this);
+		if(this._listatweets._verHashtagUsuarioNoRegistrado!=null) {
+			this._listatweets._verHashtagUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+			this._listatweets._verHashtagUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_vertweetUsuarioNoRegistrado);
+		}
+		else {
+			this._listatweets._verperfilUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+			this._listatweets._verperfilUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_vertweetUsuarioNoRegistrado);
+		}
 	}
 
 	public void VerperfilUsuarioNoRegistrado() {
-		throw new UnsupportedOperationException();
+		_verperfilUsuarioNoRegistrado = new VerperfilUsuarioNoRegistrado(this);
+		if(this._listatweets._verHashtagUsuarioNoRegistrado!=null) {
+			this._listatweets._verHashtagUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+			this._listatweets._verHashtagUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verperfilUsuarioNoRegistrado);
+		}
+		else {
+			this._listatweets._verperfilUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+			this._listatweets._verperfilUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verperfilUsuarioNoRegistrado);
+		}
 	}
 }
