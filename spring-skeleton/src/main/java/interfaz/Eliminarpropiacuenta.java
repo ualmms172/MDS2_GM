@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaEliminarpropiacuenta;
 
 public class Eliminarpropiacuenta extends VistaEliminarpropiacuenta  {
@@ -14,6 +16,22 @@ public class Eliminarpropiacuenta extends VistaEliminarpropiacuenta  {
 	public Eliminarpropiacuenta(Verperfilpropio verperfilpropio) {
 		
 		_verperfilpropio = verperfilpropio; 
+		
+		
+		this.getButtonAtras().addClickListener(event -> {
+			
+		
+        UsuarioRegistrado usuario = _verperfilpropio._usuarioregistrado; 
+			
+			
+	    Verperfilpropio perfil = new Verperfilpropio(usuario); 		
+			
+		this._verperfilpropio.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll(); 	
+		this._verperfilpropio.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil); 	
+			
+			
+			
+		}); 
 	}
 	
 	

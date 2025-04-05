@@ -26,11 +26,23 @@ public class Modificardatoscuenta extends VistaModificardatoscuenta {
 		_verperfilpropio = verperfilpropio; 
 		
 		this.getButtonModificar().addClickListener(event -> Modificar()); 
+		
+		this.getButtonAtras().addClickListener(event -> {
+			
+			
+			Verperfilpropio perfil = new Verperfilpropio(_verperfilpropio._usuarioregistrado); 
+			
+			this._verperfilpropio.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll(); 
+			this._verperfilpropio.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil); 
+			
+			
+		}); 
+		
 	}
 	
 	
 	public void Modificar() {
-		
+			
 		
 		if(_verperfilpropio._usuarioregistrado!=null) {
 			Verperfilpropio perfil = new Verperfilpropio(_verperfilpropio._usuarioregistrado);

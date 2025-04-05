@@ -20,6 +20,12 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
+		
+		
+		this.getButtonEliminarCuenta().addClickListener(event -> Eliminarpropiacuenta()); 
+		this.getButtonModidicarDatos().addClickListener(event -> Modificardatoscuenta()); 
+
+		
 	}
 	
 	
@@ -31,6 +37,13 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
+		
+		
+
+		this.getButtonEliminarCuenta().addClickListener(event -> Eliminarpropiacuenta()); 
+		this.getButtonModidicarDatos().addClickListener(event -> Modificardatoscuenta()); 
+
+		
 	}
 	
 	public Verperfilpropio(ListaUsuariosGeneralUsuarioRegistrado_item listaUsuariosGeneralUsuarioRegistrado) {
@@ -40,6 +53,13 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
+		
+
+		this.getButtonEliminarCuenta().addClickListener(event -> Eliminarpropiacuenta()); 
+		this.getButtonModidicarDatos().addClickListener(event -> Modificardatoscuenta()); 
+
+		
+		
 	}
 	
 	public Verperfilpropio(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado) {
@@ -49,16 +69,40 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		// TODO Auto-generated constructor stub
+		
+
+		this.getButtonEliminarCuenta().addClickListener(event -> Eliminarpropiacuenta()); 
+		this.getButtonModidicarDatos().addClickListener(event -> Modificardatoscuenta()); 
+
+		
+		
+		
+		
+		
 	}
 
 
 	
 	public void Eliminarpropiacuenta() {
-		throw new UnsupportedOperationException();
+		
+		_eliminarpropiacuenta  = new Eliminarpropiacuenta(this); 
+		this.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+		this.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_eliminarpropiacuenta);
+
+
 	}
 
 	public void Modificardatoscuenta() {
-		throw new UnsupportedOperationException();
+
+		_modificardatoscuenta = new Modificardatoscuenta(this); 
+		this.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+		this.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_modificardatoscuenta);
+
+	
+	
+	
+	
+	
 	}
 	
 	
