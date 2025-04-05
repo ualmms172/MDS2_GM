@@ -7,6 +7,9 @@ public class ListaComentariosAdministrador_item extends ListaComentariosGeneral_
 		super(lista);
 		// TODO Auto-generated constructor stub
 		this.getButtonMeGusta().setVisible(false);
+		
+		this.getButtonBorrar().addClickListener(Event -> BorrarComentario());
+		this.getImgFotoPerfilTweet().addClickListener(Event -> VerPerfilAdministrador());
 	}
 
 	//private event _borrarComentario;

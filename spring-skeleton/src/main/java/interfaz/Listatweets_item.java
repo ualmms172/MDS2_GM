@@ -10,6 +10,9 @@ public class Listatweets_item extends ListaTweetsGeneral_item {
 		this.getButtonMeGusta().setVisible(false);
 		this.getButtonRetweet().setVisible(false);
 		_listatweets = (Listatweets) _lista;
+		
+		this.getVaadinHorizontalLayout().addClickListener(event -> VertweetUsuarioNoRegistrado()); 
+		this.getImgFotoPerfilTweet().addClickListener(event -> VerperfilUsuarioNoRegistrado()); 
 	}
 
 	public Listatweets _listatweets;

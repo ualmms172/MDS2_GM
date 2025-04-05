@@ -24,6 +24,8 @@ public class Modificardatoscuenta extends VistaModificardatoscuenta {
 	public Modificardatoscuenta(Verperfilpropio verperfilpropio) {
 		
 		_verperfilpropio = verperfilpropio; 
+		
+		this.getButtonModificar().addClickListener(event -> Modificar()); 
 	}
 	
 	

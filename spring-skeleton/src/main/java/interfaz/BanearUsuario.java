@@ -47,10 +47,26 @@ public class BanearUsuario extends VistaBanearusuario{
 		
 	}
 	
-	//public BanearUsuario(VerPerfilAdministrador verPerfilAdministrador) {
+	public BanearUsuario(VerPerfilAdministrador verPerfilAdministrador) {
 		
-		//_verPerfilAdministrador = verPerfilAdministrador; 
-	//}
+		_verPerfilAdministrador = verPerfilAdministrador; 
+		
+		this.getButtonAtras().addClickListener(event -> {
+			
+			ListaUsuariosAdministrador lu = (ListaUsuariosAdministrador) _listaUsuariosAdministrador._listaUsuariosGeneral;
+			
+			VerListaCompletaUsuariosAdministrador vista= new VerListaCompletaUsuariosAdministrador(lu._verListaCompletaUsuariosAdministrador._administrador); 
+			
+			
+			lu._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll(); 
+			
+			
+	        lu._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(vista);
+	
+	});
+		
+	
+	}
 	
 	
 	

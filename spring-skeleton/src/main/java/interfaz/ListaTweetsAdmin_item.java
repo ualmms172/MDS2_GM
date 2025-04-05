@@ -12,6 +12,8 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 		this.getButtonRetweet().setVisible(false);
 		
 		this.getVaadinHorizontalLayout().addClickListener(event -> VerTweetAdministrador()); 
+		this.getImgFotoPerfilTweet().addClickListener(event -> VerPerfilAdministrador()); 
+		this.getButtonBorrar().addClickListener(event -> BorrarTweet()); 
 	}
 
 	//private event _borrarTweet;

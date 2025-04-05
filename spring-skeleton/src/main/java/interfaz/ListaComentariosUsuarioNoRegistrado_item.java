@@ -10,6 +10,8 @@ public class ListaComentariosUsuarioNoRegistrado_item extends ListaComentariosGe
 		// TODO Auto-generated constructor stub
 		this.getButtonMeGusta().setVisible(false);
 		this.getButtonBorrar().setVisible(false);
+		
+		this.getImgFotoPerfilTweet().addClickListener(Event -> VerperfilUsuarioNoRegistrado());
 	}
 
 	public ListaComentariosUsuarioNoRegistrado _listaComentariosUsuarioNoRegistrado;

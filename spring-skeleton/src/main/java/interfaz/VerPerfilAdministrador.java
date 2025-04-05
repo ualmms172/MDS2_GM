@@ -20,6 +20,8 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		
+		this.getButtonBanear().addClickListener(event -> BanearUsuario()); 
+		
 		ListaTweetsAdmin();
 	}
 	
@@ -34,6 +36,8 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		
+		this.getButtonBanear().addClickListener(event -> BanearUsuario()); 
+		
 		ListaTweetsAdmin();
 	}
 	
@@ -46,6 +50,8 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
+		
+		this.getButtonBanear().addClickListener(event -> BanearUsuario()); 
 		
 		ListaTweetsAdmin();
 	}
@@ -61,6 +67,8 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		
+		this.getButtonBanear().addClickListener(event -> BanearUsuario()); 
+		
 		ListaTweetsAdmin();
 	}
 	
@@ -74,7 +82,9 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	
 
 	public void BanearUsuario() {
-		throw new UnsupportedOperationException();
+		_banearUsuario = new BanearUsuario(this);
+		this.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+		this.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_banearUsuario);
 	}
 
 	public void ListaTweetsAdmin() {

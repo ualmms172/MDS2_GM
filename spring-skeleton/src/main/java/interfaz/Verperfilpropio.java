@@ -13,7 +13,7 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	
 	
 	
-	public Verperfilpropio(MostrartweetsUsuarioRegistrado_item mostrartweetsUsuarioRegistrado) {
+	public Verperfilpropio(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado) {
 		super(mostrartweetsUsuarioRegistrado);
 		// TODO Auto-generated constructor stub
 		this.getButtonBloquear().setVisible(false);

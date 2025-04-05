@@ -11,6 +11,7 @@ public class Comentar extends CrearContenido {
 		
 		_vertweetgeneralUsuarioRegistrado = vertweetgeneralUsuarioRegistrado; 
 		
+		this.getButtonPublicar().addClickListener(Event -> Publicarcomentario());
 		
 	}
 	

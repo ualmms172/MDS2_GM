@@ -10,7 +10,7 @@ public class Hacertweet extends CrearContenido {
 	public Hacertweet(UsuarioRegistrado usuarioregistrado) {
 		
 		_usuarioregistrado = usuarioregistrado;
-		
+		this.getButtonPublicar().addClickListener(Event -> Publicartweet());
 		this.getButtonAtras().addClickListener(event -> {
 			
 			this._usuarioregistrado.MainView.removeAll(); 

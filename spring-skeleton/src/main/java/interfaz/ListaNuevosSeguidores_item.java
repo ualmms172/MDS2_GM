@@ -8,10 +8,18 @@ public class ListaNuevosSeguidores_item extends VistaListanuevosseguidores_item 
 	//private Label _informacion;
 	//private Button _seguir;
 	public ListaNuevosSeguidores _listaNuevosSeguidores;
+	private boolean dado =false;
 	
 	public ListaNuevosSeguidores_item (ListaNuevosSeguidores lista) {
 		
 		_listaNuevosSeguidores = lista; 
+		
+		this.getButtonSeguir_NoSeguir().addClickListener(Event -> {
+			if(dado)
+				SeguirUsuario();
+			else
+				Dejardeseguirausuario();
+		});
 	}
 	
 	

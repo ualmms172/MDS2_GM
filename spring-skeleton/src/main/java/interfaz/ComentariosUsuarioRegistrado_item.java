@@ -8,6 +8,9 @@ public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 		// TODO Auto-generated constructor stub
 		this.getButtonBorrar().setVisible(false);
 		this.getButtonMeGusta().setVisible(true);
+		
+		this.getButtonMeGusta().addClickListener(Event -> Darlikeacomentario());
+		this.getImgFotoPerfilTweet().addClickListener(Event -> Darlikeacomentario());
 	}
 
 	//private event _darlikeacomentario;

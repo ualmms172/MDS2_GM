@@ -5,11 +5,11 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	
 	public MostrartweetsUsuarioRegistrado _mostrartweetsUsuarioRegistrado;
-	public MostrartweetsUsuarioRegistrado_item _mostrartweetsUsuarioRegistrado_item;
+	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetsUsuarioRegistrado_item;
 	public ListaUsuariosGeneralUsuarioRegistrado_item _listaUsuariosGeneralUsuarioRegistrado;
 	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
 	
-	public VerperfilgeneralUsuarioRegistrado(MostrartweetsUsuarioRegistrado_item mostrartweetsUsuarioRegistrado) {
+	public VerperfilgeneralUsuarioRegistrado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado) {
 		
 		_mostrartweetsUsuarioRegistrado_item = mostrartweetsUsuarioRegistrado; 
 		this.getButtonBanear().setVisible(false);
