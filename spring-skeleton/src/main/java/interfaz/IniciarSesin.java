@@ -49,8 +49,8 @@ public class IniciarSesin extends VistaIniciarsesin {
 	public void Autentificarse() {
 		
 		this._usuarioNoRegistrado.MainView.removeAll();
-		UsuarioRegistrado usuario = new UsuarioRegistrado(this._usuarioNoRegistrado.MainView); 
-		this._usuarioNoRegistrado.MainView.add(usuario);
+		Administrador ad = new Administrador(this._usuarioNoRegistrado.MainView); 
+		this._usuarioNoRegistrado.MainView.add(ad);
 		
 		
 		

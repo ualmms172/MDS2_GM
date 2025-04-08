@@ -2,6 +2,7 @@ package gallardoMartinez;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -104,6 +105,8 @@ import interfaz.Vertweetpropio;
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 public class MainView extends VerticalLayout {
 
+
+    UsuarioNoRegistrado usu = new UsuarioNoRegistrado(this); 
     /**
      * Construct  a new Vaadin view.
      * <p>
@@ -113,9 +116,15 @@ public class MainView extends VerticalLayout {
      *            The message service. Automatically injected Spring managed
      *            bean.
      */
+	public static class Pantalla{
+
+		   public static VerticalLayout MainView;
+
+		   public static Component Anterior;
+
+		    }
+		
 	
-	
-    UsuarioNoRegistrado usu = new UsuarioNoRegistrado(this); 
 
     public MainView(@Autowired GreetService service) {
 
@@ -129,6 +138,7 @@ public class MainView extends VerticalLayout {
 
     	add(usu); 
      
+    	Pantalla.MainView = this;
    
     }
 

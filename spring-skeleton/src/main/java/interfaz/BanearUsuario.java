@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Pantalla;
 import interfaz.ListaUsuariosAdministrador_item;
 import interfaz.VerPerfilAdministrador;
 import vistas.VistaBanearusuario;
@@ -40,6 +42,8 @@ public class BanearUsuario extends VistaBanearusuario{
 				
 		});
 		
+		this.getButtonTemporal().addClickListener(event -> BanearTemporalmente());
+		
 		
 		
 		
@@ -69,6 +73,8 @@ public class BanearUsuario extends VistaBanearusuario{
 	
 	});
 		
+		this.getButtonTemporal().addClickListener(event -> BanearTemporalmente());
+		
 	
 	}
 	
@@ -77,7 +83,11 @@ public class BanearUsuario extends VistaBanearusuario{
 	
 
 	public void BanearTemporalmente() {
-		throw new UnsupportedOperationException();
+		Administrador ad = new Administrador((MainView)Pantalla.MainView);
+		Verbaneados vb = new Verbaneados(ad);
+		Pantalla.Anterior = ad;
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(vb);
 	}
 
 	public void BanearIndefinidamente() {

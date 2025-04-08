@@ -1,5 +1,7 @@
 package interfaz;
 
+import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Pantalla;
 import interfaz.Registrar;
 import vistas.VistaValidarcorreo;
 
@@ -16,11 +18,16 @@ public class ValidarCorreo extends VistaValidarcorreo{
 	public ValidarCorreo(Registrar registrar) {
 		
 		_registrar = registrar; 
+		this.getButtonValidar().addClickListener(event -> Registrarse()); 
 	}
 	
 	
 	public void Registrarse() {
-		throw new UnsupportedOperationException();
+		
+		UsuarioRegistrado vista = new UsuarioRegistrado((MainView)Pantalla.MainView);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(vista);
 	}
 	
 	

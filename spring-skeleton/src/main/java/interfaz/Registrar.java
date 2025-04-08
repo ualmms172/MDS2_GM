@@ -1,5 +1,6 @@
 package interfaz;
 
+import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaRegistrar;
 
 public class Registrar extends VistaRegistrar {
@@ -30,8 +31,12 @@ public class Registrar extends VistaRegistrar {
 			
 			this._usuarioNoRegistrado.MainView.removeAll(); 
 			this._usuarioNoRegistrado.MainView.add(this._usuarioNoRegistrado); 
+			
+			
 				
 		});
+		
+		this.getButtonContinuar().addClickListener(event -> ValidarCorreo()); 
 	}
 	
 	
@@ -40,6 +45,10 @@ public class Registrar extends VistaRegistrar {
 	}
 
 	public void ValidarCorreo() {
-		throw new UnsupportedOperationException();
+		
+		ValidarCorreo vista = new ValidarCorreo(this);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(vista);
 	}
 }
