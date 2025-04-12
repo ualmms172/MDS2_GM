@@ -23,9 +23,6 @@ public class Verlistacompletahashtags extends VistaVerlistacompletahashtags{
 	
 	
 	
-	
-	
-	
 	public void ListaHashtagsUsuarioNoRegistrado() {
 		_listaHashtagsUsuarioNoRegistrado = new ListaHashtagsUsuarioNoRegistrado(this);
 		this.getVerticalLayoutListaHashtags().as(VerticalLayout.class).add(_listaHashtagsUsuarioNoRegistrado);

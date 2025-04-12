@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaUsuariosbaneados_item;
 
 public class UsuariosBaneados_item extends VistaUsuariosbaneados_item {
@@ -18,6 +20,6 @@ public class UsuariosBaneados_item extends VistaUsuariosbaneados_item {
 	
 
 	public void Desbanearusuario() {
-		throw new UnsupportedOperationException();
+		this._usuariosBaneados.getVerticalListausuariosbaneados().as(VerticalLayout.class).remove(this);
 	}
 }

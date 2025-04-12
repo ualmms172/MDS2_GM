@@ -5,6 +5,7 @@ import java.util.Vector;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Pantalla;
 
 public class UsuarioRegistrado extends Logueado {
 	private int _id_user;
@@ -74,6 +75,7 @@ public class UsuarioRegistrado extends Logueado {
 	public void Notificaciones() {
 		
 		_Notificaciones = new Notificaciones(this); 
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		MainView.removeAll();
 		MainView.add(_Notificaciones);
 		
@@ -82,6 +84,7 @@ public class UsuarioRegistrado extends Logueado {
 	public void VerlistacompletahashtagUsuarioRegistrado() {
 		
 		_VerlistacompletahashtagUsuarioRegistrado = new VerlistacompletahashtagUsuarioRegistrado(this); 
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		MainView.removeAll();
 		MainView.add(_VerlistacompletahashtagUsuarioRegistrado);
 		
@@ -90,6 +93,7 @@ public class UsuarioRegistrado extends Logueado {
 	public void Hacertweet() {
 		
 		_Hacertweet = new Hacertweet(this); 
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		MainView.removeAll();
 		MainView.add(_Hacertweet);
 		
@@ -100,6 +104,7 @@ public class UsuarioRegistrado extends Logueado {
 		// TODO - implement Usuarioregistrado.VerlistacompletausuariosUsuarioRegistrado
 		
 		_VerlistacompletausuariosUsuarioRegistrado = new VerlistacompletausuariosUsuarioRegistrado(this); 
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		MainView.removeAll();
 		MainView.add(_VerlistacompletausuariosUsuarioRegistrado);
 		
@@ -108,6 +113,7 @@ public class UsuarioRegistrado extends Logueado {
 
 	public void Verperfilpropio() {
 		_Verperfilpropio = new Verperfilpropio(this); 
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		MainView.removeAll();
 		MainView.add(_Verperfilpropio);
 		

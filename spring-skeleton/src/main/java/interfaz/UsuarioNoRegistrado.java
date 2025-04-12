@@ -5,6 +5,7 @@ import vistas.VistaUsuarionoregistrado;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Pantalla;
 
 //import basededatos.iUsuarioNoRegistrado;
 
@@ -52,6 +53,7 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 
 	public void Verlistacompletahashtags() {
 		_verlistacompletahashtags = new Verlistacompletahashtags(this); 
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		MainView.removeAll();
 		MainView.add(_verlistacompletahashtags);
 		
@@ -68,6 +70,7 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	public void VerListaCompletaUsuariosUsuarioNoRegistrado() {
 
 		_verListaCompletaUsuariosUsuarioNoRegistrado = new VerListaCompletaUsuariosUsuarioNoRegistrado(this); 
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		MainView.removeAll();
 		MainView.add(_verListaCompletaUsuariosUsuarioNoRegistrado);
 	

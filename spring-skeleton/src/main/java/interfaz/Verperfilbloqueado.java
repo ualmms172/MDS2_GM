@@ -1,5 +1,7 @@
 package interfaz;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 	//private event _desbloquear;
 	//private event _bloquear;
@@ -54,10 +56,22 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 	//Hacer constructores: 
 
 	public void Desbloquear() {
-		throw new UnsupportedOperationException();
+		
+			this.getButtonBloquear().getStyle().set("color", "red");
+			this.getButtonBloquear().setText("Bloquear");
+			
+			Verperfilbloqueado x = new Verperfilbloqueado(_mostrartweetspropiosUsuarioRegistrado);
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(x);
 	}
 
 	public void Bloquear() {
-		throw new UnsupportedOperationException();
+		
+		this.getButtonBloquear().getStyle().set("color", "gray");
+		this.getButtonBloquear().setText("Desbloquear");
+		
+		Verperfilbloqueado x = new Verperfilbloqueado(_mostrartweetspropiosUsuarioRegistrado);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(x);
 	}
 }

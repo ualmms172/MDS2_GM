@@ -8,6 +8,7 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetsUsuarioRegistrado_item;
 	public ListaUsuariosGeneralUsuarioRegistrado_item _listaUsuariosGeneralUsuarioRegistrado;
 	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
+	public Comentariospropios_item _comentariosUsuarioRegistrado;
 	
 	public VerperfilgeneralUsuarioRegistrado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado) {
 		
@@ -35,6 +36,14 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 		MostrartweetsUsuarioRegistrado();
 	}
 	
+	public VerperfilgeneralUsuarioRegistrado(Comentariospropios_item comentariosUsuarioRegistrado ) {
+		
+		
+		_comentariosUsuarioRegistrado = comentariosUsuarioRegistrado; 
+		this.getButtonBanear().setVisible(false);
+		
+		MostrartweetsUsuarioRegistrado();
+	}
 	
 	public VerperfilgeneralUsuarioRegistrado() {
 		

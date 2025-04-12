@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 	public Listatweets_item _listatweets;
 	public ListaComentariosUsuarioNoRegistrado _listaComentariosUsuarioNoRegistrado;
@@ -41,6 +43,9 @@ public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 	}
 
 	public void VerperfilUsuarioNoRegistrado() {
-		throw new UnsupportedOperationException();
+		_verperfilUsuarioNoRegistrado = new VerperfilUsuarioNoRegistrado(this);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_verperfilUsuarioNoRegistrado);
 	}
 }

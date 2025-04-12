@@ -2,12 +2,16 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	//private Button _comentar;
 	//private Button _retweetear;
 	public ComentariosUsuarioRegistrado _comentariosUsuarioRegistrado;
 	public VerperfilgeneralUsuarioRegistrado _verperfilUsuarioRegistrado;
 	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
+	public Comentar _comentar;
+	public Retweetear _retweetear;
     
 	public VertweetgeneralUsuarioRegistrado (VerperfilgeneralUsuarioRegistrado verperfilUsuarioRegistrado ) {
 		
@@ -36,14 +40,24 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	}
 
 	public void Comentar() {
-		throw new UnsupportedOperationException();
+		
+		_comentar = new Comentar(this);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_comentar);
 	}
 
 	public void VerperfilUsuarioRegistrado() {
-		throw new UnsupportedOperationException();
+		_verperfilUsuarioRegistrado = new VerperfilgeneralUsuarioRegistrado(this);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_verperfilUsuarioRegistrado);
 	}
 
 	public void Retweetear() {
-		throw new UnsupportedOperationException();
+		_retweetear = new Retweetear(this);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_retweetear);
 	}
 }

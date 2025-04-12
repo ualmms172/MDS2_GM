@@ -17,9 +17,6 @@ public class VerListaCompletaUsuariosUsuarioNoRegistrado extends VistaVerlistaco
 	}
 	
 	
-	
-	
-	
 	public void ListaUsuariosUsuarionoRegistrado() {
 		_listaUsuariosUsuarionoRegistrado = new ListaUsuariosUsuarionoRegistrado(this);
 		this.getVerticalLayoutListaUsuarios().as(VerticalLayout.class).add(_listaUsuariosUsuarionoRegistrado);

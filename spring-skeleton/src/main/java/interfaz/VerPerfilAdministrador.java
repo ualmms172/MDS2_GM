@@ -2,6 +2,9 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Pantalla;
+
 public class VerPerfilAdministrador extends VerPerfilGeneral {
 	//private Button _banear;
 	public ListaUsuariosGeneralAdministrador_item _listaUsuariosGeneralAdministrador;
@@ -72,19 +75,12 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		ListaTweetsAdmin();
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	public void BanearUsuario() {
 		_banearUsuario = new BanearUsuario(this);
-		this.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-		this.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_banearUsuario);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_banearUsuario);
 	}
 
 	public void ListaTweetsAdmin() {
