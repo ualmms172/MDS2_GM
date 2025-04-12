@@ -1,5 +1,7 @@
 package interfaz;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsuarioRegistrado_item {
 	public ListausuariosUsuarioRegistrado_item(ListaUsuariosGeneral lista) {
 		super(lista);
@@ -16,10 +18,22 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 	public ListausuariosUsuarioRegistrado _listausuariosUsuarioRegistrado;
 
 	public void SeguirUsuario() {
-		throw new UnsupportedOperationException();
+		this.getButtonSeguir().getStyle().set("color", "red");
+		this.getButtonSeguir().setText("Dejar de seguir");
+
+		VerlistacompletausuariosUsuarioRegistrado l = new VerlistacompletausuariosUsuarioRegistrado(_listausuariosUsuarioRegistrado._verlistacompletausuariosUsuarioRegistrado._usuarioregistrado);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(l);
+		
+		
 	}
 
 	public void Dejardeseguirausuario() {
-		throw new UnsupportedOperationException();
+		this.getButtonSeguir().getStyle().set("color", "gray");
+		this.getButtonSeguir().setText("Seguir");
+		
+		VerlistacompletausuariosUsuarioRegistrado l = new VerlistacompletausuariosUsuarioRegistrado(_listausuariosUsuarioRegistrado._verlistacompletausuariosUsuarioRegistrado._usuarioregistrado);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(l);
 	}
 }

@@ -10,8 +10,22 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 	//private event _darlikeatweet;
 	//private Button _darMeGusta;
 	public MostrartweetsUsuarioRegistrado _mostrartweetsUsuarioRegistrado;
+	public Boolean dado;
 
 	public void Darlikeatweet() {
-		throw new UnsupportedOperationException();
+		
+		if(!dado) {
+			this.getButtonMeGusta().getStyle().set("color", "red");
+			this.getButtonMeGusta().setText("Quitar");
+			MostrartweetsUsuarioRegistrado la = (MostrartweetsUsuarioRegistrado) _lista;
+			la._item.add(this);
+			}
+			
+			else {
+				this.getButtonMeGusta().getStyle().set("color", "gray");
+				this.getButtonMeGusta().setText("Dar me gusta");
+				MostrartweetsUsuarioRegistrado la = (MostrartweetsUsuarioRegistrado) _lista;
+				la._item.add(this);
+				}
 	}
 }

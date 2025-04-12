@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class ListaUsuariosAdministrador_item extends ListaUsuariosGeneralAdministrador_item {
 	public ListaUsuariosAdministrador_item(ListaUsuariosAdministrador lista) {
 		super(lista);
@@ -20,11 +22,16 @@ public class ListaUsuariosAdministrador_item extends ListaUsuariosGeneralAdminis
 
 	public void BanearUsuario() {
 		
-		ListaUsuariosAdministrador l = (ListaUsuariosAdministrador) this._listaUsuariosGeneral;   
-
-        l._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-        _banearUsuario = new BanearUsuario(this); 
-        l._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_banearUsuario);
+		 _banearUsuario = new BanearUsuario(this); 
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_banearUsuario);
+		
+//		ListaUsuariosAdministrador l = (ListaUsuariosAdministrador) this._listaUsuariosGeneral;   
+//
+//        l._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+//        _banearUsuario = new BanearUsuario(this); 
+//        l._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_banearUsuario);
 		
 	
 	}

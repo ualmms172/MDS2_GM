@@ -1,5 +1,7 @@
 package interfaz;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class ListahashtagsUsuarioRegistrado_item extends ListahashtagsgeneralUsuarioRegistrado_item {
 	public ListahashtagsUsuarioRegistrado_item(ListaHashtagsGeneral lista) {
 		super(lista);
@@ -14,6 +16,9 @@ public class ListahashtagsUsuarioRegistrado_item extends ListahashtagsgeneralUsu
 	public Hacertweet _hacertweet;
 
 	public void Hacertweet() {
-		throw new UnsupportedOperationException();
+		_hacertweet = new Hacertweet(this);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_hacertweet);
 	}
 }

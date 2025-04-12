@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class ListaComentariosUsuarioNoRegistrado_item extends ListaComentariosGeneral_item {
 	
 	
@@ -19,7 +21,8 @@ public class ListaComentariosUsuarioNoRegistrado_item extends ListaComentariosGe
 
 	public void VerperfilUsuarioNoRegistrado() {
 		_verperfilUsuarioNoRegistrado = new VerperfilUsuarioNoRegistrado(this);
-		this._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-		this._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verperfilUsuarioNoRegistrado);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_verperfilUsuarioNoRegistrado);
 	}
 }

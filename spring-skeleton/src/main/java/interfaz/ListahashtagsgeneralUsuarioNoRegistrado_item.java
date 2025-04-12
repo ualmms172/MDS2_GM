@@ -1,5 +1,7 @@
 package interfaz;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class ListahashtagsgeneralUsuarioNoRegistrado_item extends ListaHashtagsGeneral_item {
 	public ListahashtagsgeneralUsuarioNoRegistrado_item(ListaHashtagsGeneral lista) {
 		super(lista);
@@ -11,6 +13,9 @@ public class ListahashtagsgeneralUsuarioNoRegistrado_item extends ListaHashtagsG
 	public VerHashtagUsuarioNoRegistrado _verHashtagUsuarioNoRegistrado;
 
 	public void VerHashtagUsuarioNoRegistrado() {
-		throw new UnsupportedOperationException();
+		_verHashtagUsuarioNoRegistrado = new VerHashtagUsuarioNoRegistrado(this);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_verHashtagUsuarioNoRegistrado);
 	}
 }

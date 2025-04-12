@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 	public ComentariosUsuarioRegistrado_item(ListaContenido lista) {
 		super(lista);
@@ -38,7 +40,8 @@ public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 
 	public void VerperfilUsuarioRegistrado() {
 		_verperfilUsuarioRegistrado = new Verperfilnobloqueado(this._comentariosUsuarioRegistrado._vertweetgeneralUsuarioRegistrado);
-		this._comentariosUsuarioRegistrado._vertweetgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-		this._comentariosUsuarioRegistrado._vertweetgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verperfilUsuarioRegistrado);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_verperfilUsuarioRegistrado);
 	}
 }

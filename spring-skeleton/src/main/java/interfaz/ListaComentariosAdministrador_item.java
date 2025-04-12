@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class ListaComentariosAdministrador_item extends ListaComentariosGeneral_item {
 	public ListaComentariosAdministrador_item(ListaContenido lista) {
 		super(lista);
@@ -19,28 +21,30 @@ public class ListaComentariosAdministrador_item extends ListaComentariosGeneral_
 
 	public void BorrarComentario() {
 		
-		VerTweetAdministrador tweet = new VerTweetAdministrador(this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin);
-		
-		if(this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador!=null) {
-			this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador.MainView.removeAll();
-			this._listaComentariosAdministrador._verTweetAdministrador = tweet;
-			this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador.MainView.add(tweet);
-		}
-		else if(this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
-			this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-			this._listaComentariosAdministrador._verTweetAdministrador = tweet;
-			this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(tweet);
-		}
-		else {
-			this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-			this._listaComentariosAdministrador._verTweetAdministrador = tweet;
-			this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(tweet);
-		}
+		this._listaComentariosAdministrador.getVerticalListacontenido().as(VerticalLayout.class).remove(this);
+//		VerTweetAdministrador tweet = new VerTweetAdministrador(this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin);
+//		
+//		if(this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador!=null) {
+//			this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador.MainView.removeAll();
+//			this._listaComentariosAdministrador._verTweetAdministrador = tweet;
+//			this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador.MainView.add(tweet);
+//		}
+//		else if(this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
+//			this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+//			this._listaComentariosAdministrador._verTweetAdministrador = tweet;
+//			this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(tweet);
+//		}
+//		else {
+//			this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+//			this._listaComentariosAdministrador._verTweetAdministrador = tweet;
+//			this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(tweet);
+//		}
 	}
 
 	public void VerPerfilAdministrador() {
 		_verPerfilAdministrador = new VerPerfilAdministrador(this);
-		this._listaComentariosAdministrador._verTweetAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-		this._listaComentariosAdministrador._verTweetAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verPerfilAdministrador);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_verPerfilAdministrador);
 	}
 }
