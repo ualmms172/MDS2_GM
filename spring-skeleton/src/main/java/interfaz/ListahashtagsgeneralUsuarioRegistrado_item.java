@@ -1,5 +1,7 @@
 package interfaz;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class ListahashtagsgeneralUsuarioRegistrado_item extends ListaHashtagsGeneral_item {
 	public ListahashtagsgeneralUsuarioRegistrado_item(ListaHashtagsGeneral lista) {
 		super(lista);
@@ -10,6 +12,9 @@ public class ListahashtagsgeneralUsuarioRegistrado_item extends ListaHashtagsGen
 	public VerHashtagUsuarioRegistrado _verHashtagUsuarioRegistrado;
 
 	public void VerHashtagUsuarioRegistrado() {
-		throw new UnsupportedOperationException();
+		_verHashtagUsuarioRegistrado = new VerHashtagUsuarioRegistrado(this);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_verHashtagUsuarioRegistrado);
 	}
 }

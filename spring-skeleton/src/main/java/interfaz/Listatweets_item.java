@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class Listatweets_item extends ListaTweetsGeneral_item {
 	public Listatweets_item(ListaContenido lista) {
 		super(lista);
@@ -21,25 +23,33 @@ public class Listatweets_item extends ListaTweetsGeneral_item {
 
 	public void VertweetUsuarioNoRegistrado() {
 		_vertweetUsuarioNoRegistrado = new VertweetUsuarioNoRegistrado(this);
-		if(this._listatweets._verHashtagUsuarioNoRegistrado!=null) {
-			this._listatweets._verHashtagUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-			this._listatweets._verHashtagUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_vertweetUsuarioNoRegistrado);
-		}
-		else {
-			this._listatweets._verperfilUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-			this._listatweets._verperfilUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_vertweetUsuarioNoRegistrado);
-		}
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_vertweetUsuarioNoRegistrado);
+//		_vertweetUsuarioNoRegistrado = new VertweetUsuarioNoRegistrado(this);
+//		if(this._listatweets._verHashtagUsuarioNoRegistrado!=null) {
+//			this._listatweets._verHashtagUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+//			this._listatweets._verHashtagUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_vertweetUsuarioNoRegistrado);
+//		}
+//		else {
+//			this._listatweets._verperfilUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+//			this._listatweets._verperfilUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_vertweetUsuarioNoRegistrado);
+//		}
 	}
 
 	public void VerperfilUsuarioNoRegistrado() {
 		_verperfilUsuarioNoRegistrado = new VerperfilUsuarioNoRegistrado(this);
-		if(this._listatweets._verHashtagUsuarioNoRegistrado!=null) {
-			this._listatweets._verHashtagUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-			this._listatweets._verHashtagUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verperfilUsuarioNoRegistrado);
-		}
-		else {
-			this._listatweets._verperfilUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-			this._listatweets._verperfilUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verperfilUsuarioNoRegistrado);
-		}
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_verperfilUsuarioNoRegistrado);
+//		_verperfilUsuarioNoRegistrado = new VerperfilUsuarioNoRegistrado(this);
+//		if(this._listatweets._verHashtagUsuarioNoRegistrado!=null) {
+//			this._listatweets._verHashtagUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+//			this._listatweets._verHashtagUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verperfilUsuarioNoRegistrado);
+//		}
+//		else {
+//			this._listatweets._verperfilUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+//			this._listatweets._verperfilUsuarioNoRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verperfilUsuarioNoRegistrado);
+//		}
 	}
 }

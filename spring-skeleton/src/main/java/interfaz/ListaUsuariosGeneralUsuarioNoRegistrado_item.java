@@ -1,5 +1,7 @@
 package interfaz;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class ListaUsuariosGeneralUsuarioNoRegistrado_item extends ListaUsuariosGeneral_item {
 	public ListaUsuariosGeneralUsuarioNoRegistrado_item(ListaUsuariosGeneral lista) {
 		super(lista);
@@ -13,6 +15,9 @@ public class ListaUsuariosGeneralUsuarioNoRegistrado_item extends ListaUsuariosG
 	public VerperfilUsuarioNoRegistrado _verperfilUsuarioNoRegistrado;
 
 	public void VerperfilUsuarioNoRegistrado() {
-		throw new UnsupportedOperationException();
+		_verperfilUsuarioNoRegistrado = new VerperfilUsuarioNoRegistrado(this);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_verperfilUsuarioNoRegistrado);
 	}
 }

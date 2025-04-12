@@ -1,5 +1,7 @@
 package interfaz;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class ListaUsuariosGeneralAdministrador_item extends ListaUsuariosGeneral_item {
 	public ListaUsuariosGeneralAdministrador_item(ListaUsuariosGeneral lista) {
 		super(lista);
@@ -12,6 +14,9 @@ public class ListaUsuariosGeneralAdministrador_item extends ListaUsuariosGeneral
 	public VerPerfilAdministrador _verPerfilAdministrador;
 
 	public void VerPerfilAdministrador() {
-		throw new UnsupportedOperationException();
+		_verPerfilAdministrador = new VerPerfilAdministrador(this);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_verPerfilAdministrador);
 	}
 }

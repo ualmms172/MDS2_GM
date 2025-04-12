@@ -5,6 +5,7 @@ import java.util.Vector;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Pantalla;
 
 public class Administrador extends Logueado {
 	private int _id_admin;
@@ -66,16 +67,18 @@ public class Administrador extends Logueado {
 	public void VerListaCompletaUsuariosAdministrador() {
 		// TODO - implement Administrador.VerListaCompletaUsuariosAdministrador
 		_VerListaCompletaUsuariosAdministrador = new VerListaCompletaUsuariosAdministrador(this); 
-		MainView.removeAll();
-		MainView.add(_VerListaCompletaUsuariosAdministrador);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_VerListaCompletaUsuariosAdministrador);
 		
 		
 	}
 
 	public void Verbaneados() {
 	   _Verbaneados = new Verbaneados(this); 
-	   MainView.removeAll();
-	   MainView.add(_Verbaneados);	
+	   Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+	   Pantalla.MainView.removeAll();
+	   Pantalla.MainView.add(_Verbaneados);
 		
 		
 	}
@@ -83,8 +86,9 @@ public class Administrador extends Logueado {
 	public void VerlistaCompletaHashtagsAdmin() {
 
 		_VerlistaCompletaHashtagsAdmin = new VerlistaCompletaHashtagsAdmin (this); 
-		MainView.removeAll();
-		MainView.add(_VerlistaCompletaHashtagsAdmin);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_VerlistaCompletaHashtagsAdmin);
 	
 	}
 	

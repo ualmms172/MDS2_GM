@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaModificardatoscuenta;
 
 public class Modificardatoscuenta extends VistaModificardatoscuenta {
@@ -29,11 +30,8 @@ public class Modificardatoscuenta extends VistaModificardatoscuenta {
 		
 		this.getButtonAtras().addClickListener(event -> {
 			
-			
-			Verperfilpropio perfil = new Verperfilpropio(_verperfilpropio._usuarioregistrado); 
-			
-			this._verperfilpropio.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll(); 
-			this._verperfilpropio.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil); 
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(_verperfilpropio);
 			
 			
 		}); 
@@ -43,35 +41,50 @@ public class Modificardatoscuenta extends VistaModificardatoscuenta {
 	
 	public void Modificar() {
 			
-		
 		if(_verperfilpropio._usuarioregistrado!=null) {
-			Verperfilpropio perfil = new Verperfilpropio(_verperfilpropio._usuarioregistrado);
-			_verperfilpropio._usuarioregistrado.MainView.removeAll();
-			_verperfilpropio._usuarioregistrado.MainView.add(perfil);
+			_verperfilpropio = new Verperfilpropio(_verperfilpropio._usuarioregistrado); 
 		}
 		else if(_verperfilpropio._mostrartweetsUsuarioRegistrado_item!=null) {
-			Verperfilpropio perfil = new Verperfilpropio(_verperfilpropio._mostrartweetsUsuarioRegistrado_item);
-			if(_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado!=null) {
-				_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado.MainView.removeAll();
-				_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado.MainView.add(perfil);
-			}
-			else if(_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado!=null) {
-				_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-				_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil);
-			}
-			else {
-				_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-				_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil);
-			}
+			_verperfilpropio = new Verperfilpropio(_verperfilpropio._mostrartweetsUsuarioRegistrado_item);
 		}
 		else if(_verperfilpropio._listaUsuariosGeneralUsuarioRegistrado!=null){
-			//if(_verperfilpropio._listaUsuariosGeneralUsuarioRegistrado)
+			_verperfilpropio = new Verperfilpropio(_verperfilpropio._listaUsuariosGeneralUsuarioRegistrado);
 		}
 		else {
-			Verperfilpropio perfil = new Verperfilpropio(_verperfilpropio._vertweetgeneralUsuarioRegistrado);
-			_verperfilpropio._vertweetgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-			_verperfilpropio._vertweetgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil);
+			_verperfilpropio = new Verperfilpropio(_verperfilpropio._vertweetgeneralUsuarioRegistrado);
 		}
+
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_verperfilpropio);
+		
+//		if(_verperfilpropio._usuarioregistrado!=null) {
+//			Verperfilpropio perfil = new Verperfilpropio(_verperfilpropio._usuarioregistrado);
+//			_verperfilpropio._usuarioregistrado.MainView.removeAll();
+//			_verperfilpropio._usuarioregistrado.MainView.add(perfil);
+//		}
+//		else if(_verperfilpropio._mostrartweetsUsuarioRegistrado_item!=null) {
+//			Verperfilpropio perfil = new Verperfilpropio(_verperfilpropio._mostrartweetsUsuarioRegistrado_item);
+//			if(_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado!=null) {
+//				_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado.MainView.removeAll();
+//				_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado.MainView.add(perfil);
+//			}
+//			else if(_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado!=null) {
+//				_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+//				_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil);
+//			}
+//			else {
+//				_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+//				_verperfilpropio._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil);
+//			}
+//		}
+//		else if(_verperfilpropio._listaUsuariosGeneralUsuarioRegistrado!=null){
+//			//if(_verperfilpropio._listaUsuariosGeneralUsuarioRegistrado)
+//		}
+//		else {
+//			Verperfilpropio perfil = new Verperfilpropio(_verperfilpropio._vertweetgeneralUsuarioRegistrado);
+//			_verperfilpropio._vertweetgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
+//			_verperfilpropio._vertweetgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil);
+//		}
 		
 		
 	}

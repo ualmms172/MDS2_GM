@@ -4,6 +4,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 
 import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaEliminarpropiacuenta;
 
 public class Eliminarpropiacuenta extends VistaEliminarpropiacuenta  {
@@ -23,14 +24,17 @@ public class Eliminarpropiacuenta extends VistaEliminarpropiacuenta  {
 		this.getButtonAtras().addClickListener(event -> {
 			
 			
-	        UsuarioRegistrado usuario = _verperfilpropio._usuarioregistrado; 
-				
-				
-		    Verperfilpropio perfil = new Verperfilpropio(usuario); 		
-				
-			this._verperfilpropio.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll(); 	
-			this._verperfilpropio.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil); 	
-				
+//	        UsuarioRegistrado usuario = _verperfilpropio._usuarioregistrado; 
+//				
+//				
+//		    Verperfilpropio perfil = new Verperfilpropio(usuario); 		
+//				
+//			this._verperfilpropio.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll(); 	
+//			this._verperfilpropio.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil); 	
+			
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(_verperfilpropio);
+			
 				
 				
 			}); 
@@ -49,13 +53,17 @@ public class Eliminarpropiacuenta extends VistaEliminarpropiacuenta  {
 		
 		
 		
-		  MainView usuario = _verperfilpropio._usuarioregistrado.MainView; 
-			
-			
-		    UsuarioNoRegistrado usuarioNoRegistrado = new UsuarioNoRegistrado(usuario); 		
-				
-			this._verperfilpropio._usuarioregistrado.MainView.removeAll(); 	
-			this._verperfilpropio._usuarioregistrado.MainView.add(usuarioNoRegistrado); 	
+//		    MainView usuario = _verperfilpropio._usuarioregistrado.MainView; 
+//			
+//			
+//		    UsuarioNoRegistrado usuarioNoRegistrado = new UsuarioNoRegistrado(usuario); 		
+//				
+//			this._verperfilpropio._usuarioregistrado.MainView.removeAll(); 	
+//			this._verperfilpropio._usuarioregistrado.MainView.add(usuarioNoRegistrado); 	
+		UsuarioNoRegistrado vista = new UsuarioNoRegistrado((MainView)Pantalla.MainView);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(vista);
 			
 			
 		

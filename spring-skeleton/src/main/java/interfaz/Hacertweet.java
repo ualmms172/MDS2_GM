@@ -1,5 +1,8 @@
 package interfaz;
 
+import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Pantalla;
+
 public class Hacertweet extends CrearContenido {
 	//private event _publicartweet;
 	//private event _mencionar;
@@ -23,13 +26,23 @@ public class Hacertweet extends CrearContenido {
 	public Hacertweet(ListahashtagsUsuarioRegistrado_item listahashtagsUsuarioRegistrado) {
 		
 		_listahashtagsUsuarioRegistrado = listahashtagsUsuarioRegistrado; 
+		this.getButtonPublicar().addClickListener(Event -> Publicartweet());
+		this.getButtonAtras().addClickListener(event -> {
+			
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(_listahashtagsUsuarioRegistrado._listahashtagsUsuarioRegistrado._verlistacompletahashtagUsuarioRegistrado);
+		}); 
 	}
 	
 	
 	public void Publicartweet() {
-		UsuarioRegistrado user = new UsuarioRegistrado(this._usuarioregistrado.MainView);
-		this._usuarioregistrado.MainView.removeAll();
-		this._usuarioregistrado.MainView.add(user);
+//		UsuarioRegistrado user = new UsuarioRegistrado(this._usuarioregistrado.MainView);
+//		this._usuarioregistrado.MainView.removeAll();
+//		this._usuarioregistrado.MainView.add(user);
+		UsuarioRegistrado vista = new UsuarioRegistrado((MainView)Pantalla.MainView);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(vista);
 	}
 
 	public void Mencionar() {
