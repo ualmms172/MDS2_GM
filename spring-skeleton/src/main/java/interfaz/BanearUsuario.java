@@ -28,21 +28,22 @@ public class BanearUsuario extends VistaBanearusuario{
 		
 		this.getButtonAtras().addClickListener(event -> {
 			
-			ListaUsuariosAdministrador lu = (ListaUsuariosAdministrador) _listaUsuariosAdministrador._listaUsuariosGeneral;
-			
-			VerListaCompletaUsuariosAdministrador vista= new VerListaCompletaUsuariosAdministrador(lu._verListaCompletaUsuariosAdministrador._administrador); 
-			
-			
-			lu._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll(); 
-			
-			
-	        lu._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(vista);
+			if(this._listaUsuariosAdministrador!=null) {
+				
+				Pantalla.MainView.removeAll();
+				Pantalla.MainView.add(_listaUsuariosAdministrador);
+			}
+			else {
+				Pantalla.MainView.removeAll();
+				Pantalla.MainView.add(_verPerfilAdministrador);
+			}
 			
 			
 				
 		});
 		
 		this.getButtonTemporal().addClickListener(event -> BanearTemporalmente());
+		this.getButtonIndefinido().addClickListener(event -> BanearTemporalmente());
 		
 		
 		
@@ -61,9 +62,15 @@ public class BanearUsuario extends VistaBanearusuario{
 			
 			//VerListaCompletaUsuariosAdministrador vista= new VerListaCompletaUsuariosAdministrador(lu._verListaCompletaUsuariosAdministrador._administrador); 
 			
-			VerPerfilAdministrador perfil = new VerPerfilAdministrador(this._verPerfilAdministrador._verTweetAdministrador); 
-			_verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-			_verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil); 
+			if(this._listaUsuariosAdministrador!=null) {
+				
+				Pantalla.MainView.removeAll();
+				Pantalla.MainView.add(_listaUsuariosAdministrador);
+			}
+			else {
+				Pantalla.MainView.removeAll();
+				Pantalla.MainView.add(_verPerfilAdministrador);
+			}
 
 			
 			//lu._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll(); 
@@ -74,7 +81,7 @@ public class BanearUsuario extends VistaBanearusuario{
 	});
 		
 		this.getButtonTemporal().addClickListener(event -> BanearTemporalmente());
-		
+		this.getButtonIndefinido().addClickListener(event -> BanearTemporalmente());		
 	
 	}
 	
@@ -91,6 +98,10 @@ public class BanearUsuario extends VistaBanearusuario{
 	}
 
 	public void BanearIndefinidamente() {
-		throw new UnsupportedOperationException();
+		Administrador ad = new Administrador((MainView)Pantalla.MainView);
+		Verbaneados vb = new Verbaneados(ad);
+		Pantalla.Anterior = ad;
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(vb);
 	}
 }

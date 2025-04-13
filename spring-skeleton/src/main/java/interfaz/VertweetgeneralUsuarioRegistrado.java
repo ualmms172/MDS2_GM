@@ -19,6 +19,9 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 		this.getButtonBorrar().setVisible(false);
 		
 		ComentariosUsuarioRegistrado();
+		this.getButtonComentar().addClickListener(event -> Comentar());
+		this.getButtonRetweet().addClickListener(event -> Retweetear());
+		this.getImgFotoPerfilTweet().addClickListener(event ->VerperfilUsuarioRegistrado());
 	}
 	
 	
@@ -28,6 +31,9 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 		this.getButtonBorrar().setVisible(false);
 	
 		ComentariosUsuarioRegistrado();
+		this.getButtonComentar().addClickListener(event -> Comentar());
+		this.getButtonRetweet().addClickListener(event -> Retweetear());
+		this.getImgFotoPerfilTweet().addClickListener(event ->VerperfilUsuarioRegistrado());
 	}
 	
 
@@ -42,7 +48,7 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	public void Comentar() {
 		
 		_comentar = new Comentar(this);
-		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+	//	Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_comentar);
 	}
@@ -56,7 +62,7 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 
 	public void Retweetear() {
 		_retweetear = new Retweetear(this);
-		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_retweetear);
 	}

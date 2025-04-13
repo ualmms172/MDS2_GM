@@ -39,10 +39,23 @@ public class Hacertweet extends CrearContenido {
 //		UsuarioRegistrado user = new UsuarioRegistrado(this._usuarioregistrado.MainView);
 //		this._usuarioregistrado.MainView.removeAll();
 //		this._usuarioregistrado.MainView.add(user);
-		UsuarioRegistrado vista = new UsuarioRegistrado((MainView)Pantalla.MainView);
-		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		
+		UsuarioRegistrado u=null;
+		VerlistacompletahashtagUsuarioRegistrado l = null;
 		Pantalla.MainView.removeAll();
-		Pantalla.MainView.add(vista);
+		if(_usuarioregistrado!=null) {
+			u = new UsuarioRegistrado((MainView)Pantalla.MainView);
+			Pantalla.MainView.add(u);
+		}
+		else {
+			l = new VerlistacompletahashtagUsuarioRegistrado(_listahashtagsUsuarioRegistrado._listahashtagsUsuarioRegistrado._verlistacompletahashtagUsuarioRegistrado._usuarioregistrado);
+			Pantalla.MainView.add(l);
+			
+		}
+			
+		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		
+		
 	}
 
 	public void Mencionar() {

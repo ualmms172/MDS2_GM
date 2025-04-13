@@ -15,13 +15,36 @@ public class Comentar extends CrearContenido {
 		
 		this.getButtonPublicar().addClickListener(Event -> Publicarcomentario());
 		
+		this.getButtonAtras().addClickListener(event -> {
+			
+			VertweetgeneralUsuarioRegistrado verTweet = null;
+			if(_vertweetgeneralUsuarioRegistrado instanceof Vertweetpropio) 
+				verTweet = new Vertweetpropio(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado);
+			else
+				verTweet = new Vertweetajeno(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado);
+			
+			if(this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado !=null) {
+				Pantalla.Anterior = this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado;
+			}
+			else if(this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado !=null) {
+				Pantalla.Anterior = this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado;
+			}
+			else {
+				Pantalla.Anterior = this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado;
+			}
+			
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(verTweet);
+				
+		});
+		
 	}
 	
 	
 	public void Publicarcomentario() {
 		
 		VertweetgeneralUsuarioRegistrado verTweet = null;
-		if(false) 
+		if(_vertweetgeneralUsuarioRegistrado instanceof Vertweetpropio) 
 			verTweet = new Vertweetpropio(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado);
 		else
 			verTweet = new Vertweetajeno(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado);

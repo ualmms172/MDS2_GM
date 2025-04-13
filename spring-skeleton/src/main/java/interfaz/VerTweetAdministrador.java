@@ -20,6 +20,7 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		
 		ListaComentariosAdministrador();
 		this.getImgFotoPerfilTweet().addClickListener(event -> VerPerfilAdministrador()); 
+		this.getButtonBorrar().addClickListener(event -> BorrarTweet());
 	}
 	
 	public VerTweetAdministrador(VerPerfilAdministrador verPerfilAdministrador) {
@@ -31,6 +32,7 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		
 		ListaComentariosAdministrador();
 		this.getImgFotoPerfilTweet().addClickListener(event -> VerPerfilAdministrador()); 
+		this.getButtonBorrar().addClickListener(event -> BorrarTweet());
 	}
 	
 	
@@ -38,6 +40,11 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(Pantalla.Anterior);
+		if(this._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null)
+			Pantalla.Anterior = this._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
+		else if(this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null)
+			Pantalla.Anterior = this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
+			
 
 	}
 

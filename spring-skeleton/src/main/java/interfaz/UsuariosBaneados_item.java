@@ -15,6 +15,7 @@ public class UsuariosBaneados_item extends VistaUsuariosbaneados_item {
 	public UsuariosBaneados_item(UsuariosBaneados listaBaneados) {
 		
 		_usuariosBaneados = listaBaneados; 
+		this.getButtonDesbanear().addClickListener(event -> Desbanearusuario());
 	}
 	
 	

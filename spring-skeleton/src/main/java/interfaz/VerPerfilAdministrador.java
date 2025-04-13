@@ -78,7 +78,6 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 
 	public void BanearUsuario() {
 		_banearUsuario = new BanearUsuario(this);
-		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_banearUsuario);
 	}

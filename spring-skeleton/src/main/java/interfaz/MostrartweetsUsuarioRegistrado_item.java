@@ -5,6 +5,7 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 		super(lista);
 		// TODO Auto-generated constructor stub
 		this.getButtonMeGusta().setVisible(true);
+		this.getButtonMeGusta().addClickListener(event-> Darlikeatweet());
 	}
 
 	//private event _darlikeatweet;

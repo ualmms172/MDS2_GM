@@ -1,5 +1,6 @@
 package interfaz;
 
+import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaIniciarsesin;
 
 public class IniciarSesin extends VistaIniciarsesin {

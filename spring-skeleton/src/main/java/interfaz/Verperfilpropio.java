@@ -97,7 +97,7 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	public void Eliminarpropiacuenta() {
 		
 		_eliminarpropiacuenta  = new Eliminarpropiacuenta(this); 
-		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_eliminarpropiacuenta);
 
@@ -107,7 +107,7 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	public void Modificardatoscuenta() {
 
 		_modificardatoscuenta = new Modificardatoscuenta(this); 
-		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+	//	Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_modificardatoscuenta);
 

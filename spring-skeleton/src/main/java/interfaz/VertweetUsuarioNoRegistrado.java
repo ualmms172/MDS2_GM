@@ -18,6 +18,7 @@ public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 		this.getButtonComentar().setVisible(false);
 		
 		this.ListaComentariosUsuarioNoRegistrado();
+		this.getImgFotoPerfilTweet().addClickListener(event -> VerperfilUsuarioNoRegistrado());
 	}
 	
 	
@@ -30,6 +31,7 @@ public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 		this.getButtonComentar().setVisible(false);
 		
 		this.ListaComentariosUsuarioNoRegistrado();
+		this.getImgFotoPerfilTweet().addClickListener(event -> VerperfilUsuarioNoRegistrado());
 	}
 	
 

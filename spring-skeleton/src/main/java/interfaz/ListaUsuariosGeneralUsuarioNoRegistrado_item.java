@@ -9,6 +9,7 @@ public class ListaUsuariosGeneralUsuarioNoRegistrado_item extends ListaUsuariosG
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelSeguido_NoSeguido().setVisible(false);
 		this.getButtonBanear().setVisible(false);
+		this.getHorizontalListausuariosgeneral_item().addClickListener(event -> VerperfilUsuarioNoRegistrado());
 	}
 
 	public ListaUsuariosGeneralUsuarioNoRegistrado _listaUsuariosGeneralUsuarioNoRegistrado;

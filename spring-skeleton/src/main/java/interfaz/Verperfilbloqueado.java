@@ -17,6 +17,7 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 
 	
 	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
+	public boolean bloqueado=false;
 	
 	public Verperfilbloqueado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado) {
 		super(mostrartweetsUsuarioRegistrado);
@@ -26,6 +27,17 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getVerticalLayoutInferior().setVisible(false);
 		
 		this.MostrartweetsUsuarioRegistrado();
+		
+		this.getButtonBloquear().addClickListener(event->{
+			
+			if(bloqueado) {
+				Desbloquear();
+			}
+			else {
+				Bloquear();
+			}
+		});
+		
 		// TODO Auto-generated constructor stub
 	}
 	

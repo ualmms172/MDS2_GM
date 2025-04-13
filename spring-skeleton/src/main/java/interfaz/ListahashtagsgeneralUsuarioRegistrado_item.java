@@ -6,6 +6,7 @@ public class ListahashtagsgeneralUsuarioRegistrado_item extends ListaHashtagsGen
 	public ListahashtagsgeneralUsuarioRegistrado_item(ListaHashtagsGeneral lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		this.getHorizontalListahashtagsgeneral_item().addClickListener(Event -> VerHashtagUsuarioRegistrado());
 	}
 
 	public ListahashtagsgeneralUsuarioRegistrado _listahashtagsgeneralUsuarioRegistrado;

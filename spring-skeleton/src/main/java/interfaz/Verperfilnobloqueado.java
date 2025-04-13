@@ -10,6 +10,8 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
 	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
 	public ComentariosUsuarioRegistrado_item _comentariosUsuarioRegistrado;
+	public boolean seguido=false;
+	public boolean bloqueado=false;
 	
 	
 
@@ -19,6 +21,19 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
+		
+		this.getButtonBloquear().addClickListener(event ->{
+			if(bloqueado)
+				Desbloquear();
+			else
+				Bloquear();
+		});
+		this.getButtonSeguir().addClickListener(event ->{
+			if(seguido)
+				Dejardeseguirausuario();
+			else
+				SeguirUsuario();
+		});
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -29,6 +44,19 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
+
+		this.getButtonBloquear().addClickListener(event ->{
+			if(bloqueado)
+				Desbloquear();
+			else
+				Bloquear();
+		});
+		this.getButtonSeguir().addClickListener(event ->{
+			if(seguido)
+				Dejardeseguirausuario();
+			else
+				SeguirUsuario();
+		});
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -38,6 +66,19 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
+
+		this.getButtonBloquear().addClickListener(event ->{
+			if(bloqueado)
+				Desbloquear();
+			else
+				Bloquear();
+		});
+		this.getButtonSeguir().addClickListener(event ->{
+			if(seguido)
+				Dejardeseguirausuario();
+			else
+				SeguirUsuario();
+		});
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -47,6 +88,19 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
+
+		this.getButtonBloquear().addClickListener(event ->{
+			if(bloqueado)
+				Desbloquear();
+			else
+				Bloquear();
+		});
+		this.getButtonSeguir().addClickListener(event ->{
+			if(seguido)
+				Dejardeseguirausuario();
+			else
+				SeguirUsuario();
+		});
 		// TODO Auto-generated constructor stub
 	}
 	

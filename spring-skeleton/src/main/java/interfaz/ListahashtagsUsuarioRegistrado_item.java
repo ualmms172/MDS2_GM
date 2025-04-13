@@ -5,6 +5,7 @@ import gallardoMartinez.MainView.Pantalla;
 public class ListahashtagsUsuarioRegistrado_item extends ListahashtagsgeneralUsuarioRegistrado_item {
 	public ListahashtagsUsuarioRegistrado_item(ListaHashtagsGeneral lista) {
 		super(lista);
+		this.getButtonEscribirTweet().addClickListener(Event -> Hacertweet());
 		// TODO Auto-generated constructor stub
 	}
 
@@ -17,7 +18,7 @@ public class ListahashtagsUsuarioRegistrado_item extends ListahashtagsgeneralUsu
 
 	public void Hacertweet() {
 		_hacertweet = new Hacertweet(this);
-		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_hacertweet);
 	}

@@ -7,6 +7,7 @@ public class ListaHashtagsgeneralAdministrador_item extends ListaHashtagsGeneral
 		super(lista);
 		// TODO Auto-generated constructor stub
 		this.getButtonEscribirTweet().setVisible(false);
+		this.getHorizontalListahashtagsgeneral_item().addClickListener(Event -> VerHashtagAdministrador());
 	}
 
 	public ListaHashtagsgeneralAdministrador _listaHashtagsgeneralAdministrador;

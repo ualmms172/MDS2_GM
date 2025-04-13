@@ -7,6 +7,7 @@ public class ListaUsuariosGeneralUsuarioRegistrado_item extends ListaUsuariosGen
 		super(lista);
 		// TODO Auto-generated constructor stub
 		this.getButtonBanear().setVisible(false);
+		this.getHorizontalListausuariosgeneral_item().addClickListener(event -> VerperfilUsuarioRegistrado());
 	}
 
 	public ListaUsuariosGeneralUsuarioRegistrado _listaUsuariosGeneralUsuarioRegistrado;

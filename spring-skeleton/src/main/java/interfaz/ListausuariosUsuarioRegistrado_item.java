@@ -6,6 +6,12 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 	public ListausuariosUsuarioRegistrado_item(ListaUsuariosGeneral lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		this.getButtonSeguir().addClickListener(Event -> {
+			if(!dado)
+				SeguirUsuario();
+			else
+				Dejardeseguirausuario();
+		});
 	}
 
 	//private event _seguirUsuario;
@@ -16,6 +22,7 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 	//private Label _teSigue;
 	//private Button _seguirUsuarioB;
 	public ListausuariosUsuarioRegistrado _listausuariosUsuarioRegistrado;
+	public boolean dado=false;
 
 	public void SeguirUsuario() {
 		this.getButtonSeguir().getStyle().set("color", "red");

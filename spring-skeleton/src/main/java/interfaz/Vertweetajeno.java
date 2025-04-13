@@ -13,12 +13,14 @@ public class Vertweetajeno extends VertweetgeneralUsuarioRegistrado {
 	
 	public Vertweetajeno(MostrartweetspropiosUsuarioRegistrado_item mostrartweetspropiosUsuarioRegistrado_item) {
 		super(mostrartweetspropiosUsuarioRegistrado_item);
+		this.getButtonMeGusta().addClickListener(event -> Darlikeatweet());
 		// TODO Auto-generated constructor stub
 	}
 	
     public Vertweetajeno (VerperfilgeneralUsuarioRegistrado verperfilUsuarioRegistrado ) {
 		
        super(verperfilUsuarioRegistrado); 
+       this.getButtonMeGusta().addClickListener(event -> Darlikeatweet());
 }	
 
 	public void Darlikeatweet() {

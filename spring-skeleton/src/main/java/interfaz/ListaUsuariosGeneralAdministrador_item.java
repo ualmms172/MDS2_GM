@@ -8,6 +8,7 @@ public class ListaUsuariosGeneralAdministrador_item extends ListaUsuariosGeneral
 		// TODO Auto-generated constructor stub
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelSeguido_NoSeguido().setVisible(false);
+		this.getHorizontalListausuariosgeneral_item().addClickListener(event -> VerPerfilAdministrador());
 	}
 
 	public ListaUsuariosGeneralAdministrador _listaUsuariosGeneralAdministrador;

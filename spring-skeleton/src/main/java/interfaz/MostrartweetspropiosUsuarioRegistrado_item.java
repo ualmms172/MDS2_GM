@@ -26,7 +26,7 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 
 	public void Retweetear() {
 		_retweetear = new Retweetear(this);
-		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+	//	Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_retweetear);
 	}

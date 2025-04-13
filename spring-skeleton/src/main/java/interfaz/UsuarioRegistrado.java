@@ -93,7 +93,7 @@ public class UsuarioRegistrado extends Logueado {
 	public void Hacertweet() {
 		
 		_Hacertweet = new Hacertweet(this); 
-		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		MainView.removeAll();
 		MainView.add(_Hacertweet);
 		
