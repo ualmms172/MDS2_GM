@@ -68,7 +68,7 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 		_verPerfilAdministrador = new VerPerfilAdministrador(this);
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
-		Pantalla.MainView.add(_verTweetAdministrador);
+		Pantalla.MainView.add(_verPerfilAdministrador);
 		
 //		_verPerfilAdministrador = new VerPerfilAdministrador(this);
 //		

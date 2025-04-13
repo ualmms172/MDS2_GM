@@ -121,6 +121,7 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	public void SeguirUsuario() {
 		this.getButtonSeguir().getStyle().set("color", "red");
 		this.getButtonSeguir().setText("Dejar de seguir");
+		seguido=true;
 
 		Verperfilnobloqueado x = null;
 		if(_listaUsuariosGeneralUsuarioRegistrado!=null) 
@@ -140,6 +141,7 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	public void Bloquear() {
 		this.getButtonBloquear().getStyle().set("color", "red");
 		this.getButtonBloquear().setText("Bloquear");
+		bloqueado=true;
 		
 		Verperfilnobloqueado x = null;
 		if(_listaUsuariosGeneralUsuarioRegistrado!=null) 
@@ -158,6 +160,7 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	public void Dejardeseguirausuario() {
 		this.getButtonSeguir().getStyle().set("color", "gray");
 		this.getButtonSeguir().setText("Seguir");
+		seguido=false;
 		
 		Verperfilnobloqueado x = null;
 		if(_listaUsuariosGeneralUsuarioRegistrado!=null) 
@@ -176,6 +179,7 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	public void Desbloquear() {
 		this.getButtonBloquear().getStyle().set("color", "gray");
 		this.getButtonBloquear().setText("Desbloquear");
+		bloqueado=false;
 		
 		Verperfilnobloqueado x = null;
 		if(_listaUsuariosGeneralUsuarioRegistrado!=null) 

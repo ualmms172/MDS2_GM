@@ -32,9 +32,11 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 			
 			if(bloqueado) {
 				Desbloquear();
+				
 			}
 			else {
 				Bloquear();
+				
 			}
 		});
 		
@@ -71,6 +73,7 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 		
 			this.getButtonBloquear().getStyle().set("color", "red");
 			this.getButtonBloquear().setText("Bloquear");
+			bloqueado=true;
 			
 			Verperfilbloqueado x = new Verperfilbloqueado(_mostrartweetspropiosUsuarioRegistrado);
 			Pantalla.MainView.removeAll();
@@ -81,6 +84,7 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 		
 		this.getButtonBloquear().getStyle().set("color", "gray");
 		this.getButtonBloquear().setText("Desbloquear");
+		bloqueado=false;
 		
 		Verperfilbloqueado x = new Verperfilbloqueado(_mostrartweetspropiosUsuarioRegistrado);
 		Pantalla.MainView.removeAll();

@@ -7,12 +7,13 @@ import gallardoMartinez.MainView.Pantalla;
 public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 	public ComentariosUsuarioRegistrado_item(ListaContenido lista) {
 		super(lista);
+		this._comentariosUsuarioRegistrado=(ComentariosUsuarioRegistrado)lista;
 		// TODO Auto-generated constructor stub
 		this.getButtonBorrar().setVisible(false);
 		this.getButtonMeGusta().setVisible(true);
 		
 		this.getButtonMeGusta().addClickListener(Event -> Darlikeacomentario());
-		this.getImgFotoPerfilTweet().addClickListener(Event -> Darlikeacomentario());
+		this.getImgFotoPerfilTweet().addClickListener(Event -> VerperfilUsuarioRegistrado());
 	}
 
 	//private event _darlikeacomentario;
@@ -28,6 +29,7 @@ public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 		this.getButtonMeGusta().setText("Quitar");
 		Comentariospropios la = (Comentariospropios) _lista;
 		la._item.add(this);
+		dado=true;
 		}
 		
 		else {
@@ -35,6 +37,7 @@ public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 			this.getButtonMeGusta().setText("Dar me gusta");
 			Comentariospropios la = (Comentariospropios) _lista;
 			la._item.add(this);
+			dado=false;
 			}
 	}
 

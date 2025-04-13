@@ -20,6 +20,7 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 			this.getButtonMeGusta().setText("Quitar");
 			MostrartweetsUsuarioRegistrado la = (MostrartweetsUsuarioRegistrado) _lista;
 			la._item.add(this);
+			dado=true;
 			}
 			
 			else {
@@ -27,6 +28,7 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 				this.getButtonMeGusta().setText("Dar me gusta");
 				MostrartweetsUsuarioRegistrado la = (MostrartweetsUsuarioRegistrado) _lista;
 				la._item.add(this);
+				dado=false;
 				}
 	}
 }

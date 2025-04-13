@@ -7,6 +7,7 @@ import gallardoMartinez.MainView.Pantalla;
 public class ListaComentariosAdministrador_item extends ListaComentariosGeneral_item {
 	public ListaComentariosAdministrador_item(ListaContenido lista) {
 		super(lista);
+		_listaComentariosAdministrador= (ListaComentariosAdministrador)lista;
 		// TODO Auto-generated constructor stub
 		this.getButtonMeGusta().setVisible(false);
 		

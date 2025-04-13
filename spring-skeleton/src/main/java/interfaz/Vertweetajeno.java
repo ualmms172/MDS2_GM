@@ -31,6 +31,7 @@ public class Vertweetajeno extends VertweetgeneralUsuarioRegistrado {
 			Vertweetajeno  x = new Vertweetajeno(_mostrartweetspropiosUsuarioRegistrado);
 			Pantalla.MainView.removeAll();
 			Pantalla.MainView.add(x);
+			dado=true;
 			}
 			
 		else {
@@ -39,6 +40,7 @@ public class Vertweetajeno extends VertweetgeneralUsuarioRegistrado {
 			Vertweetajeno  x = new Vertweetajeno(_mostrartweetspropiosUsuarioRegistrado);
 			Pantalla.MainView.removeAll();
 			Pantalla.MainView.add(x);
+			dado=false;
 			}
 	}
 }
