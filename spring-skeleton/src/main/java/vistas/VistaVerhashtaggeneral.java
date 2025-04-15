@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.button.Button;
 
 @Tag("vista-verhashtaggeneral")
 @JsModule("./views/vista-verhashtaggeneral.ts")
@@ -17,6 +18,16 @@ public class VistaVerhashtaggeneral extends LitTemplate {
 	private Label labelHashtag;
 	@Id("verticalLayout-ListaHashtags")
 	private Element verticalLayoutListaHashtags;
+	@Id("button-Atras")
+	private Button buttonAtras;
+
+	public Button getButtonAtras() {
+		return buttonAtras;
+	}
+
+	public void setButtonAtras(Button buttonAtras) {
+		this.buttonAtras = buttonAtras;
+	}
 
 	public VistaVerhashtaggeneral() {
         // You can initialise any data required for the connected UI components here.

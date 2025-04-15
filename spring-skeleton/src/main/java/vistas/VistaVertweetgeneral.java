@@ -71,6 +71,16 @@ public class VistaVertweetgeneral extends LitTemplate {
 	private Element vaadinVerticalLayout;
 	@Id("button-comentar")
 	private Button buttonComentar;
+	@Id("button-Atras")
+	private Button buttonAtras;
+
+	public Button getButtonAtras() {
+		return buttonAtras;
+	}
+
+	public void setButtonAtras(Button buttonAtras) {
+		this.buttonAtras = buttonAtras;
+	}
 
 	public VistaVertweetgeneral() {
         // You can initialise any data required for the connected UI components here.

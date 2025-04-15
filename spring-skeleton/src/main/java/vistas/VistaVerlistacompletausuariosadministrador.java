@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.button.Button;
 
 @Tag("vista-verlistacompletausuariosadministrador")
 @JsModule("./views/vista-verlistacompletausuariosadministrador.ts")
@@ -17,6 +18,16 @@ public class VistaVerlistacompletausuariosadministrador extends LitTemplate {
 	private Label labelUsuarios;
 	@Id("verticalLayout-ListaUsuarios")
 	private Element verticalLayoutListaUsuarios;
+	@Id("button-Atras")
+	private Button buttonAtras;
+
+	public Button getButtonAtras() {
+		return buttonAtras;
+	}
+
+	public void setButtonAtras(Button buttonAtras) {
+		this.buttonAtras = buttonAtras;
+	}
 
 	public VistaVerlistacompletausuariosadministrador() {
         // You can initialise any data required for the connected UI components here.

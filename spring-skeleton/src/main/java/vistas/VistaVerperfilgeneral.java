@@ -54,6 +54,16 @@ public class VistaVerperfilgeneral extends LitTemplate {
 	private Label labelAvisoBloqueo;
 	@Id("VerticalLayout-EstarBloqueado")
 	private Element verticalLayoutEstarBloqueado;
+	@Id("button-Atras")
+	private Button buttonAtras;
+
+	public Button getButtonAtras() {
+		return buttonAtras;
+	}
+
+	public void setButtonAtras(Button buttonAtras) {
+		this.buttonAtras = buttonAtras;
+	}
 
 	public VistaVerperfilgeneral() {
         // You can initialise any data required for the connected UI components here.

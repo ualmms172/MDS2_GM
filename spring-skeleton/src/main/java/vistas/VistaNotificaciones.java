@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.button.Button;
 
 @Tag("vista-notificaciones")
 @JsModule("./views/vista-notificaciones.ts")
@@ -36,6 +37,16 @@ public class VistaNotificaciones extends LitTemplate {
 	private Label labelMenciones;
 	@Id("verticalLayout-CajaMenciones")
 	private Element verticalLayoutCajaMenciones;
+	@Id("button-Atras")
+	private Button buttonAtras;
+
+	public Button getButtonAtras() {
+		return buttonAtras;
+	}
+
+	public void setButtonAtras(Button buttonAtras) {
+		this.buttonAtras = buttonAtras;
+	}
 
 	public VistaNotificaciones() {
         // You can initialise any data required for the connected UI components here.

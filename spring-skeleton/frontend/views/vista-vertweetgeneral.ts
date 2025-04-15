@@ -69,8 +69,8 @@ export class VistaVertweetgeneral extends LitElement {
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="height: 33%; width: 100%; flex-grow: 0; align-self: center;">
-  <vaadin-button style="align-self: flex-end; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-l); flex-grow: 0;" tabindex="0">
-   Atras
+  <vaadin-button style="align-self: flex-end; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-l); flex-grow: 0;" tabindex="0" id="button-Atras">
+    Atras 
   </vaadin-button>
   <vaadin-vertical-layout theme="spacing" style="align-self: flex-start; flex-grow: 1; align-items: stretch; height: 100%;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="width: 12%;"></vaadin-vertical-layout>

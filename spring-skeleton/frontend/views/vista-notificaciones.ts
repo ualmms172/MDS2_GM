@@ -17,8 +17,8 @@ export class VistaNotificaciones extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;position:absolute;" id="verticalLayout-Notificaciones">
- <vaadin-button style="align-self: flex-start; margin: var(--lumo-space-m);" tabindex="0">
-  Atras 
+ <vaadin-button style="align-self: flex-start; margin: var(--lumo-space-m);" tabindex="0" id="button-Atras">
+   Atras 
  </vaadin-button>
  <label style="align-self: center; flex-grow: 0; height: 10%;" id="label-Notificaciones">Notificaciones</label>
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%; height: 60%;" id="horizontalLayout-CajasNotificaciones">

@@ -17,8 +17,8 @@ export class VistaVerbaneados extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; position:absolute;" id="verticalLayout-VentanaCompleta">
- <vaadin-button style="margin-top: var(--lumo-space-l); margin-left: var(--lumo-space-l);" tabindex="0">
-  Atras
+ <vaadin-button style="margin-top: var(--lumo-space-l); margin-left: var(--lumo-space-l);" tabindex="0" id="button-Atras">
+   Atras 
  </vaadin-button>
  <label style="align-self: center; margin: var(--lumo-space-xl);" id="label-UsuariosBaneados">Usuarios Baneados</label>
  <vaadin-vertical-layout style="flex-grow: 1; align-self: flex-start; align-items: flex-start; flex-direction: column;" id="verticalLayout-Lista"></vaadin-vertical-layout>
