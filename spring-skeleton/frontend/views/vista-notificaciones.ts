@@ -1,7 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/button/src/vaadin-button.js';
 import '@vaadin/horizontal-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vertical-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-notificaciones')
 export class VistaNotificaciones extends LitElement {
@@ -17,7 +17,10 @@ export class VistaNotificaciones extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;position:absolute;" id="verticalLayout-Notificaciones">
- <label style="align-self: center; flex-grow: 1; margin-top: var(--lumo-space-l);" id="label-Notificaciones">Notificaciones</label>
+ <vaadin-button style="align-self: flex-start; margin: var(--lumo-space-m);" tabindex="0">
+  Atras 
+ </vaadin-button>
+ <label style="align-self: center; flex-grow: 0; height: 10%;" id="label-Notificaciones">Notificaciones</label>
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%; height: 60%;" id="horizontalLayout-CajasNotificaciones">
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; margin-left: var(--lumo-space-m); align-items: center;" id="verticalLayout-RetweetsRecibidos">
    <label style="align-self: center;" id="label-RetweetsRecibidos">Retweets recibidos</label>

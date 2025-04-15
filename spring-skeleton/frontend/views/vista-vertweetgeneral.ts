@@ -1,7 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/horizontal-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vertical-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/button/src/vaadin-button.js';
 
 @customElement('vista-vertweetgeneral')
@@ -68,7 +68,13 @@ export class VistaVertweetgeneral extends LitElement {
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-grow: 1; width: 60%; align-items: stretch;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
+ <vaadin-horizontal-layout theme="spacing" style="height: 33%; width: 100%; flex-grow: 0; align-self: center;">
+  <vaadin-button style="align-self: flex-end; margin-bottom: var(--lumo-space-m); margin-left: var(--lumo-space-l); flex-grow: 0;" tabindex="0">
+   Atras
+  </vaadin-button>
+  <vaadin-vertical-layout theme="spacing" style="align-self: flex-start; flex-grow: 1; align-items: stretch; height: 100%;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" style="width: 12%;"></vaadin-vertical-layout>
+ </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }

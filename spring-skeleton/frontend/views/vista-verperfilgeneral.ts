@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/horizontal-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vertical-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/button/src/vaadin-button.js';
 
 @customElement('vista-verperfilgeneral')
 export class VistaVerperfilgeneral extends LitElement {
@@ -48,6 +48,9 @@ export class VistaVerperfilgeneral extends LitElement {
   <label style="flex-grow: 1;" id="label-Descripcion">Descripción: </label>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-self: flex-start; flex-grow: 1;" id="horizontalLayout-Inferior">
+  <vaadin-button style="align-self: flex-end; margin-left: var(--lumo-space-s); margin-bottom: var(--lumo-space-m);" tabindex="0">
+   Atras
+  </vaadin-button>
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: center; width: 100%; height: 100%; align-items: stretch;" id="verticalLayout-Inferior"></vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" id="VerticalLayout-EstarBloqueado" style="flex-grow: 1;">
    <label id="label-AvisoBloqueo" style="flex-grow: 1; align-self: center;">Este usuario te ha bloqueado.</label>
