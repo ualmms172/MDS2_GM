@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaVerlistacompletahashtagsadmin;
 
 public class VerlistaCompletaHashtagsAdmin extends VistaVerlistacompletahashtagsadmin {
@@ -15,6 +16,12 @@ public class VerlistaCompletaHashtagsAdmin extends VistaVerlistacompletahashtags
 		_administrador = administrador; 
 		
 		ListaHashtagsAdministrador();
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(_administrador);
+			
+	});
 	}
 	
 	public void ListaHashtagsAdministrador() {

@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaVerlistacompletausuariosadministrador;
 
 public class VerListaCompletaUsuariosAdministrador extends VistaVerlistacompletausuariosadministrador {
@@ -14,6 +15,12 @@ public class VerListaCompletaUsuariosAdministrador extends VistaVerlistacompleta
 		_administrador = administrador; 
 		
 		ListaUsuariosAdministrador();
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(_administrador);
+			
+	});
 	}
 	
 	

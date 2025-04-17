@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class VerHashtagAdministrador extends VerHashtagGeneral {
 	public ListaHashtagsgeneralAdministrador_item _listaHashtagsgeneralAdministrador;
 	public ListaTweetsAdmin _listaTweetsAdmin;
@@ -18,5 +20,14 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 		_listaHashtagsgeneralAdministrador = listaHashtagsgeneralAdministrador;
 		
 		ListaTweetsAdmin();
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(Pantalla.Anterior);
+			if(this._listaHashtagsgeneralAdministrador._listaHashtagsgeneralAdministrador instanceof ListaHashtagsAdministrador) {
+				ListaHashtagsAdministrador l = (ListaHashtagsAdministrador) this._listaHashtagsgeneralAdministrador._listaHashtagsgeneralAdministrador;
+				Pantalla.Anterior = l._verlistaCompletaHashtagsAdmin._administrador;
+			}
+	});
 	}
 }

@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 	public ListahashtagsgeneralUsuarioNoRegistrado_item _listahashtagsgeneralUsuarioNoRegistrado;
 	public Listatweets _listatweets;
@@ -11,6 +13,15 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 		_listahashtagsgeneralUsuarioNoRegistrado = listahashtagsgeneralUsuarioNoRegistrado;
 		
 		Listatweets();
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(Pantalla.Anterior);
+			if(this._listahashtagsgeneralUsuarioNoRegistrado._listahashtagsgeneralUsuarioNoRegistrado instanceof ListaHashtagsUsuarioNoRegistrado) {
+				ListaHashtagsUsuarioNoRegistrado l = (ListaHashtagsUsuarioNoRegistrado) this._listahashtagsgeneralUsuarioNoRegistrado._listahashtagsgeneralUsuarioNoRegistrado;
+				Pantalla.Anterior = l._verlistacompletahashtags._usuarioNoRegistrado;
+			}
+	});
 		
 	}
 	

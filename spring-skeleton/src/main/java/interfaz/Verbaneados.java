@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaVerbaneados;
 
 public class Verbaneados extends VistaVerbaneados {
@@ -15,6 +16,12 @@ public class Verbaneados extends VistaVerbaneados {
 		_administrador = administrador; 
 		
 		UsuariosBaneados();
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(_administrador);
+			
+	});
 	}
 	
 	

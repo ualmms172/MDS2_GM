@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaVerlistacompletahashtagusuarioregistrado;
 
 public class VerlistacompletahashtagUsuarioRegistrado extends VistaVerlistacompletahashtagusuarioregistrado {
@@ -14,6 +15,12 @@ public class VerlistacompletahashtagUsuarioRegistrado extends VistaVerlistacompl
 		_usuarioregistrado = usuarioregistrado; 
 		
 		ListahashtagsUsuarioRegistrado();
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(_usuarioregistrado);
+			
+	});
 	}
 	
 

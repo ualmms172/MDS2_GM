@@ -7,7 +7,7 @@ import gallardoMartinez.MainView.Pantalla;
 public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	//private Button _comentar;
 	//private Button _retweetear;
-	public ComentariosUsuarioRegistrado _comentariosUsuarioRegistrado;
+	public Comentariospropios _comentariosUsuarioRegistrado;
 	public VerperfilgeneralUsuarioRegistrado _verperfilUsuarioRegistrado;
 	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
 	public Comentar _comentar;
@@ -38,10 +38,10 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	
 
 	public void ComentariosUsuarioRegistrado() {
-		_comentariosUsuarioRegistrado = new ComentariosUsuarioRegistrado(this);
+		_comentariosUsuarioRegistrado = new Comentariospropios(this);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_comentariosUsuarioRegistrado);
 		
-		ComentariosUsuarioRegistrado_item item_tweets = new ComentariosUsuarioRegistrado_item(_comentariosUsuarioRegistrado);
+		Comentariospropios_item item_tweets = new Comentariospropios_item(_comentariosUsuarioRegistrado);
 		_comentariosUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 

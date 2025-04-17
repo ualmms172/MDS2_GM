@@ -3,13 +3,14 @@ package interfaz;
 import java.util.Vector;
 
 public class ComentariosUsuarioRegistrado extends Comentariospropios {
-	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
+	public ComentariosUsuarioRegistrado(VertweetgeneralUsuarioRegistrado tweet) {
+		super(tweet);
+		// TODO Auto-generated constructor stub
+	}
+
 	public Vector<ComentariosUsuarioRegistrado_item> _item = new Vector<ComentariosUsuarioRegistrado_item>();
 	
-	public ComentariosUsuarioRegistrado(VertweetgeneralUsuarioRegistrado tweet) {
-		
-		_vertweetgeneralUsuarioRegistrado = tweet; 
-	}
+	
 	
 	
 }

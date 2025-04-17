@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaNotificaciones;
 
 public class Notificaciones extends VistaNotificaciones {
@@ -23,7 +24,13 @@ public class Notificaciones extends VistaNotificaciones {
 		this.ListaMencionesRecibidas();
 		this.ListaRetweetsNotificados();
 		this.ListaNuevosSeguidores();
-	}
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(Pantalla.Anterior);
+			
+	});
+		}
 	
 		
 

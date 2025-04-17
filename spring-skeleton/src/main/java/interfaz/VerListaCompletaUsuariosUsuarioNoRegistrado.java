@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaVerlistacompletausuariosusuarionoregistrado;
 
 public class VerListaCompletaUsuariosUsuarioNoRegistrado extends VistaVerlistacompletausuariosusuarionoregistrado {
@@ -14,6 +15,12 @@ public class VerListaCompletaUsuariosUsuarioNoRegistrado extends VistaVerlistaco
 		_usuarioNoRegistrado = usuarioNoRegistrado; 
 		
 		ListaUsuariosUsuarionoRegistrado();
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(_usuarioNoRegistrado);
+			
+	});
 	}
 	
 	

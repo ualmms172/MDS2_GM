@@ -8,5 +8,6 @@ public class Comentariospropios_item extends ListaComentariosGeneral_item {
 		this.getButtonBorrar().setVisible(false);
 	}
 
+
 	public Comentariospropios _comentariospropios;
 }
