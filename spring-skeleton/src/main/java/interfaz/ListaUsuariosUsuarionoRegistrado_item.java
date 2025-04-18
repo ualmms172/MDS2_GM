@@ -4,6 +4,7 @@ public class ListaUsuariosUsuarionoRegistrado_item extends ListaUsuariosGeneralU
 	public ListaUsuariosUsuarionoRegistrado_item(ListaUsuariosGeneral lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		_listaUsuariosUsuarionoRegistrado = (ListaUsuariosUsuarionoRegistrado) lista;
 	}
 
 	//private Label _numSeguidores;

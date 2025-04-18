@@ -57,22 +57,26 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 			Pantalla.MainView.removeAll();
 			Pantalla.MainView.add(Pantalla.Anterior);
 			if(this._listaTweetsAdmin_item._listaTweetsAdmin._verHashtagAdministrador!=null) {
-				if(this._listaTweetsAdmin_item._listaTweetsAdmin._verHashtagAdministrador._listaHashtagsgeneralAdministrador._listaHashtagsgeneralAdministrador instanceof ListaHashtagsAdministrador) {
-					ListaHashtagsAdministrador l = (ListaHashtagsAdministrador) this._listaTweetsAdmin_item._listaTweetsAdmin._verHashtagAdministrador._listaHashtagsgeneralAdministrador._listaHashtagsgeneralAdministrador;
-					Pantalla.Anterior = l._verlistaCompletaHashtagsAdmin;
+				if(this._listaTweetsAdmin_item._listaTweetsAdmin._verHashtagAdministrador._listaHashtagsgeneralAdministrador instanceof ListaHashtagsAdministrador_item) {
+					ListaHashtagsAdministrador_item l = (ListaHashtagsAdministrador_item) this._listaTweetsAdmin_item._listaTweetsAdmin._verHashtagAdministrador._listaHashtagsgeneralAdministrador;
+					Pantalla.Anterior = l._listaHashtagsAdministrador._verlistaCompletaHashtagsAdmin;
+				}
+				else {
+					ListaHashtagsFamososAdministrador_item l = (ListaHashtagsFamososAdministrador_item) this._listaTweetsAdmin_item._listaTweetsAdmin._verHashtagAdministrador._listaHashtagsgeneralAdministrador;
+					Pantalla.Anterior= l._listaHashtagsFamososAdministrador._administrador;
 				}
 			}
 			else if(this._listaTweetsAdmin_item._listaTweetsAdmin._verPerfilAdministrador!=null) {
 				VerPerfilAdministrador x = this._listaTweetsAdmin_item._listaTweetsAdmin._verPerfilAdministrador;
 				
 				if(x._listaUsuariosGeneralAdministrador!=null) {
-					if(x._listaUsuariosGeneralAdministrador._listaUsuariosGeneralAdministrador instanceof ListaUsuariosAdministrador) {
-						ListaUsuariosAdministrador l = (ListaUsuariosAdministrador) x._listaUsuariosGeneralAdministrador._listaUsuariosGeneralAdministrador;
-						Pantalla.Anterior= l._verListaCompletaUsuariosAdministrador._administrador;
+					if(x._listaUsuariosGeneralAdministrador instanceof ListaUsuariosAdministrador_item) {
+						ListaUsuariosAdministrador_item l = (ListaUsuariosAdministrador_item) x._listaUsuariosGeneralAdministrador;
+						Pantalla.Anterior= l._listaUsuariosAdministrador._verListaCompletaUsuariosAdministrador._administrador;
 					}
 					else {
-						ListaUsuariosFamososAdministrador l = (ListaUsuariosFamososAdministrador) x._listaUsuariosGeneralAdministrador._listaUsuariosGeneralAdministrador;
-						Pantalla.Anterior= l._administrador;
+						ListaUsuariosFamososAdministrador_item l = (ListaUsuariosFamososAdministrador_item) x._listaUsuariosGeneralAdministrador;
+						Pantalla.Anterior= l._listaUsuariosFamososAdministrador._administrador;
 					}
 				}
 				

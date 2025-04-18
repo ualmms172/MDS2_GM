@@ -7,6 +7,7 @@ public class ListahashtagfamososUsuarioRegistrado_item extends Listahashtagsgene
 		this.getButtonEscribirTweet().setVisible(false);
 		this.getLabelCreador().setVisible(false);
 		this.getLabelNumTweets().setVisible(false);
+		_listahashtagfamososUsuarioRegistrado = (ListahashtagfamososUsuarioRegistrado) lista;
 	}
 
 	public ListahashtagfamososUsuarioRegistrado _listahashtagfamososUsuarioRegistrado;

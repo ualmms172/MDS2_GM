@@ -8,6 +8,7 @@ public class ListaUsuariosFamososAdministrador_item extends ListaUsuariosGeneral
 		this.getLabelNumSeguidos().setVisible(false);
 		this.getLabelNumTweets().setVisible(false);
 		this.getButtonBanear().setVisible(false);
+		_listaUsuariosFamososAdministrador = (ListaUsuariosFamososAdministrador) lista;
 	}
 
 	public ListaUsuariosFamososAdministrador _listaUsuariosFamososAdministrador;

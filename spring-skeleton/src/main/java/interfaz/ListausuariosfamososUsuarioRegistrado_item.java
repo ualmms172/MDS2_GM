@@ -9,6 +9,8 @@ public class ListausuariosfamososUsuarioRegistrado_item extends ListaUsuariosGen
 		this.getLabelNumTweets().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelSeguido_NoSeguido().setVisible(false);
+		
+		_listausuariosfamososUsuarioRegistrado = (ListausuariosfamososUsuarioRegistrado) lista;
 	}
 
 	public ListausuariosfamososUsuarioRegistrado _listausuariosfamososUsuarioRegistrado;

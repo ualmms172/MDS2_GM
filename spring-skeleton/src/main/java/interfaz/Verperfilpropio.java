@@ -34,17 +34,24 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	
 	
 	public Verperfilpropio(UsuarioRegistrado usuarioregistrado) {
-		 
+		
+		//Esta parte no esta en los demas ya que se incluye en el (super)
+		this.getButtonBanear().setVisible(false);
+		MostrartweetsUsuarioRegistrado();
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(Pantalla.Anterior);});
+		//
+		
 		_usuarioregistrado  = usuarioregistrado; 
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		
-		
-
 		this.getButtonEliminarCuenta().addClickListener(event -> Eliminarpropiacuenta()); 
 		this.getButtonModidicarDatos().addClickListener(event -> Modificardatoscuenta()); 
+		
 
 		
 	}

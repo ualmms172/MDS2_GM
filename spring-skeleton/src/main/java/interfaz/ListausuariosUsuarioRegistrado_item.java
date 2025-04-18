@@ -6,6 +6,8 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 	public ListausuariosUsuarioRegistrado_item(ListaUsuariosGeneral lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		
+		_listausuariosUsuarioRegistrado = (ListausuariosUsuarioRegistrado) lista;
 		this.getButtonSeguir().addClickListener(Event -> {
 			if(!dado)
 				SeguirUsuario();

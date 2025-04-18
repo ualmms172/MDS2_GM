@@ -123,38 +123,13 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonSeguir().setText("Dejar de seguir");
 		seguido=true;
 
-		Verperfilnobloqueado x = null;
-		if(_listaUsuariosGeneralUsuarioRegistrado!=null) 
-			 x = new Verperfilnobloqueado(_listaUsuariosGeneralUsuarioRegistrado);
-		else if(_vertweetgeneralUsuarioRegistrado!=null)
-			x = new Verperfilnobloqueado(_listaUsuariosGeneralUsuarioRegistrado);
-		else if(_mostrartweetspropiosUsuarioRegistrado!=null)
-			x = new Verperfilnobloqueado(_mostrartweetspropiosUsuarioRegistrado);
-		else
-			x = new Verperfilnobloqueado(_comentariosUsuarioRegistrado);
-		
-		
-		Pantalla.MainView.removeAll();
-		Pantalla.MainView.add(x);
 	}
 
 	public void Bloquear() {
 		this.getButtonBloquear().getStyle().set("color", "red");
-		this.getButtonBloquear().setText("Bloquear");
+		this.getButtonBloquear().setText("Desbloquear");
 		bloqueado=true;
 		
-		Verperfilnobloqueado x = null;
-		if(_listaUsuariosGeneralUsuarioRegistrado!=null) 
-			 x = new Verperfilnobloqueado(_listaUsuariosGeneralUsuarioRegistrado);
-		else if(_vertweetgeneralUsuarioRegistrado!=null)
-			x = new Verperfilnobloqueado(_listaUsuariosGeneralUsuarioRegistrado);
-		else if(_mostrartweetspropiosUsuarioRegistrado!=null)
-			x = new Verperfilnobloqueado(_mostrartweetspropiosUsuarioRegistrado);
-		else
-			x = new Verperfilnobloqueado(_comentariosUsuarioRegistrado);
-		
-		Pantalla.MainView.removeAll();
-		Pantalla.MainView.add(x);
 	}
 
 	public void Dejardeseguirausuario() {
@@ -162,37 +137,13 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonSeguir().setText("Seguir");
 		seguido=false;
 		
-		Verperfilnobloqueado x = null;
-		if(_listaUsuariosGeneralUsuarioRegistrado!=null) 
-			 x = new Verperfilnobloqueado(_listaUsuariosGeneralUsuarioRegistrado);
-		else if(_vertweetgeneralUsuarioRegistrado!=null)
-			x = new Verperfilnobloqueado(_listaUsuariosGeneralUsuarioRegistrado);
-		else if(_mostrartweetspropiosUsuarioRegistrado!=null)
-			x = new Verperfilnobloqueado(_mostrartweetspropiosUsuarioRegistrado);
-		else
-			x = new Verperfilnobloqueado(_comentariosUsuarioRegistrado);
-		
-		Pantalla.MainView.removeAll();
-		Pantalla.MainView.add(x);
 	}
 
 	public void Desbloquear() {
 		this.getButtonBloquear().getStyle().set("color", "gray");
-		this.getButtonBloquear().setText("Desbloquear");
+		this.getButtonBloquear().setText("Bloquear");
 		bloqueado=false;
 		
-		Verperfilnobloqueado x = null;
-		if(_listaUsuariosGeneralUsuarioRegistrado!=null) 
-			 x = new Verperfilnobloqueado(_listaUsuariosGeneralUsuarioRegistrado);
-		else if(_vertweetgeneralUsuarioRegistrado!=null)
-			x = new Verperfilnobloqueado(_listaUsuariosGeneralUsuarioRegistrado);
-		else if(_mostrartweetspropiosUsuarioRegistrado!=null)
-			x = new Verperfilnobloqueado(_mostrartweetspropiosUsuarioRegistrado);
-		else
-			x = new Verperfilnobloqueado(_comentariosUsuarioRegistrado);
-		
-		Pantalla.MainView.removeAll();
-		Pantalla.MainView.add(x);
 	}
 	
 }

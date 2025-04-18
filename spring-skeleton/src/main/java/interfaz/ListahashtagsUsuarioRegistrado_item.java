@@ -5,8 +5,10 @@ import gallardoMartinez.MainView.Pantalla;
 public class ListahashtagsUsuarioRegistrado_item extends ListahashtagsgeneralUsuarioRegistrado_item {
 	public ListahashtagsUsuarioRegistrado_item(ListaHashtagsGeneral lista) {
 		super(lista);
+		_listahashtagsUsuarioRegistrado = (ListahashtagsUsuarioRegistrado) lista;
 		this.getButtonEscribirTweet().addClickListener(Event -> Hacertweet());
 		// TODO Auto-generated constructor stub
+		
 	}
 
 	//private Label _numTweets;

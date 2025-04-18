@@ -4,6 +4,7 @@ public class ListaHashtagsUsuarioNoRegistrado_item extends ListahashtagsgeneralU
 	public ListaHashtagsUsuarioNoRegistrado_item(ListaHashtagsGeneral lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		_listaHashtagsUsuarioNoRegistrado = (ListaHashtagsUsuarioNoRegistrado) lista;
 	}
 
 	//private Label _numTweets;

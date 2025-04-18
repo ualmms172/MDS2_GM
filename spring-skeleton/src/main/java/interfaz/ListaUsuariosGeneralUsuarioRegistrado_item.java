@@ -14,7 +14,10 @@ public class ListaUsuariosGeneralUsuarioRegistrado_item extends ListaUsuariosGen
 	public VerperfilgeneralUsuarioRegistrado _verperfilUsuarioRegistrado;
 
 	public void VerperfilUsuarioRegistrado() {
-		_verperfilUsuarioRegistrado = new VerperfilgeneralUsuarioRegistrado(this);
+		//_verperfilUsuarioRegistrado = new VerperfilgeneralUsuarioRegistrado(this);
+		if(true) _verperfilUsuarioRegistrado = new Verperfilnobloqueado(this);
+		else if(true) _verperfilUsuarioRegistrado = new Verperfilpropio(this);
+		else _verperfilUsuarioRegistrado = new Verperfilbloqueado(this);
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_verperfilUsuarioRegistrado);

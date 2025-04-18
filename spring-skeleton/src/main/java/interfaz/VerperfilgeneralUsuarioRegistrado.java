@@ -23,22 +23,26 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 			Pantalla.MainView.removeAll();
 			Pantalla.MainView.add(Pantalla.Anterior);
 			if(this._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado!=null) {
-				if(this._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado._listahashtagsgeneralUsuarioRegistrado._listahashtagsgeneralUsuarioRegistrado instanceof ListahashtagsUsuarioRegistrado) {
-					ListahashtagsUsuarioRegistrado l = (ListahashtagsUsuarioRegistrado) this._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado._listahashtagsgeneralUsuarioRegistrado._listahashtagsgeneralUsuarioRegistrado;
-					Pantalla.Anterior = l._verlistacompletahashtagUsuarioRegistrado;
+				if(this._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado._listahashtagsgeneralUsuarioRegistrado instanceof ListahashtagsUsuarioRegistrado_item) {
+					ListahashtagsUsuarioRegistrado_item l = (ListahashtagsUsuarioRegistrado_item) this._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado._listahashtagsgeneralUsuarioRegistrado;
+					Pantalla.Anterior = l._listahashtagsUsuarioRegistrado._verlistacompletahashtagUsuarioRegistrado;
+				}
+				else {
+					ListahashtagfamososUsuarioRegistrado_item l = (ListahashtagfamososUsuarioRegistrado_item) this._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado._listahashtagsgeneralUsuarioRegistrado;
+					Pantalla.Anterior= l._listahashtagfamososUsuarioRegistrado._usuarioregistrado;
 				}
 			}
 			else if(this._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado!=null) {
 				VerperfilgeneralUsuarioRegistrado x = this._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado;
 				
 				if(x._listaUsuariosGeneralUsuarioRegistrado!=null) {
-					if(x._listaUsuariosGeneralUsuarioRegistrado._listaUsuariosGeneralUsuarioRegistrado instanceof ListausuariosUsuarioRegistrado) {
-						ListausuariosUsuarioRegistrado l = (ListausuariosUsuarioRegistrado) x._listaUsuariosGeneralUsuarioRegistrado._listaUsuariosGeneralUsuarioRegistrado;
-						Pantalla.Anterior= l._verlistacompletausuariosUsuarioRegistrado._usuarioregistrado;
+					if(x._listaUsuariosGeneralUsuarioRegistrado instanceof ListausuariosUsuarioRegistrado_item) {
+						ListausuariosUsuarioRegistrado_item l = (ListausuariosUsuarioRegistrado_item) x._listaUsuariosGeneralUsuarioRegistrado;
+						Pantalla.Anterior= l._listausuariosUsuarioRegistrado._verlistacompletausuariosUsuarioRegistrado._usuarioregistrado;
 					}
 					else {
-						ListausuariosfamososUsuarioRegistrado l = (ListausuariosfamososUsuarioRegistrado) x._listaUsuariosGeneralUsuarioRegistrado._listaUsuariosGeneralUsuarioRegistrado;
-						Pantalla.Anterior= l._usuarioregistrado;
+						ListausuariosfamososUsuarioRegistrado_item l = (ListausuariosfamososUsuarioRegistrado_item) x._listaUsuariosGeneralUsuarioRegistrado;
+						Pantalla.Anterior= l._listausuariosfamososUsuarioRegistrado._usuarioregistrado;
 					}
 				}
 				
@@ -63,7 +67,7 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 					}
 				}
 				
-				else {
+				else if(x._comentariosUsuarioRegistrado!=null){
 					if(x._comentariosUsuarioRegistrado._comentariospropios._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado!=null) {
 						Pantalla.Anterior = x._comentariosUsuarioRegistrado._comentariospropios._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado;
 					}
@@ -73,6 +77,10 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 					else {
 						Pantalla.Anterior = x._comentariosUsuarioRegistrado._comentariospropios._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado;
 					}
+				}
+				else {
+					Verperfilpropio l = (Verperfilpropio) x;
+					Pantalla.Anterior= l._usuarioregistrado;
 				}
 				
 				

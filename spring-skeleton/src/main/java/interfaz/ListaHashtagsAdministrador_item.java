@@ -4,6 +4,7 @@ public class ListaHashtagsAdministrador_item extends ListaHashtagsgeneralAdminis
 	public ListaHashtagsAdministrador_item(ListaHashtagsGeneral lista) {
 		super(lista);
 		// TODO Auto-generated constructor stub
+		_listaHashtagsAdministrador =(ListaHashtagsAdministrador) lista;
 	}
 
 	//private Label _numTweets;
