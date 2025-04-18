@@ -21,6 +21,68 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		ListaComentariosAdministrador();
 		this.getImgFotoPerfilTweet().addClickListener(event -> VerPerfilAdministrador()); 
 		this.getButtonBorrar().addClickListener(event -> BorrarTweet());
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(Pantalla.Anterior);
+			if(this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
+				if(this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador._listaHashtagsgeneralAdministrador._listaHashtagsgeneralAdministrador instanceof ListaHashtagsAdministrador) {
+					ListaHashtagsAdministrador l = (ListaHashtagsAdministrador) this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador._listaHashtagsgeneralAdministrador._listaHashtagsgeneralAdministrador;
+					Pantalla.Anterior = l._verlistaCompletaHashtagsAdmin;
+				}
+			}
+			else if(this._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
+				VerPerfilAdministrador x = this._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
+				
+				if(x._listaUsuariosGeneralAdministrador!=null) {
+					if(x._listaUsuariosGeneralAdministrador._listaUsuariosGeneralAdministrador instanceof ListaUsuariosAdministrador) {
+						ListaUsuariosAdministrador l = (ListaUsuariosAdministrador) x._listaUsuariosGeneralAdministrador._listaUsuariosGeneralAdministrador;
+						Pantalla.Anterior= l._verListaCompletaUsuariosAdministrador._administrador;
+					}
+					else {
+						ListaUsuariosFamososAdministrador l = (ListaUsuariosFamososAdministrador) x._listaUsuariosGeneralAdministrador._listaUsuariosGeneralAdministrador;
+						Pantalla.Anterior= l._administrador;
+					}
+				}
+				
+				else if(x._listaTweetsAdmin_item!=null) {
+					if(x._listaTweetsAdmin_item._listaTweetsAdmin._verHashtagAdministrador!=null) {
+						Pantalla.Anterior = x._listaTweetsAdmin_item._listaTweetsAdmin._verHashtagAdministrador;
+					}
+					else if(x._listaTweetsAdmin_item._listaTweetsAdmin._verPerfilAdministrador!=null) {
+						Pantalla.Anterior = x._listaTweetsAdmin_item._listaTweetsAdmin._verPerfilAdministrador;
+					}
+				}
+				
+				else if(x._verTweetAdministrador!=null) {
+					if(x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
+						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
+					}
+					else if(x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
+						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
+					}
+					else {
+						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador;
+					}
+				}
+				
+				else {
+					if(x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
+						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
+					}
+					else if(x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
+						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
+					}
+					else {
+						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador;
+					}
+				}
+				
+				
+			}
+			
+			
+	});
 	}
 	
 	public VerTweetAdministrador(VerPerfilAdministrador verPerfilAdministrador) {
@@ -40,10 +102,62 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(Pantalla.Anterior);
-		if(this._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null)
-			Pantalla.Anterior = this._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
-		else if(this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null)
-			Pantalla.Anterior = this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
+		
+		if(this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
+			if(this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador._listaHashtagsgeneralAdministrador._listaHashtagsgeneralAdministrador instanceof ListaHashtagsAdministrador) {
+				ListaHashtagsAdministrador l = (ListaHashtagsAdministrador) this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador._listaHashtagsgeneralAdministrador._listaHashtagsgeneralAdministrador;
+				Pantalla.Anterior = l._verlistaCompletaHashtagsAdmin;
+			}
+		}
+		else if(this._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
+			VerPerfilAdministrador x = this._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
+			
+			if(x._listaUsuariosGeneralAdministrador!=null) {
+				if(x._listaUsuariosGeneralAdministrador._listaUsuariosGeneralAdministrador instanceof ListaUsuariosAdministrador) {
+					ListaUsuariosAdministrador l = (ListaUsuariosAdministrador) x._listaUsuariosGeneralAdministrador._listaUsuariosGeneralAdministrador;
+					Pantalla.Anterior= l._verListaCompletaUsuariosAdministrador._administrador;
+				}
+				else {
+					ListaUsuariosFamososAdministrador l = (ListaUsuariosFamososAdministrador) x._listaUsuariosGeneralAdministrador._listaUsuariosGeneralAdministrador;
+					Pantalla.Anterior= l._administrador;
+				}
+			}
+			
+			else if(x._listaTweetsAdmin_item!=null) {
+				if(x._listaTweetsAdmin_item._listaTweetsAdmin._verHashtagAdministrador!=null) {
+					Pantalla.Anterior = x._listaTweetsAdmin_item._listaTweetsAdmin._verHashtagAdministrador;
+				}
+				else if(x._listaTweetsAdmin_item._listaTweetsAdmin._verPerfilAdministrador!=null) {
+					Pantalla.Anterior = x._listaTweetsAdmin_item._listaTweetsAdmin._verPerfilAdministrador;
+				}
+			}
+			
+			else if(x._verTweetAdministrador!=null) {
+				if(x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
+					Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
+				}
+				else if(x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
+					Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
+				}
+				else {
+					Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador;
+				}
+			}
+			
+			else {
+				if(x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
+					Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
+				}
+				else if(x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
+					Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
+				}
+				else {
+					Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador;
+				}
+			}
+			
+			
+		}
 			
 
 	}

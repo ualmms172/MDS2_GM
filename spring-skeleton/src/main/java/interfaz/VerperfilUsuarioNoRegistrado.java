@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView.Pantalla;
+
 public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	public VertweetUsuarioNoRegistrado _vertweetUsuarioNoRegistrado;
 	public ListaComentariosUsuarioNoRegistrado_item _listaComentariosUsuarioNoRegistrado;
@@ -30,6 +32,21 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		
 		Listatweets();
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(Pantalla.Anterior);
+			if(this._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado!=null) {
+				Pantalla.Anterior=this._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado;
+			}
+			else if(this._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado!=null) {
+				Pantalla.Anterior=this._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado;
+			}
+//			else {
+//				Pantalla.Anterior=this._vertweetUsuarioNoRegistrado._listatweets._listatweets._usuarioNoRegistrado;
+//			}
+			
+	});
 	}
 	
 	
@@ -45,6 +62,21 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 	
 		Listatweets();
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(Pantalla.Anterior);
+			if(this._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado!=null) {
+				Pantalla.Anterior=this._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado;
+			}
+			else if(this._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado!=null) {
+				Pantalla.Anterior=this._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado;
+			}
+//			else {
+//				Pantalla.Anterior =this._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._usuarioNoRegistrado;
+//			}
+			
+	});
 	}
 	
 	public VerperfilUsuarioNoRegistrado(ListaUsuariosGeneralUsuarioNoRegistrado_item listaUsuariosGeneralUsuarioNoRegistrado) {
@@ -59,6 +91,16 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		
 		Listatweets();
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(Pantalla.Anterior);
+			if(this._listaUsuariosGeneralUsuarioNoRegistrado._listaUsuariosGeneralUsuarioNoRegistrado instanceof ListaUsuariosUsuarionoRegistrado) {
+				ListaUsuariosUsuarionoRegistrado l = (ListaUsuariosUsuarionoRegistrado) this._listaUsuariosGeneralUsuarioNoRegistrado._listaUsuariosGeneralUsuarioNoRegistrado;
+				Pantalla.Anterior= l._verListaCompletaUsuariosUsuarioNoRegistrado._usuarioNoRegistrado;
+			}
+			
+	});
 	}
 	
 	public VerperfilUsuarioNoRegistrado(Listatweets_item listatweets) {
@@ -73,6 +115,68 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		
 		Listatweets();
+		
+		this.getButtonAtras().addClickListener(event -> {
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(Pantalla.Anterior);
+			if(this._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado!=null) {
+				if(this._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado._listahashtagsgeneralUsuarioNoRegistrado._listahashtagsgeneralUsuarioNoRegistrado instanceof ListaHashtagsUsuarioNoRegistrado) {
+					ListaHashtagsUsuarioNoRegistrado l = (ListaHashtagsUsuarioNoRegistrado) this._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado._listahashtagsgeneralUsuarioNoRegistrado._listahashtagsgeneralUsuarioNoRegistrado;
+					Pantalla.Anterior = l._verlistacompletahashtags;
+				}
+			}
+			else if(this._listatweets_item._listatweets._verperfilUsuarioNoRegistrado!=null) {
+				VerperfilUsuarioNoRegistrado x = this._listatweets_item._listatweets._verperfilUsuarioNoRegistrado;
+				
+				if(x._listaUsuariosGeneralUsuarioNoRegistrado!=null) {
+					if(x._listaUsuariosGeneralUsuarioNoRegistrado._listaUsuariosGeneralUsuarioNoRegistrado instanceof ListaUsuariosUsuarionoRegistrado) {
+						ListaUsuariosUsuarionoRegistrado l = (ListaUsuariosUsuarionoRegistrado) x._listaUsuariosGeneralUsuarioNoRegistrado._listaUsuariosGeneralUsuarioNoRegistrado;
+						Pantalla.Anterior= l._verListaCompletaUsuariosUsuarioNoRegistrado._usuarioNoRegistrado;
+					}
+					else {
+						ListaUsuariosFamosos l = (ListaUsuariosFamosos) x._listaUsuariosGeneralUsuarioNoRegistrado._listaUsuariosGeneralUsuarioNoRegistrado;
+						Pantalla.Anterior= l._usuarioNoRegistrado;
+					}
+				}
+				
+				else if(x._listatweets_item!=null) {
+					if(x._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado!=null) {
+						Pantalla.Anterior = x._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado;
+					}
+					else if(x._listatweets_item._listatweets._verperfilUsuarioNoRegistrado!=null) {
+						Pantalla.Anterior = x._listatweets_item._listatweets._verperfilUsuarioNoRegistrado;
+					}
+				}
+				
+				else if(x._vertweetUsuarioNoRegistrado!=null) {
+					if(x._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado!=null) {
+						Pantalla.Anterior = x._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado;
+					}
+					else if(x._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado!=null) {
+						Pantalla.Anterior = x._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado;
+					}
+//					else {
+//						Pantalla.Anterior = x._vertweetUsuarioNoRegistrado._listatweets._listatweets._usuarioNoRegistrado;
+//					}
+				}
+				
+				else {
+					if(x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado!=null) {
+						Pantalla.Anterior = x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado;
+					}
+					else if(x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado!=null) {
+						Pantalla.Anterior = x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado;
+					}
+//					else {
+//						Pantalla.Anterior = x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._usuarioNoRegistrado;
+//					}
+				}
+				
+				
+			}
+			
+			
+	});
 	}
 	
 	
