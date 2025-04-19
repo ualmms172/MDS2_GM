@@ -5,14 +5,19 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 		super(lista);
 		// TODO Auto-generated constructor stub
 		this.getButtonMeGusta().setVisible(true);
+		
 		this.getButtonMeGusta().addClickListener(event-> Darlikeatweet());
+		this.getButtonMeGusta().getElement()
+	    .executeJs("this.addEventListener('click', function(e) { e.stopPropagation(); })");
+
 	}
 
 	//private event _darlikeatweet;
 	//private Button _darMeGusta;
 	public MostrartweetsUsuarioRegistrado _mostrartweetsUsuarioRegistrado;
-	public Boolean dado;
-
+	
+	public Boolean dado = false;
+	
 	public void Darlikeatweet() {
 		
 		if(!dado) {

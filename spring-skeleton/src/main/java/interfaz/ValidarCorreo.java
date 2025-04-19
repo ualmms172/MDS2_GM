@@ -19,6 +19,10 @@ public class ValidarCorreo extends VistaValidarcorreo{
 		
 		_registrar = registrar; 
 		this.getButtonValidar().addClickListener(event -> Registrarse()); 
+		this.getButtonAtras().addClickListener(event->{
+			Pantalla.MainView.removeAll();
+			Pantalla.MainView.add(Pantalla.Anterior);
+		});
 	}
 	
 	

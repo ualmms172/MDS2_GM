@@ -16,6 +16,8 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 		this.getVaadinHorizontalLayout().addClickListener(Event -> VerTweetUsuarioRegistrado());
 		this.getImgFotoPerfilTweet().addClickListener(Event -> VerperfilUsuarioRegistrado());
 		
+		
+		
 	}
 
 	//private Button _retweetear;
@@ -23,6 +25,8 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 	public VertweetgeneralUsuarioRegistrado _verTweetUsuarioRegistrado;
 	public VerperfilgeneralUsuarioRegistrado _verperfilUsuarioRegistrado;
 	public Retweetear _retweetear;
+	
+	
 
 	public void Retweetear() {
 		_retweetear = new Retweetear(this);

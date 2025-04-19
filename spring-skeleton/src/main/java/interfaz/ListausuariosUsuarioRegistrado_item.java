@@ -8,12 +8,15 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 		// TODO Auto-generated constructor stub
 		
 		_listausuariosUsuarioRegistrado = (ListausuariosUsuarioRegistrado) lista;
+		
 		this.getButtonSeguir().addClickListener(Event -> {
 			if(!dado)
 				SeguirUsuario();
 			else
 				Dejardeseguirausuario();
 		});
+		this.getButtonSeguir().getElement()
+	    .executeJs("this.addEventListener('click', function(e) { e.stopPropagation(); })");
 	}
 
 	//private event _seguirUsuario;
@@ -30,9 +33,7 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 		this.getButtonSeguir().getStyle().set("color", "red");
 		this.getButtonSeguir().setText("Dejar de seguir");
 
-		VerlistacompletausuariosUsuarioRegistrado l = new VerlistacompletausuariosUsuarioRegistrado(_listausuariosUsuarioRegistrado._verlistacompletausuariosUsuarioRegistrado._usuarioregistrado);
-		Pantalla.MainView.removeAll();
-		Pantalla.MainView.add(l);
+		
 		
 		
 	}
@@ -41,8 +42,5 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 		this.getButtonSeguir().getStyle().set("color", "gray");
 		this.getButtonSeguir().setText("Seguir");
 		
-		VerlistacompletausuariosUsuarioRegistrado l = new VerlistacompletausuariosUsuarioRegistrado(_listausuariosUsuarioRegistrado._verlistacompletausuariosUsuarioRegistrado._usuarioregistrado);
-		Pantalla.MainView.removeAll();
-		Pantalla.MainView.add(l);
 	}
 }

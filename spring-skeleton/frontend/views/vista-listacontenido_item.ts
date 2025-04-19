@@ -55,10 +55,8 @@ export class VistaListacontenido_item extends LitElement {
      <vaadin-horizontal-layout theme="spacing" id="horizontalLayout-MeGusta">
       <label style="flex-grow: 1;" id="label-MeGusta">Num Me gusta</label>
       <img style="flex-grow: 1;" id="img-MeGusta">
-      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 1;" tabindex="0" id="button-MeGusta">
-       <vaadin-button id="icon-MeGusta" tabindex="0">
-         Me gusta 
-       </vaadin-button>
+      <vaadin-button id="button-MeGusta" style="flex-grow: 1;" tabindex="0">
+       Me gusta 
       </vaadin-button>
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>

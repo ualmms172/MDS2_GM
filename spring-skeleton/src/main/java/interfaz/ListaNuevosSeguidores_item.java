@@ -15,10 +15,14 @@ public class ListaNuevosSeguidores_item extends VistaListanuevosseguidores_item 
 		_listaNuevosSeguidores = lista; 
 		
 		this.getButtonSeguir_NoSeguir().addClickListener(Event -> {
-			if(!dado)
+			if(!dado) {
 				SeguirUsuario();
-			else
+				dado=true;
+			}
+			else {
 				Dejardeseguirausuario();
+				dado=false;
+			}
 		});
 	}
 	

@@ -66,8 +66,6 @@ public class VistaListacontenido_item extends LitTemplate {
 	private Element verticalLayoutRetweetBorrar;
 	@Id("button-MeGusta")
 	private Button buttonMeGusta;
-	@Id("icon-MeGusta")
-	private Button iconMeGusta;
 	public VistaListacontenido_item() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -270,14 +268,6 @@ public class VistaListacontenido_item extends LitTemplate {
 
 	public void setButtonMeGusta(Button buttonMeGusta) {
 		this.buttonMeGusta = buttonMeGusta;
-	}
-
-	public Button getIconMeGusta() {
-		return iconMeGusta;
-	}
-
-	public void setIconMeGusta(Button iconMeGusta) {
-		this.iconMeGusta = iconMeGusta;
 	}
 
 
