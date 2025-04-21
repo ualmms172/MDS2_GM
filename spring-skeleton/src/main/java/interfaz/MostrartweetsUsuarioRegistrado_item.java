@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.AttachEvent;
+
 public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsuarioRegistrado_item {
 	MostrartweetsUsuarioRegistrado_item(ListaContenido lista) {
 		super(lista);
@@ -35,5 +37,14 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 				la._item.add(this);
 				dado=false;
 				}
+	}
+	
+	@Override
+	protected void onAttach(AttachEvent attachEvent) {
+	    super.onAttach(attachEvent);
+
+
+	    this.getButtonMeGusta().getElement()
+	        .executeJs("this.addEventListener('click', function(e) { e.stopPropagation(); })");
 	}
 }

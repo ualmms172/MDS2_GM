@@ -25,10 +25,27 @@ public class Administrador extends Logueado {
 	
 	public Administrador(MainView MainView) {
 		super(MainView);
+		/*
 		this.getButtonNotificaciones().setVisible(false);
 		this.getImgPerfilUsuario().setVisible(false);
 		this.getButtonEscribirTweet().setVisible(false);
 		this.getButtonVerPerfil().setVisible(false);
+		*/
+		//this.getImgPerfilUsuario().setVisible(false);
+		
+		this.getLabelListaUsuariosMasFamosos().getStyle().set("font-size", "15px");
+		this.getButtonEscribirTweet().getStyle().set("visibility", "hidden");
+		this.getButtonEscribirTweet().getStyle().set("pointer-events", "none");
+		
+		this.getButtonNotificaciones().getStyle().set("visibility", "hidden");
+		this.getButtonNotificaciones().getStyle().set("pointer-events", "none");
+		
+		this.getImgPerfilUsuario().getStyle().set("visibility", "hidden");
+		this.getImgPerfilUsuario().getStyle().set("pointer-events", "none");
+		
+		this.getButtonVerPerfil().getStyle().set("visibility", "hidden");
+		this.getButtonVerPerfil().getStyle().set("pointer-events", "none");
+		
 		
 		this.getButtonVerMasUsuarios().addClickListener(Event -> VerListaCompletaUsuariosAdministrador()); 
 		this.getButtonVerMasHashtags().addClickListener(Event -> VerlistaCompletaHashtagsAdmin()); 

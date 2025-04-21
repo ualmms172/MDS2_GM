@@ -69,6 +69,9 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 					else if(x._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado!=null) {
 						Pantalla.Anterior = x._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado;
 					}
+					else {
+						Pantalla.Anterior = x._mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado;
+					}
 				}
 				
 				else if(x._vertweetgeneralUsuarioRegistrado!=null) {
