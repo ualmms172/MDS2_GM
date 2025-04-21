@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Model quotesql="1" tablecharset="" mysql_version="504" mssql_version="2005" derby_version="106" ingres_version="9">
+  <Entity name="UsuarioRegistrado" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="Id_user">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Descripcion">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="FotoPerfil">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="FotoFondo">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="LogueadoId_logueado">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Logueado.Id_logueado</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Administrador" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="Id_admin">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="LogueadoId_logueado">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Logueado.Id_logueado</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Tweet" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="ContenidoId_cont">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Contenido.Id_cont</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="TweetContenidoId_cont">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Tweet.ContenidoId_cont</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Hashtag" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="Id_hash">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="UsuarioRegistradoLogueadoId_logueado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.UsuarioRegistrado.LogueadoId_logueado</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="NumTweets">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Titulo">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Logueado" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="Id_logueado">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Nick">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Contrasena">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Contenido" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="Id_cont">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="UsuarioRegistradoLogueadoId_logueado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.UsuarioRegistrado.LogueadoId_logueado</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="baneo" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="Id_baneo">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="FechaFin">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>17</Type>
+      <Length>0</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="UsuarioRegistradoLogueadoId_logueado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.UsuarioRegistrado.LogueadoId_logueado</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="AdministradorLogueadoId_logueado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Administrador.LogueadoId_logueado</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Multimedia" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="Id_mult">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="ContenidoId_cont">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Contenido.Id_cont</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Url">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Foto">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>1</Type>
+      <Length>1</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Texto" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="Id_texto">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="ContenidoId_cont">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Contenido.Id_cont</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Texto">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Comentario" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="ContenidoId_cont">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Contenido.Id_cont</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="TweetContenidoId_cont">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Tweet.ContenidoId_cont</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Tweet_Hashtag" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="TweetContenidoId_cont">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Tweet.ContenidoId_cont</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="HashtagId_hash">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Hashtag.Id_hash</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="UsuarioRegistrado_UsuarioRegistrado" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="UsuarioRegistradoLogueadoId_logueado">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.UsuarioRegistrado.LogueadoId_logueado</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="UsuarioRegistradoLogueadoId_logueado2">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.UsuarioRegistrado.LogueadoId_logueado</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="UsuarioRegistrado_UsuarioRegistrado2" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="UsuarioRegistradoLogueadoId_logueado">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.UsuarioRegistrado.LogueadoId_logueado</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="UsuarioRegistradoLogueadoId_logueado2">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.UsuarioRegistrado.LogueadoId_logueado</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="UsuarioRegistrado_Contenido" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="UsuarioRegistradoLogueadoId_logueado">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.UsuarioRegistrado.LogueadoId_logueado</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="ContenidoId_cont">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Contenido.Id_cont</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Tweet_UsuarioRegistrado" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="TweetContenidoId_cont">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.Tweet.ContenidoId_cont</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="UsuarioRegistradoLogueadoId_logueado">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>basededatos.UsuarioRegistrado.LogueadoId_logueado</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <ForeignKey name="FKUsuarioReg475124">
+    <ReferenceTable>UsuarioRegistrado</ReferenceTable>
+    <ReferencedTable>Logueado</ReferencedTable>
+    <Columns>
+      <Column>LogueadoId_logueado</Column>
+    </Columns>
+    <RefColumns>
+      <Column>Id_logueado</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKAdministra832840">
+    <ReferenceTable>Administrador</ReferenceTable>
+    <ReferencedTable>Logueado</ReferencedTable>
+    <Columns>
+      <Column>LogueadoId_logueado</Column>
+    </Columns>
+    <RefColumns>
+      <Column>Id_logueado</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKTweet480558">
+    <ReferenceTable>Tweet</ReferenceTable>
+    <ReferencedTable>Contenido</ReferencedTable>
+    <Columns>
+      <Column>ContenidoId_cont</Column>
+    </Columns>
+    <RefColumns>
+      <Column>Id_cont</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKComentario468651">
+    <ReferenceTable>Comentario</ReferenceTable>
+    <ReferencedTable>Contenido</ReferencedTable>
+    <Columns>
+      <Column>ContenidoId_cont</Column>
+    </Columns>
+    <RefColumns>
+      <Column>Id_cont</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKTweet_Hash508293">
+    <ReferenceTable>Tweet_Hashtag</ReferenceTable>
+    <ReferencedTable>Tweet</ReferencedTable>
+    <Columns>
+      <Column>TweetContenidoId_cont</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ContenidoId_cont</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKTweet_Hash806765">
+    <ReferenceTable>Tweet_Hashtag</ReferenceTable>
+    <ReferencedTable>Hashtag</ReferencedTable>
+    <Columns>
+      <Column>HashtagId_hash</Column>
+    </Columns>
+    <RefColumns>
+      <Column>Id_hash</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKUsuarioReg499964">
+    <ReferenceTable>UsuarioRegistrado_UsuarioRegistrado</ReferenceTable>
+    <ReferencedTable>UsuarioRegistrado</ReferencedTable>
+    <Columns>
+      <Column>UsuarioRegistradoLogueadoId_logueado</Column>
+    </Columns>
+    <RefColumns>
+      <Column>LogueadoId_logueado</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKUsuarioReg559801">
+    <ReferenceTable>UsuarioRegistrado_UsuarioRegistrado</ReferenceTable>
+    <ReferencedTable>UsuarioRegistrado</ReferencedTable>
+    <Columns>
+      <Column>UsuarioRegistradoLogueadoId_logueado2</Column>
+    </Columns>
+    <RefColumns>
+      <Column>LogueadoId_logueado</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKUsuarioReg256301">
+    <ReferenceTable>UsuarioRegistrado_UsuarioRegistrado2</ReferenceTable>
+    <ReferencedTable>UsuarioRegistrado</ReferencedTable>
+    <Columns>
+      <Column>UsuarioRegistradoLogueadoId_logueado</Column>
+    </Columns>
+    <RefColumns>
+      <Column>LogueadoId_logueado</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKUsuarioReg803464">
+    <ReferenceTable>UsuarioRegistrado_UsuarioRegistrado2</ReferenceTable>
+    <ReferencedTable>UsuarioRegistrado</ReferencedTable>
+    <Columns>
+      <Column>UsuarioRegistradoLogueadoId_logueado2</Column>
+    </Columns>
+    <RefColumns>
+      <Column>LogueadoId_logueado</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKTweet153239">
+    <ReferenceTable>Tweet</ReferenceTable>
+    <ReferencedTable>Tweet</ReferencedTable>
+    <Columns>
+      <Column>TweetContenidoId_cont</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ContenidoId_cont</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKUsuarioReg706606">
+    <ReferenceTable>UsuarioRegistrado_Contenido</ReferenceTable>
+    <ReferencedTable>UsuarioRegistrado</ReferencedTable>
+    <Columns>
+      <Column>UsuarioRegistradoLogueadoId_logueado</Column>
+    </Columns>
+    <RefColumns>
+      <Column>LogueadoId_logueado</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKUsuarioReg399283">
+    <ReferenceTable>UsuarioRegistrado_Contenido</ReferenceTable>
+    <ReferencedTable>Contenido</ReferencedTable>
+    <Columns>
+      <Column>ContenidoId_cont</Column>
+    </Columns>
+    <RefColumns>
+      <Column>Id_cont</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKComentario141332">
+    <ReferenceTable>Comentario</ReferenceTable>
+    <ReferencedTable>Tweet</ReferencedTable>
+    <Columns>
+      <Column>TweetContenidoId_cont</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ContenidoId_cont</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKMultimedia154392">
+    <ReferenceTable>Multimedia</ReferenceTable>
+    <ReferencedTable>Contenido</ReferencedTable>
+    <Columns>
+      <Column>ContenidoId_cont</Column>
+    </Columns>
+    <RefColumns>
+      <Column>Id_cont</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKTexto963038">
+    <ReferenceTable>Texto</ReferenceTable>
+    <ReferencedTable>Contenido</ReferencedTable>
+    <Columns>
+      <Column>ContenidoId_cont</Column>
+    </Columns>
+    <RefColumns>
+      <Column>Id_cont</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKHashtag816271">
+    <ReferenceTable>Hashtag</ReferenceTable>
+    <ReferencedTable>UsuarioRegistrado</ReferencedTable>
+    <Columns>
+      <Column>UsuarioRegistradoLogueadoId_logueado</Column>
+    </Columns>
+    <RefColumns>
+      <Column>LogueadoId_logueado</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKTweet_Usua407590">
+    <ReferenceTable>Tweet_UsuarioRegistrado</ReferenceTable>
+    <ReferencedTable>Tweet</ReferencedTable>
+    <Columns>
+      <Column>TweetContenidoId_cont</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ContenidoId_cont</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKTweet_Usua427586">
+    <ReferenceTable>Tweet_UsuarioRegistrado</ReferenceTable>
+    <ReferencedTable>UsuarioRegistrado</ReferencedTable>
+    <Columns>
+      <Column>UsuarioRegistradoLogueadoId_logueado</Column>
+    </Columns>
+    <RefColumns>
+      <Column>LogueadoId_logueado</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKContenido168544">
+    <ReferenceTable>Contenido</ReferenceTable>
+    <ReferencedTable>UsuarioRegistrado</ReferencedTable>
+    <Columns>
+      <Column>UsuarioRegistradoLogueadoId_logueado</Column>
+    </Columns>
+    <RefColumns>
+      <Column>LogueadoId_logueado</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKbaneo455783">
+    <ReferenceTable>baneo</ReferenceTable>
+    <ReferencedTable>UsuarioRegistrado</ReferencedTable>
+    <Columns>
+      <Column>UsuarioRegistradoLogueadoId_logueado</Column>
+    </Columns>
+    <RefColumns>
+      <Column>LogueadoId_logueado</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKbaneo397877">
+    <ReferenceTable>baneo</ReferenceTable>
+    <ReferencedTable>Administrador</ReferencedTable>
+    <Columns>
+      <Column>AdministradorLogueadoId_logueado</Column>
+    </Columns>
+    <RefColumns>
+      <Column>LogueadoId_logueado</Column>
+    </RefColumns>
+  </ForeignKey>
+</Model>

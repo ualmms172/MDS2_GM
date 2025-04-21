@@ -30,5 +30,8 @@ public class VerListaCompletaUsuariosAdministrador extends VistaVerlistacompleta
 		
 		ListaUsuariosAdministrador_item item_tweets = new ListaUsuariosAdministrador_item(_listaUsuariosAdministrador);
 		_listaUsuariosAdministrador.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
+		
+		
+		
 	}
 }
