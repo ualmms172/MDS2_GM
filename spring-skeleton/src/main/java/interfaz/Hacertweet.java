@@ -58,11 +58,4 @@ public class Hacertweet extends CrearContenido {
 		
 	}
 
-	public void Mencionar() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void UsarHashtag() {
-		throw new UnsupportedOperationException();
-	}
 }

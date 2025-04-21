@@ -180,11 +180,4 @@ public class Retweetear extends CrearContenido {
 		 }
 	}
 
-	public void Mencionar() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void UsarHashtag() {
-		throw new UnsupportedOperationException();
-	}
 }

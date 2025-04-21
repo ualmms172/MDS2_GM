@@ -87,6 +87,9 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 					else if(x._listaTweetsAdmin_item._listaTweetsAdmin._verPerfilAdministrador!=null) {
 						Pantalla.Anterior = x._listaTweetsAdmin_item._listaTweetsAdmin._verPerfilAdministrador;
 					}
+					else {
+						Pantalla.Anterior=x._listaTweetsAdmin_item._listaTweetsAdmin._administrador;
+					}
 				}
 				
 				else if(x._verTweetAdministrador!=null) {
