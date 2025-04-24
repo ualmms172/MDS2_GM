@@ -66,6 +66,10 @@ public class VistaListacontenido_item extends LitTemplate {
 	private Element verticalLayoutRetweetBorrar;
 	@Id("button-MeGusta")
 	private Button buttonMeGusta;
+	@Id("label-RetweeteadoPor")
+	private Label labelRetweeteadoPor;
+	@Id("horizontalLayout-RetweeteadoPor")
+	private HorizontalLayout horizontalLayoutRetweeteadoPor;
 	public VistaListacontenido_item() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -268,6 +272,22 @@ public class VistaListacontenido_item extends LitTemplate {
 
 	public void setButtonMeGusta(Button buttonMeGusta) {
 		this.buttonMeGusta = buttonMeGusta;
+	}
+	
+	public Label getlabelRetweeteadoPor() {
+		return labelRetweeteadoPor;
+	}
+
+	public void setabelRetweeteadoPor(Label labelRetweeteadoPor) {
+		this.labelRetweeteadoPor = labelRetweeteadoPor;
+	}
+	
+	public HorizontalLayout getHorizontalLayoutRetweeteadoPor() {
+		return horizontalLayoutRetweeteadoPor;
+	}
+
+	public void setabelRetweeteadoPor(HorizontalLayout horizontalLayoutRetweeteadoPor) {
+		this.horizontalLayoutRetweeteadoPor = horizontalLayoutRetweeteadoPor;
 	}
 
 

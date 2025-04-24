@@ -20,6 +20,9 @@ export class VistaListacontenido_item extends LitElement {
 <vaadin-vertical-layout id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; background-color: #cdc8c8; align-self: center; width: 70%;" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="vaadinVerticalLayout1">
+   <vaadin-horizontal-layout theme="spacing" id="horizontalLayout-RetweeteadoPor" style="align-self: center;">
+    <label id="label-RetweeteadoPor">Retweeteado por [Usuario]</label>
+   </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%; height: 15%;" id="horizontalLayout-Cabecera">
     <img style="flex-grow: 1; width: 38%; height: 100%; margin-top: var(--lumo-space-s); margin-left: var(--lumo-space-s);" id="img-FotoPerfilTweet">
     <label style="flex-grow: 1; width: 100%; margin-top: var(--lumo-space-xl);" id="label-NombreUsuario">Nombre Usuario</label>
@@ -56,7 +59,7 @@ export class VistaListacontenido_item extends LitElement {
       <label style="flex-grow: 1;" id="label-MeGusta">Num Me gusta</label>
       <img style="flex-grow: 1;" id="img-MeGusta">
       <vaadin-button id="button-MeGusta" style="flex-grow: 1;" tabindex="0">
-       Me gusta 
+        Me gusta 
       </vaadin-button>
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>

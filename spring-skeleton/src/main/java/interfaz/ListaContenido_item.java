@@ -16,6 +16,8 @@ public class ListaContenido_item extends VistaListacontenido_item {
 	
 	public ListaContenido_item(ListaContenido lista) {
 	_lista = lista;
+	this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
+	this.getlabelRetweeteadoPor().setVisible(false);
 	}
 	
 }

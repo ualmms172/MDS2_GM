@@ -18,6 +18,9 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		this.getButtonMeGusta().setVisible(false);
 		this.getButtonRetweet().setVisible(false);
 		
+		this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
+		this.getlabelRetweeteadoPor().setVisible(false);
+		
 		ListaComentariosAdministrador();
 		this.getImgFotoPerfilTweet().addClickListener(event -> VerPerfilAdministrador()); 
 		this.getButtonBorrar().addClickListener(event -> BorrarTweet());

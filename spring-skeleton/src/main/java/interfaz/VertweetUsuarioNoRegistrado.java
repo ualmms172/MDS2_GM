@@ -17,6 +17,9 @@ public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 		this.getButtonRetweet().setVisible(false);
 		this.getButtonComentar().setVisible(false);
 		
+		this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
+		this.getlabelRetweeteadoPor().setVisible(false);
+		
 		this.ListaComentariosUsuarioNoRegistrado();
 		this.getImgFotoPerfilTweet().addClickListener(event -> VerperfilUsuarioNoRegistrado());
 		

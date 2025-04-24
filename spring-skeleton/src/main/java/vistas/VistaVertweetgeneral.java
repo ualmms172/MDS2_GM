@@ -73,6 +73,10 @@ public class VistaVertweetgeneral extends LitTemplate {
 	private Button buttonComentar;
 	@Id("button-Atras")
 	private Button buttonAtras;
+	@Id("label-RetweeteadoPor")
+	private Label labelRetweeteadoPor;
+	@Id("horizontalLayout-RetweeteadoPor")
+	private HorizontalLayout horizontalLayoutRetweeteadoPor;
 
 	public Button getButtonAtras() {
 		return buttonAtras;
@@ -310,8 +314,21 @@ public class VistaVertweetgeneral extends LitTemplate {
 		this.buttonComentar = buttonComentar;
 	}
 	
-    
-    
+	public Label getlabelRetweeteadoPor() {
+		return labelRetweeteadoPor;
+	}
+
+	public void setabelRetweeteadoPor(Label labelRetweeteadoPor) {
+		this.labelRetweeteadoPor = labelRetweeteadoPor;
+	}
+	
+	public HorizontalLayout getHorizontalLayoutRetweeteadoPor() {
+		return horizontalLayoutRetweeteadoPor;
+	}
+
+	public void setabelRetweeteadoPor(HorizontalLayout horizontalLayoutRetweeteadoPor) {
+		this.horizontalLayoutRetweeteadoPor = horizontalLayoutRetweeteadoPor;
+	}
     
     
     

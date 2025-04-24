@@ -18,6 +18,10 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 		_verperfilUsuarioRegistrado = verperfilUsuarioRegistrado; 
 		this.getButtonBorrar().setVisible(false);
 		
+		this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
+		this.getlabelRetweeteadoPor().setVisible(false);
+		
+		
 		ComentariosUsuarioRegistrado();
 		this.getButtonComentar().addClickListener(event -> Comentar());
 		this.getButtonRetweet().addClickListener(event -> Retweetear());
@@ -29,6 +33,9 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 		
 		_mostrartweetspropiosUsuarioRegistrado = mostrartweetspropiosUsuarioRegistrado_item; 
 		this.getButtonBorrar().setVisible(false);
+		
+		this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
+		this.getlabelRetweeteadoPor().setVisible(false);
 	
 		ComentariosUsuarioRegistrado();
 		this.getButtonComentar().addClickListener(event -> Comentar());
