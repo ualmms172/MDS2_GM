@@ -2,11 +2,12 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.Tweet;
 import gallardoMartinez.MainView.Pantalla;
 
 public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
-	public ListaTweetsAdmin_item(ListaContenido lista) {
-		super(lista);
+	public ListaTweetsAdmin_item(ListaContenido lista,Tweet t) {
+		super(lista,t);
 		
 		_listaTweetsAdmin = (ListaTweetsAdmin) _lista; 
 		// TODO Auto-generated constructor stub

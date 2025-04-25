@@ -56,7 +56,7 @@ public class Retweetear extends CrearContenido {
 					 Pantalla.MainView.add(y);
 				 }
 				 else {
-					 UsuarioRegistrado y = new UsuarioRegistrado((MainView)Pantalla.MainView);
+					 UsuarioRegistrado y = new UsuarioRegistrado((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 					 Pantalla.MainView.add(y);
 				 }
 			 }
@@ -112,7 +112,7 @@ public class Retweetear extends CrearContenido {
 					 Pantalla.MainView.add(y);
 				 }
 				 else {
-					 UsuarioRegistrado y = new UsuarioRegistrado((MainView)Pantalla.MainView);
+					 UsuarioRegistrado y = new UsuarioRegistrado((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 					 Pantalla.MainView.add(y);
 				 }
 			 }
@@ -171,7 +171,7 @@ public class Retweetear extends CrearContenido {
 				 Pantalla.MainView.add(y);
 			 }
 			 else {
-				 UsuarioRegistrado y = new UsuarioRegistrado((MainView)Pantalla.MainView);
+				 UsuarioRegistrado y = new UsuarioRegistrado((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 				 Pantalla.MainView.add(y);
 			 }
 		 }

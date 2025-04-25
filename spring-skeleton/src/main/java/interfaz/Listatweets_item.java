@@ -2,11 +2,12 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.Tweet;
 import gallardoMartinez.MainView.Pantalla;
 
 public class Listatweets_item extends ListaTweetsGeneral_item {
-	public Listatweets_item(ListaContenido lista) {
-		super(lista);
+	public Listatweets_item(ListaContenido lista,Tweet t) {
+		super(lista,t);
 		// TODO Auto-generated constructor stub
 		this.getButtonBorrar().setVisible(false);
 		this.getButtonMeGusta().setVisible(false);

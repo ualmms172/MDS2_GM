@@ -116,7 +116,7 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 		_comentariosUsuarioRegistrado = new Comentariospropios(this);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_comentariosUsuarioRegistrado);
 		
-		Comentariospropios_item item_tweets = new Comentariospropios_item(_comentariosUsuarioRegistrado);
+		Comentariospropios_item item_tweets = new Comentariospropios_item(_comentariosUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_comentariosUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 

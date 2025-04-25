@@ -28,7 +28,7 @@ public class VerListaCompletaUsuariosAdministrador extends VistaVerlistacompleta
 		_listaUsuariosAdministrador = new ListaUsuariosAdministrador(this);
 		this.getVerticalLayoutListaUsuarios().as(VerticalLayout.class).add(_listaUsuariosAdministrador);
 		
-		ListaUsuariosAdministrador_item item_tweets = new ListaUsuariosAdministrador_item(_listaUsuariosAdministrador);
+		ListaUsuariosAdministrador_item item_tweets = new ListaUsuariosAdministrador_item(_listaUsuariosAdministrador,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listaUsuariosAdministrador.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
 		
 		

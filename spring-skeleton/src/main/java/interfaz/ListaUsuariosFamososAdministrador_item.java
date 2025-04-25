@@ -1,8 +1,8 @@
 package interfaz;
 
 public class ListaUsuariosFamososAdministrador_item extends ListaUsuariosGeneralAdministrador_item {
-	public ListaUsuariosFamososAdministrador_item(ListaUsuariosGeneral lista) {
-		super(lista);
+	public ListaUsuariosFamososAdministrador_item(ListaUsuariosGeneral lista,basededatos.UsuarioRegistrado u) {
+		super(lista,u);
 		// TODO Auto-generated constructor stub
 		this.getLabelNumSeguidores().setVisible(false);
 		this.getLabelNumSeguidos().setVisible(false);

@@ -2,9 +2,11 @@ package interfaz;
 
 import com.vaadin.flow.component.AttachEvent;
 
+import basededatos.Tweet;
+
 public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsuarioRegistrado_item {
-	MostrartweetsUsuarioRegistrado_item(ListaContenido lista) {
-		super(lista);
+	MostrartweetsUsuarioRegistrado_item(ListaContenido lista,Tweet t) {
+		super(lista,t);
 		// TODO Auto-generated constructor stub
 		this.getButtonMeGusta().setVisible(true);
 		

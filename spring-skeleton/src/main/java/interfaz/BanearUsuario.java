@@ -90,7 +90,7 @@ public class BanearUsuario extends VistaBanearusuario{
 	
 
 	public void BanearTemporalmente() {
-		Administrador ad = new Administrador((MainView)Pantalla.MainView);
+		Administrador ad = new Administrador((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		Verbaneados vb = new Verbaneados(ad);
 		Pantalla.Anterior = ad;
 		Pantalla.MainView.removeAll();
@@ -98,7 +98,7 @@ public class BanearUsuario extends VistaBanearusuario{
 	}
 
 	public void BanearIndefinidamente() {
-		Administrador ad = new Administrador((MainView)Pantalla.MainView);
+		Administrador ad = new Administrador((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		Verbaneados vb = new Verbaneados(ad);
 		Pantalla.Anterior = ad;
 		Pantalla.MainView.removeAll();

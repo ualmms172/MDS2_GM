@@ -2,11 +2,12 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.Comentario;
 import gallardoMartinez.MainView.Pantalla;
 
 public class ListaComentariosAdministrador_item extends ListaComentariosGeneral_item {
-	public ListaComentariosAdministrador_item(ListaContenido lista) {
-		super(lista);
+	public ListaComentariosAdministrador_item(ListaContenido lista,Comentario c) {
+		super(lista,c);
 		_listaComentariosAdministrador= (ListaComentariosAdministrador)lista;
 		// TODO Auto-generated constructor stub
 		this.getButtonMeGusta().setVisible(false);

@@ -197,7 +197,7 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		_listaTweetsAdmin = new ListaTweetsAdmin(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_listaTweetsAdmin);
 		
-		ListaTweetsAdmin_item item_tweets = new ListaTweetsAdmin_item(_listaTweetsAdmin);
+		ListaTweetsAdmin_item item_tweets = new ListaTweetsAdmin_item(_listaTweetsAdmin,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 }

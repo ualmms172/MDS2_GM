@@ -50,7 +50,7 @@ public class IniciarSesin extends VistaIniciarsesin {
 	public void Autentificarse() {
 		
 		this._usuarioNoRegistrado.MainView.removeAll();
-		Administrador ad = new Administrador(this._usuarioNoRegistrado.MainView); 
+		Administrador ad = new Administrador(this._usuarioNoRegistrado.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL 
 		this._usuarioNoRegistrado.MainView.add(ad);
 		
 		
