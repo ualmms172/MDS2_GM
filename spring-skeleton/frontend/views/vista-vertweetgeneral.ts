@@ -56,7 +56,7 @@ export class VistaVertweetgeneral extends LitElement {
        Borrar 
      </vaadin-button>
     </vaadin-vertical-layout>
-    <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="verticalLayout-EspacioBotones"></vaadin-vertical-layout>
+    <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 40%; align-items: stretch; flex-direction: column;" id="verticalLayout-EspacioBotones"></vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 20%; align-self: flex-end; margin-right: var(--lumo-space-m); margin-bottom: var(--lumo-space-xl);" id="verticalLayout-MeGusta">
      <vaadin-horizontal-layout theme="spacing" id="horizontalLayout-MeGusta" style="align-self: flex-end; margin-right: var(--lumo-space-s);">
       <label style="flex-grow: 1;" id="label-MeGusta">Num Me gusta</label>
