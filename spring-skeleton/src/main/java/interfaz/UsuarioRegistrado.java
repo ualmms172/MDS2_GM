@@ -37,6 +37,9 @@ public class UsuarioRegistrado extends Logueado {
 	public UsuarioRegistrado(MainView MainView, basededatos.UsuarioRegistrado u) {
 		super(MainView);
 		this.u=u;
+		
+		this.getImgPerfilUsuario().setSrc(u.getFotoPerfil());
+		
 		this.getButtonBaneados().setVisible(false);
 		this.getButtonNotificaciones().addClickListener(event -> Notificaciones()); 
 		this.getButtonVerMasHashtags().addClickListener(event -> VerlistacompletahashtagUsuarioRegistrado());

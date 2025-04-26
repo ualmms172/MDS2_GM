@@ -11,10 +11,15 @@ public class UsuariosBaneados_item extends VistaUsuariosbaneados_item {
 	//private Image _fotoPerfil;
 	//private Button _desbanearB;
 	public UsuariosBaneados _usuariosBaneados;
+	public basededatos.UsuarioRegistrado u;
 	
-	public UsuariosBaneados_item(UsuariosBaneados listaBaneados) {
+	public UsuariosBaneados_item(UsuariosBaneados listaBaneados,basededatos.UsuarioRegistrado u) {
 		
 		_usuariosBaneados = listaBaneados; 
+		this.u=u;
+		this.getLabelNick().setText(u.getNick());
+	//	this.getLabelNumSeguidores().setText(u.getn);
+		this.getImgPerfilUsuarioBaneado().setSrc(u.getFotoPerfil());
 		this.getButtonDesbanear().addClickListener(event -> Desbanearusuario());
 	}
 	

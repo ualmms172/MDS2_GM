@@ -28,6 +28,14 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	public VertweetgeneralUsuarioRegistrado (MostrartweetspropiosUsuarioRegistrado_item mostrartweetspropiosUsuarioRegistrado_item ) {
 		
 		_mostrartweetspropiosUsuarioRegistrado = mostrartweetspropiosUsuarioRegistrado_item; 
+		
+		this.getLabelCuerpoTwet().setText(_mostrartweetspropiosUsuarioRegistrado.t.getContieneTexto().getTexto());
+		//	this.getLabelMeGusta().setText(_mostrartweetspropiosUsuarioRegistrado.t.meGustaPor);
+			this.getLabelNombreUsuario().setText(_mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor().getNick());
+			this.getImgFotoPerfilTweet().setSrc(_mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor().getFotoPerfil());
+			//this.getImgFotoTweet().setSrc(_mostrartweetspropiosUsuarioRegistrado.t.contieneMultimedia.ge);
+			//this.getDivTweet().sets
+		
 		this.getButtonBorrar().setVisible(false);
 	
 		ComentariosUsuarioRegistrado();

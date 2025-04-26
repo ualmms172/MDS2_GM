@@ -11,6 +11,7 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 	public VerHashtagUsuarioNoRegistrado(ListahashtagsgeneralUsuarioNoRegistrado_item listahashtagsgeneralUsuarioNoRegistrado) {
 		
 		_listahashtagsgeneralUsuarioNoRegistrado = listahashtagsgeneralUsuarioNoRegistrado;
+		this.getLabelHashtag().setText(_listahashtagsgeneralUsuarioNoRegistrado.h.getTitulo());
 		
 		Listatweets();
 		
