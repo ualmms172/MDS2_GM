@@ -26,8 +26,8 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		
 		this.getLabelNick().setText(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().getNick());
 		this.getLabelDescripcion().setText(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().getDescripcion());
-//		this.getLabelNumSeguidores().setText(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().);
-//		this.getLabelNumSeguidos().setText(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().);
+		this.getLabelNumSeguidores().setText(String.valueOf(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().seguidoPor.size()));
+		this.getLabelNumSeguidos().setText(String.valueOf(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().sigueA.size()));
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);

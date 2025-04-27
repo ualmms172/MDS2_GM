@@ -7,7 +7,6 @@ public class Comentariospropios_item extends ListaComentariosGeneral_item {
 	
 	public Comentariospropios_item(ListaContenido lista,Comentario c) {
 		super(lista,c);
-		this.c=c;
 		// TODO Auto-generated constructor stub
 		
 		
