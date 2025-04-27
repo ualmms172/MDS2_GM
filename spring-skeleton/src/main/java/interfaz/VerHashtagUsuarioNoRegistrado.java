@@ -11,6 +11,7 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 	public VerHashtagUsuarioNoRegistrado(ListahashtagsgeneralUsuarioNoRegistrado_item listahashtagsgeneralUsuarioNoRegistrado) {
 		
 		_listahashtagsgeneralUsuarioNoRegistrado = listahashtagsgeneralUsuarioNoRegistrado;
+		this.getLabelHashtag().setText(_listahashtagsgeneralUsuarioNoRegistrado.h.getTitulo());
 		
 		Listatweets();
 		
@@ -31,7 +32,7 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 		_listatweets = new Listatweets(this);
 		this.getVerticalLayoutListaHashtags().as(VerticalLayout.class).add(_listatweets);
 		
-		Listatweets_item item_tweets = new Listatweets_item(_listatweets);
+		Listatweets_item item_tweets = new Listatweets_item(_listatweets,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listatweets.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 }

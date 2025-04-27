@@ -12,6 +12,14 @@ public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 	public VertweetUsuarioNoRegistrado(Listatweets_item listatweets) {
 		
 		_listatweets = listatweets; 
+		
+		this.getLabelCuerpoTwet().setText(_listatweets.t.getContieneTexto().getTexto());
+		//	this.getLabelMeGusta().setText(_listatweets.t.meGustaPor);
+			this.getLabelNombreUsuario().setText(_listatweets.t.getEscritoPor().getNick());
+			this.getImgFotoPerfilTweet().setSrc(_listatweets.t.getEscritoPor().getFotoPerfil());
+			//this.getImgFotoTweet().setSrc(_listatweets.t.contieneMultimedia.ge);
+			//this.getDivTweet().sets
+		
 		this.getButtonBorrar().setVisible(false);
 		this.getButtonMeGusta().setVisible(false);
 		this.getButtonRetweet().setVisible(false);
@@ -108,7 +116,7 @@ public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 		_listaComentariosUsuarioNoRegistrado = new ListaComentariosUsuarioNoRegistrado(this);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_listaComentariosUsuarioNoRegistrado);
 		
-		ListaComentariosUsuarioNoRegistrado_item item_tweets = new ListaComentariosUsuarioNoRegistrado_item(_listaComentariosUsuarioNoRegistrado);
+		ListaComentariosUsuarioNoRegistrado_item item_tweets = new ListaComentariosUsuarioNoRegistrado_item(_listaComentariosUsuarioNoRegistrado,null);//AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listaComentariosUsuarioNoRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 

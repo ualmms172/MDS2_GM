@@ -2,11 +2,12 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.Comentario;
 import gallardoMartinez.MainView.Pantalla;
 
 public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
-	public ComentariosUsuarioRegistrado_item(ListaContenido lista) {
-		super(lista);
+	public ComentariosUsuarioRegistrado_item(ListaContenido lista,Comentario c) {
+		super(lista,c);
 		this._comentariosUsuarioRegistrado=(ComentariosUsuarioRegistrado)lista;
 		// TODO Auto-generated constructor stub
 		this.getButtonBorrar().setVisible(false);

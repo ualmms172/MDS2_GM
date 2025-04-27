@@ -5,8 +5,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import gallardoMartinez.MainView.Pantalla;
 
 public class ListaUsuariosAdministrador_item extends ListaUsuariosGeneralAdministrador_item {
-	public ListaUsuariosAdministrador_item(ListaUsuariosAdministrador lista) {
-		super(lista);
+	public ListaUsuariosAdministrador_item(ListaUsuariosAdministrador lista,basededatos.UsuarioRegistrado u) {
+		super(lista,u);
 		// TODO Auto-generated constructor stub
 		
 		this.getButtonBanear().addClickListener(event -> BanearUsuario()); 

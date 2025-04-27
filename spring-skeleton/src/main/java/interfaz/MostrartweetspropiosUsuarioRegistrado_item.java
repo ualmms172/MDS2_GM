@@ -2,11 +2,12 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.Tweet;
 import gallardoMartinez.MainView.Pantalla;
 
 public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGeneral_item {
-	public MostrartweetspropiosUsuarioRegistrado_item(ListaContenido lista) {
-		super(lista);
+	public MostrartweetspropiosUsuarioRegistrado_item(ListaContenido lista,Tweet t) {
+		super(lista,t);
 		_mostrartweetspropiosUsuarioRegistrado = (MostrartweetspropiosUsuarioRegistrado) _lista;
 		// TODO Auto-generated constructor stub
 		this.getButtonBorrar().setVisible(false);

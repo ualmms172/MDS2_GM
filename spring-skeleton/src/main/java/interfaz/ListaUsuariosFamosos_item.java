@@ -3,8 +3,8 @@ package interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class ListaUsuariosFamosos_item extends ListaUsuariosGeneralUsuarioNoRegistrado_item {
-	public ListaUsuariosFamosos_item(ListaUsuariosGeneral lista) {
-		super(lista);
+	public ListaUsuariosFamosos_item(ListaUsuariosGeneral lista,basededatos.UsuarioRegistrado u) {
+		super(lista,u);
 		// TODO Auto-generated constructor stub
 		this.getLabelNumSeguidores().setVisible(false);
 		this.getLabelNumSeguidos().setVisible(false);

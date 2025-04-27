@@ -15,7 +15,7 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		_listatweets = new Listatweets(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_listatweets);
 		
-		Listatweets_item item_tweets = new Listatweets_item(_listatweets);
+		Listatweets_item item_tweets = new Listatweets_item(_listatweets,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listatweets.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 	
@@ -23,6 +23,12 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		
 		
 		_vertweetUsuarioNoRegistrado = vertweetUsuarioNoRegistrado;
+		
+		this.getLabelNick().setText(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().getNick());
+		this.getLabelDescripcion().setText(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().getDescripcion());
+		this.getLabelNumSeguidores().setText(String.valueOf(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().seguidoPor.size()));
+		this.getLabelNumSeguidos().setText(String.valueOf(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().sigueA.size()));
+		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
@@ -53,6 +59,12 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	public VerperfilUsuarioNoRegistrado(ListaComentariosUsuarioNoRegistrado_item listaComentariosUsuarioNoRegistrado) {
 	
 		_listaComentariosUsuarioNoRegistrado = listaComentariosUsuarioNoRegistrado;
+		
+		this.getLabelNick().setText(_listaComentariosUsuarioNoRegistrado.c.getEscritoPor().getNick());
+		this.getLabelDescripcion().setText(_listaComentariosUsuarioNoRegistrado.c.getEscritoPor().getDescripcion());
+//		this.getLabelNumSeguidores().setText(_listaComentariosUsuarioNoRegistrado.c.getEscritoPor().);
+//		this.getLabelNumSeguidos().setText(_listaComentariosUsuarioNoRegistrado.c.getEscritoPor().);
+		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
@@ -82,6 +94,12 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	public VerperfilUsuarioNoRegistrado(ListaUsuariosGeneralUsuarioNoRegistrado_item listaUsuariosGeneralUsuarioNoRegistrado) {
 		
 		_listaUsuariosGeneralUsuarioNoRegistrado = listaUsuariosGeneralUsuarioNoRegistrado; 
+		
+		this.getLabelNick().setText(_listaUsuariosGeneralUsuarioNoRegistrado.u.getNick());
+		this.getLabelDescripcion().setText(_listaUsuariosGeneralUsuarioNoRegistrado.u.getDescripcion());
+//		this.getLabelNumSeguidores().setText(_listaUsuariosGeneralUsuarioNoRegistrado.u.);
+//		this.getLabelNumSeguidos().setText(_listaUsuariosGeneralUsuarioNoRegistrado.u.);
+		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
@@ -106,6 +124,12 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	public VerperfilUsuarioNoRegistrado(Listatweets_item listatweets) {
 		
 		_listatweets_item = listatweets; 
+		
+		this.getLabelNick().setText(_listatweets_item.t.getEscritoPor().getNick());
+		this.getLabelDescripcion().setText(_listatweets_item.t.getEscritoPor().getDescripcion());
+//		this.getLabelNumSeguidores().setText(_listatweets_item.t.getEscritoPor().);
+//		this.getLabelNumSeguidos().setText(_listatweets_item.t.getEscritoPor().);
+		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);

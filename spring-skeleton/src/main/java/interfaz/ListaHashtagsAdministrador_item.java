@@ -1,8 +1,10 @@
 package interfaz;
 
+import basededatos.Hashtag;
+
 public class ListaHashtagsAdministrador_item extends ListaHashtagsgeneralAdministrador_item {
-	public ListaHashtagsAdministrador_item(ListaHashtagsGeneral lista) {
-		super(lista);
+	public ListaHashtagsAdministrador_item(ListaHashtagsGeneral lista,Hashtag h) {
+		super(lista,h);
 		// TODO Auto-generated constructor stub
 		_listaHashtagsAdministrador =(ListaHashtagsAdministrador) lista;
 	}

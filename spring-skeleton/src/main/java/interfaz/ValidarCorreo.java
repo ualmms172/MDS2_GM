@@ -28,7 +28,7 @@ public class ValidarCorreo extends VistaValidarcorreo{
 	
 	public void Registrarse() {
 		
-		UsuarioRegistrado vista = new UsuarioRegistrado((MainView)Pantalla.MainView);
+		UsuarioRegistrado vista = new UsuarioRegistrado((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(vista);

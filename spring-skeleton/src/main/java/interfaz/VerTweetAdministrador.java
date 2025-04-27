@@ -14,6 +14,14 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	public VerTweetAdministrador(ListaTweetsAdmin_item listaTweetsAdmin) {
 		
 		_listaTweetsAdmin = listaTweetsAdmin; 
+		
+		this.getLabelCuerpoTwet().setText(_listaTweetsAdmin.t.getContieneTexto().getTexto());
+	//	this.getLabelMeGusta().setText(_listaTweetsAdmin.t.meGustaPor);
+		this.getLabelNombreUsuario().setText(_listaTweetsAdmin.t.getEscritoPor().getNick());
+		this.getImgFotoPerfilTweet().setSrc(_listaTweetsAdmin.t.getEscritoPor().getFotoPerfil());
+		//this.getImgFotoTweet().setSrc(_listaTweetsAdmin.t.contieneMultimedia.ge);
+		//this.getDivTweet().sets
+		
 		this.getButtonComentar().setVisible(false);
 		this.getButtonMeGusta().setVisible(false);
 		this.getButtonRetweet().setVisible(false);
@@ -179,7 +187,7 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		_listaComentariosAdministrador = new ListaComentariosAdministrador(this);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_listaComentariosAdministrador);
 		
-		ListaComentariosAdministrador_item item_tweets = new ListaComentariosAdministrador_item(_listaComentariosAdministrador);
+		ListaComentariosAdministrador_item item_tweets = new ListaComentariosAdministrador_item(_listaComentariosAdministrador,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listaComentariosAdministrador.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 

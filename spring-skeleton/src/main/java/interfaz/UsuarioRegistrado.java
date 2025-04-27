@@ -17,11 +17,11 @@ public class UsuarioRegistrado extends Logueado {
 	public Vector<UsuarioRegistrado> _seguidoPor = new Vector<UsuarioRegistrado>();
 	public Vector<UsuarioRegistrado> _sigueA = new Vector<UsuarioRegistrado>();
 	//public BD_UsuarioRegistrado _contenedor_UsuariosRegistrados;
-	public Vector<Tweet> _mencionadoEn = new Vector<Tweet>();
-	public baneo _unnamed_baneo_;
-	public Vector<Contenido> _meGusta = new Vector<Contenido>();
-	public Vector<Hashtag> _creaHashtag = new Vector<Hashtag>();
-	public Vector<Contenido> _escribe = new Vector<Contenido>();
+//	public Vector<Tweet> _mencionadoEn = new Vector<Tweet>();
+//	public baneo _unnamed_baneo_;
+//	public Vector<Contenido> _meGusta = new Vector<Contenido>();
+//	public Vector<Hashtag> _creaHashtag = new Vector<Hashtag>();
+//	public Vector<Contenido> _escribe = new Vector<Contenido>();
 	Notificaciones _Notificaciones;
 	VerlistacompletahashtagUsuarioRegistrado _VerlistacompletahashtagUsuarioRegistrado;
 	Hacertweet _Hacertweet;
@@ -32,9 +32,14 @@ public class UsuarioRegistrado extends Logueado {
 	Verperfilpropio _Verperfilpropio;
 
 
+	public basededatos.UsuarioRegistrado u;
 	
-	public UsuarioRegistrado(MainView MainView) {
+	public UsuarioRegistrado(MainView MainView, basededatos.UsuarioRegistrado u) {
 		super(MainView);
+		this.u=u;
+		
+		this.getImgPerfilUsuario().setSrc(u.getFotoPerfil());
+		
 		this.getButtonBaneados().setVisible(false);
 		this.getButtonNotificaciones().addClickListener(event -> Notificaciones()); 
 		this.getButtonVerMasHashtags().addClickListener(event -> VerlistacompletahashtagUsuarioRegistrado());
@@ -53,7 +58,7 @@ public class UsuarioRegistrado extends Logueado {
 
 		_mostrartweetspropiosUsuarioRegistrado = new MostrartweetspropiosUsuarioRegistrado(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_mostrartweetspropiosUsuarioRegistrado);
-		MostrartweetspropiosUsuarioRegistrado_item item_tweets = new MostrartweetspropiosUsuarioRegistrado_item(_mostrartweetspropiosUsuarioRegistrado);
+		MostrartweetspropiosUsuarioRegistrado_item item_tweets = new MostrartweetspropiosUsuarioRegistrado_item(_mostrartweetspropiosUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_mostrartweetspropiosUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 		
 	}
@@ -61,14 +66,14 @@ public class UsuarioRegistrado extends Logueado {
 	public void ListausuariosfamososUsuarioRegistrado() {
 		_listausuariosfamososUsuarioRegistrado = new ListausuariosfamososUsuarioRegistrado(this);
 		this.getHorizontalLayoutListaUsuariosMasFamosos2().add(_listausuariosfamososUsuarioRegistrado);
-		ListausuariosfamososUsuarioRegistrado_item item_tweets = new ListausuariosfamososUsuarioRegistrado_item(_listausuariosfamososUsuarioRegistrado);
+		ListausuariosfamososUsuarioRegistrado_item item_tweets = new ListausuariosfamososUsuarioRegistrado_item(_listausuariosfamososUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listausuariosfamososUsuarioRegistrado.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public void ListahashtagfamososUsuarioRegistrado() {
 		_listahashtagfamososUsuarioRegistrado = new ListahashtagfamososUsuarioRegistrado(this);
 		this.getHorizontalLayoutHashtagsMasUsados().add(_listahashtagfamososUsuarioRegistrado);
-		ListahashtagfamososUsuarioRegistrado_item item_tweets = new ListahashtagfamososUsuarioRegistrado_item(_listahashtagfamososUsuarioRegistrado);
+		ListahashtagfamososUsuarioRegistrado_item item_tweets = new ListahashtagfamososUsuarioRegistrado_item(_listahashtagfamososUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listahashtagfamososUsuarioRegistrado.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 	

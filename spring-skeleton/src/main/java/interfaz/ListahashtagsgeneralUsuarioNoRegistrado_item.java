@@ -1,10 +1,11 @@
 package interfaz;
 
+import basededatos.Hashtag;
 import gallardoMartinez.MainView.Pantalla;
 
 public class ListahashtagsgeneralUsuarioNoRegistrado_item extends ListaHashtagsGeneral_item {
-	public ListahashtagsgeneralUsuarioNoRegistrado_item(ListaHashtagsGeneral lista) {
-		super(lista);
+	public ListahashtagsgeneralUsuarioNoRegistrado_item(ListaHashtagsGeneral lista,Hashtag h) {
+		super(lista,h);
 		// TODO Auto-generated constructor stub
 		this.getButtonEscribirTweet().setVisible(false);
 		this.getHorizontalListahashtagsgeneral_item().addClickListener(Event -> VerHashtagUsuarioNoRegistrado());
