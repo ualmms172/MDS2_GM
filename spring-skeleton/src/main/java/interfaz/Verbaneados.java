@@ -29,7 +29,7 @@ public class Verbaneados extends VistaVerbaneados {
 	public void UsuariosBaneados() {
 		_usuariosBaneados = new UsuariosBaneados(this);
 		this.getVerticalLayoutLista().as(VerticalLayout.class).add(_usuariosBaneados);
-		UsuariosBaneados_item item_tweets = new UsuariosBaneados_item(_usuariosBaneados);
+		UsuariosBaneados_item item_tweets = new UsuariosBaneados_item(_usuariosBaneados,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_usuariosBaneados.getVerticalListausuariosbaneados().as(VerticalLayout.class).add(item_tweets);
 	}
 }

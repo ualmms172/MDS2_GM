@@ -15,6 +15,12 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	public VerperfilgeneralUsuarioRegistrado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado) {
 		
 		_mostrartweetsUsuarioRegistrado_item = mostrartweetsUsuarioRegistrado; 
+		
+		this.getLabelNick().setText(_mostrartweetsUsuarioRegistrado_item.t.getEscritoPor().getNick());
+		this.getLabelDescripcion().setText(_mostrartweetsUsuarioRegistrado_item.t.getEscritoPor().getDescripcion());
+//		this.getLabelNumSeguidores().setText(_mostrartweetsUsuarioRegistrado_item.t.getEscritoPor().);
+//		this.getLabelNumSeguidos().setText(_mostrartweetsUsuarioRegistrado_item.t.getEscritoPor().);
+		
 		this.getButtonBanear().setVisible(false);
 		
 		MostrartweetsUsuarioRegistrado();
@@ -113,6 +119,12 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	public VerperfilgeneralUsuarioRegistrado (ListaUsuariosGeneralUsuarioRegistrado_item listaUsuariosGeneralUsuarioRegistrado) {
 		
 		_listaUsuariosGeneralUsuarioRegistrado = listaUsuariosGeneralUsuarioRegistrado; 
+		
+		this.getLabelNick().setText(_listaUsuariosGeneralUsuarioRegistrado.u.getNick());
+		this.getLabelDescripcion().setText(_listaUsuariosGeneralUsuarioRegistrado.u.getDescripcion());
+//		this.getLabelNumSeguidores().setText(listaUsuariosGeneralUsuarioRegistrado.u.);
+//		this.getLabelNumSeguidos().setText(listaUsuariosGeneralUsuarioRegistrado.u.);
+		
 		this.getButtonBanear().setVisible(false);
 		
 		MostrartweetsUsuarioRegistrado();
@@ -132,6 +144,12 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 		
 		
 		_vertweetgeneralUsuarioRegistrado = vertweetgeneralUsuarioRegistrado; 
+		
+		this.getLabelNick().setText(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor().getNick());
+		this.getLabelDescripcion().setText(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor().getDescripcion());
+//		this.getLabelNumSeguidores().setText(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor().);
+//		this.getLabelNumSeguidos().setText(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor().);
+		
 		this.getButtonBanear().setVisible(false);
 		
 		MostrartweetsUsuarioRegistrado();
@@ -156,6 +174,12 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 		
 		
 		_comentariosUsuarioRegistrado = comentariosUsuarioRegistrado; 
+		
+		this.getLabelNick().setText(_comentariosUsuarioRegistrado.c.getEscritoPor().getNick());
+		this.getLabelDescripcion().setText(_comentariosUsuarioRegistrado.c.getEscritoPor().getDescripcion());
+//		this.getLabelNumSeguidores().setText(_comentariosUsuarioRegistrado.c.getEscritoPor().);
+//		this.getLabelNumSeguidos().setText(_comentariosUsuarioRegistrado.c.getEscritoPor().);
+		
 		this.getButtonBanear().setVisible(false);
 		
 		MostrartweetsUsuarioRegistrado();
@@ -187,7 +211,7 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 		_mostrartweetsUsuarioRegistrado = new MostrartweetsUsuarioRegistrado(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_mostrartweetsUsuarioRegistrado);
 		
-		MostrartweetsUsuarioRegistrado_item item_tweets = new MostrartweetsUsuarioRegistrado_item(_mostrartweetsUsuarioRegistrado);
+		MostrartweetsUsuarioRegistrado_item item_tweets = new MostrartweetsUsuarioRegistrado_item(_mostrartweetsUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_mostrartweetsUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 }

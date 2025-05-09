@@ -25,6 +25,7 @@ public class BanearUsuario extends VistaBanearusuario{
 	public BanearUsuario(ListaUsuariosAdministrador_item listaUsuariosAdministrador) {
 		
 		_listaUsuariosAdministrador = listaUsuariosAdministrador;
+		//this.getLabelAvisoBaneo().setText(_listaUsuariosAdministrador.u.getNick()); Esta no es del todo así
 		
 		this.getButtonAtras().addClickListener(event -> {
 			
@@ -55,6 +56,21 @@ public class BanearUsuario extends VistaBanearusuario{
 	public BanearUsuario(VerPerfilAdministrador verPerfilAdministrador) {
 		
 		_verPerfilAdministrador = verPerfilAdministrador; 
+		basededatos.UsuarioRegistrado u = null;
+		if(_verPerfilAdministrador._listaTweetsAdmin_item!=null) {
+			u = _verPerfilAdministrador._listaTweetsAdmin_item.t.getEscritoPor();
+		}
+		else if(_verPerfilAdministrador._listaComentariosAdministrador!=null) {
+			u = _verPerfilAdministrador._listaComentariosAdministrador.c.getEscritoPor();
+		}
+		else if(_verPerfilAdministrador._verTweetAdministrador!=null) {
+			u = _verPerfilAdministrador._verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor();
+		}
+		else if(_verPerfilAdministrador._listaUsuariosGeneralAdministrador!=null) {
+			u = _verPerfilAdministrador._listaUsuariosGeneralAdministrador.u;
+		}
+		
+		//this.getLabelAvisoBaneo().setText(_listaUsuariosAdministrador.u.getNick()); Esta no es del todo así
 		
 		this.getButtonAtras().addClickListener(event -> {
 			
@@ -90,7 +106,7 @@ public class BanearUsuario extends VistaBanearusuario{
 	
 
 	public void BanearTemporalmente() {
-		Administrador ad = new Administrador((MainView)Pantalla.MainView);
+		Administrador ad = new Administrador((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		Verbaneados vb = new Verbaneados(ad);
 		Pantalla.Anterior = ad;
 		Pantalla.MainView.removeAll();
@@ -98,7 +114,7 @@ public class BanearUsuario extends VistaBanearusuario{
 	}
 
 	public void BanearIndefinidamente() {
-		Administrador ad = new Administrador((MainView)Pantalla.MainView);
+		Administrador ad = new Administrador((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		Verbaneados vb = new Verbaneados(ad);
 		Pantalla.Anterior = ad;
 		Pantalla.MainView.removeAll();

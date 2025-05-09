@@ -44,7 +44,7 @@ public class Hacertweet extends CrearContenido {
 		VerlistacompletahashtagUsuarioRegistrado l = null;
 		Pantalla.MainView.removeAll();
 		if(_usuarioregistrado!=null) {
-			u = new UsuarioRegistrado((MainView)Pantalla.MainView);
+			u = new UsuarioRegistrado((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 			Pantalla.MainView.add(u);
 		}
 		else {

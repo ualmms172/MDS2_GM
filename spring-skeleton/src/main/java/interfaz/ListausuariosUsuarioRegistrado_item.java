@@ -3,8 +3,8 @@ package interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsuarioRegistrado_item {
-	public ListausuariosUsuarioRegistrado_item(ListaUsuariosGeneral lista) {
-		super(lista);
+	public ListausuariosUsuarioRegistrado_item(ListaUsuariosGeneral lista,basededatos.UsuarioRegistrado u) {
+		super(lista,u);
 		// TODO Auto-generated constructor stub
 		
 		_listausuariosUsuarioRegistrado = (ListausuariosUsuarioRegistrado) lista;

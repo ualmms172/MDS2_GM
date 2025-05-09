@@ -16,6 +16,12 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	
 	public VerPerfilAdministrador(ListaUsuariosGeneralAdministrador_item listaUsuariosGeneralAdministrador) {
 		_listaUsuariosGeneralAdministrador = listaUsuariosGeneralAdministrador; 
+		
+		this.getLabelNick().setText(_listaUsuariosGeneralAdministrador.u.getNick());
+		this.getLabelDescripcion().setText(_listaUsuariosGeneralAdministrador.u.getDescripcion());
+//		this.getLabelNumSeguidores().setText(_listaUsuariosGeneralAdministrador.u.);
+//		this.getLabelNumSeguidos().setText(_listaUsuariosGeneralAdministrador.u.);
+		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
@@ -42,6 +48,12 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	public VerPerfilAdministrador(ListaTweetsAdmin_item listaTweetsAdmin ) {
 		
 		_listaTweetsAdmin_item = listaTweetsAdmin; 
+		
+		this.getLabelNick().setText(_listaTweetsAdmin_item.t.getEscritoPor().getNick());
+		this.getLabelDescripcion().setText(_listaTweetsAdmin_item.t.getEscritoPor().getDescripcion());
+//		this.getLabelNumSeguidores().setText(_listaTweetsAdmin_item.t.getEscritoPor().);
+//		this.getLabelNumSeguidos().setText(_listaTweetsAdmin_item.t.getEscritoPor().);
+		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
@@ -142,6 +154,12 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	public VerPerfilAdministrador(VerTweetAdministrador verTweetAdministrador) {
 		
 		_verTweetAdministrador = verTweetAdministrador; 
+		
+		this.getLabelNick().setText(_verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor().getNick());
+		this.getLabelDescripcion().setText(_verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor().getDescripcion());
+//		this.getLabelNumSeguidores().setText(_verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor().);
+//		this.getLabelNumSeguidos().setText(_verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor().);
+		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
@@ -173,6 +191,12 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	public VerPerfilAdministrador(ListaComentariosAdministrador_item listaComentariosAdministrador) {
 		
 		_listaComentariosAdministrador = listaComentariosAdministrador; 
+		
+		this.getLabelNick().setText(_listaComentariosAdministrador.c.getEscritoPor().getNick());
+		this.getLabelDescripcion().setText(_listaComentariosAdministrador.c.getEscritoPor().getDescripcion());
+//		this.getLabelNumSeguidores().setText(_listaComentariosAdministrador.c.getEscritoPor().);
+//		this.getLabelNumSeguidos().setText(_listaComentariosAdministrador.c.getEscritoPor().);
+		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
@@ -211,7 +235,7 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		_listaTweetsAdmin = new ListaTweetsAdmin(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_listaTweetsAdmin);
 		
-		ListaTweetsAdmin_item item_tweets = new ListaTweetsAdmin_item(_listaTweetsAdmin);
+		ListaTweetsAdmin_item item_tweets = new ListaTweetsAdmin_item(_listaTweetsAdmin,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 }

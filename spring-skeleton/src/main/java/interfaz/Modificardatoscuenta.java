@@ -26,6 +26,20 @@ public class Modificardatoscuenta extends VistaModificardatoscuenta {
 		
 		_verperfilpropio = verperfilpropio; 
 		
+//		basededatos.UsuarioRegistrado u = null;
+//		if(_verperfilpropio._usuarioregistrado!=null) {
+//			u = _verperfilpropio._usuarioregistrado.u;
+//		}
+//		else if(_verperfilpropio._comentariospropios!=null) {
+//			u = _verperfilpropio._comentariospropios.c.getEscritoPor();
+//		}
+//		else if(_verperfilpropio._mostrartweetsUsuarioRegistrado_item!=null) {
+//			u = _verperfilpropio._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor();
+//		}
+//		else if(_verperfilpropio._vertweetgeneralUsuarioRegistrado!=null) {
+//			u = _verperfilpropio._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
+//		}
+		
 		this.getButtonModificar().addClickListener(event -> Modificar()); 
 		
 		this.getButtonAtras().addClickListener(event -> {

@@ -1,10 +1,11 @@
 package interfaz;
 
+import basededatos.Hashtag;
 import gallardoMartinez.MainView.Pantalla;
 
 public class ListahashtagsUsuarioRegistrado_item extends ListahashtagsgeneralUsuarioRegistrado_item {
-	public ListahashtagsUsuarioRegistrado_item(ListaHashtagsGeneral lista) {
-		super(lista);
+	public ListahashtagsUsuarioRegistrado_item(ListaHashtagsGeneral lista,Hashtag h) {
+		super(lista,h);
 		_listahashtagsUsuarioRegistrado = (ListahashtagsUsuarioRegistrado) lista;
 		this.getButtonEscribirTweet().addClickListener(Event -> Hacertweet());
 		// TODO Auto-generated constructor stub

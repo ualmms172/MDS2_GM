@@ -3,8 +3,10 @@ package interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class ListaUsuariosGeneralUsuarioRegistrado_item extends ListaUsuariosGeneral_item {
-	public ListaUsuariosGeneralUsuarioRegistrado_item(ListaUsuariosGeneral lista) {
-		super(lista);
+	public ListaUsuariosGeneralUsuarioRegistrado_item(ListaUsuariosGeneral lista,basededatos.UsuarioRegistrado u) {
+		super(lista,u);
+		//this.getLabelSeguido_NoSeguido().setText(null);
+		
 		// TODO Auto-generated constructor stub
 		this.getButtonBanear().setVisible(false);
 		this.getHorizontalListausuariosgeneral_item().addClickListener(event -> VerperfilUsuarioRegistrado());
