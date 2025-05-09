@@ -29,7 +29,9 @@ public class VerHashtagUsuarioRegistrado extends VerHashtagGeneral {
 	}
 	
 	public VerHashtagUsuarioRegistrado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetspropiosusuarioregistrado) {
+		
 		_mostrartweetspropiosusuarioregistrado = mostrartweetspropiosusuarioregistrado; 
+		this.getLabelHashtag().setText(_listahashtagsgeneralUsuarioRegistrado.h.getTitulo());
 		
 		MostrartweetsUsuarioRegistrado();
 		
@@ -126,6 +128,7 @@ public class VerHashtagUsuarioRegistrado extends VerHashtagGeneral {
 	public VerHashtagUsuarioRegistrado(VertweetgeneralUsuarioRegistrado vertweetgeneralusarioregistrado) {
 		
 		_vertweetgeneralusarioregistrado = vertweetgeneralusarioregistrado; 
+		this.getLabelHashtag().setText(_listahashtagsgeneralUsuarioRegistrado.h.getTitulo());
 		
 		MostrartweetsUsuarioRegistrado();
 		
