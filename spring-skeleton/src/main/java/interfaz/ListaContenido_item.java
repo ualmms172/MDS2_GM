@@ -18,11 +18,15 @@ public class ListaContenido_item extends VistaListacontenido_item {
 	
 	public ListaContenido_item(ListaContenido lista,Contenido c) {
 	_lista = lista;
+
 	this.cont=c;
 	this.getLabelNombreUsuario().setText(c.getEscritoPor().getNick());
 	this.getImgFotoPerfilTweet().setSrc(c.getEscritoPor().getFotoPerfil());
 	this.getLabelCuerpoTwet().setText(c.getContieneTexto().getTexto());//Imagino que este será en un if
 	//Falta el de la foto del tweet en el caso de que exista
+  this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
+	this.getlabelRetweeteadoPor().setVisible(false);
+
 	}
 	
 }
