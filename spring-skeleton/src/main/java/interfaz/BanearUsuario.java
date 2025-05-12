@@ -25,7 +25,7 @@ public class BanearUsuario extends VistaBanearusuario{
 	public BanearUsuario(ListaUsuariosAdministrador_item listaUsuariosAdministrador) {
 		
 		_listaUsuariosAdministrador = listaUsuariosAdministrador;
-		//this.getLabelAvisoBaneo().setText(_listaUsuariosAdministrador.u.getNick()); Esta no es del todo así
+		this.getLabelAvisoBaneo().setText(_listaUsuariosAdministrador.u.getNick()); 
 		
 		this.getButtonAtras().addClickListener(event -> {
 			
@@ -70,7 +70,7 @@ public class BanearUsuario extends VistaBanearusuario{
 			u = _verPerfilAdministrador._listaUsuariosGeneralAdministrador.u;
 		}
 		
-		//this.getLabelAvisoBaneo().setText(_listaUsuariosAdministrador.u.getNick()); Esta no es del todo así
+		this.getLabelAvisoBaneo().setText(_listaUsuariosAdministrador.u.getNick());
 		
 		this.getButtonAtras().addClickListener(event -> {
 			

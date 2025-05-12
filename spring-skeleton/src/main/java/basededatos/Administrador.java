@@ -14,6 +14,7 @@
 package basededatos;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 @Entity
 @org.hibernate.annotations.Proxy(lazy=false)
