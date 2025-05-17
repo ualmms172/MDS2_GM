@@ -16,11 +16,11 @@ public interface iAdministrador extends iLogueado {
 
 	public UsuarioRegistrado[] Cargar_Baneados();
 
-	public void Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador);
+	public Administrador Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador);
 
-	public void Desbanear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador);
+	public Administrador Desbanear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador);
 
-	public void BorrarTweet(Tweet aTweet);
+	public Administrador BorrarTweet(Tweet aTweet);
 
-	public void BorrarComentario(Comentario aComentario);
+	public Administrador BorrarComentario(Comentario aComentario);
 }

@@ -19,11 +19,11 @@ public class BD_UsuarioRegistrado {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Eliminar_Usuario(UsuarioRegistrado aUsuario) {
+	public Administrador Eliminar_Usuario(UsuarioRegistrado aUsuario) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void ModificarCuenta(UsuarioRegistrado aUsuario, String aDescripcion, String aUrl_fondo, String aUrl_perfil, String aNick) {
+	public UsuarioRegistrado ModificarCuenta(UsuarioRegistrado aUsuario, String aDescripcion, String aUrl_fondo, String aUrl_perfil, String aNick) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -31,23 +31,23 @@ public class BD_UsuarioRegistrado {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Seguir_Usuario(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) {
+	public UsuarioRegistrado Seguir_Usuario(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Dejar_Seguir(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) {
+	public UsuarioRegistrado Dejar_Seguir(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Bloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) {
+	public UsuarioRegistrado Bloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Desbloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) {
+	public UsuarioRegistrado Desbloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void DarLikeATweet(Tweet aTweet) {
+	public UsuarioRegistrado DarLikeATweet(Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 

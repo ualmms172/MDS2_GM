@@ -20,31 +20,31 @@ public class BD_Tweet {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video) {
+	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Escribir_Retweet(String aTexto, String aUrl_foto, String aUrl_video) {
+	public UsuarioRegistrado Escribir_Retweet(String aTexto, String aUrl_foto, String aUrl_video) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void BorrarTweet(Tweet aTweet) {
+	public Administrador BorrarTweet(Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void DarLikeTweet(Tweet aTweet) {
+	public UsuarioRegistrado DarLikeTweet(Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void QuitarLikeTweet(Tweet aTweet) {
+	public UsuarioRegistrado QuitarLikeTweet(Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Mencionar(Tweet aTweet, UsuarioRegistrado aUr) {
+	public UsuarioRegistrado Mencionar(Tweet aTweet, UsuarioRegistrado aUr) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void UsarHashtag(Hashtag aH, Tweet aTweet) {
+	public UsuarioRegistrado UsarHashtag(Hashtag aH, Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 }

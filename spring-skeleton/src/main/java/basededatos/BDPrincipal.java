@@ -33,59 +33,59 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 		throw new UnsupportedOperationException();
 	}
 
-	public void Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video) {
+	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Escribir_Comentario(String aTexto, String aUrl_foto, String aUrl_video) {
+	public UsuarioRegistrado Escribir_Comentario(String aTexto, String aUrl_foto, String aUrl_video) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Escribir_Retweet(String aTexto, String aUrl_foto, String aUrl_video) {
+	public UsuarioRegistrado Escribir_Retweet(String aTexto, String aUrl_foto, String aUrl_video) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Eliminar_Usuario(UsuarioRegistrado aUsuario) {
+	public UsuarioRegistrado Eliminar_Usuario(UsuarioRegistrado aUsuario) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void ModificarCuenta(UsuarioRegistrado aUsuario, String aDescripcion, String aUrl_fondo, String aUrl_perfil, String aNick) {
+	public UsuarioRegistrado ModificarCuenta(UsuarioRegistrado aUsuario, String aDescripcion, String aUrl_fondo, String aUrl_perfil, String aNick) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Seguir_Usuario(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) {
+	public UsuarioRegistrado Seguir_Usuario(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Dejar_Seguir(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) {
+	public UsuarioRegistrado Dejar_Seguir(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Bloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) {
+	public UsuarioRegistrado Bloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Desbloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) {
+	public UsuarioRegistrado Desbloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void DarLikeTweet(Tweet aTweet) {
+	public UsuarioRegistrado DarLikeTweet(Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void QuitarLikeTweet(Tweet aTweet) {
+	public UsuarioRegistrado QuitarLikeTweet(Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void DarLikeComentario(Comentario aComentario) {
+	public UsuarioRegistrado DarLikeComentario(Comentario aComentario) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void QuitarLikeComentario(Comentario aComentario) {
+	public UsuarioRegistrado QuitarLikeComentario(Comentario aComentario) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Mencionar(Tweet aTweet, UsuarioRegistrado aUr) {
+	public UsuarioRegistrado Mencionar(Tweet aTweet, UsuarioRegistrado aUr) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -101,7 +101,7 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 		throw new UnsupportedOperationException();
 	}
 
-	public void UsarHashtag(Hashtag aH, Tweet aTweet) {
+	public UsuarioRegistrado UsarHashtag(Hashtag aH, Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -117,19 +117,19 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 		throw new UnsupportedOperationException();
 	}
 
-	public void Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) {
+	public Administrador Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Desbanear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) {
+	public Administrador Desbanear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void BorrarTweet(Tweet aTweet) {
+	public Administrador BorrarTweet(Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void BorrarComentario(Comentario aComentario) {
+	public Administrador BorrarComentario(Comentario aComentario) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -140,8 +140,6 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	public Logueado get_Logueado() {
 		throw new UnsupportedOperationException();
 	}
-
-
 
 	public Administrador get_Administrador() {
 		throw new UnsupportedOperationException();

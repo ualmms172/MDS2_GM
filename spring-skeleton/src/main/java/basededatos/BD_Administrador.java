@@ -11,11 +11,11 @@ public class BD_Administrador {
 		throw new UnsupportedOperationException();
 	}
        
-     public void Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) {
+     public Administrador Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Desbanear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador)   {
+	public Administrador Desbanear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador)   {
 		throw new UnsupportedOperationException();
 	}
 
