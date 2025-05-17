@@ -17,31 +17,31 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 		throw new UnsupportedOperationException();
 	}
 
-	public Tweet[] Cargar_TweetsUsuario(UsuarioRegistrado aUsuario) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Tweet[] Cargar_TweetsHashtag(Hashtag aHashtag) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Tweet[] Cargar_TweetsPrincipales(Logueado aLogueado) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Comentario[] Cargar_Comentarios(Tweet aTweet) {
-		throw new UnsupportedOperationException();
-	}
+//	public Tweet[] Cargar_TweetsUsuario(UsuarioRegistrado aUsuario) {
+//		throw new UnsupportedOperationException();
+//	}
+//
+//	public Tweet[] Cargar_TweetsHashtag(Hashtag aHashtag) {
+//		throw new UnsupportedOperationException();
+//	}
+//
+//	public Tweet[] Cargar_TweetsPrincipales(Logueado aLogueado) {
+//		throw new UnsupportedOperationException();
+//	}
+//
+//	public Comentario[] Cargar_Comentarios(Tweet aTweet) {
+//		throw new UnsupportedOperationException();
+//	}
 
 	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video) {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado Escribir_Comentario(String aTexto, String aUrl_foto, String aUrl_video) {
+	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video) {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado Escribir_Retweet(String aTexto, String aUrl_foto, String aUrl_video) {
+	public UsuarioRegistrado Escribir_Retweet(Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -69,19 +69,19 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado DarLikeTweet(Tweet aTweet) {
+	public UsuarioRegistrado DarLikeTweet(UsuarioRegistrado aUsuario,Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado QuitarLikeTweet(Tweet aTweet) {
+	public UsuarioRegistrado QuitarLikeTweet(UsuarioRegistrado aUsuario,Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado DarLikeComentario(Comentario aComentario) {
+	public UsuarioRegistrado DarLikeComentario(UsuarioRegistrado aUsuario,Comentario aComentario) {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado QuitarLikeComentario(Comentario aComentario) {
+	public UsuarioRegistrado QuitarLikeComentario(UsuarioRegistrado aUsuario,Comentario aComentario) {
 		throw new UnsupportedOperationException();
 	}
 

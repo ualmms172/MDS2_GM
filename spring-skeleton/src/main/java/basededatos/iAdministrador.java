@@ -6,13 +6,13 @@ public interface iAdministrador extends iLogueado {
 
 	public Hashtag[] Cargar_Hashtags();
 
-	public Tweet[] Cargar_TweetsUsuario(UsuarioRegistrado aUsuario);
-
-	public Tweet[] Cargar_TweetsHashtag(Hashtag aHashtag);
-
-	public Tweet[] Cargar_TweetsPrincipales(Logueado aLogueado);
-
-	public Comentario[] Cargar_Comentarios(Tweet aTweet);
+//	public Tweet[] Cargar_TweetsUsuario(UsuarioRegistrado aUsuario);
+//
+//	public Tweet[] Cargar_TweetsHashtag(Hashtag aHashtag);
+//
+//	public Tweet[] Cargar_TweetsPrincipales(Logueado aLogueado);
+//
+//	public Comentario[] Cargar_Comentarios(Tweet aTweet);
 
 	public UsuarioRegistrado[] Cargar_Baneados();
 

@@ -11,7 +11,7 @@ public class BD_Comentario {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado Escribir_Comentario(String aTexto, String aUrl_foto, String aUrl_video) {
+	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -23,11 +23,11 @@ public class BD_Comentario {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado DarLikeComentario(Comentario aComentario) {
+	public UsuarioRegistrado DarLikeComentario(UsuarioRegistrado aUsuario,Comentario aComentario) {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado QuitarLikeComentario(Comentario aComentario) {
+	public UsuarioRegistrado QuitarLikeComentario(UsuarioRegistrado aUsuario,Comentario aComentario) {
 		throw new UnsupportedOperationException();
 	}
 

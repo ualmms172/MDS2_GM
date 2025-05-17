@@ -24,7 +24,7 @@ public class BD_Tweet {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado Escribir_Retweet(String aTexto, String aUrl_foto, String aUrl_video) {
+	public UsuarioRegistrado Escribir_Retweet(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -32,11 +32,11 @@ public class BD_Tweet {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado DarLikeTweet(Tweet aTweet) {
+	public UsuarioRegistrado DarLikeTweet(UsuarioRegistrado aUsuario,Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado QuitarLikeTweet(Tweet aTweet) {
+	public UsuarioRegistrado QuitarLikeTweet(UsuarioRegistrado aUsuario,Tweet aTweet) {
 		throw new UnsupportedOperationException();
 	}
 

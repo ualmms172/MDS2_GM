@@ -6,19 +6,19 @@ public interface iUsuarioregistrado extends iLogueado {
 
 	public Hashtag[] Cargar_Hashtags();
 
-	public Tweet[] Cargar_TweetsUsuario(UsuarioRegistrado aUsuario);
+//	public Tweet[] Cargar_TweetsUsuario(UsuarioRegistrado aUsuario);
+//
+//	public Tweet[] Cargar_TweetsHashtag(Hashtag aHashtag);
+//
+//	public Tweet[] Cargar_TweetsPrincipales(Logueado aLogueado);
 
-	public Tweet[] Cargar_TweetsHashtag(Hashtag aHashtag);
-
-	public Tweet[] Cargar_TweetsPrincipales(Logueado aLogueado);
-
-	public Comentario[] Cargar_Comentarios(Tweet aTweet);
+//	public Comentario[] Cargar_Comentarios(Tweet aTweet);
 
 	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video);
 
-	public UsuarioRegistrado Escribir_Comentario(String aTexto, String aUrl_foto, String aUrl_video);
+	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video); 
 
-	public UsuarioRegistrado Escribir_Retweet(String aTexto, String aUrl_foto, String aUrl_video);
+	public UsuarioRegistrado Escribir_Retweet(Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video);
 
 	public UsuarioRegistrado Eliminar_Usuario(UsuarioRegistrado aUsuario);
 
@@ -32,13 +32,13 @@ public interface iUsuarioregistrado extends iLogueado {
 
 	public UsuarioRegistrado Desbloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado);
 
-	public UsuarioRegistrado DarLikeTweet(Tweet aTweet);
+	public UsuarioRegistrado DarLikeTweet(UsuarioRegistrado aUsuario,Tweet aTweet);
 
-	public UsuarioRegistrado QuitarLikeTweet(Tweet aTweet);
+	public UsuarioRegistrado QuitarLikeTweet(UsuarioRegistrado aUsuario, Tweet aTweet);
 
-	public UsuarioRegistrado DarLikeComentario(Comentario aComentario);
+	public UsuarioRegistrado DarLikeComentario(UsuarioRegistrado aUsuario, Comentario aComentario);
 
-	public UsuarioRegistrado QuitarLikeComentario(Comentario aComentario);
+	public UsuarioRegistrado QuitarLikeComentario(UsuarioRegistrado aUsuario, Comentario aComentario);
 
 	public UsuarioRegistrado Mencionar(Tweet aTweet, UsuarioRegistrado aUr);
 
