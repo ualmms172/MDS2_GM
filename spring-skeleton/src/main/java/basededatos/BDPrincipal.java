@@ -1,5 +1,7 @@
 package basededatos;
 
+import org.orm.PersistentException;
+
 public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iAdministrador, iLogueado {
 	public BD_UsuarioRegistrado _bd_usu;
 	public BD_Administrador _bd_adm;
@@ -33,84 +35,109 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 //		throw new UnsupportedOperationException();
 //	}
 
-	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) throws PersistentException {
+		
+		return _bd_twe.Escribir_Tweet(aTexto, aUrl_foto, aUrl_video, aUsuario); 
 	}
 
-	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) throws PersistentException {
+	
+		return _bd_com.Escribir_Comentario(aTweet, aTexto, aUrl_foto, aUrl_video, aUsuario); 
+		
+		
 	}
 
-	public UsuarioRegistrado Escribir_Retweet(Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado Escribir_Retweet(Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) throws PersistentException {
+		return _bd_twe.Escribir_Retweet(aTweet, aTexto, aUrl_foto, aUrl_video, aUsuario); 
 	}
 
-	public UsuarioRegistrado Eliminar_Usuario(UsuarioRegistrado aUsuario) {
-		throw new UnsupportedOperationException();
+	public void Eliminar_Usuario(UsuarioRegistrado aUsuario) throws PersistentException {
+		
+		 Administrador admin = _bd_usu.Eliminar_Usuario(aUsuario); 
+	
 	}
 
-	public UsuarioRegistrado ModificarCuenta(UsuarioRegistrado aUsuario, String aDescripcion, String aUrl_fondo, String aUrl_perfil, String aNick) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado ModificarCuenta(UsuarioRegistrado aUsuario, String aDescripcion, String aUrl_fondo, String aUrl_perfil, String aNick) throws PersistentException {
+	
+		
+		return _bd_usu.ModificarCuenta(aUsuario, aDescripcion, aUrl_fondo, aUrl_perfil, aNick); 
+
 	}
 
-	public UsuarioRegistrado Seguir_Usuario(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado Seguir_Usuario(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) throws PersistentException {
+		
+		return _bd_usu.Seguir_Usuario(aSeguidor, aSeguido); 
+		
 	}
 
-	public UsuarioRegistrado Dejar_Seguir(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado Dejar_Seguir(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) throws PersistentException {
+		return _bd_usu.Dejar_Seguir(aSeguidor, aSeguido); 
 	}
 
-	public UsuarioRegistrado Bloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado Bloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) throws PersistentException {
+		return _bd_usu.Bloquear(aBloqueador, aBloqueado); 
 	}
 
-	public UsuarioRegistrado Desbloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado Desbloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) throws PersistentException {
+
+		return _bd_usu.Desbloquear(aBloqueador, aBloqueado); 
 	}
 
-	public UsuarioRegistrado DarLikeTweet(UsuarioRegistrado aUsuario,Tweet aTweet) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado DarLikeTweet(UsuarioRegistrado aUsuario,Tweet aTweet) throws PersistentException {
+
+	    return _bd_twe.DarLikeTweet(aUsuario, aTweet); 
 	}
 
-	public UsuarioRegistrado QuitarLikeTweet(UsuarioRegistrado aUsuario,Tweet aTweet) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado QuitarLikeTweet(UsuarioRegistrado aUsuario,Tweet aTweet) throws PersistentException {
+		
+		return _bd_twe.QuitarLikeTweet(aUsuario, aTweet);
 	}
 
-	public UsuarioRegistrado DarLikeComentario(UsuarioRegistrado aUsuario,Comentario aComentario) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado DarLikeComentario(UsuarioRegistrado aUsuario,Comentario aComentario) throws PersistentException {
+
+	    return this._bd_com.DarLikeComentario(aUsuario, aComentario); 
 	}
 
-	public UsuarioRegistrado QuitarLikeComentario(UsuarioRegistrado aUsuario,Comentario aComentario) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado QuitarLikeComentario(UsuarioRegistrado aUsuario,Comentario aComentario) throws PersistentException {
+		
+		return this._bd_com.QuitarLikeComentario(aUsuario, aComentario); 
 	}
 
-	public UsuarioRegistrado Mencionar(Tweet aTweet, UsuarioRegistrado aUr) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado Mencionar(Tweet aTweet, UsuarioRegistrado aUr) throws PersistentException {
+		return this._bd_twe.Mencionar(aTweet, aUr); 
 	}
 
-	public UsuarioRegistrado BuscarUsuario(String aNick) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado BuscarUsuario(String aNick) throws PersistentException {
+	    return this._bd_usu.BuscarUsuario(aNick); 
 	}
 
-	public Hashtag BuscarHashtag(String aHashtag) {
-		throw new UnsupportedOperationException();
+	public Hashtag BuscarHashtag(String aHashtag) throws PersistentException {
+        return this._bd_has.BuscarHashtag(aHashtag); 
+	
 	}
 
-	public Hashtag CrearHashtag(String aHashtag) {
-		throw new UnsupportedOperationException();
+	public Hashtag CrearHashtag(String aHashtag) throws PersistentException {
+
+        return this._bd_has.CrearHashtag(aHashtag); 	
 	}
 
-	public UsuarioRegistrado UsarHashtag(Hashtag aH, Tweet aTweet) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado UsarHashtag(Hashtag aH, Tweet aTweet) throws PersistentException {
+		return this._bd_twe.UsarHashtag(aH, aTweet); 
 	}
 
-	public UsuarioRegistrado Registrar_Usuario(String aNick, String aDescripcion, String aUrl_perfil, Object aUrl_fondo, String aContrasena) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado Registrar_Usuario(String aNick, String aDescripcion, String aUrl_perfil, Object aUrl_fondo, String aContrasena) throws PersistentException {
+
+	
+	    return this._bd_usu.Registrar_Usuario(aNick, aDescripcion, aUrl_perfil, aUrl_perfil, aContrasena); 
+	
+	
 	}
 
 	public Logueado Loguear(String aNick, String aContrasena) {
-		throw new UnsupportedOperationException();
+
+	return this._bd_adm.
+	
+	
 	}
 
 	public UsuarioRegistrado[] Cargar_Baneados() {

@@ -1,5 +1,7 @@
 package basededatos;
 
+import org.orm.PersistentException;
+
 public interface iUsuarioNoRegistrado {
 
 	public Hashtag[] Cargar_Hashtags();
@@ -12,7 +14,7 @@ public interface iUsuarioNoRegistrado {
 //
 //	public Comentario[] Cargar_Comentarios(Tweet aTweet);
 
-	public UsuarioRegistrado Registrar_Usuario(String aNick, String aDescripcion, String aUrl_perfil, Object aUrl_fondo, String aContrasena);
+	public UsuarioRegistrado Registrar_Usuario(String aNick, String aDescripcion, String aUrl_perfil, Object aUrl_fondo, String aContrasena) throws PersistentException;
 
 	public Logueado Loguear(String aNick, String aContrasena);
 }
