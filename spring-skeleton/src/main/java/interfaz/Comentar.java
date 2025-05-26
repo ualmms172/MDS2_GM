@@ -85,4 +85,8 @@ public class Comentar extends CrearContenido {
 //		ComentariosUsuarioRegistrado_item item_tweets = new ComentariosUsuarioRegistrado_item(_comentariosUsuarioRegistrado);
 //		_comentariosUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
+	
+	public Comentar Recargar(UsuarioRegistrado log) {
+		return new Comentar(_vertweetgeneralUsuarioRegistrado.Recargar(log));
+	}
 }

@@ -34,4 +34,8 @@ public class VerListaCompletaUsuariosAdministrador extends VistaVerlistacompleta
 		
 		
 	}
+	
+	public VerListaCompletaUsuariosAdministrador Recargar(Administrador log) {
+		return new VerListaCompletaUsuariosAdministrador(log);
+	}
 }

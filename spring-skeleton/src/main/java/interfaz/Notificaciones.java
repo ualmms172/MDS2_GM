@@ -57,4 +57,8 @@ public class Notificaciones extends VistaNotificaciones {
 		ListaMencionesRecibidas_item item_tweets = new ListaMencionesRecibidas_item(_listaMencionesRecibidas);
 		_listaMencionesRecibidas.getVerticalListamencionesrecibidas().as(VerticalLayout.class).add(item_tweets);
 	}
+	
+	public Notificaciones Recargar(UsuarioRegistrado log) {
+		return new Notificaciones(log);
+	}
 }

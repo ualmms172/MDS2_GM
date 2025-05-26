@@ -120,4 +120,17 @@ public class BanearUsuario extends VistaBanearusuario{
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(vb);
 	}
+	
+	public BanearUsuario Recargar(Administrador log) {
+		BanearUsuario vista = null;
+		if(this._listaUsuariosAdministrador!=null) {
+			ListaUsuariosAdministrador list = new ListaUsuariosAdministrador (_listaUsuariosAdministrador._listaUsuariosAdministrador._verListaCompletaUsuariosAdministrador.Recargar(log));
+			_listaUsuariosAdministrador._listaUsuariosAdministrador=list;
+			vista=new BanearUsuario(_listaUsuariosAdministrador);
+		}
+		else {
+			vista= new BanearUsuario(this._verPerfilAdministrador.Recargar(log));
+		}
+		return vista;
+	}
 }

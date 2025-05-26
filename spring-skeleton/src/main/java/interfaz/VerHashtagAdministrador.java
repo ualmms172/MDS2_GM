@@ -145,4 +145,39 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 			
 	});
 	}
+	
+	public VerHashtagAdministrador Recargar(Administrador log) {
+		VerHashtagAdministrador vista = null;
+		if(this._listaHashtagsgeneralAdministrador!=null) {
+			if(this._listaHashtagsgeneralAdministrador instanceof ListaHashtagsFamososAdministrador_item) {
+				ListaHashtagsFamososAdministrador list = new ListaHashtagsFamososAdministrador(log);
+				((ListaHashtagsFamososAdministrador_item) _listaHashtagsgeneralAdministrador)._listaHashtagsFamososAdministrador =list;
+				vista = new VerHashtagAdministrador(_listaHashtagsgeneralAdministrador);
+			}
+			else {
+				ListaHashtagsAdministrador list = new ListaHashtagsAdministrador(((ListaHashtagsAdministrador_item) _listaHashtagsgeneralAdministrador)._listaHashtagsAdministrador._verlistaCompletaHashtagsAdmin.Recargar(log));
+				((ListaHashtagsAdministrador_item) _listaHashtagsgeneralAdministrador)._listaHashtagsAdministrador=list;
+				vista = new VerHashtagAdministrador(_listaHashtagsgeneralAdministrador);
+			}
+		}
+		else if(this._listaTweetsAdmin_item!=null){
+			ListaTweetsAdmin lt = _listaTweetsAdmin_item._listaTweetsAdmin;
+			if(lt._verPerfilAdministrador!=null) {
+				lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
+				vista= new VerHashtagAdministrador(_listaTweetsAdmin_item);
+			}
+			else if(lt._verHashtagAdministrador!=null) {
+				lt = new ListaTweetsAdmin(lt._verHashtagAdministrador.Recargar(log));
+				vista= new VerHashtagAdministrador(_listaTweetsAdmin_item); 
+				}
+			else {
+				lt = new ListaTweetsAdmin(log);
+				vista =new VerHashtagAdministrador(_listaTweetsAdmin_item);
+			}
+		}
+		else {
+			vista= new VerHashtagAdministrador(this._verTweetAdministrador.Recargar(log)); 
+		}
+		return vista;
+	}
 }

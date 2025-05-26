@@ -172,4 +172,47 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_retweetear);
 	}
+	
+	public VertweetgeneralUsuarioRegistrado Recargar(UsuarioRegistrado log) {
+	    VertweetgeneralUsuarioRegistrado vista = null;
+	    MostrartweetspropiosUsuarioRegistrado lt = this._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado;
+
+	    if (lt._verperfilgeneralUsuarioRegistrado != null) {
+	        lt = new MostrartweetspropiosUsuarioRegistrado(lt._verperfilgeneralUsuarioRegistrado.Recargar(log));
+	        _mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado = lt;
+
+	        if (this instanceof Vertweetpropio) {
+	            vista = new Vertweetpropio(_mostrartweetspropiosUsuarioRegistrado);
+	        } else if (this instanceof Vertweetajeno) {
+	            vista = new Vertweetajeno(_mostrartweetspropiosUsuarioRegistrado);
+	        } else {
+	            vista = new VertweetgeneralUsuarioRegistrado(_mostrartweetspropiosUsuarioRegistrado);
+	        }
+	    } else if (lt._verHashtagUsuarioRegistrado != null) {
+	        lt = new MostrartweetspropiosUsuarioRegistrado(lt._verHashtagUsuarioRegistrado.Recargar(log));
+	        _mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado = lt;
+
+	        if (this instanceof Vertweetpropio) {
+	            vista = new Vertweetpropio(_mostrartweetspropiosUsuarioRegistrado);
+	        } else if (this instanceof Vertweetajeno) {
+	            vista = new Vertweetajeno(_mostrartweetspropiosUsuarioRegistrado);
+	        } else {
+	            vista = new VertweetgeneralUsuarioRegistrado(_mostrartweetspropiosUsuarioRegistrado);
+	        }
+	    } else {
+	        lt = new MostrartweetspropiosUsuarioRegistrado(log);
+	        _mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado = lt;
+
+	        if (this instanceof Vertweetpropio) {
+	            vista = new Vertweetpropio(_mostrartweetspropiosUsuarioRegistrado);
+	        } else if (this instanceof Vertweetajeno) {
+	            vista = new Vertweetajeno(_mostrartweetspropiosUsuarioRegistrado);
+	        } else {
+	            vista = new VertweetgeneralUsuarioRegistrado(_mostrartweetspropiosUsuarioRegistrado);
+	        }
+	    }
+
+	    return vista;
+	}
+
 }

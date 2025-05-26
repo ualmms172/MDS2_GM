@@ -102,4 +102,8 @@ public class Modificardatoscuenta extends VistaModificardatoscuenta {
 		
 		
 	}
+	
+	public Modificardatoscuenta Recargar(UsuarioRegistrado log) {
+		return new Modificardatoscuenta((Verperfilpropio)this._verperfilpropio.Recargar(log));
+	}
 }

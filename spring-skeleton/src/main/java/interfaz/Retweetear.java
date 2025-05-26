@@ -179,5 +179,28 @@ public class Retweetear extends CrearContenido {
 			 Pantalla.MainView.add(_vertweetgeneralUsuarioRegistrado); 
 		 }
 	}
+	
+	public Retweetear Recargar(UsuarioRegistrado log) {
+		Retweetear vista = null;
+		if(this._vertweetgeneralUsuarioRegistrado!=null) {
+			vista = new Retweetear(_vertweetgeneralUsuarioRegistrado.Recargar(log));
+		}
+		else {
+			MostrartweetspropiosUsuarioRegistrado lt = this._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado;
+			if(lt._verperfilgeneralUsuarioRegistrado!=null) {
+				lt = new MostrartweetspropiosUsuarioRegistrado(lt._verperfilgeneralUsuarioRegistrado.Recargar(log));
+				vista= new Retweetear(_mostrartweetspropiosUsuarioRegistrado);
+			}
+			else if(lt._verHashtagUsuarioRegistrado!=null) {
+				lt = new MostrartweetspropiosUsuarioRegistrado(lt._verHashtagUsuarioRegistrado.Recargar(log));
+				vista= new Retweetear(_mostrartweetspropiosUsuarioRegistrado); 
+				}
+			else {
+				lt = new MostrartweetspropiosUsuarioRegistrado(log);
+				vista = new Retweetear(_mostrartweetspropiosUsuarioRegistrado);
+			}
+		}
+		return vista;
+	}
 
 }
