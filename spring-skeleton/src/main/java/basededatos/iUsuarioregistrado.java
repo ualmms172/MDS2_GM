@@ -16,11 +16,11 @@ public interface iUsuarioregistrado extends iLogueado {
 
 //	public Comentario[] Cargar_Comentarios(Tweet aTweet);
 
-	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video);
+	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video) throws PersistentException;
 
-	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video); 
+	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video) throws PersistentException; 
 
-	public UsuarioRegistrado Escribir_Retweet(Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video);
+	public UsuarioRegistrado Escribir_Retweet(Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video) throws PersistentException;
 
 	public void Eliminar_Usuario(UsuarioRegistrado aUsuario) throws PersistentException;
 

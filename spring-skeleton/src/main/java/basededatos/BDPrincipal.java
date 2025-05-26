@@ -133,42 +133,80 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	
 	}
 
-	public Logueado Loguear(String aNick, String aContrasena) {
+	public Logueado Loguear(String aNick, String aPassword) throws PersistentException {
 
-	return this._bd_adm.
+	
+		Logueado log = this._bd_usu.buscar_usuario(aNick, aPassword);
+		if(log==null)
+			log = this._bd_adm.Buscar_administrador(aNick, aPassword);
+		
+		return log;
+	}
+
+	public UsuarioRegistrado[] Cargar_Baneados() throws PersistentException {
+		
+		return this._bd_usu.Cargar_Baneados(); 
+		
+	}
+
+	public Administrador Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) throws PersistentException {
+
+	     return this._bd_adm.Banear(aUsuarioRegistrado, aAdministrador); 
 	
 	
+	
 	}
 
-	public UsuarioRegistrado[] Cargar_Baneados() {
-		throw new UnsupportedOperationException();
+	public Administrador Desbanear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) throws PersistentException {
+		return this._bd_adm.Desbanear(aUsuarioRegistrado, aAdministrador); 
 	}
 
-	public Administrador Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) {
-		throw new UnsupportedOperationException();
+	public Administrador BorrarTweet(Tweet aTweet) throws PersistentException {
+        return this._bd_twe.BorrarTweet(aTweet, get_Administrador()); 
+	
 	}
 
-	public Administrador Desbanear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) {
-		throw new UnsupportedOperationException();
-	}
+	public Administrador BorrarComentario(Comentario aComentario) throws PersistentException {
 
-	public Administrador BorrarTweet(Tweet aTweet) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Administrador BorrarComentario(Comentario aComentario) {
-		throw new UnsupportedOperationException();
+		return this._bd_com.BorrarComentario(aComentario); 
+	
 	}
 
 	public UsuarioRegistrado get_Usuarioregistrado() {
-		throw new UnsupportedOperationException();
+
+		return null; 
+	
+	
 	}
 
-	public Logueado get_Logueado() {
-		throw new UnsupportedOperationException();
+	public Logueado get_Logueado(String aNick, String aPassword) throws PersistentException {
+		return null; 
 	}
 
 	public Administrador get_Administrador() {
-		throw new UnsupportedOperationException();
+	
+	 return null; 
+		
+	}
+
+	@Override
+	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video) throws PersistentException {
+
+	   return this._bd_twe.Escribir_Tweet(aTexto, aUrl_foto, aUrl_video, get_Usuarioregistrado()); 
+		
+	}
+
+	@Override
+	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video) throws PersistentException {
+		// TODO Auto-generated method stub
+		return this._bd_com.Escribir_Comentario(aTweet, aTexto, aUrl_foto, aUrl_video, get_Usuarioregistrado()); 
+	}
+
+	@Override
+	public UsuarioRegistrado Escribir_Retweet(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video) throws PersistentException {
+		// TODO Auto-generated method stub
+	
+		return this._bd_twe.Escribir_Retweet(aTweet, aTexto, aUrl_foto, aUrl_video, get_Usuarioregistrado()); 
+		
 	}
 }

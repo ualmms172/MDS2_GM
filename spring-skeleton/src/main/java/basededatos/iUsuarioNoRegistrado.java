@@ -16,5 +16,5 @@ public interface iUsuarioNoRegistrado {
 
 	public UsuarioRegistrado Registrar_Usuario(String aNick, String aDescripcion, String aUrl_perfil, Object aUrl_fondo, String aContrasena) throws PersistentException;
 
-	public Logueado Loguear(String aNick, String aContrasena);
+	public Logueado Loguear(String aNick, String aContrasena) throws PersistentException;
 }
