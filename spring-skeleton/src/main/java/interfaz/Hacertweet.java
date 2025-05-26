@@ -57,5 +57,38 @@ public class Hacertweet extends CrearContenido {
 		
 		
 	}
+	
+	public void Mencionar() {
+		String texto = this.getTextFieldCampoTexto().getValue();
+		
+		int inicio = texto.indexOf("@");
+		if (inicio != -1) {
+		    int fin = texto.indexOf(" ", inicio);
+		    if (fin == -1) {
+		        fin = texto.length(); 
+		    }
+		    String mencion = texto.substring(inicio, fin);
+		}
+		
+	}
+	
+	public void UsarHashtag() {
+		String texto = this.getTextFieldCampoTexto().getValue();
+		
+		int inicio = texto.indexOf("#");
+		if (inicio != -1) {
+		    int fin = texto.indexOf(" ", inicio);
+		    if (fin == -1) {
+		        fin = texto.length(); 
+		    }
+		    String hashtag = texto.substring(inicio, fin);
+		}
+		
+	}
+	
+	
+	public Hacertweet Recargar(UsuarioRegistrado log) {
+		return new Hacertweet(log);
+	}
 
 }

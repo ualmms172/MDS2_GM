@@ -31,4 +31,8 @@ public class VerlistacompletahashtagUsuarioRegistrado extends VistaVerlistacompl
 		ListahashtagsUsuarioRegistrado_item item_tweets = new ListahashtagsUsuarioRegistrado_item(_listahashtagsUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listahashtagsUsuarioRegistrado.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
+	
+	public VerlistacompletahashtagUsuarioRegistrado Recargar(UsuarioRegistrado log) {
+		return new VerlistacompletahashtagUsuarioRegistrado(log);
+	}
 }

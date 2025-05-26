@@ -32,4 +32,10 @@ public class Verbaneados extends VistaVerbaneados {
 		UsuariosBaneados_item item_tweets = new UsuariosBaneados_item(_usuariosBaneados,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_usuariosBaneados.getVerticalListausuariosbaneados().as(VerticalLayout.class).add(item_tweets);
 	}
+	
+	public Verbaneados Recargar(Administrador log) {
+		Verbaneados vista = new Verbaneados (log);
+		return vista;
+		
+	}
 }

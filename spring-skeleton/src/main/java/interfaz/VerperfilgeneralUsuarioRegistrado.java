@@ -214,4 +214,77 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 		MostrartweetsUsuarioRegistrado_item item_tweets = new MostrartweetsUsuarioRegistrado_item(_mostrartweetsUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_mostrartweetsUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
+	
+	public VerperfilgeneralUsuarioRegistrado Recargar(UsuarioRegistrado log) {
+	    VerperfilgeneralUsuarioRegistrado vista = null;
+
+	    if (this._listaUsuariosGeneralUsuarioRegistrado != null) {
+	        if (this._listaUsuariosGeneralUsuarioRegistrado instanceof ListausuariosfamososUsuarioRegistrado_item) {
+	            ListausuariosfamososUsuarioRegistrado list = new ListausuariosfamososUsuarioRegistrado(log);
+	            ((ListausuariosfamososUsuarioRegistrado_item) _listaUsuariosGeneralUsuarioRegistrado)._listausuariosfamososUsuarioRegistrado = list;
+	            
+	            if (this instanceof Verperfilpropio) {
+	                vista = new Verperfilpropio(_listaUsuariosGeneralUsuarioRegistrado);
+	            } else if (this instanceof Verperfilbloqueado) {
+	                vista = new Verperfilbloqueado(_listaUsuariosGeneralUsuarioRegistrado);
+	            } else if (this instanceof Verperfilnobloqueado) {
+	                vista = new Verperfilnobloqueado(_listaUsuariosGeneralUsuarioRegistrado);
+	            } else {
+	                vista = new VerperfilgeneralUsuarioRegistrado(_listaUsuariosGeneralUsuarioRegistrado);
+	            }
+	        } else {
+	            ListausuariosUsuarioRegistrado list = new ListausuariosUsuarioRegistrado(
+	                ((ListausuariosUsuarioRegistrado_item) _listaUsuariosGeneralUsuarioRegistrado)._listausuariosUsuarioRegistrado._verlistacompletausuariosUsuarioRegistrado.Recargar(log)
+	            );
+	            ((ListausuariosUsuarioRegistrado_item) _listaUsuariosGeneralUsuarioRegistrado)._listausuariosUsuarioRegistrado = list;
+	            
+	            if (this instanceof Verperfilpropio) {
+	                vista = new Verperfilpropio(_listaUsuariosGeneralUsuarioRegistrado);
+	            } else if (this instanceof Verperfilbloqueado) {
+	                vista = new Verperfilbloqueado(_listaUsuariosGeneralUsuarioRegistrado);
+	            } else if (this instanceof Verperfilnobloqueado) {
+	                vista = new Verperfilnobloqueado(_listaUsuariosGeneralUsuarioRegistrado);
+	            } else {
+	                vista = new VerperfilgeneralUsuarioRegistrado(_listaUsuariosGeneralUsuarioRegistrado);
+	            }
+	        }
+	    } else if (this._mostrartweetsUsuarioRegistrado_item != null) {
+	        MostrartweetspropiosUsuarioRegistrado lt = _mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado;
+	        
+	        if (lt._verperfilgeneralUsuarioRegistrado != null) {
+	            lt = new MostrartweetspropiosUsuarioRegistrado(lt._verperfilgeneralUsuarioRegistrado.Recargar(log));
+	        } else if (lt._verHashtagUsuarioRegistrado != null) {
+	            lt = new MostrartweetspropiosUsuarioRegistrado(lt._verHashtagUsuarioRegistrado.Recargar(log));
+	        } else {
+	            lt = new MostrartweetspropiosUsuarioRegistrado(log);
+	        }
+
+	        _mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado = lt;
+
+	        if (this instanceof Verperfilpropio) {
+	            vista = new Verperfilpropio(_mostrartweetsUsuarioRegistrado_item);
+	        } else if (this instanceof Verperfilbloqueado) {
+	            vista = new Verperfilbloqueado(_mostrartweetsUsuarioRegistrado_item);
+	        } else if (this instanceof Verperfilnobloqueado) {
+	            vista = new Verperfilnobloqueado(_mostrartweetsUsuarioRegistrado_item);
+	        } else {
+	            vista = new VerperfilgeneralUsuarioRegistrado(_mostrartweetsUsuarioRegistrado_item);
+	        }
+	    } else {
+	        VertweetgeneralUsuarioRegistrado recargado = this._vertweetgeneralUsuarioRegistrado.Recargar(log);
+
+	        if (this instanceof Verperfilpropio) {
+	            vista = new Verperfilpropio(recargado);
+	        } else if (this instanceof Verperfilbloqueado) {
+	            vista = new Verperfilbloqueado(recargado);
+	        } else if (this instanceof Verperfilnobloqueado) {
+	            vista = new Verperfilnobloqueado(recargado);
+	        } else {
+	            vista = new VerperfilgeneralUsuarioRegistrado(recargado);
+	        }
+	    }
+
+	    return vista;
+	}
+
 }

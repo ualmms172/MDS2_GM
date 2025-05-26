@@ -31,4 +31,8 @@ public class VerlistaCompletaHashtagsAdmin extends VistaVerlistacompletahashtags
 		ListaHashtagsAdministrador_item item_tweets = new ListaHashtagsAdministrador_item(_listaHashtagsAdministrador,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listaHashtagsAdministrador.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
+	
+	public VerlistaCompletaHashtagsAdmin Recargar(Administrador log) {
+		return new VerlistaCompletaHashtagsAdmin(log);
+	}
 }

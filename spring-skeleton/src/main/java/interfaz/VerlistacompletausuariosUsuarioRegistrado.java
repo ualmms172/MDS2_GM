@@ -33,4 +33,8 @@ public class VerlistacompletausuariosUsuarioRegistrado extends VistaVerlistacomp
 		ListausuariosUsuarioRegistrado_item item_tweets = new ListausuariosUsuarioRegistrado_item(_listausuariosUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listausuariosUsuarioRegistrado.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
+	
+	public VerlistacompletausuariosUsuarioRegistrado Recargar(UsuarioRegistrado log) {
+		return new VerlistacompletausuariosUsuarioRegistrado(log);
+	}
 }

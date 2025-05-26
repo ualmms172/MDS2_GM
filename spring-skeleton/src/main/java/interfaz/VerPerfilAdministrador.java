@@ -238,4 +238,44 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		ListaTweetsAdmin_item item_tweets = new ListaTweetsAdmin_item(_listaTweetsAdmin,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
+	
+	public VerPerfilAdministrador Recargar(Administrador log) {
+		VerPerfilAdministrador vista = null;
+		if(this._listaUsuariosGeneralAdministrador!=null) {
+			if(this._listaUsuariosGeneralAdministrador instanceof ListaUsuariosFamososAdministrador_item) {
+				ListaUsuariosFamososAdministrador list = new ListaUsuariosFamososAdministrador(log);
+				((ListaUsuariosFamososAdministrador_item) _listaUsuariosGeneralAdministrador)._listaUsuariosFamososAdministrador =list;
+				vista = new VerPerfilAdministrador(_listaUsuariosGeneralAdministrador);
+			}
+			else {
+				ListaUsuariosAdministrador list = new ListaUsuariosAdministrador(((ListaUsuariosAdministrador_item) _listaUsuariosGeneralAdministrador)._listaUsuariosAdministrador._verListaCompletaUsuariosAdministrador.Recargar(log));
+				((ListaUsuariosAdministrador_item) _listaUsuariosGeneralAdministrador)._listaUsuariosAdministrador=list;
+				vista = new VerPerfilAdministrador(_listaUsuariosGeneralAdministrador);
+			}
+		}
+		else if(this._listaTweetsAdmin_item!=null){
+			ListaTweetsAdmin lt = _listaTweetsAdmin_item._listaTweetsAdmin;
+			if(lt._verPerfilAdministrador!=null) {
+				lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
+				vista= new VerPerfilAdministrador(_listaTweetsAdmin_item);
+			}
+			else if(lt._verHashtagAdministrador!=null) {
+				lt = new ListaTweetsAdmin(lt._verHashtagAdministrador.Recargar(log));
+				vista= new VerPerfilAdministrador(_listaTweetsAdmin_item); 
+				}
+			else {
+				lt = new ListaTweetsAdmin(log);
+				new VerPerfilAdministrador(_listaTweetsAdmin_item);
+			}
+		}
+		else if(this._verTweetAdministrador!=null){
+			vista= new VerPerfilAdministrador(this._verTweetAdministrador.Recargar(log)); 
+		}
+		else {
+			ListaComentariosAdministrador lt = this._listaComentariosAdministrador._listaComentariosAdministrador;
+			lt = new ListaComentariosAdministrador(lt._verTweetAdministrador.Recargar(log));
+			vista= new VerPerfilAdministrador(_listaComentariosAdministrador);
+		}
+		return vista;
+	}
 }

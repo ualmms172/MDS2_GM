@@ -257,6 +257,24 @@ public class VerTweetAdministrador extends VertweetGeneral {
 //		}
 		
 	}
+	
+	public VerTweetAdministrador Recargar(Administrador log) {
+		VerTweetAdministrador vista = null;
+		ListaTweetsAdmin lt = _listaTweetsAdmin._listaTweetsAdmin;
+		if(lt._verPerfilAdministrador!=null) {
+			lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
+			vista= new VerTweetAdministrador(_listaTweetsAdmin);
+		}
+		else if(lt._verHashtagAdministrador!=null) {
+			lt = new ListaTweetsAdmin(lt._verHashtagAdministrador.Recargar(log));
+			vista= new VerTweetAdministrador(_listaTweetsAdmin); 
+			}
+		else {
+			lt = new ListaTweetsAdmin(log);
+			new VerTweetAdministrador(_listaTweetsAdmin);
+		}
+		return vista;
+	}
 }
 	
 	

@@ -157,4 +157,39 @@ public class VerHashtagUsuarioRegistrado extends VerHashtagGeneral {
 		MostrartweetsUsuarioRegistrado_item item_tweets = new MostrartweetsUsuarioRegistrado_item(_mostrartweetsUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 		_mostrartweetsUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
+	
+	public VerHashtagUsuarioRegistrado Recargar(UsuarioRegistrado log) {
+		VerHashtagUsuarioRegistrado vista = null;
+		if(this._listahashtagsgeneralUsuarioRegistrado!=null) {
+			if(this._listahashtagsgeneralUsuarioRegistrado instanceof ListahashtagfamososUsuarioRegistrado_item) {
+				ListahashtagfamososUsuarioRegistrado list = new ListahashtagfamososUsuarioRegistrado(log);
+				((ListahashtagfamososUsuarioRegistrado_item) _listahashtagsgeneralUsuarioRegistrado)._listahashtagfamososUsuarioRegistrado =list;
+				vista = new VerHashtagUsuarioRegistrado(_listahashtagsgeneralUsuarioRegistrado);
+			}
+			else {
+				ListahashtagsUsuarioRegistrado list = new ListahashtagsUsuarioRegistrado(((ListahashtagsUsuarioRegistrado_item) _listahashtagsgeneralUsuarioRegistrado)._listahashtagsUsuarioRegistrado._verlistacompletahashtagUsuarioRegistrado.Recargar(log));
+				((ListahashtagsUsuarioRegistrado_item) _listahashtagsgeneralUsuarioRegistrado)._listahashtagsUsuarioRegistrado=list;
+				vista = new VerHashtagUsuarioRegistrado(_listahashtagsgeneralUsuarioRegistrado);
+			}
+		}
+		else if(this._mostrartweetspropiosusuarioregistrado!=null){
+			MostrartweetspropiosUsuarioRegistrado lt = _mostrartweetspropiosusuarioregistrado._mostrartweetspropiosUsuarioRegistrado;
+			if(lt._verperfilgeneralUsuarioRegistrado!=null) {
+				lt = new MostrartweetspropiosUsuarioRegistrado(lt._verperfilgeneralUsuarioRegistrado.Recargar(log));
+				vista= new VerHashtagUsuarioRegistrado(_mostrartweetspropiosusuarioregistrado);
+			}
+			else if(lt._verHashtagUsuarioRegistrado!=null) {
+				lt = new MostrartweetspropiosUsuarioRegistrado(lt._verHashtagUsuarioRegistrado.Recargar(log));
+				vista= new VerHashtagUsuarioRegistrado(_mostrartweetspropiosusuarioregistrado); 
+				}
+			else {
+				lt = new MostrartweetspropiosUsuarioRegistrado(log);
+				vista =new VerHashtagUsuarioRegistrado(_mostrartweetspropiosusuarioregistrado);
+			}
+		}
+		else {
+			vista= new VerHashtagUsuarioRegistrado(this._vertweetgeneralusarioregistrado.Recargar(log)); 
+		}
+		return vista;
+	}
 }
