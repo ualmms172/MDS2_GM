@@ -124,6 +124,11 @@ public class MainView extends VerticalLayout {
 
 		    }
 		
+	public static class Interfaz{
+		public static Administrador ad;
+		public static UsuarioRegistrado ur;
+		public static UsuarioNoRegistrado nr;
+	}
 	
 
     public MainView(@Autowired GreetService service) {

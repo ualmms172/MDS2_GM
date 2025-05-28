@@ -4,6 +4,8 @@ import vistas.VistaUsuarionoregistrado;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iUsuarioNoRegistrado;
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Pantalla;
 
@@ -27,6 +29,7 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	
 	MainView MainView;
 	
+	public iUsuarioNoRegistrado _iUsuarioNoRegistrado = new BDPrincipal();
 	
 	public UsuarioNoRegistrado(MainView MainView) {
 	this.MainView = MainView;

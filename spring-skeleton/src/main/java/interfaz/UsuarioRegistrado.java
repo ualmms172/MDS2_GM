@@ -4,6 +4,8 @@ import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iUsuarioregistrado;
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Pantalla;
 
@@ -31,7 +33,7 @@ public class UsuarioRegistrado extends Logueado {
 	VerlistacompletausuariosUsuarioRegistrado _VerlistacompletausuariosUsuarioRegistrado;
 	Verperfilpropio _Verperfilpropio;
 
-
+	public iUsuarioregistrado _iUsuarioregistrado = new BDPrincipal();
 	public basededatos.UsuarioRegistrado u;
 	
 	public UsuarioRegistrado(MainView MainView, basededatos.UsuarioRegistrado u) {

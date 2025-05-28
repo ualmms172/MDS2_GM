@@ -1,6 +1,7 @@
 package interfaz;
 
 import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 import interfaz.Registrar;
 import vistas.VistaValidarcorreo;
@@ -13,6 +14,7 @@ public class ValidarCorreo extends VistaValidarcorreo{
 	//private Button _continuar;
 	//private event _registrarse;
 	public Registrar _registrar;
+	public String[] datos = new String[6];
 	
 	
 	public ValidarCorreo(Registrar registrar) {
@@ -27,8 +29,10 @@ public class ValidarCorreo extends VistaValidarcorreo{
 	
 	
 	public void Registrarse() {
+
+		basededatos.UsuarioRegistrado ubd = Interfaz.nr._iUsuarioNoRegistrado.Registrar_Usuario(datos[0], datos[3], datos[5], datos[4], datos[1],datos[2]);
 		
-		UsuarioRegistrado vista = new UsuarioRegistrado((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+		UsuarioRegistrado vista = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd); 
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(vista);

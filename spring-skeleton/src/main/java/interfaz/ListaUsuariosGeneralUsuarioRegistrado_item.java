@@ -1,5 +1,6 @@
 package interfaz;
 
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class ListaUsuariosGeneralUsuarioRegistrado_item extends ListaUsuariosGeneral_item {
@@ -17,8 +18,8 @@ public class ListaUsuariosGeneralUsuarioRegistrado_item extends ListaUsuariosGen
 
 	public void VerperfilUsuarioRegistrado() {
 		//_verperfilUsuarioRegistrado = new VerperfilgeneralUsuarioRegistrado(this);
-		if(true) _verperfilUsuarioRegistrado = new Verperfilnobloqueado(this);
-		else if(true) _verperfilUsuarioRegistrado = new Verperfilpropio(this);
+		if(this.u==Interfaz.ur.u ) _verperfilUsuarioRegistrado = new Verperfilpropio(this);
+		else if(!this.u.bloqueaA.contains(Interfaz.ur.u)) _verperfilUsuarioRegistrado = new Verperfilnobloqueado(this);
 		else _verperfilUsuarioRegistrado = new Verperfilbloqueado(this);
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();

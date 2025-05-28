@@ -1,5 +1,7 @@
 package interfaz;
 
+import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
@@ -28,6 +30,16 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 		
 		this.MostrartweetsUsuarioRegistrado();
 		
+		bloqueado = this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor().bloqueadoPor.contains(Interfaz.ur.u);
+		if(bloqueado) {
+			this.getButtonBloquear().getStyle().set("color", "gray");
+			this.getButtonBloquear().setText("Desbloquear");
+		}
+		else {
+			this.getButtonBloquear().getStyle().set("color", "red");
+			this.getButtonBloquear().setText("Bloquear");
+		}
+		
 		this.getButtonBloquear().addClickListener(event->{
 			
 			if(bloqueado) {
@@ -52,6 +64,19 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 		
 		this.MostrartweetsUsuarioRegistrado();
 		// TODO Auto-generated constructor stub
+		
+		
+		this.getButtonBloquear().addClickListener(event->{
+			
+			if(bloqueado) {
+				Desbloquear();
+				
+			}
+			else {
+				Bloquear();
+				
+			}
+		});
 	}
 	
 	public Verperfilbloqueado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado) {
@@ -63,6 +88,17 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 		
 		this.MostrartweetsUsuarioRegistrado();
 		// TODO Auto-generated constructor stub
+		this.getButtonBloquear().addClickListener(event->{
+			
+			if(bloqueado) {
+				Desbloquear();
+				
+			}
+			else {
+				Bloquear();
+				
+			}
+		});
 	}
 	
 	
@@ -71,23 +107,32 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 
 	public void Desbloquear() {
 		
-			this.getButtonBloquear().getStyle().set("color", "red");
-			this.getButtonBloquear().setText("Bloquear");
-			bloqueado=true;
-			
-			Verperfilbloqueado x = new Verperfilbloqueado(_mostrartweetspropiosUsuarioRegistrado);
+//			this.getButtonBloquear().getStyle().set("color", "red");
+//			this.getButtonBloquear().setText("Bloquear");
+//			bloqueado=true;
+//			
+//			Verperfilbloqueado x = new Verperfilbloqueado(_mostrartweetspropiosUsuarioRegistrado);
+//			Pantalla.MainView.removeAll();
+//			Pantalla.MainView.add(x);
+			basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Desbloquear(Interfaz.ur.u, this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor());
+			UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 			Pantalla.MainView.removeAll();
-			Pantalla.MainView.add(x);
+			Pantalla.MainView.add(this.Recargar(u));
 	}
 
 	public void Bloquear() {
 		
-		this.getButtonBloquear().getStyle().set("color", "gray");
-		this.getButtonBloquear().setText("Desbloquear");
-		bloqueado=false;
+//		this.getButtonBloquear().getStyle().set("color", "gray");
+//		this.getButtonBloquear().setText("Desbloquear");
+//		bloqueado=false;
+//		
+//		Verperfilbloqueado x = new Verperfilbloqueado(_mostrartweetspropiosUsuarioRegistrado);
+//		Pantalla.MainView.removeAll();
+//		Pantalla.MainView.add(x);
 		
-		Verperfilbloqueado x = new Verperfilbloqueado(_mostrartweetspropiosUsuarioRegistrado);
+		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Bloquear(Interfaz.ur.u, this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor());
+		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		Pantalla.MainView.removeAll();
-		Pantalla.MainView.add(x);
+		Pantalla.MainView.add(this.Recargar(u));
 	}
 }

@@ -8,9 +8,16 @@ import com.vaadin.flow.component.html.Span;
 import basededatos.Tweet;
 
 public class ListaTweetsGeneral_item extends ListaContenido_item {
-	ListaTweetsGeneral_item(ListaContenido lista,Tweet t) {
+	
+		ListaTweetsGeneral_item(ListaContenido lista,Tweet t) {
 		super(lista,t);
 		this.t=t;
+		
+		if(!t.mencionaA.isEmpty()) 
+			Mencion();
+		
+		if(!t.contiene.isEmpty())
+			Hashtag();
 		
 		// TODO Auto-generated constructor stub
 	}

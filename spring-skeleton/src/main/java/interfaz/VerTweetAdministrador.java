@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class VerTweetAdministrador extends VertweetGeneral {
@@ -12,15 +14,10 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	public VerPerfilAdministrador _verPerfilAdministrador;
 	
 	public VerTweetAdministrador(ListaTweetsAdmin_item listaTweetsAdmin) {
-		
+		super(listaTweetsAdmin);
 		_listaTweetsAdmin = listaTweetsAdmin; 
 		
-		this.getLabelCuerpoTwet().setText(_listaTweetsAdmin.t.getContieneTexto().getTexto());
-	//	this.getLabelMeGusta().setText(_listaTweetsAdmin.t.meGustaPor);
-		this.getLabelNombreUsuario().setText(_listaTweetsAdmin.t.getEscritoPor().getNick());
-		this.getImgFotoPerfilTweet().setSrc(_listaTweetsAdmin.t.getEscritoPor().getFotoPerfil());
-		//this.getImgFotoTweet().setSrc(_listaTweetsAdmin.t.contieneMultimedia.ge);
-		//this.getDivTweet().sets
+		
 		
 		this.getButtonComentar().setVisible(false);
 		this.getButtonMeGusta().setVisible(false);
@@ -119,23 +116,26 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	});
 	}
 	
-	public VerTweetAdministrador(VerPerfilAdministrador verPerfilAdministrador) {
-		
-		_verPerfilAdministrador = verPerfilAdministrador; 
-		this.getButtonComentar().setVisible(false);
-		this.getButtonMeGusta().setVisible(false);
-		this.getButtonRetweet().setVisible(false);
-		
-		ListaComentariosAdministrador();
-		this.getImgFotoPerfilTweet().addClickListener(event -> VerPerfilAdministrador()); 
-		this.getButtonBorrar().addClickListener(event -> BorrarTweet());
-	}
+//	public VerTweetAdministrador(VerPerfilAdministrador verPerfilAdministrador) {
+//		super(null);
+//		_verPerfilAdministrador = verPerfilAdministrador; 
+//		this.getButtonComentar().setVisible(false);
+//		this.getButtonMeGusta().setVisible(false);
+//		this.getButtonRetweet().setVisible(false);
+//		
+//		ListaComentariosAdministrador();
+//		this.getImgFotoPerfilTweet().addClickListener(event -> VerPerfilAdministrador()); 
+//		this.getButtonBorrar().addClickListener(event -> BorrarTweet());
+//	}
 	
 	
 	public void BorrarTweet() {
+		basededatos.Administrador adb=Interfaz.ad._iadministrador.BorrarTweet(this._listaTweetsAdmin.t);
+		Administrador a = new Administrador((MainView)Pantalla.MainView,adb);
+		
 		
 		Pantalla.MainView.removeAll();
-		Pantalla.MainView.add(Pantalla.Anterior);
+		
 		
 		if(this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
 			if(this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador._listaHashtagsgeneralAdministrador instanceof ListaHashtagsAdministrador_item) {
@@ -146,6 +146,7 @@ public class VerTweetAdministrador extends VertweetGeneral {
 				ListaHashtagsFamososAdministrador_item l = (ListaHashtagsFamososAdministrador_item) this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador._listaHashtagsgeneralAdministrador;
 				Pantalla.Anterior= l._listaHashtagsFamososAdministrador._administrador;
 			}
+			Pantalla.MainView.add(this._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador.Recargar(a)); //Añadido 27/05/2025
 		}
 		else if(this._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
 			VerPerfilAdministrador x = this._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
@@ -194,8 +195,12 @@ public class VerTweetAdministrador extends VertweetGeneral {
 				}
 			}
 			
-			
+			Pantalla.MainView.add(this._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador.Recargar(a)); //Añadido 27/05/2025
 		}
+		else {//Añadido 27/05/2025
+			Pantalla.MainView.add(a);//Añadido 27/05/2025
+		}//Añadido 27/05/2025
+		
 			
 
 	}

@@ -1,6 +1,7 @@
 package interfaz;
 
 import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class Hacertweet extends CrearContenido {
@@ -39,18 +40,25 @@ public class Hacertweet extends CrearContenido {
 //		UsuarioRegistrado user = new UsuarioRegistrado(this._usuarioregistrado.MainView);
 //		this._usuarioregistrado.MainView.removeAll();
 //		this._usuarioregistrado.MainView.add(user);
-		
 		UsuarioRegistrado u=null;
 		VerlistacompletahashtagUsuarioRegistrado l = null;
+		String texto = this.getTextFieldCampoTexto().getValue();
+		String foto = this.getTextFieldUrlFoto().getValue();
+		String video= this.getTextFieldTextoVideo().getValue();
+		
+		if(texto.isBlank() && foto.isBlank() && video.isBlank())
+			return;
+		
+		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Tweet(texto, foto, video, Interfaz.ur.u);
+		u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
+		
 		Pantalla.MainView.removeAll();
 		if(_usuarioregistrado!=null) {
-			u = new UsuarioRegistrado((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
 			Pantalla.MainView.add(u);
 		}
 		else {
-			l = new VerlistacompletahashtagUsuarioRegistrado(_listahashtagsUsuarioRegistrado._listahashtagsUsuarioRegistrado._verlistacompletahashtagUsuarioRegistrado._usuarioregistrado);
+			l = new VerlistacompletahashtagUsuarioRegistrado(u);
 			Pantalla.MainView.add(l);
-			
 		}
 			
 		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);

@@ -1,5 +1,8 @@
 package basededatos;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 import org.orm.PersistentException;
 
 public interface iAdministrador extends iLogueado {
@@ -16,13 +19,13 @@ public interface iAdministrador extends iLogueado {
 //
 //	public Comentario[] Cargar_Comentarios(Tweet aTweet);
 
-	public UsuarioRegistrado[] Cargar_Baneados() throws PersistentException;
+	public UsuarioRegistrado[] Cargar_Baneados() ;
 
-	public Administrador Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) throws PersistentException;
+	public Administrador Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador,LocalDate aFecha) ;
 
-	public Administrador Desbanear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) throws PersistentException;
+	public Administrador Desbanear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) ;
 
-	public Administrador BorrarTweet(Tweet aTweet) throws PersistentException;
+	public Administrador BorrarTweet(Tweet aTweet) ;
 
-	public Administrador BorrarComentario(Comentario aComentario) throws PersistentException;
+	public Administrador BorrarComentario(Comentario aComentario);
 }

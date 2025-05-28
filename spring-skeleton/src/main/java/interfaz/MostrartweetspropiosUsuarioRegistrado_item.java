@@ -3,6 +3,7 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.Tweet;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGeneral_item {
@@ -38,7 +39,7 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 
 	public void VerTweetUsuarioRegistrado() {
 		
-		if(true)
+		if(t.getEscritoPor().equals(Interfaz.ur.u))
 			_verTweetUsuarioRegistrado = new Vertweetpropio(this); 
 		else
 			_verTweetUsuarioRegistrado = new Vertweetajeno(this); 
@@ -80,9 +81,9 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 
 	public void VerperfilUsuarioRegistrado() {
 		
-		if(true)
+		if(t.getEscritoPor().equals(Interfaz.ur.u))
 			_verperfilUsuarioRegistrado = new Verperfilpropio(this); 
-		else if(true)
+		else if(!t.getEscritoPor().bloqueaA.contains(Interfaz.ur.u))
 			_verperfilUsuarioRegistrado = new Verperfilnobloqueado(this); 
 		else
 			_verperfilUsuarioRegistrado = new Verperfilbloqueado(this); 

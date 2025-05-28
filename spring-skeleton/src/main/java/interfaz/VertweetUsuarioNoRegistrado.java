@@ -10,7 +10,7 @@ public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 	public VerperfilUsuarioNoRegistrado _verperfilUsuarioNoRegistrado;
 
 	public VertweetUsuarioNoRegistrado(Listatweets_item listatweets) {
-		
+		super(listatweets);
 		_listatweets = listatweets; 
 		
 		this.getLabelCuerpoTwet().setText(_listatweets.t.getContieneTexto().getTexto());

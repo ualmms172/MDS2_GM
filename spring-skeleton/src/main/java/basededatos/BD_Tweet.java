@@ -109,14 +109,12 @@ public class BD_Tweet {
 	
 	}
 
-	public Administrador BorrarTweet(Tweet aTweet, Administrador aAdministrador) throws PersistentException {
+	public Administrador BorrarTweet(Tweet aTweet) throws PersistentException {
 		
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 		Administrador admin = null;
 
 		try {
-			// Aquí puedes recuperar el administrador actual si es necesario
-			admin = AdministradorDAO.getAdministradorByORMID(aAdministrador.getId_logueado()); 
 			TweetDAO.delete(aTweet);
 			t.commit();
 		} catch (Exception e) {

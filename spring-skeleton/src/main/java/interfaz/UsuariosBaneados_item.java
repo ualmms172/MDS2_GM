@@ -2,6 +2,9 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
+import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaUsuariosbaneados_item;
 
 public class UsuariosBaneados_item extends VistaUsuariosbaneados_item {
@@ -26,6 +29,10 @@ public class UsuariosBaneados_item extends VistaUsuariosbaneados_item {
 	
 
 	public void Desbanearusuario() {
-		this._usuariosBaneados.getVerticalListausuariosbaneados().as(VerticalLayout.class).remove(this);
+		basededatos.Administrador abd = Interfaz.ad._iadministrador.Desbanear(u, Interfaz.ad.a);
+		Administrador a = new Administrador((MainView)Pantalla.MainView,abd);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(new Verbaneados(a));
+		//this._usuariosBaneados.getVerticalListausuariosbaneados().as(VerticalLayout.class).remove(this);
 	}
 }
