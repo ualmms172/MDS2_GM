@@ -117,7 +117,7 @@ public class BD_UsuarioRegistrado {
 		return aUsuario;
 	}
 
-	public UsuarioRegistrado Registrar_Usuario(String aNick, String aDescripcion, String aUrl_perfil, String aUrl_fondo, String aContrasena) throws PersistentException {
+	public UsuarioRegistrado Registrar_Usuario(String aNick, String aDescripcion, String aUrl_perfil, String aUrl_fondo, String aContrasena,String aCorreo) throws PersistentException {
 		
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 		UsuarioRegistrado nuevo = null;
@@ -129,6 +129,8 @@ public class BD_UsuarioRegistrado {
 			nuevo.setFotoPerfil(aUrl_perfil);
 			nuevo.setFotoFondo(aUrl_fondo);
 			nuevo.setContrasena(aContrasena);
+			//nuevo.setCorreo(aCorreo);
+			
 
 			UsuarioRegistradoDAO.save(nuevo);
 			t.commit();

@@ -3,6 +3,8 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.Comentario;
+import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class ListaComentariosAdministrador_item extends ListaComentariosGeneral_item {
@@ -23,7 +25,15 @@ public class ListaComentariosAdministrador_item extends ListaComentariosGeneral_
 
 	public void BorrarComentario() {
 		
-		this._listaComentariosAdministrador.getVerticalListacontenido().as(VerticalLayout.class).remove(this);
+		basededatos.Administrador abd=Interfaz.ad._iadministrador.BorrarComentario(c);
+		
+		Administrador a = new Administrador((MainView)Pantalla.MainView,abd);
+		
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_listaComentariosAdministrador._verTweetAdministrador.Recargar(a));
+		
+//		this._listaComentariosAdministrador.getVerticalListacontenido().as(VerticalLayout.class).remove(this);
+		
 //		VerTweetAdministrador tweet = new VerTweetAdministrador(this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin);
 //		
 //		if(this._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador!=null) {

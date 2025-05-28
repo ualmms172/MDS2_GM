@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaModificardatoscuenta;
 
@@ -55,21 +57,27 @@ public class Modificardatoscuenta extends VistaModificardatoscuenta {
 	
 	public void Modificar() {
 			
-		if(_verperfilpropio._usuarioregistrado!=null) {
-			_verperfilpropio = new Verperfilpropio(_verperfilpropio._usuarioregistrado); 
-		}
-		else if(_verperfilpropio._mostrartweetsUsuarioRegistrado_item!=null) {
-			_verperfilpropio = new Verperfilpropio(_verperfilpropio._mostrartweetsUsuarioRegistrado_item);
-		}
-		else if(_verperfilpropio._listaUsuariosGeneralUsuarioRegistrado!=null){
-			_verperfilpropio = new Verperfilpropio(_verperfilpropio._listaUsuariosGeneralUsuarioRegistrado);
-		}
-		else {
-			_verperfilpropio = new Verperfilpropio(_verperfilpropio._vertweetgeneralUsuarioRegistrado);
-		}
+//		if(_verperfilpropio._usuarioregistrado!=null) {
+//			_verperfilpropio = new Verperfilpropio(_verperfilpropio._usuarioregistrado); 
+//		}
+//		else if(_verperfilpropio._mostrartweetsUsuarioRegistrado_item!=null) {
+//			_verperfilpropio = new Verperfilpropio(_verperfilpropio._mostrartweetsUsuarioRegistrado_item);
+//		}
+//		else if(_verperfilpropio._listaUsuariosGeneralUsuarioRegistrado!=null){
+//			_verperfilpropio = new Verperfilpropio(_verperfilpropio._listaUsuariosGeneralUsuarioRegistrado);
+//		}
+//		else {
+//			_verperfilpropio = new Verperfilpropio(_verperfilpropio._vertweetgeneralUsuarioRegistrado);
+//		}
 
+		String descripcion = this.getTextFieldDescripcion().getValue();
+		String nick = this.getTextFieldNick().getValue();
+		String fotoPerfil = this.getTextFieldFotoDePerfil().getValue();
+		String fotoFondo = this.getTextFieldFotoDeFondo().getValue();
+		basededatos.UsuarioRegistrado ubd= Interfaz.ur._iUsuarioregistrado.ModificarCuenta(Interfaz.ur.u, descripcion, fotoFondo, fotoPerfil, nick);
+		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		Pantalla.MainView.removeAll();
-		Pantalla.MainView.add(_verperfilpropio);
+		Pantalla.MainView.add(this._verperfilpropio.Recargar(u));
 		
 //		if(_verperfilpropio._usuarioregistrado!=null) {
 //			Verperfilpropio perfil = new Verperfilpropio(_verperfilpropio._usuarioregistrado);

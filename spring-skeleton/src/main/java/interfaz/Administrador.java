@@ -4,6 +4,8 @@ import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Pantalla;
 
@@ -20,7 +22,7 @@ public class Administrador extends Logueado {
 	Verbaneados _Verbaneados;
 
 
-
+	public iAdministrador _iadministrador = new BDPrincipal();
 	public basededatos.Administrador a;
 	
 	public Administrador(MainView MainView, basededatos.Administrador a) {

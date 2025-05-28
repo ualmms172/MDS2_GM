@@ -20,11 +20,17 @@ public class ListaContenido_item extends VistaListacontenido_item {
 	_lista = lista;
 
 	this.cont=c;
+	this.getLabelCuerpoTwet().setText(c.getContieneTexto().getTexto());
+	this.getLabelMeGusta().setText((String.valueOf(c.meGustaPor.size())));
 	this.getLabelNombreUsuario().setText(c.getEscritoPor().getNick());
 	this.getImgFotoPerfilTweet().setSrc(c.getEscritoPor().getFotoPerfil());
-	this.getLabelCuerpoTwet().setText(c.getContieneTexto().getTexto());//Imagino que este será en un if
-	//Falta el de la foto del tweet en el caso de que exista
-  this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
+	for( basededatos.Multimedia multimedia : c.contieneMultimedia.toArray()) {
+		if(multimedia.getFoto())
+			this.getImgFotoTweet().setSrc(multimedia.getUrl());
+		else 
+			this.getDivTweet().setText(multimedia.getUrl());
+	}
+	this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
 	this.getlabelRetweeteadoPor().setVisible(false);
 
 	}

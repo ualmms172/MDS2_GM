@@ -3,7 +3,9 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.Tweet;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
+import gallardoMartinez.MainView;
 
 public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 	public ListaTweetsAdmin_item(ListaContenido lista,Tweet t) {
@@ -26,7 +28,22 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 	public VerPerfilAdministrador _verPerfilAdministrador;
 
 	public void BorrarTweet() {
-		this._listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).remove(this);
+//		this._listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).remove(this);
+		
+		basededatos.Administrador abd=Interfaz.ad._iadministrador.BorrarTweet(t);
+		Administrador a = new Administrador((MainView)Pantalla.MainView,abd);
+		Pantalla.MainView.removeAll();
+		
+		if(this._listaTweetsAdmin._administrador!=null) {
+			Pantalla.MainView.add(a);
+		}
+		else if(this._listaTweetsAdmin._verHashtagAdministrador!=null){
+			Pantalla.MainView.add(this._listaTweetsAdmin._verHashtagAdministrador.Recargar(a));
+		}
+		else {
+			Pantalla.MainView.add(this._listaTweetsAdmin._verPerfilAdministrador.Recargar(a));
+		}
+		
 	}
 
 	public void VerTweetAdministrador() {

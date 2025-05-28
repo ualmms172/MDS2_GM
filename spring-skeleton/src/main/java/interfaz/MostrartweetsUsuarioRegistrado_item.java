@@ -3,10 +3,20 @@ package interfaz;
 import com.vaadin.flow.component.AttachEvent;
 
 import basededatos.Tweet;
+import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
+import gallardoMartinez.MainView.Pantalla;
 
 public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsuarioRegistrado_item {
 	MostrartweetsUsuarioRegistrado_item(ListaContenido lista,Tweet t) {
 		super(lista,t);
+		
+		_mostrartweetsUsuarioRegistrado = (MostrartweetsUsuarioRegistrado)lista;
+		dado=t.meGustaPor.contains(Interfaz.ur.u);
+		if(dado) {
+			this.getButtonMeGusta().getStyle().set("color", "red");
+			this.getButtonMeGusta().setText("Quitar");
+		}
 		// TODO Auto-generated constructor stub
 		this.getButtonMeGusta().setVisible(true);
 		
@@ -20,24 +30,49 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 	//private Button _darMeGusta;
 	public MostrartweetsUsuarioRegistrado _mostrartweetsUsuarioRegistrado;
 	
-	public Boolean dado = false;
+	public Boolean dado;
 	
 	public void Darlikeatweet() {
 		
 		if(!dado) {
-			this.getButtonMeGusta().getStyle().set("color", "red");
-			this.getButtonMeGusta().setText("Quitar");
-			MostrartweetsUsuarioRegistrado la = (MostrartweetsUsuarioRegistrado) _lista;
-			la._item.add(this);
-			dado=true;
+//			this.getButtonMeGusta().getStyle().set("color", "red");
+//			this.getButtonMeGusta().setText("Quitar");
+//			MostrartweetsUsuarioRegistrado la = (MostrartweetsUsuarioRegistrado) _lista;
+//			la._item.add(this);
+//			dado=true;
+			basededatos.UsuarioRegistrado ubd= Interfaz.ur._iUsuarioregistrado.DarLikeTweet(Interfaz.ur.u, t);
+			UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
+			Pantalla.MainView.removeAll();
+			if(this._mostrartweetsUsuarioRegistrado._usuarioregistrado!=null) {
+				Pantalla.MainView.add(u);
+			}
+			else if(this._mostrartweetsUsuarioRegistrado._verHashtagUsuarioRegistrado!=null) {
+				Pantalla.MainView.add(this._mostrartweetsUsuarioRegistrado._verHashtagUsuarioRegistrado.Recargar(u));
+			}
+			else {
+				Pantalla.MainView.add(this._mostrartweetsUsuarioRegistrado._verperfilgeneralUsuarioRegistrado.Recargar(u));
+			}
 			}
 			
 			else {
-				this.getButtonMeGusta().getStyle().set("color", "gray");
-				this.getButtonMeGusta().setText("Dar me gusta");
-				MostrartweetsUsuarioRegistrado la = (MostrartweetsUsuarioRegistrado) _lista;
-				la._item.add(this);
-				dado=false;
+//				this.getButtonMeGusta().getStyle().set("color", "gray");
+//				this.getButtonMeGusta().setText("Dar me gusta");
+//				MostrartweetsUsuarioRegistrado la = (MostrartweetsUsuarioRegistrado) _lista;
+//				la._item.add(this);
+//				dado=false;
+				
+				basededatos.UsuarioRegistrado ubd= Interfaz.ur._iUsuarioregistrado.QuitarLikeTweet(Interfaz.ur.u, t);
+				UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
+				Pantalla.MainView.removeAll();
+				if(this._mostrartweetsUsuarioRegistrado._usuarioregistrado!=null) {
+					Pantalla.MainView.add(u);
+				}
+				else if(this._mostrartweetsUsuarioRegistrado._verHashtagUsuarioRegistrado!=null) {
+					Pantalla.MainView.add(this._mostrartweetsUsuarioRegistrado._verHashtagUsuarioRegistrado.Recargar(u));
+				}
+				else {
+					Pantalla.MainView.add(this._mostrartweetsUsuarioRegistrado._verperfilgeneralUsuarioRegistrado.Recargar(u));
+				}
 				}
 	}
 	

@@ -1,8 +1,13 @@
 package interfaz;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 import interfaz.ListaUsuariosAdministrador_item;
 import interfaz.VerPerfilAdministrador;
@@ -97,7 +102,7 @@ public class BanearUsuario extends VistaBanearusuario{
 	});
 		
 		this.getButtonTemporal().addClickListener(event -> BanearTemporalmente());
-		this.getButtonIndefinido().addClickListener(event -> BanearTemporalmente());		
+		this.getButtonIndefinido().addClickListener(event -> BanearIndefinidamente());		
 	
 	}
 	
@@ -106,7 +111,27 @@ public class BanearUsuario extends VistaBanearusuario{
 	
 
 	public void BanearTemporalmente() {
-		Administrador ad = new Administrador((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+		basededatos.UsuarioRegistrado ubd = null;
+		if(_listaUsuariosAdministrador!=null)
+			ubd= _listaUsuariosAdministrador.u;
+		else {
+			if(_verPerfilAdministrador._listaTweetsAdmin_item!=null) {
+				ubd= _verPerfilAdministrador._listaTweetsAdmin_item.cont.getEscritoPor();
+			}
+			else if(_verPerfilAdministrador._listaUsuariosGeneralAdministrador!=null) {
+				ubd=_verPerfilAdministrador._listaUsuariosGeneralAdministrador.u;
+			}
+			else {
+				ubd= _verPerfilAdministrador._listaComentariosAdministrador.cont.getEscritoPor();
+			}
+		}
+			
+		String fechaStr = this.getPlaceHolderTiempoBaneo().getValue();
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+	    LocalDate fecha = LocalDate.parse(fechaStr, formatter);
+	    
+		basededatos.Administrador abd=Interfaz.ad._iadministrador.Banear(ubd, Interfaz.ad.a,fecha);
+		Administrador ad = new Administrador((MainView)Pantalla.MainView,abd); 
 		Verbaneados vb = new Verbaneados(ad);
 		Pantalla.Anterior = ad;
 		Pantalla.MainView.removeAll();
@@ -114,7 +139,23 @@ public class BanearUsuario extends VistaBanearusuario{
 	}
 
 	public void BanearIndefinidamente() {
-		Administrador ad = new Administrador((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+		basededatos.UsuarioRegistrado ubd = null;
+		if(_listaUsuariosAdministrador!=null)
+			ubd= _listaUsuariosAdministrador.u;
+		else {
+			if(_verPerfilAdministrador._listaTweetsAdmin_item!=null) {
+				ubd= _verPerfilAdministrador._listaTweetsAdmin_item.cont.getEscritoPor();
+			}
+			else if(_verPerfilAdministrador._listaUsuariosGeneralAdministrador!=null) {
+				ubd=_verPerfilAdministrador._listaUsuariosGeneralAdministrador.u;
+			}
+			else {
+				ubd= _verPerfilAdministrador._listaComentariosAdministrador.cont.getEscritoPor();
+			}
+		}
+			
+		basededatos.Administrador abd=Interfaz.ad._iadministrador.Banear(ubd, Interfaz.ad.a,null);
+		Administrador ad = new Administrador((MainView)Pantalla.MainView,abd); 
 		Verbaneados vb = new Verbaneados(ad);
 		Pantalla.Anterior = ad;
 		Pantalla.MainView.removeAll();

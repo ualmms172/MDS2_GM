@@ -46,7 +46,28 @@ public class Registrar extends VistaRegistrar {
 
 	public void ValidarCorreo() {
 		
+		String nick = this.getTextFieldNick().getValue();
+		String contrasena = this.getTextFieldContrasena().getValue();
+		String correo = this.getTextFieldCorreo().getValue();
+		String descripcion = this.getTextFieldDescripcion().getValue();
+		String fotoFondo = this.getTextFieldFotoDeFondo().getValue();
+		String fotoPerfil = this.getTextFieldFotoDePerfil().getValue();
+		
+		//Si falta algun campo esencial no se hace nada 
+		if(nick.isBlank() || correo.isBlank() || contrasena.isBlank()) {
+			return;
+		}
+		
 		ValidarCorreo vista = new ValidarCorreo(this);
+		_validarCorreo = vista;
+		
+		vista.datos[0] = nick;
+		vista.datos[1] = contrasena;
+		vista.datos[2] = correo;
+		vista.datos[3] = descripcion;
+		vista.datos[4] = fotoFondo;
+		vista.datos[5] = fotoPerfil;
+		
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(vista);

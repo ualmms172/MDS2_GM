@@ -2,6 +2,7 @@ package interfaz;
 
 import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaIniciarsesin;
+import gallardoMartinez.MainView;
 
 public class IniciarSesin extends VistaIniciarsesin {
 	//private event _autentificarse;
@@ -49,9 +50,21 @@ public class IniciarSesin extends VistaIniciarsesin {
 
 	public void Autentificarse() {
 		
+		String nick = this.getTextFieldCorreo().getValue();
+		String pass = this.getTextFieldContraseña().getValue();
+		basededatos.Logueado log = this._usuarioNoRegistrado._iUsuarioNoRegistrado.Loguear(nick, pass);
+		if(log==null) 
+			return;
+		
 		this._usuarioNoRegistrado.MainView.removeAll();
-		Administrador ad = new Administrador(this._usuarioNoRegistrado.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL 
-		this._usuarioNoRegistrado.MainView.add(ad);
+		if(log instanceof basededatos.Administrador) {
+			Administrador a = new Administrador((MainView)Pantalla.MainView,(basededatos.Administrador)log);
+			this._usuarioNoRegistrado.MainView.add(a);
+		}
+		else {
+			UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,(basededatos.UsuarioRegistrado)log);
+			this._usuarioNoRegistrado.MainView.add(u);
+		}
 		
 		
 		

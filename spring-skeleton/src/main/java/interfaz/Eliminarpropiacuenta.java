@@ -4,6 +4,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 
 import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaEliminarpropiacuenta;
 
@@ -74,6 +75,8 @@ public class Eliminarpropiacuenta extends VistaEliminarpropiacuenta  {
 //				
 //			this._verperfilpropio._usuarioregistrado.MainView.removeAll(); 	
 //			this._verperfilpropio._usuarioregistrado.MainView.add(usuarioNoRegistrado); 	
+		Interfaz.ur._iUsuarioregistrado.Eliminar_Usuario(Interfaz.ur.u);
+		Interfaz.ur=null;
 		UsuarioNoRegistrado vista = new UsuarioNoRegistrado((MainView)Pantalla.MainView);
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();

@@ -12,11 +12,11 @@ public class Vertweetpropio extends VertweetgeneralUsuarioRegistrado {
 	}
 	
 	
-public Vertweetpropio (VerperfilgeneralUsuarioRegistrado verperfilUsuarioRegistrado ) {
-		
-		super(verperfilUsuarioRegistrado);
-		this.getButtonMeGusta().setVisible(false);
-	}
+//public Vertweetpropio (VerperfilgeneralUsuarioRegistrado verperfilUsuarioRegistrado ) {
+//		
+//		super(verperfilUsuarioRegistrado);
+//		this.getButtonMeGusta().setVisible(false);
+//	}
 	
 	
 	

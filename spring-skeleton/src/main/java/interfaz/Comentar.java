@@ -3,6 +3,8 @@ package interfaz;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class Comentar extends CrearContenido {
@@ -60,8 +62,15 @@ public class Comentar extends CrearContenido {
 		}
 		
 		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		
+		String texto = this.getTextFieldCampoTexto().getValue();
+		String foto = this.getTextFieldUrlFoto().getValue();
+		String video = this.getTextFieldTextoVideo().getValue();
+		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Comentario(verTweet._mostrartweetspropiosUsuarioRegistrado.t, texto, foto,video, Interfaz.ur.u);
+		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
+		
 		Pantalla.MainView.removeAll();
-		Pantalla.MainView.add(verTweet);
+		Pantalla.MainView.add(verTweet.Recargar(u));
 //		ComentariosUsuarioRegistrado _comentariosUsuarioRegistrado = _vertweetgeneralUsuarioRegistrado._comentariosUsuarioRegistrado;
 //		VertweetgeneralUsuarioRegistrado verTweet = null;
 //		if(false) 

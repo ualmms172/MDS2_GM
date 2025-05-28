@@ -13,32 +13,27 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	public Comentar _comentar;
 	public Retweetear _retweetear;
     
-	public VertweetgeneralUsuarioRegistrado (VerperfilgeneralUsuarioRegistrado verperfilUsuarioRegistrado ) {
-		
-		_verperfilUsuarioRegistrado = verperfilUsuarioRegistrado; 
-		this.getButtonBorrar().setVisible(false);
-		
-		this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
-		this.getlabelRetweeteadoPor().setVisible(false);
-		
-		
-		ComentariosUsuarioRegistrado();
-		this.getButtonComentar().addClickListener(event -> Comentar());
-		this.getButtonRetweet().addClickListener(event -> Retweetear());
-		this.getImgFotoPerfilTweet().addClickListener(event ->VerperfilUsuarioRegistrado());
-	}
+//	public VertweetgeneralUsuarioRegistrado (VerperfilgeneralUsuarioRegistrado verperfilUsuarioRegistrado ) {
+//		super(null);
+//		_verperfilUsuarioRegistrado = verperfilUsuarioRegistrado; 
+//		this.getButtonBorrar().setVisible(false);
+//		
+//		this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
+//		this.getlabelRetweeteadoPor().setVisible(false);
+//		
+//		
+//		ComentariosUsuarioRegistrado();
+//		this.getButtonComentar().addClickListener(event -> Comentar());
+//		this.getButtonRetweet().addClickListener(event -> Retweetear());
+//		this.getImgFotoPerfilTweet().addClickListener(event ->VerperfilUsuarioRegistrado());
+//	}
 	
 	
 	public VertweetgeneralUsuarioRegistrado (MostrartweetspropiosUsuarioRegistrado_item mostrartweetspropiosUsuarioRegistrado_item ) {
+		super(mostrartweetspropiosUsuarioRegistrado_item);
 		
 		_mostrartweetspropiosUsuarioRegistrado = mostrartweetspropiosUsuarioRegistrado_item; 
 		
-		this.getLabelCuerpoTwet().setText(_mostrartweetspropiosUsuarioRegistrado.t.getContieneTexto().getTexto());
-		//	this.getLabelMeGusta().setText(_mostrartweetspropiosUsuarioRegistrado.t.meGustaPor);
-			this.getLabelNombreUsuario().setText(_mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor().getNick());
-			this.getImgFotoPerfilTweet().setSrc(_mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor().getFotoPerfil());
-			//this.getImgFotoTweet().setSrc(_mostrartweetspropiosUsuarioRegistrado.t.contieneMultimedia.ge);
-			//this.getDivTweet().sets
 		
 		this.getButtonBorrar().setVisible(false);
 		

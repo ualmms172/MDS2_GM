@@ -17,6 +17,27 @@ public class VertweetGeneral extends VistaVertweetgeneral {
 	//private Image _iconoMeGusta;
 	//private Button _accederPerfil;
 	
+	public VertweetGeneral(ListaTweetsGeneral_item item) {
+		
+			this.getLabelCuerpoTwet().setText(item.t.getContieneTexto().getTexto());
+			this.getLabelMeGusta().setText((String.valueOf(item.t.meGustaPor.size())));
+			this.getLabelNombreUsuario().setText(item.t.getEscritoPor().getNick());
+			this.getImgFotoPerfilTweet().setSrc(item.t.getEscritoPor().getFotoPerfil());
+			for( basededatos.Multimedia multimedia : item.t.contieneMultimedia.toArray()) {
+				if(multimedia.getFoto())
+					this.getImgFotoTweet().setSrc(multimedia.getUrl());
+				else 
+					this.getDivTweet().setText(multimedia.getUrl());
+			}
+		
+			if(!item.t.mencionaA.isEmpty()) 
+				Mencion();
+		
+			if(!item.t.contiene.isEmpty())
+				Hashtag();
+		
+	}
+	
 	public void Mencion() {
 		Label labelOriginal = this.getLabelCuerpoTwet();
 	    String texto = labelOriginal.getText();

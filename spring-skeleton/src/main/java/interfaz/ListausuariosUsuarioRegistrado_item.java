@@ -1,5 +1,7 @@
 package interfaz;
 
+import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsuarioRegistrado_item {
@@ -8,6 +10,12 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 		// TODO Auto-generated constructor stub
 		
 		_listausuariosUsuarioRegistrado = (ListausuariosUsuarioRegistrado) lista;
+		
+		dado = u.seguidoPor.contains(Interfaz.ur.u);
+		if(dado) {
+			this.getButtonSeguir().getStyle().set("color", "red");
+			this.getButtonSeguir().setText("Dejar de seguir");
+		}
 		
 		this.getButtonSeguir().addClickListener(Event -> {
 			if(!dado)
@@ -30,17 +38,17 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 	public boolean dado=false;
 
 	public void SeguirUsuario() {
-		this.getButtonSeguir().getStyle().set("color", "red");
-		this.getButtonSeguir().setText("Dejar de seguir");
-
-		
-		
-		
+		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Seguir_Usuario(Interfaz.ur.u, u);
+		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(new VerlistacompletausuariosUsuarioRegistrado(u));
 	}
 
 	public void Dejardeseguirausuario() {
-		this.getButtonSeguir().getStyle().set("color", "gray");
-		this.getButtonSeguir().setText("Seguir");
+		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Dejar_Seguir(Interfaz.ur.u, u);
+		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(new VerlistacompletausuariosUsuarioRegistrado(u));
 		
 	}
 }
