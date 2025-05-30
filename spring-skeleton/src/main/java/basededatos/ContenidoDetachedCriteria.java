@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;

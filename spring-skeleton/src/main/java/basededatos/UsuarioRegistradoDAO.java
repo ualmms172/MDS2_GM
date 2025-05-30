@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,10 +19,10 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class UsuarioRegistradoDAO {
-	public static UsuarioRegistrado loadUsuarioRegistradoByORMID(int id_logueado) throws PersistentException {
+	public static UsuarioRegistrado loadUsuarioRegistradoByORMID(int ID) throws PersistentException {
 		try {
 			PersistentSession session = MDS12425PFGallardoMartínezPersistentManager.instance().getSession();
-			return loadUsuarioRegistradoByORMID(session, id_logueado);
+			return loadUsuarioRegistradoByORMID(session, ID);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -30,10 +30,10 @@ public class UsuarioRegistradoDAO {
 		}
 	}
 	
-	public static UsuarioRegistrado getUsuarioRegistradoByORMID(int id_logueado) throws PersistentException {
+	public static UsuarioRegistrado getUsuarioRegistradoByORMID(int ID) throws PersistentException {
 		try {
 			PersistentSession session = MDS12425PFGallardoMartínezPersistentManager.instance().getSession();
-			return getUsuarioRegistradoByORMID(session, id_logueado);
+			return getUsuarioRegistradoByORMID(session, ID);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -41,10 +41,10 @@ public class UsuarioRegistradoDAO {
 		}
 	}
 	
-	public static UsuarioRegistrado loadUsuarioRegistradoByORMID(int id_logueado, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static UsuarioRegistrado loadUsuarioRegistradoByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS12425PFGallardoMartínezPersistentManager.instance().getSession();
-			return loadUsuarioRegistradoByORMID(session, id_logueado, lockMode);
+			return loadUsuarioRegistradoByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -52,10 +52,10 @@ public class UsuarioRegistradoDAO {
 		}
 	}
 	
-	public static UsuarioRegistrado getUsuarioRegistradoByORMID(int id_logueado, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static UsuarioRegistrado getUsuarioRegistradoByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS12425PFGallardoMartínezPersistentManager.instance().getSession();
-			return getUsuarioRegistradoByORMID(session, id_logueado, lockMode);
+			return getUsuarioRegistradoByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -63,9 +63,9 @@ public class UsuarioRegistradoDAO {
 		}
 	}
 	
-	public static UsuarioRegistrado loadUsuarioRegistradoByORMID(PersistentSession session, int id_logueado) throws PersistentException {
+	public static UsuarioRegistrado loadUsuarioRegistradoByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (UsuarioRegistrado) session.load(basededatos.UsuarioRegistrado.class, Integer.valueOf(id_logueado));
+			return (UsuarioRegistrado) session.load(basededatos.UsuarioRegistrado.class, Integer.valueOf(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class UsuarioRegistradoDAO {
 		}
 	}
 	
-	public static UsuarioRegistrado getUsuarioRegistradoByORMID(PersistentSession session, int id_logueado) throws PersistentException {
+	public static UsuarioRegistrado getUsuarioRegistradoByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (UsuarioRegistrado) session.get(basededatos.UsuarioRegistrado.class, Integer.valueOf(id_logueado));
+			return (UsuarioRegistrado) session.get(basededatos.UsuarioRegistrado.class, Integer.valueOf(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class UsuarioRegistradoDAO {
 		}
 	}
 	
-	public static UsuarioRegistrado loadUsuarioRegistradoByORMID(PersistentSession session, int id_logueado, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static UsuarioRegistrado loadUsuarioRegistradoByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (UsuarioRegistrado) session.load(basededatos.UsuarioRegistrado.class, Integer.valueOf(id_logueado), lockMode);
+			return (UsuarioRegistrado) session.load(basededatos.UsuarioRegistrado.class, Integer.valueOf(ID), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class UsuarioRegistradoDAO {
 		}
 	}
 	
-	public static UsuarioRegistrado getUsuarioRegistradoByORMID(PersistentSession session, int id_logueado, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static UsuarioRegistrado getUsuarioRegistradoByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (UsuarioRegistrado) session.get(basededatos.UsuarioRegistrado.class, Integer.valueOf(id_logueado), lockMode);
+			return (UsuarioRegistrado) session.get(basededatos.UsuarioRegistrado.class, Integer.valueOf(ID), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -333,7 +333,7 @@ public class UsuarioRegistradoDAO {
 			}
 			basededatos.Tweet[] lMencionadoEns = usuarioRegistrado.mencionadoEn.toArray();
 			for(int i = 0; i < lMencionadoEns.length; i++) {
-				lMencionadoEns[i].mencionaA.remove(usuarioRegistrado);
+				lMencionadoEns[i].setMencionaA(null);
 			}
 			basededatos.UsuarioRegistrado[] lBloqueadoPors = usuarioRegistrado.bloqueadoPor.toArray();
 			for(int i = 0; i < lBloqueadoPors.length; i++) {
@@ -355,10 +355,6 @@ public class UsuarioRegistradoDAO {
 			for(int i = 0; i < lEscribes.length; i++) {
 				lEscribes[i].setEscritoPor(null);
 			}
-			if (usuarioRegistrado.getBaneo() != null) {
-				usuarioRegistrado.getBaneo().setUsuarioRegistrado(null);
-			}
-			
 			return delete(usuarioRegistrado);
 		}
 		catch(Exception e) {
@@ -379,7 +375,7 @@ public class UsuarioRegistradoDAO {
 			}
 			basededatos.Tweet[] lMencionadoEns = usuarioRegistrado.mencionadoEn.toArray();
 			for(int i = 0; i < lMencionadoEns.length; i++) {
-				lMencionadoEns[i].mencionaA.remove(usuarioRegistrado);
+				lMencionadoEns[i].setMencionaA(null);
 			}
 			basededatos.UsuarioRegistrado[] lBloqueadoPors = usuarioRegistrado.bloqueadoPor.toArray();
 			for(int i = 0; i < lBloqueadoPors.length; i++) {
@@ -401,10 +397,6 @@ public class UsuarioRegistradoDAO {
 			for(int i = 0; i < lEscribes.length; i++) {
 				lEscribes[i].setEscritoPor(null);
 			}
-			if (usuarioRegistrado.getBaneo() != null) {
-				usuarioRegistrado.getBaneo().setUsuarioRegistrado(null);
-			}
-			
 			try {
 				session.delete(usuarioRegistrado);
 				return true;

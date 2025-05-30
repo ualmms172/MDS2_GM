@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,7 +19,6 @@ import javax.persistence.*;
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Tweet")
 @Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorValue("Tweet")
 @PrimaryKeyJoinColumn(name="ContenidoId_cont", referencedColumnName="Id_cont")
 public class Tweet extends basededatos.Contenido implements Serializable {
 	public Tweet() {
@@ -29,14 +28,8 @@ public class Tweet extends basededatos.Contenido implements Serializable {
 		if (key == ORMConstants.KEY_TWEET_COMENTARIOS) {
 			return ORM_comentarios;
 		}
-		else if (key == ORMConstants.KEY_TWEET_CONTIENE) {
-			return ORM_contiene;
-		}
 		else if (key == ORMConstants.KEY_TWEET_RETWEETEADOPOR) {
 			return ORM_retweeteadoPor;
-		}
-		else if (key == ORMConstants.KEY_TWEET_MENCIONAA) {
-			return ORM_mencionaA;
 		}
 		
 		return null;
@@ -45,6 +38,14 @@ public class Tweet extends basededatos.Contenido implements Serializable {
 	private void this_setOwner(Object owner, int key) {
 		if (key == ORMConstants.KEY_TWEET_RETWEETEAA) {
 			this.RetweeteaA = (basededatos.Tweet) owner;
+		}
+		
+		else if (key == ORMConstants.KEY_TWEET_CONTIENE) {
+			this.Contiene = (basededatos.Hashtag) owner;
+		}
+		
+		else if (key == ORMConstants.KEY_TWEET_MENCIONAA) {
+			this.MencionaA = (basededatos.UsuarioRegistrado) owner;
 		}
 	}
 	
@@ -60,31 +61,33 @@ public class Tweet extends basededatos.Contenido implements Serializable {
 		
 	};
 	
+	@ManyToOne(targetEntity=basededatos.UsuarioRegistrado.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
+	@JoinColumns(value={ @JoinColumn(name="UsuarioRegistradoLogueadoID", referencedColumnName="LogueadoID") }, foreignKey=@ForeignKey(name="FKTweet4972"))	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
+	private basededatos.UsuarioRegistrado MencionaA;
+	
 	@ManyToOne(targetEntity=basededatos.Tweet.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="TweetContenidoId_cont", referencedColumnName="ContenidoId_cont") }, foreignKey=@ForeignKey(name="FKTweet153239"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private basededatos.Tweet RetweeteaA;
 	
+	@ManyToOne(targetEntity=basededatos.Hashtag.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
+	@JoinColumns(value={ @JoinColumn(name="HashtagId_hash", referencedColumnName="Id_hash") }, foreignKey=@ForeignKey(name="FKTweet161820"))	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
+	private basededatos.Hashtag Contiene;
+	
 	@OneToMany(mappedBy="ComentadoEn", targetEntity=basededatos.Comentario.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_comentarios = new java.util.HashSet();
 	
-	@ManyToMany(mappedBy="ORM_contenidoPor", targetEntity=basededatos.Hashtag.class)	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
-	private java.util.Set ORM_contiene = new java.util.HashSet();
-	
 	@OneToMany(mappedBy="RetweeteaA", targetEntity=basededatos.Tweet.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_retweeteadoPor = new java.util.HashSet();
-	
-	@ManyToMany(mappedBy="ORM_mencionadoEn", targetEntity=basededatos.UsuarioRegistrado.class)	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
-	private java.util.Set ORM_mencionaA = new java.util.HashSet();
 	
 	public void setRetweeteaA(basededatos.Tweet value) {
 		if (RetweeteaA != null) {
@@ -121,16 +124,29 @@ public class Tweet extends basededatos.Contenido implements Serializable {
 	@Transient	
 	public final basededatos.ComentarioSetCollection comentarios = new basededatos.ComentarioSetCollection(this, _ormAdapter, ORMConstants.KEY_TWEET_COMENTARIOS, ORMConstants.KEY_COMENTARIO_COMENTADOEN, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
-	private void setORM_Contiene(java.util.Set value) {
-		this.ORM_contiene = value;
+	public void setContiene(basededatos.Hashtag value) {
+		if (Contiene != null) {
+			Contiene.contenidoPor.remove(this);
+		}
+		if (value != null) {
+			value.contenidoPor.add(this);
+		}
 	}
 	
-	private java.util.Set getORM_Contiene() {
-		return ORM_contiene;
+	public basededatos.Hashtag getContiene() {
+		return Contiene;
 	}
 	
-	@Transient	
-	public final basededatos.HashtagSetCollection contiene = new basededatos.HashtagSetCollection(this, _ormAdapter, ORMConstants.KEY_TWEET_CONTIENE, ORMConstants.KEY_HASHTAG_CONTENIDOPOR, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	/**
+	 * This method is for internal use only.
+	 */
+	public void setORM_Contiene(basededatos.Hashtag value) {
+		this.Contiene = value;
+	}
+	
+	private basededatos.Hashtag getORM_Contiene() {
+		return Contiene;
+	}
 	
 	private void setORM_RetweeteadoPor(java.util.Set value) {
 		this.ORM_retweeteadoPor = value;
@@ -143,16 +159,29 @@ public class Tweet extends basededatos.Contenido implements Serializable {
 	@Transient	
 	public final basededatos.TweetSetCollection retweeteadoPor = new basededatos.TweetSetCollection(this, _ormAdapter, ORMConstants.KEY_TWEET_RETWEETEADOPOR, ORMConstants.KEY_TWEET_RETWEETEAA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
-	private void setORM_MencionaA(java.util.Set value) {
-		this.ORM_mencionaA = value;
+	public void setMencionaA(basededatos.UsuarioRegistrado value) {
+		if (MencionaA != null) {
+			MencionaA.mencionadoEn.remove(this);
+		}
+		if (value != null) {
+			value.mencionadoEn.add(this);
+		}
 	}
 	
-	private java.util.Set getORM_MencionaA() {
-		return ORM_mencionaA;
+	public basededatos.UsuarioRegistrado getMencionaA() {
+		return MencionaA;
 	}
 	
-	@Transient	
-	public final basededatos.UsuarioRegistradoSetCollection mencionaA = new basededatos.UsuarioRegistradoSetCollection(this, _ormAdapter, ORMConstants.KEY_TWEET_MENCIONAA, ORMConstants.KEY_USUARIOREGISTRADO_MENCIONADOEN, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	/**
+	 * This method is for internal use only.
+	 */
+	public void setORM_MencionaA(basededatos.UsuarioRegistrado value) {
+		this.MencionaA = value;
+	}
+	
+	private basededatos.UsuarioRegistrado getORM_MencionaA() {
+		return MencionaA;
+	}
 	
 	public String toString() {
 		return super.toString();

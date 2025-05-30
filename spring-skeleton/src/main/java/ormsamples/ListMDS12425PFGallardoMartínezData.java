@@ -1,5 +1,5 @@
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -57,14 +57,6 @@ public class ListMDS12425PFGallardoMartínezData {
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
-		System.out.println("Listing baneo...");
-		basededatos.baneo[] basededatosbaneos = basededatos.baneoDAO.listBaneoByQuery(null, null);
-		length = Math.min(basededatosbaneos.length, ROW_COUNT);
-		for (int i = 0; i < length; i++) {
-			System.out.println(basededatosbaneos[i]);
-		}
-		System.out.println(length + " record(s) retrieved.");
-		
 		System.out.println("Listing Multimedia...");
 		basededatos.Multimedia[] basededatosMultimedias = basededatos.MultimediaDAO.listMultimediaByQuery(null, null);
 		length = Math.min(basededatosMultimedias.length, ROW_COUNT);
@@ -95,7 +87,7 @@ public class ListMDS12425PFGallardoMartínezData {
 		System.out.println("Listing Logueado by Criteria...");
 		basededatos.LogueadoCriteria lbasededatosLogueadoCriteria = new basededatos.LogueadoCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//lbasededatosLogueadoCriteria.id_logueado.eq();
+		//lbasededatosLogueadoCriteria.ID.eq();
 		lbasededatosLogueadoCriteria.setMaxResults(ROW_COUNT);
 		basededatos.Logueado[] basededatosLogueados = lbasededatosLogueadoCriteria.listLogueado();
 		int length =basededatosLogueados== null ? 0 : Math.min(basededatosLogueados.length, ROW_COUNT); 
@@ -107,7 +99,7 @@ public class ListMDS12425PFGallardoMartínezData {
 		System.out.println("Listing UsuarioRegistrado by Criteria...");
 		basededatos.UsuarioRegistradoCriteria lbasededatosUsuarioRegistradoCriteria = new basededatos.UsuarioRegistradoCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//lbasededatosUsuarioRegistradoCriteria.id_logueado.eq();
+		//lbasededatosUsuarioRegistradoCriteria.ID.eq();
 		lbasededatosUsuarioRegistradoCriteria.setMaxResults(ROW_COUNT);
 		basededatos.UsuarioRegistrado[] basededatosUsuarioRegistrados = lbasededatosUsuarioRegistradoCriteria.listUsuarioRegistrado();
 		length =basededatosUsuarioRegistrados== null ? 0 : Math.min(basededatosUsuarioRegistrados.length, ROW_COUNT); 
@@ -119,7 +111,7 @@ public class ListMDS12425PFGallardoMartínezData {
 		System.out.println("Listing Administrador by Criteria...");
 		basededatos.AdministradorCriteria lbasededatosAdministradorCriteria = new basededatos.AdministradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//lbasededatosAdministradorCriteria.id_logueado.eq();
+		//lbasededatosAdministradorCriteria.ID.eq();
 		lbasededatosAdministradorCriteria.setMaxResults(ROW_COUNT);
 		basededatos.Administrador[] basededatosAdministradors = lbasededatosAdministradorCriteria.listAdministrador();
 		length =basededatosAdministradors== null ? 0 : Math.min(basededatosAdministradors.length, ROW_COUNT); 
@@ -163,18 +155,6 @@ public class ListMDS12425PFGallardoMartínezData {
 			 System.out.println(basededatosHashtags[i]);
 		}
 		System.out.println(length + " Hashtag record(s) retrieved."); 
-		
-		System.out.println("Listing baneo by Criteria...");
-		basededatos.baneoCriteria lbasededatosbaneoCriteria = new basededatos.baneoCriteria();
-		// Please uncomment the follow line and fill in parameter(s) 
-		//lbasededatosbaneoCriteria.id_baneo.eq();
-		lbasededatosbaneoCriteria.setMaxResults(ROW_COUNT);
-		basededatos.baneo[] basededatosbaneos = lbasededatosbaneoCriteria.listBaneo();
-		length =basededatosbaneos== null ? 0 : Math.min(basededatosbaneos.length, ROW_COUNT); 
-		for (int i = 0; i < length; i++) {
-			 System.out.println(basededatosbaneos[i]);
-		}
-		System.out.println(length + " baneo record(s) retrieved."); 
 		
 		System.out.println("Listing Multimedia by Criteria...");
 		basededatos.MultimediaCriteria lbasededatosMultimediaCriteria = new basededatos.MultimediaCriteria();

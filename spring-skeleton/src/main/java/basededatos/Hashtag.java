@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -56,7 +56,7 @@ public class Hashtag implements Serializable {
 	
 	@ManyToOne(targetEntity=basededatos.UsuarioRegistrado.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="UsuarioRegistradoLogueadoId_logueado", referencedColumnName="LogueadoId_logueado", nullable=false) }, foreignKey=@ForeignKey(name="FKHashtag816271"))	
+	@JoinColumns(value={ @JoinColumn(name="UsuarioRegistradoLogueadoID", referencedColumnName="LogueadoID", nullable=false) }, foreignKey=@ForeignKey(name="FKHashtag984534"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private basededatos.UsuarioRegistrado CreadoPor;
 	
@@ -66,9 +66,8 @@ public class Hashtag implements Serializable {
 	@Column(name="Titulo", nullable=true, length=255)	
 	private String Titulo;
 	
-	@ManyToMany(targetEntity=basededatos.Tweet.class)	
+	@OneToMany(mappedBy="Contiene", targetEntity=basededatos.Tweet.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Tweet_Hashtag", joinColumns={ @JoinColumn(name="HashtagId_hash") }, inverseJoinColumns={ @JoinColumn(name="TweetContenidoId_cont") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_contenidoPor = new java.util.HashSet();
 	
@@ -109,7 +108,7 @@ public class Hashtag implements Serializable {
 	}
 	
 	@Transient	
-	public final basededatos.TweetSetCollection contenidoPor = new basededatos.TweetSetCollection(this, _ormAdapter, ORMConstants.KEY_HASHTAG_CONTENIDOPOR, ORMConstants.KEY_TWEET_CONTIENE, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final basededatos.TweetSetCollection contenidoPor = new basededatos.TweetSetCollection(this, _ormAdapter, ORMConstants.KEY_HASHTAG_CONTENIDOPOR, ORMConstants.KEY_TWEET_CONTIENE, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public void setCreadoPor(basededatos.UsuarioRegistrado value) {
 		if (CreadoPor != null) {

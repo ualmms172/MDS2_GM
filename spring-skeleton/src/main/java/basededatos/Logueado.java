@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,22 +19,36 @@ import javax.persistence.*;
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Logueado")
 @Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorValue("Logueado")
 public class Logueado implements Serializable {
 	public Logueado() {
 	}
 	
-	@Column(name="Id_logueado", nullable=false, length=10)	
+	@Column(name="ID", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BASEDEDATOS_LOGUEADO_ID_LOGUEADO_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BASEDEDATOS_LOGUEADO_ID_LOGUEADO_GENERATOR", strategy="native")	
-	private int id_logueado;
+	@GeneratedValue(generator="BASEDEDATOS_LOGUEADO_ID_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="BASEDEDATOS_LOGUEADO_ID_GENERATOR", strategy="native")	
+	private int ID;
 	
 	@Column(name="Nick", nullable=true, length=255)	
 	private String Nick;
 	
 	@Column(name="Contrasena", nullable=true, length=255)	
 	private String Contrasena;
+	
+	@Column(name="Correo", nullable=true, length=255)	
+	private String Correo;
+	
+	private void setID(int value) {
+		this.ID = value;
+	}
+	
+	public int getID() {
+		return ID;
+	}
+	
+	public int getORMID() {
+		return getID();
+	}
 	
 	public void setNick(String value) {
 		this.Nick = value;
@@ -52,20 +66,16 @@ public class Logueado implements Serializable {
 		return Contrasena;
 	}
 	
-	private void setId_logueado(int value) {
-		this.id_logueado = value;
+	public void setCorreo(String value) {
+		this.Correo = value;
 	}
 	
-	public int getId_logueado() {
-		return id_logueado;
-	}
-	
-	public int getORMID() {
-		return getId_logueado();
+	public String getCorreo() {
+		return Correo;
 	}
 	
 	public String toString() {
-		return String.valueOf(getId_logueado());
+		return String.valueOf(getID());
 	}
 	
 }

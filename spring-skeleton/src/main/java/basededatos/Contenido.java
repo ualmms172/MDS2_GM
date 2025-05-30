@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,7 +19,6 @@ import javax.persistence.*;
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Contenido")
 @Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorValue("Contenido")
 public class Contenido implements Serializable {
 	public Contenido() {
 	}
@@ -65,13 +64,13 @@ public class Contenido implements Serializable {
 	
 	@ManyToMany(targetEntity=basededatos.UsuarioRegistrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="UsuarioRegistrado_Contenido", joinColumns={ @JoinColumn(name="ContenidoId_cont") }, inverseJoinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoId_logueado") })	
+	@JoinTable(name="UsuarioRegistrado_Contenido2", joinColumns={ @JoinColumn(name="ContenidoId_cont") }, inverseJoinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoID") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_meGustaPor = new java.util.HashSet();
 	
 	@ManyToOne(targetEntity=basededatos.UsuarioRegistrado.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="UsuarioRegistradoLogueadoId_logueado", referencedColumnName="LogueadoId_logueado", nullable=false) }, foreignKey=@ForeignKey(name="FKContenido168544"))	
+	@JoinColumns(value={ @JoinColumn(name="UsuarioRegistradoLogueadoID", referencedColumnName="LogueadoID", nullable=false) }, foreignKey=@ForeignKey(name="FKContenido336807"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private basededatos.UsuarioRegistrado EscritoPor;
 	

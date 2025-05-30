@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -74,6 +74,7 @@ public class UsuarioRegistradoSetCollection extends org.orm.util.ORMSet {
 	 * <li>Descripcion</li>
 	 * <li>FotoPerfil</li>
 	 * <li>FotoFondo</li>
+	 * <li>Baneo</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
@@ -88,6 +89,7 @@ public class UsuarioRegistradoSetCollection extends org.orm.util.ORMSet {
 	 * <li>Descripcion</li>
 	 * <li>FotoPerfil</li>
 	 * <li>FotoFondo</li>
+	 * <li>Baneo</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array

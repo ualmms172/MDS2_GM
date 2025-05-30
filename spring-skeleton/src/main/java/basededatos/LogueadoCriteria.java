@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,15 +19,17 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class LogueadoCriteria extends AbstractORMCriteria {
-	public final IntegerExpression id_logueado;
+	public final IntegerExpression ID;
 	public final StringExpression Nick;
 	public final StringExpression Contrasena;
+	public final StringExpression Correo;
 	
 	public LogueadoCriteria(Criteria criteria) {
 		super(criteria);
-		id_logueado = new IntegerExpression("id_logueado", this);
+		ID = new IntegerExpression("ID", this);
 		Nick = new StringExpression("Nick", this);
 		Contrasena = new StringExpression("Contrasena", this);
+		Correo = new StringExpression("Correo", this);
 	}
 	
 	public LogueadoCriteria(PersistentSession session) {

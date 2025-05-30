@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -26,12 +26,14 @@ public class TweetDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression ContieneMultimedia;
 	public final IntegerExpression ContieneTextoId;
 	public final AssociationExpression ContieneTexto;
+	public final IntegerExpression MencionaAId;
+	public final AssociationExpression MencionaA;
 	public final IntegerExpression RetweeteaAId;
 	public final AssociationExpression RetweeteaA;
+	public final IntegerExpression ContieneId;
+	public final AssociationExpression Contiene;
 	public final CollectionExpression Comentarios;
-	public final CollectionExpression Contiene;
 	public final CollectionExpression RetweeteadoPor;
-	public final CollectionExpression MencionaA;
 	
 	public TweetDetachedCriteria() {
 		super(basededatos.Tweet.class, basededatos.TweetCriteria.class);
@@ -42,12 +44,14 @@ public class TweetDetachedCriteria extends AbstractORMDetachedCriteria {
 		ContieneMultimedia = new CollectionExpression("ORM_contieneMultimedia", this.getDetachedCriteria());
 		ContieneTextoId = new IntegerExpression("ContieneTexto.id_cont", this.getDetachedCriteria());
 		ContieneTexto = new AssociationExpression("ContieneTexto", this.getDetachedCriteria());
+		MencionaAId = new IntegerExpression("MencionaA.", this.getDetachedCriteria());
+		MencionaA = new AssociationExpression("MencionaA", this.getDetachedCriteria());
 		RetweeteaAId = new IntegerExpression("RetweeteaA.", this.getDetachedCriteria());
 		RetweeteaA = new AssociationExpression("RetweeteaA", this.getDetachedCriteria());
+		ContieneId = new IntegerExpression("Contiene.id_hash", this.getDetachedCriteria());
+		Contiene = new AssociationExpression("Contiene", this.getDetachedCriteria());
 		Comentarios = new CollectionExpression("ORM_comentarios", this.getDetachedCriteria());
-		Contiene = new CollectionExpression("ORM_contiene", this.getDetachedCriteria());
 		RetweeteadoPor = new CollectionExpression("ORM_retweeteadoPor", this.getDetachedCriteria());
-		MencionaA = new CollectionExpression("ORM_mencionaA", this.getDetachedCriteria());
 	}
 	
 	public TweetDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -59,32 +63,34 @@ public class TweetDetachedCriteria extends AbstractORMDetachedCriteria {
 		ContieneMultimedia = new CollectionExpression("ORM_contieneMultimedia", this.getDetachedCriteria());
 		ContieneTextoId = new IntegerExpression("ContieneTexto.id_cont", this.getDetachedCriteria());
 		ContieneTexto = new AssociationExpression("ContieneTexto", this.getDetachedCriteria());
+		MencionaAId = new IntegerExpression("MencionaA.", this.getDetachedCriteria());
+		MencionaA = new AssociationExpression("MencionaA", this.getDetachedCriteria());
 		RetweeteaAId = new IntegerExpression("RetweeteaA.", this.getDetachedCriteria());
 		RetweeteaA = new AssociationExpression("RetweeteaA", this.getDetachedCriteria());
+		ContieneId = new IntegerExpression("Contiene.id_hash", this.getDetachedCriteria());
+		Contiene = new AssociationExpression("Contiene", this.getDetachedCriteria());
 		Comentarios = new CollectionExpression("ORM_comentarios", this.getDetachedCriteria());
-		Contiene = new CollectionExpression("ORM_contiene", this.getDetachedCriteria());
 		RetweeteadoPor = new CollectionExpression("ORM_retweeteadoPor", this.getDetachedCriteria());
-		MencionaA = new CollectionExpression("ORM_mencionaA", this.getDetachedCriteria());
+	}
+	
+	public UsuarioRegistradoDetachedCriteria createMencionaACriteria() {
+		return new UsuarioRegistradoDetachedCriteria(createCriteria("MencionaA"));
 	}
 	
 	public TweetDetachedCriteria createRetweeteaACriteria() {
 		return new TweetDetachedCriteria(createCriteria("RetweeteaA"));
 	}
 	
+	public HashtagDetachedCriteria createContieneCriteria() {
+		return new HashtagDetachedCriteria(createCriteria("Contiene"));
+	}
+	
 	public ComentarioDetachedCriteria createComentariosCriteria() {
 		return new ComentarioDetachedCriteria(createCriteria("ORM_comentarios"));
 	}
 	
-	public HashtagDetachedCriteria createContieneCriteria() {
-		return new HashtagDetachedCriteria(createCriteria("ORM_contiene"));
-	}
-	
 	public TweetDetachedCriteria createRetweeteadoPorCriteria() {
 		return new TweetDetachedCriteria(createCriteria("ORM_retweeteadoPor"));
-	}
-	
-	public UsuarioRegistradoDetachedCriteria createMencionaACriteria() {
-		return new UsuarioRegistradoDetachedCriteria(createCriteria("ORM_mencionaA"));
 	}
 	
 	public UsuarioRegistradoDetachedCriteria createMeGustaPorCriteria() {

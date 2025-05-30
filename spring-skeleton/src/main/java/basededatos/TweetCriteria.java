@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -26,12 +26,14 @@ public class TweetCriteria extends AbstractORMCriteria {
 	public final CollectionExpression ContieneMultimedia;
 	public final IntegerExpression ContieneTextoId;
 	public final AssociationExpression ContieneTexto;
+	public final IntegerExpression MencionaAId;
+	public final AssociationExpression MencionaA;
 	public final IntegerExpression RetweeteaAId;
 	public final AssociationExpression RetweeteaA;
+	public final IntegerExpression ContieneId;
+	public final AssociationExpression Contiene;
 	public final CollectionExpression Comentarios;
-	public final CollectionExpression Contiene;
 	public final CollectionExpression RetweeteadoPor;
-	public final CollectionExpression MencionaA;
 	
 	public TweetCriteria(Criteria criteria) {
 		super(criteria);
@@ -42,12 +44,14 @@ public class TweetCriteria extends AbstractORMCriteria {
 		ContieneMultimedia = new CollectionExpression("ORM_contieneMultimedia", this);
 		ContieneTextoId = new IntegerExpression("ContieneTexto.id_cont", this);
 		ContieneTexto = new AssociationExpression("ContieneTexto", this);
+		MencionaAId = new IntegerExpression("MencionaA.", this);
+		MencionaA = new AssociationExpression("MencionaA", this);
 		RetweeteaAId = new IntegerExpression("RetweeteaA.", this);
 		RetweeteaA = new AssociationExpression("RetweeteaA", this);
+		ContieneId = new IntegerExpression("Contiene.id_hash", this);
+		Contiene = new AssociationExpression("Contiene", this);
 		Comentarios = new CollectionExpression("ORM_comentarios", this);
-		Contiene = new CollectionExpression("ORM_contiene", this);
 		RetweeteadoPor = new CollectionExpression("ORM_retweeteadoPor", this);
-		MencionaA = new CollectionExpression("ORM_mencionaA", this);
 	}
 	
 	public TweetCriteria(PersistentSession session) {
@@ -58,24 +62,24 @@ public class TweetCriteria extends AbstractORMCriteria {
 		this(MDS12425PFGallardoMartínezPersistentManager.instance().getSession());
 	}
 	
+	public UsuarioRegistradoCriteria createMencionaACriteria() {
+		return new UsuarioRegistradoCriteria(createCriteria("MencionaA"));
+	}
+	
 	public TweetCriteria createRetweeteaACriteria() {
 		return new TweetCriteria(createCriteria("RetweeteaA"));
+	}
+	
+	public HashtagCriteria createContieneCriteria() {
+		return new HashtagCriteria(createCriteria("Contiene"));
 	}
 	
 	public ComentarioCriteria createComentariosCriteria() {
 		return new ComentarioCriteria(createCriteria("ORM_comentarios"));
 	}
 	
-	public HashtagCriteria createContieneCriteria() {
-		return new HashtagCriteria(createCriteria("ORM_contiene"));
-	}
-	
 	public TweetCriteria createRetweeteadoPorCriteria() {
 		return new TweetCriteria(createCriteria("ORM_retweeteadoPor"));
-	}
-	
-	public UsuarioRegistradoCriteria createMencionaACriteria() {
-		return new UsuarioRegistradoCriteria(createCriteria("ORM_mencionaA"));
 	}
 	
 	public UsuarioRegistradoCriteria createMeGustaPorCriteria() {

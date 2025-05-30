@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,22 +19,25 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class LogueadoDetachedCriteria extends AbstractORMDetachedCriteria {
-	public final IntegerExpression id_logueado;
+	public final IntegerExpression ID;
 	public final StringExpression Nick;
 	public final StringExpression Contrasena;
+	public final StringExpression Correo;
 	
 	public LogueadoDetachedCriteria() {
 		super(basededatos.Logueado.class, basededatos.LogueadoCriteria.class);
-		id_logueado = new IntegerExpression("id_logueado", this.getDetachedCriteria());
+		ID = new IntegerExpression("ID", this.getDetachedCriteria());
 		Nick = new StringExpression("Nick", this.getDetachedCriteria());
 		Contrasena = new StringExpression("Contrasena", this.getDetachedCriteria());
+		Correo = new StringExpression("Correo", this.getDetachedCriteria());
 	}
 	
 	public LogueadoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, basededatos.LogueadoCriteria.class);
-		id_logueado = new IntegerExpression("id_logueado", this.getDetachedCriteria());
+		ID = new IntegerExpression("ID", this.getDetachedCriteria());
 		Nick = new StringExpression("Nick", this.getDetachedCriteria());
 		Contrasena = new StringExpression("Contrasena", this.getDetachedCriteria());
+		Correo = new StringExpression("Correo", this.getDetachedCriteria());
 	}
 	
 	public Logueado uniqueLogueado(PersistentSession session) {

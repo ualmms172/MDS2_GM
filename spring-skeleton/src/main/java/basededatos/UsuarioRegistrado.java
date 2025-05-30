@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,8 +19,7 @@ import javax.persistence.*;
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="UsuarioRegistrado")
 @Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorValue("UsuarioRegistrado")
-@PrimaryKeyJoinColumn(name="LogueadoId_logueado", referencedColumnName="Id_logueado")
+@PrimaryKeyJoinColumn(name="LogueadoID", referencedColumnName="ID")
 public class UsuarioRegistrado extends basededatos.Logueado implements Serializable {
 	public UsuarioRegistrado() {
 	}
@@ -54,20 +53,10 @@ public class UsuarioRegistrado extends basededatos.Logueado implements Serializa
 		return null;
 	}
 	
-	private void this_setOwner(Object owner, int key) {
-		if (key == ORMConstants.KEY_USUARIOREGISTRADO_BANEO) {
-			this.baneo = (basededatos.baneo) owner;
-		}
-	}
-	
 	@Transient	
 	org.orm.util.ORMAdapter _ormAdapter = new org.orm.util.AbstractORMAdapter() {
 		public java.util.Set getSet(int key) {
 			return this_getSet(key);
-		}
-		
-		public void setOwner(Object owner, int key) {
-			this_setOwner(owner, key);
 		}
 		
 	};
@@ -84,21 +73,24 @@ public class UsuarioRegistrado extends basededatos.Logueado implements Serializa
 	@Column(name="FotoFondo", nullable=true, length=255)	
 	private String FotoFondo;
 	
+	@Column(name="Baneo", nullable=true)	
+	@Temporal(TemporalType.DATE)	
+	private java.util.Date Baneo;
+	
 	@ManyToMany(targetEntity=basededatos.UsuarioRegistrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="UsuarioRegistrado_UsuarioRegistrado", joinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoId_logueado2") }, inverseJoinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoId_logueado") })	
+	@JoinTable(name="UsuarioRegistrado_UsuarioRegistrado3", joinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoID2") }, inverseJoinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoID") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_bloqueaA = new java.util.HashSet();
 	
 	@ManyToMany(targetEntity=basededatos.UsuarioRegistrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="UsuarioRegistrado_UsuarioRegistrado2", joinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoId_logueado2") }, inverseJoinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoId_logueado") })	
+	@JoinTable(name="UsuarioRegistrado_UsuarioRegistrado4", joinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoID2") }, inverseJoinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoID") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_sigueA = new java.util.HashSet();
 	
-	@ManyToMany(targetEntity=basededatos.Tweet.class)	
+	@OneToMany(mappedBy="MencionaA", targetEntity=basededatos.Tweet.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Tweet_UsuarioRegistrado", joinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoId_logueado") }, inverseJoinColumns={ @JoinColumn(name="TweetContenidoId_cont") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_mencionadoEn = new java.util.HashSet();
 	
@@ -126,10 +118,6 @@ public class UsuarioRegistrado extends basededatos.Logueado implements Serializa
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_escribe = new java.util.HashSet();
-	
-	@OneToOne(mappedBy="usuarioRegistrado", targetEntity=basededatos.baneo.class)	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	private basededatos.baneo baneo;
 	
 	public void setId_user(int value) {
 		this.id_user = value;
@@ -163,6 +151,14 @@ public class UsuarioRegistrado extends basededatos.Logueado implements Serializa
 		return FotoFondo;
 	}
 	
+	public void setBaneo(java.util.Date value) {
+		this.Baneo = value;
+	}
+	
+	public java.util.Date getBaneo() {
+		return Baneo;
+	}
+	
 	private void setORM_BloqueaA(java.util.Set value) {
 		this.ORM_bloqueaA = value;
 	}
@@ -194,7 +190,7 @@ public class UsuarioRegistrado extends basededatos.Logueado implements Serializa
 	}
 	
 	@Transient	
-	public final basededatos.TweetSetCollection mencionadoEn = new basededatos.TweetSetCollection(this, _ormAdapter, ORMConstants.KEY_USUARIOREGISTRADO_MENCIONADOEN, ORMConstants.KEY_TWEET_MENCIONAA, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final basededatos.TweetSetCollection mencionadoEn = new basededatos.TweetSetCollection(this, _ormAdapter, ORMConstants.KEY_USUARIOREGISTRADO_MENCIONADOEN, ORMConstants.KEY_TWEET_MENCIONAA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM_BloqueadoPor(java.util.Set value) {
 		this.ORM_bloqueadoPor = value;
@@ -250,44 +246,6 @@ public class UsuarioRegistrado extends basededatos.Logueado implements Serializa
 	
 	@Transient	
 	public final basededatos.ContenidoSetCollection escribe = new basededatos.ContenidoSetCollection(this, _ormAdapter, ORMConstants.KEY_USUARIOREGISTRADO_ESCRIBE, ORMConstants.KEY_CONTENIDO_ESCRITOPOR, ORMConstants.KEY_MUL_ONE_TO_MANY);
-	
-	public basededatos.Administrador getAdministrador() {
-		if(baneo != null) {
-			return baneo.getAdministrador();
-		}
-		else {
-			return null;
-		}
-	}
-	
-	public void removeAdministrador() {
-		if(baneo!= null) {
-			baneo.setAdministrador(null);
-			this.setBaneo(null);
-		}
-	}
-	
-	public void addAdministrador(basededatos.baneo aBaneo, basededatos.Administrador aAdministrador) {
-		this.setBaneo(aBaneo);
-		aBaneo.setAdministrador(aAdministrador);
-	}
-	
-	public void setBaneo(basededatos.baneo value) {
-		if (this.baneo != value) {
-			basededatos.baneo lbaneo = this.baneo;
-			this.baneo = value;
-			if (value != null) {
-				baneo.setUsuarioRegistrado(this);
-			}
-			if (lbaneo != null && lbaneo.getUsuarioRegistrado() == this) {
-				lbaneo.setUsuarioRegistrado(null);
-			}
-		}
-	}
-	
-	public basededatos.baneo getBaneo() {
-		return baneo;
-	}
 	
 	public String toString() {
 		return super.toString();

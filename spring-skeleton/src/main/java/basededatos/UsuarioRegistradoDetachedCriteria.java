@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,13 +19,15 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class UsuarioRegistradoDetachedCriteria extends AbstractORMDetachedCriteria {
-	public final IntegerExpression id_logueado;
+	public final IntegerExpression ID;
 	public final StringExpression Nick;
 	public final StringExpression Contrasena;
+	public final StringExpression Correo;
 	public final IntegerExpression id_user;
 	public final StringExpression Descripcion;
 	public final StringExpression FotoPerfil;
 	public final StringExpression FotoFondo;
+	public final DateExpression Baneo;
 	public final CollectionExpression BloqueaA;
 	public final CollectionExpression SigueA;
 	public final CollectionExpression MencionadoEn;
@@ -34,18 +36,18 @@ public class UsuarioRegistradoDetachedCriteria extends AbstractORMDetachedCriter
 	public final CollectionExpression MeGusta;
 	public final CollectionExpression CreaHashtag;
 	public final CollectionExpression escribe;
-	public final IntegerExpression baneoId;
-	public final AssociationExpression baneo;
 	
 	public UsuarioRegistradoDetachedCriteria() {
 		super(basededatos.UsuarioRegistrado.class, basededatos.UsuarioRegistradoCriteria.class);
-		id_logueado = new IntegerExpression("id_logueado", this.getDetachedCriteria());
+		ID = new IntegerExpression("ID", this.getDetachedCriteria());
 		Nick = new StringExpression("Nick", this.getDetachedCriteria());
 		Contrasena = new StringExpression("Contrasena", this.getDetachedCriteria());
+		Correo = new StringExpression("Correo", this.getDetachedCriteria());
 		id_user = new IntegerExpression("id_user", this.getDetachedCriteria());
 		Descripcion = new StringExpression("Descripcion", this.getDetachedCriteria());
 		FotoPerfil = new StringExpression("FotoPerfil", this.getDetachedCriteria());
 		FotoFondo = new StringExpression("FotoFondo", this.getDetachedCriteria());
+		Baneo = new DateExpression("Baneo", this.getDetachedCriteria());
 		BloqueaA = new CollectionExpression("ORM_bloqueaA", this.getDetachedCriteria());
 		SigueA = new CollectionExpression("ORM_sigueA", this.getDetachedCriteria());
 		MencionadoEn = new CollectionExpression("ORM_mencionadoEn", this.getDetachedCriteria());
@@ -54,19 +56,19 @@ public class UsuarioRegistradoDetachedCriteria extends AbstractORMDetachedCriter
 		MeGusta = new CollectionExpression("ORM_meGusta", this.getDetachedCriteria());
 		CreaHashtag = new CollectionExpression("ORM_creaHashtag", this.getDetachedCriteria());
 		escribe = new CollectionExpression("ORM_escribe", this.getDetachedCriteria());
-		baneoId = new IntegerExpression("baneo.null", this.getDetachedCriteria());
-		baneo = new AssociationExpression("baneo", this.getDetachedCriteria());
 	}
 	
 	public UsuarioRegistradoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, basededatos.UsuarioRegistradoCriteria.class);
-		id_logueado = new IntegerExpression("id_logueado", this.getDetachedCriteria());
+		ID = new IntegerExpression("ID", this.getDetachedCriteria());
 		Nick = new StringExpression("Nick", this.getDetachedCriteria());
 		Contrasena = new StringExpression("Contrasena", this.getDetachedCriteria());
+		Correo = new StringExpression("Correo", this.getDetachedCriteria());
 		id_user = new IntegerExpression("id_user", this.getDetachedCriteria());
 		Descripcion = new StringExpression("Descripcion", this.getDetachedCriteria());
 		FotoPerfil = new StringExpression("FotoPerfil", this.getDetachedCriteria());
 		FotoFondo = new StringExpression("FotoFondo", this.getDetachedCriteria());
+		Baneo = new DateExpression("Baneo", this.getDetachedCriteria());
 		BloqueaA = new CollectionExpression("ORM_bloqueaA", this.getDetachedCriteria());
 		SigueA = new CollectionExpression("ORM_sigueA", this.getDetachedCriteria());
 		MencionadoEn = new CollectionExpression("ORM_mencionadoEn", this.getDetachedCriteria());
@@ -75,8 +77,6 @@ public class UsuarioRegistradoDetachedCriteria extends AbstractORMDetachedCriter
 		MeGusta = new CollectionExpression("ORM_meGusta", this.getDetachedCriteria());
 		CreaHashtag = new CollectionExpression("ORM_creaHashtag", this.getDetachedCriteria());
 		escribe = new CollectionExpression("ORM_escribe", this.getDetachedCriteria());
-		baneoId = new IntegerExpression("baneo.null", this.getDetachedCriteria());
-		baneo = new AssociationExpression("baneo", this.getDetachedCriteria());
 	}
 	
 	public UsuarioRegistradoDetachedCriteria createBloqueaACriteria() {
@@ -109,10 +109,6 @@ public class UsuarioRegistradoDetachedCriteria extends AbstractORMDetachedCriter
 	
 	public ContenidoDetachedCriteria createEscribeCriteria() {
 		return new ContenidoDetachedCriteria(createCriteria("ORM_escribe"));
-	}
-	
-	public baneoDetachedCriteria createBaneoCriteria() {
-		return new baneoDetachedCriteria(createCriteria("baneo"));
 	}
 	
 	public UsuarioRegistrado uniqueUsuarioRegistrado(PersistentSession session) {

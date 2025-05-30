@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,13 +19,15 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class UsuarioRegistradoCriteria extends AbstractORMCriteria {
-	public final IntegerExpression id_logueado;
+	public final IntegerExpression ID;
 	public final StringExpression Nick;
 	public final StringExpression Contrasena;
+	public final StringExpression Correo;
 	public final IntegerExpression id_user;
 	public final StringExpression Descripcion;
 	public final StringExpression FotoPerfil;
 	public final StringExpression FotoFondo;
+	public final DateExpression Baneo;
 	public final CollectionExpression BloqueaA;
 	public final CollectionExpression SigueA;
 	public final CollectionExpression MencionadoEn;
@@ -34,18 +36,18 @@ public class UsuarioRegistradoCriteria extends AbstractORMCriteria {
 	public final CollectionExpression MeGusta;
 	public final CollectionExpression CreaHashtag;
 	public final CollectionExpression escribe;
-	public final IntegerExpression baneoId;
-	public final AssociationExpression baneo;
 	
 	public UsuarioRegistradoCriteria(Criteria criteria) {
 		super(criteria);
-		id_logueado = new IntegerExpression("id_logueado", this);
+		ID = new IntegerExpression("ID", this);
 		Nick = new StringExpression("Nick", this);
 		Contrasena = new StringExpression("Contrasena", this);
+		Correo = new StringExpression("Correo", this);
 		id_user = new IntegerExpression("id_user", this);
 		Descripcion = new StringExpression("Descripcion", this);
 		FotoPerfil = new StringExpression("FotoPerfil", this);
 		FotoFondo = new StringExpression("FotoFondo", this);
+		Baneo = new DateExpression("Baneo", this);
 		BloqueaA = new CollectionExpression("ORM_bloqueaA", this);
 		SigueA = new CollectionExpression("ORM_sigueA", this);
 		MencionadoEn = new CollectionExpression("ORM_mencionadoEn", this);
@@ -54,8 +56,6 @@ public class UsuarioRegistradoCriteria extends AbstractORMCriteria {
 		MeGusta = new CollectionExpression("ORM_meGusta", this);
 		CreaHashtag = new CollectionExpression("ORM_creaHashtag", this);
 		escribe = new CollectionExpression("ORM_escribe", this);
-		baneoId = new IntegerExpression("baneo.null", this);
-		baneo = new AssociationExpression("baneo", this);
 	}
 	
 	public UsuarioRegistradoCriteria(PersistentSession session) {
@@ -96,10 +96,6 @@ public class UsuarioRegistradoCriteria extends AbstractORMCriteria {
 	
 	public ContenidoCriteria createEscribeCriteria() {
 		return new ContenidoCriteria(createCriteria("ORM_escribe"));
-	}
-	
-	public baneoCriteria createBaneoCriteria() {
-		return new baneoCriteria(createCriteria("baneo"));
 	}
 	
 	public UsuarioRegistrado uniqueUsuarioRegistrado() {

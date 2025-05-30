@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,10 +19,10 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class AdministradorDAO {
-	public static Administrador loadAdministradorByORMID(int id_logueado) throws PersistentException {
+	public static Administrador loadAdministradorByORMID(int ID) throws PersistentException {
 		try {
 			PersistentSession session = MDS12425PFGallardoMartínezPersistentManager.instance().getSession();
-			return loadAdministradorByORMID(session, id_logueado);
+			return loadAdministradorByORMID(session, ID);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -30,10 +30,10 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador getAdministradorByORMID(int id_logueado) throws PersistentException {
+	public static Administrador getAdministradorByORMID(int ID) throws PersistentException {
 		try {
 			PersistentSession session = MDS12425PFGallardoMartínezPersistentManager.instance().getSession();
-			return getAdministradorByORMID(session, id_logueado);
+			return getAdministradorByORMID(session, ID);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -41,10 +41,10 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador loadAdministradorByORMID(int id_logueado, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Administrador loadAdministradorByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS12425PFGallardoMartínezPersistentManager.instance().getSession();
-			return loadAdministradorByORMID(session, id_logueado, lockMode);
+			return loadAdministradorByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -52,10 +52,10 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador getAdministradorByORMID(int id_logueado, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Administrador getAdministradorByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS12425PFGallardoMartínezPersistentManager.instance().getSession();
-			return getAdministradorByORMID(session, id_logueado, lockMode);
+			return getAdministradorByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -63,9 +63,9 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador loadAdministradorByORMID(PersistentSession session, int id_logueado) throws PersistentException {
+	public static Administrador loadAdministradorByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (Administrador) session.load(basededatos.Administrador.class, Integer.valueOf(id_logueado));
+			return (Administrador) session.load(basededatos.Administrador.class, Integer.valueOf(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador getAdministradorByORMID(PersistentSession session, int id_logueado) throws PersistentException {
+	public static Administrador getAdministradorByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (Administrador) session.get(basededatos.Administrador.class, Integer.valueOf(id_logueado));
+			return (Administrador) session.get(basededatos.Administrador.class, Integer.valueOf(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador loadAdministradorByORMID(PersistentSession session, int id_logueado, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Administrador loadAdministradorByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Administrador) session.load(basededatos.Administrador.class, Integer.valueOf(id_logueado), lockMode);
+			return (Administrador) session.load(basededatos.Administrador.class, Integer.valueOf(ID), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class AdministradorDAO {
 		}
 	}
 	
-	public static Administrador getAdministradorByORMID(PersistentSession session, int id_logueado, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Administrador getAdministradorByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Administrador) session.get(basededatos.Administrador.class, Integer.valueOf(id_logueado), lockMode);
+			return (Administrador) session.get(basededatos.Administrador.class, Integer.valueOf(ID), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -316,39 +316,6 @@ public class AdministradorDAO {
 			return true;
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw new PersistentException(e);
-		}
-	}
-	
-	public static boolean deleteAndDissociate(basededatos.Administrador administrador)throws PersistentException {
-		try {
-			basededatos.baneo[] lBaneoss = administrador.baneos.toArray();
-			for(int i = 0; i < lBaneoss.length; i++) {
-				lBaneoss[i].setAdministrador(null);
-			}
-			return delete(administrador);
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-			throw new PersistentException(e);
-		}
-	}
-	
-	public static boolean deleteAndDissociate(basededatos.Administrador administrador, org.orm.PersistentSession session)throws PersistentException {
-		try {
-			basededatos.baneo[] lBaneoss = administrador.baneos.toArray();
-			for(int i = 0; i < lBaneoss.length; i++) {
-				lBaneoss[i].setAdministrador(null);
-			}
-			try {
-				session.delete(administrador);
-				return true;
-			} catch (Exception e) {
-				return false;
-			}
-		}
-		catch(Exception e) {
 			e.printStackTrace();
 			throw new PersistentException(e);
 		}

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,32 +19,28 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class AdministradorDetachedCriteria extends AbstractORMDetachedCriteria {
-	public final IntegerExpression id_logueado;
+	public final IntegerExpression ID;
 	public final StringExpression Nick;
 	public final StringExpression Contrasena;
+	public final StringExpression Correo;
 	public final IntegerExpression id_admin;
-	public final CollectionExpression baneos;
 	
 	public AdministradorDetachedCriteria() {
 		super(basededatos.Administrador.class, basededatos.AdministradorCriteria.class);
-		id_logueado = new IntegerExpression("id_logueado", this.getDetachedCriteria());
+		ID = new IntegerExpression("ID", this.getDetachedCriteria());
 		Nick = new StringExpression("Nick", this.getDetachedCriteria());
 		Contrasena = new StringExpression("Contrasena", this.getDetachedCriteria());
+		Correo = new StringExpression("Correo", this.getDetachedCriteria());
 		id_admin = new IntegerExpression("id_admin", this.getDetachedCriteria());
-		baneos = new CollectionExpression("ORM_baneos", this.getDetachedCriteria());
 	}
 	
 	public AdministradorDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, basededatos.AdministradorCriteria.class);
-		id_logueado = new IntegerExpression("id_logueado", this.getDetachedCriteria());
+		ID = new IntegerExpression("ID", this.getDetachedCriteria());
 		Nick = new StringExpression("Nick", this.getDetachedCriteria());
 		Contrasena = new StringExpression("Contrasena", this.getDetachedCriteria());
+		Correo = new StringExpression("Correo", this.getDetachedCriteria());
 		id_admin = new IntegerExpression("id_admin", this.getDetachedCriteria());
-		baneos = new CollectionExpression("ORM_baneos", this.getDetachedCriteria());
-	}
-	
-	public baneoDetachedCriteria createBaneosCriteria() {
-		return new baneoDetachedCriteria(createCriteria("ORM_baneos"));
 	}
 	
 	public Administrador uniqueAdministrador(PersistentSession session) {

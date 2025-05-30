@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -323,25 +323,25 @@ public class TweetDAO {
 	
 	public static boolean deleteAndDissociate(basededatos.Tweet tweet)throws PersistentException {
 		try {
+			if (tweet.getMencionaA() != null) {
+				tweet.getMencionaA().mencionadoEn.remove(tweet);
+			}
+			
 			if (tweet.getRetweeteaA() != null) {
 				tweet.getRetweeteaA().retweeteadoPor.remove(tweet);
+			}
+			
+			if (tweet.getContiene() != null) {
+				tweet.getContiene().contenidoPor.remove(tweet);
 			}
 			
 			basededatos.Comentario[] lComentarioss = tweet.comentarios.toArray();
 			for(int i = 0; i < lComentarioss.length; i++) {
 				lComentarioss[i].setComentadoEn(null);
 			}
-			basededatos.Hashtag[] lContienes = tweet.contiene.toArray();
-			for(int i = 0; i < lContienes.length; i++) {
-				lContienes[i].contenidoPor.remove(tweet);
-			}
 			basededatos.Tweet[] lRetweeteadoPors = tweet.retweeteadoPor.toArray();
 			for(int i = 0; i < lRetweeteadoPors.length; i++) {
 				lRetweeteadoPors[i].setRetweeteaA(null);
-			}
-			basededatos.UsuarioRegistrado[] lMencionaAs = tweet.mencionaA.toArray();
-			for(int i = 0; i < lMencionaAs.length; i++) {
-				lMencionaAs[i].mencionadoEn.remove(tweet);
 			}
 			basededatos.UsuarioRegistrado[] lMeGustaPors = tweet.meGustaPor.toArray();
 			for(int i = 0; i < lMeGustaPors.length; i++) {
@@ -369,25 +369,25 @@ public class TweetDAO {
 	
 	public static boolean deleteAndDissociate(basededatos.Tweet tweet, org.orm.PersistentSession session)throws PersistentException {
 		try {
+			if (tweet.getMencionaA() != null) {
+				tweet.getMencionaA().mencionadoEn.remove(tweet);
+			}
+			
 			if (tweet.getRetweeteaA() != null) {
 				tweet.getRetweeteaA().retweeteadoPor.remove(tweet);
+			}
+			
+			if (tweet.getContiene() != null) {
+				tweet.getContiene().contenidoPor.remove(tweet);
 			}
 			
 			basededatos.Comentario[] lComentarioss = tweet.comentarios.toArray();
 			for(int i = 0; i < lComentarioss.length; i++) {
 				lComentarioss[i].setComentadoEn(null);
 			}
-			basededatos.Hashtag[] lContienes = tweet.contiene.toArray();
-			for(int i = 0; i < lContienes.length; i++) {
-				lContienes[i].contenidoPor.remove(tweet);
-			}
 			basededatos.Tweet[] lRetweeteadoPors = tweet.retweeteadoPor.toArray();
 			for(int i = 0; i < lRetweeteadoPors.length; i++) {
 				lRetweeteadoPors[i].setRetweeteaA(null);
-			}
-			basededatos.UsuarioRegistrado[] lMencionaAs = tweet.mencionaA.toArray();
-			for(int i = 0; i < lMencionaAs.length; i++) {
-				lMencionaAs[i].mencionadoEn.remove(tweet);
 			}
 			basededatos.UsuarioRegistrado[] lMeGustaPors = tweet.meGustaPor.toArray();
 			for(int i = 0; i < lMeGustaPors.length; i++) {

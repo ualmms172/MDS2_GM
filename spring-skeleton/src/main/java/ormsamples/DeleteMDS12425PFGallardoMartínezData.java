@@ -1,5 +1,5 @@
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -27,9 +27,6 @@ public class DeleteMDS12425PFGallardoMartínezData {
 			basededatos.Hashtag lbasededatosHashtag = basededatos.HashtagDAO.loadHashtagByQuery(null, null);
 			// Delete the persistent object
 			basededatos.HashtagDAO.delete(lbasededatosHashtag);
-			basededatos.baneo lbasededatosbaneo = basededatos.baneoDAO.loadBaneoByQuery(null, null);
-			// Delete the persistent object
-			basededatos.baneoDAO.delete(lbasededatosbaneo);
 			basededatos.Multimedia lbasededatosMultimedia = basededatos.MultimediaDAO.loadMultimediaByQuery(null, null);
 			// Delete the persistent object
 			basededatos.MultimediaDAO.delete(lbasededatosMultimedia);

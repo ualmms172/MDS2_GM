@@ -8,14 +8,12 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
 
 public interface ORMConstants extends org.orm.util.ORMBaseConstants {
-	final int KEY_ADMINISTRADOR_BANEOS = 1589013116;
-	
 	final int KEY_COMENTARIO_COMENTADOEN = 1608227213;
 	
 	final int KEY_CONTENIDO_CONTIENEMULTIMEDIA = 1447053046;
@@ -58,12 +56,6 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	
 	final int KEY_USUARIOREGISTRADO_SIGUEA = 1203232673;
 	
-	final int KEY_USUARIOREGISTRADO_BANEO = 1022266008;
-	
 	final int KEY_USUARIOREGISTRADO_ESCRIBE = 2018184590;
-	
-	final int KEY_BANEO_ADMINISTRADOR = 2124050935;
-	
-	final int KEY_BANEO_USUARIOREGISTRADO = 410694520;
 	
 }

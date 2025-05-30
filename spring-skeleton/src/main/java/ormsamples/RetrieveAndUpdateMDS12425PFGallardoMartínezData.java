@@ -1,5 +1,5 @@
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -27,9 +27,6 @@ public class RetrieveAndUpdateMDS12425PFGallardoMartínezData {
 			basededatos.Hashtag lbasededatosHashtag = basededatos.HashtagDAO.loadHashtagByQuery(null, null);
 			// Update the properties of the persistent object
 			basededatos.HashtagDAO.save(lbasededatosHashtag);
-			basededatos.baneo lbasededatosbaneo = basededatos.baneoDAO.loadBaneoByQuery(null, null);
-			// Update the properties of the persistent object
-			basededatos.baneoDAO.save(lbasededatosbaneo);
 			basededatos.Multimedia lbasededatosMultimedia = basededatos.MultimediaDAO.loadMultimediaByQuery(null, null);
 			// Update the properties of the persistent object
 			basededatos.MultimediaDAO.save(lbasededatosMultimedia);
@@ -51,19 +48,19 @@ public class RetrieveAndUpdateMDS12425PFGallardoMartínezData {
 		System.out.println("Retrieving Logueado by LogueadoCriteria");
 		basededatos.LogueadoCriteria lbasededatosLogueadoCriteria = new basededatos.LogueadoCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//lbasededatosLogueadoCriteria.id_logueado.eq();
+		//lbasededatosLogueadoCriteria.ID.eq();
 		System.out.println(lbasededatosLogueadoCriteria.uniqueLogueado());
 		
 		System.out.println("Retrieving UsuarioRegistrado by UsuarioRegistradoCriteria");
 		basededatos.UsuarioRegistradoCriteria lbasededatosUsuarioRegistradoCriteria = new basededatos.UsuarioRegistradoCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//lbasededatosUsuarioRegistradoCriteria.id_logueado.eq();
+		//lbasededatosUsuarioRegistradoCriteria.ID.eq();
 		System.out.println(lbasededatosUsuarioRegistradoCriteria.uniqueUsuarioRegistrado());
 		
 		System.out.println("Retrieving Administrador by AdministradorCriteria");
 		basededatos.AdministradorCriteria lbasededatosAdministradorCriteria = new basededatos.AdministradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//lbasededatosAdministradorCriteria.id_logueado.eq();
+		//lbasededatosAdministradorCriteria.ID.eq();
 		System.out.println(lbasededatosAdministradorCriteria.uniqueAdministrador());
 		
 		System.out.println("Retrieving Contenido by ContenidoCriteria");
@@ -83,12 +80,6 @@ public class RetrieveAndUpdateMDS12425PFGallardoMartínezData {
 		// Please uncomment the follow line and fill in parameter(s)
 		//lbasededatosHashtagCriteria.id_hash.eq();
 		System.out.println(lbasededatosHashtagCriteria.uniqueHashtag());
-		
-		System.out.println("Retrieving baneo by baneoCriteria");
-		basededatos.baneoCriteria lbasededatosbaneoCriteria = new basededatos.baneoCriteria();
-		// Please uncomment the follow line and fill in parameter(s)
-		//lbasededatosbaneoCriteria.id_baneo.eq();
-		System.out.println(lbasededatosbaneoCriteria.uniqueBaneo());
 		
 		System.out.println("Retrieving Multimedia by MultimediaCriteria");
 		basededatos.MultimediaCriteria lbasededatosMultimediaCriteria = new basededatos.MultimediaCriteria();

@@ -1,5 +1,5 @@
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -13,23 +13,20 @@ public class CreateMDS12425PFGallardoMartínezData {
 			// Initialize the properties of the persistent object here
 			basededatos.LogueadoDAO.save(lbasededatosLogueado);
 			basededatos.UsuarioRegistrado lbasededatosUsuarioRegistrado = basededatos.UsuarioRegistradoDAO.createUsuarioRegistrado();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : baneo, escribe, CreaHashtag, MeGusta, SeguidoPor, BloqueadoPor, MencionadoEn, SigueA, BloqueaA, id_user
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : escribe, CreaHashtag, MeGusta, SeguidoPor, BloqueadoPor, SigueA, BloqueaA, id_user
 			basededatos.UsuarioRegistradoDAO.save(lbasededatosUsuarioRegistrado);
 			basededatos.Administrador lbasededatosAdministrador = basededatos.AdministradorDAO.createAdministrador();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : baneos, id_admin
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : id_admin
 			basededatos.AdministradorDAO.save(lbasededatosAdministrador);
 			basededatos.Contenido lbasededatosContenido = basededatos.ContenidoDAO.createContenido();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : ContieneTexto, ContieneMultimedia, EscritoPor, MeGustaPor
 			basededatos.ContenidoDAO.save(lbasededatosContenido);
 			basededatos.Tweet lbasededatosTweet = basededatos.TweetDAO.createTweet();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : MencionaA, Contiene, Comentarios
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : Comentarios
 			basededatos.TweetDAO.save(lbasededatosTweet);
 			basededatos.Hashtag lbasededatosHashtag = basededatos.HashtagDAO.createHashtag();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : ContenidoPor, NumTweets, CreadoPor
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : NumTweets, CreadoPor
 			basededatos.HashtagDAO.save(lbasededatosHashtag);
-			basededatos.baneo lbasededatosbaneo = basededatos.baneoDAO.createBaneo();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : administrador, usuarioRegistrado
-			basededatos.baneoDAO.save(lbasededatosbaneo);
 			basededatos.Multimedia lbasededatosMultimedia = basededatos.MultimediaDAO.createMultimedia();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : foto, PerteneceA
 			basededatos.MultimediaDAO.save(lbasededatosMultimedia);

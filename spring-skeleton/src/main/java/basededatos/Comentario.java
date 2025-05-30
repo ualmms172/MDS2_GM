@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,7 +19,6 @@ import javax.persistence.*;
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Comentario")
 @Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorValue("Comentario")
 @PrimaryKeyJoinColumn(name="ContenidoId_cont", referencedColumnName="Id_cont")
 public class Comentario extends basededatos.Contenido implements Serializable {
 	public Comentario() {

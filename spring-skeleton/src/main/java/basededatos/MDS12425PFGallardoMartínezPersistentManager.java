@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -43,7 +43,6 @@ public class MDS12425PFGallardoMartínezPersistentManager extends PersistentMana
 		aMetadataSources.addAnnotatedClass(basededatos.Contenido.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Tweet.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Hashtag.class);
-		aMetadataSources.addAnnotatedClass(basededatos.baneo.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Multimedia.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Texto.class);
 		aMetadataSources.addAnnotatedClass(basededatos.Comentario.class);

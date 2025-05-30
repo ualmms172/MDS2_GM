@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -19,10 +19,10 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class LogueadoDAO {
-	public static Logueado loadLogueadoByORMID(int id_logueado) throws PersistentException {
+	public static Logueado loadLogueadoByORMID(int ID) throws PersistentException {
 		try {
 			PersistentSession session = MDS12425PFGallardoMartínezPersistentManager.instance().getSession();
-			return loadLogueadoByORMID(session, id_logueado);
+			return loadLogueadoByORMID(session, ID);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -30,10 +30,10 @@ public class LogueadoDAO {
 		}
 	}
 	
-	public static Logueado getLogueadoByORMID(int id_logueado) throws PersistentException {
+	public static Logueado getLogueadoByORMID(int ID) throws PersistentException {
 		try {
 			PersistentSession session = MDS12425PFGallardoMartínezPersistentManager.instance().getSession();
-			return getLogueadoByORMID(session, id_logueado);
+			return getLogueadoByORMID(session, ID);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -41,10 +41,10 @@ public class LogueadoDAO {
 		}
 	}
 	
-	public static Logueado loadLogueadoByORMID(int id_logueado, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Logueado loadLogueadoByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS12425PFGallardoMartínezPersistentManager.instance().getSession();
-			return loadLogueadoByORMID(session, id_logueado, lockMode);
+			return loadLogueadoByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -52,10 +52,10 @@ public class LogueadoDAO {
 		}
 	}
 	
-	public static Logueado getLogueadoByORMID(int id_logueado, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Logueado getLogueadoByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = MDS12425PFGallardoMartínezPersistentManager.instance().getSession();
-			return getLogueadoByORMID(session, id_logueado, lockMode);
+			return getLogueadoByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -63,9 +63,9 @@ public class LogueadoDAO {
 		}
 	}
 	
-	public static Logueado loadLogueadoByORMID(PersistentSession session, int id_logueado) throws PersistentException {
+	public static Logueado loadLogueadoByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (Logueado) session.load(basededatos.Logueado.class, Integer.valueOf(id_logueado));
+			return (Logueado) session.load(basededatos.Logueado.class, Integer.valueOf(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class LogueadoDAO {
 		}
 	}
 	
-	public static Logueado getLogueadoByORMID(PersistentSession session, int id_logueado) throws PersistentException {
+	public static Logueado getLogueadoByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (Logueado) session.get(basededatos.Logueado.class, Integer.valueOf(id_logueado));
+			return (Logueado) session.get(basededatos.Logueado.class, Integer.valueOf(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class LogueadoDAO {
 		}
 	}
 	
-	public static Logueado loadLogueadoByORMID(PersistentSession session, int id_logueado, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Logueado loadLogueadoByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Logueado) session.load(basededatos.Logueado.class, Integer.valueOf(id_logueado), lockMode);
+			return (Logueado) session.load(basededatos.Logueado.class, Integer.valueOf(ID), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class LogueadoDAO {
 		}
 	}
 	
-	public static Logueado getLogueadoByORMID(PersistentSession session, int id_logueado, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Logueado getLogueadoByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Logueado) session.get(basededatos.Logueado.class, Integer.valueOf(id_logueado), lockMode);
+			return (Logueado) session.get(basededatos.Logueado.class, Integer.valueOf(ID), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

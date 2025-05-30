@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Antonio Gallardo(University of Almeria)
+ * Licensee: Miguel(University of Almeria)
  * License Type: Academic
  */
 package basededatos;
@@ -329,7 +329,7 @@ public class HashtagDAO {
 			
 			basededatos.Tweet[] lContenidoPors = hashtag.contenidoPor.toArray();
 			for(int i = 0; i < lContenidoPors.length; i++) {
-				lContenidoPors[i].contiene.remove(hashtag);
+				lContenidoPors[i].setContiene(null);
 			}
 			return delete(hashtag);
 		}
@@ -347,7 +347,7 @@ public class HashtagDAO {
 			
 			basededatos.Tweet[] lContenidoPors = hashtag.contenidoPor.toArray();
 			for(int i = 0; i < lContenidoPors.length; i++) {
-				lContenidoPors[i].contiene.remove(hashtag);
+				lContenidoPors[i].setContiene(null);
 			}
 			try {
 				session.delete(hashtag);
