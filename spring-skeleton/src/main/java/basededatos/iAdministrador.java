@@ -21,7 +21,7 @@ public interface iAdministrador extends iLogueado {
 
 	public UsuarioRegistrado[] Cargar_Baneados() ;
 
-	public Administrador Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador,LocalDate aFecha) ;
+	public Administrador Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador,Date aFecha) ;
 
 	public Administrador Desbanear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) ;
 

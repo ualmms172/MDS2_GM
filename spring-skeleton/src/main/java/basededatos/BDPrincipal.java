@@ -73,7 +73,7 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 
 	public void Eliminar_Usuario(UsuarioRegistrado aUsuario) {
 	    try {
-	        Administrador admin = _bd_usu.Eliminar_Usuario(aUsuario);
+	        _bd_usu.Eliminar_Usuario(aUsuario);
 	    } catch (PersistentException e) {
 	        System.err.println("Error al eliminar usuario: " + e.getMessage());
 	        e.printStackTrace();
@@ -256,9 +256,9 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	    }
 	}
 
-	public Administrador Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador,LocalDate aFecha) {
+	public Administrador Banear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador,Date aFecha) {
 	    try {
-	        return _bd_adm.Banear(aUsuarioRegistrado, aAdministrador);
+	        return _bd_adm.Banear(aUsuarioRegistrado, aAdministrador,aFecha);
 	    } catch (PersistentException e) {
 	        System.err.println("Error al banear usuario: " + e.getMessage());
 	        e.printStackTrace();

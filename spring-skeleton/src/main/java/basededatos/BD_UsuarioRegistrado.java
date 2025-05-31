@@ -70,14 +70,15 @@ public class BD_UsuarioRegistrado {
 
 	}
 
-	public Administrador Eliminar_Usuario(UsuarioRegistrado aUsuario) throws PersistentException {
-	
+	public void Eliminar_Usuario(UsuarioRegistrado aUsuario) throws PersistentException {
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 		Administrador admin = null;
 
 		try {
-			admin = aUsuario.getAdministrador(); // si está baneado, devuelve su administrador
+
+			// Eliminar al usuario
 			UsuarioRegistradoDAO.delete(aUsuario);
+
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -85,17 +86,8 @@ public class BD_UsuarioRegistrado {
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
-		return admin;
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
+
 
 	public UsuarioRegistrado ModificarCuenta(UsuarioRegistrado aUsuario, String aDescripcion, String aUrl_fondo, String aUrl_perfil, String aNick) throws PersistentException {
 	

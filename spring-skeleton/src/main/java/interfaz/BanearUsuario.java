@@ -128,7 +128,7 @@ public class BanearUsuario extends VistaBanearusuario{
 			
 		String fechaStr = this.getPlaceHolderTiempoBaneo().getValue();
 	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-	    LocalDate fecha = LocalDate.parse(fechaStr, formatter);
+	    Date fecha = Date.parse(fechaStr, formatter);
 	    
 		basededatos.Administrador abd=Interfaz.ad._iadministrador.Banear(ubd, Interfaz.ad.a,fecha);
 		Administrador ad = new Administrador((MainView)Pantalla.MainView,abd); 

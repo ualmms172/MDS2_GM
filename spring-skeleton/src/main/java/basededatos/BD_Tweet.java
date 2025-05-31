@@ -169,14 +169,11 @@ public class BD_Tweet {
 		
 
 	public UsuarioRegistrado Mencionar(Tweet aTweet, UsuarioRegistrado aUr) throws PersistentException {
-		
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 
 		try {
-			aTweet.mencionaA.add(aUr);
-			aUr.mencionadoEn.add(aTweet);
+			aTweet.setMencionaA(aUr); // Relación @ManyToOne
 			TweetDAO.save(aTweet);
-			UsuarioRegistradoDAO.save(aUr);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -185,28 +182,26 @@ public class BD_Tweet {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
 		return aUr;
-		
-		
-		
 	}
 
+
 	public UsuarioRegistrado UsarHashtag(Hashtag aH, Tweet aTweet) throws PersistentException {
-	
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 		UsuarioRegistrado autor = null;
 
 		try {
-			aTweet.contiene.add(aH);
-			aH.contenidoPor.add(aTweet);
-
+			aTweet.setContiene(aH); // Relación @ManyToOne con Hashtag
 			autor = aTweet.getEscritoPor();
+
 			if (autor != null && !autor.creaHashtag.contains(aH)) {
 				autor.creaHashtag.add(aH);
 			}
 
 			TweetDAO.save(aTweet);
 			HashtagDAO.save(aH);
-			if (autor != null) UsuarioRegistradoDAO.save(autor);
+			if (autor != null) {
+				UsuarioRegistradoDAO.save(autor);
+			}
 
 			t.commit();
 		} catch (Exception e) {
@@ -216,6 +211,6 @@ public class BD_Tweet {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
 		return autor;
-		
 	}
+
 }
