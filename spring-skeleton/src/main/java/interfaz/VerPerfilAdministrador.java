@@ -9,10 +9,12 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	//private Button _banear;
 	public ListaUsuariosGeneralAdministrador_item _listaUsuariosGeneralAdministrador;
 	public ListaTweetsAdmin_item _listaTweetsAdmin_item;
-	public ListaTweetsAdmin _listaTweetsAdmin; //Creado por Miguel
+	public ListaTweetsAdmin _listaTweetsAdmin; 
 	public VerTweetAdministrador _verTweetAdministrador;
 	public ListaComentariosAdministrador_item _listaComentariosAdministrador;
 	public BanearUsuario _banearUsuario;
+	
+	public boolean mencion;
 	
 	public VerPerfilAdministrador(ListaUsuariosGeneralAdministrador_item listaUsuariosGeneralAdministrador) {
 		_listaUsuariosGeneralAdministrador = listaUsuariosGeneralAdministrador; 
@@ -45,14 +47,26 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	}
 	
 	
-	public VerPerfilAdministrador(ListaTweetsAdmin_item listaTweetsAdmin ) {
+	public VerPerfilAdministrador(ListaTweetsAdmin_item listaTweetsAdmin,Boolean mencion ) {
 		
 		_listaTweetsAdmin_item = listaTweetsAdmin; 
 		
-		this.getLabelNick().setText(_listaTweetsAdmin_item.t.getEscritoPor().getNick());
-		this.getLabelDescripcion().setText(_listaTweetsAdmin_item.t.getEscritoPor().getDescripcion());
-//		this.getLabelNumSeguidores().setText(_listaTweetsAdmin_item.t.getEscritoPor().);
-//		this.getLabelNumSeguidos().setText(_listaTweetsAdmin_item.t.getEscritoPor().);
+		this.mencion=mencion;
+		
+		basededatos.UsuarioRegistrado user =null;
+		
+		if(mencion) {
+			 user = _listaTweetsAdmin_item.t.getMencionaA();
+		}
+		else {
+			user = _listaTweetsAdmin_item.t.getEscritoPor();
+		}
+		
+		this.getLabelNick().setText(user.getNick());
+		this.getLabelDescripcion().setText(user.getDescripcion());
+		this.getLabelNumSeguidores().setText(String.valueOf(user.seguidoPor.size()));
+		this.getLabelNumSeguidos().setText(String.valueOf(user.sigueA.size()));
+		
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -151,14 +165,25 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	});
 	}
 	
-	public VerPerfilAdministrador(VerTweetAdministrador verTweetAdministrador) {
+	public VerPerfilAdministrador(VerTweetAdministrador verTweetAdministrador,Boolean mencion) {
 		
 		_verTweetAdministrador = verTweetAdministrador; 
 		
-		this.getLabelNick().setText(_verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor().getNick());
-		this.getLabelDescripcion().setText(_verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor().getDescripcion());
-//		this.getLabelNumSeguidores().setText(_verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor().);
-//		this.getLabelNumSeguidos().setText(_verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor().);
+		this.mencion=mencion;
+		
+		basededatos.UsuarioRegistrado user =null;
+		
+		if(mencion) {
+			 user = _verTweetAdministrador._listaTweetsAdmin.t.getMencionaA();
+		}
+		else {
+			user = _verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor();
+		}
+		
+		this.getLabelNick().setText(user.getNick());
+		this.getLabelDescripcion().setText(user.getDescripcion());
+		this.getLabelNumSeguidores().setText(String.valueOf(user.seguidoPor.size()));
+		this.getLabelNumSeguidos().setText(String.valueOf(user.sigueA.size()));
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -257,19 +282,19 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 			ListaTweetsAdmin lt = _listaTweetsAdmin_item._listaTweetsAdmin;
 			if(lt._verPerfilAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
-				vista= new VerPerfilAdministrador(_listaTweetsAdmin_item);
+				vista= new VerPerfilAdministrador(_listaTweetsAdmin_item,mencion);
 			}
 			else if(lt._verHashtagAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verHashtagAdministrador.Recargar(log));
-				vista= new VerPerfilAdministrador(_listaTweetsAdmin_item); 
+				vista= new VerPerfilAdministrador(_listaTweetsAdmin_item,mencion); 
 				}
 			else {
 				lt = new ListaTweetsAdmin(log);
-				new VerPerfilAdministrador(_listaTweetsAdmin_item);
+				new VerPerfilAdministrador(_listaTweetsAdmin_item,mencion);
 			}
 		}
 		else if(this._verTweetAdministrador!=null){
-			vista= new VerPerfilAdministrador(this._verTweetAdministrador.Recargar(log)); 
+			vista= new VerPerfilAdministrador(this._verTweetAdministrador.Recargar(log),mencion); 
 		}
 		else {
 			ListaComentariosAdministrador lt = this._listaComentariosAdministrador._listaComentariosAdministrador;

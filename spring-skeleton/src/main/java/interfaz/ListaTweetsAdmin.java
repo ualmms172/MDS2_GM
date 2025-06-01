@@ -50,7 +50,10 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 			u= _verPerfilAdministrador._listaUsuariosGeneralAdministrador.u;
 		}
 		else {
-			u= _verPerfilAdministrador._listaTweetsAdmin_item.t.getEscritoPor();
+			if(_verPerfilAdministrador.mencion)
+				u= _verPerfilAdministrador._listaTweetsAdmin_item.t.getMencionaA();
+			else
+				u= _verPerfilAdministrador._listaTweetsAdmin_item.t.getEscritoPor();
 		}
 		
 		ArrayList<Tweet> tweets = new ArrayList<Tweet>();
@@ -74,10 +77,10 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 		
 		Hashtag hash =null;
 		if(_verHashtagAdministrador._verTweetAdministrador!=null) {
-			hash= _verHashtagAdministrador._verTweetAdministrador._listaTweetsAdmin.t.contiene.toArray()[0];
+			hash= _verHashtagAdministrador._verTweetAdministrador._listaTweetsAdmin.t.getContiene();
 		}
 		else if(_verHashtagAdministrador._listaTweetsAdmin_item!=null) {
-			hash=_verHashtagAdministrador._listaTweetsAdmin_item.t.contiene.toArray()[0];
+			hash=_verHashtagAdministrador._listaTweetsAdmin_item.t.getContiene();
 		}
 		else {
 			hash=_verHashtagAdministrador._listaHashtagsgeneralAdministrador.h;

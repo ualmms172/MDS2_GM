@@ -22,7 +22,7 @@ public class Comentariospropios_item extends ListaComentariosGeneral_item {
 	public Verperfilpropio _verperfilpropio;
 	
 	public void VerperfilUsuarioRegistrado() {
-		_verperfilpropio = new Verperfilpropio(this._comentariospropios._vertweetgeneralUsuarioRegistrado);
+		_verperfilpropio = new Verperfilpropio(this);
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_verperfilpropio);

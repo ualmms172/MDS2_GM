@@ -1,5 +1,7 @@
 package interfaz;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -126,9 +128,16 @@ public class BanearUsuario extends VistaBanearusuario{
 			}
 		}
 			
-		String fechaStr = this.getPlaceHolderTiempoBaneo().getValue();
-	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-	    Date fecha = Date.parse(fechaStr, formatter);
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        formato.setLenient(false); // Para validar fechas incorrectas
+        Date fecha=null;
+        String fechaStr = this.getPlaceHolderTiempoBaneo().getValue();
+        try {
+             fecha = formato.parse(fechaStr);
+            System.out.println("Fecha convertida: " + fecha);
+        } catch (ParseException e) {
+            System.out.println("Error al parsear la fecha: " + e.getMessage());
+        }
 	    
 		basededatos.Administrador abd=Interfaz.ad._iadministrador.Banear(ubd, Interfaz.ad.a,fecha);
 		Administrador ad = new Administrador((MainView)Pantalla.MainView,abd); 

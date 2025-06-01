@@ -62,7 +62,7 @@ public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 	}
 
 	public void VerperfilUsuarioRegistrado() {
-		_verperfilUsuarioRegistrado = new Verperfilnobloqueado(this._comentariosUsuarioRegistrado._vertweetgeneralUsuarioRegistrado);
+		_verperfilUsuarioRegistrado = new Verperfilnobloqueado(this);
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_verperfilUsuarioRegistrado);

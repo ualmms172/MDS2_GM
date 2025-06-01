@@ -21,8 +21,8 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
 	public boolean bloqueado=false;
 	
-	public Verperfilbloqueado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado) {
-		super(mostrartweetsUsuarioRegistrado);
+	public Verperfilbloqueado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado,boolean mencion) {
+		super(mostrartweetsUsuarioRegistrado,mencion);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
@@ -79,8 +79,8 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 		});
 	}
 	
-	public Verperfilbloqueado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado) {
-		super(vertweetgeneralUsuarioRegistrado);
+	public Verperfilbloqueado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado,boolean mencion) {
+		super(vertweetgeneralUsuarioRegistrado,mencion);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getButtonSeguir().setVisible(false);

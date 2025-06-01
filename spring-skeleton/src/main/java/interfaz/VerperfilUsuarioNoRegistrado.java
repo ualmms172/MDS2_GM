@@ -10,6 +10,8 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	public ListaUsuariosGeneralUsuarioNoRegistrado_item _listaUsuariosGeneralUsuarioNoRegistrado;
 	public Listatweets_item _listatweets_item;
 	public Listatweets _listatweets;
+	
+	public boolean mencion;
 
 	public void Listatweets() {
 		_listatweets = new Listatweets(this);
@@ -19,15 +21,24 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		_listatweets.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 	
-	public VerperfilUsuarioNoRegistrado(VertweetUsuarioNoRegistrado vertweetUsuarioNoRegistrado) {
+	public VerperfilUsuarioNoRegistrado(VertweetUsuarioNoRegistrado vertweetUsuarioNoRegistrado,Boolean mencion) {
 		
 		
 		_vertweetUsuarioNoRegistrado = vertweetUsuarioNoRegistrado;
+		this.mencion=mencion;
+		basededatos.UsuarioRegistrado user =null;
 		
-		this.getLabelNick().setText(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().getNick());
-		this.getLabelDescripcion().setText(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().getDescripcion());
-		this.getLabelNumSeguidores().setText(String.valueOf(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().seguidoPor.size()));
-		this.getLabelNumSeguidos().setText(String.valueOf(_vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor().sigueA.size()));
+		if(mencion) {
+			 user = _vertweetUsuarioNoRegistrado._listatweets.t.getMencionaA();
+		}
+		else {
+			user = _vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor();
+		}
+		
+		this.getLabelNick().setText(user.getNick());
+		this.getLabelDescripcion().setText(user.getDescripcion());
+		this.getLabelNumSeguidores().setText(String.valueOf(user.seguidoPor.size()));
+		this.getLabelNumSeguidos().setText(String.valueOf(user.sigueA.size()));
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -121,14 +132,24 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	});
 	}
 	
-	public VerperfilUsuarioNoRegistrado(Listatweets_item listatweets) {
+	public VerperfilUsuarioNoRegistrado(Listatweets_item listatweets,Boolean mencion) {
 		
 		_listatweets_item = listatweets; 
+		this.mencion=mencion;
 		
-		this.getLabelNick().setText(_listatweets_item.t.getEscritoPor().getNick());
-		this.getLabelDescripcion().setText(_listatweets_item.t.getEscritoPor().getDescripcion());
-//		this.getLabelNumSeguidores().setText(_listatweets_item.t.getEscritoPor().);
-//		this.getLabelNumSeguidos().setText(_listatweets_item.t.getEscritoPor().);
+		basededatos.UsuarioRegistrado user =null;
+		
+		if(mencion) {
+			 user = _listatweets_item.t.getMencionaA();
+		}
+		else {
+			user = _listatweets_item.t.getEscritoPor();
+		}
+		
+		this.getLabelNick().setText(user.getNick());
+		this.getLabelDescripcion().setText(user.getDescripcion());
+		this.getLabelNumSeguidores().setText(String.valueOf(user.seguidoPor.size()));
+		this.getLabelNumSeguidos().setText(String.valueOf(user.sigueA.size()));
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);

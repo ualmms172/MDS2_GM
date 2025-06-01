@@ -121,8 +121,7 @@ public class BD_UsuarioRegistrado {
 			nuevo.setFotoPerfil(aUrl_perfil);
 			nuevo.setFotoFondo(aUrl_fondo);
 			nuevo.setContrasena(aContrasena);
-			//nuevo.setCorreo(aCorreo);
-			
+			nuevo.setCorreo(aCorreo);		
 
 			UsuarioRegistradoDAO.save(nuevo);
 			t.commit();

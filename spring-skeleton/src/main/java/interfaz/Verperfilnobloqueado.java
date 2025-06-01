@@ -17,8 +17,8 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	
 	
 
-	public Verperfilnobloqueado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado) {
-		super(mostrartweetsUsuarioRegistrado);
+	public Verperfilnobloqueado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado,boolean mencion) {
+		super(mostrartweetsUsuarioRegistrado,mencion);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
@@ -105,8 +105,8 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Verperfilnobloqueado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado) {
-		super(vertweetgeneralUsuarioRegistrado);
+	public Verperfilnobloqueado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado,boolean mencion) {
+		super(vertweetgeneralUsuarioRegistrado,mencion);
 		this.getButtonEliminarCuenta().setVisible(false);
 		this.getButtonModidicarDatos().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);

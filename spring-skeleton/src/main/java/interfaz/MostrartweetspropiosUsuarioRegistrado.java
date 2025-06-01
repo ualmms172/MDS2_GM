@@ -43,10 +43,10 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 	
 	Hashtag hash =null;
 	if(_verHashtagUsuarioRegistrado._vertweetgeneralusarioregistrado!=null) {
-		hash= _verHashtagUsuarioRegistrado._vertweetgeneralusarioregistrado._mostrartweetspropiosUsuarioRegistrado.t.contiene.toArray()[0];
+		hash= _verHashtagUsuarioRegistrado._vertweetgeneralusarioregistrado._mostrartweetspropiosUsuarioRegistrado.t.getContiene();
 	}
 	else if(_verHashtagUsuarioRegistrado._mostrartweetspropiosusuarioregistrado!=null) {
-		hash=_verHashtagUsuarioRegistrado._mostrartweetspropiosusuarioregistrado.t.contiene.toArray()[0];
+		hash=_verHashtagUsuarioRegistrado._mostrartweetspropiosusuarioregistrado.t.getContiene();
 	}
 	else {
 		hash=_verHashtagUsuarioRegistrado._listahashtagsgeneralUsuarioRegistrado.h;
@@ -72,7 +72,10 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 			u= _verperfilgeneralUsuarioRegistrado._listaUsuariosGeneralUsuarioRegistrado.u;
 		}
 		else {
-			u= _verperfilgeneralUsuarioRegistrado._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor();
+			if(_verperfilgeneralUsuarioRegistrado.mencion)
+				u=_verperfilgeneralUsuarioRegistrado._mostrartweetsUsuarioRegistrado_item.t.getMencionaA();
+			else
+				u= _verperfilgeneralUsuarioRegistrado._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor();
 		}
 		
 		ArrayList<Tweet> tweets = new ArrayList<Tweet>();

@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.Tweet;
@@ -17,8 +19,55 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 		this.getButtonRetweet().setVisible(false);
 		
 		this.getVaadinHorizontalLayout().addClickListener(event -> VerTweetAdministrador()); 
-		this.getImgFotoPerfilTweet().addClickListener(event -> VerPerfilAdministrador()); 
+		this.getImgFotoPerfilTweet().addClickListener(event -> VerPerfilAdministrador(false)); 
 		this.getButtonBorrar().addClickListener(event -> BorrarTweet()); 
+		
+		Label labelOriginal = this.getLabelCuerpoTwet();
+		if(t.getMencionaA()!=null) {
+			Span[] mencion = this.Mencion();
+		    Span nuevoSpan = new Span();
+
+		    // Copiar estilos visuales si el Label tiene alguno
+		    nuevoSpan.getStyle().set("font-family", labelOriginal.getStyle().get("font-family"));
+		    nuevoSpan.getStyle().set("font-size", labelOriginal.getStyle().get("font-size"));
+		    nuevoSpan.getStyle().set("font-weight", labelOriginal.getStyle().get("font-weight"));
+		    nuevoSpan.getStyle().set("color", labelOriginal.getStyle().get("color"));
+		    nuevoSpan.getStyle().set("display", "inline");
+		    
+		    mencion[1].getStyle().set("color", "blue");
+		    mencion[1].getStyle().set("cursor", "pointer");
+		    mencion[1].getElement().addEventListener("click", e -> {
+		    	VerPerfilAdministrador(true);
+		    });
+		    
+		    nuevoSpan.add(mencion[0], mencion[1], mencion[2]);
+		    
+		    this.getHorizontalLayoutCuerpoTweet().removeAll();
+		    this.getHorizontalLayoutCuerpoTweet().add(nuevoSpan);
+		    
+		}
+		if(t.getContiene()!=null) {
+			
+			Span[] hashtag = this.Hashtag();
+		    Span nuevoSpan = new Span();
+		    
+		    nuevoSpan.getStyle().set("font-family", labelOriginal.getStyle().get("font-family"));
+		    nuevoSpan.getStyle().set("font-size", labelOriginal.getStyle().get("font-size"));
+		    nuevoSpan.getStyle().set("font-weight", labelOriginal.getStyle().get("font-weight"));
+		    nuevoSpan.getStyle().set("color", labelOriginal.getStyle().get("color"));
+		    nuevoSpan.getStyle().set("display", "inline");
+		    
+		    hashtag[1].getStyle().set("color", "blue");
+		    hashtag[1].getStyle().set("cursor", "pointer");
+		    hashtag[1].getElement().addEventListener("click", e -> {
+		    	 this.VerHashtagAdministrador();
+		    });
+		    
+		    nuevoSpan.add(hashtag[0], hashtag[1], hashtag[2]);
+		    
+		    this.getHorizontalLayoutCuerpoTweet().removeAll();
+		    this.getHorizontalLayoutCuerpoTweet().add(nuevoSpan);
+		}
 	}
 
 	//private event _borrarTweet;
@@ -26,6 +75,8 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 	public ListaTweetsAdmin _listaTweetsAdmin;
 	public VerTweetAdministrador _verTweetAdministrador;
 	public VerPerfilAdministrador _verPerfilAdministrador;
+	
+	public VerHashtagAdministrador _verhashtagadministrador;
 
 	public void BorrarTweet() {
 //		this._listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).remove(this);
@@ -81,9 +132,17 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 //		}
 		
 	}
+	
+	public void VerHashtagAdministrador() {
+		_verhashtagadministrador = new VerHashtagAdministrador(this);
+		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+		Pantalla.MainView.removeAll();
+		Pantalla.MainView.add(_verhashtagadministrador);
+		
+	}
 
-	public void VerPerfilAdministrador() {
-		_verPerfilAdministrador = new VerPerfilAdministrador(this);
+	public void VerPerfilAdministrador(boolean mencion) {
+		_verPerfilAdministrador = new VerPerfilAdministrador(this,mencion);
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_verPerfilAdministrador);

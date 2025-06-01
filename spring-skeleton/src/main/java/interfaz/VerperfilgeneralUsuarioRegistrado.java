@@ -12,14 +12,27 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
 	public Comentariospropios_item _comentariosUsuarioRegistrado;
 	
-	public VerperfilgeneralUsuarioRegistrado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado) {
+	public boolean mencion;
+	
+	public VerperfilgeneralUsuarioRegistrado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado,Boolean mencion) {
 		
 		_mostrartweetsUsuarioRegistrado_item = mostrartweetsUsuarioRegistrado; 
 		
-		this.getLabelNick().setText(_mostrartweetsUsuarioRegistrado_item.t.getEscritoPor().getNick());
-		this.getLabelDescripcion().setText(_mostrartweetsUsuarioRegistrado_item.t.getEscritoPor().getDescripcion());
-//		this.getLabelNumSeguidores().setText(_mostrartweetsUsuarioRegistrado_item.t.getEscritoPor().);
-//		this.getLabelNumSeguidos().setText(_mostrartweetsUsuarioRegistrado_item.t.getEscritoPor().);
+		basededatos.UsuarioRegistrado user =null;
+		this.mencion=mencion;
+		
+		if(mencion) {
+			 user = _mostrartweetsUsuarioRegistrado_item.t.getMencionaA();
+		}
+		else {
+			user = _mostrartweetsUsuarioRegistrado_item.t.getEscritoPor();
+		}
+		
+		this.getLabelNick().setText(user.getNick());
+		this.getLabelDescripcion().setText(user.getDescripcion());
+		this.getLabelNumSeguidores().setText(String.valueOf(user.seguidoPor.size()));
+		this.getLabelNumSeguidos().setText(String.valueOf(user.sigueA.size()));
+		
 		
 		this.getButtonBanear().setVisible(false);
 		
@@ -140,15 +153,25 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	});
 	}
 	
-	public VerperfilgeneralUsuarioRegistrado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado ) {
+	public VerperfilgeneralUsuarioRegistrado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado,Boolean mencion) {
 		
 		
 		_vertweetgeneralUsuarioRegistrado = vertweetgeneralUsuarioRegistrado; 
+		this.mencion=mencion;
 		
-		this.getLabelNick().setText(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor().getNick());
-		this.getLabelDescripcion().setText(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor().getDescripcion());
-//		this.getLabelNumSeguidores().setText(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor().);
-//		this.getLabelNumSeguidos().setText(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor().);
+		basededatos.UsuarioRegistrado user =null;
+		
+		if(mencion) {
+			 user = _vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getMencionaA();
+		}
+		else {
+			user = _vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
+		}
+		
+		this.getLabelNick().setText(user.getNick());
+		this.getLabelDescripcion().setText(user.getDescripcion());
+		this.getLabelNumSeguidores().setText(String.valueOf(user.seguidoPor.size()));
+		this.getLabelNumSeguidos().setText(String.valueOf(user.sigueA.size()));
 		
 		this.getButtonBanear().setVisible(false);
 		
@@ -262,25 +285,25 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	        _mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado = lt;
 
 	        if (this instanceof Verperfilpropio) {
-	            vista = new Verperfilpropio(_mostrartweetsUsuarioRegistrado_item);
+	            vista = new Verperfilpropio(_mostrartweetsUsuarioRegistrado_item,mencion);
 	        } else if (this instanceof Verperfilbloqueado) {
-	            vista = new Verperfilbloqueado(_mostrartweetsUsuarioRegistrado_item);
+	            vista = new Verperfilbloqueado(_mostrartweetsUsuarioRegistrado_item,mencion);
 	        } else if (this instanceof Verperfilnobloqueado) {
-	            vista = new Verperfilnobloqueado(_mostrartweetsUsuarioRegistrado_item);
+	            vista = new Verperfilnobloqueado(_mostrartweetsUsuarioRegistrado_item,mencion);
 	        } else {
-	            vista = new VerperfilgeneralUsuarioRegistrado(_mostrartweetsUsuarioRegistrado_item);
+	            vista = new VerperfilgeneralUsuarioRegistrado(_mostrartweetsUsuarioRegistrado_item,mencion);
 	        }
 	    } else {
 	        VertweetgeneralUsuarioRegistrado recargado = this._vertweetgeneralUsuarioRegistrado.Recargar(log);
 
 	        if (this instanceof Verperfilpropio) {
-	            vista = new Verperfilpropio(recargado);
+	            vista = new Verperfilpropio(recargado,mencion);
 	        } else if (this instanceof Verperfilbloqueado) {
-	            vista = new Verperfilbloqueado(recargado);
+	            vista = new Verperfilbloqueado(recargado,mencion);
 	        } else if (this instanceof Verperfilnobloqueado) {
-	            vista = new Verperfilnobloqueado(recargado);
+	            vista = new Verperfilnobloqueado(recargado,mencion);
 	        } else {
-	            vista = new VerperfilgeneralUsuarioRegistrado(recargado);
+	            vista = new VerperfilgeneralUsuarioRegistrado(recargado,mencion);
 	        }
 	    }
 

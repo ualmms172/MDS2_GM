@@ -27,7 +27,10 @@ public class Listatweets extends ListaTweetsGeneral {
 			u= _verperfilUsuarioNoRegistrado._listaUsuariosGeneralUsuarioNoRegistrado.u;
 		}
 		else {
-			u= _verperfilUsuarioNoRegistrado._listatweets_item.t.getEscritoPor();
+			if(_verperfilUsuarioNoRegistrado.mencion)
+				u= _verperfilUsuarioNoRegistrado._listatweets_item.t.getMencionaA();
+			else
+				u= _verperfilUsuarioNoRegistrado._listatweets_item.t.getEscritoPor();
 		}
 		
 		ArrayList<Tweet> tweets = new ArrayList<Tweet>();
@@ -52,10 +55,10 @@ public class Listatweets extends ListaTweetsGeneral {
 		
 		Hashtag hash =null;
 		if(_verHashtagUsuarioNoRegistrado._vertweetUsuarioNoRegistrado!=null) {
-			hash= _verHashtagUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets.t.contiene.toArray()[0];
+			hash= _verHashtagUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets.t.getContiene();
 		}
 		else if(_verHashtagUsuarioNoRegistrado._listatweets_item!=null) {
-			hash=_verHashtagUsuarioNoRegistrado._listatweets_item.t.contiene.toArray()[0];
+			hash=_verHashtagUsuarioNoRegistrado._listatweets_item.t.getContiene();
 		}
 		else {
 			hash=_verHashtagUsuarioNoRegistrado._listahashtagsgeneralUsuarioNoRegistrado.h;
