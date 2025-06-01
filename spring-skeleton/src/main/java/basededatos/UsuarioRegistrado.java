@@ -80,43 +80,43 @@ public class UsuarioRegistrado extends basededatos.Logueado implements Serializa
 	@ManyToMany(targetEntity=basededatos.UsuarioRegistrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="UsuarioRegistrado_UsuarioRegistrado3", joinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoID2") }, inverseJoinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoID") })	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.FALSE)	
 	private java.util.Set ORM_bloqueaA = new java.util.HashSet();
 	
 	@ManyToMany(targetEntity=basededatos.UsuarioRegistrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="UsuarioRegistrado_UsuarioRegistrado4", joinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoID2") }, inverseJoinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoID") })	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.FALSE)	
 	private java.util.Set ORM_sigueA = new java.util.HashSet();
 	
 	@OneToMany(mappedBy="MencionaA", targetEntity=basededatos.Tweet.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.FALSE)	
 	private java.util.Set ORM_mencionadoEn = new java.util.HashSet();
 	
 	@ManyToMany(mappedBy="ORM_bloqueaA", targetEntity=basededatos.UsuarioRegistrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.FALSE)	
 	private java.util.Set ORM_bloqueadoPor = new java.util.HashSet();
 	
 	@ManyToMany(mappedBy="ORM_sigueA", targetEntity=basededatos.UsuarioRegistrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.FALSE)	
 	private java.util.Set ORM_seguidoPor = new java.util.HashSet();
 	
 	@ManyToMany(mappedBy="ORM_meGustaPor", targetEntity=basededatos.Contenido.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.FALSE)	
 	private java.util.Set ORM_meGusta = new java.util.HashSet();
 	
 	@OneToMany(mappedBy="CreadoPor", targetEntity=basededatos.Hashtag.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.FALSE)	
 	private java.util.Set ORM_creaHashtag = new java.util.HashSet();
 	
 	@OneToMany(mappedBy="EscritoPor", targetEntity=basededatos.Contenido.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.FALSE)	
 	private java.util.Set ORM_escribe = new java.util.HashSet();
 	
 	public void setId_user(int value) {
