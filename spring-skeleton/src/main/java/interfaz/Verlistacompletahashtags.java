@@ -32,8 +32,8 @@ public class Verlistacompletahashtags extends VistaVerlistacompletahashtags{
 		_listaHashtagsUsuarioNoRegistrado = new ListaHashtagsUsuarioNoRegistrado(this);
 		this.getVerticalLayoutListaHashtags().as(VerticalLayout.class).add(_listaHashtagsUsuarioNoRegistrado);
 		
-		ListaHashtagsUsuarioNoRegistrado_item item_tweets = new ListaHashtagsUsuarioNoRegistrado_item(_listaHashtagsUsuarioNoRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-		_listaHashtagsUsuarioNoRegistrado.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
+//		ListaHashtagsUsuarioNoRegistrado_item item_tweets = new ListaHashtagsUsuarioNoRegistrado_item(_listaHashtagsUsuarioNoRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+//		_listaHashtagsUsuarioNoRegistrado.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	

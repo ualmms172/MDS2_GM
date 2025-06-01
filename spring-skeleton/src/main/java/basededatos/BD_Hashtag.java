@@ -12,16 +12,13 @@ public class BD_Hashtag {
 	public Vector<Hashtag> _contiene_hashtags = new Vector<Hashtag>();
 
 
-	public Hashtag Cargar_Hashtags() throws PersistentException {
+	public Hashtag[] Cargar_Hashtags() throws PersistentException {
 		
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-		Hashtag resultado = null;
-
+		Hashtag[] resultado = null;
 		try {
 			Hashtag[] hashtags = HashtagDAO.listHashtagByQuery(null, "Titulo ASC");
-			if (hashtags.length > 0) {
-				resultado = hashtags[0]; // devuelve el primero
-			}
+			resultado = hashtags;
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();

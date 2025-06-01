@@ -258,8 +258,8 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		_listaComentariosAdministrador = new ListaComentariosAdministrador(this);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_listaComentariosAdministrador);
 		
-		ListaComentariosAdministrador_item item_tweets = new ListaComentariosAdministrador_item(_listaComentariosAdministrador,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-		_listaComentariosAdministrador.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
+//		ListaComentariosAdministrador_item item_tweets = new ListaComentariosAdministrador_item(_listaComentariosAdministrador,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+//		_listaComentariosAdministrador.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public void VerHashtagAdministrador() {

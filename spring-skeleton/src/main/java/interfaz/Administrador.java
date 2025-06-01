@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
 import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class Administrador extends Logueado {
@@ -28,6 +29,8 @@ public class Administrador extends Logueado {
 	public Administrador(MainView MainView, basededatos.Administrador a) {
 		super(MainView);
 		this.a=a;
+		
+		Interfaz.ad=this;
 		/*
 		this.getButtonNotificaciones().setVisible(false);
 		this.getImgPerfilUsuario().setVisible(false);
@@ -63,23 +66,23 @@ public class Administrador extends Logueado {
 	public void ListaTweetsAdmin() {
 		_listaTweetsAdmin = new ListaTweetsAdmin(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_listaTweetsAdmin);
-		ListaTweetsAdmin_item item_tweets = new ListaTweetsAdmin_item(_listaTweetsAdmin,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-		_listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
+//		ListaTweetsAdmin_item item_tweets = new ListaTweetsAdmin_item(_listaTweetsAdmin,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+//		_listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public void ListaUsuariosFamososAdministrador() {
 		_listaUsuariosFamososAdministrador = new ListaUsuariosFamososAdministrador(this);
 		this.getHorizontalLayoutListaUsuariosMasFamosos2().add(_listaUsuariosFamososAdministrador);
-  	    ListaUsuariosFamososAdministrador_item listaUsuariosFamososAdministradorItem = new ListaUsuariosFamososAdministrador_item(_listaUsuariosFamososAdministrador,null); //AQUÍ HABRA QUE MODIFICAR EL NULL 
-  	    _listaUsuariosFamososAdministrador.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(listaUsuariosFamososAdministradorItem);
+//  	    ListaUsuariosFamososAdministrador_item listaUsuariosFamososAdministradorItem = new ListaUsuariosFamososAdministrador_item(_listaUsuariosFamososAdministrador,null); //AQUÍ HABRA QUE MODIFICAR EL NULL 
+//  	    _listaUsuariosFamososAdministrador.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(listaUsuariosFamososAdministradorItem);
 
 	}
 	
 	public void ListaHashtagsFamososAdministrador() {
 		_listaHashtagsFamososAdministrador = new ListaHashtagsFamososAdministrador(this);
 		this.getHorizontalLayoutHashtagsMasUsados().add(_listaHashtagsFamososAdministrador);
-  	    ListaHashtagsFamososAdministrador_item listaHashtagsFamososAdministradorItem = new ListaHashtagsFamososAdministrador_item(_listaHashtagsFamososAdministrador,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-  	    _listaHashtagsFamososAdministrador.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(listaHashtagsFamososAdministradorItem);
+//  	    ListaHashtagsFamososAdministrador_item listaHashtagsFamososAdministradorItem = new ListaHashtagsFamososAdministrador_item(_listaHashtagsFamososAdministrador,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+//  	    _listaHashtagsFamososAdministrador.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(listaHashtagsFamososAdministradorItem);
 
 	
 	}

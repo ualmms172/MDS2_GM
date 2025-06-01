@@ -194,8 +194,8 @@ public class VertweetUsuarioNoRegistrado extends VertweetGeneral {
 		_listaComentariosUsuarioNoRegistrado = new ListaComentariosUsuarioNoRegistrado(this);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_listaComentariosUsuarioNoRegistrado);
 		
-		ListaComentariosUsuarioNoRegistrado_item item_tweets = new ListaComentariosUsuarioNoRegistrado_item(_listaComentariosUsuarioNoRegistrado,null);//AQUÍ HABRA QUE MODIFICAR EL NULL
-		_listaComentariosUsuarioNoRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
+//		ListaComentariosUsuarioNoRegistrado_item item_tweets = new ListaComentariosUsuarioNoRegistrado_item(_listaComentariosUsuarioNoRegistrado,null);//AQUÍ HABRA QUE MODIFICAR EL NULL
+//		_listaComentariosUsuarioNoRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public void VerHashtagUsuarioNoRegistrado() {

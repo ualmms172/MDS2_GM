@@ -10,6 +10,7 @@ public class Logueado extends VistaLogueado{
 	
 	MainView MainView;
 	public Logueado(MainView MainView) {
+		
 	this.MainView = MainView;
 	
 	this.getButtonCerrarSesion().addClickListener(event -> Cerrarsesin()); 

@@ -6,20 +6,36 @@ import java.util.Date;
 import org.orm.PersistentException;
 
 public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iAdministrador, iLogueado {
-	public BD_UsuarioRegistrado _bd_usu;
-	public BD_Administrador _bd_adm;
-	public BD_Tweet _bd_twe;
-	public BD_Comentario _bd_com;
-	public BD_Hashtag _bd_has;
-	public BD_Texto _bd_tex;
-	public BD_Multimedia _bd_mul;
+	public BD_UsuarioRegistrado _bd_usu = new BD_UsuarioRegistrado();
+	public BD_Administrador _bd_adm = new BD_Administrador();
+	public BD_Tweet _bd_twe = new BD_Tweet();
+	public BD_Comentario _bd_com = new BD_Comentario();
+	public BD_Hashtag _bd_has = new BD_Hashtag();
+	public BD_Texto _bd_tex = new BD_Texto();
+	public BD_Multimedia _bd_mul = new BD_Multimedia();
 
 	public UsuarioRegistrado[] Cargar_Usuarios() {
-		throw new UnsupportedOperationException();
+		try {
+	        return _bd_usu.Cargar_Usuarios();
+	    } catch (PersistentException e) {
+	        
+	        System.err.println("Error al cargar usuarios: " + e.getMessage());
+	        e.printStackTrace(); 
+	       
+	        return null;
+	    }
 	}
 
 	public Hashtag[] Cargar_Hashtags() {
-		throw new UnsupportedOperationException();
+		try {
+	        return _bd_has.Cargar_Hashtags();
+	    } catch (PersistentException e) {
+	        
+	        System.err.println("Error al cargar hashtags: " + e.getMessage());
+	        e.printStackTrace(); 
+	       
+	        return null;
+	    }
 	}
 
 //	public Tweet[] Cargar_TweetsUsuario(UsuarioRegistrado aUsuario) {

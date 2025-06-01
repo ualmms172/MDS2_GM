@@ -16,7 +16,9 @@ public class ListausuariosfamososUsuarioRegistrado extends ListaUsuariosGeneralU
 		
 		basededatos.UsuarioRegistrado[] usuarios = Interfaz.ur._iUsuarioregistrado.Cargar_Usuarios();
 		
-		for(int i=0;i<10;i++) { //Como son los famosos solo se muestran los n primeros
+		int n = usuarios.length;
+		if(n>10)n=10;
+		for(int i=0;i<n;i++) { //Como son los famosos solo se muestran los n primeros
 			
 			basededatos.UsuarioRegistrado user = usuarios[i];
 			

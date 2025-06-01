@@ -38,24 +38,24 @@ public class Notificaciones extends VistaNotificaciones {
 		_listaRetweetsNotificados = new ListaRetweetsNotificados(this);
 		this.getVerticalLayoutRetweetsRecibidos1().as(VerticalLayout.class).add(_listaRetweetsNotificados);
 		
-		ListaRetweetsNotificados_item item_tweets = new ListaRetweetsNotificados_item(_listaRetweetsNotificados,null);
-		_listaRetweetsNotificados.getVerticalListaretweetsnotificados().as(VerticalLayout.class).add(item_tweets);
+//		ListaRetweetsNotificados_item item_tweets = new ListaRetweetsNotificados_item(_listaRetweetsNotificados,null);
+//		_listaRetweetsNotificados.getVerticalListaretweetsnotificados().as(VerticalLayout.class).add(item_tweets);
 	}
 
 	public void ListaNuevosSeguidores() {
 		_listaNuevosSeguidores = new ListaNuevosSeguidores(this);
 		this.getVerticalLayoutCajaSeguidoresObtenidos().as(VerticalLayout.class).add(_listaNuevosSeguidores);
 		
-		ListaNuevosSeguidores_item item_tweets = new ListaNuevosSeguidores_item(_listaNuevosSeguidores,null);
-		_listaNuevosSeguidores.getVerticalListanuevoseguidores().as(VerticalLayout.class).add(item_tweets);
+//		ListaNuevosSeguidores_item item_tweets = new ListaNuevosSeguidores_item(_listaNuevosSeguidores,null);
+//		_listaNuevosSeguidores.getVerticalListanuevoseguidores().as(VerticalLayout.class).add(item_tweets);
 	}
 
 	public void ListaMencionesRecibidas() {
 		_listaMencionesRecibidas = new ListaMencionesRecibidas(this);
 		this.getVerticalLayoutCajaMenciones().as(VerticalLayout.class).add(_listaMencionesRecibidas);
 		
-		ListaMencionesRecibidas_item item_tweets = new ListaMencionesRecibidas_item(_listaMencionesRecibidas,null);
-		_listaMencionesRecibidas.getVerticalListamencionesrecibidas().as(VerticalLayout.class).add(item_tweets);
+//		ListaMencionesRecibidas_item item_tweets = new ListaMencionesRecibidas_item(_listaMencionesRecibidas,null);
+//		_listaMencionesRecibidas.getVerticalListamencionesrecibidas().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public Notificaciones Recargar(UsuarioRegistrado log) {

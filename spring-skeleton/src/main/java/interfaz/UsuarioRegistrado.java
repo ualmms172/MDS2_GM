@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import basededatos.BDPrincipal;
 import basededatos.iUsuarioregistrado;
 import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class UsuarioRegistrado extends Logueado {
@@ -39,6 +40,7 @@ public class UsuarioRegistrado extends Logueado {
 	public UsuarioRegistrado(MainView MainView, basededatos.UsuarioRegistrado u) {
 		super(MainView);
 		this.u=u;
+		Interfaz.ur=this;
 		
 		this.getImgPerfilUsuario().setSrc(u.getFotoPerfil());
 		
@@ -60,23 +62,23 @@ public class UsuarioRegistrado extends Logueado {
 
 		_mostrartweetspropiosUsuarioRegistrado = new MostrartweetspropiosUsuarioRegistrado(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_mostrartweetspropiosUsuarioRegistrado);
-		MostrartweetspropiosUsuarioRegistrado_item item_tweets = new MostrartweetspropiosUsuarioRegistrado_item(_mostrartweetspropiosUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-		_mostrartweetspropiosUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
+//		MostrartweetspropiosUsuarioRegistrado_item item_tweets = new MostrartweetspropiosUsuarioRegistrado_item(_mostrartweetspropiosUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+//		_mostrartweetspropiosUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 		
 	}
 	
 	public void ListausuariosfamososUsuarioRegistrado() {
 		_listausuariosfamososUsuarioRegistrado = new ListausuariosfamososUsuarioRegistrado(this);
 		this.getHorizontalLayoutListaUsuariosMasFamosos2().add(_listausuariosfamososUsuarioRegistrado);
-		ListausuariosfamososUsuarioRegistrado_item item_tweets = new ListausuariosfamososUsuarioRegistrado_item(_listausuariosfamososUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-		_listausuariosfamososUsuarioRegistrado.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
+//		ListausuariosfamososUsuarioRegistrado_item item_tweets = new ListausuariosfamososUsuarioRegistrado_item(_listausuariosfamososUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+//		_listausuariosfamososUsuarioRegistrado.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public void ListahashtagfamososUsuarioRegistrado() {
 		_listahashtagfamososUsuarioRegistrado = new ListahashtagfamososUsuarioRegistrado(this);
 		this.getHorizontalLayoutHashtagsMasUsados().add(_listahashtagfamososUsuarioRegistrado);
-		ListahashtagfamososUsuarioRegistrado_item item_tweets = new ListahashtagfamososUsuarioRegistrado_item(_listahashtagfamososUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-		_listahashtagfamososUsuarioRegistrado.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
+//		ListahashtagfamososUsuarioRegistrado_item item_tweets = new ListahashtagfamososUsuarioRegistrado_item(_listahashtagfamososUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+//		_listahashtagfamososUsuarioRegistrado.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public void Notificaciones() {
