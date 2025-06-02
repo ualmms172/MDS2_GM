@@ -2,6 +2,9 @@ package interfaz;
 
 import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaIniciarsesin;
+
+import com.vaadin.flow.component.notification.Notification;
+
 import gallardoMartinez.MainView;
 
 public class IniciarSesin extends VistaIniciarsesin {
@@ -50,11 +53,21 @@ public class IniciarSesin extends VistaIniciarsesin {
 
 	public void Autentificarse() {
 		
+		if(this.getTextFieldCorreo().isEmpty()) {
+			Notification.show("Introduce el usuario.");
+		}
+		if(this.getTextFieldContraseña().isEmpty()) {
+			Notification.show("Introduce la contraseña.");
+            return;
+		}
+		
 		String nick = this.getTextFieldCorreo().getValue();
 		String pass = this.getTextFieldContraseña().getValue();
 		basededatos.Logueado log = this._usuarioNoRegistrado._iUsuarioNoRegistrado.Loguear(nick, pass);
-		if(log==null) 
+		if(log==null) {
+			Notification.show("Datos incorrectos.");
 			return;
+		}
 		
 		this._usuarioNoRegistrado.MainView.removeAll();
 		if(log instanceof basededatos.Administrador) {

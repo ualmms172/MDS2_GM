@@ -1,6 +1,7 @@
 package interfaz;
 
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import gallardoMartinez.MainView;
@@ -44,6 +45,11 @@ public class Comentar extends CrearContenido {
 	
 	
 	public void Publicarcomentario() {
+		
+		if (this.getTextFieldCampoTexto().isEmpty() && this.getTextFieldTextoVideo().isEmpty() && this.getTextFieldUrlFoto().isEmpty()) {
+            Notification.show("Se debe rellenar al menos un campo para poder comentar.");
+            return;
+        }
 		
 		VertweetgeneralUsuarioRegistrado verTweet = null;
 		if(_vertweetgeneralUsuarioRegistrado instanceof Vertweetpropio) 

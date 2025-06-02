@@ -34,7 +34,7 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	
 	
 	public Verperfilpropio(UsuarioRegistrado usuarioregistrado) {
-		
+		super();
 		//Esta parte no esta en los demas ya que se incluye en el (super)
 		this.getButtonBanear().setVisible(false);
 		MostrartweetsUsuarioRegistrado();

@@ -17,5 +17,8 @@ public class ListaUsuariosGeneral_item extends VistaListausuariosgeneral_item{
 		//this.getLabelNumSeguidos().setText(null);
 		this.getImgPerfilUsuario().setSrc(u.getFotoPerfil());
 		//this.getLabelNumTweets().setText(null);
+		
+		this.getImgPerfilUsuario().setHeight("100%");
+		this.getImgPerfilUsuario().setWidth("50%");
 	}
 }

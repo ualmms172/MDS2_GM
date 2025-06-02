@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import gallardoMartinez.MainView;
@@ -51,7 +52,7 @@ public class BanearUsuario extends VistaBanearusuario{
 		});
 		
 		this.getButtonTemporal().addClickListener(event -> BanearTemporalmente());
-		this.getButtonIndefinido().addClickListener(event -> BanearTemporalmente());
+		this.getButtonIndefinido().addClickListener(event -> BanearIndefinidamente());
 		
 		
 		
@@ -113,6 +114,24 @@ public class BanearUsuario extends VistaBanearusuario{
 	
 
 	public void BanearTemporalmente() {
+		
+		 if (getPlaceHolderTiempoBaneo().isEmpty()) {
+             Notification.show("Por favor, rellena el tiempo antes de continuar.");
+             return;
+         }
+		 
+		 SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+	        formato.setLenient(false); // Para validar fechas incorrectas
+	        Date fecha=null;
+	        String fechaStr = this.getPlaceHolderTiempoBaneo().getValue();
+	        try {
+	             fecha = formato.parse(fechaStr);
+	            System.out.println("Fecha convertida: " + fecha);
+	        } catch (ParseException e) {
+	        	Notification.show("La fecha debe estar en formato: dd/MM/yyyy ");
+	             return;
+	        }
+		 
 		basededatos.UsuarioRegistrado ubd = null;
 		if(_listaUsuariosAdministrador!=null)
 			ubd= _listaUsuariosAdministrador.u;
@@ -128,16 +147,7 @@ public class BanearUsuario extends VistaBanearusuario{
 			}
 		}
 			
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        formato.setLenient(false); // Para validar fechas incorrectas
-        Date fecha=null;
-        String fechaStr = this.getPlaceHolderTiempoBaneo().getValue();
-        try {
-             fecha = formato.parse(fechaStr);
-            System.out.println("Fecha convertida: " + fecha);
-        } catch (ParseException e) {
-            System.out.println("Error al parsear la fecha: " + e.getMessage());
-        }
+		
 	    
 		basededatos.Administrador abd=Interfaz.ad._iadministrador.Banear(ubd, Interfaz.ad.a,fecha);
 		Administrador ad = new Administrador((MainView)Pantalla.MainView,abd); 

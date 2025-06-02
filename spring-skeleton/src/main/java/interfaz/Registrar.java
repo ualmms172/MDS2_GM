@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaRegistrar;
 
@@ -55,6 +57,7 @@ public class Registrar extends VistaRegistrar {
 		
 		//Si falta algun campo esencial no se hace nada 
 		if(nick.isBlank() || correo.isBlank() || contrasena.isBlank()) {
+			Notification.show("Se deben llenar los campos de nick, correo y contraseña.");
 			return;
 		}
 		

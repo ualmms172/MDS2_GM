@@ -24,6 +24,9 @@ public class UsuariosBaneados_item extends VistaUsuariosbaneados_item {
 	//	this.getLabelNumSeguidores().setText(u.getn);
 		this.getImgPerfilUsuarioBaneado().setSrc(u.getFotoPerfil());
 		this.getButtonDesbanear().addClickListener(event -> Desbanearusuario());
+		
+		this.getImgPerfilUsuarioBaneado().setHeight("100%");
+		this.getImgPerfilUsuarioBaneado().setWidth("50%");
 	}
 	
 	

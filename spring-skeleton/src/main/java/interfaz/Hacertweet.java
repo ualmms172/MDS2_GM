@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
@@ -40,6 +42,12 @@ public class Hacertweet extends CrearContenido {
 //		UsuarioRegistrado user = new UsuarioRegistrado(this._usuarioregistrado.MainView);
 //		this._usuarioregistrado.MainView.removeAll();
 //		this._usuarioregistrado.MainView.add(user);
+		
+		if (this.getTextFieldCampoTexto().isEmpty() && this.getTextFieldTextoVideo().isEmpty() && this.getTextFieldUrlFoto().isEmpty()) {
+            Notification.show("Se debe rellenar al menos un campo para poder tweetear.");
+            return;
+        }
+		
 		UsuarioRegistrado u=null;
 		VerlistacompletahashtagUsuarioRegistrado l = null;
 		String texto = this.getTextFieldCampoTexto().getValue();

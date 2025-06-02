@@ -17,12 +17,13 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	public boolean mencion;
 	
 	public VerPerfilAdministrador(ListaUsuariosGeneralAdministrador_item listaUsuariosGeneralAdministrador) {
+		super();
 		_listaUsuariosGeneralAdministrador = listaUsuariosGeneralAdministrador; 
 		
 		this.getLabelNick().setText(_listaUsuariosGeneralAdministrador.u.getNick());
 		this.getLabelDescripcion().setText(_listaUsuariosGeneralAdministrador.u.getDescripcion());
-//		this.getLabelNumSeguidores().setText(_listaUsuariosGeneralAdministrador.u.);
-//		this.getLabelNumSeguidos().setText(_listaUsuariosGeneralAdministrador.u.);
+		this.getLabelNumSeguidores().setText(String.valueOf(_listaUsuariosGeneralAdministrador.u.seguidoPor.size()));
+		this.getLabelNumSeguidos().setText(String.valueOf(_listaUsuariosGeneralAdministrador.u.sigueA.size()));
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -48,7 +49,7 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	
 	
 	public VerPerfilAdministrador(ListaTweetsAdmin_item listaTweetsAdmin,Boolean mencion ) {
-		
+		super();
 		_listaTweetsAdmin_item = listaTweetsAdmin; 
 		
 		this.mencion=mencion;
@@ -166,7 +167,7 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	}
 	
 	public VerPerfilAdministrador(VerTweetAdministrador verTweetAdministrador,Boolean mencion) {
-		
+		super();
 		_verTweetAdministrador = verTweetAdministrador; 
 		
 		this.mencion=mencion;
@@ -214,7 +215,7 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	
 
 	public VerPerfilAdministrador(ListaComentariosAdministrador_item listaComentariosAdministrador) {
-		
+		super();
 		_listaComentariosAdministrador = listaComentariosAdministrador; 
 		
 		this.getLabelNick().setText(_listaComentariosAdministrador.c.getEscritoPor().getNick());

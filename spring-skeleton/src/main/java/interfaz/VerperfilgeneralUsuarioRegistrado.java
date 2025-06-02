@@ -15,7 +15,7 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	public boolean mencion;
 	
 	public VerperfilgeneralUsuarioRegistrado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado,Boolean mencion) {
-		
+		super();
 		_mostrartweetsUsuarioRegistrado_item = mostrartweetsUsuarioRegistrado; 
 		
 		basededatos.UsuarioRegistrado user =null;
@@ -130,7 +130,7 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	
 	
 	public VerperfilgeneralUsuarioRegistrado (ListaUsuariosGeneralUsuarioRegistrado_item listaUsuariosGeneralUsuarioRegistrado) {
-		
+		super();
 		_listaUsuariosGeneralUsuarioRegistrado = listaUsuariosGeneralUsuarioRegistrado; 
 		
 		this.getLabelNick().setText(_listaUsuariosGeneralUsuarioRegistrado.u.getNick());
@@ -154,7 +154,7 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	}
 	
 	public VerperfilgeneralUsuarioRegistrado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado,Boolean mencion) {
-		
+		super();
 		
 		_vertweetgeneralUsuarioRegistrado = vertweetgeneralUsuarioRegistrado; 
 		this.mencion=mencion;
@@ -194,7 +194,7 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	}
 	
 	public VerperfilgeneralUsuarioRegistrado(Comentariospropios_item comentariosUsuarioRegistrado ) {
-		
+		super();
 		
 		_comentariosUsuarioRegistrado = comentariosUsuarioRegistrado; 
 		
@@ -225,7 +225,7 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	}
 	
 	public VerperfilgeneralUsuarioRegistrado() {
-		
+		super(); //Es llamado desde VerperfilPropio(UsuarioRegistrado)
 	}
 	
 

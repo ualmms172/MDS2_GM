@@ -31,9 +31,27 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 		}
 		
 		for(Tweet twe : tweets) {
-			MostrartweetspropiosUsuarioRegistrado_item t = new MostrartweetspropiosUsuarioRegistrado_item(this,twe);
+			
+			Tweet tweet=twe;
+			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()!=null && twe.contieneMultimedia.isEmpty();
+			if(ret) {
+				tweet=twe.getRetweeteaA();
+			}
+			
+			MostrartweetspropiosUsuarioRegistrado_item t =null;
+			if(twe.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
+				t = new MostrartweetspropiosUsuarioRegistrado_item(this,tweet);
+			else
+				t= new MostrartweetsUsuarioRegistrado_item(this,tweet);
+			
+			if(ret) {
+				t.getlabelRetweeteadoPor().setVisible(true);
+				t.getlabelRetweeteadoPor().removeAll();
+				t.getlabelRetweeteadoPor().add("Retweeteado por " + twe.getEscritoPor());
+			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);
+			
 		}
 	}
 	
@@ -54,9 +72,27 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 	Tweet[] tweets = hash.contenidoPor.toArray();
 	
 	for(Tweet twe : tweets) {
-		MostrartweetspropiosUsuarioRegistrado_item t = new MostrartweetspropiosUsuarioRegistrado_item(this,twe);
+		
+		Tweet tweet=twe;
+		boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()!=null && twe.contieneMultimedia.isEmpty();
+		if(ret) {
+			tweet=twe.getRetweeteaA();
+		}
+		
+		MostrartweetspropiosUsuarioRegistrado_item t =null;
+		if(twe.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
+			t = new MostrartweetspropiosUsuarioRegistrado_item(this,tweet);
+		else
+			t= new MostrartweetsUsuarioRegistrado_item(this,tweet);
+		
+		if(ret) {
+			t.getlabelRetweeteadoPor().setVisible(true);
+			t.getlabelRetweeteadoPor().removeAll();
+			t.getlabelRetweeteadoPor().add("Retweeteado por " + twe.getEscritoPor());
+		}
 		
 		this.getVerticalListacontenido().as(VerticalLayout.class).add(t);
+		
 	}
 	}
 	
@@ -90,9 +126,27 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 		}
 		
 		for(Tweet twe : tweets) {
-			MostrartweetspropiosUsuarioRegistrado_item t = new MostrartweetspropiosUsuarioRegistrado_item(this,twe);
+			
+			Tweet tweet=twe;
+			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()!=null && twe.contieneMultimedia.isEmpty();
+			if(ret) {
+				tweet=twe.getRetweeteaA();
+			}
+			
+			MostrartweetspropiosUsuarioRegistrado_item t =null;
+			if(twe.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
+				t = new MostrartweetspropiosUsuarioRegistrado_item(this,tweet);
+			else
+				t= new MostrartweetsUsuarioRegistrado_item(this,tweet);
+			
+			if(ret) {
+				t.getlabelRetweeteadoPor().setVisible(true);
+				t.getlabelRetweeteadoPor().removeAll();
+				t.getlabelRetweeteadoPor().add("Retweeteado por " + twe.getEscritoPor());
+			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);
+			
 		}
 		}
 }

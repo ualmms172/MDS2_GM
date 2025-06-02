@@ -86,7 +86,7 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 
 	public void VerTweetUsuarioRegistrado() {
 		
-		if(t.getEscritoPor().equals(Interfaz.ur.u))
+		if(t.getEscritoPor().getID()==Interfaz.ur.u.getID())
 			_verTweetUsuarioRegistrado = new Vertweetpropio(this); 
 		else
 			_verTweetUsuarioRegistrado = new Vertweetajeno(this); 

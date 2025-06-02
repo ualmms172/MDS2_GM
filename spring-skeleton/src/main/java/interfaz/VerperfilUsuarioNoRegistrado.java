@@ -22,7 +22,7 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	}
 	
 	public VerperfilUsuarioNoRegistrado(VertweetUsuarioNoRegistrado vertweetUsuarioNoRegistrado,Boolean mencion) {
-		
+		super();
 		
 		_vertweetUsuarioNoRegistrado = vertweetUsuarioNoRegistrado;
 		this.mencion=mencion;
@@ -68,7 +68,7 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	
 	
 	public VerperfilUsuarioNoRegistrado(ListaComentariosUsuarioNoRegistrado_item listaComentariosUsuarioNoRegistrado) {
-	
+		super();
 		_listaComentariosUsuarioNoRegistrado = listaComentariosUsuarioNoRegistrado;
 		
 		this.getLabelNick().setText(_listaComentariosUsuarioNoRegistrado.c.getEscritoPor().getNick());
@@ -103,7 +103,7 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	}
 	
 	public VerperfilUsuarioNoRegistrado(ListaUsuariosGeneralUsuarioNoRegistrado_item listaUsuariosGeneralUsuarioNoRegistrado) {
-		
+		super();
 		_listaUsuariosGeneralUsuarioNoRegistrado = listaUsuariosGeneralUsuarioNoRegistrado; 
 		
 		this.getLabelNick().setText(_listaUsuariosGeneralUsuarioNoRegistrado.u.getNick());
@@ -133,7 +133,7 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	}
 	
 	public VerperfilUsuarioNoRegistrado(Listatweets_item listatweets,Boolean mencion) {
-		
+		super();
 		_listatweets_item = listatweets; 
 		this.mencion=mencion;
 		

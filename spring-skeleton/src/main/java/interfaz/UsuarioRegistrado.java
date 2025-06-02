@@ -43,6 +43,9 @@ public class UsuarioRegistrado extends Logueado {
 		Interfaz.ur=this;
 		
 		this.getImgPerfilUsuario().setSrc(u.getFotoPerfil());
+
+		this.getImgPerfilUsuario().setHeight("100%");
+		this.getImgPerfilUsuario().setWidth("50%");
 		
 		this.getButtonBaneados().setVisible(false);
 		this.getButtonNotificaciones().addClickListener(event -> Notificaciones()); 

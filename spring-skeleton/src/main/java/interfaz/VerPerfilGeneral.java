@@ -9,4 +9,8 @@ public class VerPerfilGeneral extends VistaVerperfilgeneral{
 	//private Label _descripcion;
 	//private Image _fotoPerfil;
 	//private Image _fotoFondo;
+	public VerPerfilGeneral() {
+		this.getImgPerfil().setHeight("100%");
+		this.getImgPerfil().setWidth("100%");
+	}
 }
