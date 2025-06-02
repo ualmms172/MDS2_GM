@@ -11,6 +11,11 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 		
 		_listausuariosUsuarioRegistrado = (ListausuariosUsuarioRegistrado) lista;
 		
+		if(u.getID()==Interfaz.ur.u.getID()) {
+			this.getButtonSeguir().setVisible(false);
+		}
+		else {
+		
 		dado = u.seguidoPor.contains(Interfaz.ur.u);
 		if(dado) {
 			this.getButtonSeguir().getStyle().set("color", "red");
@@ -25,6 +30,7 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 		});
 		this.getButtonSeguir().getElement()
 	    .executeJs("this.addEventListener('click', function(e) { e.stopPropagation(); })");
+		}
 	}
 
 	//private event _seguirUsuario;

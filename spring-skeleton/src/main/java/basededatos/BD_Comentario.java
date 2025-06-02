@@ -40,13 +40,13 @@ public class BD_Comentario {
 			nuevoComentario.setComentadoEn(aTweet);
 
 			// Suponiendo que el usuario está logueado y accesible desde algún contexto actual
-			UsuarioRegistrado autor = (UsuarioRegistrado) UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuario.getId_user());
+			UsuarioRegistrado autor = aUsuario;
 			nuevoComentario.setEscritoPor(autor);
 
 			ComentarioDAO.save(nuevoComentario);
 
 			t.commit();
-			return autor;
+			return (UsuarioRegistrado) UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuario.getID());
 		} catch (Exception e) {
 			if (t != null) t.rollback();
 			e.printStackTrace();
@@ -57,7 +57,7 @@ public class BD_Comentario {
 		
 	}
 
-	public Administrador BorrarComentarios(Tweet aTweet) throws PersistentException {
+	public Administrador BorrarComentarios(Tweet aTweet,Administrador aAdministrador) throws PersistentException {
 		
 		PersistentTransaction t = null;
 		try {
@@ -70,7 +70,7 @@ public class BD_Comentario {
 			t.commit();
 
 			// Aquí podrías devolver el administrador que ha realizado esta acción si lo conoces
-			return null; // O cambiar esto por el administrador actual
+			return (Administrador)AdministradorDAO.loadAdministradorByORMID(aAdministrador.getID()); // O cambiar esto por el administrador actual
 		} catch (Exception e) {
 			if (t != null) t.rollback();
 			e.printStackTrace();
@@ -83,14 +83,14 @@ public class BD_Comentario {
 		
 	
 
-	public Administrador BorrarComentario(Comentario aComentario) throws PersistentException {
+	public Administrador BorrarComentario(Comentario aComentario,Administrador aAdministrador) throws PersistentException {
 		
 		PersistentTransaction t = null;
 		try {
 			t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 			ComentarioDAO.delete(aComentario);
 			t.commit();
-			return null; // Devuelve el administrador si se conoce
+			return AdministradorDAO.loadAdministradorByORMID(aAdministrador.getID()); // Devuelve el administrador si se conoce
 		} catch (Exception e) {
 			if (t != null) t.rollback();
 			e.printStackTrace();
@@ -111,7 +111,7 @@ public class BD_Comentario {
 			aUsuario.meGusta.add(aComentario);
 
 			t.commit();
-			return aUsuario;
+			return (UsuarioRegistrado) UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuario.getID());
 		} catch (Exception e) {
 			if (t != null) t.rollback();
 			e.printStackTrace();
@@ -134,7 +134,7 @@ public class BD_Comentario {
 			aUsuario.meGusta.remove(aComentario);
 
 			t.commit();
-			return aUsuario;
+			return (UsuarioRegistrado) UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuario.getID());
 		} catch (Exception e) {
 			if (t != null) t.rollback();
 			e.printStackTrace();

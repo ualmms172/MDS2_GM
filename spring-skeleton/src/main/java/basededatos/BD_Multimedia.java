@@ -18,7 +18,7 @@ public class BD_Multimedia {
 
 	    try {
 	        // Suponiendo que el autor es el usuario con ID 1 (ajusta esto según tu sistema)
-	        autor = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuario.getId_user()); // ← ajusta si es necesario
+	        autor = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuario.getID()); // ← ajusta si es necesario
 
 	        // Crear contenido nuevo y asignar autor
 	    

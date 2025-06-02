@@ -218,7 +218,7 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 		else
 			user = this._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
 		
-		if(user==Interfaz.ur.u)
+		if(user.getID()==Interfaz.ur.u.getID())
 			_verperfilUsuarioRegistrado = new Verperfilnobloqueado(this,mencion);
 		else if(user.bloqueaA.contains(Interfaz.ur.u))
 			_verperfilUsuarioRegistrado= new Verperfilpropio(this,mencion);

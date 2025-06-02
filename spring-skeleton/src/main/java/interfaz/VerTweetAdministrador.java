@@ -179,7 +179,7 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	
 	
 	public void BorrarTweet() {
-		basededatos.Administrador adb=Interfaz.ad._iadministrador.BorrarTweet(this._listaTweetsAdmin.t);
+		basededatos.Administrador adb=Interfaz.ad._iadministrador.BorrarTweet(this._listaTweetsAdmin.t,Interfaz.ad.a);
 		Administrador a = new Administrador((MainView)Pantalla.MainView,adb);
 		
 		

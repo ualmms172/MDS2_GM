@@ -25,7 +25,7 @@ public interface iAdministrador extends iLogueado {
 
 	public Administrador Desbanear(UsuarioRegistrado aUsuarioRegistrado, Administrador aAdministrador) ;
 
-	public Administrador BorrarTweet(Tweet aTweet) ;
+	public Administrador BorrarTweet(Tweet aTweet,Administrador aAdministrador) ;
 
-	public Administrador BorrarComentario(Comentario aComentario);
+	public Administrador BorrarComentario(Comentario aComentario,Administrador aAdministrador);
 }

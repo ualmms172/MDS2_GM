@@ -38,6 +38,7 @@ public class BD_Administrador {
 
 			UsuarioRegistradoDAO.save(aUsuarioRegistrado);
 			AdministradorDAO.save(aAdministrador);
+			
 
 			t.commit();
 		} catch (Exception e) {
@@ -46,7 +47,7 @@ public class BD_Administrador {
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
-		return aAdministrador;
+		return AdministradorDAO.loadAdministradorByORMID(aAdministrador.getID());
 	}
 
 
@@ -60,6 +61,7 @@ public class BD_Administrador {
 
 			UsuarioRegistradoDAO.save(aUsuarioRegistrado);
 			AdministradorDAO.save(aAdministrador);
+			
 
 			t.commit();
 		} catch (Exception e) {
@@ -68,7 +70,7 @@ public class BD_Administrador {
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
-		return aAdministrador;
+		return AdministradorDAO.loadAdministradorByORMID(aAdministrador.getID());
 		
 		
 		

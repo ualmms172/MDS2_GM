@@ -71,6 +71,9 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 		else if(_verperfilgeneralUsuarioRegistrado._listaUsuariosGeneralUsuarioRegistrado!=null) {
 			u= _verperfilgeneralUsuarioRegistrado._listaUsuariosGeneralUsuarioRegistrado.u;
 		}
+		else if(_verperfilgeneralUsuarioRegistrado instanceof Verperfilpropio) {
+			u=Interfaz.ur.u;
+		}
 		else {
 			if(_verperfilgeneralUsuarioRegistrado.mencion)
 				u=_verperfilgeneralUsuarioRegistrado._mostrartweetsUsuarioRegistrado_item.t.getMencionaA();

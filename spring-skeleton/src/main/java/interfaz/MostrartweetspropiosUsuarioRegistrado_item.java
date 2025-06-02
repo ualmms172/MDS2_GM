@@ -141,7 +141,7 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 		else
 			user = t.getEscritoPor();
 		
-		if(user.equals(Interfaz.ur.u))
+		if(user.getID()==Interfaz.ur.u.getID())
 			_verperfilUsuarioRegistrado = new Verperfilpropio(this,mencion); 
 		else if(!user.bloqueaA.contains(Interfaz.ur.u))
 			_verperfilUsuarioRegistrado = new Verperfilnobloqueado(this,mencion); 

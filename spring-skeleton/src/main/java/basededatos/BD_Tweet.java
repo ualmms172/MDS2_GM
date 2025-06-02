@@ -31,7 +31,7 @@ public class BD_Tweet {
 
 		    try {
 		        // Suponiendo que tienes una forma de obtener el usuario actual
-		        autor = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getId_user()); // ⚠️ Sustituye por el ID correcto
+		        autor = aUsuario; // ⚠️ Sustituye por el ID correcto
 
 		        // Crear el contenido base
 		        Tweet tweet = TweetDAO.createTweet();
@@ -71,7 +71,7 @@ public class BD_Tweet {
 		    }
 
 		    MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		    return autor;
+		    return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getID());
 		}
 		
 		
@@ -85,7 +85,7 @@ public class BD_Tweet {
 			Tweet retweet = TweetDAO.createTweet();
 			retweet.setRetweeteaA(aTweet);
 
-			autor = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getId_user());  // Modifica según tu lógica
+			autor = aUsuario;  
 			retweet.setEscritoPor(autor);
 
 			if (aTexto != null && !aTexto.isEmpty()) {
@@ -104,16 +104,14 @@ public class BD_Tweet {
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
-		return autor;
+		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getID());
 		
 	
 	}
 
-	public Administrador BorrarTweet(Tweet aTweet) throws PersistentException {
+	public Administrador BorrarTweet(Tweet aTweet,Administrador aAdministrador) throws PersistentException {
 		
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-		Administrador admin = null;
-
 		try {
 			TweetDAO.delete(aTweet);
 			t.commit();
@@ -123,7 +121,7 @@ public class BD_Tweet {
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
-		return admin;
+		return AdministradorDAO.loadAdministradorByORMID(aAdministrador.getID());
 			
 	}
 
@@ -143,7 +141,7 @@ public class BD_Tweet {
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
-		return aUsuario;
+		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getID());
 	
 	}
 
@@ -163,7 +161,7 @@ public class BD_Tweet {
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
-		return aUsuario;
+		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getID());
 	}
 		
 		
@@ -181,7 +179,7 @@ public class BD_Tweet {
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
-		return aUr;
+		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUr.getID());
 	}
 
 
@@ -210,7 +208,7 @@ public class BD_Tweet {
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
-		return autor;
+		return  UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(autor.getID());
 	}
 
 }

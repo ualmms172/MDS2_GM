@@ -292,9 +292,9 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	    }
 	}
 
-	public Administrador BorrarTweet(Tweet aTweet) {
+	public Administrador BorrarTweet(Tweet aTweet,Administrador aAdministrador) {
 	    try {
-	        return _bd_twe.BorrarTweet(aTweet);
+	        return _bd_twe.BorrarTweet(aTweet,aAdministrador);
 	    } catch (PersistentException e) {
 	        System.err.println("Error al borrar tweet: " + e.getMessage());
 	        e.printStackTrace();
@@ -302,9 +302,9 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	    }
 	}
 
-	public Administrador BorrarComentario(Comentario aComentario) {
+	public Administrador BorrarComentario(Comentario aComentario,Administrador aAdministrador) {
 	    try {
-	        return _bd_com.BorrarComentario(aComentario);
+	        return _bd_com.BorrarComentario(aComentario,aAdministrador);
 	    } catch (PersistentException e) {
 	        System.err.println("Error al borrar comentario: " + e.getMessage());
 	        e.printStackTrace();

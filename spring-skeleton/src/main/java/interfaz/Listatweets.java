@@ -35,7 +35,7 @@ public class Listatweets extends ListaTweetsGeneral {
 		
 		ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 		
-		for(Contenido c :Interfaz.ur.u.escribe.toArray()) {
+		for(Contenido c :u.escribe.toArray()) {
 			if(c instanceof Tweet) {
 				tweets.add((Tweet)c);
 			}
