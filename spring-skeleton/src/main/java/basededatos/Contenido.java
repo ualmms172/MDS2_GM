@@ -65,7 +65,7 @@ public class Contenido implements Serializable {
 	@ManyToMany(targetEntity=basededatos.UsuarioRegistrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="UsuarioRegistrado_Contenido2", joinColumns={ @JoinColumn(name="ContenidoId_cont") }, inverseJoinColumns={ @JoinColumn(name="UsuarioRegistradoLogueadoID") })	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.FALSE)	
 	private java.util.Set ORM_meGustaPor = new java.util.HashSet();
 	
 	@ManyToOne(targetEntity=basededatos.UsuarioRegistrado.class, fetch=FetchType.LAZY)	
@@ -76,7 +76,7 @@ public class Contenido implements Serializable {
 	
 	@OneToMany(mappedBy="PerteneceA", targetEntity=basededatos.Multimedia.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.FALSE)	
 	private java.util.Set ORM_contieneMultimedia = new java.util.HashSet();
 	
 	@OneToOne(mappedBy="PerteneceA", targetEntity=basededatos.Texto.class, fetch=FetchType.LAZY)	

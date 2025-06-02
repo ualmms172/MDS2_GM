@@ -68,7 +68,7 @@ public class Hashtag implements Serializable {
 	
 	@OneToMany(mappedBy="Contiene", targetEntity=basededatos.Tweet.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.FALSE)	
 	private java.util.Set ORM_contenidoPor = new java.util.HashSet();
 	
 	private void setId_hash(int value) {
