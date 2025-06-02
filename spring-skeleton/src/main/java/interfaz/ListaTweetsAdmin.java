@@ -61,6 +61,12 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 		else if(_verPerfilAdministrador._listaUsuariosGeneralAdministrador!=null) {
 			u= _verPerfilAdministrador._listaUsuariosGeneralAdministrador.u;
 		}
+		else if(_verPerfilAdministrador._verTweetAdministrador!=null) {
+			if(_verPerfilAdministrador.mencion)
+				u= _verPerfilAdministrador._verTweetAdministrador._listaTweetsAdmin.t.getMencionaA();
+			else
+				u= _verPerfilAdministrador._verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor();
+		}
 		else {
 			if(_verPerfilAdministrador.mencion)
 				u= _verPerfilAdministrador._listaTweetsAdmin_item.t.getMencionaA();

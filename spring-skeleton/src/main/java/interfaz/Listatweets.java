@@ -26,6 +26,12 @@ public class Listatweets extends ListaTweetsGeneral {
 		else if(_verperfilUsuarioNoRegistrado._listaUsuariosGeneralUsuarioNoRegistrado!=null) {
 			u= _verperfilUsuarioNoRegistrado._listaUsuariosGeneralUsuarioNoRegistrado.u;
 		}
+		else if(_verperfilUsuarioNoRegistrado._vertweetUsuarioNoRegistrado!=null) {
+			if(_verperfilUsuarioNoRegistrado.mencion)
+			u= _verperfilUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets.t.getMencionaA();
+		else
+			u= _verperfilUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor();
+		}
 		else {
 			if(_verperfilUsuarioNoRegistrado.mencion)
 				u= _verperfilUsuarioNoRegistrado._listatweets_item.t.getMencionaA();

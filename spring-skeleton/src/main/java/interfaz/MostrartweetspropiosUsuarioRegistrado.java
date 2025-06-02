@@ -110,6 +110,12 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 		else if(_verperfilgeneralUsuarioRegistrado instanceof Verperfilpropio) {
 			u=Interfaz.ur.u;
 		}
+		else if(_verperfilgeneralUsuarioRegistrado._vertweetgeneralUsuarioRegistrado!=null) {
+			if(_verperfilgeneralUsuarioRegistrado.mencion)
+				u=_verperfilgeneralUsuarioRegistrado._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getMencionaA();
+			else
+				u= _verperfilgeneralUsuarioRegistrado._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
+		}
 		else {
 			if(_verperfilgeneralUsuarioRegistrado.mencion)
 				u=_verperfilgeneralUsuarioRegistrado._mostrartweetsUsuarioRegistrado_item.t.getMencionaA();
