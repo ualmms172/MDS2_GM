@@ -260,5 +260,23 @@ public class BD_UsuarioRegistrado {
 		return usuario;
 		
 		}
+	
+public UsuarioRegistrado BuscarUsuarioCorreo(String aCorreo) throws PersistentException {
+		
+		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+		UsuarioRegistrado usuario = null;
+
+		try {
+			usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByQuery("Correo = '" + aCorreo + "'", null);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+			throw new PersistentException(e);
+		} finally {
+			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
+		}
+		return usuario;
+		
+		}
 			
 	}

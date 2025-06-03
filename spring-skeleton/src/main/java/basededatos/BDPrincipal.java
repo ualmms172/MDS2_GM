@@ -312,6 +312,17 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	    }
 	}
 
+	@Override
+	public UsuarioRegistrado BuscarUsuarioCorreo(String aCorreo) {
+		 try {
+		        return _bd_usu.BuscarUsuarioCorreo(aCorreo);
+		    } catch (PersistentException e) {
+		        System.err.println("Error al buscar usuario por su correo: " + e.getMessage());
+		        e.printStackTrace();
+		        return null;
+		    }
+	}
+
 
 
 //	public UsuarioRegistrado get_Usuarioregistrado() {

@@ -4,6 +4,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import com.vaadin.flow.component.notification.Notification;
+
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaRegistrar;
 
@@ -66,6 +68,15 @@ public class Registrar extends VistaRegistrar {
 			return;
 		}
 		
+		if(Interfaz.nr._iUsuarioNoRegistrado.BuscarUsuarioCorreo(correo)!=null) {
+			Notification.show("Ya existe un usuario vinculado al correo proporcionado.");
+			return;
+		}
+		if(Interfaz.nr._iUsuarioNoRegistrado.BuscarUsuario(nick)!=null) {
+			Notification.show("Ya existe un usuario con ese nick.");
+			return;
+		}
+		
 		// Comprobamos que la foto(perfil) lo sea realmente
 		if (!fotoPerfil.isBlank()) {
 			try {
@@ -106,6 +117,7 @@ public class Registrar extends VistaRegistrar {
 				return;
 			}
 		}
+		
     
 		this.codigoGenerado = String.valueOf((int) (Math.random() * 900000 + 100000));
 		enviarCodigoPorCorreo(correo, codigoGenerado);
