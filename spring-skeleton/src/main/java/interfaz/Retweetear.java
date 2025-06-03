@@ -1,5 +1,12 @@
 package interfaz;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import com.vaadin.flow.component.notification.Notification;
+
+import basededatos.Contenido;
+import basededatos.Tweet;
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
@@ -67,9 +74,28 @@ public class Retweetear extends CrearContenido {
 			
 		});
 		
+		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
+		    String url = event.getValue();
+		    if (url != null && !url.isEmpty()) {
+		        this.getImgImagen().setSrc(url);
+		    } else {
+		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
+		    }
+		});
+		
+		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
+		    String url = event.getValue();
+		    if (url != null && !url.isEmpty()) {
+		        this.getImgVideo().setSrc(url);
+		    } else {
+		    	this.getImgVideo().setSrc(""); // Limpia la imagen si el campo está vacío
+		    }
+		});
+		
 	}
 	
 	public Retweetear (VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado) {
+		
 		
 		_vertweetgeneralUsuarioRegistrado = vertweetgeneralUsuarioRegistrado; 
 		this.getButtonPublicar().addClickListener(event->Publicarretweet());
@@ -123,6 +149,24 @@ public class Retweetear extends CrearContenido {
 			
 		});
 		
+		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
+		    String url = event.getValue();
+		    if (url != null && !url.isEmpty()) {
+		        this.getImgImagen().setSrc(url);
+		    } else {
+		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
+		    }
+		});
+		
+		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
+		    String url = event.getValue();
+		    if (url != null && !url.isEmpty()) {
+		        this.getImgVideo().setSrc(url);
+		    } else {
+		    	this.getImgVideo().setSrc(""); // Limpia la imagen si el campo está vacío
+		    }
+		});
+		
 	}
 	
 	
@@ -133,10 +177,75 @@ public class Retweetear extends CrearContenido {
 
 	public void Publicarretweet() { //No se si es del todo correcto, he añadido solo el recargar a los MainView existentes (ademas de lo inicial claro)
 		
+		basededatos.Tweet t = null;
+		if(_mostrartweetspropiosUsuarioRegistrado!=null) t = _mostrartweetspropiosUsuarioRegistrado.t;
+		else t=_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t;
+		
+		boolean hecho=false;
+		
+		for(Contenido cont : Interfaz.ur.u.escribe.toArray()) {
+			if(cont instanceof Tweet) continue;
+			Tweet tweet = (Tweet)cont;
+			if(tweet.getRetweeteaA()!=null)
+				if(tweet.getRetweeteaA().getORMID()==t.getORMID()) {
+					hecho=true;
+					break;
+				}
+		}
+		
+		if (hecho && this.getTextFieldCampoTexto().isEmpty() && this.getTextFieldTextoVideo().isEmpty() && this.getTextFieldUrlFoto().isEmpty() ) {
+            Notification.show("Ya has hecho un retweet vacio de este tweet. Para uno nuevo rellena algún campo.");
+            return;
+        }
+		
 		String texto = this.getTextFieldCampoTexto().getValue();
 		String foto = this.getTextFieldUrlFoto().getValue();
 		String video = this.getTextFieldTextoVideo().getValue();
-		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Retweet(this._mostrartweetspropiosUsuarioRegistrado.t, texto, foto, video, Interfaz.ur.u);
+		
+		//Comprobamos que la foto lo sea realmente
+		if(!foto.isBlank()) {
+			try {
+		        URL url = new URL(foto);
+		        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		        connection.setRequestMethod("HEAD");
+		        connection.setConnectTimeout(3000);
+		        connection.setReadTimeout(3000);
+		        connection.connect();
+
+		        String contentType = connection.getContentType();
+		        if( contentType == null || !contentType.startsWith("image/")) {
+		        	Notification.show("Si se rellena el campo foto debe contener un enlace a una foto.");
+		            return;
+		        }
+		    } catch (Exception e) {
+		    	Notification.show("Si se rellena el campo foto debe contener un enlace a una foto.");
+	            return;
+		    }
+		}
+		
+		//Comprobamos que el video lo sea realmente
+				if(!video.isBlank()) {
+					try {
+				        URL url = new URL(video);
+				        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+				        connection.setRequestMethod("HEAD");
+				        connection.setConnectTimeout(3000);
+				        connection.setReadTimeout(3000);
+				        connection.connect();
+
+				        String contentType = connection.getContentType();
+				        if( contentType == null || !contentType.startsWith("video/")) {
+				        	Notification.show("Si se rellena el campo video debe contener un enlace a una video.");
+				            return;
+				        }
+				    } catch (Exception e) {
+				    	Notification.show("Si se rellena el campo video debe contener un enlace a una video.");
+			            return;
+				    }
+				}
+		
+		basededatos.UsuarioRegistrado ubd=Interfaz.ur._iUsuarioregistrado.Escribir_Retweet(t, texto, foto, video, Interfaz.ur.u);
+	
 		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		
 		 Pantalla.MainView.removeAll();

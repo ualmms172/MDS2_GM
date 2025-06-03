@@ -6,9 +6,12 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.UsuarioRegistradoDAO;
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
@@ -183,10 +186,17 @@ public class BanearUsuario extends VistaBanearusuario{
 	
 	public BanearUsuario Recargar(Administrador log) {
 		BanearUsuario vista = null;
+		basededatos.UsuarioRegistrado u = null;
 		if(this._listaUsuariosAdministrador!=null) {
 			ListaUsuariosAdministrador list = new ListaUsuariosAdministrador (_listaUsuariosAdministrador._listaUsuariosAdministrador._verListaCompletaUsuariosAdministrador.Recargar(log));
-			_listaUsuariosAdministrador._listaUsuariosAdministrador=list;
-			vista=new BanearUsuario(_listaUsuariosAdministrador);
+			try {
+				 u = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(_listaUsuariosAdministrador.u.getID());
+			} catch (PersistentException e) {
+				e.printStackTrace();
+			} 
+			ListaUsuariosAdministrador_item item = new ListaUsuariosAdministrador_item(list,u);
+			//_listaUsuariosAdministrador._listaUsuariosAdministrador=list;
+			vista=new BanearUsuario(item);
 		}
 		else {
 			vista= new BanearUsuario(this._verPerfilAdministrador.Recargar(log));

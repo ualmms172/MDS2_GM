@@ -1,9 +1,12 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.TweetDAO;
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
@@ -322,18 +325,26 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	public VerTweetAdministrador Recargar(Administrador log) {
 		VerTweetAdministrador vista = null;
 		ListaTweetsAdmin lt = _listaTweetsAdmin._listaTweetsAdmin;
+		basededatos.Tweet t = null;
+		try {
+			t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin.t.getORMID());
+		} catch (PersistentException e) {
+			e.printStackTrace(); 
+		}
+		
 		if(lt._verPerfilAdministrador!=null) {
 			lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
-			vista= new VerTweetAdministrador(_listaTweetsAdmin);
 		}
 		else if(lt._verHashtagAdministrador!=null) {
 			lt = new ListaTweetsAdmin(lt._verHashtagAdministrador.Recargar(log));
-			vista= new VerTweetAdministrador(_listaTweetsAdmin); 
 			}
 		else {
 			lt = new ListaTweetsAdmin(log);
-			new VerTweetAdministrador(_listaTweetsAdmin);
 		}
+		
+		ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
+		vista= new VerTweetAdministrador(item);
+		
 		return vista;
 	}
 }

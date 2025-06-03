@@ -1,9 +1,14 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.Contenido;
+import basededatos.Tweet;
+import basededatos.TweetDAO;
 import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
@@ -45,6 +50,8 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 		this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
 		this.getlabelRetweeteadoPor().setVisible(false);
 	
+		
+		
 		ComentariosUsuarioRegistrado();
 		this.getButtonComentar().addClickListener(event -> Comentar());
 		this.getButtonRetweet().addClickListener(event -> Retweetear());
@@ -240,41 +247,40 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	public VertweetgeneralUsuarioRegistrado Recargar(UsuarioRegistrado log) {
 	    VertweetgeneralUsuarioRegistrado vista = null;
 	    MostrartweetspropiosUsuarioRegistrado lt = this._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado;
+	    
+	    basededatos.Tweet t = null;
+		try {
+			t = TweetDAO.loadTweetByORMID(_mostrartweetspropiosUsuarioRegistrado.t.getORMID());
+		} catch (PersistentException e) {
+			e.printStackTrace(); 
+		}
 
 	    if (lt._verperfilgeneralUsuarioRegistrado != null) {
 	        lt = new MostrartweetspropiosUsuarioRegistrado(lt._verperfilgeneralUsuarioRegistrado.Recargar(log));
-	        _mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado = lt;
+	        
+	        //_mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado = lt;
 
-	        if (this instanceof Vertweetpropio) {
-	            vista = new Vertweetpropio(_mostrartweetspropiosUsuarioRegistrado);
-	        } else if (this instanceof Vertweetajeno) {
-	            vista = new Vertweetajeno(_mostrartweetspropiosUsuarioRegistrado);
-	        } else {
-	            vista = new VertweetgeneralUsuarioRegistrado(_mostrartweetspropiosUsuarioRegistrado);
-	        }
 	    } else if (lt._verHashtagUsuarioRegistrado != null) {
 	        lt = new MostrartweetspropiosUsuarioRegistrado(lt._verHashtagUsuarioRegistrado.Recargar(log));
-	        _mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado = lt;
+	        //_mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado = lt;
 
-	        if (this instanceof Vertweetpropio) {
-	            vista = new Vertweetpropio(_mostrartweetspropiosUsuarioRegistrado);
-	        } else if (this instanceof Vertweetajeno) {
-	            vista = new Vertweetajeno(_mostrartweetspropiosUsuarioRegistrado);
-	        } else {
-	            vista = new VertweetgeneralUsuarioRegistrado(_mostrartweetspropiosUsuarioRegistrado);
-	        }
+	       
 	    } else {
 	        lt = new MostrartweetspropiosUsuarioRegistrado(log);
-	        _mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado = lt;
+	        //_mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado = lt;
 
-	        if (this instanceof Vertweetpropio) {
-	            vista = new Vertweetpropio(_mostrartweetspropiosUsuarioRegistrado);
-	        } else if (this instanceof Vertweetajeno) {
-	            vista = new Vertweetajeno(_mostrartweetspropiosUsuarioRegistrado);
-	        } else {
-	            vista = new VertweetgeneralUsuarioRegistrado(_mostrartweetspropiosUsuarioRegistrado);
-	        }
+	        
 	    }
+	    
+	    MostrartweetspropiosUsuarioRegistrado_item item = new MostrartweetspropiosUsuarioRegistrado_item(lt,t);
+	    
+	    if (this instanceof Vertweetpropio) {
+            vista = new Vertweetpropio(item);
+        } else if (this instanceof Vertweetajeno) {
+            vista = new Vertweetajeno(item);
+        } else {
+            vista = new VertweetgeneralUsuarioRegistrado(item);
+        }
 
 	    return vista;
 	}

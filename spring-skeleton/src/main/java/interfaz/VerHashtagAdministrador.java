@@ -1,7 +1,12 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.HashtagDAO;
+import basededatos.TweetDAO;
+import basededatos.UsuarioRegistradoDAO;
 import gallardoMartinez.MainView.Pantalla;
 
 public class VerHashtagAdministrador extends VerHashtagGeneral {
@@ -148,31 +153,52 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 	
 	public VerHashtagAdministrador Recargar(Administrador log) {
 		VerHashtagAdministrador vista = null;
+		
 		if(this._listaHashtagsgeneralAdministrador!=null) {
+			basededatos.Hashtag h = null;
+			try {
+				h = HashtagDAO.loadHashtagByORMID(_listaHashtagsgeneralAdministrador.h.getId_hash());
+			} catch (PersistentException e) {
+				e.printStackTrace();
+			}
+			
 			if(this._listaHashtagsgeneralAdministrador instanceof ListaHashtagsFamososAdministrador_item) {
 				ListaHashtagsFamososAdministrador list = new ListaHashtagsFamososAdministrador(log);
-				((ListaHashtagsFamososAdministrador_item) _listaHashtagsgeneralAdministrador)._listaHashtagsFamososAdministrador =list;
-				vista = new VerHashtagAdministrador(_listaHashtagsgeneralAdministrador);
+				
+				ListaHashtagsFamososAdministrador_item item = new ListaHashtagsFamososAdministrador_item(list,h);
+				//((ListaHashtagsFamososAdministrador_item) _listaHashtagsgeneralAdministrador)._listaHashtagsFamososAdministrador =list;
+				vista = new VerHashtagAdministrador(item);
 			}
 			else {
 				ListaHashtagsAdministrador list = new ListaHashtagsAdministrador(((ListaHashtagsAdministrador_item) _listaHashtagsgeneralAdministrador)._listaHashtagsAdministrador._verlistaCompletaHashtagsAdmin.Recargar(log));
-				((ListaHashtagsAdministrador_item) _listaHashtagsgeneralAdministrador)._listaHashtagsAdministrador=list;
-				vista = new VerHashtagAdministrador(_listaHashtagsgeneralAdministrador);
+				ListaHashtagsFamososAdministrador_item item = new ListaHashtagsFamososAdministrador_item(list,h);
+				//((ListaHashtagsAdministrador_item) _listaHashtagsgeneralAdministrador)._listaHashtagsAdministrador=list;
+				vista = new VerHashtagAdministrador(item);
 			}
 		}
 		else if(this._listaTweetsAdmin_item!=null){
 			ListaTweetsAdmin lt = _listaTweetsAdmin_item._listaTweetsAdmin;
+			basededatos.Tweet t = null;
+			try {
+				t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin_item.t.getORMID());
+			} catch (PersistentException e) {
+				e.printStackTrace();//ESTO SIGNIFICA QUE EL TWEET SE HA BORRADO
+			}
+			
 			if(lt._verPerfilAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
-				vista= new VerHashtagAdministrador(_listaTweetsAdmin_item);
+				ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
+				vista= new VerHashtagAdministrador(item);
 			}
 			else if(lt._verHashtagAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verHashtagAdministrador.Recargar(log));
-				vista= new VerHashtagAdministrador(_listaTweetsAdmin_item); 
+				ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
+				vista= new VerHashtagAdministrador(item); 
 				}
 			else {
 				lt = new ListaTweetsAdmin(log);
-				vista =new VerHashtagAdministrador(_listaTweetsAdmin_item);
+				ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
+				vista =new VerHashtagAdministrador(item);
 			}
 		}
 		else {

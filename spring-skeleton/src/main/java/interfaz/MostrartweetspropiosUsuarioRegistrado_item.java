@@ -4,6 +4,7 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.Contenido;
 import basededatos.Tweet;
 import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
@@ -15,6 +16,7 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 		// TODO Auto-generated constructor stub
 		this.getButtonBorrar().setVisible(false);
 		this.getButtonMeGusta().setVisible(false);
+		
 		
 		this.getButtonRetweet().addClickListener(Event -> Retweetear());
 		this.getVaadinHorizontalLayout().addClickListener(Event -> VerTweetUsuarioRegistrado());
