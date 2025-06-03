@@ -56,6 +56,16 @@ public class Modificardatoscuenta extends VistaModificardatoscuenta {
 			
 		}); 
 		
+		this.getTextFieldFotoDePerfil().addValueChangeListener(event -> {
+		    String url = event.getValue();
+		    if (url != null && !url.isEmpty()) {
+		        this.getImgPerfil().setSrc(url);
+		    } else {
+		    	this.getImgPerfil().setSrc(""); // Limpia la imagen si el campo está vacío
+		    }
+		});
+		
+		
 	}
 	
 	

@@ -37,8 +37,16 @@ public class Registrar extends VistaRegistrar {
 			this._usuarioNoRegistrado.MainView.removeAll(); 
 			this._usuarioNoRegistrado.MainView.add(this._usuarioNoRegistrado); 
 			
-			
-				
+		});
+		
+
+		this.getTextFieldFotoDePerfil().addValueChangeListener(event -> {
+		    String url = event.getValue();
+		    if (url != null && !url.isEmpty()) {
+		        this.getImgPerfil().setSrc(url);
+		    } else {
+		    	this.getImgPerfil().setSrc(""); // Limpia la imagen si el campo está vacío
+		    }
 		});
 		
 		this.getButtonContinuar().addClickListener(event -> ValidarCorreo()); 

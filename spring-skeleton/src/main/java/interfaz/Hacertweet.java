@@ -26,6 +26,24 @@ public class Hacertweet extends CrearContenido {
 		    this._usuarioregistrado.MainView.add(_usuarioregistrado); 
 		}); 
 		
+		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
+		    String url = event.getValue();
+		    if (url != null && !url.isEmpty()) {
+		        this.getImgImagen().setSrc(url);
+		    } else {
+		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
+		    }
+		});
+		
+		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
+		    String url = event.getValue();
+		    if (url != null && !url.isEmpty()) {
+		        this.getImgVideo().setSrc(url);
+		    } else {
+		    	this.getImgVideo().setSrc(""); // Limpia la imagen si el campo está vacío
+		    }
+		});
+		
 	}
 	
 	
@@ -38,6 +56,24 @@ public class Hacertweet extends CrearContenido {
 			Pantalla.MainView.removeAll();
 			Pantalla.MainView.add(_listahashtagsUsuarioRegistrado._listahashtagsUsuarioRegistrado._verlistacompletahashtagUsuarioRegistrado);
 		}); 
+		
+		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
+		    String url = event.getValue();
+		    if (url != null && !url.isEmpty()) {
+		        this.getImgImagen().setSrc(url);
+		    } else {
+		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
+		    }
+		});
+		
+		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
+		    String url = event.getValue();
+		    if (url != null && !url.isEmpty()) {
+		        this.getImgVideo().setSrc(url);
+		    } else {
+		    	this.getImgVideo().setSrc(""); // Limpia la imagen si el campo está vacío
+		    }
+		});
 	}
 	
 	

@@ -44,6 +44,24 @@ public class Comentar extends CrearContenido {
 				
 		});
 		
+		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
+		    String url = event.getValue();
+		    if (url != null && !url.isEmpty()) {
+		        this.getImgImagen().setSrc(url);
+		    } else {
+		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
+		    }
+		});
+		
+		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
+		    String url = event.getValue();
+		    if (url != null && !url.isEmpty()) {
+		        this.getImgVideo().setSrc(url);
+		    } else {
+		    	this.getImgVideo().setSrc(""); // Limpia la imagen si el campo está vacío
+		    }
+		});
+		
 	}
 	
 	
