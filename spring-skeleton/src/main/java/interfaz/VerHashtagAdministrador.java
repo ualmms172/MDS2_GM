@@ -182,24 +182,27 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 			try {
 				t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin_item.t.getORMID());
 			} catch (PersistentException e) {
-				e.printStackTrace();//ESTO SIGNIFICA QUE EL TWEET SE HA BORRADO
+				_listaTweetsAdmin_item.eliminado=true;
 			}
 			
 			if(lt._verPerfilAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
-				ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
-				vista= new VerHashtagAdministrador(item);
 			}
 			else if(lt._verHashtagAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verHashtagAdministrador.Recargar(log));
-				ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
-				vista= new VerHashtagAdministrador(item); 
 				}
 			else {
 				lt = new ListaTweetsAdmin(log);
+			}
+			if(_listaTweetsAdmin_item.eliminado) {
+				_listaTweetsAdmin_item._listaTweetsAdmin=lt; //En caso de que el tweet original se haya eliminado usamos el mismo item para poder seguir haciendo las referencias a donde estemos
+				vista =new VerHashtagAdministrador(_listaTweetsAdmin_item);
+			}
+			else {
 				ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
 				vista =new VerHashtagAdministrador(item);
 			}
+			
 		}
 		else {
 			vista= new VerHashtagAdministrador(this._verTweetAdministrador.Recargar(log)); 

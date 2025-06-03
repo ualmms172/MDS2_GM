@@ -77,6 +77,8 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 	public VerPerfilAdministrador _verPerfilAdministrador;
 	
 	public VerHashtagAdministrador _verhashtagadministrador;
+	
+	public boolean eliminado =false;
 
 	public void BorrarTweet() {
 //		this._listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).remove(this);
