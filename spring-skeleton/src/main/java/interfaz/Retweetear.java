@@ -1,5 +1,9 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
+
+import basededatos.Contenido;
+import basededatos.Tweet;
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
@@ -71,6 +75,7 @@ public class Retweetear extends CrearContenido {
 	
 	public Retweetear (VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado) {
 		
+		
 		_vertweetgeneralUsuarioRegistrado = vertweetgeneralUsuarioRegistrado; 
 		this.getButtonPublicar().addClickListener(event->Publicarretweet());
 		this.getButtonAtras().addClickListener(event->{
@@ -133,10 +138,33 @@ public class Retweetear extends CrearContenido {
 
 	public void Publicarretweet() { //No se si es del todo correcto, he añadido solo el recargar a los MainView existentes (ademas de lo inicial claro)
 		
+		basededatos.Tweet t = null;
+		if(_mostrartweetspropiosUsuarioRegistrado!=null) t = _mostrartweetspropiosUsuarioRegistrado.t;
+		else t=_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t;
+		
+		boolean hecho=false;
+		
+		for(Contenido cont : Interfaz.ur.u.escribe.toArray()) {
+			if(cont instanceof Tweet) continue;
+			Tweet tweet = (Tweet)cont;
+			if(tweet.getRetweeteaA()!=null)
+				if(tweet.getRetweeteaA().getORMID()==t.getORMID()) {
+					hecho=true;
+					break;
+				}
+		}
+		
+		if (hecho && this.getTextFieldCampoTexto().isEmpty() && this.getTextFieldTextoVideo().isEmpty() && this.getTextFieldUrlFoto().isEmpty() ) {
+            Notification.show("Ya has hecho un retweet vacio de este tweet. Para uno nuevo rellena algún campo.");
+            return;
+        }
+		
 		String texto = this.getTextFieldCampoTexto().getValue();
 		String foto = this.getTextFieldUrlFoto().getValue();
 		String video = this.getTextFieldTextoVideo().getValue();
-		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Retweet(this._mostrartweetspropiosUsuarioRegistrado.t, texto, foto, video, Interfaz.ur.u);
+		
+		basededatos.UsuarioRegistrado ubd=Interfaz.ur._iUsuarioregistrado.Escribir_Retweet(t, texto, foto, video, Interfaz.ur.u);
+	
 		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		
 		 Pantalla.MainView.removeAll();

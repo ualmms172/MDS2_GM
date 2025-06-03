@@ -6,6 +6,8 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.Contenido;
+import basededatos.Tweet;
 import basededatos.TweetDAO;
 import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
@@ -48,6 +50,8 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 		this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
 		this.getlabelRetweeteadoPor().setVisible(false);
 	
+		
+		
 		ComentariosUsuarioRegistrado();
 		this.getButtonComentar().addClickListener(event -> Comentar());
 		this.getButtonRetweet().addClickListener(event -> Retweetear());
