@@ -1,5 +1,6 @@
 package interfaz;
 
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaIniciarsesin;
 
@@ -44,7 +45,21 @@ public class IniciarSesin extends VistaIniciarsesin {
 	}
 
 	public void Recuperarlacontrasea() {
-		throw new UnsupportedOperationException();
+		if(this.getTextFieldCorreo().isEmpty()) {
+			Notification.show("Introduce el nick ");
+			return;
+		}
+		String nick = this.getTextFieldCorreo().getValue();
+		basededatos.UsuarioRegistrado user= Interfaz.nr._iUsuarioNoRegistrado.BuscarUsuario(nick);
+		
+		if(user==null){
+			Notification.show("Usuario no existente ");
+			return;
+		}
+		
+		String password = user.getContrasena();
+		
+		//Aqui ya haces que se envie esa contraseña.
 	}
 
 	public void IniciarsesinconGoogle() {
