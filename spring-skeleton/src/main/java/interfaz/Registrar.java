@@ -21,8 +21,8 @@ public class Registrar extends VistaRegistrar {
 	public ValidarCorreo _validarCorreo;
 	private String codigoGenerado;
 
-	private final String remitente = "antoniogg0045@gmail.com"; 
-	private final String clave = "xfurqhhkhuvrzlmp";
+	private final String remitente = "twitternoreplymds2@gmail.com"; 
+	private final String clave = "hxemxtbijkmzmebb";
 
 	public Registrar(UsuarioNoRegistrado usuarioNoRegistrado) {
 		_usuarioNoRegistrado = usuarioNoRegistrado;
@@ -68,7 +68,8 @@ public class Registrar extends VistaRegistrar {
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(vista);
 	}
-
+	
+	
 	private void enviarCodigoPorCorreo(String destino, String codigo) {
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
@@ -86,15 +87,45 @@ public class Registrar extends VistaRegistrar {
 			System.out.println("Enviando mensaje a: " + destino);
 
 			Message mensaje = new MimeMessage(sesion);
-			mensaje.setFrom(new InternetAddress(remitente));
+			mensaje.setFrom(new InternetAddress(remitente, "Twitter")); 
 			mensaje.setRecipients(Message.RecipientType.TO, InternetAddress.parse(destino));
-			mensaje.setSubject("Código de verificación");
-			mensaje.setText("Tu código de verificación es: " + codigo);
+			mensaje.setSubject("Verificación de cuenta - Twitter");
+
+			String contenidoHtml =
+				"<html>" +
+				"<body style=\"margin:0; padding:0; font-family:Arial, sans-serif; background-color:#f4f4f4;\">" +
+				"  <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding: 40px 0;\">" +
+				"    <tr><td align=\"center\">" +
+				"      <table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#ffffff; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.1);\">" +
+				"        <tr style=\"background-color:#1DA1F2;\">" +
+				"          <td style=\"padding: 20px; text-align:center;\">" +
+				"            <h1 style=\"color:#fff; margin:0; font-size:24px;\">Twitter</h1>" +
+				"          </td>" +
+				"        </tr>" +
+				"        <tr><td style=\"padding: 30px; color:#333;\">" +
+				"          <h2 style=\"color:#1DA1F2;\">¡Verifica tu cuenta!</h2>" +
+				"          <p>Gracias por unirte a nuestra comunidad. Para completar tu registro, introduce el siguiente código:</p>" +
+				"          <div style=\"margin: 30px 0; text-align: center;\">" +
+				"            <span style=\"font-size: 36px; font-weight: bold; color:#1DA1F2;\">" + codigo + "</span>" +
+				"          </div>" +
+				"          <p>Tenga un buen día.</p>" +
+				"          <p style=\"margin-top:30px;\">Si no has solicitado este registro, puedes ignorar este correo.</p>" +
+				"        </td></tr>" +
+				"        <tr><td style=\"background:#f4f4f4; text-align:center; padding:20px; color:#999;\">" +
+				"          <small>© 2025 Twitter. Todos los derechos reservados.<br>No respondas a este mensaje. Es un correo automático.</small>" +
+				"        </td></tr>" +
+				"      </table>" +
+				"    </td></tr>" +
+				"  </table>" +
+				"</body>" +
+				"</html>";
+
+			mensaje.setContent(contenidoHtml, "text/html; charset=utf-8");
 
 			Transport.send(mensaje);
 			System.out.println("Correo enviado correctamente.");
 			Notification.show("Se ha enviado el código al correo.");
-		} catch (MessagingException e) {
+		} catch (Exception e) {
 			System.out.println("Error al enviar el correo: " + e.getMessage());
 			e.printStackTrace();
 			Notification.show("Error al enviar el correo.");
