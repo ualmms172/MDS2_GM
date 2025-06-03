@@ -313,6 +313,7 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	}
 
 
+
 //	public UsuarioRegistrado get_Usuarioregistrado() {
 //
 //		return null; 

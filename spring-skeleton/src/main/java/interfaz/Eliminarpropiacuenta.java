@@ -64,8 +64,13 @@ public class Eliminarpropiacuenta extends VistaEliminarpropiacuenta  {
 
 	public void Eliminacuenta() {
 		
-		
-		
+		//Si no se indica ningun motivo entonces no se hace ningun correo
+		if(!this.getTextFieldMotivo().isEmpty()) {
+			String motivo = this.getTextFieldMotivo().getValue();
+			String userName = Interfaz.ur.u.getNick();
+			
+			//Indicar que "userName" ha eliminado su cuenta indicando este motivo: "motivo" (O algo así)
+		}
 		
 		
 //		    MainView usuario = _verperfilpropio._usuarioregistrado.MainView; 
