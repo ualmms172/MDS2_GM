@@ -299,22 +299,24 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 			try {
 				t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin_item.t.getORMID());
 			} catch (PersistentException e) {
-				e.printStackTrace(); //ESTO SIGNIFICA QUE EL TWEET SE HA BORRADO
+				_listaTweetsAdmin_item.eliminado=true; //ESTO SIGNIFICA QUE EL TWEET SE HA BORRADO
 			}
 			if(lt._verPerfilAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
-				ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
-				vista= new VerPerfilAdministrador(item,mencion);
 			}
 			else if(lt._verHashtagAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verHashtagAdministrador.Recargar(log));
-				ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
-				vista= new VerPerfilAdministrador(item,mencion); 
 				}
 			else {
 				lt = new ListaTweetsAdmin(log);
+			}
+			if(_listaTweetsAdmin_item.eliminado) {
+				_listaTweetsAdmin_item._listaTweetsAdmin=lt;
+				vista = new VerPerfilAdministrador(_listaTweetsAdmin_item,mencion);
+			}
+			else{
 				ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
-				new VerPerfilAdministrador(item,mencion);
+				vista = new VerPerfilAdministrador(item,mencion);
 			}
 		}
 		else if(this._verTweetAdministrador!=null){
