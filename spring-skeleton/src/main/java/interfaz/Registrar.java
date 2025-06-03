@@ -121,7 +121,7 @@ public class Registrar extends VistaRegistrar {
 		vista.datos[2] = correo;
 		vista.datos[3] = descripcion;
 		vista.datos[4] = fotoFondo;
-		vista.datos[5] = fotoPerfil;
+		vista.datos[5] = !fotoPerfil.isBlank()?fotoPerfil:"https://images.icon-icons.com/2367/PNG/512/user_icon_143482.png";
 		
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
