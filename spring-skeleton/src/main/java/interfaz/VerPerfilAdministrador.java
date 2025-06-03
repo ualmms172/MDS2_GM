@@ -1,7 +1,13 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.ComentarioDAO;
+import basededatos.HashtagDAO;
+import basededatos.TweetDAO;
+import basededatos.UsuarioRegistradoDAO;
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Pantalla;
 
@@ -268,30 +274,47 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	public VerPerfilAdministrador Recargar(Administrador log) {
 		VerPerfilAdministrador vista = null;
 		if(this._listaUsuariosGeneralAdministrador!=null) {
+			basededatos.UsuarioRegistrado u = null;
+			try {
+				u = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(_listaUsuariosGeneralAdministrador.u.getID());
+			} catch (PersistentException e) {
+				e.printStackTrace();
+			}
 			if(this._listaUsuariosGeneralAdministrador instanceof ListaUsuariosFamososAdministrador_item) {
 				ListaUsuariosFamososAdministrador list = new ListaUsuariosFamososAdministrador(log);
-				((ListaUsuariosFamososAdministrador_item) _listaUsuariosGeneralAdministrador)._listaUsuariosFamososAdministrador =list;
-				vista = new VerPerfilAdministrador(_listaUsuariosGeneralAdministrador);
+				ListaUsuariosFamososAdministrador_item item = new ListaUsuariosFamososAdministrador_item(list,u);
+				//((ListaUsuariosFamososAdministrador_item) _listaUsuariosGeneralAdministrador)._listaUsuariosFamososAdministrador =list;
+				vista = new VerPerfilAdministrador(item);
 			}
 			else {
 				ListaUsuariosAdministrador list = new ListaUsuariosAdministrador(((ListaUsuariosAdministrador_item) _listaUsuariosGeneralAdministrador)._listaUsuariosAdministrador._verListaCompletaUsuariosAdministrador.Recargar(log));
-				((ListaUsuariosAdministrador_item) _listaUsuariosGeneralAdministrador)._listaUsuariosAdministrador=list;
-				vista = new VerPerfilAdministrador(_listaUsuariosGeneralAdministrador);
+				ListaUsuariosAdministrador_item item = new ListaUsuariosAdministrador_item(list,u);
+				//((ListaUsuariosAdministrador_item) _listaUsuariosGeneralAdministrador)._listaUsuariosAdministrador=list;
+				vista = new VerPerfilAdministrador(item);
 			}
 		}
 		else if(this._listaTweetsAdmin_item!=null){
 			ListaTweetsAdmin lt = _listaTweetsAdmin_item._listaTweetsAdmin;
+			basededatos.Tweet t = null;
+			try {
+				t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin_item.t.getORMID());
+			} catch (PersistentException e) {
+				e.printStackTrace(); //ESTO SIGNIFICA QUE EL TWEET SE HA BORRADO
+			}
 			if(lt._verPerfilAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
-				vista= new VerPerfilAdministrador(_listaTweetsAdmin_item,mencion);
+				ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
+				vista= new VerPerfilAdministrador(item,mencion);
 			}
 			else if(lt._verHashtagAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verHashtagAdministrador.Recargar(log));
-				vista= new VerPerfilAdministrador(_listaTweetsAdmin_item,mencion); 
+				ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
+				vista= new VerPerfilAdministrador(item,mencion); 
 				}
 			else {
 				lt = new ListaTweetsAdmin(log);
-				new VerPerfilAdministrador(_listaTweetsAdmin_item,mencion);
+				ListaTweetsAdmin_item item = new ListaTweetsAdmin_item(lt,t);
+				new VerPerfilAdministrador(item,mencion);
 			}
 		}
 		else if(this._verTweetAdministrador!=null){
@@ -299,8 +322,15 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		}
 		else {
 			ListaComentariosAdministrador lt = this._listaComentariosAdministrador._listaComentariosAdministrador;
+			basededatos.Comentario c = null;
+			try {
+				c = ComentarioDAO.loadComentarioByORMID(_listaComentariosAdministrador.c.getORMID());
+			} catch (PersistentException e) {
+				e.printStackTrace(); //ESTO SIGNIFICA QUE EL COMENTARIO SE HA BORRADO
+			}
 			lt = new ListaComentariosAdministrador(lt._verTweetAdministrador.Recargar(log));
-			vista= new VerPerfilAdministrador(_listaComentariosAdministrador);
+			ListaComentariosAdministrador_item item = new ListaComentariosAdministrador_item(lt,c);
+			vista= new VerPerfilAdministrador(item);
 		}
 		return vista;
 	}
