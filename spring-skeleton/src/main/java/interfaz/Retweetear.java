@@ -1,5 +1,8 @@
 package interfaz;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import com.vaadin.flow.component.notification.Notification;
 
 import basededatos.Contenido;
@@ -162,6 +165,48 @@ public class Retweetear extends CrearContenido {
 		String texto = this.getTextFieldCampoTexto().getValue();
 		String foto = this.getTextFieldUrlFoto().getValue();
 		String video = this.getTextFieldTextoVideo().getValue();
+		
+		//Comprobamos que la foto lo sea realmente
+		if(!foto.isBlank()) {
+			try {
+		        URL url = new URL(foto);
+		        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		        connection.setRequestMethod("HEAD");
+		        connection.setConnectTimeout(3000);
+		        connection.setReadTimeout(3000);
+		        connection.connect();
+
+		        String contentType = connection.getContentType();
+		        if( contentType == null || !contentType.startsWith("image/")) {
+		        	Notification.show("Si se rellena el campo foto debe contener un enlace a una foto.");
+		            return;
+		        }
+		    } catch (Exception e) {
+		    	Notification.show("Si se rellena el campo foto debe contener un enlace a una foto.");
+	            return;
+		    }
+		}
+		
+		//Comprobamos que el video lo sea realmente
+				if(!video.isBlank()) {
+					try {
+				        URL url = new URL(video);
+				        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+				        connection.setRequestMethod("HEAD");
+				        connection.setConnectTimeout(3000);
+				        connection.setReadTimeout(3000);
+				        connection.connect();
+
+				        String contentType = connection.getContentType();
+				        if( contentType == null || !contentType.startsWith("video/")) {
+				        	Notification.show("Si se rellena el campo video debe contener un enlace a una video.");
+				            return;
+				        }
+				    } catch (Exception e) {
+				    	Notification.show("Si se rellena el campo video debe contener un enlace a una video.");
+			            return;
+				    }
+				}
 		
 		basededatos.UsuarioRegistrado ubd=Interfaz.ur._iUsuarioregistrado.Escribir_Retweet(t, texto, foto, video, Interfaz.ur.u);
 	
