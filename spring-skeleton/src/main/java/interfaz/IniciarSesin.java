@@ -4,6 +4,18 @@ import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaIniciarsesin;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.stream.Collectors;
+
+import org.json.JSONObject;
+
+import com.vaadin.flow.component.ClientCallable;
 import com.vaadin.flow.component.notification.Notification;
 
 import gallardoMartinez.MainView;
@@ -36,7 +48,7 @@ public class IniciarSesin extends VistaIniciarsesin {
 		});
 		
 		this.getButtonContinuar().addClickListener(event -> Autentificarse()); 
-		
+		this.getButtonIniciarSesionConGoogle().addClickListener(event -> IniciarsesinconGoogle());
 		}
 	
 		
@@ -63,8 +75,114 @@ public class IniciarSesin extends VistaIniciarsesin {
 	}
 
 	public void IniciarsesinconGoogle() {
-		throw new UnsupportedOperationException();
+	    String clientId = "642402904207-ond1hkr3i2i5cte87rk0ghakli6dgdm1.apps.googleusercontent.com";
+	    String clientSecret = "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";
+	    String redirectUri = "http://localhost:8081/oauth2callback"; // asegúrate de registrar esta URL en Google
+
+	    // 1. Construir URL de autenticación
+	    String authUrl = "https://accounts.google.com/o/oauth2/v2/auth"
+	        + "?scope=openid%20email%20profile"
+	        + "&access_type=online"
+	        + "&response_type=code"
+	        + "&client_id=" + clientId
+	        + "&redirect_uri=" + redirectUri;
+
+	    // 2. Abrir la ventana de autenticación
+	    getUI().ifPresent(ui -> {
+	        ui.getPage().executeJs(""
+	            + "const popup = window.open($0, '_blank', 'width=500,height=600');"
+	            + "const interval = setInterval(async () => {"
+	            + "  try {"
+	            + "    if (popup.location.href.startsWith($1)) {"
+	            + "      const url = new URL(popup.location.href);"
+	            + "      const code = url.searchParams.get('code');"
+	            + "      window.clearInterval(interval);"
+	            + "      popup.close();"
+	            + "      $2.$server.handleGoogleCode(code);"
+	            + "    }"
+	            + "  } catch (e) {}"
+	            + "}, 1000);",
+	            authUrl, redirectUri, getElement());
+	    });
 	}
+	
+	
+	@ClientCallable
+	public void handleGoogleCode(String code) {
+	    try {
+	        String clientId = "642402904207-ond1hkr3i2i5cte87rk0ghakli6dgdm1.apps.googleusercontent.com";
+	        String clientSecret = "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";
+	        String redirectUri = "http://localhost:8081/oauth2callback";
+
+	        // 1. Intercambiar el código por un access_token
+	        String tokenEndpoint = "https://oauth2.googleapis.com/token";
+	        String params = "code=" + URLEncoder.encode(code, StandardCharsets.UTF_8)
+	                + "&client_id=" + URLEncoder.encode(clientId, StandardCharsets.UTF_8)
+	                + "&client_secret=" + URLEncoder.encode(clientSecret, StandardCharsets.UTF_8)
+	                + "&redirect_uri=" + URLEncoder.encode(redirectUri, StandardCharsets.UTF_8)
+	                + "&grant_type=authorization_code";
+
+	        URL url = new URL(tokenEndpoint);
+	        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+	        conn.setRequestMethod("POST");
+	        conn.setDoOutput(true);
+	        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+
+	        try (OutputStream os = conn.getOutputStream()) {
+	            os.write(params.getBytes(StandardCharsets.UTF_8));
+	        }
+
+	        int responseCode = conn.getResponseCode();
+	        InputStreamReader streamReader = (responseCode == 200) ?
+	                new InputStreamReader(conn.getInputStream()) :
+	                new InputStreamReader(conn.getErrorStream());
+
+	        BufferedReader in = new BufferedReader(streamReader);
+	        String response = in.lines().collect(Collectors.joining());
+	        in.close();
+
+	        if (responseCode != 200) {
+	            System.err.println("Error al intercambiar el código: " + response);
+	            Notification.show("Error al autenticar con Google.");
+	            return;
+	        }
+
+	        String accessToken = new JSONObject(response).getString("access_token");
+
+	        // 2. Obtener datos del usuario
+	        URL userInfoUrl = new URL("https://www.googleapis.com/oauth2/v2/userinfo");
+	        HttpURLConnection userConn = (HttpURLConnection) userInfoUrl.openConnection();
+	        userConn.setRequestProperty("Authorization", "Bearer " + accessToken);
+
+	        BufferedReader reader = new BufferedReader(new InputStreamReader(userConn.getInputStream()));
+	        String userInfo = reader.lines().collect(Collectors.joining());
+	        reader.close();
+
+	        JSONObject userJson = new JSONObject(userInfo);
+	        String email = userJson.getString("email");
+	        String name = userJson.optString("name");
+
+	        // 3. Autenticar al usuario
+	        basededatos.UsuarioRegistrado user = this._usuarioNoRegistrado._iUsuarioNoRegistrado.BuscarUsuarioCorreo(email);
+	        if (user == null) {
+	            Notification.show("No se ha podido iniciar sesión. Debe registrarse.");
+	        } else {
+	            basededatos.Logueado log = user;
+	            this._usuarioNoRegistrado.MainView.removeAll();
+	            UsuarioRegistrado u = new UsuarioRegistrado((MainView) Pantalla.MainView, (basededatos.UsuarioRegistrado) log);
+	            this._usuarioNoRegistrado.MainView.add(u);
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        Notification.show("Error durante el inicio de sesión con Google.");
+	    }
+	}
+
+
+	
+	
+	
 
 	public void Autentificarse() {
 		
