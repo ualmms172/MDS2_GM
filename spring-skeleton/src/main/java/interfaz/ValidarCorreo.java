@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
@@ -29,6 +31,9 @@ public class ValidarCorreo extends VistaValidarcorreo{
 	
 	
 	public void Registrarse() {
+		
+		
+		if (this.getTextFieldCuenta().getValue().equals(_registrar.getCodigoGenerado())) {
 
 		basededatos.UsuarioRegistrado ubd = Interfaz.nr._iUsuarioNoRegistrado.Registrar_Usuario(datos[0], datos[3], datos[5], datos[4], datos[1],datos[2]);
 		
@@ -36,6 +41,14 @@ public class ValidarCorreo extends VistaValidarcorreo{
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(vista);
+		}
+		else {
+			
+			Notification.show("El código de verificación es incorrecto. Por favor, inténtelo de nuevo o vuelva atrás");
+			
+		}
+		
+		
 	}
 	
 	
