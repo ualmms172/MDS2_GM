@@ -51,7 +51,7 @@ public class Registrar extends VistaRegistrar {
 			return;
 		}
 
-		codigoGenerado = String.valueOf((int) (Math.random() * 900000 + 100000));
+		this.codigoGenerado = String.valueOf((int) (Math.random() * 900000 + 100000));
 		enviarCodigoPorCorreo(correo, codigoGenerado);
 
 		ValidarCorreo vista = new ValidarCorreo(this);
