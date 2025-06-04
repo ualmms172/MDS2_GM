@@ -32,7 +32,7 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 	public VerHashtagUsuarioNoRegistrado(Listatweets_item listatweets_item) {
 		
 		_listatweets_item = listatweets_item;
-		this.getLabelHashtag().setText(_listahashtagsgeneralUsuarioNoRegistrado.h.getTitulo());
+		this.getLabelHashtag().setText(listatweets_item.t.getContiene().getTitulo());
 		
 		Listatweets();
 		
@@ -123,7 +123,7 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 	public VerHashtagUsuarioNoRegistrado(VertweetUsuarioNoRegistrado vertweetUsuarioNoRegistrado) {
 		
 		_vertweetUsuarioNoRegistrado = vertweetUsuarioNoRegistrado;
-		this.getLabelHashtag().setText(_listahashtagsgeneralUsuarioNoRegistrado.h.getTitulo());
+		this.getLabelHashtag().setText(_vertweetUsuarioNoRegistrado._listatweets.t.getContiene().getTitulo());
 		
 		Listatweets();
 		

@@ -21,50 +21,53 @@ public class Listatweets_item extends ListaTweetsGeneral_item {
 		this.getImgFotoPerfilTweet().addClickListener(event -> VerperfilUsuarioNoRegistrado(false));
 		
 		Label labelOriginal = this.getLabelCuerpoTwet();
-		if(t.getMencionaA()!=null) {
-			Span[] mencion = this.Mencion();
+
+		Span[] mencion=null;
+		if (t.getMencionaA() != null) {
+		    mencion = this.Mencion();
 		    Span nuevoSpan = new Span();
 
-		    // Copiar estilos visuales si el Label tiene alguno
-		    nuevoSpan.getStyle().set("font-family", labelOriginal.getStyle().get("font-family"));
-		    nuevoSpan.getStyle().set("font-size", labelOriginal.getStyle().get("font-size"));
-		    nuevoSpan.getStyle().set("font-weight", labelOriginal.getStyle().get("font-weight"));
-		    nuevoSpan.getStyle().set("color", labelOriginal.getStyle().get("color"));
-		    nuevoSpan.getStyle().set("display", "inline");
-		    
+		    copiarEstilos(labelOriginal, nuevoSpan);
+
 		    mencion[1].getStyle().set("color", "blue");
 		    mencion[1].getStyle().set("cursor", "pointer");
-		    mencion[1].getElement().addEventListener("click", e -> {
-		    	 VerperfilUsuarioNoRegistrado(true);
-		    });
-		    
+		    mencion[1].getElement().addEventListener("click", e -> VerperfilUsuarioNoRegistrado(true));
+
 		    nuevoSpan.add(mencion[0], mencion[1], mencion[2]);
-		    
+
 		    this.getHorizontalLayoutCuerpoTweet().removeAll();
 		    this.getHorizontalLayoutCuerpoTweet().add(nuevoSpan);
-		    
 		}
-		if(t.getContiene()!=null) {
-			
-			Span[] hashtag = this.Hashtag();
-		    Span nuevoSpan = new Span();
+
+		if (t.getContiene() != null) {
+		    Span[] hashtag = this.Hashtag(mencion);
 		    
-		    nuevoSpan.getStyle().set("font-family", labelOriginal.getStyle().get("font-family"));
-		    nuevoSpan.getStyle().set("font-size", labelOriginal.getStyle().get("font-size"));
-		    nuevoSpan.getStyle().set("font-weight", labelOriginal.getStyle().get("font-weight"));
-		    nuevoSpan.getStyle().set("color", labelOriginal.getStyle().get("color"));
-		    nuevoSpan.getStyle().set("display", "inline");
-		    
-		    hashtag[1].getStyle().set("color", "blue");
-		    hashtag[1].getStyle().set("cursor", "pointer");
-		    hashtag[1].getElement().addEventListener("click", e -> {
-		    	 this.VerHashtagUsuarioNoRegistrado();
-		    });
-		    
-		    nuevoSpan.add(hashtag[0], hashtag[1], hashtag[2]);
-		    
-		    this.getHorizontalLayoutCuerpoTweet().removeAll();
-		    this.getHorizontalLayoutCuerpoTweet().add(nuevoSpan);
+		    if (hashtag != null) {
+		        Span nuevoSpan = new Span();
+		        copiarEstilos(labelOriginal, nuevoSpan);
+
+		        // Recorremos todos los spans para aplicar estilos y listeners al hashtag y mención
+		        for (Span span : hashtag) {
+		            String texto = span.getText();
+		            if (texto.startsWith("#")) {
+		                span.getStyle().set("color", "blue");
+		                span.getStyle().set("cursor", "pointer");
+		                span.getElement().addEventListener("click", e -> VerHashtagUsuarioNoRegistrado());
+		            }
+		            // Si tienes una mención y quieres aplicar estilos aquí también:
+		            else if (texto.startsWith("@")) {
+		                span.getStyle().set("color", "blue");
+		                span.getStyle().set("cursor", "pointer");
+		                span.getElement().addEventListener("click", e -> VerperfilUsuarioNoRegistrado(true));
+		            }
+		        }
+
+		        // Añadimos todos los spans en orden
+		        nuevoSpan.add(hashtag);
+
+		        this.getHorizontalLayoutCuerpoTweet().removeAll();
+		        this.getHorizontalLayoutCuerpoTweet().add(nuevoSpan);
+		    }
 		}
 	}
 

@@ -41,7 +41,7 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 	
 	public VerHashtagAdministrador(ListaTweetsAdmin_item listaTweetsAdmin_item) {
 		_listaTweetsAdmin_item = listaTweetsAdmin_item;
-		this.getLabelHashtag().setText(_listaHashtagsgeneralAdministrador.h.getTitulo());
+		this.getLabelHashtag().setText(_listaTweetsAdmin_item.t.getContiene().getTitulo());
 		ListaTweetsAdmin();
 		
 		this.getButtonAtras().addClickListener(event -> {
@@ -132,7 +132,7 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 	
 	public VerHashtagAdministrador(VerTweetAdministrador verTweetAdministrador) {
 		_verTweetAdministrador = verTweetAdministrador;
-		this.getLabelHashtag().setText(_listaHashtagsgeneralAdministrador.h.getTitulo());
+		this.getLabelHashtag().setText(_verTweetAdministrador._listaTweetsAdmin.t.getContiene().getTitulo());
 		ListaTweetsAdmin();
 		
 		this.getButtonAtras().addClickListener(event -> {

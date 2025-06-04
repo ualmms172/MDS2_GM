@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.AttachEvent;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import gallardoMartinez.MainView.Pantalla;
@@ -37,4 +39,14 @@ public class VerlistacompletausuariosUsuarioRegistrado extends VistaVerlistacomp
 	public VerlistacompletausuariosUsuarioRegistrado Recargar(UsuarioRegistrado log) {
 		return new VerlistacompletausuariosUsuarioRegistrado(log);
 	}
+	
+	@Override
+	protected void onAttach(AttachEvent attachEvent) {
+	    super.onAttach(attachEvent);
+	    
+	    UI.getCurrent().getPage().executeJs(
+	        "document.addEventListener('click', function(e) { e.stopPropagation(); }, true);"
+	    );
+	}
+
 }

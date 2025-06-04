@@ -1,8 +1,14 @@
 package interfaz;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.notification.Notification;
 
 import vistas.VistaVertweetgeneral;
 
@@ -32,57 +38,72 @@ public class VertweetGeneral extends VistaVertweetgeneral {
 				else 
 					this.getDivTweet().setText(multimedia.getUrl());
 			}
-		
+		/*
 			if(item.t.getMencionaA()!=null) 
 				Mencion();
 		
 			if(item.t.getContiene()!=null)
 				Hashtag();
+				*/
 		
 	}
 	
 public Span[] Mencion() {
 		
-		Label labelOriginal = this.getLabelCuerpoTwet();
-	    String texto = labelOriginal.getText();
+		String texto = this.getLabelCuerpoTwet().getText();
+	    String[] partes = texto.split("@\\w+");
 
-	    int indexAt = texto.indexOf('@');
-	    int indexEspacio = texto.indexOf(' ', indexAt);
-	    if (indexEspacio == -1) {
-	        indexEspacio = texto.length();
-	    }
+	    // Extrae el nombre mencionado usando expresión regular
+	    Pattern pattern = Pattern.compile("@\\w+");
+	    Matcher matcher = pattern.matcher(texto);
+	    String mencion = matcher.find() ? matcher.group() : "";
 
-	    String antes = texto.substring(0, indexAt);
-	    String mencion = texto.substring(indexAt, indexEspacio);
-	    String despues = texto.substring(indexEspacio);
-
-//	    // Crear el nuevo Span que reemplazará visualmente al Label
-//	    Span nuevoSpan = new Span();
-
-	    // Copiar estilos visuales si el Label tiene alguno
-//	    nuevoSpan.getStyle().set("font-family", labelOriginal.getStyle().get("font-family"));
-//	    nuevoSpan.getStyle().set("font-size", labelOriginal.getStyle().get("font-size"));
-//	    nuevoSpan.getStyle().set("font-weight", labelOriginal.getStyle().get("font-weight"));
-//	    nuevoSpan.getStyle().set("color", labelOriginal.getStyle().get("color"));
-//	    nuevoSpan.getStyle().set("display", "inline");
-
-	    // Construir el texto con partes
-	    Span spanAntes = new Span(antes);
+	    Span spanAntes = new Span(partes.length > 0 ? partes[0] : "");
 	    Span spanMencion = new Span(mencion);
-	    spanMencion.getStyle().set("color", "blue");
-	    spanMencion.getStyle().set("cursor", "pointer");
-//	    spanMencion.getElement().addEventListener("click", e -> {
-//	        System.out.println("Click en mención: " + mencion);
-//	        // Puedes usar UI.getCurrent().navigate(...) si quieres navegar
-//	    });
-	    Span spanDespues = new Span(despues);
-	    
-	    Span[] result = new Span[3];
-	    result[1] = spanAntes;
-	    result[2] = spanMencion;
-	    result[3] = spanDespues;
-	    
-	    return result;
+	    Span spanDespues = new Span(partes.length > 1 ? partes[1] : "");
+
+	    return new Span[] { spanAntes, spanMencion, spanDespues };
+//		
+//		Label labelOriginal = this.getLabelCuerpoTwet();
+//	    String texto = labelOriginal.getText();
+//
+//	    int indexAt = texto.indexOf('@');
+//	    int indexEspacio = texto.indexOf(' ', indexAt);
+//	    if (indexEspacio == -1) {
+//	        indexEspacio = texto.length();
+//	    }
+//
+//	    String antes = texto.substring(0, indexAt);
+//	    String mencion = texto.substring(indexAt, indexEspacio);
+//	    String despues = texto.substring(indexEspacio);
+//
+////	    // Crear el nuevo Span que reemplazará visualmente al Label
+////	    Span nuevoSpan = new Span();
+//
+//	    // Copiar estilos visuales si el Label tiene alguno
+////	    nuevoSpan.getStyle().set("font-family", labelOriginal.getStyle().get("font-family"));
+////	    nuevoSpan.getStyle().set("font-size", labelOriginal.getStyle().get("font-size"));
+////	    nuevoSpan.getStyle().set("font-weight", labelOriginal.getStyle().get("font-weight"));
+////	    nuevoSpan.getStyle().set("color", labelOriginal.getStyle().get("color"));
+////	    nuevoSpan.getStyle().set("display", "inline");
+//
+//	    // Construir el texto con partes
+//	    Span spanAntes = new Span(antes);
+//	    Span spanMencion = new Span(mencion);
+//	    spanMencion.getStyle().set("color", "blue");
+//	    spanMencion.getStyle().set("cursor", "pointer");
+////	    spanMencion.getElement().addEventListener("click", e -> {
+////	        System.out.println("Click en mención: " + mencion);
+////	        // Puedes usar UI.getCurrent().navigate(...) si quieres navegar
+////	    });
+//	    Span spanDespues = new Span(despues);
+//	    
+//	    Span[] result = new Span[3];
+//	    result[1] = spanAntes;
+//	    result[2] = spanMencion;
+//	    result[3] = spanDespues;
+//	    
+//	    return result;
 
 //	    nuevoSpan.add(spanAntes, spanMencion, spanDespues);
 
@@ -91,58 +112,89 @@ public Span[] Mencion() {
 //	    this.getHorizontalLayoutCuerpoTweet().add(nuevoSpan);
 	}
 	
-	public Span[] Hashtag() {
-	    Component contenido = this.getHorizontalLayoutCuerpoTweet().getComponentAt(0);
+	public Span[] Hashtag(Span[] mencion) {
+		Pattern patternHashtag = Pattern.compile("#\\w+");
 
-	    String texto;
-	    if (contenido instanceof Label) {
-	        texto = ((Label) contenido).getText();
-	    } else if (contenido instanceof Span) {
-	        texto = ((Span) contenido).getText(); // Recupera el texto combinado del span
-	    } else {
-	        return null; // No es ni Label ni Span, salimos
-	    }
+		if (mencion == null) {
+			// Caso sin mención previa: partir texto del Label original por hashtag
+			String texto = this.getLabelCuerpoTwet().getText();
+			String[] partes = texto.split("#\\w+");
 
-	    int indexHash = texto.indexOf('#');
-	    if (indexHash == -1) {
-	        return null; // No hay hashtag
-	    }
+			Matcher matcher = patternHashtag.matcher(texto);
+			String hashtag = matcher.find() ? matcher.group() : "";
 
-	    int indexEspacio = texto.indexOf(' ', indexHash);
-	    if (indexEspacio == -1) {
-	        indexEspacio = texto.length();
-	    }
+			Span spanAntes = new Span(partes.length > 0 ? partes[0] : "");
+			Span spanHashtag = new Span(hashtag);
+			Span spanDespues = new Span(partes.length > 1 ? partes[1] : "");
 
-	    String antes = texto.substring(0, indexHash);
-	    String hashtag = texto.substring(indexHash, indexEspacio);
-	    String despues = texto.substring(indexEspacio);
+			return new Span[] { spanAntes, spanHashtag, spanDespues };
+		}
 
-	    // Crear nuevo span con hashtag clickeable
-//	    Span nuevoSpan = new Span();
-//	    nuevoSpan.getStyle().set("display", "inline");
+		// Caso con mención previa: buscar hashtag en mencion[0] o mencion[2]
+		String textoAntes = mencion[0].getText();
+		String textoDespues = mencion[2].getText();
 
-	    Span spanAntes = new Span(antes);
-	    Span spanHashtag = new Span(hashtag);
-	    spanHashtag.getStyle().set("color", "green");
-	    spanHashtag.getStyle().set("cursor", "pointer");
-	    spanHashtag.getElement().addEventListener("click", e -> {
-	        System.out.println("Click en hashtag: " + hashtag);
-	        // UI.getCurrent().navigate("hashtag/" + hashtag.substring(1));
-	    });
-	    Span spanDespues = new Span(despues);
-	    
-	    
-	    Span[] result = new Span[3];
-	    result[1] = spanAntes;
-	    result[2] = spanHashtag;
-	    result[3] = spanDespues;
-	    
-	    return result;
+		Matcher matcherAntes = patternHashtag.matcher(textoAntes);
+		Matcher matcherDespues = patternHashtag.matcher(textoDespues);
 
-//	    nuevoSpan.add(spanAntes, spanHashtag, spanDespues);
-//
-//	    // Reemplazar en el layout
-//	    this.getHorizontalLayoutCuerpoTweet().removeAll();
-//	    this.getHorizontalLayoutCuerpoTweet().add(nuevoSpan);
+		List<Span> resultado = new ArrayList<>();
+
+		if (matcherAntes.find()) {
+			int start = matcherAntes.start();
+			int end = matcherAntes.end();
+
+			String antesHashtag = textoAntes.substring(0, start);
+			String hashtag = textoAntes.substring(start, end);
+			String despuesHashtag = textoAntes.substring(end);
+
+			if (!antesHashtag.isEmpty())
+				resultado.add(new Span(antesHashtag));
+
+			Span spanHashtag = new Span(hashtag);
+			resultado.add(spanHashtag);
+
+			if (!despuesHashtag.isEmpty())
+				resultado.add(new Span(despuesHashtag));
+
+			// Mantener la mención intacta en medio
+			resultado.add(mencion[1]);
+			resultado.add(mencion[2]);
+
+		} else if (matcherDespues.find()) {
+			int start = matcherDespues.start();
+			int end = matcherDespues.end();
+
+			String antesHashtag = textoDespues.substring(0, start);
+			String hashtag = textoDespues.substring(start, end);
+			String despuesHashtag = textoDespues.substring(end);
+
+			resultado.add(mencion[0]);
+			resultado.add(mencion[1]);
+
+			if (!antesHashtag.isEmpty())
+				resultado.add(new Span(antesHashtag));
+
+			Span spanHashtag = new Span(hashtag);
+			resultado.add(spanHashtag);
+
+			if (!despuesHashtag.isEmpty())
+				resultado.add(new Span(despuesHashtag));
+
+		} else {
+			// No hay hashtag, devolver la mención original completa
+			return mencion;
+		}
+
+		return resultado.toArray(new Span[0]);
 	}
+
+	
+	protected void copiarEstilos(Label label, Span destino) {
+	    destino.getStyle().set("font-family", label.getStyle().get("font-family"));
+	    destino.getStyle().set("font-size", label.getStyle().get("font-size"));
+	    destino.getStyle().set("font-weight", label.getStyle().get("font-weight"));
+	    destino.getStyle().set("color", label.getStyle().get("color"));
+	    destino.getStyle().set("display", "inline");
+	}
+	
 }
