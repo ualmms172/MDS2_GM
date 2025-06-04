@@ -185,7 +185,7 @@ public class Retweetear extends CrearContenido {
 		boolean hecho=false;
 		
 		for(Contenido cont : Interfaz.ur.u.escribe.toArray()) {
-			if(cont instanceof Tweet) continue;
+			if(!(cont instanceof Tweet)) continue;
 			Tweet tweet = (Tweet)cont;
 			if(tweet.getRetweeteaA()!=null)
 				if(tweet.getRetweeteaA().getORMID()==t.getORMID()) {
