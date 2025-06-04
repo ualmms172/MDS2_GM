@@ -38,6 +38,9 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 				tweet=twe.getRetweeteaA();
 			}
 			
+			//Si el tweet pertenece a alguien que te ha bloqueado no sale
+			if(Interfaz.ur.u.bloqueadoPor.contains(tweet.getEscritoPor())) continue;
+			
 			MostrartweetspropiosUsuarioRegistrado_item t =null;
 			if(twe.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
 				t = new MostrartweetspropiosUsuarioRegistrado_item(this,tweet);
@@ -78,6 +81,9 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 		if(ret) {
 			tweet=twe.getRetweeteaA();
 		}
+		
+		//Si el tweet pertenece a alguien que te ha bloqueado no sale
+		if(Interfaz.ur.u.bloqueadoPor.contains(tweet.getEscritoPor())) continue;
 		
 		MostrartweetspropiosUsuarioRegistrado_item t =null;
 		if(twe.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
@@ -138,6 +144,9 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 			if(ret) {
 				tweet=twe.getRetweeteaA();
 			}
+			
+			//Si el tweet pertenece a alguien que te ha bloqueado no sale
+			if(Interfaz.ur.u.bloqueadoPor.contains(tweet.getEscritoPor())) continue;
 			
 			MostrartweetspropiosUsuarioRegistrado_item t =null;
 			if(twe.getEscritoPor().getID()==Interfaz.ur.u.getID()) 

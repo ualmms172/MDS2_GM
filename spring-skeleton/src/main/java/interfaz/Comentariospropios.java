@@ -20,6 +20,9 @@ public class Comentariospropios extends ListaComentariosGeneral {
 		Comentario[] comentarios = this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.comentarios.toArray();
 		for(Comentario com : comentarios) {
 			
+			//Si el comentario pertenece a alguien que te ha bloqueado no sale
+			if(Interfaz.ur.u.bloqueadoPor.contains(com.getEscritoPor())) continue;
+			
 			Comentariospropios_item c = null;
 			if(com.getEscritoPor().equals(Interfaz.ur.u))
 				c = new Comentariospropios_item(this,com);
