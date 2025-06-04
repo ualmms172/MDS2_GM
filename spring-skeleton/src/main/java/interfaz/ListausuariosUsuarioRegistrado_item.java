@@ -11,7 +11,8 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 		
 		_listausuariosUsuarioRegistrado = (ListausuariosUsuarioRegistrado) lista;
 		
-		if(u.getID()==Interfaz.ur.u.getID()) {
+		//No se si el contains funciona correctamente, sino se hace un bucle para comprobar 1 a 1 directamente
+		if(u.getID()==Interfaz.ur.u.getID() || Interfaz.ur.u.bloqueadoPor.contains(u)) { 
 			this.getButtonSeguir().setVisible(false);
 		}
 		else {
