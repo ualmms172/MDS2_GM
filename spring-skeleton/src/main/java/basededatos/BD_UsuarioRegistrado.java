@@ -186,6 +186,12 @@ public class BD_UsuarioRegistrado {
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 
 		try {
+			if(aBloqueado.sigueA.contains(aBloqueador)) {
+				aBloqueado.sigueA.remove(aBloqueador);
+				aBloqueador.seguidoPor.remove(aBloqueado);
+				UsuarioRegistradoDAO.save(aBloqueado);
+				UsuarioRegistradoDAO.save(aBloqueador);
+			}
 			aBloqueador.bloqueaA.add(aBloqueado);
 			aBloqueado.bloqueadoPor.add(aBloqueador);
 			UsuarioRegistradoDAO.save(aBloqueador);
