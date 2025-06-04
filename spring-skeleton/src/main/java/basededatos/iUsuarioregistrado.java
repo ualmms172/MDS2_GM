@@ -16,11 +16,11 @@ public interface iUsuarioregistrado extends iLogueado {
 
 //	public Comentario[] Cargar_Comentarios(Tweet aTweet);
 
-	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) ;
+	public UsuarioRegistrado Escribir_Tweet(Hashtag aHashtag, UsuarioRegistrado aUsuarioMencionado, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) ;
 
 	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) ; 
 
-	public UsuarioRegistrado Escribir_Retweet(Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) ;
+	public UsuarioRegistrado Escribir_Retweet(Hashtag aHashtag, UsuarioRegistrado aUsuarioMencionado,Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) ;
 
 	public void Eliminar_Usuario(UsuarioRegistrado aUsuario);
 
@@ -48,7 +48,7 @@ public interface iUsuarioregistrado extends iLogueado {
 
 	public Hashtag BuscarHashtag(String aHashtag) ;
 
-	public Hashtag CrearHashtag(String aHashtag) ;
+	public Hashtag CrearHashtag(String aHashtag,UsuarioRegistrado aUsuario) ;
 
-	public UsuarioRegistrado UsarHashtag(Hashtag aH, Tweet aTweet) ;
+	//public UsuarioRegistrado UsarHashtag(Hashtag h, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) ;
 }

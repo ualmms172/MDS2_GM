@@ -5,6 +5,7 @@ import java.net.URL;
 
 import com.vaadin.flow.component.notification.Notification;
 
+import basededatos.Hashtag;
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
@@ -135,7 +136,19 @@ public class Hacertweet extends CrearContenido {
 			}
 		}
 		
-		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Tweet(texto, foto, video, Interfaz.ur.u);
+		
+		basededatos.UsuarioRegistrado ubd = null;
+		Hashtag hash=null;
+		basededatos.UsuarioRegistrado mencionado = null;
+		
+		if (texto.contains("#")) {
+			hash= this.UsarHashtag(texto);
+		}
+		if(texto.contains("@")) {
+			mencionado = this.Mencionar(texto);
+		}
+		
+		ubd=Interfaz.ur._iUsuarioregistrado.Escribir_Tweet(hash,mencionado,texto, foto, video, Interfaz.ur.u);
 		u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		
 		Pantalla.MainView.removeAll();
@@ -152,31 +165,33 @@ public class Hacertweet extends CrearContenido {
 		
 	}
 	
-	public void Mencionar() {
-		String texto = this.getTextFieldCampoTexto().getValue();
+	public basededatos.UsuarioRegistrado Mencionar(String texto) {
 		
 		int inicio = texto.indexOf("@");
+		
 		if (inicio != -1) {
 		    int fin = texto.indexOf(" ", inicio);
 		    if (fin == -1) {
 		        fin = texto.length(); 
 		    }
 		    String mencion = texto.substring(inicio, fin);
+		    basededatos.UsuarioRegistrado mencionado = Interfaz.ur._iUsuarioregistrado.BuscarUsuario(mencion);
+		    return mencionado;
 		}
+		return null;
 		
 	}
 	
-	public void UsarHashtag() {
-		String texto = this.getTextFieldCampoTexto().getValue();
+	public Hashtag UsarHashtag(String texto) {
 		
-		int inicio = texto.indexOf("#");
-		if (inicio != -1) {
-		    int fin = texto.indexOf(" ", inicio);
-		    if (fin == -1) {
-		        fin = texto.length(); 
-		    }
-		    String hashtag = texto.substring(inicio, fin);
+		int start = texto.indexOf("#");
+		int end = texto.indexOf(" ", start);
+		String hashtag = (end == -1) ? texto.substring(start) : texto.substring(start, end);
+		Hashtag hash = Interfaz.ur._iUsuarioregistrado.BuscarHashtag(hashtag);
+		if(hash==null) {
+			hash = Interfaz.ur._iUsuarioregistrado.CrearHashtag(hashtag, Interfaz.ur.u);
 		}
+		return hash;
 		
 	}
 	

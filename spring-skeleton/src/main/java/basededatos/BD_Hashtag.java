@@ -55,7 +55,7 @@ public class BD_Hashtag {
 			    return encontrado;	
 	}
 
-	public Hashtag CrearHashtag(String aHashtag) throws PersistentException {
+	public Hashtag CrearHashtag(String aHashtag,UsuarioRegistrado aUsuario) throws PersistentException {
 		
 		
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
@@ -65,7 +65,7 @@ public class BD_Hashtag {
 			hashtag = HashtagDAO.createHashtag();
 			hashtag.setTitulo(aHashtag);
 			hashtag.setNumTweets(0); // inicializa en 0
-
+			hashtag.setCreadoPor(aUsuario);
 			// Aquí podrías establecer el usuario creador, si lo tienes disponible.
 			// Por ejemplo:
 			// UsuarioRegistrado autor = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(idUsuario);

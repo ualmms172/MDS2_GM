@@ -6,6 +6,7 @@ import java.net.URL;
 import com.vaadin.flow.component.notification.Notification;
 
 import basededatos.Contenido;
+import basededatos.Hashtag;
 import basededatos.Tweet;
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Interfaz;
@@ -243,8 +244,21 @@ public class Retweetear extends CrearContenido {
 			            return;
 				    }
 				}
+				
+				
+				
+				Hashtag hash=null;
+				basededatos.UsuarioRegistrado mencionado = null;
+				
+				if (texto.contains("#")) {
+					hash= this.UsarHashtag(texto);
+				}
+				if(texto.contains("@")) {
+					mencionado = this.Mencionar(texto);
+				}
+				
 		
-		basededatos.UsuarioRegistrado ubd=Interfaz.ur._iUsuarioregistrado.Escribir_Retweet(t, texto, foto, video, Interfaz.ur.u);
+		basededatos.UsuarioRegistrado ubd=Interfaz.ur._iUsuarioregistrado.Escribir_Retweet(hash,mencionado,t, texto, foto, video, Interfaz.ur.u);
 	
 		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		
@@ -294,6 +308,37 @@ public class Retweetear extends CrearContenido {
 		 else {
 			 Pantalla.MainView.add(_vertweetgeneralUsuarioRegistrado.Recargar(u)); 
 		 }
+	}
+	
+	
+	public basededatos.UsuarioRegistrado Mencionar(String texto) {
+
+		int inicio = texto.indexOf("@");
+
+		if (inicio != -1) {
+			int fin = texto.indexOf(" ", inicio);
+			if (fin == -1) {
+				fin = texto.length();
+			}
+			String mencion = texto.substring(inicio, fin);
+			basededatos.UsuarioRegistrado mencionado = Interfaz.ur._iUsuarioregistrado.BuscarUsuario(mencion);
+			return mencionado;
+		}
+		return null;
+
+	}
+
+	public Hashtag UsarHashtag(String texto) {
+
+		int start = texto.indexOf("#");
+		int end = texto.indexOf(" ", start);
+		String hashtag = (end == -1) ? texto.substring(start) : texto.substring(start, end);
+		Hashtag hash = Interfaz.ur._iUsuarioregistrado.BuscarHashtag(hashtag);
+		if (hash == null) {
+			hash = Interfaz.ur._iUsuarioregistrado.CrearHashtag(hashtag, Interfaz.ur.u);
+		}
+		return hash;
+
 	}
 	
 	public Retweetear Recargar(UsuarioRegistrado log) {

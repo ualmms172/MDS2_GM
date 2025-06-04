@@ -24,90 +24,139 @@ public class BD_Tweet {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) throws PersistentException {
-		
-		  PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-		    UsuarioRegistrado autor = null;
+	public UsuarioRegistrado Escribir_Tweet(Hashtag aHashtag, UsuarioRegistrado aUsuarioMencionado, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) throws PersistentException {
+	    PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+	    UsuarioRegistrado autor = null;
 
-		    try {
-		        // Suponiendo que tienes una forma de obtener el usuario actual
-		        autor = aUsuario; // ⚠️ Sustituye por el ID correcto
+	    try {
+	        autor = aUsuario;
 
-		        // Crear el contenido base
-		        Tweet tweet = TweetDAO.createTweet();
-		        tweet.setEscritoPor(autor);
+	        // Crear el nuevo tweet
+	        Tweet tweet = TweetDAO.createTweet();
+	        tweet.setEscritoPor(autor);
 
-		        // Asociar texto si hay
-		        if (aTexto != null && !aTexto.isEmpty()) {
-		            Texto texto = TextoDAO.createTexto();
-		            texto.setTexto(aTexto);
-		            texto.setPerteneceA(tweet);
-		            tweet.setContieneTexto(texto);
-		            TextoDAO.save(texto);
-		        }
+	        // Asociar texto si lo hay
+	        if (aTexto != null && !aTexto.isEmpty()) {
+	            Texto texto = TextoDAO.createTexto();
+	            texto.setTexto(aTexto);
+	            texto.setPerteneceA(tweet);
+	            tweet.setContieneTexto(texto);
+	            TextoDAO.save(texto);
+	        }
 
-		        // Asociar multimedia si hay URL
-		        if (aUrl_foto != null && !aUrl_foto.isEmpty()) {
-		            Multimedia foto = MultimediaDAO.createMultimedia();
-		            foto.setUrl(aUrl_foto);
-		            foto.setFoto(true);
-		            foto.setPerteneceA(tweet);
-		            MultimediaDAO.save(foto);
-		        }
+	        // Asociar foto si la hay
+	        if (aUrl_foto != null && !aUrl_foto.isEmpty()) {
+	            Multimedia foto = MultimediaDAO.createMultimedia();
+	            foto.setUrl(aUrl_foto);
+	            foto.setFoto(true);
+	            foto.setPerteneceA(tweet);
+	            MultimediaDAO.save(foto);
+	        }
 
-		        if (aUrl_video != null && !aUrl_video.isEmpty()) {
-		            Multimedia video = MultimediaDAO.createMultimedia();
-		            video.setUrl(aUrl_video);
-		            video.setFoto(false);
-		            video.setPerteneceA(tweet);
-		            MultimediaDAO.save(video);
-		        }
+	        // Asociar video si lo hay
+	        if (aUrl_video != null && !aUrl_video.isEmpty()) {
+	            Multimedia video = MultimediaDAO.createMultimedia();
+	            video.setUrl(aUrl_video);
+	            video.setFoto(false);
+	            video.setPerteneceA(tweet);
+	            MultimediaDAO.save(video);
+	        }
 
-		        TweetDAO.save(tweet);
-		        t.commit();
-		    } catch (Exception e) {
-		        t.rollback();
-		        e.printStackTrace();
-		    }
+	        // Asociar el hashtag si no es null
+	        if (aHashtag != null) {
+	            tweet.setContiene(aHashtag);
 
-		    MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		    return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getID());
-		}
-		
-		
+	            HashtagDAO.save(aHashtag);
+	        }
 
-	public UsuarioRegistrado Escribir_Retweet(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) throws PersistentException {
-		
-		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-		UsuarioRegistrado autor = null;
+	        if (aUsuarioMencionado != null) {
+	            tweet.setMencionaA(aUsuarioMencionado);
+	        }
 
-		try {
-			Tweet retweet = TweetDAO.createTweet();
-			retweet.setRetweeteaA(aTweet);
+	        // Guardar el tweet y el autor
+	        TweetDAO.save(tweet);
+	        UsuarioRegistradoDAO.save(autor);
 
-			autor = aUsuario;  
-			retweet.setEscritoPor(autor);
+	        t.commit();
+	    } catch (Exception e) {
+	        t.rollback();
+	        throw new PersistentException(e);
+	    } finally {
+	        MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
+	    }
 
-			if (aTexto != null && !aTexto.isEmpty()) {
-				Texto texto = TextoDAO.createTexto();
-				texto.setTexto(aTexto);
-				texto.setPerteneceA(retweet);
-				TextoDAO.save(texto);
-				retweet.setContieneTexto(texto);
-			}
-
-			TweetDAO.save(retweet);
-			t.commit();
-		} catch (Exception e) {
-			t.rollback();
-			throw new PersistentException(e);
-		} finally {
-			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		}
-		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getID());
-		
-	
+	    return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(autor.getID());
 	}
+
+		
+		
+
+	public UsuarioRegistrado Escribir_Retweet(Hashtag aHashtag, UsuarioRegistrado aUsuarioMencionado, Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) throws PersistentException {
+	    PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+	    UsuarioRegistrado autor = null;
+
+	    try {
+	        autor = aUsuario;
+
+	        // Crear retweet
+	        Tweet retweet = TweetDAO.createTweet();
+	        retweet.setEscritoPor(autor);
+	        retweet.setRetweeteaA(aTweet);
+
+	        // Agregar texto si lo hay
+	        if (aTexto != null && !aTexto.isEmpty()) {
+	            Texto texto = TextoDAO.createTexto();
+	            texto.setTexto(aTexto);
+	            texto.setPerteneceA(retweet);
+	            retweet.setContieneTexto(texto);
+	            TextoDAO.save(texto);
+	        }
+
+	        // Agregar foto si la hay
+	        if (aUrl_foto != null && !aUrl_foto.isEmpty()) {
+	            Multimedia foto = MultimediaDAO.createMultimedia();
+	            foto.setUrl(aUrl_foto);
+	            foto.setFoto(true);
+	            foto.setPerteneceA(retweet);
+	            MultimediaDAO.save(foto);
+	        }
+
+	        // Agregar video si lo hay
+	        if (aUrl_video != null && !aUrl_video.isEmpty()) {
+	            Multimedia video = MultimediaDAO.createMultimedia();
+	            video.setUrl(aUrl_video);
+	            video.setFoto(false);
+	            video.setPerteneceA(retweet);
+	            MultimediaDAO.save(video);
+	        }
+
+	        // Asociar hashtag si no es null
+	        if (aHashtag != null) {
+	            retweet.setContiene(aHashtag);
+
+	            HashtagDAO.save(aHashtag);
+	        }
+
+	        // Mencionar usuario si no es null
+	        if (aUsuarioMencionado != null) {
+	            retweet.setMencionaA(aUsuarioMencionado);
+	        }
+
+	        // Guardar el retweet y el autor
+	        TweetDAO.save(retweet);
+	        UsuarioRegistradoDAO.save(autor);
+
+	        t.commit();
+	    } catch (Exception e) {
+	        t.rollback();
+	        throw new PersistentException(e);
+	    } finally {
+	        MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
+	    }
+
+	    return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(autor.getID());
+	}
+
 
 	public Administrador BorrarTweet(Tweet aTweet,Administrador aAdministrador) throws PersistentException {
 		
@@ -182,33 +231,63 @@ public class BD_Tweet {
 		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUr.getID());
 	}
 
+/*
+	public UsuarioRegistrado UsarHashtag(Hashtag h, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) throws PersistentException {
+	    PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+	    UsuarioRegistrado autor = null;
 
-	public UsuarioRegistrado UsarHashtag(Hashtag aH, Tweet aTweet) throws PersistentException {
-		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-		UsuarioRegistrado autor = null;
+	    try {
+	        autor = aUsuario;
 
-		try {
-			aTweet.setContiene(aH); // Relación @ManyToOne con Hashtag
-			autor = aTweet.getEscritoPor();
+	        // Crear nuevo tweet
+	        Tweet tweet = TweetDAO.createTweet();
+	        tweet.setEscritoPor(autor);
 
-			if (autor != null && !autor.creaHashtag.contains(aH)) {
-				autor.creaHashtag.add(aH);
-			}
+	        // Asignar texto si lo hay
+	        if (aTexto != null && !aTexto.isEmpty()) {
+	            Texto texto = TextoDAO.createTexto();
+	            texto.setTexto(aTexto);
+	            texto.setPerteneceA(tweet);
+	            tweet.setContieneTexto(texto);
+	            TextoDAO.save(texto);
+	        }
 
-			TweetDAO.save(aTweet);
-			HashtagDAO.save(aH);
-			if (autor != null) {
-				UsuarioRegistradoDAO.save(autor);
-			}
+	        // Asignar multimedia si lo hay
+	        if (aUrl_foto != null && !aUrl_foto.isEmpty()) {
+	            Multimedia foto = MultimediaDAO.createMultimedia();
+	            foto.setUrl(aUrl_foto);
+	            foto.setFoto(true);
+	            foto.setPerteneceA(tweet);
+	            MultimediaDAO.save(foto);
+	        }
 
-			t.commit();
-		} catch (Exception e) {
-			t.rollback();
-			throw new PersistentException(e);
-		} finally {
-			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		}
-		return  UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(autor.getID());
+	        if (aUrl_video != null && !aUrl_video.isEmpty()) {
+	            Multimedia video = MultimediaDAO.createMultimedia();
+	            video.setUrl(aUrl_video);
+	            video.setFoto(false);
+	            video.setPerteneceA(tweet);
+	            MultimediaDAO.save(video);
+	        }
+
+	        // Asociar el hashtag al tweet
+	        tweet.setContiene(h);
+
+	        // Guardar todo
+	        TweetDAO.save(tweet);
+	        HashtagDAO.save(h);
+	        UsuarioRegistradoDAO.save(autor);
+
+	        t.commit();
+	    } catch (Exception e) {
+	        t.rollback();
+	        throw new PersistentException(e);
+	    } finally {
+	        MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
+	    }
+
+	    return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(autor.getID());
 	}
+	*/
+
 
 }

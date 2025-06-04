@@ -54,10 +54,10 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 //		throw new UnsupportedOperationException();
 //	}
 
-	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) {
+	public UsuarioRegistrado Escribir_Tweet(Hashtag aHashtag, UsuarioRegistrado aUsuarioMencionado, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) {
 		
 		try {
-	        return _bd_twe.Escribir_Tweet(aTexto, aUrl_foto, aUrl_video, aUsuario); 
+	        return _bd_twe.Escribir_Tweet( aHashtag,  aUsuarioMencionado,  aTexto,  aUrl_foto,  aUrl_video,  aUsuario); 
 	    } catch (PersistentException e) {
 	        
 	        System.err.println("Error al escribir el tweet: " + e.getMessage());
@@ -77,9 +77,9 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	    }
 	}
 
-	public UsuarioRegistrado Escribir_Retweet(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) {
+	public UsuarioRegistrado Escribir_Retweet(Hashtag aHashtag, UsuarioRegistrado aUsuarioMencionado,Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) {
 	    try {
-	        return _bd_twe.Escribir_Retweet(aTweet, aTexto, aUrl_foto, aUrl_video, aUsuario);
+	        return _bd_twe.Escribir_Retweet( aHashtag,  aUsuarioMencionado,aTweet, aTexto, aUrl_foto, aUrl_video, aUsuario);
 	    } catch (PersistentException e) {
 	        System.err.println("Error al escribir retweet: " + e.getMessage());
 	        e.printStackTrace();
@@ -217,25 +217,26 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	    }
 	}
 
-	public Hashtag CrearHashtag(String aHashtag) {
+	public Hashtag CrearHashtag(String aHashtag,UsuarioRegistrado aUsuario) {
 	    try {
-	        return _bd_has.CrearHashtag(aHashtag);
+	        return _bd_has.CrearHashtag(aHashtag,aUsuario);
 	    } catch (PersistentException e) {
 	        System.err.println("Error al crear hashtag: " + e.getMessage());
 	        e.printStackTrace();
 	        return null;
 	    }
 	}
-
-	public UsuarioRegistrado UsarHashtag(Hashtag aH, Tweet aTweet) {
+/*
+	public UsuarioRegistrado UsarHashtag(Hashtag h, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) {
 	    try {
-	        return _bd_twe.UsarHashtag(aH, aTweet);
+	        return _bd_twe.UsarHashtag( h,  aTexto,  aUrl_foto,  aUrl_video,  aUsuario);
 	    } catch (PersistentException e) {
 	        System.err.println("Error al usar hashtag en tweet: " + e.getMessage());
 	        e.printStackTrace();
 	        return null;
 	    }
 	}
+	*/
 
 
 	public UsuarioRegistrado Registrar_Usuario(String aNick, String aDescripcion, String aUrl_perfil, String aUrl_fondo, String aContrasena,String aCorreo) {
