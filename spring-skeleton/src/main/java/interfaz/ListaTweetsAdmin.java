@@ -33,16 +33,16 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 		for(Tweet twe : tweets) {
 			
 			Tweet tweet=twe;
-			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()!=null && twe.contieneMultimedia.isEmpty();
+			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()==null && twe.contieneMultimedia.isEmpty();
 			if(ret) {
 				tweet=twe.getRetweeteaA();
 			}
 			ListaTweetsAdmin_item t = new ListaTweetsAdmin_item(this,tweet);
 			
 			if(ret) {
+				t.getHorizontalLayoutRetweeteadoPor().setVisible(true);
 				t.getlabelRetweeteadoPor().setVisible(true);
-				t.getlabelRetweeteadoPor().removeAll();
-				t.getlabelRetweeteadoPor().add("Retweeteado por " + twe.getEscritoPor());
+				t.getlabelRetweeteadoPor().setText("Retweeteado por " + twe.getEscritoPor().getNick());
 			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);
@@ -85,16 +85,16 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 		for(Tweet twe : tweets) {
 			
 			Tweet tweet=twe;
-			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()!=null && twe.contieneMultimedia.isEmpty();
+			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()==null && twe.contieneMultimedia.isEmpty();
 			if(ret) {
 				tweet=twe.getRetweeteaA();
 			}
 			ListaTweetsAdmin_item t = new ListaTweetsAdmin_item(this,tweet);
 			
 			if(ret) {
+				t.getHorizontalLayoutRetweeteadoPor().setVisible(true);
 				t.getlabelRetweeteadoPor().setVisible(true);
-				t.getlabelRetweeteadoPor().removeAll();
-				t.getlabelRetweeteadoPor().add("Retweeteado por " + twe.getEscritoPor());
+				t.getlabelRetweeteadoPor().setText("Retweeteado por " + twe.getEscritoPor().getNick());
 			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);
@@ -120,16 +120,16 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 		for(Tweet twe : tweets) {
 			
 			Tweet tweet=twe;
-			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()!=null && twe.contieneMultimedia.isEmpty();
+			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()==null && twe.contieneMultimedia.isEmpty();
 			if(ret) {
 				tweet=twe.getRetweeteaA();
 			}
 			ListaTweetsAdmin_item t = new ListaTweetsAdmin_item(this,tweet);
 			
 			if(ret) {
+				t.getHorizontalLayoutRetweeteadoPor().setVisible(true);
 				t.getlabelRetweeteadoPor().setVisible(true);
-				t.getlabelRetweeteadoPor().removeAll();
-				t.getlabelRetweeteadoPor().add("Retweeteado por " + twe.getEscritoPor());
+				t.getlabelRetweeteadoPor().setText("Retweeteado por " + twe.getEscritoPor().getNick());
 			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);

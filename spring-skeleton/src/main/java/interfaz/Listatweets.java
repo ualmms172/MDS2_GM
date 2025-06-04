@@ -3,6 +3,7 @@ package interfaz;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.Contenido;
@@ -50,16 +51,16 @@ public class Listatweets extends ListaTweetsGeneral {
 		for(Tweet twe : tweets) {
 			
 			Tweet tweet=twe;
-			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()!=null && twe.contieneMultimedia.isEmpty();
+			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()==null && twe.contieneMultimedia.isEmpty();
 			if(ret) {
 				tweet=twe.getRetweeteaA();
 			}
 			Listatweets_item t = new Listatweets_item(this,tweet);
 			
 			if(ret) {
+				t.getHorizontalLayoutRetweeteadoPor().setVisible(true);
 				t.getlabelRetweeteadoPor().setVisible(true);
-				t.getlabelRetweeteadoPor().removeAll();
-				t.getlabelRetweeteadoPor().add("Retweeteado por " + twe.getEscritoPor());
+				t.getlabelRetweeteadoPor().setText("Retweeteado por " + twe.getEscritoPor().getNick());
 			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);
@@ -86,16 +87,16 @@ public class Listatweets extends ListaTweetsGeneral {
 		for(Tweet twe : tweets) {
 			
 			Tweet tweet=twe;
-			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()!=null && twe.contieneMultimedia.isEmpty();
+			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()==null && twe.contieneMultimedia.isEmpty();
 			if(ret) {
 				tweet=twe.getRetweeteaA();
 			}
 			Listatweets_item t = new Listatweets_item(this,tweet);
 			
 			if(ret) {
+				t.getHorizontalLayoutRetweeteadoPor().setVisible(true);
 				t.getlabelRetweeteadoPor().setVisible(true);
-				t.getlabelRetweeteadoPor().removeAll();
-				t.getlabelRetweeteadoPor().add("Retweeteado por " + twe.getEscritoPor());
+				t.getlabelRetweeteadoPor().setText("Retweeteado por " + twe.getEscritoPor().getNick());
 			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);

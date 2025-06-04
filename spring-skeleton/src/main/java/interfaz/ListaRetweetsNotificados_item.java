@@ -12,5 +12,7 @@ public class ListaRetweetsNotificados_item extends VistaListaretweetsnotificados
 		
 		_listaRetweetsNotificados = lista; 
 		this.t=t;
+		
+		this.getLabelTextoRetweetNotificado().setText("El usuario " + t.getEscritoPor().getNick() + " ha retweeteado\"" +  t.getRetweeteaA().getContieneTexto()!=null? t.getRetweeteaA().getContieneTexto().getTexto():"[Tweet sin texto]" +"\"");
 	}
 }

@@ -13,6 +13,8 @@ public class ListaMencionesRecibidas_item extends VistaListamencionesrecibidas_i
 		
 		this.t=t;
 		_listaMencionesRecibidas = lista; 
+		
+		this.getLabelMencion().setText(t.getEscritoPor().getNick() + " te ha mencionado");
 	}
     
 }

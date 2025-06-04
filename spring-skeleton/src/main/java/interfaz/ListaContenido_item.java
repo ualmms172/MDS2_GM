@@ -33,8 +33,8 @@ public class ListaContenido_item extends VistaListacontenido_item {
 	this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
 	this.getlabelRetweeteadoPor().setVisible(false);
 	
-	this.getImgFotoPerfilTweet().setHeight("100%");
-	this.getImgFotoPerfilTweet().setWidth("50%");
+	this.getImgFotoPerfilTweet().setHeight("50%");
+	this.getImgFotoPerfilTweet().setWidth("20%");
 
 	}
 	
