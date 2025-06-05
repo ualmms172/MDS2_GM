@@ -15,7 +15,7 @@ public class ListaHashtagsGeneral_item extends VistaListahashtagsgeneral_item {
 		
 		_listaHashtagsGeneral = lista;
 		this.h=h;
-		this.getLabelCreador().setText(h.getCreadoPor().getNick());
+		this.getLabelCreador().setText("Creado por: "+h.getCreadoPor().getNick());
 		this.getLabelHashtag().setText(h.getTitulo());
 		this.getLabelNumTweets().setText(String.valueOf(h.getNumTweets()));
 		

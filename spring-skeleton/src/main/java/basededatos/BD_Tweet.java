@@ -65,7 +65,7 @@ public class BD_Tweet {
 	        // Asociar el hashtag si no es null
 	        if (aHashtag != null) {
 	            tweet.setContiene(aHashtag);
-
+	            aHashtag.setNumTweets(aHashtag.getNumTweets()+1);
 	            HashtagDAO.save(aHashtag);
 	        }
 
@@ -133,7 +133,7 @@ public class BD_Tweet {
 	        // Asociar hashtag si no es null
 	        if (aHashtag != null) {
 	            retweet.setContiene(aHashtag);
-
+	            aHashtag.setNumTweets(aHashtag.getNumTweets()+1);
 	            HashtagDAO.save(aHashtag);
 	        }
 

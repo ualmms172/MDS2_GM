@@ -51,6 +51,7 @@ public class Hacertweet extends CrearContenido {
 	public Hacertweet(ListahashtagsUsuarioRegistrado_item listahashtagsUsuarioRegistrado) {
 		
 		_listahashtagsUsuarioRegistrado = listahashtagsUsuarioRegistrado; 
+		this.getTextFieldCampoTexto().setValue(_listahashtagsUsuarioRegistrado.h.getTitulo());
 		this.getButtonPublicar().addClickListener(Event -> Publicartweet());
 		this.getButtonAtras().addClickListener(event -> {
 			
@@ -168,12 +169,13 @@ public class Hacertweet extends CrearContenido {
 	public basededatos.UsuarioRegistrado Mencionar(String texto) {
 		
 		int inicio = texto.indexOf("@");
-		
 		if (inicio != -1) {
 		    int fin = texto.indexOf(" ", inicio);
 		    if (fin == -1) {
 		        fin = texto.length(); 
 		    }
+		    if(inicio<texto.length()) inicio++;
+		    else return null;
 		    String mencion = texto.substring(inicio, fin);
 		    basededatos.UsuarioRegistrado mencionado = Interfaz.ur._iUsuarioregistrado.BuscarUsuario(mencion);
 		    return mencionado;
