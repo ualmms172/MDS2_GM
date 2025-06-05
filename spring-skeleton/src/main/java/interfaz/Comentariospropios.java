@@ -24,7 +24,7 @@ public class Comentariospropios extends ListaComentariosGeneral {
 			if(Interfaz.ur.u.bloqueadoPor.contains(com.getEscritoPor())) continue;
 			
 			Comentariospropios_item c = null;
-			if(com.getEscritoPor().equals(Interfaz.ur.u))
+			if(com.getEscritoPor().getID()==Interfaz.ur.u.getID())
 				c = new Comentariospropios_item(this,com);
 			else
 				c = new ComentariosUsuarioRegistrado_item(this,com);

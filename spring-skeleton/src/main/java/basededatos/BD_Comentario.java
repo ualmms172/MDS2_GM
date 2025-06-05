@@ -24,38 +24,59 @@ public class BD_Comentario {
         	
 	}
 
-	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet,String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) throws PersistentException {
+        public UsuarioRegistrado Escribir_Comentario(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) throws PersistentException {
+            PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+            UsuarioRegistrado autor = null;
 
-		
-		PersistentTransaction t = null;
-		try {
-			t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+            try {
+                autor = aUsuario;
 
-			Comentario nuevoComentario = ComentarioDAO.createComentario();
-			Texto texto = TextoDAO.createTexto();
-			texto.setTexto(aTexto);
-			TextoDAO.save(texto);
+                // Crear el nuevo comentario
+                Comentario nuevoComentario = ComentarioDAO.createComentario();
+                nuevoComentario.setComentadoEn(aTweet);
+                nuevoComentario.setEscritoPor(autor);
 
-			nuevoComentario.setContieneTexto(texto);
-			nuevoComentario.setComentadoEn(aTweet);
+                // Asociar texto si lo hay
+                if (aTexto != null && !aTexto.isEmpty()) {
+                    Texto texto = TextoDAO.createTexto();
+                    texto.setTexto(aTexto);
+                    texto.setPerteneceA(nuevoComentario);
+                    nuevoComentario.setContieneTexto(texto);
+                    TextoDAO.save(texto);
+                }
 
-			// Suponiendo que el usuario está logueado y accesible desde algún contexto actual
-			UsuarioRegistrado autor = aUsuario;
-			nuevoComentario.setEscritoPor(autor);
+                // Asociar foto si la hay
+                if (aUrl_foto != null && !aUrl_foto.isEmpty()) {
+                    Multimedia foto = MultimediaDAO.createMultimedia();
+                    foto.setUrl(aUrl_foto);
+                    foto.setFoto(true);
+                    foto.setPerteneceA(nuevoComentario);
+                    MultimediaDAO.save(foto);
+                }
 
-			ComentarioDAO.save(nuevoComentario);
+                // Asociar video si lo hay
+                if (aUrl_video != null && !aUrl_video.isEmpty()) {
+                    Multimedia video = MultimediaDAO.createMultimedia();
+                    video.setUrl(aUrl_video);
+                    video.setFoto(false);
+                    video.setPerteneceA(nuevoComentario);
+                    MultimediaDAO.save(video);
+                }
 
-			t.commit();
-			return (UsuarioRegistrado) UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuario.getID());
-		} catch (Exception e) {
-			if (t != null) t.rollback();
-			e.printStackTrace();
-			return null;
-		} finally {
-			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		}
-		
-	}
+                ComentarioDAO.save(nuevoComentario);
+                UsuarioRegistradoDAO.save(autor);
+
+                t.commit();
+            } catch (Exception e) {
+                if (t != null) t.rollback();
+                throw new PersistentException(e);
+            } finally {
+                MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
+            }
+
+            return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(autor.getID());
+        }
+
 
 	public Administrador BorrarComentarios(Tweet aTweet,Administrador aAdministrador) throws PersistentException {
 		

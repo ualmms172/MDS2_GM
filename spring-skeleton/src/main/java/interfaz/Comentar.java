@@ -74,22 +74,6 @@ public class Comentar extends CrearContenido {
 		
 		
 		
-		VertweetgeneralUsuarioRegistrado verTweet = null;
-		if(_vertweetgeneralUsuarioRegistrado instanceof Vertweetpropio) 
-			verTweet = new Vertweetpropio(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado);
-		else
-			verTweet = new Vertweetajeno(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado);
-		
-		if(this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado !=null) {
-			Pantalla.Anterior = this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado;
-		}
-		else if(this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado !=null) {
-			Pantalla.Anterior = this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado;
-		}
-		else {
-			Pantalla.Anterior = this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado;
-		}
-		
 		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		
 		String texto = this.getTextFieldCampoTexto().getValue();
@@ -138,8 +122,25 @@ public class Comentar extends CrearContenido {
 			}
 		}
 		
-		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Comentario(verTweet._mostrartweetspropiosUsuarioRegistrado.t, texto, foto,video, Interfaz.ur.u);
+		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Comentario(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t, texto, foto,video, Interfaz.ur.u);
 		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
+		
+		
+		VertweetgeneralUsuarioRegistrado verTweet = null;
+		if(_vertweetgeneralUsuarioRegistrado instanceof Vertweetpropio) 
+			verTweet = new Vertweetpropio(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado);
+		else
+			verTweet = new Vertweetajeno(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado);
+		
+		if(this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado !=null) {
+			Pantalla.Anterior = this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado;
+		}
+		else if(this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado !=null) {
+			Pantalla.Anterior = this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado;
+		}
+		else {
+			Pantalla.Anterior = this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado;
+		}
 		
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(verTweet.Recargar(u));

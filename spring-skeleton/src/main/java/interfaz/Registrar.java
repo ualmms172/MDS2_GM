@@ -142,10 +142,18 @@ public class Registrar extends VistaRegistrar {
 	
 	private void enviarCodigoPorCorreo(String destino, String codigo) {
 		Properties props = new Properties();
+//		props.put("mail.smtp.auth", "true");
+//		props.put("mail.smtp.starttls.enable", "true");
+//		props.put("mail.smtp.host", "smtp.gmail.com");
+//		props.put("mail.smtp.port", "587");
+		//Segunda versión
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.starttls.enable", "true");
 		props.put("mail.smtp.host", "smtp.gmail.com");
 		props.put("mail.smtp.port", "587");
+		props.put("mail.smtp.ssl.protocols", "TLSv1.2");  // Importante si usas Java 8
+		props.put("mail.smtp.ssl.trust", "smtp.gmail.com");  // Confiar en Gmail explícitamente
+	//	props.put("mail.smtp.ssl.checkserveridentity", "false");  // Este en principio no se necesita
 
 		Session sesion = Session.getInstance(props, new Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {

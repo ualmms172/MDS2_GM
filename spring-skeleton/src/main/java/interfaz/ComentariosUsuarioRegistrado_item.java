@@ -10,7 +10,7 @@ import gallardoMartinez.MainView.Pantalla;
 public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 	public ComentariosUsuarioRegistrado_item(ListaContenido lista,Comentario c) {
 		super(lista,c);
-		this._comentariosUsuarioRegistrado=(ComentariosUsuarioRegistrado)lista;
+		this._comentariosUsuarioRegistrado= (Comentariospropios) lista;
 		// TODO Auto-generated constructor stub
 		this.getButtonBorrar().setVisible(false);
 		this.getButtonMeGusta().setVisible(true);
@@ -28,7 +28,7 @@ public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 
 	//private event _darlikeacomentario;
 	//private Button _meGusta;
-	public ComentariosUsuarioRegistrado _comentariosUsuarioRegistrado;
+	public Comentariospropios _comentariosUsuarioRegistrado;
 	public VerperfilgeneralUsuarioRegistrado _verperfilUsuarioRegistrado;
 	public boolean dado=false;
 

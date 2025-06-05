@@ -2,16 +2,17 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.Tweet;
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	
-	public ListaUsuariosGeneralUsuarioRegistrado_item _listaUsuariosGeneralUsuarioRegistrado;
-	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
-	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
-	public ComentariosUsuarioRegistrado_item _comentariosUsuarioRegistrado;
+//	public ListaUsuariosGeneralUsuarioRegistrado_item _listaUsuariosGeneralUsuarioRegistrado;
+//	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
+//	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
+//	public ComentariosUsuarioRegistrado_item _comentariosUsuarioRegistrado;
 	public boolean seguido=false;
 	public boolean bloqueado=false;
 	
@@ -210,7 +211,31 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 //		this.getButtonSeguir().setText("Dejar de seguir");
 //		seguido=true;
 		
-		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Seguir_Usuario(Interfaz.ur.u, this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor());
+		basededatos.UsuarioRegistrado user = null;
+		if(this._mostrartweetsUsuarioRegistrado_item!=null) {
+			if(mencion) {
+				user=this._mostrartweetsUsuarioRegistrado_item.t.getMencionaA();
+			}
+			else {
+				user=this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor();
+			}
+		}
+		else if(this._vertweetgeneralUsuarioRegistrado!=null) {
+			if(mencion) {
+				user=this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getMencionaA();
+			}
+			else {
+				user=this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
+			}
+		}
+		else if(this._comentariosUsuarioRegistrado!=null) {
+			user = this._comentariosUsuarioRegistrado.c.getEscritoPor();
+		}
+		else if(this._listaUsuariosGeneralUsuarioRegistrado!=null) {
+			user = this._listaUsuariosGeneralUsuarioRegistrado.u;
+		}
+		
+		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Seguir_Usuario(Interfaz.ur.u, user);
 		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(this.Recargar(u));
@@ -221,8 +246,31 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 //		this.getButtonBloquear().getStyle().set("color", "red");
 //		this.getButtonBloquear().setText("Desbloquear");
 //		bloqueado=true;
+		basededatos.UsuarioRegistrado user = null;
+		if(this._mostrartweetsUsuarioRegistrado_item!=null) {
+			if(mencion) {
+				user=this._mostrartweetsUsuarioRegistrado_item.t.getMencionaA();
+			}
+			else {
+				user=this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor();
+			}
+		}
+		else if(this._vertweetgeneralUsuarioRegistrado!=null) {
+			if(mencion) {
+				user=this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getMencionaA();
+			}
+			else {
+				user=this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
+			}
+		}
+		else if(this._comentariosUsuarioRegistrado!=null) {
+			user = this._comentariosUsuarioRegistrado.c.getEscritoPor();
+		}
+		else if(this._listaUsuariosGeneralUsuarioRegistrado!=null) {
+			user = this._listaUsuariosGeneralUsuarioRegistrado.u;
+		}
 		
-		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Bloquear(Interfaz.ur.u, this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor());
+		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Bloquear(Interfaz.ur.u, user);
 		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(this.Recargar(u));
@@ -234,7 +282,31 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 //		this.getButtonSeguir().setText("Seguir");
 //		seguido=false;
 		
-		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Dejar_Seguir(Interfaz.ur.u, this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor());
+		basededatos.UsuarioRegistrado user = null;
+		if(this._mostrartweetsUsuarioRegistrado_item!=null) {
+			if(mencion) {
+				user=this._mostrartweetsUsuarioRegistrado_item.t.getMencionaA();
+			}
+			else {
+				user=this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor();
+			}
+		}
+		else if(this._vertweetgeneralUsuarioRegistrado!=null) {
+			if(mencion) {
+				user=this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getMencionaA();
+			}
+			else {
+				user=this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
+			}
+		}
+		else if(this._comentariosUsuarioRegistrado!=null) {
+			user = this._comentariosUsuarioRegistrado.c.getEscritoPor();
+		}
+		else if(this._listaUsuariosGeneralUsuarioRegistrado!=null) {
+			user = this._listaUsuariosGeneralUsuarioRegistrado.u;
+		}
+		
+		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Dejar_Seguir(Interfaz.ur.u, user);
 		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(this.Recargar(u));
@@ -245,7 +317,31 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 //		this.getButtonBloquear().setText("Bloquear");
 //		bloqueado=false;
 		
-		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Desbloquear(Interfaz.ur.u, this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor());
+		basededatos.UsuarioRegistrado user = null;
+		if(this._mostrartweetsUsuarioRegistrado_item!=null) {
+			if(mencion) {
+				user=this._mostrartweetsUsuarioRegistrado_item.t.getMencionaA();
+			}
+			else {
+				user=this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor();
+			}
+		}
+		else if(this._vertweetgeneralUsuarioRegistrado!=null) {
+			if(mencion) {
+				user=this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getMencionaA();
+			}
+			else {
+				user=this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
+			}
+		}
+		else if(this._comentariosUsuarioRegistrado!=null) {
+			user = this._comentariosUsuarioRegistrado.c.getEscritoPor();
+		}
+		else if(this._listaUsuariosGeneralUsuarioRegistrado!=null) {
+			user = this._listaUsuariosGeneralUsuarioRegistrado.u;
+		}
+		
+		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Desbloquear(Interfaz.ur.u, user);
 		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(this.Recargar(u));

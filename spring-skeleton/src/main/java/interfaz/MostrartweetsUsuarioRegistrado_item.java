@@ -11,7 +11,7 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 	MostrartweetsUsuarioRegistrado_item(ListaContenido lista,Tweet t) {
 		super(lista,t);
 		
-		_mostrartweetsUsuarioRegistrado = (MostrartweetsUsuarioRegistrado)lista;
+		_mostrartweetsUsuarioRegistrado = (MostrartweetspropiosUsuarioRegistrado)lista;
 		dado=t.meGustaPor.contains(Interfaz.ur.u);
 		if(dado) {
 			this.getButtonMeGusta().getStyle().set("color", "red");
@@ -28,7 +28,7 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 
 	//private event _darlikeatweet;
 	//private Button _darMeGusta;
-	public MostrartweetsUsuarioRegistrado _mostrartweetsUsuarioRegistrado;
+	public MostrartweetspropiosUsuarioRegistrado _mostrartweetsUsuarioRegistrado;
 	
 	public Boolean dado;
 	
