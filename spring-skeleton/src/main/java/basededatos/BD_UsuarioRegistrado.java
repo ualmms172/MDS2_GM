@@ -196,7 +196,14 @@ public class BD_UsuarioRegistrado {
 	        UsuarioRegistrado bloqueado = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aBloqueado.getID());
 
 	        // Si el bloqueado sigue al bloqueador, eliminamos la relación
-	        if (bloqueado.sigueA.contains(bloqueador)) {
+	        boolean seguido=false;
+	        for(basededatos.UsuarioRegistrado usu : bloqueado.sigueA.toArray()) {
+	        	if(usu.getID()==bloqueador.getID()) {
+	        		seguido=true;
+	        		break;
+	        	}
+	        }
+	        if (seguido) {
 	            bloqueado.sigueA.remove(bloqueador);
 	            bloqueador.seguidoPor.remove(bloqueado);
 

@@ -18,11 +18,15 @@ public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 		this.getButtonMeGusta().addClickListener(Event -> Darlikeacomentario());
 		this.getImgFotoPerfilTweet().addClickListener(Event -> VerperfilUsuarioRegistrado());
 		
-		dado=false;
-		if(c.meGustaPor.contains(Interfaz.ur.u)) {
+		for(basededatos.UsuarioRegistrado usu : c.meGustaPor.toArray()) {
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				dado=true;
+				break;
+			}
+		}
+		if(dado) {
 			this.getButtonMeGusta().getStyle().set("color", "red");
 			this.getButtonMeGusta().setText("Quitar");
-			dado=true;
 		}
 	}
 

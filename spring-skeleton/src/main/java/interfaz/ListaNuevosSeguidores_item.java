@@ -20,7 +20,14 @@ public class ListaNuevosSeguidores_item extends VistaListanuevosseguidores_item 
 		String text = u.getNick() + "ha empezado a seguirte";
 		this.getLabelTextoSeguir().removeAll();
 		this.getLabelTextoSeguir().add(text);
-		dado = u.seguidoPor.contains(Interfaz.ur.u);
+		
+		//dado = u.seguidoPor.contains(Interfaz.ur.u);
+		for(basededatos.UsuarioRegistrado usu : u.seguidoPor.toArray()) {
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				dado=true;
+				break;
+			}
+		}
 		
 		if(dado) {
 			this.getButtonSeguir_NoSeguir().getStyle().set("color", "red");

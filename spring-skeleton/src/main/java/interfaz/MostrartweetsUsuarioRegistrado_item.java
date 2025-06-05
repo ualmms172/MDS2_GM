@@ -12,7 +12,14 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 		super(lista,t);
 		
 		_mostrartweetsUsuarioRegistrado = (MostrartweetspropiosUsuarioRegistrado)lista;
-		dado=t.meGustaPor.contains(Interfaz.ur.u);
+//		dado=t.meGustaPor.contains(Interfaz.ur.u);
+		dado=false;
+		for(basededatos.UsuarioRegistrado usu : t.meGustaPor.toArray()) {
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				dado=true;
+				break;
+			}
+		}
 		if(dado) {
 			this.getButtonMeGusta().getStyle().set("color", "red");
 			this.getButtonMeGusta().setText("Quitar");

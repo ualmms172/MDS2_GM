@@ -30,7 +30,13 @@ public class Verperfilbloqueado extends VerperfilgeneralUsuarioRegistrado {
 		
 		this.MostrartweetsUsuarioRegistrado();
 		
-		bloqueado = this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor().bloqueadoPor.contains(Interfaz.ur.u);
+//		bloqueado = this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor().bloqueadoPor.contains(Interfaz.ur.u);
+		for(basededatos.UsuarioRegistrado usu : mencion?this._mostrartweetsUsuarioRegistrado_item.t.getMencionaA().bloqueadoPor.toArray():this._mostrartweetsUsuarioRegistrado_item.t.getEscritoPor().bloqueadoPor.toArray()) {
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				bloqueado=true;
+				break;
+			}
+		}
 		if(bloqueado) {
 			this.getButtonBloquear().getStyle().set("color", "gray");
 			this.getButtonBloquear().setText("Desbloquear");

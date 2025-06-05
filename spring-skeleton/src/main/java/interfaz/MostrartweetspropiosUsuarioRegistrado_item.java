@@ -196,10 +196,19 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 		
 		if(user.getID()==Interfaz.ur.u.getID())
 			_verperfilUsuarioRegistrado = new Verperfilpropio(this,mencion); 
-		else if(!user.bloqueaA.contains(Interfaz.ur.u))
-			_verperfilUsuarioRegistrado = new Verperfilnobloqueado(this,mencion); 
-		else
-			_verperfilUsuarioRegistrado = new Verperfilbloqueado(this,mencion); 
+		else {
+			boolean bloqueado=false;
+			for(basededatos.UsuarioRegistrado usu:  user.bloqueaA.toArray()){
+				if(usu.getID()==Interfaz.ur.u.getID()) {
+					bloqueado=true;
+					break;
+				}
+			}
+			if(!bloqueado)
+				_verperfilUsuarioRegistrado = new Verperfilnobloqueado(this,mencion); 
+			else
+				_verperfilUsuarioRegistrado = new Verperfilbloqueado(this,mencion); 
+		}
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_verperfilUsuarioRegistrado);

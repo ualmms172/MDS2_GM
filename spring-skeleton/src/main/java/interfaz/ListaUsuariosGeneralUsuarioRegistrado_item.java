@@ -19,8 +19,17 @@ public class ListaUsuariosGeneralUsuarioRegistrado_item extends ListaUsuariosGen
 	public void VerperfilUsuarioRegistrado() {
 		//_verperfilUsuarioRegistrado = new VerperfilgeneralUsuarioRegistrado(this);
 		if(this.u.getID()==Interfaz.ur.u.getID()) _verperfilUsuarioRegistrado = new Verperfilpropio(this);
-		else if(!this.u.bloqueaA.contains(Interfaz.ur.u)) _verperfilUsuarioRegistrado = new Verperfilnobloqueado(this);
-		else _verperfilUsuarioRegistrado = new Verperfilbloqueado(this);
+		else {
+			boolean bloqueado=false;
+			for(basededatos.UsuarioRegistrado usu : u.bloqueaA.toArray()) {
+				if(usu.getID()==Interfaz.ur.u.getID()) {
+					bloqueado=true;
+					break;
+				}
+			}
+			if(!bloqueado) _verperfilUsuarioRegistrado = new Verperfilnobloqueado(this);
+			else _verperfilUsuarioRegistrado = new Verperfilbloqueado(this);
+		}
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_verperfilUsuarioRegistrado);

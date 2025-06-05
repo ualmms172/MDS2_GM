@@ -15,7 +15,14 @@ public class Vertweetajeno extends VertweetgeneralUsuarioRegistrado {
 	
 	public Vertweetajeno(MostrartweetspropiosUsuarioRegistrado_item mostrartweetspropiosUsuarioRegistrado_item) {
 		super(mostrartweetspropiosUsuarioRegistrado_item);
-		dado = mostrartweetspropiosUsuarioRegistrado_item.t.meGustaPor.contains(Interfaz.ur.u);
+//		dado = mostrartweetspropiosUsuarioRegistrado_item.t.meGustaPor.contains(Interfaz.ur.u);
+		for(basededatos.UsuarioRegistrado usu : mostrartweetspropiosUsuarioRegistrado_item.t.meGustaPor.toArray()) {
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				dado=true;
+				break;
+			}
+		}
+		
 		if(dado) {
 			this.getButtonMeGusta().getStyle().set("color", "red");
 			this.getButtonMeGusta().setText("Quitar");

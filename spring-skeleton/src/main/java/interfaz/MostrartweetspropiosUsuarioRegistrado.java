@@ -100,7 +100,14 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 		}
 		
 		//Si el tweet pertenece a alguien que te ha bloqueado no sale
-		if(Interfaz.ur.u.bloqueadoPor.contains(tweet.getEscritoPor())) continue;
+		boolean bloqueado=false;
+		for(basededatos.UsuarioRegistrado user : Interfaz.ur.u.bloqueadoPor.toArray()) {
+			if(user.getID()==tweet.getEscritoPor().getID()) {
+				bloqueado=true;
+				break;
+			}
+		}
+		if(bloqueado) continue;
 		
 		MostrartweetspropiosUsuarioRegistrado_item t =null;
 		if(twe.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
@@ -167,7 +174,14 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 			}
 			
 			//Si el tweet pertenece a alguien que te ha bloqueado no sale
-			if(Interfaz.ur.u.bloqueadoPor.contains(tweet.getEscritoPor())) continue;
+			boolean bloqueado=false;
+			for(basededatos.UsuarioRegistrado user : Interfaz.ur.u.bloqueadoPor.toArray()) {
+				if(user.getID()==tweet.getEscritoPor().getID()) {
+					bloqueado=true;
+					break;
+				}
+			}
+			if(bloqueado) continue;
 			
 			MostrartweetspropiosUsuarioRegistrado_item t =null;
 			if(twe.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
