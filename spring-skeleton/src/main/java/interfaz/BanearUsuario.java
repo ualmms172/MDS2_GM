@@ -37,6 +37,7 @@ public class BanearUsuario extends VistaBanearusuario{
 		
 		_listaUsuariosAdministrador = listaUsuariosAdministrador;
 		this.getLabelAvisoBaneo().setText(_listaUsuariosAdministrador.u.getNick()); 
+		this.getPlaceHolderTiempoBaneo().setPlaceholder("dd/mm/yyyy");
 		
 		this.getButtonAtras().addClickListener(event -> {
 			
@@ -67,6 +68,7 @@ public class BanearUsuario extends VistaBanearusuario{
 	public BanearUsuario(VerPerfilAdministrador verPerfilAdministrador) {
 		
 		_verPerfilAdministrador = verPerfilAdministrador; 
+		this.getPlaceHolderTiempoBaneo().setPlaceholder("dd/mm/yyyy");
 		basededatos.UsuarioRegistrado u = null;
 		if(_verPerfilAdministrador._listaTweetsAdmin_item!=null) {
 			u = _verPerfilAdministrador._listaTweetsAdmin_item.t.getEscritoPor();
@@ -129,7 +131,6 @@ public class BanearUsuario extends VistaBanearusuario{
 	        String fechaStr = this.getPlaceHolderTiempoBaneo().getValue();
 	        try {
 	             fecha = formato.parse(fechaStr);
-	            System.out.println("Fecha convertida: " + fecha);
 	        } catch (ParseException e) {
 	        	Notification.show("La fecha debe estar en formato: dd/MM/yyyy ");
 	             return;
@@ -176,7 +177,7 @@ public class BanearUsuario extends VistaBanearusuario{
 			}
 		}
 			
-		basededatos.Administrador abd=Interfaz.ad._iadministrador.Banear(ubd, Interfaz.ad.a,null);
+		basededatos.Administrador abd=Interfaz.ad._iadministrador.Banear(ubd, Interfaz.ad.a,new Date(Long.MAX_VALUE));
 		Administrador ad = new Administrador((MainView)Pantalla.MainView,abd); 
 		Verbaneados vb = new Verbaneados(ad);
 		Pantalla.Anterior = ad;
