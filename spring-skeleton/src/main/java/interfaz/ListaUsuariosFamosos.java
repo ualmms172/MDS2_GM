@@ -22,7 +22,7 @@ public class ListaUsuariosFamosos extends ListaUsuariosGeneralUsuarioNoRegistrad
 		if(n>10)n=10;
 		for(int i=0;i<n;i++) { //Como son los famosos solo se muestran los n primeros
 			
-			if(usuarios[i].getBaneo().after(new Date())) {
+			if(usuarios[i].getBaneo()!=null && usuarios[i].getBaneo().after(new Date())) {
 				if(n<usuarios.length) n++;
 				continue;
 			}

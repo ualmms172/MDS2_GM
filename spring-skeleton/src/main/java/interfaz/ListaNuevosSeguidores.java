@@ -20,7 +20,7 @@ public class ListaNuevosSeguidores extends VistaListanuevosseguidores {
 		
 		for(basededatos.UsuarioRegistrado user : usuarios) {
 			
-			if(user.getBaneo().after(new Date())) {
+			if(user.getBaneo()!=null && user.getBaneo().after(new Date())) {
 				continue;
 			}
 			

@@ -20,7 +20,7 @@ public class ListaMencionesRecibidas extends VistaListamencionesrecibidas {
 		Tweet[] tweets = Interfaz.ur.u.mencionadoEn.toArray();
 		for(Tweet twe : tweets) {
 			
-			if(twe.getEscritoPor().getBaneo().after(new Date())) {
+			if(twe.getEscritoPor().getBaneo()!=null && twe.getEscritoPor().getBaneo().after(new Date())) {
 				continue;
 			}
 			

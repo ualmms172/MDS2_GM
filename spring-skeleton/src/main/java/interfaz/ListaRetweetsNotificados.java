@@ -29,7 +29,7 @@ public class ListaRetweetsNotificados extends VistaListaretweetsnotificados {
 		
 		for(Tweet twe : tweets) {
 			
-			if(twe.getEscritoPor().getBaneo().after(new Date())) {
+			if(twe.getEscritoPor().getBaneo()!=null && twe.getEscritoPor().getBaneo().after(new Date())) {
 				continue;
 			}
 			

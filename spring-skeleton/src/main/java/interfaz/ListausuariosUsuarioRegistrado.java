@@ -19,7 +19,7 @@ public class ListausuariosUsuarioRegistrado extends ListaUsuariosGeneralUsuarioR
 		
 		for(basededatos.UsuarioRegistrado user : usuarios) {
 			
-			if(user.getBaneo().after(new Date())) {
+			if(user.getBaneo()!=null && user.getBaneo().after(new Date())) {
 				continue;
 			}
 			

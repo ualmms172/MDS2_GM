@@ -24,7 +24,7 @@ public class Comentariospropios extends ListaComentariosGeneral {
 			//Si el comentario pertenece a alguien que te ha bloqueado no sale
 			if(Interfaz.ur.u.bloqueadoPor.contains(com.getEscritoPor())) continue;
 			
-			if(com.getEscritoPor().getBaneo().after(new Date())) continue;
+			if(com.getEscritoPor().getBaneo()!=null && com.getEscritoPor().getBaneo().after(new Date())) continue;
 			
 			
 			Comentariospropios_item c = null;
