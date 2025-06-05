@@ -25,9 +25,24 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 		
-		basededatos.UsuarioRegistrado user= mostrartweetsUsuarioRegistrado.t.getEscritoPor();
-		seguido= user.seguidoPor.contains(Interfaz.ur.u);
-		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
+		basededatos.UsuarioRegistrado user= mencion?mostrartweetsUsuarioRegistrado.t.getMencionaA():mostrartweetsUsuarioRegistrado.t.getEscritoPor();
+		
+//		seguido= user.seguidoPor.contains(Interfaz.ur.u);
+		for(basededatos.UsuarioRegistrado usu : user.seguidoPor.toArray()){
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				bloqueado=true;
+				break;
+			}
+		}
+		
+//		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
+		for(basededatos.UsuarioRegistrado usu : user.bloqueaA.toArray()){
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				bloqueado=true;
+				break;
+			}
+		}
+		
 		
 		if(seguido) {
 			this.getButtonSeguir().getStyle().set("color", "red");
@@ -71,8 +86,21 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 
 		basededatos.UsuarioRegistrado user= listaUsuariosGeneralUsuarioRegistrado.u;
-		seguido= user.seguidoPor.contains(Interfaz.ur.u);
-		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
+//		seguido= user.seguidoPor.contains(Interfaz.ur.u);
+		for(basededatos.UsuarioRegistrado usu : user.seguidoPor.toArray()){
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				bloqueado=true;
+				break;
+			}
+		}
+		
+//		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
+		for(basededatos.UsuarioRegistrado usu : user.bloqueaA.toArray()){
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				bloqueado=true;
+				break;
+			}
+		}
 		
 		if(seguido) {
 			this.getButtonSeguir().getStyle().set("color", "red");
@@ -113,9 +141,22 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 
-		basededatos.UsuarioRegistrado user= vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
-		seguido= user.seguidoPor.contains(Interfaz.ur.u);
-		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
+		basededatos.UsuarioRegistrado user= mencion?vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getMencionaA():vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
+//		seguido= user.seguidoPor.contains(Interfaz.ur.u);
+		for(basededatos.UsuarioRegistrado usu : user.seguidoPor.toArray()){
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				bloqueado=true;
+				break;
+			}
+		}
+		
+//		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
+		for(basededatos.UsuarioRegistrado usu : user.bloqueaA.toArray()){
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				bloqueado=true;
+				break;
+			}
+		}
 		
 		if(seguido) {
 			this.getButtonSeguir().getStyle().set("color", "red");
@@ -157,8 +198,21 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 
 		basededatos.UsuarioRegistrado user= _comentariosUsuarioRegistrado.c.getEscritoPor();
-		seguido= user.seguidoPor.contains(Interfaz.ur.u);
-		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
+//		seguido= user.seguidoPor.contains(Interfaz.ur.u);
+		for(basededatos.UsuarioRegistrado usu : user.seguidoPor.toArray()){
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				bloqueado=true;
+				break;
+			}
+		}
+		
+//		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
+		for(basededatos.UsuarioRegistrado usu : user.bloqueaA.toArray()){
+			if(usu.getID()==Interfaz.ur.u.getID()) {
+				bloqueado=true;
+				break;
+			}
+		}
 		
 		if(seguido) {
 			this.getButtonSeguir().getStyle().set("color", "red");

@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.AttachEvent;
+
 import gallardoMartinez.MainView;
 import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
@@ -8,16 +10,28 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 	public ListausuariosUsuarioRegistrado_item(ListaUsuariosGeneral lista,basededatos.UsuarioRegistrado u) {
 		super(lista,u);
 		// TODO Auto-generated constructor stub
-		
 		_listausuariosUsuarioRegistrado = (ListausuariosUsuarioRegistrado) lista;
 		
-		//No se si el contains funciona correctamente, sino se hace un bucle para comprobar 1 a 1 directamente
-		if(u.getID()==Interfaz.ur.u.getID() || Interfaz.ur.u.bloqueadoPor.contains(u)) { 
+		
+		boolean bloqueado=false;
+		for(basededatos.UsuarioRegistrado user : u.bloqueaA.toArray()){
+			if(user.getID()==Interfaz.ur.u.getID()) {
+				bloqueado=true;
+				break;
+			}
+		}
+		if(u.getID()==Interfaz.ur.u.getID() || bloqueado) { 
 			this.getButtonSeguir().setVisible(false);
 		}
 		else {
 		
-		dado = u.seguidoPor.contains(Interfaz.ur.u);
+		for(basededatos.UsuarioRegistrado user : u.seguidoPor.toArray()){
+			if(user.getID()==Interfaz.ur.u.getID()) {
+				dado=true;
+				break;
+			}
+		}
+		
 		if(dado) {
 			this.getButtonSeguir().getStyle().set("color", "red");
 			this.getButtonSeguir().setText("Dejar de seguir");
@@ -42,7 +56,7 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 	//private Label _teSigue;
 	//private Button _seguirUsuarioB;
 	public ListausuariosUsuarioRegistrado _listausuariosUsuarioRegistrado;
-	public boolean dado=false;
+	public boolean dado;
 
 	public void SeguirUsuario() {
 		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Seguir_Usuario(Interfaz.ur.u, u);
@@ -57,5 +71,14 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(new VerlistacompletausuariosUsuarioRegistrado(u));
 		
+	}
+	
+	@Override
+	protected void onAttach(AttachEvent attachEvent) {
+	    super.onAttach(attachEvent);
+
+
+	    this.getButtonSeguir().getElement()
+	        .executeJs("this.addEventListener('click', function(e) { e.stopPropagation(); })");
 	}
 }

@@ -40,13 +40,13 @@ public class VerlistacompletausuariosUsuarioRegistrado extends VistaVerlistacomp
 		return new VerlistacompletausuariosUsuarioRegistrado(log);
 	}
 	
-	@Override
-	protected void onAttach(AttachEvent attachEvent) {
-	    super.onAttach(attachEvent);
-	    
-	    UI.getCurrent().getPage().executeJs(
-	        "document.addEventListener('click', function(e) { e.stopPropagation(); }, true);"
-	    );
-	}
+//	@Override
+//	protected void onAttach(AttachEvent attachEvent) {
+//	    super.onAttach(attachEvent);
+//	    
+//	    UI.getCurrent().getPage().executeJs(
+//	        "document.addEventListener('click', function(e) { e.stopPropagation(); }, true);"
+//	    );
+//	}
 
 }

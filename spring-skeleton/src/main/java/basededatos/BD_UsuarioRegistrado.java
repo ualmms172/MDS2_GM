@@ -106,7 +106,7 @@ public class BD_UsuarioRegistrado {
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
-		return aUsuario;
+		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getID());
 	}
 
 	public UsuarioRegistrado Registrar_Usuario(String aNick, String aDescripcion, String aUrl_perfil, String aUrl_fondo, String aContrasena,String aCorreo) throws PersistentException {
@@ -141,43 +141,49 @@ public class BD_UsuarioRegistrado {
 		
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 
-		try {
-			aSeguidor.sigueA.add(aSeguido);
-			aSeguido.seguidoPor.add(aSeguidor);
-			UsuarioRegistradoDAO.save(aSeguidor);
-			UsuarioRegistradoDAO.save(aSeguido);
-			t.commit();
-		} catch (Exception e) {
-			t.rollback();
-			throw new PersistentException(e);
-		} finally {
-			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		}
-		return aSeguidor;
-		
-			
+	    try {
+	        UsuarioRegistrado seguidor = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aSeguidor.getID());
+	        UsuarioRegistrado seguido = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aSeguido.getID());
+
+	        seguidor.sigueA.add(seguido); // Usa las instancias cargadas desde la sesión
+	        seguido.seguidoPor.add(seguidor);
+
+	        UsuarioRegistradoDAO.save(seguidor);
+	        UsuarioRegistradoDAO.save(seguido);
+
+	        t.commit();
+
+	        return seguidor;
+	    } catch (Exception e) {
+	        t.rollback();
+	        throw new PersistentException(e);
+	    } finally {
+	        MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
+	    }
 	}
+	
 
 	public UsuarioRegistrado Dejar_Seguir(UsuarioRegistrado aSeguidor, UsuarioRegistrado aSeguido) throws PersistentException {
-	
-		
-		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+	    PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 
-		try {
-			aSeguidor.sigueA.remove(aSeguido);
-			aSeguido.seguidoPor.remove(aSeguidor);
-			UsuarioRegistradoDAO.save(aSeguidor);
-			UsuarioRegistradoDAO.save(aSeguido);
-			t.commit();
-		} catch (Exception e) {
-			t.rollback();
-			throw new PersistentException(e);
-		} finally {
-			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		}
-		return aSeguidor;
-		
-		
+	    try {
+	        UsuarioRegistrado seguidor = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aSeguidor.getID());
+	        UsuarioRegistrado seguido = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aSeguido.getID());
+
+	        seguidor.sigueA.remove(seguido);
+	        seguido.seguidoPor.remove(seguidor);
+
+	        UsuarioRegistradoDAO.save(seguidor);
+	        UsuarioRegistradoDAO.save(seguido);
+
+	        t.commit();
+	        return seguidor;
+	    } catch (Exception e) {
+	        t.rollback();
+	        throw new PersistentException(e);
+	    } finally {
+	        MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
+	    }
 		
 	}
 
@@ -185,44 +191,57 @@ public class BD_UsuarioRegistrado {
 		
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 
-		try {
-			if(aBloqueado.sigueA.contains(aBloqueador)) {
-				aBloqueado.sigueA.remove(aBloqueador);
-				aBloqueador.seguidoPor.remove(aBloqueado);
-				UsuarioRegistradoDAO.save(aBloqueado);
-				UsuarioRegistradoDAO.save(aBloqueador);
-			}
-			aBloqueador.bloqueaA.add(aBloqueado);
-			aBloqueado.bloqueadoPor.add(aBloqueador);
-			UsuarioRegistradoDAO.save(aBloqueador);
-			UsuarioRegistradoDAO.save(aBloqueado);
-			t.commit();
-		} catch (Exception e) {
-			t.rollback();
-			throw new PersistentException(e);
-		} finally {
-			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		}
-		return aBloqueador;	
+	    try {
+	        UsuarioRegistrado bloqueador = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aBloqueador.getID());
+	        UsuarioRegistrado bloqueado = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aBloqueado.getID());
+
+	        // Si el bloqueado sigue al bloqueador, eliminamos la relación
+	        if (bloqueado.sigueA.contains(bloqueador)) {
+	            bloqueado.sigueA.remove(bloqueador);
+	            bloqueador.seguidoPor.remove(bloqueado);
+
+	            UsuarioRegistradoDAO.save(bloqueado);
+	            UsuarioRegistradoDAO.save(bloqueador);
+	        }
+
+	        bloqueador.bloqueaA.add(bloqueado);
+	        bloqueado.bloqueadoPor.add(bloqueador);
+
+	        UsuarioRegistradoDAO.save(bloqueador);
+	        UsuarioRegistradoDAO.save(bloqueado);
+
+	        t.commit();
+	        return bloqueador;
+	    } catch (Exception e) {
+	        t.rollback();
+	        throw new PersistentException(e);
+	    } finally {
+	        MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
+	    }
 	}
 
 	public UsuarioRegistrado Desbloquear(UsuarioRegistrado aBloqueador, UsuarioRegistrado aBloqueado) throws PersistentException {
-		
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 
-		try {
-			aBloqueador.bloqueaA.remove(aBloqueado);
-			aBloqueado.bloqueadoPor.remove(aBloqueador);
-			UsuarioRegistradoDAO.save(aBloqueador);
-			UsuarioRegistradoDAO.save(aBloqueado);
-			t.commit();
-		} catch (Exception e) {
-			t.rollback();
-			throw new PersistentException(e);
-		} finally {
-			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		}
-		return aBloqueador;
+	    try {
+	        UsuarioRegistrado bloqueador = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aBloqueador.getID());
+	        UsuarioRegistrado bloqueado = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aBloqueado.getID());
+
+	        bloqueador.bloqueaA.remove(bloqueado);
+	        bloqueado.bloqueadoPor.remove(bloqueador);
+
+	        UsuarioRegistradoDAO.save(bloqueador);
+	        UsuarioRegistradoDAO.save(bloqueado);
+
+	        t.commit();
+	        return bloqueador;
+	    } catch (Exception e) {
+	        t.rollback();
+	        throw new PersistentException(e);
+	    } finally {
+	        MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
+	    }
+
 	}
 
 	public UsuarioRegistrado DarLikeATweet(Tweet aTweet, UsuarioRegistrado aUsuario) throws PersistentException {
@@ -243,7 +262,7 @@ public class BD_UsuarioRegistrado {
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
-		return usuario;
+		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(usuario.getID());
 		
 
 		
