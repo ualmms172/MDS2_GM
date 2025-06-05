@@ -1,5 +1,6 @@
 package interfaz;
 
+import java.util.Date;
 import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -18,6 +19,10 @@ public class ListaMencionesRecibidas extends VistaListamencionesrecibidas {
 		
 		Tweet[] tweets = Interfaz.ur.u.mencionadoEn.toArray();
 		for(Tweet twe : tweets) {
+			
+			if(twe.getEscritoPor().getBaneo().after(new Date())) {
+				continue;
+			}
 			
 			ListaMencionesRecibidas_item t = new ListaMencionesRecibidas_item(this,twe);
 			

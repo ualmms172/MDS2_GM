@@ -1,5 +1,6 @@
 package interfaz;
 
+import java.util.Date;
 import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -16,6 +17,10 @@ public class ListaComentariosUsuarioNoRegistrado extends ListaComentariosGeneral
 		
 		Comentario[] comentarios = this._vertweetUsuarioNoRegistrado._listatweets.t.comentarios.toArray();
 		for(Comentario com : comentarios) {
+			
+			if(com.getEscritoPor().getBaneo().after(new Date())) {
+				continue;
+			}
 			
 			ListaComentariosUsuarioNoRegistrado_item c = new ListaComentariosUsuarioNoRegistrado_item(this,com);
 			

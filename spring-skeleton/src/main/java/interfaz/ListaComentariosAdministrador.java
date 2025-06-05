@@ -1,5 +1,6 @@
 package interfaz;
 
+import java.util.Date;
 import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -18,6 +19,10 @@ public class ListaComentariosAdministrador extends ListaComentariosGeneral {
     	
     	Comentario[] comentarios = this._verTweetAdministrador._listaTweetsAdmin.t.comentarios.toArray();
 		for(Comentario com : comentarios) {
+			
+			if(com.getEscritoPor().getBaneo().after(new Date())) {
+				continue;
+			}
 			
 			ListaComentariosAdministrador_item c = new ListaComentariosAdministrador_item(this,com);
 			

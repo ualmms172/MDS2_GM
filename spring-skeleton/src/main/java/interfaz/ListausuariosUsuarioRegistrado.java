@@ -1,5 +1,6 @@
 package interfaz;
 
+import java.util.Date;
 import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -17,6 +18,11 @@ public class ListausuariosUsuarioRegistrado extends ListaUsuariosGeneralUsuarioR
 		basededatos.UsuarioRegistrado[] usuarios = Interfaz.ur._iUsuarioregistrado.Cargar_Usuarios();
 		
 		for(basededatos.UsuarioRegistrado user : usuarios) {
+			
+			if(user.getBaneo().after(new Date())) {
+				continue;
+			}
+			
 			ListausuariosUsuarioRegistrado_item u= new ListausuariosUsuarioRegistrado_item(this,user);
 			
 			this.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(u);

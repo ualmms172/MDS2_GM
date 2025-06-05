@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Vector;
 
 import com.vaadin.flow.component.notification.Notification;
@@ -50,6 +51,10 @@ public class Listatweets extends ListaTweetsGeneral {
 		
 		for(Tweet twe : tweets) {
 			
+			if(twe.getEscritoPor().getBaneo().after(new Date())) {
+				continue;
+			}
+			
 			Tweet tweet=twe;
 			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()==null && twe.contieneMultimedia.isEmpty();
 			if(ret) {
@@ -85,6 +90,10 @@ public class Listatweets extends ListaTweetsGeneral {
 		Tweet[] tweets = hash.contenidoPor.toArray();
 		
 		for(Tweet twe : tweets) {
+			
+			if(twe.getEscritoPor().getBaneo().after(new Date())) {
+				continue;
+			}
 			
 			Tweet tweet=twe;
 			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()==null && twe.contieneMultimedia.isEmpty();

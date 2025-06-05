@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -27,6 +28,11 @@ public class ListaRetweetsNotificados extends VistaListaretweetsnotificados {
 		}
 		
 		for(Tweet twe : tweets) {
+			
+			if(twe.getEscritoPor().getBaneo().after(new Date())) {
+				continue;
+			}
+			
 			ListaRetweetsNotificados_item t = new ListaRetweetsNotificados_item(this,twe);
 			
 			this.getVerticalListaretweetsnotificados().as(VerticalLayout.class).add(t);

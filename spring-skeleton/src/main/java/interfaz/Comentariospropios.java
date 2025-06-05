@@ -1,5 +1,6 @@
 package interfaz;
 
+import java.util.Date;
 import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -22,6 +23,9 @@ public class Comentariospropios extends ListaComentariosGeneral {
 			
 			//Si el comentario pertenece a alguien que te ha bloqueado no sale
 			if(Interfaz.ur.u.bloqueadoPor.contains(com.getEscritoPor())) continue;
+			
+			if(com.getEscritoPor().getBaneo().after(new Date())) continue;
+			
 			
 			Comentariospropios_item c = null;
 			if(com.getEscritoPor().getID()==Interfaz.ur.u.getID())

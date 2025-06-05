@@ -1,5 +1,6 @@
 package interfaz;
 
+import java.util.Date;
 import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -18,6 +19,10 @@ public class ListaNuevosSeguidores extends VistaListanuevosseguidores {
 		basededatos.UsuarioRegistrado[] usuarios = Interfaz.ur.u.seguidoPor.toArray();
 		
 		for(basededatos.UsuarioRegistrado user : usuarios) {
+			
+			if(user.getBaneo().after(new Date())) {
+				continue;
+			}
 			
 			ListaNuevosSeguidores_item u = new ListaNuevosSeguidores_item(this,user);
 			

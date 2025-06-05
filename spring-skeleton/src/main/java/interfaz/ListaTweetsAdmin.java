@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -31,6 +32,10 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 		}
 		
 		for(Tweet twe : tweets) {
+			
+			if(twe.getEscritoPor().getBaneo().after(new Date())) {
+				continue;
+			}
 			
 			Tweet tweet=twe;
 			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()==null && twe.contieneMultimedia.isEmpty();
@@ -84,6 +89,10 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 		
 		for(Tweet twe : tweets) {
 			
+			if(twe.getEscritoPor().getBaneo().after(new Date())) {
+				continue;
+			}
+			
 			Tweet tweet=twe;
 			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()==null && twe.contieneMultimedia.isEmpty();
 			if(ret) {
@@ -118,6 +127,10 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 		Tweet[] tweets = hash.contenidoPor.toArray();
 		
 		for(Tweet twe : tweets) {
+			
+			if(twe.getEscritoPor().getBaneo().after(new Date())) {
+				continue;
+			}
 			
 			Tweet tweet=twe;
 			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()==null && twe.contieneMultimedia.isEmpty();
