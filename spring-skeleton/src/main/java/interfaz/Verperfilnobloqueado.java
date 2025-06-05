@@ -30,13 +30,13 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 //		seguido= user.seguidoPor.contains(Interfaz.ur.u);
 		for(basededatos.UsuarioRegistrado usu : user.seguidoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
-				bloqueado=true;
+				seguido=true;
 				break;
 			}
 		}
 		
 //		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
-		for(basededatos.UsuarioRegistrado usu : user.bloqueaA.toArray()){
+		for(basededatos.UsuarioRegistrado usu : user.bloqueadoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				bloqueado=true;
 				break;
@@ -89,13 +89,13 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 //		seguido= user.seguidoPor.contains(Interfaz.ur.u);
 		for(basededatos.UsuarioRegistrado usu : user.seguidoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
-				bloqueado=true;
+				seguido=true;
 				break;
 			}
 		}
 		
 //		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
-		for(basededatos.UsuarioRegistrado usu : user.bloqueaA.toArray()){
+		for(basededatos.UsuarioRegistrado usu : user.bloqueadoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				bloqueado=true;
 				break;
@@ -145,13 +145,13 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 //		seguido= user.seguidoPor.contains(Interfaz.ur.u);
 		for(basededatos.UsuarioRegistrado usu : user.seguidoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
-				bloqueado=true;
+				seguido=true;
 				break;
 			}
 		}
 		
 //		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
-		for(basededatos.UsuarioRegistrado usu : user.bloqueaA.toArray()){
+		for(basededatos.UsuarioRegistrado usu : user.bloqueadoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				bloqueado=true;
 				break;
@@ -201,13 +201,13 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 //		seguido= user.seguidoPor.contains(Interfaz.ur.u);
 		for(basededatos.UsuarioRegistrado usu : user.seguidoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
-				bloqueado=true;
+				seguido=true;
 				break;
 			}
 		}
 		
 //		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
-		for(basededatos.UsuarioRegistrado usu : user.bloqueaA.toArray()){
+		for(basededatos.UsuarioRegistrado usu : user.bloqueadoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				bloqueado=true;
 				break;

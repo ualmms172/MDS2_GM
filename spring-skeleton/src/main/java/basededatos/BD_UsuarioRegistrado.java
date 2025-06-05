@@ -77,7 +77,9 @@ public class BD_UsuarioRegistrado {
 		try {
 
 			// Eliminar al usuario
-			UsuarioRegistradoDAO.delete(aUsuario);
+//			UsuarioRegistradoDAO.delete(aUsuario);
+			UsuarioRegistradoDAO.deleteAndDissociate(aUsuario);
+			
 
 			t.commit();
 		} catch (Exception e) {

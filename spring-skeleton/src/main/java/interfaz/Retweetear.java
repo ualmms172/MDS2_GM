@@ -3,6 +3,7 @@ package interfaz;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.notification.Notification;
 
 import basededatos.Contenido;
@@ -65,8 +66,8 @@ public class Retweetear extends CrearContenido {
 					 Pantalla.MainView.add(y);
 				 }
 				 else {
-					 UsuarioRegistrado y = new UsuarioRegistrado((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-					 Pantalla.MainView.add(y);
+					 //UsuarioRegistrado y = new UsuarioRegistrado((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+					 Pantalla.MainView.add(_mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado);
 				 }
 			 }
 			 else {
@@ -86,12 +87,35 @@ public class Retweetear extends CrearContenido {
 		
 		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
 		    String url = event.getValue();
-		    if (url != null && !url.isEmpty()) {
-		        this.getImgVideo().setSrc(url);
+		    Div videoDiv = this.getImgVideo(); // Aunque el nombre "getImgVideo" puede confundir, si devuelve un Div está bien
+
+		    if (url != null && !url.isBlank()) {
+		        String videoId = null;
+
+		        if (url.contains("youtube.com/watch?v=")) {
+		            int index = url.indexOf("watch?v=") + 8;
+		            int end = url.indexOf("&", index);
+		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
+		        } else if (url.contains("youtu.be/")) {
+		            int index = url.indexOf("youtu.be/") + 9;
+		            int end = url.indexOf("?", index);
+		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
+		        }
+
+		        if (videoId != null && !videoId.isBlank()) {
+		            String embedUrl = "https://www.youtube.com/embed/" + videoId;
+		            String iframe = "<iframe width='560' height='315' src='" + embedUrl + "' " +
+		                            "title='YouTube video player' frameborder='0' " +
+		                            "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
+		            videoDiv.getElement().setProperty("innerHTML", iframe);
+		        } else {
+		            videoDiv.getElement().setProperty("innerHTML", "");
+		        }
 		    } else {
-		    	this.getImgVideo().setSrc(""); // Limpia la imagen si el campo está vacío
+		        videoDiv.getElement().setProperty("innerHTML", ""); // Limpia el contenido si el campo está vacío
 		    }
 		});
+
 		
 	}
 	
@@ -161,12 +185,35 @@ public class Retweetear extends CrearContenido {
 		
 		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
 		    String url = event.getValue();
-		    if (url != null && !url.isEmpty()) {
-		        this.getImgVideo().setSrc(url);
+		    Div videoDiv = this.getImgVideo(); // Aunque el nombre "getImgVideo" puede confundir, si devuelve un Div está bien
+
+		    if (url != null && !url.isBlank()) {
+		        String videoId = null;
+
+		        if (url.contains("youtube.com/watch?v=")) {
+		            int index = url.indexOf("watch?v=") + 8;
+		            int end = url.indexOf("&", index);
+		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
+		        } else if (url.contains("youtu.be/")) {
+		            int index = url.indexOf("youtu.be/") + 9;
+		            int end = url.indexOf("?", index);
+		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
+		        }
+
+		        if (videoId != null && !videoId.isBlank()) {
+		            String embedUrl = "https://www.youtube.com/embed/" + videoId;
+		            String iframe = "<iframe width='560' height='315' src='" + embedUrl + "' " +
+		                            "title='YouTube video player' frameborder='0' " +
+		                            "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
+		            videoDiv.getElement().setProperty("innerHTML", iframe);
+		        } else {
+		            videoDiv.getElement().setProperty("innerHTML", "");
+		        }
 		    } else {
-		    	this.getImgVideo().setSrc(""); // Limpia la imagen si el campo está vacío
+		        videoDiv.getElement().setProperty("innerHTML", ""); // Limpia el contenido si el campo está vacío
 		    }
 		});
+
 		
 	}
 	
@@ -225,25 +272,50 @@ public class Retweetear extends CrearContenido {
 		}
 		
 		//Comprobamos que el video lo sea realmente
-				if(!video.isBlank()) {
-					try {
-				        URL url = new URL(video);
-				        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-				        connection.setRequestMethod("HEAD");
-				        connection.setConnectTimeout(3000);
-				        connection.setReadTimeout(3000);
-				        connection.connect();
+		if (!video.isBlank()) {
+		    try {
+		        // Validar y extraer el ID del video de YouTube
+		        String videoId = null;
 
-				        String contentType = connection.getContentType();
-				        if( contentType == null || !contentType.startsWith("video/")) {
-				        	Notification.show("Si se rellena el campo video debe contener un enlace a una video.");
-				            return;
-				        }
-				    } catch (Exception e) {
-				    	Notification.show("Si se rellena el campo video debe contener un enlace a una video.");
-			            return;
-				    }
-				}
+		        if (video.contains("youtube.com/watch?v=")) {
+		            int index = video.indexOf("watch?v=") + 8;
+		            int end = video.indexOf("&", index);
+		            videoId = (end == -1) ? video.substring(index) : video.substring(index, end);
+		        } else if (video.contains("youtu.be/")) {
+		            int index = video.indexOf("youtu.be/") + 9;
+		            int end = video.indexOf("?", index);
+		            videoId = (end == -1) ? video.substring(index) : video.substring(index, end);
+		        }
+
+		        if (videoId == null || videoId.isBlank()) {
+		            Notification.show("El enlace no parece ser un video de YouTube válido.");
+		            return;
+		        }
+
+		        String embedUrl = "https://www.youtube.com/embed/" + videoId;
+
+		        // Verificar si el video existe haciendo una petición GET al embed
+		        URL url = new URL(embedUrl);
+		        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		        connection.setRequestMethod("GET"); // HEAD a veces falla con YouTube
+		        connection.setConnectTimeout(3000);
+		        connection.setReadTimeout(3000);
+		        int responseCode = connection.getResponseCode();
+
+		        if (responseCode != 200) {
+		            Notification.show("El video de YouTube no se puede cargar o no existe.");
+		            return;
+		        }
+
+		        // Si llega hasta aquí, el video es válido
+		        // Aquí podrías guardar el video o actualizar la vista
+		        video = embedUrl;
+
+		    } catch (Exception e) {
+		        Notification.show("El enlace debe ser un video de YouTube válido y accesible.");
+		        return;
+		    }
+		}
 				
 				
 				

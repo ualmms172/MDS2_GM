@@ -78,7 +78,7 @@ public class BD_Comentario {
         }
 
 
-	public Administrador BorrarComentarios(Tweet aTweet,Administrador aAdministrador) throws PersistentException {
+	public void BorrarComentarios(Tweet aTweet) throws PersistentException {
 		
 		PersistentTransaction t = null;
 		try {
@@ -91,11 +91,11 @@ public class BD_Comentario {
 			t.commit();
 
 			// Aquí podrías devolver el administrador que ha realizado esta acción si lo conoces
-			return (Administrador)AdministradorDAO.loadAdministradorByORMID(aAdministrador.getID()); // O cambiar esto por el administrador actual
+			//return (Administrador)AdministradorDAO.loadAdministradorByORMID(aAdministrador.getID()); // O cambiar esto por el administrador actual
 		} catch (Exception e) {
 			if (t != null) t.rollback();
 			e.printStackTrace();
-			return null;
+			return ;
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
@@ -109,7 +109,8 @@ public class BD_Comentario {
 		PersistentTransaction t = null;
 		try {
 			t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-			ComentarioDAO.delete(aComentario);
+//			ComentarioDAO.delete(aComentario);
+			ComentarioDAO.deleteAndDissociate(aComentario);
 			t.commit();
 			return AdministradorDAO.loadAdministradorByORMID(aAdministrador.getID()); // Devuelve el administrador si se conoce
 		} catch (Exception e) {

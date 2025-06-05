@@ -28,4 +28,10 @@ public interface iAdministrador extends iLogueado {
 	public Administrador BorrarTweet(Tweet aTweet,Administrador aAdministrador) ;
 
 	public Administrador BorrarComentario(Comentario aComentario,Administrador aAdministrador);
+	
+	public void BorrarComentarios(Tweet aTweet);
+	
+	public void BorrarTexto(Contenido aContenido);
+	
+	public void BorrarMultimedia(Contenido aContenido);
 }

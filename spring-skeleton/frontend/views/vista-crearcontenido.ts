@@ -51,7 +51,9 @@ export class VistaCrearcontenido extends LitElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1;" id="verticalLayout-PrevisualizacionVideo">
-  <img style="flex-grow: 1;" id="img-Video">
+  <div id="img-Video" style="flex-grow: 1; align-self: center;">
+    Div 
+  </div>
   <label style="flex-grow: 1; align-self: center;" id="label-PrevisualizacionVideo">Previsualización Video</label>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>

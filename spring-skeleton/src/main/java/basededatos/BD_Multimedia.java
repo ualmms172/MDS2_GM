@@ -57,10 +57,10 @@ public class BD_Multimedia {
 		
 	}
 
-	public Administrador BorrarMultimedia(Contenido aContenido) throws PersistentException {
+	public void BorrarMultimedia(Contenido aContenido) throws PersistentException {
 
 	    PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-	    Administrador admin = null; // Puedes usarlo si tienes la lógica de "quién borra"
+	    //Administrador admin = null; // Puedes usarlo si tienes la lógica de "quién borra"
 
 	    try {
 	        Multimedia[] elementos = aContenido.contieneMultimedia.toArray();
@@ -76,7 +76,7 @@ public class BD_Multimedia {
 	    }
 
 	    MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-	    return admin;
+	   // return admin;
 
 	
 	

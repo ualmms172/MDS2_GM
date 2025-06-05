@@ -162,7 +162,11 @@ public class BD_Tweet {
 		
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 		try {
-			TweetDAO.delete(aTweet);
+			
+			if(aTweet.getContiene()!=null) {
+				aTweet.getContiene().setNumTweets(aTweet.getContiene().getNumTweets()-1);
+			}
+			TweetDAO.deleteAndDissociate(aTweet);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -196,21 +200,26 @@ public class BD_Tweet {
 
 	public UsuarioRegistrado QuitarLikeTweet(UsuarioRegistrado aUsuario,Tweet aTweet) throws PersistentException {
 	
-		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+		 PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 
-		try {
-			aTweet.meGustaPor.remove(aUsuario);
-			aUsuario.meGusta.remove(aTweet);
-			TweetDAO.save(aTweet);
-			UsuarioRegistradoDAO.save(aUsuario);
-			t.commit();
-		} catch (Exception e) {
-			t.rollback();
-			throw new PersistentException(e);
-		} finally {
-			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		}
-		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getID());
+		    try {
+		        UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getID());
+		        Tweet tweet = TweetDAO.loadTweetByORMID(aTweet.getORMID());
+
+		        tweet.meGustaPor.remove(usuario);
+		        usuario.meGusta.remove(tweet);
+
+		        TweetDAO.save(tweet);
+		        UsuarioRegistradoDAO.save(usuario);
+
+		        t.commit();
+		        return usuario;
+		    } catch (Exception e) {
+		        t.rollback();
+		        throw new PersistentException(e);
+		    } finally {
+		        MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
+		    }
 	}
 		
 		

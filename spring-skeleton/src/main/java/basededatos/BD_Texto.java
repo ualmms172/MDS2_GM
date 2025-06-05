@@ -43,11 +43,11 @@ public class BD_Texto {
 		
 	}
 
-	public Administrador BorrarTexto(Contenido aContenido) throws PersistentException {
+	public void BorrarTexto(Contenido aContenido) throws PersistentException {
 		
 		
 		 PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-		    Administrador admin = null;
+		   // Administrador admin = null;
 
 		    try {
 		        Texto texto = aContenido.getContieneTexto();
@@ -63,7 +63,7 @@ public class BD_Texto {
 		    }
 
 		    MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		    return admin;
+		   // return admin;
 		
 		
 		

@@ -10,6 +10,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Div;
 
 @Tag("vista-crearcontenido")
 @JsModule("./views/vista-crearcontenido.ts")
@@ -57,10 +58,10 @@ public class VistaCrearcontenido extends LitTemplate {
 	private Button buttonPublicar;
 	@Id("verticalLayout-PrevisualizacionVideo")
 	private Element verticalLayoutPrevisualizacionVideo;
-	@Id("img-Video")
-	private Image imgVideo;
 	@Id("label-PrevisualizacionVideo")
 	private Label labelPrevisualizacionVideo;
+	@Id("img-Video")
+	private Div imgVideo;
 
 	public VistaCrearcontenido() {
         // You can initialise any data required for the connected UI components here.
@@ -234,11 +235,11 @@ public class VistaCrearcontenido extends LitTemplate {
 		this.verticalLayoutPrevisualizacionVideo = verticalLayoutPrevisualizacionVideo;
 	}
 
-	public Image getImgVideo() {
+	public Div getImgVideo() {
 		return imgVideo;
 	}
 
-	public void setImgVideo(Image imgVideo) {
+	public void setImgVideo(Div imgVideo) {
 		this.imgVideo = imgVideo;
 	}
 

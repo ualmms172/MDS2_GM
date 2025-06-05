@@ -60,12 +60,26 @@ public class Listatweets extends ListaTweetsGeneral {
 			if(ret) {
 				tweet=twe.getRetweeteaA();
 			}
+			
 			Listatweets_item t = new Listatweets_item(this,tweet);
 			
 			if(ret) {
 				t.getHorizontalLayoutRetweeteadoPor().setVisible(true);
 				t.getlabelRetweeteadoPor().setVisible(true);
 				t.getlabelRetweeteadoPor().setText("Retweeteado por " + twe.getEscritoPor().getNick());
+			}
+			//Si hay retweet con texto y/o multimedia
+			else if(twe.getRetweeteaA()!=null) { 
+				Tweet retwe = tweet.getRetweeteaA();
+				Listatweets_item retweet = new Listatweets_item(this,retwe);
+			//	retweet.getButtonMeGusta().setVisible(false);
+				retweet.getHorizontalLayoutOpciones().setVisible(false);
+				if(retwe.contieneMultimedia!=null) {
+					retweet.getHorizontalLayoutMultimedia().setVisible(false);
+					retweet.getHorizontalMultimedia().setVisible(false);
+				}
+				t.getHorizontalLayoutRetweeteadoPor().removeAll();
+				t.getHorizontalLayoutRetweeteadoPor().add(retweet);
 			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);

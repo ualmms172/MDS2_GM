@@ -35,8 +35,18 @@ public class VertweetGeneral extends VistaVertweetgeneral {
 			for( basededatos.Multimedia multimedia : item.t.contieneMultimedia.toArray()) {
 				if(multimedia.getFoto())
 					this.getImgFotoTweet().setSrc(multimedia.getUrl());
-				else 
-					this.getDivTweet().setText(multimedia.getUrl());
+				else{
+					String embedUrl = multimedia.getUrl();  // URL ya en formato embed
+
+					if (embedUrl != null && !embedUrl.isBlank()) {
+					    this.getDivTweet().getElement().setProperty("innerHTML",
+					        "<iframe width='560' height='315' src='" + embedUrl + "' " +
+					        "title='YouTube video player' frameborder='0' " +
+					        "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
+					} else {
+					    this.getDivTweet().getElement().setProperty("innerHTML", "");
+					}
+				}
 			}
 		/*
 			if(item.t.getMencionaA()!=null) 

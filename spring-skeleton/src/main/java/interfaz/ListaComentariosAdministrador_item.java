@@ -25,6 +25,9 @@ public class ListaComentariosAdministrador_item extends ListaComentariosGeneral_
 
 	public void BorrarComentario() {
 		
+//		Interfaz.ad._iadministrador.BorrarTexto(cont);
+//		Interfaz.ad._iadministrador.BorrarMultimedia(cont);
+
 		basededatos.Administrador abd=Interfaz.ad._iadministrador.BorrarComentario(c,Interfaz.ad.a);
 		
 		Administrador a = new Administrador((MainView)Pantalla.MainView,abd);

@@ -324,6 +324,42 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 		    }
 	}
 
+	@Override
+	public void BorrarComentarios(Tweet aTweet) {
+		 try {
+		         _bd_com.BorrarComentarios(aTweet);
+		    } catch (PersistentException e) {
+		        System.err.println("Error al borrar los comentarios de un tweet: " + e.getMessage());
+		        e.printStackTrace();
+		        return ;
+		    }
+		
+	}
+
+	@Override
+	public void BorrarTexto(Contenido aContenido) {
+		try {
+	         _bd_tex.BorrarTexto(aContenido);
+	    } catch (PersistentException e) {
+	        System.err.println("Error al borrar el texto de un contenido: " + e.getMessage());
+	        e.printStackTrace();
+	        return ;
+	    }
+		
+	}
+
+	@Override
+	public void BorrarMultimedia(Contenido aContenido) {
+		try {
+	         this._bd_mul.BorrarMultimedia(aContenido);
+	    } catch (PersistentException e) {
+	        System.err.println("Error al borrar la multimedia de un contenido: " + e.getMessage());
+	        e.printStackTrace();
+	        return ;
+	    }
+		
+	}
+
 
 
 //	public UsuarioRegistrado get_Usuarioregistrado() {

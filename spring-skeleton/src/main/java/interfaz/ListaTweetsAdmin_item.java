@@ -86,6 +86,10 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 	public void BorrarTweet() {
 //		this._listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).remove(this);
 		
+//		Interfaz.ad._iadministrador.BorrarTexto(cont);
+//		Interfaz.ad._iadministrador.BorrarMultimedia(cont);
+//		Interfaz.ad._iadministrador.BorrarComentarios(t);
+		
 		basededatos.Administrador abd=Interfaz.ad._iadministrador.BorrarTweet(t,Interfaz.ad.a);
 		Administrador a = new Administrador((MainView)Pantalla.MainView,abd);
 		Pantalla.MainView.removeAll();

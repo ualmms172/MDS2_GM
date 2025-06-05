@@ -20,15 +20,28 @@ public class ListaContenido_item extends VistaListacontenido_item {
 	_lista = lista;
 
 	this.cont=c;
-	this.getLabelCuerpoTwet().setText(c.getContieneTexto().getTexto());
+	if(c.getContieneTexto()!=null)
+		this.getLabelCuerpoTwet().setText(c.getContieneTexto().getTexto());
+	else
+		this.getLabelCuerpoTwet().setVisible(false);
 	this.getLabelMeGusta().setText((String.valueOf(c.meGustaPor.size())));
 	this.getLabelNombreUsuario().setText(c.getEscritoPor().getNick());
 	this.getImgFotoPerfilTweet().setSrc(c.getEscritoPor().getFotoPerfil());
 	for( basededatos.Multimedia multimedia : c.contieneMultimedia.toArray()) {
 		if(multimedia.getFoto())
 			this.getImgFotoTweet().setSrc(multimedia.getUrl());
-		else 
-			this.getDivTweet().setText(multimedia.getUrl());
+		else {
+			String embedUrl = multimedia.getUrl();  // URL ya en formato embed
+
+			if (embedUrl != null && !embedUrl.isBlank()) {
+			    this.getDivTweet().getElement().setProperty("innerHTML",
+			        "<iframe width='560' height='315' src='" + embedUrl + "' " +
+			        "title='YouTube video player' frameborder='0' " +
+			        "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
+			} else {
+			    this.getDivTweet().getElement().setProperty("innerHTML", "");
+			}
+		}
 	}
 	this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
 	this.getlabelRetweeteadoPor().setVisible(false);
