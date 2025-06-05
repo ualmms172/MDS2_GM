@@ -4,7 +4,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.orm.PersistentException;
 
@@ -201,7 +203,7 @@ public class BanearUsuario extends VistaBanearusuario{
 			}
 		}
 			
-		basededatos.Administrador abd=Interfaz.ad._iadministrador.Banear(ubd, Interfaz.ad.a,new Date(Long.MAX_VALUE));
+		basededatos.Administrador abd=Interfaz.ad._iadministrador.Banear(ubd, Interfaz.ad.a,new GregorianCalendar(9999, Calendar.DECEMBER, 31).getTime());
 		Administrador ad = new Administrador((MainView)Pantalla.MainView,abd); 
 		Verbaneados vb = new Verbaneados(ad);
 		Pantalla.Anterior = ad;
