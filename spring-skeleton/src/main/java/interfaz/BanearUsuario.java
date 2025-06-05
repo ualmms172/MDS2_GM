@@ -71,19 +71,25 @@ public class BanearUsuario extends VistaBanearusuario{
 		this.getPlaceHolderTiempoBaneo().setPlaceholder("dd/mm/yyyy");
 		basededatos.UsuarioRegistrado u = null;
 		if(_verPerfilAdministrador._listaTweetsAdmin_item!=null) {
-			u = _verPerfilAdministrador._listaTweetsAdmin_item.t.getEscritoPor();
+			if(_verPerfilAdministrador.mencion)
+				u = _verPerfilAdministrador._listaTweetsAdmin_item.t.getMencionaA();
+			else
+				u = _verPerfilAdministrador._listaTweetsAdmin_item.t.getEscritoPor();
 		}
 		else if(_verPerfilAdministrador._listaComentariosAdministrador!=null) {
 			u = _verPerfilAdministrador._listaComentariosAdministrador.c.getEscritoPor();
 		}
 		else if(_verPerfilAdministrador._verTweetAdministrador!=null) {
-			u = _verPerfilAdministrador._verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor();
+			if(_verPerfilAdministrador.mencion)
+				u= _verPerfilAdministrador._verTweetAdministrador._listaTweetsAdmin.t.getMencionaA();
+			else
+				u = _verPerfilAdministrador._verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor();
 		}
 		else if(_verPerfilAdministrador._listaUsuariosGeneralAdministrador!=null) {
 			u = _verPerfilAdministrador._listaUsuariosGeneralAdministrador.u;
 		}
 		
-		this.getLabelAvisoBaneo().setText(_listaUsuariosAdministrador.u.getNick());
+		this.getLabelAvisoBaneo().setText(u.getNick());
 		
 		this.getButtonAtras().addClickListener(event -> {
 			
@@ -141,7 +147,16 @@ public class BanearUsuario extends VistaBanearusuario{
 			ubd= _listaUsuariosAdministrador.u;
 		else {
 			if(_verPerfilAdministrador._listaTweetsAdmin_item!=null) {
-				ubd= _verPerfilAdministrador._listaTweetsAdmin_item.cont.getEscritoPor();
+				if(_verPerfilAdministrador.mencion)
+					ubd= _verPerfilAdministrador._listaTweetsAdmin_item.t.getMencionaA();
+				else
+					ubd = _verPerfilAdministrador._listaTweetsAdmin_item.t.getEscritoPor();
+			}
+			else if(_verPerfilAdministrador._verTweetAdministrador!=null) {
+				if(_verPerfilAdministrador.mencion)
+					ubd= _verPerfilAdministrador._verTweetAdministrador._listaTweetsAdmin.t.getMencionaA();
+				else
+					ubd = _verPerfilAdministrador._verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor();
 			}
 			else if(_verPerfilAdministrador._listaUsuariosGeneralAdministrador!=null) {
 				ubd=_verPerfilAdministrador._listaUsuariosGeneralAdministrador.u;
@@ -167,7 +182,16 @@ public class BanearUsuario extends VistaBanearusuario{
 			ubd= _listaUsuariosAdministrador.u;
 		else {
 			if(_verPerfilAdministrador._listaTweetsAdmin_item!=null) {
-				ubd= _verPerfilAdministrador._listaTweetsAdmin_item.cont.getEscritoPor();
+				if(_verPerfilAdministrador.mencion)
+					ubd= _verPerfilAdministrador._listaTweetsAdmin_item.t.getMencionaA();
+				else
+					ubd = _verPerfilAdministrador._listaTweetsAdmin_item.t.getEscritoPor();
+			}
+			else if(_verPerfilAdministrador._verTweetAdministrador!=null) {
+				if(_verPerfilAdministrador.mencion)
+					ubd= _verPerfilAdministrador._verTweetAdministrador._listaTweetsAdmin.t.getMencionaA();
+				else
+					ubd = _verPerfilAdministrador._verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor();
 			}
 			else if(_verPerfilAdministrador._listaUsuariosGeneralAdministrador!=null) {
 				ubd=_verPerfilAdministrador._listaUsuariosGeneralAdministrador.u;
