@@ -22,7 +22,14 @@ public class Comentariospropios extends ListaComentariosGeneral {
 		for(Comentario com : comentarios) {
 			
 			//Si el comentario pertenece a alguien que te ha bloqueado no sale
-			if(Interfaz.ur.u.bloqueadoPor.contains(com.getEscritoPor())) continue;
+			boolean bloqueado=false;
+			for(basededatos.UsuarioRegistrado user : Interfaz.ur.u.bloqueadoPor.toArray()) {
+				if(user.getID()==com.getEscritoPor().getID()) {
+					bloqueado=true;
+					break;
+				}
+			}
+			if(bloqueado) continue;
 			
 			if(com.getEscritoPor().getBaneo()!=null && com.getEscritoPor().getBaneo().after(new Date())) continue;
 			
