@@ -31,9 +31,23 @@ public class BD_Tweet {
 	    try {
 	        autor = aUsuario;
 
-	        // Crear el nuevo tweet
+	     // Crear el nuevo tweet
 	        Tweet tweet = TweetDAO.createTweet();
 	        tweet.setEscritoPor(autor);
+
+	        // Asociar el hashtag si no es null
+	        if (aHashtag != null) {
+	            tweet.setContiene(aHashtag);
+	            aHashtag.setNumTweets(aHashtag.getNumTweets()+1);
+	            HashtagDAO.save(aHashtag);
+	        }
+
+	        if (aUsuarioMencionado != null) {
+	            tweet.setMencionaA(aUsuarioMencionado);
+	        }
+
+	        // Guarda el tweet primero para evitar TransientPropertyValueException
+	        TweetDAO.save(tweet);
 
 	        // Asociar texto si lo hay
 	        if (aTexto != null && !aTexto.isEmpty()) {
@@ -61,21 +75,8 @@ public class BD_Tweet {
 	            video.setPerteneceA(tweet);
 	            MultimediaDAO.save(video);
 	        }
-
-	        // Asociar el hashtag si no es null
-	        if (aHashtag != null) {
-	            tweet.setContiene(aHashtag);
-	            aHashtag.setNumTweets(aHashtag.getNumTweets()+1);
-	            HashtagDAO.save(aHashtag);
-	        }
-
-	        if (aUsuarioMencionado != null) {
-	            tweet.setMencionaA(aUsuarioMencionado);
-	        }
-
-	        // Guardar el tweet y el autor
+	        
 	        TweetDAO.save(tweet);
-	        UsuarioRegistradoDAO.save(autor);
 
 	        t.commit();
 	    } catch (Exception e) {

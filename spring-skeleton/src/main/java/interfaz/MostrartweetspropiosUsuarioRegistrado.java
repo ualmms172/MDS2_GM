@@ -55,7 +55,7 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 			if(bloqueado) continue;
 			
 			MostrartweetspropiosUsuarioRegistrado_item t =null;
-			if(twe.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
+			if(tweet.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
 				t = new MostrartweetspropiosUsuarioRegistrado_item(this,tweet);
 			else
 				t= new MostrartweetsUsuarioRegistrado_item(this,tweet);
@@ -110,7 +110,7 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 		if(bloqueado) continue;
 		
 		MostrartweetspropiosUsuarioRegistrado_item t =null;
-		if(twe.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
+		if(tweet.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
 			t = new MostrartweetspropiosUsuarioRegistrado_item(this,tweet);
 		else
 			t= new MostrartweetsUsuarioRegistrado_item(this,tweet);
@@ -184,7 +184,7 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 			if(bloqueado) continue;
 			
 			MostrartweetspropiosUsuarioRegistrado_item t =null;
-			if(twe.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
+			if(tweet.getEscritoPor().getID()==Interfaz.ur.u.getID()) 
 				t = new MostrartweetspropiosUsuarioRegistrado_item(this,tweet);
 			else
 				t= new MostrartweetsUsuarioRegistrado_item(this,tweet);

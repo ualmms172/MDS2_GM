@@ -32,6 +32,7 @@ import jakarta.mail.Transport;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 
+import java.util.Date;
 import java.util.Properties;
 
 import org.json.JSONObject;
@@ -294,12 +295,19 @@ public class IniciarSesin extends VistaIniciarsesin {
 			return;
 		}
 		
-		this._usuarioNoRegistrado.MainView.removeAll();
+		
+		
 		if(log instanceof basededatos.Administrador) {
+			this._usuarioNoRegistrado.MainView.removeAll();
 			Administrador a = new Administrador((MainView)Pantalla.MainView,(basededatos.Administrador)log);
 			this._usuarioNoRegistrado.MainView.add(a);
 		}
 		else {
+			if(((basededatos.UsuarioRegistrado)log).getBaneo()!=null && ((basededatos.UsuarioRegistrado)log).getBaneo().after(new Date())) {
+				Notification.show("Este usuario se encuentra baneado hasta: "+ ((basededatos.UsuarioRegistrado)log).getBaneo().toString());
+				return;
+			}
+			this._usuarioNoRegistrado.MainView.removeAll();
 			UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,(basededatos.UsuarioRegistrado)log);
 			this._usuarioNoRegistrado.MainView.add(u);
 		}

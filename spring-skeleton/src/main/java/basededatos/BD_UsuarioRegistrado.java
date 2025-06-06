@@ -56,7 +56,8 @@ public class BD_UsuarioRegistrado {
 		UsuarioRegistrado[] baneados = null;
 
 		try {
-			baneados = UsuarioRegistradoDAO.listUsuarioRegistradoByQuery("baneo IS NOT NULL", null);
+			baneados = UsuarioRegistradoDAO.listUsuarioRegistradoByQuery("baneo IS NOT NULL AND baneo > CURRENT_TIMESTAMP", null);
+
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();

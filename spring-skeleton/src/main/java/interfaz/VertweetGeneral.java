@@ -28,7 +28,8 @@ public class VertweetGeneral extends VistaVertweetgeneral {
 			this.getImgFotoPerfilTweet().setHeight("100%");
 			this.getImgFotoPerfilTweet().setWidth("50%");
 		
-			this.getLabelCuerpoTwet().setText(item.t.getContieneTexto().getTexto());
+			if(item.t.getContieneTexto()!=null)
+				this.getLabelCuerpoTwet().setText(item.t.getContieneTexto().getTexto());
 			this.getLabelMeGusta().setText((String.valueOf(item.t.meGustaPor.size())));
 			this.getLabelNombreUsuario().setText(item.t.getEscritoPor().getNick());
 			this.getImgFotoPerfilTweet().setSrc(item.t.getEscritoPor().getFotoPerfil());

@@ -70,16 +70,18 @@ public class Listatweets extends ListaTweetsGeneral {
 			}
 			//Si hay retweet con texto y/o multimedia
 			else if(twe.getRetweeteaA()!=null) { 
+				
 				Tweet retwe = tweet.getRetweeteaA();
 				Listatweets_item retweet = new Listatweets_item(this,retwe);
+				retweet.getVaadinHorizontalLayout().getStyle().set("background-color", "#e0e0e0");
 			//	retweet.getButtonMeGusta().setVisible(false);
 				retweet.getHorizontalLayoutOpciones().setVisible(false);
 				if(retwe.contieneMultimedia!=null) {
 					retweet.getHorizontalLayoutMultimedia().setVisible(false);
 					retweet.getHorizontalMultimedia().setVisible(false);
 				}
-				t.getHorizontalLayoutRetweeteadoPor().removeAll();
-				t.getHorizontalLayoutRetweeteadoPor().add(retweet);
+				//t.getHorizontalLayoutRetweeteadoPor().removeAll();
+				t.getVerticalLayoutEspacioBotones().as(VerticalLayout.class).add(retweet);
 			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);
