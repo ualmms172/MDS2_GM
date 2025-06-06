@@ -165,6 +165,7 @@ public class BD_Tweet {
 			
 			if(aTweet.getContiene()!=null) {
 				aTweet.getContiene().setNumTweets(aTweet.getContiene().getNumTweets()-1);
+				HashtagDAO.save(aTweet.getContiene());
 			}
 			TweetDAO.deleteAndDissociate(aTweet);
 			t.commit();
