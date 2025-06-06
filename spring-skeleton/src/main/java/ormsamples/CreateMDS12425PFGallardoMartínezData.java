@@ -13,7 +13,7 @@ public class CreateMDS12425PFGallardoMartínezData {
 			// Initialize the properties of the persistent object here
 			basededatos.LogueadoDAO.save(lbasededatosLogueado);
 			basededatos.UsuarioRegistrado lbasededatosUsuarioRegistrado = basededatos.UsuarioRegistradoDAO.createUsuarioRegistrado();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : escribe, CreaHashtag, MeGusta, SeguidoPor, BloqueadoPor, SigueA, BloqueaA, id_user
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : escribe, MeGusta, SeguidoPor, BloqueadoPor, SigueA, BloqueaA, id_user
 			basededatos.UsuarioRegistradoDAO.save(lbasededatosUsuarioRegistrado);
 			basededatos.Administrador lbasededatosAdministrador = basededatos.AdministradorDAO.createAdministrador();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : id_admin
@@ -25,7 +25,7 @@ public class CreateMDS12425PFGallardoMartínezData {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : Comentarios
 			basededatos.TweetDAO.save(lbasededatosTweet);
 			basededatos.Hashtag lbasededatosHashtag = basededatos.HashtagDAO.createHashtag();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : NumTweets, CreadoPor
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : NumTweets
 			basededatos.HashtagDAO.save(lbasededatosHashtag);
 			basededatos.Multimedia lbasededatosMultimedia = basededatos.MultimediaDAO.createMultimedia();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : foto, PerteneceA

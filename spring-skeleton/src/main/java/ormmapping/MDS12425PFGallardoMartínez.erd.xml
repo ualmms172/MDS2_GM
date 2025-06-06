@@ -121,19 +121,6 @@
       <UserTypes/>
     </Column>
   </Entity>
-  <Entity name="baneo" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
-    <Column name="FechaFin">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>17</Type>
-      <Length>0</Length>
-      <Nullable>true</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-  </Entity>
   <Entity name="UsuarioRegistrado" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
     <Column name="Id_user">
       <PrimaryKey>false</PrimaryKey>
@@ -296,7 +283,7 @@
       <ReferencedColumn>basededatos.UsuarioRegistrado.LogueadoID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
-      <Nullable>false</Nullable>
+      <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>

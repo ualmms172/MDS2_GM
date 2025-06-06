@@ -163,10 +163,10 @@ public class BD_Tweet {
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 		try {
 			
-			if(aTweet.getContiene()!=null) {
-				aTweet.getContiene().setNumTweets(aTweet.getContiene().getNumTweets()-1);
-				HashtagDAO.save(aTweet.getContiene());
-			}
+//			if(aTweet.getContiene()!=null) {
+//				aTweet.getContiene().setNumTweets(aTweet.getContiene().getNumTweets()-1);
+//				HashtagDAO.save(aTweet.getContiene());
+//			}
 			TweetDAO.deleteAndDissociate(aTweet);
 			t.commit();
 		} catch (Exception e) {
