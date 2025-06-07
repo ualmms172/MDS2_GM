@@ -101,6 +101,20 @@ public class VerPerfilGeneral extends VistaVerperfilgeneral{
 	
 	public VerPerfilGeneral(UsuarioRegistrado usuarioregistrado) {
 		
+		this.getLabelNick().setText(usuarioregistrado.u.getNick());
+		this.getLabelDescripcion().setText(usuarioregistrado.u.getDescripcion());
+		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(usuarioregistrado.u.seguidoPor.size()));
+		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(usuarioregistrado.u.sigueA.size()));
+		if(usuarioregistrado.u.getFotoFondo()!=null)
+			this.getImgCabecera().setSrc(usuarioregistrado.u.getFotoFondo());
+		this.getImgPerfil().setSrc(usuarioregistrado.u.getFotoPerfil());
+		
+		this.getImgPerfil().setHeight("100%");
+		this.getImgPerfil().setWidth("100%");
+		
+		this.getImgPerfil().setHeight("100%");
+		this.getImgPerfil().setWidth("100%");
+		
 	}
 	
 }
