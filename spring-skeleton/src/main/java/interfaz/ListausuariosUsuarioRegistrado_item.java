@@ -12,6 +12,14 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 		// TODO Auto-generated constructor stub
 		_listausuariosUsuarioRegistrado = (ListausuariosUsuarioRegistrado) lista;
 		
+		boolean seguido=false;
+		for(basededatos.UsuarioRegistrado user : Interfaz.ur.u.seguidoPor.toArray()) {
+			if(user.getID()==u.getID()) {
+				seguido=true;
+				break;
+			}
+		}
+		this.getLabelSeguido_NoSeguido().setText(seguido?"Te sigue": "No te sigue");
 		
 		boolean bloqueado=false;
 		for(basededatos.UsuarioRegistrado user : u.bloqueaA.toArray()){

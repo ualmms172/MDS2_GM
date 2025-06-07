@@ -21,7 +21,7 @@ public class UsuariosBaneados_item extends VistaUsuariosbaneados_item {
 		_usuariosBaneados = listaBaneados; 
 		this.u=u;
 		this.getLabelNick().setText(u.getNick());
-	//	this.getLabelNumSeguidores().setText(u.getn);
+		this.getLabelNumSeguidores().setText(String.valueOf(u.seguidoPor.size()));
 		this.getImgPerfilUsuarioBaneado().setSrc(u.getFotoPerfil());
 		this.getButtonDesbanear().addClickListener(event -> Desbanearusuario());
 		

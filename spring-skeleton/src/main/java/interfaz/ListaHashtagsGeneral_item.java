@@ -21,7 +21,7 @@ public class ListaHashtagsGeneral_item extends VistaListahashtagsgeneral_item {
 			this.getLabelCreador().setText("Creado por: "+ h.getCreadoPor().getNick());
 	//	this.getLabelCreador().setText("Creado por: "+ h.getCreadoPor()!=null?h.getCreadoPor().getNick():"Usuario eliminado");
 		this.getLabelHashtag().setText(h.getTitulo());
-		this.getLabelNumTweets().setText(String.valueOf(h.getNumTweets()));
+		this.getLabelNumTweets().setText("Num tweets "+String.valueOf(h.contenidoPor.size()));
 		
 	}
 }

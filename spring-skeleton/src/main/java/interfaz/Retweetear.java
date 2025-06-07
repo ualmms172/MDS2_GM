@@ -23,6 +23,8 @@ public class Retweetear extends CrearContenido {
 	
 	public Retweetear (MostrartweetspropiosUsuarioRegistrado_item mostrartweetspropiosUsuarioRegistrado) {
 		
+		this.getLabelCrearContenido().setText("Crear Retweet");
+		
 		_mostrartweetspropiosUsuarioRegistrado = mostrartweetspropiosUsuarioRegistrado; 
 		this.getButtonPublicar().addClickListener(event->Publicarretweet());
 		this.getButtonAtras().addClickListener(event->{
@@ -120,6 +122,8 @@ public class Retweetear extends CrearContenido {
 	}
 	
 	public Retweetear (VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado) {
+		
+		this.getLabelCrearContenido().setText("Crear Retweet");
 		
 		
 		_vertweetgeneralUsuarioRegistrado = vertweetgeneralUsuarioRegistrado; 

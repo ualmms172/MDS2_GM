@@ -13,10 +13,10 @@ public class ListaUsuariosGeneral_item extends VistaListausuariosgeneral_item{
 		this.u=u;
 		_listaUsuariosGeneral  = lista; 
 		this.getLabelNick().setText(u.getNick());
-		//this.getLabelNumSeguidores().setText(u.get);
-		//this.getLabelNumSeguidos().setText(null);
+		this.getLabelNumSeguidores().setText(String.valueOf(u.seguidoPor.size()) + " Seguidores" );
+		this.getLabelNumSeguidos().setText(String.valueOf(u.sigueA.size()) + " Seguidos" );
 		this.getImgPerfilUsuario().setSrc(u.getFotoPerfil());
-		//this.getLabelNumTweets().setText(null);
+		this.getLabelNumTweets().setText(String.valueOf(u.escribe.size()) +" Contenido escrito" );
 		
 		this.getImgPerfilUsuario().setHeight("100%");
 		this.getImgPerfilUsuario().setWidth("50%");

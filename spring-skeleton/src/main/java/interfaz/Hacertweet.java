@@ -21,6 +21,7 @@ public class Hacertweet extends CrearContenido {
 	public Hacertweet(UsuarioRegistrado usuarioregistrado) {
 		
 		_usuarioregistrado = usuarioregistrado;
+		this.getLabelCrearContenido().setText("Crear Tweet");
 		this.getButtonPublicar().addClickListener(Event -> Publicartweet());
 		this.getButtonAtras().addClickListener(event -> {
 			
@@ -72,6 +73,7 @@ public class Hacertweet extends CrearContenido {
 		
 		_listahashtagsUsuarioRegistrado = listahashtagsUsuarioRegistrado; 
 		this.getTextFieldCampoTexto().setValue(_listahashtagsUsuarioRegistrado.h.getTitulo());
+		this.getLabelCrearContenido().setText("Crear Tweet");
 		this.getButtonPublicar().addClickListener(Event -> Publicartweet());
 		this.getButtonAtras().addClickListener(event -> {
 			

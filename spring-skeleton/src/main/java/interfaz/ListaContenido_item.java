@@ -24,7 +24,7 @@ public class ListaContenido_item extends VistaListacontenido_item {
 		this.getLabelCuerpoTwet().setText(c.getContieneTexto().getTexto());
 	else
 		this.getLabelCuerpoTwet().setVisible(false);
-	this.getLabelMeGusta().setText((String.valueOf(c.meGustaPor.size())));
+	this.getLabelMeGusta().setText("Likes "+(String.valueOf(c.meGustaPor.size())));
 	this.getLabelNombreUsuario().setText(c.getEscritoPor().getNick());
 	this.getImgFotoPerfilTweet().setSrc(c.getEscritoPor().getFotoPerfil());
 	for( basededatos.Multimedia multimedia : c.contieneMultimedia.toArray()) {

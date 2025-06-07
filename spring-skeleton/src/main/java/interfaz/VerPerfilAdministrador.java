@@ -29,8 +29,11 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		
 		this.getLabelNick().setText(_listaUsuariosGeneralAdministrador.u.getNick());
 		this.getLabelDescripcion().setText(_listaUsuariosGeneralAdministrador.u.getDescripcion());
-		this.getLabelNumSeguidores().setText(String.valueOf(_listaUsuariosGeneralAdministrador.u.seguidoPor.size()));
-		this.getLabelNumSeguidos().setText(String.valueOf(_listaUsuariosGeneralAdministrador.u.sigueA.size()));
+		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(_listaUsuariosGeneralAdministrador.u.seguidoPor.size()));
+		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(_listaUsuariosGeneralAdministrador.u.sigueA.size()));
+		if(_listaUsuariosGeneralAdministrador.u.getFotoFondo()!=null)
+			this.getImgCabecera().setSrc(_listaUsuariosGeneralAdministrador.u.getFotoFondo());
+		this.getImgPerfil().setSrc(_listaUsuariosGeneralAdministrador.u.getFotoPerfil());
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -72,8 +75,11 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		
 		this.getLabelNick().setText(user.getNick());
 		this.getLabelDescripcion().setText(user.getDescripcion());
-		this.getLabelNumSeguidores().setText(String.valueOf(user.seguidoPor.size()));
-		this.getLabelNumSeguidos().setText(String.valueOf(user.sigueA.size()));
+		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(user.seguidoPor.size()));
+		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(user.sigueA.size()));
+		if(user.getFotoFondo()!=null)
+			this.getImgCabecera().setSrc(user.getFotoFondo());
+		this.getImgPerfil().setSrc(user.getFotoPerfil());
 		
 		
 		this.getButtonBloquear().setVisible(false);
@@ -190,8 +196,11 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		
 		this.getLabelNick().setText(user.getNick());
 		this.getLabelDescripcion().setText(user.getDescripcion());
-		this.getLabelNumSeguidores().setText(String.valueOf(user.seguidoPor.size()));
-		this.getLabelNumSeguidos().setText(String.valueOf(user.sigueA.size()));
+		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(user.seguidoPor.size()));
+		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(user.sigueA.size()));
+		if(user.getFotoFondo()!=null)
+			this.getImgCabecera().setSrc(user.getFotoFondo());
+		this.getImgPerfil().setSrc(user.getFotoPerfil());
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -227,8 +236,11 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		
 		this.getLabelNick().setText(_listaComentariosAdministrador.c.getEscritoPor().getNick());
 		this.getLabelDescripcion().setText(_listaComentariosAdministrador.c.getEscritoPor().getDescripcion());
-//		this.getLabelNumSeguidores().setText(_listaComentariosAdministrador.c.getEscritoPor().);
-//		this.getLabelNumSeguidos().setText(_listaComentariosAdministrador.c.getEscritoPor().);
+		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(_listaComentariosAdministrador.c.getEscritoPor().seguidoPor.size()));
+		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(_listaComentariosAdministrador.c.getEscritoPor().sigueA.size()));
+		if(_listaComentariosAdministrador.c.getEscritoPor().getFotoFondo()!=null)
+			this.getImgCabecera().setSrc(_listaComentariosAdministrador.c.getEscritoPor().getFotoFondo());
+		this.getImgPerfil().setSrc(_listaComentariosAdministrador.c.getEscritoPor().getFotoPerfil());
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);

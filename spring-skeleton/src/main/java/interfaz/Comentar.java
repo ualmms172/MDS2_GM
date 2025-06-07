@@ -19,6 +19,7 @@ public class Comentar extends CrearContenido {
 	public Comentar(VertweetgeneralUsuarioRegistrado  vertweetgeneralUsuarioRegistrado) {
 		
 		_vertweetgeneralUsuarioRegistrado = vertweetgeneralUsuarioRegistrado; 
+		this.getLabelCrearContenido().setText("Crear Comentario");
 		
 		this.getButtonPublicar().addClickListener(Event -> Publicarcomentario());
 		

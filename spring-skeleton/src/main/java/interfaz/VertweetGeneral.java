@@ -30,7 +30,7 @@ public class VertweetGeneral extends VistaVertweetgeneral {
 		
 			if(item.t.getContieneTexto()!=null)
 				this.getLabelCuerpoTwet().setText(item.t.getContieneTexto().getTexto());
-			this.getLabelMeGusta().setText((String.valueOf(item.t.meGustaPor.size())));
+			this.getLabelMeGusta().setText("Likes: "+(String.valueOf(item.t.meGustaPor.size())));
 			this.getLabelNombreUsuario().setText(item.t.getEscritoPor().getNick());
 			this.getImgFotoPerfilTweet().setSrc(item.t.getEscritoPor().getFotoPerfil());
 			for( basededatos.Multimedia multimedia : item.t.contieneMultimedia.toArray()) {
