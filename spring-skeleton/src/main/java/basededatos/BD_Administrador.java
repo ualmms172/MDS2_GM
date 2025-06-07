@@ -73,10 +73,20 @@ public class BD_Administrador {
 		return AdministradorDAO.loadAdministradorByORMID(aAdministrador.getID());
 		
 		
+	}
+	
+	public Administrador ObtenerAdminId (Administrador aAdministrador) throws PersistentException {
+		Administrador admin = null;
 		
-		
-		
-		
+		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+		try {
+			admin = AdministradorDAO.loadAdministradorByORMID(aAdministrador.getID());
+					
+		} catch (Exception e) {
+			t.rollback();
+		}
+
+		return admin;
 	}
 
 

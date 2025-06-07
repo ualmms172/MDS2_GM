@@ -241,6 +241,20 @@ public class BD_Tweet {
 		}
 		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUr.getID());
 	}
+	
+	public Tweet ObtenerTweetId (Tweet aTweet) throws PersistentException {
+		Tweet twe = null;
+		
+		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+		try {
+			twe = TweetDAO.loadTweetByORMID(aTweet.getORMID());
+					
+		} catch (Exception e) {
+			t.rollback();
+		}
+
+		return twe;
+	}
 
 /*
 	public UsuarioRegistrado UsarHashtag(Hashtag h, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) throws PersistentException {

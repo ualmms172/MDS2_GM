@@ -19,5 +19,10 @@ public interface iUsuarioNoRegistrado {
 	public Logueado Loguear(String aNick, String aContrasena);
 	
 	public UsuarioRegistrado BuscarUsuario(String aNick);
+	
 	public UsuarioRegistrado BuscarUsuarioCorreo(String aCorreo);
+	
+	public Tweet ObtenerTweetId (Tweet aTweet);
+	
+	public Comentario ObtenerComentarioId(Comentario aComentario);
 }

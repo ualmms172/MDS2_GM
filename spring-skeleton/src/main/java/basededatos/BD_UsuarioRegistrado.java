@@ -313,5 +313,19 @@ public UsuarioRegistrado BuscarUsuarioCorreo(String aCorreo) throws PersistentEx
 		return usuario;
 		
 		}
+
+	public UsuarioRegistrado ObtenerUsuarioId (UsuarioRegistrado aUsuario) throws PersistentException {
+		UsuarioRegistrado usuario = null;
+		
+		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+		try {
+			usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getID());
+					
+		} catch (Exception e) {
+			t.rollback();
+		}
+
+		return usuario;
+	}
 			
 	}

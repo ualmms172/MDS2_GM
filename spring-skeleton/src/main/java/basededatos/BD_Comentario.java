@@ -166,6 +166,19 @@ public class BD_Comentario {
 		}
 	}
 		
+	public Comentario ObtenerComentarioId (Comentario aComentario) throws PersistentException {
+		Comentario com = null;
+		
+		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+		try {
+			com = ComentarioDAO.loadComentarioByORMID(aComentario.getORMID());
+					
+		} catch (Exception e) {
+			t.rollback();
+		}
+
+		return com;
+	}
 		
 		
 		

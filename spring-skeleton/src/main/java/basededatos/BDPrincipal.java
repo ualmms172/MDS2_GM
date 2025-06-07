@@ -360,6 +360,65 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 		
 	}
 
+	@Override
+	public Administrador ObtenerAdminId(Administrador aAdministrador) {
+		Administrador admin=null;
+		try {
+			admin = this._bd_adm.ObtenerAdminId(aAdministrador);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return admin;
+	}
+
+	@Override
+	public UsuarioRegistrado ObtenerUsuarioId(UsuarioRegistrado aUsuario) {
+		UsuarioRegistrado user=null;
+		try {
+			user = this._bd_usu.ObtenerUsuarioId(aUsuario);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return user;
+	}
+
+	@Override
+	public Tweet ObtenerTweetId(Tweet aTweet) {
+		Tweet twe=null;
+		try {
+			twe = this._bd_twe.ObtenerTweetId(aTweet);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return twe;
+	}
+
+	@Override
+	public Comentario ObtenerComentarioId(Comentario aComentario) {
+		Comentario com=null;
+		try {
+			com = this._bd_com.ObtenerComentarioId(aComentario);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return com;
+	}
+	
+//	public usuario obtenerUsuarioporId(int aId) {
+//		usuario usuario=null;
+//		try {
+//			usuario = _usuarios.obtenerUsuarioporId(aId);
+//		} catch (PersistentException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return usuario;
+//	}
+
 
 
 //	public UsuarioRegistrado get_Usuarioregistrado() {

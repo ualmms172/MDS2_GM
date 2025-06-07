@@ -49,6 +49,13 @@ public interface iUsuarioregistrado extends iLogueado {
 	public Hashtag BuscarHashtag(String aHashtag) ;
 
 	public Hashtag CrearHashtag(String aHashtag,UsuarioRegistrado aUsuario) ;
+	
+	public UsuarioRegistrado ObtenerUsuarioId(UsuarioRegistrado aUsuario);
+	
+	public Tweet ObtenerTweetId (Tweet aTweet);
+	
+	public Comentario ObtenerComentarioId(Comentario aComentario);
 
 	//public UsuarioRegistrado UsarHashtag(Hashtag h, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) ;
+	
 }
