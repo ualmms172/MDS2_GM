@@ -3,6 +3,7 @@ package interfaz;
 import vistas.VistaLogueado;
 
 import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 
 public class Logueado extends VistaLogueado{
 	private String _nick;
@@ -20,6 +21,9 @@ public class Logueado extends VistaLogueado{
 	
 	
 	public void Cerrarsesin() {
+		
+		Interfaz.ad=null;
+		Interfaz.ur=null;
 		
 		UsuarioNoRegistrado usuario =  new UsuarioNoRegistrado(MainView); 
 		usuario.MainView.removeAll();

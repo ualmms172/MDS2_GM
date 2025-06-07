@@ -40,4 +40,8 @@ public interface iAdministrador extends iLogueado {
 	public Tweet ObtenerTweetId (Tweet aTweet);
 	
 	public Comentario ObtenerComentarioId(Comentario aComentario);
+	
+	public UsuarioRegistrado ObtenerUsuarioId(UsuarioRegistrado aUsuario);
+	
+	public Hashtag ObtenerHashtagId(Hashtag aHashtag);
 }

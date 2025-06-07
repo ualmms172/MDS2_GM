@@ -260,12 +260,12 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	    VertweetgeneralUsuarioRegistrado vista = null;
 	    MostrartweetspropiosUsuarioRegistrado lt = this._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado;
 	    
-	    basededatos.Tweet t = null;
-		try {
-			t = TweetDAO.loadTweetByORMID(_mostrartweetspropiosUsuarioRegistrado.t.getORMID());
-		} catch (PersistentException e) {
-			e.printStackTrace(); 
-		}
+	    basededatos.Tweet t = Interfaz.ur._iUsuarioregistrado.ObtenerTweetId(_mostrartweetspropiosUsuarioRegistrado.t);
+//		try {
+//			t = TweetDAO.loadTweetByORMID(_mostrartweetspropiosUsuarioRegistrado.t.getORMID());
+//		} catch (PersistentException e) {
+//			e.printStackTrace(); 
+//		}
 
 	    if (lt._verperfilgeneralUsuarioRegistrado != null) {
 	        lt = new MostrartweetspropiosUsuarioRegistrado(lt._verperfilgeneralUsuarioRegistrado.Recargar(log));

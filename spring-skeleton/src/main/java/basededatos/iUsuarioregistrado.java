@@ -55,6 +55,8 @@ public interface iUsuarioregistrado extends iLogueado {
 	public Tweet ObtenerTweetId (Tweet aTweet);
 	
 	public Comentario ObtenerComentarioId(Comentario aComentario);
+	
+	public Hashtag ObtenerHashtagId(Hashtag aHashtag);
 
 	//public UsuarioRegistrado UsarHashtag(Hashtag h, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) ;
 	

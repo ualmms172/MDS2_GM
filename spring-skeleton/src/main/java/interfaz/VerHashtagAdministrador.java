@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import basededatos.HashtagDAO;
 import basededatos.TweetDAO;
 import basededatos.UsuarioRegistradoDAO;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class VerHashtagAdministrador extends VerHashtagGeneral {
@@ -155,12 +156,12 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 		VerHashtagAdministrador vista = null;
 		
 		if(this._listaHashtagsgeneralAdministrador!=null) {
-			basededatos.Hashtag h = null;
-			try {
-				h = HashtagDAO.loadHashtagByORMID(_listaHashtagsgeneralAdministrador.h.getId_hash());
-			} catch (PersistentException e) {
-				e.printStackTrace();
-			}
+			basededatos.Hashtag h = Interfaz.ad._iadministrador.ObtenerHashtagId(_listaHashtagsgeneralAdministrador.h);
+//			try {
+//				h = HashtagDAO.loadHashtagByORMID(_listaHashtagsgeneralAdministrador.h.getId_hash());
+//			} catch (PersistentException e) {
+//				e.printStackTrace();
+//			}
 			
 			if(this._listaHashtagsgeneralAdministrador instanceof ListaHashtagsFamososAdministrador_item) {
 				ListaHashtagsFamososAdministrador list = new ListaHashtagsFamososAdministrador(log);
@@ -178,12 +179,13 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 		}
 		else if(this._listaTweetsAdmin_item!=null){
 			ListaTweetsAdmin lt = _listaTweetsAdmin_item._listaTweetsAdmin;
-			basededatos.Tweet t = null;
-			try {
-				t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin_item.t.getORMID());
-			} catch (PersistentException e) {
-				_listaTweetsAdmin_item.eliminado=true;
-			}
+			basededatos.Tweet t = Interfaz.ad._iadministrador.ObtenerTweetId(_listaTweetsAdmin_item.t);
+			if(t==null) _listaTweetsAdmin_item.eliminado=true;
+//			try {
+//				t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin_item.t.getORMID());
+//			} catch (PersistentException e) {
+//				_listaTweetsAdmin_item.eliminado=true;
+//			}
 			
 			if(lt._verPerfilAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));

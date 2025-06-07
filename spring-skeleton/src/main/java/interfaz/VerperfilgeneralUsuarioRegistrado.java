@@ -6,6 +6,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.TweetDAO;
 import basededatos.UsuarioRegistradoDAO;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
@@ -246,12 +247,12 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	    VerperfilgeneralUsuarioRegistrado vista = null;
 
 	    if (this._listaUsuariosGeneralUsuarioRegistrado != null) {
-	    	basededatos.UsuarioRegistrado u = null;
-			try {
-				u = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(_listaUsuariosGeneralUsuarioRegistrado.u.getID());
-			} catch (PersistentException e) {
-				e.printStackTrace();
-			}
+	    	basededatos.UsuarioRegistrado u = Interfaz.ur._iUsuarioregistrado.ObtenerUsuarioId(_listaUsuariosGeneralUsuarioRegistrado.u);
+//			try {
+//				u = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(_listaUsuariosGeneralUsuarioRegistrado.u.getID());
+//			} catch (PersistentException e) {
+//				e.printStackTrace();
+//			}
 	        if (this._listaUsuariosGeneralUsuarioRegistrado instanceof ListausuariosfamososUsuarioRegistrado_item) {
 	            ListausuariosfamososUsuarioRegistrado list = new ListausuariosfamososUsuarioRegistrado(log);
 	            ListausuariosfamososUsuarioRegistrado_item item = new ListausuariosfamososUsuarioRegistrado_item(list,u);
@@ -285,12 +286,12 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	        }
 	    } else if (this._mostrartweetsUsuarioRegistrado_item != null) {
 	        MostrartweetspropiosUsuarioRegistrado lt = _mostrartweetsUsuarioRegistrado_item._mostrartweetspropiosUsuarioRegistrado;
-	        basededatos.Tweet t = null;
-			try {
-				t = TweetDAO.loadTweetByORMID(_mostrartweetsUsuarioRegistrado_item.t.getORMID());
-			} catch (PersistentException e) {
-				e.printStackTrace(); 
-			}
+	        basededatos.Tweet t = Interfaz.ur._iUsuarioregistrado.ObtenerTweetId(_mostrartweetsUsuarioRegistrado_item.t);
+//			try {
+//				t = TweetDAO.loadTweetByORMID(_mostrartweetsUsuarioRegistrado_item.t.getORMID());
+//			} catch (PersistentException e) {
+//				e.printStackTrace(); 
+//			}
 	        if (lt._verperfilgeneralUsuarioRegistrado != null) {
 	            lt = new MostrartweetspropiosUsuarioRegistrado(lt._verperfilgeneralUsuarioRegistrado.Recargar(log));
 	        } else if (lt._verHashtagUsuarioRegistrado != null) {

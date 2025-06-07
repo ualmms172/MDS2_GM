@@ -6,6 +6,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.HashtagDAO;
 import basededatos.TweetDAO;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class VerHashtagUsuarioRegistrado extends VerHashtagGeneral {
@@ -165,12 +166,12 @@ public class VerHashtagUsuarioRegistrado extends VerHashtagGeneral {
 	public VerHashtagUsuarioRegistrado Recargar(UsuarioRegistrado log) {
 		VerHashtagUsuarioRegistrado vista = null;
 		if(this._listahashtagsgeneralUsuarioRegistrado!=null) {
-			basededatos.Hashtag h = null;
-			try {
-				h = HashtagDAO.loadHashtagByORMID(_listahashtagsgeneralUsuarioRegistrado.h.getId_hash());
-			} catch (PersistentException e) {
-				e.printStackTrace();
-			}
+			basededatos.Hashtag h = Interfaz.ur._iUsuarioregistrado.ObtenerHashtagId(_listahashtagsgeneralUsuarioRegistrado.h);
+//			try {
+//				h = HashtagDAO.loadHashtagByORMID(_listahashtagsgeneralUsuarioRegistrado.h.getId_hash());
+//			} catch (PersistentException e) {
+//				e.printStackTrace();
+//			}
 			if(this._listahashtagsgeneralUsuarioRegistrado instanceof ListahashtagfamososUsuarioRegistrado_item) {
 				ListahashtagfamososUsuarioRegistrado list = new ListahashtagfamososUsuarioRegistrado(log);
 				ListahashtagfamososUsuarioRegistrado_item item = new ListahashtagfamososUsuarioRegistrado_item(list,h);
@@ -187,12 +188,12 @@ public class VerHashtagUsuarioRegistrado extends VerHashtagGeneral {
 		else if(this._mostrartweetspropiosusuarioregistrado!=null){
 			
 			MostrartweetspropiosUsuarioRegistrado lt = _mostrartweetspropiosusuarioregistrado._mostrartweetspropiosUsuarioRegistrado;
-			basededatos.Tweet t = null;
-			try {
-				t = TweetDAO.loadTweetByORMID(_mostrartweetspropiosusuarioregistrado.t.getORMID());
-			} catch (PersistentException e) {
-				e.printStackTrace(); 
-			}
+			basededatos.Tweet t = Interfaz.ur._iUsuarioregistrado.ObtenerTweetId(_mostrartweetspropiosusuarioregistrado.t);
+//			try {
+//				t = TweetDAO.loadTweetByORMID(_mostrartweetspropiosusuarioregistrado.t.getORMID());
+//			} catch (PersistentException e) {
+//				e.printStackTrace(); 
+//			}
 			if(lt._verperfilgeneralUsuarioRegistrado!=null) {
 				lt = new MostrartweetspropiosUsuarioRegistrado(lt._verperfilgeneralUsuarioRegistrado.Recargar(log));
 				MostrartweetspropiosUsuarioRegistrado_item item = new MostrartweetspropiosUsuarioRegistrado_item(lt,t);

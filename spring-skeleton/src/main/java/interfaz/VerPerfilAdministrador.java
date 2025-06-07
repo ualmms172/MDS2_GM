@@ -9,6 +9,7 @@ import basededatos.HashtagDAO;
 import basededatos.TweetDAO;
 import basededatos.UsuarioRegistradoDAO;
 import gallardoMartinez.MainView;
+import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class VerPerfilAdministrador extends VerPerfilGeneral {
@@ -274,12 +275,12 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	public VerPerfilAdministrador Recargar(Administrador log) {
 		VerPerfilAdministrador vista = null;
 		if(this._listaUsuariosGeneralAdministrador!=null) {
-			basededatos.UsuarioRegistrado u = null;
-			try {
-				u = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(_listaUsuariosGeneralAdministrador.u.getID());
-			} catch (PersistentException e) {
-				e.printStackTrace();
-			}
+			basededatos.UsuarioRegistrado u = Interfaz.ad._iadministrador.ObtenerUsuarioId(_listaUsuariosGeneralAdministrador.u);
+//			try {
+//				u = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(_listaUsuariosGeneralAdministrador.u.getID());
+//			} catch (PersistentException e) {
+//				e.printStackTrace();
+//			}
 			if(this._listaUsuariosGeneralAdministrador instanceof ListaUsuariosFamososAdministrador_item) {
 				ListaUsuariosFamososAdministrador list = new ListaUsuariosFamososAdministrador(log);
 				ListaUsuariosFamososAdministrador_item item = new ListaUsuariosFamososAdministrador_item(list,u);
@@ -295,12 +296,13 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		}
 		else if(this._listaTweetsAdmin_item!=null){
 			ListaTweetsAdmin lt = _listaTweetsAdmin_item._listaTweetsAdmin;
-			basededatos.Tweet t = null;
-			try {
-				t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin_item.t.getORMID());
-			} catch (PersistentException e) {
-				_listaTweetsAdmin_item.eliminado=true; //ESTO SIGNIFICA QUE EL TWEET SE HA BORRADO
-			}
+			basededatos.Tweet t = Interfaz.ad._iadministrador.ObtenerTweetId(_listaTweetsAdmin_item.t);
+			if(t==null) _listaTweetsAdmin_item.eliminado=true;
+//			try {
+//				t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin_item.t.getORMID());
+//			} catch (PersistentException e) {
+//				_listaTweetsAdmin_item.eliminado=true; //ESTO SIGNIFICA QUE EL TWEET SE HA BORRADO
+//			}
 			if(lt._verPerfilAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
 			}
@@ -324,14 +326,11 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		}
 		else {
 			ListaComentariosAdministrador lt = this._listaComentariosAdministrador._listaComentariosAdministrador;
-			basededatos.Comentario c = null;
-			try {
-				c = ComentarioDAO.loadComentarioByORMID(_listaComentariosAdministrador.c.getORMID());
-			} catch (PersistentException e) {
-				e.printStackTrace(); //ESTO SIGNIFICA QUE EL COMENTARIO SE HA BORRADO
-			}
+		//	basededatos.Comentario c = Interfaz.ad._iadministrador.ObtenerComentarioId(_listaComentariosAdministrador.c);
+//			if(c==null)¿?
+			//ListaComentariosAdministrador_item item = new ListaComentariosAdministrador_item(lt,c);
 			lt = new ListaComentariosAdministrador(lt._verTweetAdministrador.Recargar(log));
-			ListaComentariosAdministrador_item item = new ListaComentariosAdministrador_item(lt,c);
+			ListaComentariosAdministrador_item item = new ListaComentariosAdministrador_item(lt,_listaComentariosAdministrador.c);
 			vista= new VerPerfilAdministrador(item);
 		}
 		return vista;

@@ -216,11 +216,9 @@ public class BanearUsuario extends VistaBanearusuario{
 		basededatos.UsuarioRegistrado u = null;
 		if(this._listaUsuariosAdministrador!=null) {
 			ListaUsuariosAdministrador list = new ListaUsuariosAdministrador (_listaUsuariosAdministrador._listaUsuariosAdministrador._verListaCompletaUsuariosAdministrador.Recargar(log));
-			try {
-				 u = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(_listaUsuariosAdministrador.u.getID());
-			} catch (PersistentException e) {
-				e.printStackTrace();
-			} 
+
+			u = Interfaz.ad._iadministrador.ObtenerUsuarioId(u);
+			
 			ListaUsuariosAdministrador_item item = new ListaUsuariosAdministrador_item(list,u);
 			//_listaUsuariosAdministrador._listaUsuariosAdministrador=list;
 			vista=new BanearUsuario(item);

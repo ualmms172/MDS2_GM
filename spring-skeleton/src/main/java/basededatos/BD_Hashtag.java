@@ -83,4 +83,18 @@ public class BD_Hashtag {
 		
 			
 	}
+	
+	public Hashtag ObtenerHashtagId (Hashtag aHashtag) throws PersistentException {
+		Hashtag hash = null;
+		
+		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
+		try {
+			hash = HashtagDAO.loadHashtagByORMID(aHashtag.getORMID());
+					
+		} catch (Exception e) {
+			t.rollback();
+		}
+
+		return hash;
+	}
 }

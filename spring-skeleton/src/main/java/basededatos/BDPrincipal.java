@@ -408,6 +408,22 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 		return com;
 	}
 	
+	//ObtenerHashtagId
+	
+	@Override
+	public Hashtag ObtenerHashtagId(Hashtag aHashtag) {
+		Hashtag hash=null;
+		try {
+			hash = this._bd_has.ObtenerHashtagId(aHashtag);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return hash;
+	}
+	
+	
+	
 //	public usuario obtenerUsuarioporId(int aId) {
 //		usuario usuario=null;
 //		try {

@@ -334,12 +334,13 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	public VerTweetAdministrador Recargar(Administrador log) {
 		VerTweetAdministrador vista = null;
 		ListaTweetsAdmin lt = _listaTweetsAdmin._listaTweetsAdmin;
-		basededatos.Tweet t = null;
-		try {
-			t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin.t.getORMID());
-		} catch (PersistentException e) {
-			_listaTweetsAdmin.eliminado=true;
-		}
+		basededatos.Tweet t = Interfaz.ad._iadministrador.ObtenerTweetId(_listaTweetsAdmin.t);
+		if(t==null) _listaTweetsAdmin.eliminado=true;
+//		try {
+//			t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin.t.getORMID());
+//		} catch (PersistentException e) {
+//			_listaTweetsAdmin.eliminado=true;
+//		}
 		
 		if(lt._verPerfilAdministrador!=null) {
 			lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
