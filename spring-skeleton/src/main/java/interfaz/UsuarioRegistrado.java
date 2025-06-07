@@ -11,14 +11,14 @@ import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class UsuarioRegistrado extends Logueado {
-	private int _id_user;
-	private String _descripcion;
-	private String _fotoPerfil;
-	private String _fotoFondo;
-	public Vector<UsuarioRegistrado> _bloqueadoPor = new Vector<UsuarioRegistrado>();
-	public Vector<UsuarioRegistrado> _bloqueaA = new Vector<UsuarioRegistrado>();
-	public Vector<UsuarioRegistrado> _seguidoPor = new Vector<UsuarioRegistrado>();
-	public Vector<UsuarioRegistrado> _sigueA = new Vector<UsuarioRegistrado>();
+//	private int _id_user;
+//	private String _descripcion;
+//	private String _fotoPerfil;
+//	private String _fotoFondo;
+//	public Vector<UsuarioRegistrado> _bloqueadoPor = new Vector<UsuarioRegistrado>();
+//	public Vector<UsuarioRegistrado> _bloqueaA = new Vector<UsuarioRegistrado>();
+//	public Vector<UsuarioRegistrado> _seguidoPor = new Vector<UsuarioRegistrado>();
+//	public Vector<UsuarioRegistrado> _sigueA = new Vector<UsuarioRegistrado>();
 	//public BD_UsuarioRegistrado _contenedor_UsuariosRegistrados;
 //	public Vector<Tweet> _mencionadoEn = new Vector<Tweet>();
 //	public baneo _unnamed_baneo_;

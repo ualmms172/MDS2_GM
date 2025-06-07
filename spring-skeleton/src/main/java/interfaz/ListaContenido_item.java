@@ -27,10 +27,27 @@ public class ListaContenido_item extends VistaListacontenido_item {
 	this.getLabelMeGusta().setText("Likes "+(String.valueOf(c.meGustaPor.size())));
 	this.getLabelNombreUsuario().setText(c.getEscritoPor().getNick());
 	this.getImgFotoPerfilTweet().setSrc(c.getEscritoPor().getFotoPerfil());
+	
+	boolean tieneVideo = false;
+	for (basededatos.Multimedia multimedia : c.contieneMultimedia.toArray()) {
+	    if (!multimedia.getFoto()) {
+	        tieneVideo = true;
+	        break;
+	    }
+	}
+
 	for( basededatos.Multimedia multimedia : c.contieneMultimedia.toArray()) {
-		if(multimedia.getFoto())
+		if(multimedia.getFoto()) {
 			this.getImgFotoTweet().setSrc(multimedia.getUrl());
-		else {
+			if(tieneVideo) {
+				this.getImgFotoTweet().setWidth(null);
+				this.getImgFotoTweet().setHeight(null);
+			}
+			else {
+				this.getImgFotoTweet().setWidth(null);
+				this.getImgFotoTweet().setHeight(null);
+			}
+		} else {
 			String embedUrl = multimedia.getUrl();  // URL ya en formato embed
 
 			if (embedUrl != null && !embedUrl.isBlank()) {

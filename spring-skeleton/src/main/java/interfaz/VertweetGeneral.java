@@ -37,10 +37,27 @@ public class VertweetGeneral extends VistaVertweetgeneral {
 			this.getLabelMeGusta().setText("Likes: "+(String.valueOf(item.t.meGustaPor.size())));
 			this.getLabelNombreUsuario().setText(item.t.getEscritoPor().getNick());
 			this.getImgFotoPerfilTweet().setSrc(item.t.getEscritoPor().getFotoPerfil());
+			
+			boolean tieneVideo = false;
+			for (basededatos.Multimedia multimedia : item.t.contieneMultimedia.toArray()) {
+			    if (!multimedia.getFoto()) {
+			        tieneVideo = true;
+			        break;
+			    }
+			}
+			
 			for( basededatos.Multimedia multimedia : item.t.contieneMultimedia.toArray()) {
-				if(multimedia.getFoto())
+				if(multimedia.getFoto()){
 					this.getImgFotoTweet().setSrc(multimedia.getUrl());
-				else{
+					if(tieneVideo) {
+						this.getImgFotoTweet().setWidth(null);
+						this.getImgFotoTweet().setHeight(null);
+					}
+					else {
+						this.getImgFotoTweet().setWidth(null);
+						this.getImgFotoTweet().setHeight(null);
+					}
+				}else{
 					String embedUrl = multimedia.getUrl();  // URL ya en formato embed
 
 					if (embedUrl != null && !embedUrl.isBlank()) {
