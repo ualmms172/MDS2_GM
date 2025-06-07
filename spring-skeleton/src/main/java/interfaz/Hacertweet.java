@@ -19,6 +19,7 @@ public class Hacertweet extends CrearContenido {
 	public ListahashtagsUsuarioRegistrado_item _listahashtagsUsuarioRegistrado;
 	
 	public Hacertweet(UsuarioRegistrado usuarioregistrado) {
+		super();
 		
 		_usuarioregistrado = usuarioregistrado;
 		this.getLabelCrearContenido().setText("Crear Tweet");
@@ -29,47 +30,48 @@ public class Hacertweet extends CrearContenido {
 		    this._usuarioregistrado.MainView.add(_usuarioregistrado); 
 		}); 
 		
-		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
-		    String url = event.getValue();
-		    if (url != null && !url.isEmpty()) {
-		        this.getImgImagen().setSrc(url);
-		    } else {
-		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
-		    }
-		});
-		
-		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
-			String url = event.getValue();
-		    Div videoDiv = this.getImgVideo();
-
-		    if (url != null && !url.isEmpty()) {
-		    	 String videoId = "";
-
-		    	    if (url.contains("watch?v=")) {
-		    	        int index = url.indexOf("watch?v=") + 8;
-		    	        int end = url.indexOf("&", index);
-		    	        if (end == -1) end = url.length();
-		    	        videoId = url.substring(index, end);
-		    	    } else if (url.contains("youtu.be/")) {
-		    	        int index = url.indexOf("youtu.be/") + 9;
-		    	        int end = url.indexOf("?", index);
-		    	        if (end == -1) end = url.length();
-		    	        videoId = url.substring(index, end);
-		    	    }
-		        String embedUrl ="https://www.youtube.com/embed/" + videoId;
-		        String iframe = "<iframe width='560' height='315' src='" + embedUrl + "' " +
-		                        "title='YouTube video player' frameborder='0' " +
-		                        "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
-		        videoDiv.getElement().setProperty("innerHTML", iframe);
-		    } else {
-		        videoDiv.getElement().setProperty("innerHTML", ""); // Limpia el contenido si el campo está vacío
-		    }
-		});
+//		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
+//		    String url = event.getValue();
+//		    if (url != null && !url.isEmpty()) {
+//		        this.getImgImagen().setSrc(url);
+//		    } else {
+//		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
+//		    }
+//		});
+//		
+//		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
+//			String url = event.getValue();
+//		    Div videoDiv = this.getImgVideo();
+//
+//		    if (url != null && !url.isEmpty()) {
+//		    	 String videoId = "";
+//
+//		    	    if (url.contains("watch?v=")) {
+//		    	        int index = url.indexOf("watch?v=") + 8;
+//		    	        int end = url.indexOf("&", index);
+//		    	        if (end == -1) end = url.length();
+//		    	        videoId = url.substring(index, end);
+//		    	    } else if (url.contains("youtu.be/")) {
+//		    	        int index = url.indexOf("youtu.be/") + 9;
+//		    	        int end = url.indexOf("?", index);
+//		    	        if (end == -1) end = url.length();
+//		    	        videoId = url.substring(index, end);
+//		    	    }
+//		        String embedUrl ="https://www.youtube.com/embed/" + videoId;
+//		        String iframe = "<iframe width='560' height='315' src='" + embedUrl + "' " +
+//		                        "title='YouTube video player' frameborder='0' " +
+//		                        "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
+//		        videoDiv.getElement().setProperty("innerHTML", iframe);
+//		    } else {
+//		        videoDiv.getElement().setProperty("innerHTML", ""); // Limpia el contenido si el campo está vacío
+//		    }
+//		});
 		
 	}
 	
 	
 	public Hacertweet(ListahashtagsUsuarioRegistrado_item listahashtagsUsuarioRegistrado) {
+		super();
 		
 		_listahashtagsUsuarioRegistrado = listahashtagsUsuarioRegistrado; 
 		this.getTextFieldCampoTexto().setValue(_listahashtagsUsuarioRegistrado.h.getTitulo());
@@ -81,45 +83,45 @@ public class Hacertweet extends CrearContenido {
 			Pantalla.MainView.add(_listahashtagsUsuarioRegistrado._listahashtagsUsuarioRegistrado._verlistacompletahashtagUsuarioRegistrado);
 		}); 
 		
-		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
-		    String url = event.getValue();
-		    if (url != null && !url.isEmpty()) {
-		        this.getImgImagen().setSrc(url);
-		    } else {
-		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
-		    }
-		});
-		
-		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
-		    String url = event.getValue();
-		    Div videoDiv = this.getImgVideo(); // Aunque el nombre "getImgVideo" puede confundir, si devuelve un Div está bien
-
-		    if (url != null && !url.isBlank()) {
-		        String videoId = null;
-
-		        if (url.contains("youtube.com/watch?v=")) {
-		            int index = url.indexOf("watch?v=") + 8;
-		            int end = url.indexOf("&", index);
-		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
-		        } else if (url.contains("youtu.be/")) {
-		            int index = url.indexOf("youtu.be/") + 9;
-		            int end = url.indexOf("?", index);
-		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
-		        }
-
-		        if (videoId != null && !videoId.isBlank()) {
-		            String embedUrl = "https://www.youtube.com/embed/" + videoId;
-		            String iframe = "<iframe width='560' height='315' src='" + embedUrl + "' " +
-		                            "title='YouTube video player' frameborder='0' " +
-		                            "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
-		            videoDiv.getElement().setProperty("innerHTML", iframe);
-		        } else {
-		            videoDiv.getElement().setProperty("innerHTML", "");
-		        }
-		    } else {
-		        videoDiv.getElement().setProperty("innerHTML", ""); // Limpia el contenido si el campo está vacío
-		    }
-		});
+//		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
+//		    String url = event.getValue();
+//		    if (url != null && !url.isEmpty()) {
+//		        this.getImgImagen().setSrc(url);
+//		    } else {
+//		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
+//		    }
+//		});
+//		
+//		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
+//		    String url = event.getValue();
+//		    Div videoDiv = this.getImgVideo(); // Aunque el nombre "getImgVideo" puede confundir, si devuelve un Div está bien
+//
+//		    if (url != null && !url.isBlank()) {
+//		        String videoId = null;
+//
+//		        if (url.contains("youtube.com/watch?v=")) {
+//		            int index = url.indexOf("watch?v=") + 8;
+//		            int end = url.indexOf("&", index);
+//		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
+//		        } else if (url.contains("youtu.be/")) {
+//		            int index = url.indexOf("youtu.be/") + 9;
+//		            int end = url.indexOf("?", index);
+//		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
+//		        }
+//
+//		        if (videoId != null && !videoId.isBlank()) {
+//		            String embedUrl = "https://www.youtube.com/embed/" + videoId;
+//		            String iframe = "<iframe width='560' height='315' src='" + embedUrl + "' " +
+//		                            "title='YouTube video player' frameborder='0' " +
+//		                            "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
+//		            videoDiv.getElement().setProperty("innerHTML", iframe);
+//		        } else {
+//		            videoDiv.getElement().setProperty("innerHTML", "");
+//		        }
+//		    } else {
+//		        videoDiv.getElement().setProperty("innerHTML", ""); // Limpia el contenido si el campo está vacío
+//		    }
+//		});
 
 	}
 	
