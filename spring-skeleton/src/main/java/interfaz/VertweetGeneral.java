@@ -23,7 +23,11 @@ public class VertweetGeneral extends VistaVertweetgeneral {
 	//private Image _iconoMeGusta;
 	//private Button _accederPerfil;
 	
+	public ListaTweetsGeneral_item _listaTweetsGeneral;
+	
 	public VertweetGeneral(ListaTweetsGeneral_item item) {
+		
+		_listaTweetsGeneral= item;
 		
 			this.getImgFotoPerfilTweet().setHeight("100%");
 			this.getImgFotoPerfilTweet().setWidth("50%");

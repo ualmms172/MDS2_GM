@@ -21,19 +21,19 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	public ListaComentariosAdministrador_item _listaComentariosAdministrador;
 	public BanearUsuario _banearUsuario;
 	
-	public boolean mencion;
+//	public boolean mencion;
 	
 	public VerPerfilAdministrador(ListaUsuariosGeneralAdministrador_item listaUsuariosGeneralAdministrador) {
-		super();
+		super(listaUsuariosGeneralAdministrador);
 		_listaUsuariosGeneralAdministrador = listaUsuariosGeneralAdministrador; 
 		
-		this.getLabelNick().setText(_listaUsuariosGeneralAdministrador.u.getNick());
-		this.getLabelDescripcion().setText(_listaUsuariosGeneralAdministrador.u.getDescripcion());
-		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(_listaUsuariosGeneralAdministrador.u.seguidoPor.size()));
-		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(_listaUsuariosGeneralAdministrador.u.sigueA.size()));
-		if(_listaUsuariosGeneralAdministrador.u.getFotoFondo()!=null)
-			this.getImgCabecera().setSrc(_listaUsuariosGeneralAdministrador.u.getFotoFondo());
-		this.getImgPerfil().setSrc(_listaUsuariosGeneralAdministrador.u.getFotoPerfil());
+//		this.getLabelNick().setText(_listaUsuariosGeneralAdministrador.u.getNick());
+//		this.getLabelDescripcion().setText(_listaUsuariosGeneralAdministrador.u.getDescripcion());
+//		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(_listaUsuariosGeneralAdministrador.u.seguidoPor.size()));
+//		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(_listaUsuariosGeneralAdministrador.u.sigueA.size()));
+//		if(_listaUsuariosGeneralAdministrador.u.getFotoFondo()!=null)
+//			this.getImgCabecera().setSrc(_listaUsuariosGeneralAdministrador.u.getFotoFondo());
+//		this.getImgPerfil().setSrc(_listaUsuariosGeneralAdministrador.u.getFotoPerfil());
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -59,27 +59,27 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	
 	
 	public VerPerfilAdministrador(ListaTweetsAdmin_item listaTweetsAdmin,Boolean mencion ) {
-		super();
+		super(listaTweetsAdmin,mencion);
 		_listaTweetsAdmin_item = listaTweetsAdmin; 
 		
-		this.mencion=mencion;
-		
-		basededatos.UsuarioRegistrado user =null;
-		
-		if(mencion) {
-			 user = _listaTweetsAdmin_item.t.getMencionaA();
-		}
-		else {
-			user = _listaTweetsAdmin_item.t.getEscritoPor();
-		}
-		
-		this.getLabelNick().setText(user.getNick());
-		this.getLabelDescripcion().setText(user.getDescripcion());
-		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(user.seguidoPor.size()));
-		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(user.sigueA.size()));
-		if(user.getFotoFondo()!=null)
-			this.getImgCabecera().setSrc(user.getFotoFondo());
-		this.getImgPerfil().setSrc(user.getFotoPerfil());
+//		this.mencion=mencion;
+//		
+//		basededatos.UsuarioRegistrado user =null;
+//		
+//		if(mencion) {
+//			 user = _listaTweetsAdmin_item.t.getMencionaA();
+//		}
+//		else {
+//			user = _listaTweetsAdmin_item.t.getEscritoPor();
+//		}
+//		
+//		this.getLabelNick().setText(user.getNick());
+//		this.getLabelDescripcion().setText(user.getDescripcion());
+//		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(user.seguidoPor.size()));
+//		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(user.sigueA.size()));
+//		if(user.getFotoFondo()!=null)
+//			this.getImgCabecera().setSrc(user.getFotoFondo());
+//		this.getImgPerfil().setSrc(user.getFotoPerfil());
 		
 		
 		this.getButtonBloquear().setVisible(false);
@@ -180,27 +180,27 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	}
 	
 	public VerPerfilAdministrador(VerTweetAdministrador verTweetAdministrador,Boolean mencion) {
-		super();
+		super(verTweetAdministrador,mencion);
 		_verTweetAdministrador = verTweetAdministrador; 
 		
 		this.mencion=mencion;
 		
-		basededatos.UsuarioRegistrado user =null;
-		
-		if(mencion) {
-			 user = _verTweetAdministrador._listaTweetsAdmin.t.getMencionaA();
-		}
-		else {
-			user = _verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor();
-		}
-		
-		this.getLabelNick().setText(user.getNick());
-		this.getLabelDescripcion().setText(user.getDescripcion());
-		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(user.seguidoPor.size()));
-		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(user.sigueA.size()));
-		if(user.getFotoFondo()!=null)
-			this.getImgCabecera().setSrc(user.getFotoFondo());
-		this.getImgPerfil().setSrc(user.getFotoPerfil());
+//		basededatos.UsuarioRegistrado user =null;
+//		
+//		if(mencion) {
+//			 user = _verTweetAdministrador._listaTweetsAdmin.t.getMencionaA();
+//		}
+//		else {
+//			user = _verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor();
+//		}
+//		
+//		this.getLabelNick().setText(user.getNick());
+//		this.getLabelDescripcion().setText(user.getDescripcion());
+//		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(user.seguidoPor.size()));
+//		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(user.sigueA.size()));
+//		if(user.getFotoFondo()!=null)
+//			this.getImgCabecera().setSrc(user.getFotoFondo());
+//		this.getImgPerfil().setSrc(user.getFotoPerfil());
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -231,7 +231,7 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	
 
 	public VerPerfilAdministrador(ListaComentariosAdministrador_item listaComentariosAdministrador) {
-		super();
+		super(listaComentariosAdministrador);
 		_listaComentariosAdministrador = listaComentariosAdministrador; 
 		
 		this.getLabelNick().setText(_listaComentariosAdministrador.c.getEscritoPor().getNick());

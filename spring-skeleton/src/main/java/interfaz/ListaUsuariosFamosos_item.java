@@ -9,6 +9,9 @@ public class ListaUsuariosFamosos_item extends ListaUsuariosGeneralUsuarioNoRegi
 		this.getLabelNumSeguidores().setVisible(false);
 		this.getLabelNumSeguidos().setVisible(false);
 		this.getLabelNumTweets().setVisible(false);
+		
+		this.getImgPerfilUsuario().setHeight("10%");
+		this.getImgPerfilUsuario().setWidth("1%");
 		_listaUsuariosFamosos= (ListaUsuariosFamosos) lista;
 	}
 

@@ -17,29 +17,29 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
 	public Comentariospropios_item _comentariosUsuarioRegistrado;
 	
-	public boolean mencion;
+//	public boolean mencion;
 	
 	public VerperfilgeneralUsuarioRegistrado(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado,Boolean mencion) {
-		super();
+		super(mostrartweetsUsuarioRegistrado,mencion);
 		_mostrartweetsUsuarioRegistrado_item = mostrartweetsUsuarioRegistrado; 
 		
-		basededatos.UsuarioRegistrado user =null;
-		this.mencion=mencion;
-		
-		if(mencion) {
-			 user = _mostrartweetsUsuarioRegistrado_item.t.getMencionaA();
-		}
-		else {
-			user = _mostrartweetsUsuarioRegistrado_item.t.getEscritoPor();
-		}
-		
-		this.getLabelNick().setText(user.getNick());
-		this.getLabelDescripcion().setText(user.getDescripcion());
-		this.getLabelNumSeguidores().setText("Seguidores: "+String.valueOf(user.seguidoPor.size()));
-		this.getLabelNumSeguidos().setText("Seguidos: " + String.valueOf(user.sigueA.size()));
-		if(user.getFotoFondo()!=null)
-			this.getImgCabecera().setSrc(user.getFotoFondo());
-		this.getImgPerfil().setSrc(user.getFotoPerfil());
+//		basededatos.UsuarioRegistrado user =null;
+//		this.mencion=mencion;
+//		
+//		if(mencion) {
+//			 user = _mostrartweetsUsuarioRegistrado_item.t.getMencionaA();
+//		}
+//		else {
+//			user = _mostrartweetsUsuarioRegistrado_item.t.getEscritoPor();
+//		}
+//		
+//		this.getLabelNick().setText(user.getNick());
+//		this.getLabelDescripcion().setText(user.getDescripcion());
+//		this.getLabelNumSeguidores().setText("Seguidores: "+String.valueOf(user.seguidoPor.size()));
+//		this.getLabelNumSeguidos().setText("Seguidos: " + String.valueOf(user.sigueA.size()));
+//		if(user.getFotoFondo()!=null)
+//			this.getImgCabecera().setSrc(user.getFotoFondo());
+//		this.getImgPerfil().setSrc(user.getFotoPerfil());
 		
 		
 		this.getButtonBanear().setVisible(false);
@@ -138,16 +138,16 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	
 	
 	public VerperfilgeneralUsuarioRegistrado (ListaUsuariosGeneralUsuarioRegistrado_item listaUsuariosGeneralUsuarioRegistrado) {
-		super();
+		super(listaUsuariosGeneralUsuarioRegistrado);
 		_listaUsuariosGeneralUsuarioRegistrado = listaUsuariosGeneralUsuarioRegistrado; 
 		
-		this.getLabelNick().setText(_listaUsuariosGeneralUsuarioRegistrado.u.getNick());
-		this.getLabelDescripcion().setText(_listaUsuariosGeneralUsuarioRegistrado.u.getDescripcion());
-		this.getLabelNumSeguidores().setText("Seguidores: "+String.valueOf(_listaUsuariosGeneralUsuarioRegistrado.u.seguidoPor.size()));
-		this.getLabelNumSeguidos().setText("Seguidos: " + String.valueOf(_listaUsuariosGeneralUsuarioRegistrado.u.sigueA.size()));
-		if(_listaUsuariosGeneralUsuarioRegistrado.u.getFotoFondo()!=null)
-			this.getImgCabecera().setSrc(_listaUsuariosGeneralUsuarioRegistrado.u.getFotoFondo());
-		this.getImgPerfil().setSrc(_listaUsuariosGeneralUsuarioRegistrado.u.getFotoPerfil());
+//		this.getLabelNick().setText(_listaUsuariosGeneralUsuarioRegistrado.u.getNick());
+//		this.getLabelDescripcion().setText(_listaUsuariosGeneralUsuarioRegistrado.u.getDescripcion());
+//		this.getLabelNumSeguidores().setText("Seguidores: "+String.valueOf(_listaUsuariosGeneralUsuarioRegistrado.u.seguidoPor.size()));
+//		this.getLabelNumSeguidos().setText("Seguidos: " + String.valueOf(_listaUsuariosGeneralUsuarioRegistrado.u.sigueA.size()));
+//		if(_listaUsuariosGeneralUsuarioRegistrado.u.getFotoFondo()!=null)
+//			this.getImgCabecera().setSrc(_listaUsuariosGeneralUsuarioRegistrado.u.getFotoFondo());
+//		this.getImgPerfil().setSrc(_listaUsuariosGeneralUsuarioRegistrado.u.getFotoPerfil());
 		
 		this.getButtonBanear().setVisible(false);
 		
@@ -165,27 +165,28 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	}
 	
 	public VerperfilgeneralUsuarioRegistrado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado,Boolean mencion) {
-		super();
+		super(vertweetgeneralUsuarioRegistrado,mencion);
 		
 		_vertweetgeneralUsuarioRegistrado = vertweetgeneralUsuarioRegistrado; 
-		this.mencion=mencion;
 		
-		basededatos.UsuarioRegistrado user =null;
-		
-		if(mencion) {
-			 user = _vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getMencionaA();
-		}
-		else {
-			user = _vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
-		}
-		
-		this.getLabelNick().setText(user.getNick());
-		this.getLabelDescripcion().setText(user.getDescripcion());
-		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(user.seguidoPor.size()));
-		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(user.sigueA.size()));
-		if(user.getFotoFondo()!=null)
-			this.getImgCabecera().setSrc(user.getFotoFondo());
-		this.getImgPerfil().setSrc(user.getFotoPerfil());
+//		this.mencion=mencion;
+//		
+//		basededatos.UsuarioRegistrado user =null;
+//		
+//		if(mencion) {
+//			 user = _vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getMencionaA();
+//		}
+//		else {
+//			user = _vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
+//		}
+//		
+//		this.getLabelNick().setText(user.getNick());
+//		this.getLabelDescripcion().setText(user.getDescripcion());
+//		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(user.seguidoPor.size()));
+//		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(user.sigueA.size()));
+//		if(user.getFotoFondo()!=null)
+//			this.getImgCabecera().setSrc(user.getFotoFondo());
+//		this.getImgPerfil().setSrc(user.getFotoPerfil());
 		
 		this.getButtonBanear().setVisible(false);
 		
@@ -208,17 +209,17 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	}
 	
 	public VerperfilgeneralUsuarioRegistrado(Comentariospropios_item comentariosUsuarioRegistrado ) {
-		super();
+		super(comentariosUsuarioRegistrado);
 		
 		_comentariosUsuarioRegistrado = comentariosUsuarioRegistrado; 
 		
-		this.getLabelNick().setText(_comentariosUsuarioRegistrado.c.getEscritoPor().getNick());
-		this.getLabelDescripcion().setText(_comentariosUsuarioRegistrado.c.getEscritoPor().getDescripcion());
-		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(_comentariosUsuarioRegistrado.c.getEscritoPor().seguidoPor.size()));
-		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(_comentariosUsuarioRegistrado.c.getEscritoPor().sigueA.size()));
-		if(_comentariosUsuarioRegistrado.c.getEscritoPor().getFotoFondo()!=null)
-			this.getImgCabecera().setSrc(_comentariosUsuarioRegistrado.c.getEscritoPor().getFotoFondo());
-		this.getImgPerfil().setSrc(_comentariosUsuarioRegistrado.c.getEscritoPor().getFotoPerfil());
+//		this.getLabelNick().setText(_comentariosUsuarioRegistrado.c.getEscritoPor().getNick());
+//		this.getLabelDescripcion().setText(_comentariosUsuarioRegistrado.c.getEscritoPor().getDescripcion());
+//		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(_comentariosUsuarioRegistrado.c.getEscritoPor().seguidoPor.size()));
+//		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(_comentariosUsuarioRegistrado.c.getEscritoPor().sigueA.size()));
+//		if(_comentariosUsuarioRegistrado.c.getEscritoPor().getFotoFondo()!=null)
+//			this.getImgCabecera().setSrc(_comentariosUsuarioRegistrado.c.getEscritoPor().getFotoFondo());
+//		this.getImgPerfil().setSrc(_comentariosUsuarioRegistrado.c.getEscritoPor().getFotoPerfil());
 		
 		this.getButtonBanear().setVisible(false);
 		
@@ -241,8 +242,8 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	});
 	}
 	
-	public VerperfilgeneralUsuarioRegistrado() {
-		super(); //Es llamado desde VerperfilPropio(UsuarioRegistrado)
+	public VerperfilgeneralUsuarioRegistrado(UsuarioRegistrado usuarioregistrado) {
+		super(usuarioregistrado); //Es llamado desde VerperfilPropio(UsuarioRegistrado)
 	}
 	
 

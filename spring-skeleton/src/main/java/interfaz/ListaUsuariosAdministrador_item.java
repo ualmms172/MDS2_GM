@@ -9,6 +9,8 @@ public class ListaUsuariosAdministrador_item extends ListaUsuariosGeneralAdminis
 		super(lista,u);
 		// TODO Auto-generated constructor stub
 		
+		
+		
 		this.getButtonBanear().addClickListener(event -> BanearUsuario()); 
 		_listaUsuariosAdministrador = (ListaUsuariosAdministrador) lista;
 	    

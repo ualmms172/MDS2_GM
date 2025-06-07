@@ -38,6 +38,10 @@ public class ListaContenido_item extends VistaListacontenido_item {
 			        "<iframe width='560' height='315' src='" + embedUrl + "' " +
 			        "title='YouTube video player' frameborder='0' " +
 			        "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
+//			    this.getDivTweet().getElement().setProperty("innerHTML",
+//			    	    "<iframe style='width:30%; height:50%;' src='" + embedUrl + "' " +
+//			    	    "title='YouTube video player' frameborder='0' " +
+//			    	    "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
 			} else {
 			    this.getDivTweet().getElement().setProperty("innerHTML", "");
 			}
