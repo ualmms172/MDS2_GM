@@ -31,23 +31,30 @@ public class VertweetGeneral extends VistaVertweetgeneral {
 			this.getImgFotoPerfilTweet().setSrc(item.t.getEscritoPor().getFotoPerfil());
 			
 			boolean tieneVideo = false;
+			boolean tieneFoto = false;
 			for (basededatos.Multimedia multimedia : item.t.contieneMultimedia.toArray()) {
 			    if (!multimedia.getFoto()) {
 			        tieneVideo = true;
-			        break;
 			    }
+			    else
+			    	tieneFoto=true;
 			}
+			
+			if(!tieneFoto)
+				this.getImgFotoTweet().setVisible(false);
+			if(!tieneVideo)
+				this.getDivTweet().setVisible(false);
 			
 			for( basededatos.Multimedia multimedia : item.t.contieneMultimedia.toArray()) {
 				if(multimedia.getFoto()){
 					this.getImgFotoTweet().setSrc(multimedia.getUrl());
 					if(tieneVideo) {
-						this.getImgFotoTweet().setWidth(null);
-						this.getImgFotoTweet().setHeight(null);
+						this.getImgFotoTweet().setWidth("250px");
+						this.getImgFotoTweet().setHeight("250px");
 					}
 					else {
-						this.getImgFotoTweet().setWidth(null);
-						this.getImgFotoTweet().setHeight(null);
+						this.getImgFotoTweet().setWidth("200px");
+						this.getImgFotoTweet().setHeight("200px");
 					}
 				}else{
 					String embedUrl = multimedia.getUrl();  // URL ya en formato embed

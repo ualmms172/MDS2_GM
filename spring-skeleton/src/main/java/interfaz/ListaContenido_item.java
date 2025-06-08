@@ -21,31 +21,42 @@ public class ListaContenido_item extends VistaListacontenido_item {
 	this.getLabelNombreUsuario().setText(c.getEscritoPor().getNick());
 	this.getImgFotoPerfilTweet().setSrc(c.getEscritoPor().getFotoPerfil());
 	
+//	this.getVaadinHorizontalLayout().setMaxHeight("400px");
+	this.getButtonRetweet().setMaxHeight("30px");
+	this.getButtonBorrar().setMaxHeight("30px");
+	this.getButtonMeGusta().setMaxHeight("30px");
+	
+	boolean tieneFoto =false;
 	boolean tieneVideo = false;
 	for (basededatos.Multimedia multimedia : c.contieneMultimedia.toArray()) {
 	    if (!multimedia.getFoto()) {
 	        tieneVideo = true;
-	        break;
 	    }
+	    else
+	    	tieneFoto=true;
 	}
+	if(!tieneFoto)
+		this.getImgFotoTweet().setVisible(false);
+	if(!tieneVideo)
+		this.getDivTweet().setVisible(false);
 
 	for( basededatos.Multimedia multimedia : c.contieneMultimedia.toArray()) {
 		if(multimedia.getFoto()) {
 			this.getImgFotoTweet().setSrc(multimedia.getUrl());
 			if(tieneVideo) {
-				this.getImgFotoTweet().setWidth(null);
-				this.getImgFotoTweet().setHeight(null);
+				this.getImgFotoTweet().setWidth("125px");
+				this.getImgFotoTweet().setHeight("125px");
 			}
 			else {
-				this.getImgFotoTweet().setWidth(null);
-				this.getImgFotoTweet().setHeight(null);
+				this.getImgFotoTweet().setWidth("125px");
+				this.getImgFotoTweet().setHeight("125px");
 			}
 		} else {
 			String embedUrl = multimedia.getUrl();  // URL ya en formato embed
 
 			if (embedUrl != null && !embedUrl.isBlank()) {
 			    this.getDivTweet().getElement().setProperty("innerHTML",
-			        "<iframe width='560' height='315' src='" + embedUrl + "' " +
+			        "<iframe width='320' height='180' src='" + embedUrl + "' " +
 			        "title='YouTube video player' frameborder='0' " +
 			        "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
 //			    this.getDivTweet().getElement().setProperty("innerHTML",

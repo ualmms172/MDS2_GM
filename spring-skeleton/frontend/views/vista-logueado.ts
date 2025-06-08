@@ -31,7 +31,7 @@ export class VistaLogueado extends LitElement {
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout style="flex-grow: 1; align-items: center;" id="verticalLayout-central">
+  <vaadin-vertical-layout style="flex-grow: 1; align-items: center; justify-content: space-around;" id="verticalLayout-central">
    <vaadin-horizontal-layout style="flex-grow: 1; height: 9%;" id="horizontalLayout-centralSuperior">
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 15%; margin-top: 23px;" id="verticalLayout-CerrarSesionNotificaciones">
      <vaadin-button style="flex-grow: 0; max-width: none; align-self: flex-end; Height:30px;" tabindex="0" id="button-CerrarSesion">
@@ -43,7 +43,7 @@ export class VistaLogueado extends LitElement {
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: flex-start;" id="verticalLayout-imagenPerfil">
      <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1;" id="horizontalLayout-ImagenPerfil">
-      <img style="flex-grow: 1; width: 25%; margin-top: var(--lumo-space-m); margin-left: var(--lumo-space-s); height: 50%;" src=".\img\PortadaTwitter - copia.jpg" id="img-PortadaTwitter">
+      <img id="img-PortadaTwitter" style="flex-grow: 1; width: 25%; margin-top: var(--lumo-space-m); margin-left: var(--lumo-space-s); height: 50%; align-self: flex-start;">
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 15%; max-height: 25%;" id="verticalLayout-BaneadoVerperfil">
@@ -51,7 +51,7 @@ export class VistaLogueado extends LitElement {
       <vaadin-button tabindex="0" style="flex-grow: 1; align-self: flex-start; Height:30px; width: 200%;" id="button-Baneados">
         Baneados 
       </vaadin-button>
-      <img style="flex-grow: 1; width: 100%; height: 100%;" src=".\img\FotoPerfilEjemplo.jpg" id="img-PerfilUsuario">
+      <img id="img-PerfilUsuario" style="flex-grow: 1; width: 100%; height: 100%; margin-left: var(--lumo-space-s);">
      </vaadin-horizontal-layout>
      <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1;" id="horizontalLayout-VerPerfilEscribirTweet">
       <vaadin-vertical-layout theme="spacing" id="verticalLayout-VerPerfilEscribirTweet">
@@ -65,7 +65,7 @@ export class VistaLogueado extends LitElement {
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
    </vaadin-horizontal-layout>
-   <vaadin-vertical-layout style="flex-grow: 1; align-items: stretch; align-self: center; flex-direction: column; width: 100%; margin-top: var(--lumo-space-m); padding-top: var(--lumo-space-xl);" id="verticalLayout-inferior"></vaadin-vertical-layout>
+   <vaadin-vertical-layout style="flex-grow: 1; align-items: stretch; align-self: center; flex-direction: column; width: 100%; margin-top: var(--lumo-space-xl); padding-top: var(--lumo-space-xl);" id="verticalLayout-inferior"></vaadin-vertical-layout>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout style="flex-grow: 1; width: 35%;" id="verticalLayout-derecho" theme="spacing">
    <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; width: 100%;" id="horizontalLayout-ListaHashtagsUsados">

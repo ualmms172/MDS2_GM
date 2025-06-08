@@ -49,6 +49,38 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 				t.getlabelRetweeteadoPor().setVisible(true);
 				t.getlabelRetweeteadoPor().setText("Retweeteado por " + twe.getEscritoPor().getNick());
 			}
+			//Si hay retweet con texto y/o multimedia
+			else if(twe.getRetweeteaA()!=null) { 
+				
+				Tweet retwe = tweet.getRetweeteaA();
+				ListaTweetsAdmin_item retweet = new ListaTweetsAdmin_item(this,retwe);
+				
+				//Se cambia el color para que se note más el tweet retweeteado
+				retweet.getVaadinHorizontalLayout().getStyle().set("background-color", "#e0e0e0");
+				
+				retweet.getButtonMeGusta().getStyle().set("visibility", "hidden");
+				retweet.getButtonMeGusta().getStyle().set("pointer-events", "none");
+				
+				
+				
+				retweet.getButtonMeGusta().getStyle().set("visibility", "hidden");
+				retweet.getButtonMeGusta().getStyle().set("pointer-events", "none");
+				
+				retweet.getImgFotoTweet().getStyle().set("visibility", "hidden");
+				retweet.getImgFotoTweet().getStyle().set("pointer-events", "none");
+				
+				retweet.getDivTweet().getStyle().set("visibility", "hidden");
+				retweet.getDivTweet().getStyle().set("pointer-events", "none");
+				
+				retweet.getLabelMeGusta().getStyle().set("visibility", "hidden");
+				retweet.getLabelMeGusta().getStyle().set("pointer-events", "none");
+			
+//				if(retwe.contieneMultimedia!=null) {
+//					retweet.getHorizontalLayoutMultimedia().setVisible(false);
+//					retweet.getHorizontalMultimedia().setVisible(false);
+//				}
+				t.getVerticalLayoutEspacioBotones().as(VerticalLayout.class).add(retweet);
+			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);
 		}
@@ -105,6 +137,38 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 				t.getlabelRetweeteadoPor().setVisible(true);
 				t.getlabelRetweeteadoPor().setText("Retweeteado por " + twe.getEscritoPor().getNick());
 			}
+			//Si hay retweet con texto y/o multimedia
+			else if(twe.getRetweeteaA()!=null) { 
+				
+				Tweet retwe = tweet.getRetweeteaA();
+				ListaTweetsAdmin_item retweet = new ListaTweetsAdmin_item(this,retwe);
+				
+				//Se cambia el color para que se note más el tweet retweeteado
+				retweet.getVaadinHorizontalLayout().getStyle().set("background-color", "#e0e0e0");
+				
+				retweet.getButtonMeGusta().getStyle().set("visibility", "hidden");
+				retweet.getButtonMeGusta().getStyle().set("pointer-events", "none");
+				
+				
+				
+				retweet.getButtonMeGusta().getStyle().set("visibility", "hidden");
+				retweet.getButtonMeGusta().getStyle().set("pointer-events", "none");
+				
+				retweet.getImgFotoTweet().getStyle().set("visibility", "hidden");
+				retweet.getImgFotoTweet().getStyle().set("pointer-events", "none");
+				
+				retweet.getDivTweet().getStyle().set("visibility", "hidden");
+				retweet.getDivTweet().getStyle().set("pointer-events", "none");
+				
+				retweet.getLabelMeGusta().getStyle().set("visibility", "hidden");
+				retweet.getLabelMeGusta().getStyle().set("pointer-events", "none");
+			
+//				if(retwe.contieneMultimedia!=null) {
+//					retweet.getHorizontalLayoutMultimedia().setVisible(false);
+//					retweet.getHorizontalMultimedia().setVisible(false);
+//				}
+				t.getVerticalLayoutEspacioBotones().as(VerticalLayout.class).add(retweet);
+			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);
 		}
@@ -143,6 +207,38 @@ public class ListaTweetsAdmin extends ListaTweetsGeneral {
 				t.getHorizontalLayoutRetweeteadoPor().setVisible(true);
 				t.getlabelRetweeteadoPor().setVisible(true);
 				t.getlabelRetweeteadoPor().setText("Retweeteado por " + twe.getEscritoPor().getNick());
+			}
+			//Si hay retweet con texto y/o multimedia
+			else if(twe.getRetweeteaA()!=null) { 
+				
+				Tweet retwe = tweet.getRetweeteaA();
+				ListaTweetsAdmin_item retweet = new ListaTweetsAdmin_item(this,retwe);
+				
+				//Se cambia el color para que se note más el tweet retweeteado
+				retweet.getVaadinHorizontalLayout().getStyle().set("background-color", "#e0e0e0");
+				
+				retweet.getButtonMeGusta().getStyle().set("visibility", "hidden");
+				retweet.getButtonMeGusta().getStyle().set("pointer-events", "none");
+				
+				
+				
+				retweet.getButtonMeGusta().getStyle().set("visibility", "hidden");
+				retweet.getButtonMeGusta().getStyle().set("pointer-events", "none");
+				
+				retweet.getImgFotoTweet().getStyle().set("visibility", "hidden");
+				retweet.getImgFotoTweet().getStyle().set("pointer-events", "none");
+				
+				retweet.getDivTweet().getStyle().set("visibility", "hidden");
+				retweet.getDivTweet().getStyle().set("pointer-events", "none");
+				
+				retweet.getLabelMeGusta().getStyle().set("visibility", "hidden");
+				retweet.getLabelMeGusta().getStyle().set("pointer-events", "none");
+			
+//				if(retwe.contieneMultimedia!=null) {
+//					retweet.getHorizontalLayoutMultimedia().setVisible(false);
+//					retweet.getHorizontalMultimedia().setVisible(false);
+//				}
+				t.getVerticalLayoutEspacioBotones().as(VerticalLayout.class).add(retweet);
 			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);

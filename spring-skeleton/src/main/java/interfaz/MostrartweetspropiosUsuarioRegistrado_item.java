@@ -37,6 +37,9 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 		    mencion[1].getElement().addEventListener("click", e -> VerperfilUsuarioRegistrado(true));
 
 		    nuevoSpan.add(mencion[0], mencion[1], mencion[2]);
+		    
+		    nuevoSpan.getElement().getStyle().set("margin-top", "15px");
+		    nuevoSpan.getElement().getStyle().set("margin-left", "15px");
 
 		    this.getHorizontalLayoutCuerpoTweet().removeAll();
 		    this.getHorizontalLayoutCuerpoTweet().add(nuevoSpan);
@@ -68,6 +71,9 @@ public class MostrartweetspropiosUsuarioRegistrado_item extends ListaTweetsGener
 		        // Añadimos todos los spans en orden
 		        nuevoSpan.add(hashtag);
 
+		        nuevoSpan.getElement().getStyle().set("margin-top", "15px");
+			    nuevoSpan.getElement().getStyle().set("margin-left", "15px");
+			    
 		        this.getHorizontalLayoutCuerpoTweet().removeAll();
 		        this.getHorizontalLayoutCuerpoTweet().add(nuevoSpan);
 		    }

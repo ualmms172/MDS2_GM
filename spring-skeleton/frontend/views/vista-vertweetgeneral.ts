@@ -49,7 +49,7 @@ export class VistaVertweetgeneral extends LitElement {
      <vaadin-button style="flex-grow: 1; align-self: flex-start; width: 30%; margin-left: var(--lumo-space-m);" tabindex="0" id="button-comentar">
        Comentar 
      </vaadin-button>
-     <vaadin-button style="flex-grow: 1; align-self: flex-start; width: 30%; margin-left: var(--lumo-space-m);" tabindex="0" id="button-Retweet">
+     <vaadin-button style="flex-grow: 1; align-self: flex-start; margin-left: var(--lumo-space-m);" tabindex="0" id="button-Retweet">
        Retweetear 
      </vaadin-button>
      <vaadin-button style="flex-grow: 1; align-self: flex-start; width: 30%; margin-left: var(--lumo-space-m);" tabindex="0" id="button-Borrar">

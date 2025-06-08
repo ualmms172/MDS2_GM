@@ -35,6 +35,8 @@ public class Listatweets_item extends ListaTweetsGeneral_item {
 
 		    nuevoSpan.add(mencion[0], mencion[1], mencion[2]);
 
+		    nuevoSpan.getElement().getStyle().set("margin-top", "15px");
+		    nuevoSpan.getElement().getStyle().set("margin-left", "15px");
 		    this.getHorizontalLayoutCuerpoTweet().removeAll();
 		    this.getHorizontalLayoutCuerpoTweet().add(nuevoSpan);
 		}
@@ -65,6 +67,9 @@ public class Listatweets_item extends ListaTweetsGeneral_item {
 		        // Añadimos todos los spans en orden
 		        nuevoSpan.add(hashtag);
 
+		        
+		        nuevoSpan.getElement().getStyle().set("margin-top", "15px");
+			    nuevoSpan.getElement().getStyle().set("margin-left", "15px");
 		        this.getHorizontalLayoutCuerpoTweet().removeAll();
 		        this.getHorizontalLayoutCuerpoTweet().add(nuevoSpan);
 		    }

@@ -29,6 +29,9 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	this.MainView = MainView;
 	Interfaz.nr=this;
 	
+	this.getImageIconoTwitter().setSrc("https://www.lowi.es/blog/wp-content/uploads/2023/10/twitter-X-1000x625.jpeg");
+	
+	
 	ListahashtagsfamososUsuarioNoRegistrado();
 	ListaUsuariosFamosos();
 	this.getButtonIniciarSesion().addClickListener(event -> IniciarSesin()); 
