@@ -264,29 +264,6 @@ public class BD_UsuarioRegistrado {
 
 	}
 
-	public UsuarioRegistrado DarLikeATweet(Tweet aTweet, UsuarioRegistrado aUsuario) throws PersistentException {
-		
-		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-		UsuarioRegistrado usuario = null;
-
-		try {
-			usuario = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuario.getId_user());  // Cambia según tu lógica
-			aTweet.meGustaPor.add(usuario);
-			usuario.meGusta.add(aTweet);
-			TweetDAO.save(aTweet);
-			UsuarioRegistradoDAO.save(usuario);
-			t.commit();
-		} catch (Exception e) {
-			t.rollback();
-			throw new PersistentException(e);
-		} finally {
-			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		}
-		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(usuario.getID());
-		
-
-		
-	}
 
 	public UsuarioRegistrado BuscarUsuario(String aNick) throws PersistentException {
 		
