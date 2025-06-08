@@ -66,10 +66,6 @@ public class IniciarSesin extends VistaIniciarsesin {
 		this.getButtonRecuperarContraseña().addClickListener(event -> Recuperarlacontrasea());
 		}
 	
-		
-	public void Validardatos() {
-		throw new UnsupportedOperationException();
-	}
 
 	public void Recuperarlacontrasea() {
 		if(this.getTextFieldCorreo().isEmpty()) {

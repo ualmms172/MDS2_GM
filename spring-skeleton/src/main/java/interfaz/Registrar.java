@@ -54,9 +54,6 @@ public class Registrar extends VistaRegistrar {
 		this.getButtonContinuar().addClickListener(event -> ValidarCorreo());
 	}
 
-	public void Comprobarsihaydatosrepetidos() {
-		throw new UnsupportedOperationException();
-	}
 
 	public void ValidarCorreo() {
 		String nick = this.getTextFieldNick().getValue();

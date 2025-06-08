@@ -21,9 +21,6 @@ public class Gestordecorreo {
 	private final String remitente = "twitternoreplymds2@gmail.com"; 
 	private final String clave = "hxemxtbijkmzmebb";
 
-	public void Recuperarlacontrasea() {
-		throw new UnsupportedOperationException();
-	}
 	
 	
 	public void enviarContrasenaPorCorreo(String destino, String contrasena) {
