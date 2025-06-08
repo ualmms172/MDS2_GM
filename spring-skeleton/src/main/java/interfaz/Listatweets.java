@@ -76,6 +76,8 @@ public class Listatweets extends ListaTweetsGeneral {
 				Tweet retwe = tweet.getRetweeteaA();
 				Listatweets_item retweet = new Listatweets_item(this,retwe);
 				
+				
+				
 				//Se cambia el color para que se note más el tweet retweeteado
 				retweet.getVaadinHorizontalLayout().getStyle().set("background-color", "#e0e0e0");
 				

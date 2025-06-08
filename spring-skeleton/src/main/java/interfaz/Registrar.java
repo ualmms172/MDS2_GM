@@ -149,7 +149,7 @@ public class Registrar extends VistaRegistrar {
 		vista.datos[1] = contrasena;
 		vista.datos[2] = correo;
 		vista.datos[3] = descripcion;
-		vista.datos[4] = fotoFondo;
+		vista.datos[4] = !fotoFondo.isBlank()?fotoFondo:"https://www.lowi.es/blog/wp-content/uploads/2023/10/twitter-X-1000x625.jpeg";
 		vista.datos[5] = !fotoPerfil.isBlank()?fotoPerfil:"https://images.icon-icons.com/2367/PNG/512/user_icon_143482.png";
 		
 

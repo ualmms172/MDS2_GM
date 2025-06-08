@@ -95,7 +95,12 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 //					retweet.getHorizontalLayoutMultimedia().setVisible(false);
 //					retweet.getHorizontalMultimedia().setVisible(false);
 //				}
+				retweet.getElement().getStyle().set("margin-left", "50px");
+				t.getVerticalLayoutRetweetBorrar().as(VerticalLayout.class).setMaxWidth("50px");
+				t.getVerticalLayoutEspacioBotones().as(VerticalLayout.class).setMaxWidth("250px");
+				t.getVerticalLayoutEspacioBotones().as(VerticalLayout.class).setMaxHeight("100px");
 				t.getVerticalLayoutEspacioBotones().as(VerticalLayout.class).add(retweet);
+				
 			}
 			
 			this.getVerticalListacontenido().as(VerticalLayout.class).add(t);

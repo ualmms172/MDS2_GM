@@ -34,8 +34,7 @@ public class UsuarioRegistrado extends Logueado {
 		this.getImgPerfilUsuario().setHeight("25px");
 		this.getImgPerfilUsuario().setWidth("25px");
 		
-		this.getImgPortadaTwitter().setHeight("300px");
-		this.getImgPortadaTwitter().setWidth("500px");
+		
 		
 		
 		
