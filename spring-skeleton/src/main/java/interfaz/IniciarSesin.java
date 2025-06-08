@@ -105,22 +105,13 @@ public class IniciarSesin extends VistaIniciarsesin {
 	
 
 	public void IniciarsesinconGoogle() {
-	    String clientId = "642402904207-ond1hkr3i2i5cte87rk0ghakli6dgdm1.apps.googleusercontent.com";
-	    String clientSecret = "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";
-	    String redirectUri = "http://localhost:8081/oauth2callback"; // asegúrate de registrar esta URL en Google
+		APIDeGoogle googleAuthService = new APIDeGoogle();
+		String authUrl = googleAuthService.buildAuthUrl();
+	    String redirectUri = googleAuthService.getRedirectUri();
 
-	    // 1. Construir URL de autenticación
-	    String authUrl = "https://accounts.google.com/o/oauth2/v2/auth"
-	        + "?scope=openid%20email%20profile"
-	        + "&access_type=online"
-	        + "&response_type=code"
-	        + "&client_id=" + clientId
-	        + "&redirect_uri=" + redirectUri;
-
-	    // 2. Abrir la ventana de autenticación
 	    getUI().ifPresent(ui -> {
-	        ui.getPage().executeJs(""
-	            + "const popup = window.open($0, '_blank', 'width=500,height=600');"
+	        ui.getPage().executeJs(
+	            "const popup = window.open($0, '_blank', 'width=500,height=600');"
 	            + "const interval = setInterval(async () => {"
 	            + "  try {"
 	            + "    if (popup.location.href.startsWith($1)) {"
@@ -132,7 +123,8 @@ public class IniciarSesin extends VistaIniciarsesin {
 	            + "    }"
 	            + "  } catch (e) {}"
 	            + "}, 1000);",
-	            authUrl, redirectUri, getElement());
+	            authUrl, redirectUri, getElement()
+	        );
 	    });
 	}
 	
