@@ -6,7 +6,7 @@ import gallardoMartinez.MainView.Pantalla;
 public class ListahashtagsgeneralUsuarioRegistrado_item extends ListaHashtagsGeneral_item {
 	public ListahashtagsgeneralUsuarioRegistrado_item(ListaHashtagsGeneral lista,Hashtag h) {
 		super(lista,h);
-		// TODO Auto-generated constructor stub
+
 		this.getHorizontalListahashtagsgeneral_item().addClickListener(Event -> VerHashtagUsuarioRegistrado());
 	}
 

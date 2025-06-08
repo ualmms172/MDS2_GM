@@ -13,14 +13,7 @@ import gallardoMartinez.MainView.Pantalla;
 //import basededatos.iUsuarioNoRegistrado;
 
 public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
-	//private Label _listaUsuarios;
-	//private Label _litaHashtags;
-	//private Image _fotoAplicacion;
-	//private Button _iniciarSesion;
-	//private Button _registrarse;
-	//private Button _verMasUsuarios;
-	//private Button _verMasHashtags;
-	//public iUsuarioNoRegistrado _iUsuarioNoRegistrado;
+
 	public IniciarSesin _iniciarSesin;
 	public Verlistacompletahashtags _verlistacompletahashtags;
 	public ListaUsuariosFamosos _listaUsuariosFamosos;
@@ -67,9 +60,7 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	public void ListaUsuariosFamosos() {
 		_listaUsuariosFamosos = new ListaUsuariosFamosos(this);
 		this.getHorizontalLayoutListaUsuariosFamosos().add(_listaUsuariosFamosos);
-//		
-//		ListaUsuariosFamosos_item item_tweets = new ListaUsuariosFamosos_item(_listaUsuariosFamosos,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_listaUsuariosFamosos.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
+
 	}
 
 	public void VerListaCompletaUsuariosUsuarioNoRegistrado() {
@@ -92,8 +83,6 @@ public class UsuarioNoRegistrado extends VistaUsuarionoregistrado{
 	public void ListahashtagsfamososUsuarioNoRegistrado() {
 		_listahashtagsfamososUsuarioNoRegistrado = new ListahashtagsfamososUsuarioNoRegistrado(this);
 		this.getHorizontallayoutListaDeHashtagMasUsados().add(_listahashtagsfamososUsuarioNoRegistrado);
-		
-//		ListahashtagsfamososUsuarioNoRegistrado_item item_tweets = new ListahashtagsfamososUsuarioNoRegistrado_item(_listahashtagsfamososUsuarioNoRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_listahashtagsfamososUsuarioNoRegistrado.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
+
 	}
 }

@@ -4,8 +4,7 @@ import basededatos.Hashtag;
 import vistas.VistaListahashtagsgeneral_item;
 
 public class ListaHashtagsGeneral_item extends VistaListahashtagsgeneral_item {
-	//private Label _nombreHashtag;
-	//private Button _accederHashtag;
+	
 	
 	public Hashtag h;
 	
@@ -19,7 +18,6 @@ public class ListaHashtagsGeneral_item extends VistaListahashtagsgeneral_item {
 			this.getLabelCreador().setText("Creado por: Usuario eliminado");
 		else
 			this.getLabelCreador().setText("Creado por: "+ h.getCreadoPor().getNick());
-	//	this.getLabelCreador().setText("Creado por: "+ h.getCreadoPor()!=null?h.getCreadoPor().getNick():"Usuario eliminado");
 		this.getLabelHashtag().setText(h.getTitulo());
 		this.getLabelNumTweets().setText("Num tweets "+String.valueOf(h.contenidoPor.size()));
 		

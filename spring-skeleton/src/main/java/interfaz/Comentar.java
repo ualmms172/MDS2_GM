@@ -47,46 +47,6 @@ public class Comentar extends CrearContenido {
 				
 		});
 		
-//		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
-//		    String url = event.getValue();
-//		    if (url != null && !url.isEmpty()) {
-//		        this.getImgImagen().setSrc(url);
-//		    } else {
-//		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
-//		    }
-//		});
-//		
-//		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
-//		    String url = event.getValue();
-//		    Div videoDiv = this.getImgVideo(); // Aunque el nombre "getImgVideo" puede confundir, si devuelve un Div está bien
-//
-//		    if (url != null && !url.isBlank()) {
-//		        String videoId = null;
-//
-//		        if (url.contains("youtube.com/watch?v=")) {
-//		            int index = url.indexOf("watch?v=") + 8;
-//		            int end = url.indexOf("&", index);
-//		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
-//		        } else if (url.contains("youtu.be/")) {
-//		            int index = url.indexOf("youtu.be/") + 9;
-//		            int end = url.indexOf("?", index);
-//		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
-//		        }
-//
-//		        if (videoId != null && !videoId.isBlank()) {
-//		            String embedUrl = "https://www.youtube.com/embed/" + videoId;
-//		            String iframe = "<iframe width='560' height='315' src='" + embedUrl + "' " +
-//		                            "title='YouTube video player' frameborder='0' " +
-//		                            "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
-//		            videoDiv.getElement().setProperty("innerHTML", iframe);
-//		        } else {
-//		            videoDiv.getElement().setProperty("innerHTML", "");
-//		        }
-//		    } else {
-//		        videoDiv.getElement().setProperty("innerHTML", ""); // Limpia el contenido si el campo está vacío
-//		    }
-//		});
-
 		
 	}
 	
@@ -98,9 +58,6 @@ public class Comentar extends CrearContenido {
             return;
         }
 		
-		
-		
-		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		
 		String texto = this.getTextFieldCampoTexto().getValue();
 		String foto = this.getTextFieldUrlFoto().getValue();
@@ -153,7 +110,7 @@ public class Comentar extends CrearContenido {
 		        // Verificar si el video existe haciendo una petición GET al embed
 		        URL url = new URL(embedUrl);
 		        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-		        connection.setRequestMethod("GET"); // HEAD a veces falla con YouTube
+		        connection.setRequestMethod("GET"); 
 		        connection.setConnectTimeout(3000);
 		        connection.setReadTimeout(3000);
 		        int responseCode = connection.getResponseCode();
@@ -164,7 +121,7 @@ public class Comentar extends CrearContenido {
 		        }
 
 		        // Si llega hasta aquí, el video es válido
-		        // Aquí podrías guardar el video o actualizar la vista
+		     
 		        video = embedUrl;
 
 		    } catch (Exception e) {
@@ -195,28 +152,7 @@ public class Comentar extends CrearContenido {
 		
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(verTweet.Recargar(u));
-//		ComentariosUsuarioRegistrado _comentariosUsuarioRegistrado = _vertweetgeneralUsuarioRegistrado._comentariosUsuarioRegistrado;
-//		VertweetgeneralUsuarioRegistrado verTweet = null;
-//		if(false) 
-//			verTweet = new Vertweetpropio(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado);
-//		else
-//			verTweet = new Vertweetajeno(_vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado);
-//			
-//		if(this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado !=null) {
-//			this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado.MainView.removeAll();
-//			this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado.MainView.add(verTweet);
-//		}
-//		else if(this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado !=null) {
-//			this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-//			this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(verTweet);
-//		}
-//		else {
-//			this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-//			this._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(verTweet);
-//		}
-//		
-//		ComentariosUsuarioRegistrado_item item_tweets = new ComentariosUsuarioRegistrado_item(_comentariosUsuarioRegistrado);
-//		_comentariosUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
+
 	}
 	
 	public Comentar Recargar(UsuarioRegistrado log) {

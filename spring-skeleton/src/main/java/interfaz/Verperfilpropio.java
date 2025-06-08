@@ -7,9 +7,7 @@ import gallardoMartinez.MainView.Pantalla;
 public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	
 
-	//private Button _eliminarCuenta;
-	//private Button _modificarDatos;
-	public UsuarioRegistrado _usuarioregistrado; //Usuarioregistrado
+	public UsuarioRegistrado _usuarioregistrado; 
 	public Comentariospropios_item _comentariospropios;
 	public Eliminarpropiacuenta _eliminarpropiacuenta;
 	public Modificardatoscuenta _modificardatoscuenta;
@@ -18,7 +16,6 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	
 	public Verperfilpropio(MostrartweetspropiosUsuarioRegistrado_item mostrartweetsUsuarioRegistrado,boolean mencion) {
 		super(mostrartweetsUsuarioRegistrado,mencion);
-		// TODO Auto-generated constructor stub
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
@@ -35,13 +32,12 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	
 	public Verperfilpropio(UsuarioRegistrado usuarioregistrado) {
 		super(usuarioregistrado);
-		//Esta parte no esta en los demas ya que se incluye en el (super)
 		this.getButtonBanear().setVisible(false);
 		MostrartweetsUsuarioRegistrado();
 		this.getButtonAtras().addClickListener(event -> {
 			Pantalla.MainView.removeAll();
 			Pantalla.MainView.add(Pantalla.Anterior);});
-		//
+		
 		
 		_usuarioregistrado  = usuarioregistrado; 
 		this.getButtonBloquear().setVisible(false);
@@ -58,7 +54,7 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	
 	public Verperfilpropio(ListaUsuariosGeneralUsuarioRegistrado_item listaUsuariosGeneralUsuarioRegistrado) {
 		super(listaUsuariosGeneralUsuarioRegistrado);
-		// TODO Auto-generated constructor stub
+		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
@@ -76,7 +72,6 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
-		// TODO Auto-generated constructor stub
 		
 
 		this.getButtonEliminarCuenta().addClickListener(event -> Eliminarpropiacuenta()); 
@@ -87,7 +82,7 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 
 	public Verperfilpropio(Comentariospropios_item _comentariospropios) {
 		super(_comentariospropios);
-		// TODO Auto-generated constructor stub
+
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelAvisoBloqueo().setVisible(false);
@@ -104,7 +99,7 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	public void Eliminarpropiacuenta() {
 		
 		_eliminarpropiacuenta  = new Eliminarpropiacuenta(this); 
-		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_eliminarpropiacuenta);
 
@@ -114,7 +109,7 @@ public class Verperfilpropio extends VerperfilgeneralUsuarioRegistrado {
 	public void Modificardatoscuenta() {
 
 		_modificardatoscuenta = new Modificardatoscuenta(this); 
-	//	Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_modificardatoscuenta);
 

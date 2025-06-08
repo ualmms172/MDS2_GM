@@ -8,11 +8,8 @@ import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
-	
-//	public ListaUsuariosGeneralUsuarioRegistrado_item _listaUsuariosGeneralUsuarioRegistrado;
-//	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
-//	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
-//	public ComentariosUsuarioRegistrado_item _comentariosUsuarioRegistrado;
+
+
 	public boolean seguido=false;
 	public boolean bloqueado=false;
 	
@@ -27,7 +24,6 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		
 		basededatos.UsuarioRegistrado user= mencion?mostrartweetsUsuarioRegistrado.t.getMencionaA():mostrartweetsUsuarioRegistrado.t.getEscritoPor();
 		
-//		seguido= user.seguidoPor.contains(Interfaz.ur.u);
 		for(basededatos.UsuarioRegistrado usu : user.seguidoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				seguido=true;
@@ -35,7 +31,6 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 			}
 		}
 		
-//		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
 		for(basededatos.UsuarioRegistrado usu : user.bloqueadoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				bloqueado=true;
@@ -74,7 +69,6 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 			else
 				SeguirUsuario();
 		});
-		// TODO Auto-generated constructor stub
 	}
 	
 	
@@ -86,7 +80,6 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 
 		basededatos.UsuarioRegistrado user= listaUsuariosGeneralUsuarioRegistrado.u;
-//		seguido= user.seguidoPor.contains(Interfaz.ur.u);
 		for(basededatos.UsuarioRegistrado usu : user.seguidoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				seguido=true;
@@ -94,7 +87,6 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 			}
 		}
 		
-//		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
 		for(basededatos.UsuarioRegistrado usu : user.bloqueadoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				bloqueado=true;
@@ -131,7 +123,6 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 			else
 				SeguirUsuario();
 		});
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Verperfilnobloqueado(VertweetgeneralUsuarioRegistrado vertweetgeneralUsuarioRegistrado,boolean mencion) {
@@ -142,15 +133,15 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 
 		basededatos.UsuarioRegistrado user= mencion?vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getMencionaA():vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado.t.getEscritoPor();
-//		seguido= user.seguidoPor.contains(Interfaz.ur.u);
+
 		for(basededatos.UsuarioRegistrado usu : user.seguidoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				seguido=true;
 				break;
 			}
 		}
-		
-//		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
+
+
 		for(basededatos.UsuarioRegistrado usu : user.bloqueadoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				bloqueado=true;
@@ -187,7 +178,6 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 			else
 				SeguirUsuario();
 		});
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Verperfilnobloqueado(ComentariosUsuarioRegistrado_item _comentariosUsuarioRegistrado) {
@@ -198,7 +188,6 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 		this.getVerticalLayoutEstarBloqueado().setVisible(false);
 
 		basededatos.UsuarioRegistrado user= _comentariosUsuarioRegistrado.c.getEscritoPor();
-//		seguido= user.seguidoPor.contains(Interfaz.ur.u);
 		for(basededatos.UsuarioRegistrado usu : user.seguidoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				seguido=true;
@@ -206,7 +195,6 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 			}
 		}
 		
-//		bloqueado = user.bloqueadoPor.contains(Interfaz.ur.u);
 		for(basededatos.UsuarioRegistrado usu : user.bloqueadoPor.toArray()){
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				bloqueado=true;
@@ -243,27 +231,14 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 			else
 				SeguirUsuario();
 		});
-		// TODO Auto-generated constructor stub
 	}
 	
 	
 	
 	
-
-	//private event _seguirUsuario;
-	//private event _bloquear;
-	//private event _dejardeseguirausuario;
-	//private event _desbloquear;
-	//private Button _seguir;
-	//private Button _bloquearB;
-
-	//public VerperfilUsuarioRegistrado _verperfilUsuarioRegistrado;
 	
 
 	public void SeguirUsuario() {
-//		this.getButtonSeguir().getStyle().set("color", "red");
-//		this.getButtonSeguir().setText("Dejar de seguir");
-//		seguido=true;
 		
 		basededatos.UsuarioRegistrado user = null;
 		if(this._mostrartweetsUsuarioRegistrado_item!=null) {
@@ -297,9 +272,6 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	}
 
 	public void Bloquear() {
-//		this.getButtonBloquear().getStyle().set("color", "red");
-//		this.getButtonBloquear().setText("Desbloquear");
-//		bloqueado=true;
 		basededatos.UsuarioRegistrado user = null;
 		if(this._mostrartweetsUsuarioRegistrado_item!=null) {
 			if(mencion) {
@@ -332,9 +304,6 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	}
 
 	public void Dejardeseguirausuario() {
-//		this.getButtonSeguir().getStyle().set("color", "gray");
-//		this.getButtonSeguir().setText("Seguir");
-//		seguido=false;
 		
 		basededatos.UsuarioRegistrado user = null;
 		if(this._mostrartweetsUsuarioRegistrado_item!=null) {
@@ -367,9 +336,6 @@ public class Verperfilnobloqueado extends VerperfilgeneralUsuarioRegistrado {
 	}
 
 	public void Desbloquear() {
-//		this.getButtonBloquear().getStyle().set("color", "gray");
-//		this.getButtonBloquear().setText("Bloquear");
-//		bloqueado=false;
 		
 		basededatos.UsuarioRegistrado user = null;
 		if(this._mostrartweetsUsuarioRegistrado_item!=null) {

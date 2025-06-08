@@ -8,8 +8,8 @@ import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaVerlistacompletausuariosusuarioregistrado;
 
 public class VerlistacompletausuariosUsuarioRegistrado extends VistaVerlistacompletausuariosusuarioregistrado {
-	//private Label _titulo;
-	public UsuarioRegistrado _usuarioregistrado; //Usuarioregistrado
+	
+	public UsuarioRegistrado _usuarioregistrado; 
 	public ListausuariosUsuarioRegistrado _listausuariosUsuarioRegistrado;
 
 	
@@ -32,21 +32,11 @@ public class VerlistacompletausuariosUsuarioRegistrado extends VistaVerlistacomp
 		_listausuariosUsuarioRegistrado = new ListausuariosUsuarioRegistrado(this);
 		this.getVerticalLayoutListaUsuarios().as(VerticalLayout.class).add(_listausuariosUsuarioRegistrado);
 		
-//		ListausuariosUsuarioRegistrado_item item_tweets = new ListausuariosUsuarioRegistrado_item(_listausuariosUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_listausuariosUsuarioRegistrado.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public VerlistacompletausuariosUsuarioRegistrado Recargar(UsuarioRegistrado log) {
 		return new VerlistacompletausuariosUsuarioRegistrado(log);
 	}
 	
-//	@Override
-//	protected void onAttach(AttachEvent attachEvent) {
-//	    super.onAttach(attachEvent);
-//	    
-//	    UI.getCurrent().getPage().executeJs(
-//	        "document.addEventListener('click', function(e) { e.stopPropagation(); }, true);"
-//	    );
-//	}
 
 }

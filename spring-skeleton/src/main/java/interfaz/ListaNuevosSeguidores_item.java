@@ -6,10 +6,7 @@ import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaListanuevosseguidores_item;
 
 public class ListaNuevosSeguidores_item extends VistaListanuevosseguidores_item {
-	//private event _seguirUsuario;
-	//private event _dejardeseguirausuario;
-	//private Label _informacion;
-	//private Button _seguir;
+
 	public ListaNuevosSeguidores _listaNuevosSeguidores;
 	private boolean dado =false;
 	public basededatos.UsuarioRegistrado u;
@@ -20,8 +17,8 @@ public class ListaNuevosSeguidores_item extends VistaListanuevosseguidores_item 
 		String text = u.getNick() + "ha empezado a seguirte";
 		this.getLabelTextoSeguir().removeAll();
 		this.getLabelTextoSeguir().add(text);
-		
-		//dado = u.seguidoPor.contains(Interfaz.ur.u);
+
+		//Comprobamos si ya se sigue al usuario
 		for(basededatos.UsuarioRegistrado usu : u.seguidoPor.toArray()) {
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				dado=true;
@@ -49,10 +46,6 @@ public class ListaNuevosSeguidores_item extends VistaListanuevosseguidores_item 
 	
 
 	public void SeguirUsuario() {
-//			this.getButtonSeguir_NoSeguir().getStyle().set("color", "red");
-//			this.getButtonSeguir_NoSeguir().setText("Dejar de seguir");
-//			ListaNuevosSeguidores la =  _listaNuevosSeguidores;
-//			la._item.add(this);
 			
 			basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Seguir_Usuario(Interfaz.ur.u, u);
 			UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
@@ -62,10 +55,6 @@ public class ListaNuevosSeguidores_item extends VistaListanuevosseguidores_item 
 	}
 
 	public void Dejardeseguirausuario() {
-//		this.getButtonSeguir_NoSeguir().getStyle().set("color", "gray");
-//		this.getButtonSeguir_NoSeguir().setText("Seguir");
-//		ListaNuevosSeguidores la =  _listaNuevosSeguidores;
-//		la._item.add(this);
 		
 		basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.Dejar_Seguir(Interfaz.ur.u, u);
 		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);

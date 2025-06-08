@@ -12,9 +12,8 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 	public VertweetUsuarioNoRegistrado _vertweetUsuarioNoRegistrado;
 	
 	public VerHashtagUsuarioNoRegistrado(ListahashtagsgeneralUsuarioNoRegistrado_item listahashtagsgeneralUsuarioNoRegistrado) {
-		
+		super(listahashtagsgeneralUsuarioNoRegistrado);
 		_listahashtagsgeneralUsuarioNoRegistrado = listahashtagsgeneralUsuarioNoRegistrado;
-		this.getLabelHashtag().setText(_listahashtagsgeneralUsuarioNoRegistrado.h.getTitulo());
 		
 		Listatweets();
 		
@@ -30,9 +29,10 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 	}
 	
 	public VerHashtagUsuarioNoRegistrado(Listatweets_item listatweets_item) {
+		super(listatweets_item);
 		
 		_listatweets_item = listatweets_item;
-		this.getLabelHashtag().setText(listatweets_item.t.getContiene().getTitulo());
+
 		
 		Listatweets();
 		
@@ -58,9 +58,7 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 						Pantalla.Anterior= this._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado._listatweets_item._listatweets._verperfilUsuarioNoRegistrado;
 					else if(this._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado!=null)
 						Pantalla.Anterior=this._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado;
-//					else {
-//						Pantalla.Anterior=this._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado._mostrartweetspropiosusuarioregistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado;
-//					}
+
 				}
 			}
 			else if(this._listatweets_item._listatweets._verperfilUsuarioNoRegistrado!=null) {
@@ -88,28 +86,12 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 				
 				else if(x._vertweetUsuarioNoRegistrado!=null) {
 					Pantalla.Anterior = x._vertweetUsuarioNoRegistrado;
-//					if(x._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado!=null) {
-//						Pantalla.Anterior = x._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado;
-//					}
-//					else if(x._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado!=null) {
-//						Pantalla.Anterior = x._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado;
-//					}
-//					else {
-//						Pantalla.Anterior = x._vertweetUsuarioNoRegistrado._listatweets._listatweets._usuarioNoRegistrado;
-//					}
+
 				}
 				
 				else {
 					Pantalla.Anterior = x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado;
-//					if(x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado!=null) {
-//						Pantalla.Anterior = x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado;
-//					}
-//					else if(x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado!=null) {
-//						Pantalla.Anterior = x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado;
-//					}
-//					else {
-//						Pantalla.Anterior = x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._usuarioNoRegistrado;
-//					}
+
 				}
 				
 				
@@ -121,9 +103,9 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 	}
 	
 	public VerHashtagUsuarioNoRegistrado(VertweetUsuarioNoRegistrado vertweetUsuarioNoRegistrado) {
+		super(vertweetUsuarioNoRegistrado);
 		
 		_vertweetUsuarioNoRegistrado = vertweetUsuarioNoRegistrado;
-		this.getLabelHashtag().setText(_vertweetUsuarioNoRegistrado._listatweets.t.getContiene().getTitulo());
 		
 		Listatweets();
 		
@@ -136,9 +118,7 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 			else if(this._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado!=null) {
 				Pantalla.Anterior=this._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado;
 			}
-//			else {
-//				Pantalla.Anterior=this._vertweetUsuarioNoRegistrado._listatweets._listatweets._usuarioNoRegistrado;
-//			}
+
 			
 	});
 		
@@ -150,7 +130,6 @@ public class VerHashtagUsuarioNoRegistrado extends VerHashtagGeneral {
 		_listatweets = new Listatweets(this);
 		this.getVerticalLayoutListaHashtags().as(VerticalLayout.class).add(_listatweets);
 		
-//		Listatweets_item item_tweets = new Listatweets_item(_listatweets,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_listatweets.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
+
 	}
 }

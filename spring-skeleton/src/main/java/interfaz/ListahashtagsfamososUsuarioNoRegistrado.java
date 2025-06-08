@@ -14,7 +14,7 @@ public class ListahashtagsfamososUsuarioNoRegistrado extends Listahashtagsgenera
 		
 		_usuarioNoRegistrado = usuario; 
 		
-		//Imagino que ya estará ordenado por fama?
+		
 		Hashtag[] hashtags = _usuarioNoRegistrado._iUsuarioNoRegistrado.Cargar_Hashtags();
 						
 		int n = hashtags.length;

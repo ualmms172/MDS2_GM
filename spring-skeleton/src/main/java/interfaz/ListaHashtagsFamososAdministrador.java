@@ -14,7 +14,7 @@ public class ListaHashtagsFamososAdministrador extends ListaHashtagsgeneralAdmin
 		
 		_administrador = administrador; 
 		
-		//Imagino que ya estará ordenado por fama?
+		
 		Hashtag[] hashtags = _administrador._iadministrador.Cargar_Hashtags();
 		
 		int n = hashtags.length;

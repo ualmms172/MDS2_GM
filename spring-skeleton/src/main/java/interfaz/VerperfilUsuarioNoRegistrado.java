@@ -11,14 +11,10 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 	public Listatweets_item _listatweets_item;
 	public Listatweets _listatweets;
 	
-//	public boolean mencion;
 
 	public void Listatweets() {
 		_listatweets = new Listatweets(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_listatweets);
-		
-//		Listatweets_item item_tweets = new Listatweets_item(_listatweets,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_listatweets.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public VerperfilUsuarioNoRegistrado(VertweetUsuarioNoRegistrado vertweetUsuarioNoRegistrado,Boolean mencion) {
@@ -26,23 +22,7 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		
 		_vertweetUsuarioNoRegistrado = vertweetUsuarioNoRegistrado;
 		
-//		this.mencion=mencion;
-//		basededatos.UsuarioRegistrado user =null;
-//		
-//		if(mencion) {
-//			 user = _vertweetUsuarioNoRegistrado._listatweets.t.getMencionaA();
-//		}
-//		else {
-//			user = _vertweetUsuarioNoRegistrado._listatweets.t.getEscritoPor();
-//		}
-//		
-//		this.getLabelNick().setText(user.getNick());
-//		this.getLabelDescripcion().setText(user.getDescripcion());
-//		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(user.seguidoPor.size()));
-//		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(user.sigueA.size()));
-//		if(user.getFotoFondo()!=null)
-//			this.getImgCabecera().setSrc(user.getFotoFondo());
-//		this.getImgPerfil().setSrc(user.getFotoPerfil());
+
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -63,9 +43,6 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 			else if(this._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado!=null) {
 				Pantalla.Anterior=this._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado;
 			}
-//			else {
-//				Pantalla.Anterior=this._vertweetUsuarioNoRegistrado._listatweets._listatweets._usuarioNoRegistrado;
-//			}
 			
 	});
 	}
@@ -75,13 +52,6 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		super(listaComentariosUsuarioNoRegistrado);
 		_listaComentariosUsuarioNoRegistrado = listaComentariosUsuarioNoRegistrado;
 		
-//		this.getLabelNick().setText(_listaComentariosUsuarioNoRegistrado.c.getEscritoPor().getNick());
-//		this.getLabelDescripcion().setText(_listaComentariosUsuarioNoRegistrado.c.getEscritoPor().getDescripcion());
-//		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(_listaComentariosUsuarioNoRegistrado.c.getEscritoPor().seguidoPor.size()));
-//		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(_listaComentariosUsuarioNoRegistrado.c.getEscritoPor().sigueA.size()));
-//		if(_listaComentariosUsuarioNoRegistrado.c.getEscritoPor().getFotoFondo()!=null)
-//			this.getImgCabecera().setSrc(_listaComentariosUsuarioNoRegistrado.c.getEscritoPor().getFotoFondo());
-//		this.getImgPerfil().setSrc(_listaComentariosUsuarioNoRegistrado.c.getEscritoPor().getFotoPerfil());
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -102,9 +72,6 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 			else if(this._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado!=null) {
 				Pantalla.Anterior=this._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado;
 			}
-//			else {
-//				Pantalla.Anterior =this._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._usuarioNoRegistrado;
-//			}
 			
 	});
 	}
@@ -113,13 +80,6 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		super(listaUsuariosGeneralUsuarioNoRegistrado);
 		_listaUsuariosGeneralUsuarioNoRegistrado = listaUsuariosGeneralUsuarioNoRegistrado; 
 		
-//		this.getLabelNick().setText(_listaUsuariosGeneralUsuarioNoRegistrado.u.getNick());
-//		this.getLabelDescripcion().setText(_listaUsuariosGeneralUsuarioNoRegistrado.u.getDescripcion());
-//		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(_listaUsuariosGeneralUsuarioNoRegistrado.u.seguidoPor.size()));
-//		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(_listaUsuariosGeneralUsuarioNoRegistrado.u.sigueA.size()));
-//		if(_listaUsuariosGeneralUsuarioNoRegistrado.u.getFotoFondo()!=null)
-//			this.getImgCabecera().setSrc(_listaUsuariosGeneralUsuarioNoRegistrado.u.getFotoFondo());
-//		this.getImgPerfil().setSrc(_listaUsuariosGeneralUsuarioNoRegistrado.u.getFotoPerfil());
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -146,24 +106,7 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 		super(listatweets,mencion);
 		_listatweets_item = listatweets; 
 		
-//		this.mencion=mencion;
-//		
-//		basededatos.UsuarioRegistrado user =null;
-//		
-//		if(mencion) {
-//			 user = _listatweets_item.t.getMencionaA();
-//		}
-//		else {
-//			user = _listatweets_item.t.getEscritoPor();
-//		}
-//		
-//		this.getLabelNick().setText(user.getNick());
-//		this.getLabelDescripcion().setText(user.getDescripcion());
-//		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(user.seguidoPor.size()));
-//		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(user.sigueA.size()));
-//		if(user.getFotoFondo()!=null)
-//			this.getImgCabecera().setSrc(user.getFotoFondo());
-//		this.getImgPerfil().setSrc(user.getFotoPerfil());
+
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -197,9 +140,7 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 						Pantalla.Anterior= this._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado._listatweets_item._listatweets._verperfilUsuarioNoRegistrado;
 					else if(this._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado!=null)
 						Pantalla.Anterior=this._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado._listatweets_item._listatweets._verHashtagUsuarioNoRegistrado;
-//					else {
-//						Pantalla.Anterior=this._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado._mostrartweetspropiosusuarioregistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado;
-//					}
+
 				}
 			}
 			else if(this._listatweets_item._listatweets._verperfilUsuarioNoRegistrado!=null) {
@@ -227,28 +168,12 @@ public class VerperfilUsuarioNoRegistrado extends VerPerfilGeneral {
 				
 				else if(x._vertweetUsuarioNoRegistrado!=null) {
 					Pantalla.Anterior = x._vertweetUsuarioNoRegistrado;
-//					if(x._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado!=null) {
-//						Pantalla.Anterior = x._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado;
-//					}
-//					else if(x._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado!=null) {
-//						Pantalla.Anterior = x._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado;
-//					}
-//					else {
-//						Pantalla.Anterior = x._vertweetUsuarioNoRegistrado._listatweets._listatweets._usuarioNoRegistrado;
-//					}
+
 				}
 				
 				else {
 					Pantalla.Anterior = x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado;
-//					if(x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado!=null) {
-//						Pantalla.Anterior = x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verHashtagUsuarioNoRegistrado;
-//					}
-//					else if(x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado!=null) {
-//						Pantalla.Anterior = x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._verperfilUsuarioNoRegistrado;
-//					}
-//					else {
-//						Pantalla.Anterior = x._listaComentariosUsuarioNoRegistrado._listaComentariosUsuarioNoRegistrado._vertweetUsuarioNoRegistrado._listatweets._listatweets._usuarioNoRegistrado;
-//					}
+
 				}
 				
 				

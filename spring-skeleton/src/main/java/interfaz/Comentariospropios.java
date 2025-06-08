@@ -31,6 +31,7 @@ public class Comentariospropios extends ListaComentariosGeneral {
 			}
 			if(bloqueado) continue;
 			
+			//Si el comentario pertenece a alguien que se encuentre baneado no sale
 			if(com.getEscritoPor().getBaneo()!=null && com.getEscritoPor().getBaneo().after(new Date())) continue;
 			
 			

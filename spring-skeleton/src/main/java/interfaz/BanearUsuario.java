@@ -22,15 +22,7 @@ import interfaz.VerPerfilAdministrador;
 import vistas.VistaBanearusuario;
 
 public class BanearUsuario extends VistaBanearusuario{
-	//private event _banearTemportalmente;
-	//private event _banearIndefinidamente;
-	//private Label _titulo;
-	//private Label _solicitudFecha;
-	//private TextField _fecha;
-	//private Button _atras;
-	//private Button _indefinido;
-	//private Button _temporal;
-	//private Label _texto;
+
 	public ListaUsuariosAdministrador_item _listaUsuariosAdministrador;
 	public VerPerfilAdministrador _verPerfilAdministrador;
 	
@@ -71,6 +63,7 @@ public class BanearUsuario extends VistaBanearusuario{
 		
 		_verPerfilAdministrador = verPerfilAdministrador; 
 		this.getPlaceHolderTiempoBaneo().setPlaceholder("dd/mm/yyyy");
+		//Como la forma de obtener el usuario a banear es incierta, primero se comprueba cual es para mostrar su nick
 		basededatos.UsuarioRegistrado u = null;
 		if(_verPerfilAdministrador._listaTweetsAdmin_item!=null) {
 			if(_verPerfilAdministrador.mencion)
@@ -93,11 +86,7 @@ public class BanearUsuario extends VistaBanearusuario{
 		
 		this.getLabelAvisoBaneo().setText(u.getNick());
 		
-		this.getButtonAtras().addClickListener(event -> {
-			
-			//ListaUsuariosAdministrador lu = (ListaUsuariosAdministrador) _listaUsuariosAdministrador._listaUsuariosGeneral;
-			
-			//VerListaCompletaUsuariosAdministrador vista= new VerListaCompletaUsuariosAdministrador(lu._verListaCompletaUsuariosAdministrador._administrador); 
+		this.getButtonAtras().addClickListener(event -> { 
 			
 			if(this._listaUsuariosAdministrador!=null) {
 				
@@ -109,11 +98,6 @@ public class BanearUsuario extends VistaBanearusuario{
 				Pantalla.MainView.add(_verPerfilAdministrador);
 			}
 
-			
-			//lu._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll(); 
-			
-			
-	        //lu._verListaCompletaUsuariosAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(vista);
 	
 	});
 		
@@ -134,7 +118,7 @@ public class BanearUsuario extends VistaBanearusuario{
          }
 		 
 		 SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-	        formato.setLenient(false); // Para validar fechas incorrectas
+	        formato.setLenient(false); 
 	        Date fecha=null;
 	        String fechaStr = this.getPlaceHolderTiempoBaneo().getValue();
 	        try {
@@ -220,7 +204,6 @@ public class BanearUsuario extends VistaBanearusuario{
 			u = Interfaz.ad._iadministrador.ObtenerUsuarioId(u);
 			
 			ListaUsuariosAdministrador_item item = new ListaUsuariosAdministrador_item(list,u);
-			//_listaUsuariosAdministrador._listaUsuariosAdministrador=list;
 			vista=new BanearUsuario(item);
 		}
 		else {

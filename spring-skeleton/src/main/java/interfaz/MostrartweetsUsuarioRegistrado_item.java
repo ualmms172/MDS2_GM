@@ -12,7 +12,7 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 		super(lista,t);
 		
 		_mostrartweetsUsuarioRegistrado = (MostrartweetspropiosUsuarioRegistrado)lista;
-//		dado=t.meGustaPor.contains(Interfaz.ur.u);
+		
 		dado=false;
 		for(basededatos.UsuarioRegistrado usu : t.meGustaPor.toArray()) {
 			if(usu.getID()==Interfaz.ur.u.getID()) {
@@ -24,7 +24,7 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 			this.getButtonMeGusta().getStyle().set("color", "red");
 			this.getButtonMeGusta().setText("Quitar");
 		}
-		// TODO Auto-generated constructor stub
+
 		this.getButtonMeGusta().setVisible(true);
 		
 		this.getButtonMeGusta().addClickListener(event-> Darlikeatweet());
@@ -33,8 +33,7 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 
 	}
 
-	//private event _darlikeatweet;
-	//private Button _darMeGusta;
+
 	public MostrartweetspropiosUsuarioRegistrado _mostrartweetsUsuarioRegistrado;
 	
 	public Boolean dado;
@@ -42,11 +41,7 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 	public void Darlikeatweet() {
 		
 		if(!dado) {
-//			this.getButtonMeGusta().getStyle().set("color", "red");
-//			this.getButtonMeGusta().setText("Quitar");
-//			MostrartweetsUsuarioRegistrado la = (MostrartweetsUsuarioRegistrado) _lista;
-//			la._item.add(this);
-//			dado=true;
+
 			basededatos.UsuarioRegistrado ubd= Interfaz.ur._iUsuarioregistrado.DarLikeTweet(Interfaz.ur.u, t);
 			UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 			Pantalla.MainView.removeAll();
@@ -62,11 +57,7 @@ public class MostrartweetsUsuarioRegistrado_item extends MostrartweetspropiosUsu
 			}
 			
 			else {
-//				this.getButtonMeGusta().getStyle().set("color", "gray");
-//				this.getButtonMeGusta().setText("Dar me gusta");
-//				MostrartweetsUsuarioRegistrado la = (MostrartweetsUsuarioRegistrado) _lista;
-//				la._item.add(this);
-//				dado=false;
+
 				
 				basededatos.UsuarioRegistrado ubd= Interfaz.ur._iUsuarioregistrado.QuitarLikeTweet(Interfaz.ur.u, t);
 				UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);

@@ -14,7 +14,7 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 		super(lista,t);
 		
 		_listaTweetsAdmin = (ListaTweetsAdmin) _lista; 
-		// TODO Auto-generated constructor stub
+
 		this.getButtonMeGusta().setVisible(false);
 		this.getButtonRetweet().setVisible(false);
 		
@@ -73,8 +73,7 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 		}
 	}
 
-	//private event _borrarTweet;
-	//private Button _borrarTweetB;
+
 	public ListaTweetsAdmin _listaTweetsAdmin;
 	public VerTweetAdministrador _verTweetAdministrador;
 	public VerPerfilAdministrador _verPerfilAdministrador;
@@ -84,11 +83,7 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 	public boolean eliminado =false;
 
 	public void BorrarTweet() {
-//		this._listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).remove(this);
-		
-//		Interfaz.ad._iadministrador.BorrarTexto(cont);
-//		Interfaz.ad._iadministrador.BorrarMultimedia(cont);
-//		Interfaz.ad._iadministrador.BorrarComentarios(t);
+
 		
 		basededatos.Administrador abd=Interfaz.ad._iadministrador.BorrarTweet(t,Interfaz.ad.a);
 		Administrador a = new Administrador((MainView)Pantalla.MainView,abd);
@@ -113,32 +108,7 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_verTweetAdministrador);
 		
-//		_verTweetAdministrador = new VerTweetAdministrador(this); 
-//		
-//		if(_listaTweetsAdmin._verHashtagAdministrador != null) {
-//			
-//			_listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-//			_listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verTweetAdministrador);
-//
-//			
-//			
-//		}
-//		
-//		else if(_listaTweetsAdmin._administrador != null) {
-//			
-//			
-//			_listaTweetsAdmin._administrador.MainView.removeAll();
-//			_listaTweetsAdmin._administrador.MainView.add(_verTweetAdministrador);
-//	
-//		}
-//		
-//		
-//		else {
-//			
-//			_listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-//			_listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verTweetAdministrador);
-//		
-//		}
+
 		
 	}
 	
@@ -156,31 +126,6 @@ public class ListaTweetsAdmin_item extends ListaTweetsGeneral_item {
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_verPerfilAdministrador);
 		
-//		_verPerfilAdministrador = new VerPerfilAdministrador(this);
-//		
-//		if(_listaTweetsAdmin._verHashtagAdministrador != null) {
-//			
-//			_listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-//			_listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verPerfilAdministrador);
-//
-//			
-//			
-//		}
-//		
-//		else if(_listaTweetsAdmin._administrador != null) {
-//			
-//			
-//			_listaTweetsAdmin._administrador.MainView.removeAll();
-//			_listaTweetsAdmin._administrador.MainView.add(_verPerfilAdministrador);
-//	
-//		}
-//		
-//		
-//		else {
-//			
-//			_listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-//			_listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(_verPerfilAdministrador);
-//		
-//		}
+
 	}
 }

@@ -38,22 +38,6 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	    }
 	}
 
-//	public Tweet[] Cargar_TweetsUsuario(UsuarioRegistrado aUsuario) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public Tweet[] Cargar_TweetsHashtag(Hashtag aHashtag) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public Tweet[] Cargar_TweetsPrincipales(Logueado aLogueado) {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public Comentario[] Cargar_Comentarios(Tweet aTweet) {
-//		throw new UnsupportedOperationException();
-//	}
-
 	public UsuarioRegistrado Escribir_Tweet(Hashtag aHashtag, UsuarioRegistrado aUsuarioMencionado, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) {
 		
 		try {
@@ -226,17 +210,6 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	        return null;
 	    }
 	}
-/*
-	public UsuarioRegistrado UsarHashtag(Hashtag h, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) {
-	    try {
-	        return _bd_twe.UsarHashtag( h,  aTexto,  aUrl_foto,  aUrl_video,  aUsuario);
-	    } catch (PersistentException e) {
-	        System.err.println("Error al usar hashtag en tweet: " + e.getMessage());
-	        e.printStackTrace();
-	        return null;
-	    }
-	}
-	*/
 
 
 	public UsuarioRegistrado Registrar_Usuario(String aNick, String aDescripcion, String aUrl_perfil, String aUrl_fondo, String aContrasena,String aCorreo) {
@@ -324,41 +297,7 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 		    }
 	}
 
-	@Override
-	public void BorrarComentarios(Tweet aTweet) {
-		 try {
-		         _bd_com.BorrarComentarios(aTweet);
-		    } catch (PersistentException e) {
-		        System.err.println("Error al borrar los comentarios de un tweet: " + e.getMessage());
-		        e.printStackTrace();
-		        return ;
-		    }
-		
-	}
-
-	@Override
-	public void BorrarTexto(Contenido aContenido) {
-		try {
-	         _bd_tex.BorrarTexto(aContenido);
-	    } catch (PersistentException e) {
-	        System.err.println("Error al borrar el texto de un contenido: " + e.getMessage());
-	        e.printStackTrace();
-	        return ;
-	    }
-		
-	}
-
-	@Override
-	public void BorrarMultimedia(Contenido aContenido) {
-		try {
-	         this._bd_mul.BorrarMultimedia(aContenido);
-	    } catch (PersistentException e) {
-	        System.err.println("Error al borrar la multimedia de un contenido: " + e.getMessage());
-	        e.printStackTrace();
-	        return ;
-	    }
-		
-	}
+	
 
 	@Override
 	public Administrador ObtenerAdminId(Administrador aAdministrador) {
@@ -396,19 +335,7 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 		return twe;
 	}
 
-	@Override
-	public Comentario ObtenerComentarioId(Comentario aComentario) {
-		Comentario com=null;
-		try {
-			com = this._bd_com.ObtenerComentarioId(aComentario);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return com;
-	}
 	
-	//ObtenerHashtagId
 	
 	@Override
 	public Hashtag ObtenerHashtagId(Hashtag aHashtag) {
@@ -424,53 +351,10 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	
 	
 	
-//	public usuario obtenerUsuarioporId(int aId) {
-//		usuario usuario=null;
-//		try {
-//			usuario = _usuarios.obtenerUsuarioporId(aId);
-//		} catch (PersistentException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return usuario;
-//	}
 
 
 
-//	public UsuarioRegistrado get_Usuarioregistrado() {
-//
-//		return null; 
-//	
-//	}
 
-//	public Logueado get_Logueado(String aNick, String aPassword) throws PersistentException {
-//		return null; 
-//	}
 
-//	public Administrador get_Administrador() {
-//	
-//	 return null; 
-//		
-//	}
 
-//	@Override
-//	public UsuarioRegistrado Escribir_Tweet(String aTexto, String aUrl_foto, String aUrl_video) throws PersistentException {
-//
-//	   return this._bd_twe.Escribir_Tweet(aTexto, aUrl_foto, aUrl_video, get_Usuarioregistrado()); 
-//		
-//	}
-
-//	@Override
-//	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video) throws PersistentException {
-//		// TODO Auto-generated method stub
-//		return this._bd_com.Escribir_Comentario(aTweet, aTexto, aUrl_foto, aUrl_video, get_Usuarioregistrado()); 
-//	}
-//
-//	@Override
-//	public UsuarioRegistrado Escribir_Retweet(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video) throws PersistentException {
-//		// TODO Auto-generated method stub
-//	
-//		return this._bd_twe.Escribir_Retweet(aTweet, aTexto, aUrl_foto, aUrl_video, get_Usuarioregistrado()); 
-//		
-//	}
 }

@@ -6,9 +6,7 @@ import gallardoMartinez.MainView.Pantalla;
 public class ListaUsuariosGeneralUsuarioRegistrado_item extends ListaUsuariosGeneral_item {
 	public ListaUsuariosGeneralUsuarioRegistrado_item(ListaUsuariosGeneral lista,basededatos.UsuarioRegistrado u) {
 		super(lista,u);
-		//this.getLabelSeguido_NoSeguido().setText(null);
-		
-		// TODO Auto-generated constructor stub
+
 		this.getButtonBanear().setVisible(false);
 		this.getHorizontalListausuariosgeneral_item().addClickListener(event -> VerperfilUsuarioRegistrado());
 	}
@@ -17,7 +15,7 @@ public class ListaUsuariosGeneralUsuarioRegistrado_item extends ListaUsuariosGen
 	public VerperfilgeneralUsuarioRegistrado _verperfilUsuarioRegistrado;
 
 	public void VerperfilUsuarioRegistrado() {
-		//_verperfilUsuarioRegistrado = new VerperfilgeneralUsuarioRegistrado(this);
+
 		if(this.u.getID()==Interfaz.ur.u.getID()) _verperfilUsuarioRegistrado = new Verperfilpropio(this);
 		else {
 			boolean bloqueado=false;

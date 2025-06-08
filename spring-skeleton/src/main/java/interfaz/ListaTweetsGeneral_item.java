@@ -17,17 +17,9 @@ public class ListaTweetsGeneral_item extends ListaContenido_item {
 		ListaTweetsGeneral_item(ListaContenido lista,Tweet t) {
 		super(lista,t);
 		this.t=t;
-		/*
-		if(t.getMencionaA()!=null) 
-			Mencion();
-		
-		if(t.getContiene()!=null)
-			Hashtag();
-			*/
 		
 	}
 
-	//private Button _accederATweet;
 	public Tweet t;
 	public ListaTweetsGeneral _listaTweetsGeneral;
 	
@@ -46,53 +38,7 @@ public class ListaTweetsGeneral_item extends ListaContenido_item {
 	    Span spanDespues = new Span(partes.length > 1 ? partes[1] : "");
 
 	    return new Span[] { spanAntes, spanMencion, spanDespues };
-//		
-//		Label labelOriginal = this.getLabelCuerpoTwet();
-//	    String texto = labelOriginal.getText();
-//
-//	    int indexAt = texto.indexOf('@');
-//	    int indexEspacio = texto.indexOf(' ', indexAt);
-//	    if (indexEspacio == -1) {
-//	        indexEspacio = texto.length();
-//	    }
-//
-//	    String antes = texto.substring(0, indexAt);
-//	    String mencion = texto.substring(indexAt, indexEspacio);
-//	    String despues = texto.substring(indexEspacio);
-//
-////	    // Crear el nuevo Span que reemplazará visualmente al Label
-////	    Span nuevoSpan = new Span();
-//
-//	    // Copiar estilos visuales si el Label tiene alguno
-////	    nuevoSpan.getStyle().set("font-family", labelOriginal.getStyle().get("font-family"));
-////	    nuevoSpan.getStyle().set("font-size", labelOriginal.getStyle().get("font-size"));
-////	    nuevoSpan.getStyle().set("font-weight", labelOriginal.getStyle().get("font-weight"));
-////	    nuevoSpan.getStyle().set("color", labelOriginal.getStyle().get("color"));
-////	    nuevoSpan.getStyle().set("display", "inline");
-//
-//	    // Construir el texto con partes
-//	    Span spanAntes = new Span(antes);
-//	    Span spanMencion = new Span(mencion);
-//	    spanMencion.getStyle().set("color", "blue");
-//	    spanMencion.getStyle().set("cursor", "pointer");
-////	    spanMencion.getElement().addEventListener("click", e -> {
-////	        System.out.println("Click en mención: " + mencion);
-////	        // Puedes usar UI.getCurrent().navigate(...) si quieres navegar
-////	    });
-//	    Span spanDespues = new Span(despues);
-//	    
-//	    Span[] result = new Span[3];
-//	    result[1] = spanAntes;
-//	    result[2] = spanMencion;
-//	    result[3] = spanDespues;
-//	    
-//	    return result;
 
-//	    nuevoSpan.add(spanAntes, spanMencion, spanDespues);
-
-//	    // Reemplazar el Label por el nuevo Span en su padre
-//	    this.getHorizontalLayoutCuerpoTweet().removeAll();
-//	    this.getHorizontalLayoutCuerpoTweet().add(nuevoSpan);
 	}
 	
 	public Span[] Hashtag(Span[] mencion) {

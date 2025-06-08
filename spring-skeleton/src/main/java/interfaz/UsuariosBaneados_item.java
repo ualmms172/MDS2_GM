@@ -8,11 +8,7 @@ import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaUsuariosbaneados_item;
 
 public class UsuariosBaneados_item extends VistaUsuariosbaneados_item {
-	//private event _desbanearusuario;
-	//private Label _nickUsuario;
-	//private Label _numSeguidores;
-	//private Image _fotoPerfil;
-	//private Button _desbanearB;
+
 	public UsuariosBaneados _usuariosBaneados;
 	public basededatos.UsuarioRegistrado u;
 	
@@ -36,6 +32,6 @@ public class UsuariosBaneados_item extends VistaUsuariosbaneados_item {
 		Administrador a = new Administrador((MainView)Pantalla.MainView,abd);
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(new Verbaneados(a));
-		//this._usuariosBaneados.getVerticalListausuariosbaneados().as(VerticalLayout.class).remove(this);
+
 	}
 }

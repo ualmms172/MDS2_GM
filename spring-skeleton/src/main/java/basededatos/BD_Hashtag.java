@@ -1,5 +1,7 @@
 package basededatos;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -17,7 +19,17 @@ public class BD_Hashtag {
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 		Hashtag[] resultado = null;
 		try {
-			Hashtag[] hashtags = HashtagDAO.listHashtagByQuery(null, "Titulo ASC");
+			Hashtag[] hashtags = HashtagDAO.listHashtagByQuery(null, null);
+			
+			// Ordenamos de mayor a menor número de contenidoPor
+			Arrays.sort(hashtags, new Comparator<Hashtag>() {
+				public int compare(Hashtag h1, Hashtag h2) {
+					int size1 = (h1.contenidoPor != null) ? h1.contenidoPor.size() : 0;
+					int size2 = (h2.contenidoPor != null) ? h2.contenidoPor.size() : 0;
+					return Integer.compare(size2, size1); // Orden descendente
+				}
+			});
+			
 			resultado = hashtags;
 			t.commit();
 		} catch (Exception e) {
@@ -66,10 +78,6 @@ public class BD_Hashtag {
 			hashtag.setTitulo(aHashtag);
 			hashtag.setNumTweets(0); // inicializa en 0
 			hashtag.setCreadoPor(aUsuario);
-			// Aquí podrías establecer el usuario creador, si lo tienes disponible.
-			// Por ejemplo:
-			// UsuarioRegistrado autor = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(idUsuario);
-			// hashtag.setCreadoPor(autor);
 
 			HashtagDAO.save(hashtag);
 			t.commit();

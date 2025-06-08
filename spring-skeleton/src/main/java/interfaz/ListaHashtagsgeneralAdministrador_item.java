@@ -6,7 +6,7 @@ import gallardoMartinez.MainView.Pantalla;
 public class ListaHashtagsgeneralAdministrador_item extends ListaHashtagsGeneral_item {
 	public ListaHashtagsgeneralAdministrador_item(ListaHashtagsGeneral lista,Hashtag h) {
 		super(lista,h);
-		// TODO Auto-generated constructor stub
+
 		this.getButtonEscribirTweet().setVisible(false);
 		this.getHorizontalListahashtagsgeneral_item().addClickListener(Event -> VerHashtagAdministrador());
 	}

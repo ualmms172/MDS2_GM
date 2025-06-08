@@ -6,8 +6,8 @@ import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaVerlistacompletahashtagusuarioregistrado;
 
 public class VerlistacompletahashtagUsuarioRegistrado extends VistaVerlistacompletahashtagusuarioregistrado {
-	//private Label _titulo;
-	public UsuarioRegistrado _usuarioregistrado; //Usuarioregistrado
+
+	public UsuarioRegistrado _usuarioregistrado; 
 	public ListahashtagsUsuarioRegistrado _listahashtagsUsuarioRegistrado;
 	
 	public VerlistacompletahashtagUsuarioRegistrado(UsuarioRegistrado usuarioregistrado) {
@@ -28,8 +28,6 @@ public class VerlistacompletahashtagUsuarioRegistrado extends VistaVerlistacompl
 		_listahashtagsUsuarioRegistrado = new ListahashtagsUsuarioRegistrado(this);
 		this.getVerticalLayoutListaHashtags().as(VerticalLayout.class).add(_listahashtagsUsuarioRegistrado);
 		
-//		ListahashtagsUsuarioRegistrado_item item_tweets = new ListahashtagsUsuarioRegistrado_item(_listahashtagsUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_listahashtagsUsuarioRegistrado.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public VerlistacompletahashtagUsuarioRegistrado Recargar(UsuarioRegistrado log) {

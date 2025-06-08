@@ -13,8 +13,7 @@ import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
-	//private Button _comentar;
-	//private Button _retweetear;
+
 	public Comentariospropios _comentariosUsuarioRegistrado;
 	public VerperfilgeneralUsuarioRegistrado _verperfilUsuarioRegistrado;
 	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
@@ -23,20 +22,7 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	
 	public VerHashtagUsuarioRegistrado _verHashtagUsuarioRegistrado;
     
-//	public VertweetgeneralUsuarioRegistrado (VerperfilgeneralUsuarioRegistrado verperfilUsuarioRegistrado ) {
-//		super(null);
-//		_verperfilUsuarioRegistrado = verperfilUsuarioRegistrado; 
-//		this.getButtonBorrar().setVisible(false);
-//		
-//		this.getHorizontalLayoutRetweeteadoPor().setVisible(false);
-//		this.getlabelRetweeteadoPor().setVisible(false);
-//		
-//		
-//		ComentariosUsuarioRegistrado();
-//		this.getButtonComentar().addClickListener(event -> Comentar());
-//		this.getButtonRetweet().addClickListener(event -> Retweetear());
-//		this.getImgFotoPerfilTweet().addClickListener(event ->VerperfilUsuarioRegistrado());
-//	}
+
 	
 	
 	public VertweetgeneralUsuarioRegistrado (MostrartweetspropiosUsuarioRegistrado_item mostrartweetspropiosUsuarioRegistrado_item ) {
@@ -162,28 +148,12 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 				
 				else if(x._vertweetgeneralUsuarioRegistrado!=null) {
 					Pantalla.Anterior = x._vertweetgeneralUsuarioRegistrado;
-//					if(x._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado!=null) {
-//						Pantalla.Anterior = x._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado;
-//					}
-//					else if(x._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado!=null) {
-//						Pantalla.Anterior = x._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado;
-//					}
-//					else {
-//						Pantalla.Anterior = x._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado;
-//					}
+
 				}
 				
 				else if(x._comentariosUsuarioRegistrado!=null) {
 					Pantalla.Anterior = x._comentariosUsuarioRegistrado._comentariospropios._vertweetgeneralUsuarioRegistrado;
-//					if(x._comentariosUsuarioRegistrado._comentariospropios._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado!=null) {
-//						Pantalla.Anterior = x._comentariosUsuarioRegistrado._comentariospropios._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verHashtagUsuarioRegistrado;
-//					}
-//					else if(x._comentariosUsuarioRegistrado._comentariospropios._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado!=null) {
-//						Pantalla.Anterior = x._comentariosUsuarioRegistrado._comentariospropios._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._verperfilgeneralUsuarioRegistrado;
-//					}
-//					else {
-//						Pantalla.Anterior = x._comentariosUsuarioRegistrado._comentariospropios._vertweetgeneralUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado;
-//					}
+
 				}
 				else {
 					Verperfilpropio l = (Verperfilpropio) x;
@@ -201,15 +171,12 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	public void ComentariosUsuarioRegistrado() {
 		_comentariosUsuarioRegistrado = new Comentariospropios(this);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_comentariosUsuarioRegistrado);
-		
-//		Comentariospropios_item item_tweets = new Comentariospropios_item(_comentariosUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_comentariosUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 
 	public void Comentar() {
 		
 		_comentar = new Comentar(this);
-	//	Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_comentar);
 	}
@@ -251,7 +218,7 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 
 	public void Retweetear() {
 		_retweetear = new Retweetear(this);
-		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(_retweetear);
 	}
@@ -261,25 +228,18 @@ public class VertweetgeneralUsuarioRegistrado extends VertweetGeneral {
 	    MostrartweetspropiosUsuarioRegistrado lt = this._mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado;
 	    
 	    basededatos.Tweet t = Interfaz.ur._iUsuarioregistrado.ObtenerTweetId(_mostrartweetspropiosUsuarioRegistrado.t);
-//		try {
-//			t = TweetDAO.loadTweetByORMID(_mostrartweetspropiosUsuarioRegistrado.t.getORMID());
-//		} catch (PersistentException e) {
-//			e.printStackTrace(); 
-//		}
+
 
 	    if (lt._verperfilgeneralUsuarioRegistrado != null) {
 	        lt = new MostrartweetspropiosUsuarioRegistrado(lt._verperfilgeneralUsuarioRegistrado.Recargar(log));
 	        
-	        //_mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado = lt;
 
 	    } else if (lt._verHashtagUsuarioRegistrado != null) {
 	        lt = new MostrartweetspropiosUsuarioRegistrado(lt._verHashtagUsuarioRegistrado.Recargar(log));
-	        //_mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado = lt;
 
 	       
 	    } else {
 	        lt = new MostrartweetspropiosUsuarioRegistrado(log);
-	        //_mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado = lt;
 
 	        
 	    }

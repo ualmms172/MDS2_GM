@@ -8,14 +8,6 @@ public interface iUsuarioregistrado extends iLogueado {
 
 	public Hashtag[] Cargar_Hashtags();
 
-//	public Tweet[] Cargar_TweetsUsuario(UsuarioRegistrado aUsuario);
-//
-//	public Tweet[] Cargar_TweetsHashtag(Hashtag aHashtag);
-//
-//	public Tweet[] Cargar_TweetsPrincipales(Logueado aLogueado);
-
-//	public Comentario[] Cargar_Comentarios(Tweet aTweet);
-
 	public UsuarioRegistrado Escribir_Tweet(Hashtag aHashtag, UsuarioRegistrado aUsuarioMencionado, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) ;
 
 	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) ; 
@@ -54,10 +46,7 @@ public interface iUsuarioregistrado extends iLogueado {
 	
 	public Tweet ObtenerTweetId (Tweet aTweet);
 	
-	public Comentario ObtenerComentarioId(Comentario aComentario);
-	
 	public Hashtag ObtenerHashtagId(Hashtag aHashtag);
 
-	//public UsuarioRegistrado UsarHashtag(Hashtag h, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) ;
 	
 }
