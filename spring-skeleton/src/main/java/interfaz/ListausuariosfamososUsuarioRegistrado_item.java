@@ -10,8 +10,8 @@ public class ListausuariosfamososUsuarioRegistrado_item extends ListaUsuariosGen
 		this.getButtonSeguir().setVisible(false);
 		this.getLabelSeguido_NoSeguido().setVisible(false);
 		
-		this.getImgPerfilUsuario().setHeight("100px");
-		this.getImgPerfilUsuario().setWidth("100px");
+		this.getImgPerfilUsuario().setHeight("35px");
+		this.getImgPerfilUsuario().setWidth("5px");
 		
 		_listausuariosfamososUsuarioRegistrado = (ListausuariosfamososUsuarioRegistrado) lista;
 	}

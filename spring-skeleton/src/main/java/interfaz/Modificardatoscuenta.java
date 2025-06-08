@@ -19,7 +19,10 @@ public class Modificardatoscuenta extends VistaModificardatoscuenta {
 		
 		_verperfilpropio = verperfilpropio; 
 		
+		
 
+		this.getImgPerfil().setHeight("5%");
+		this.getImgPerfil().setWidth("80%");
 		
 		this.getButtonModificar().addClickListener(event -> Modificar()); 
 		

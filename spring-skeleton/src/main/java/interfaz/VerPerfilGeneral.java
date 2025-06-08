@@ -20,6 +20,10 @@ public class VerPerfilGeneral extends VistaVerperfilgeneral{
 		this.getImgPerfil().setHeight("100%");
 		this.getImgPerfil().setWidth("100%");
 		
+
+		this.getImgCabecera().setHeight("200px");
+		this.getImgCabecera().setWidth("200px");
+		
 		
 	}
 	
@@ -46,6 +50,9 @@ public class VerPerfilGeneral extends VistaVerperfilgeneral{
 		
 		this.getImgPerfil().setHeight("100%");
 		this.getImgPerfil().setWidth("100%");
+
+		this.getImgCabecera().setHeight("200px");
+		this.getImgCabecera().setWidth("200px");
 		
 	}
 	
@@ -72,6 +79,10 @@ public class VerPerfilGeneral extends VistaVerperfilgeneral{
 		
 		this.getImgPerfil().setHeight("100%");
 		this.getImgPerfil().setWidth("100%");
+
+
+		this.getImgCabecera().setHeight("200px");
+		this.getImgCabecera().setWidth("200px");
 		
 	}
 	
@@ -87,6 +98,9 @@ public class VerPerfilGeneral extends VistaVerperfilgeneral{
 		
 		this.getImgPerfil().setHeight("100%");
 		this.getImgPerfil().setWidth("100%");
+
+		this.getImgCabecera().setHeight("200px");
+		this.getImgCabecera().setWidth("200px");
 		
 	}
 	
@@ -105,6 +119,10 @@ public class VerPerfilGeneral extends VistaVerperfilgeneral{
 		
 		this.getImgPerfil().setHeight("100%");
 		this.getImgPerfil().setWidth("100%");
+
+
+		this.getImgCabecera().setHeight("200px");
+		this.getImgCabecera().setWidth("200px");
 		
 	}
 	

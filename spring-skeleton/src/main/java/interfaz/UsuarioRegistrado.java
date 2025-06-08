@@ -31,8 +31,13 @@ public class UsuarioRegistrado extends Logueado {
 		
 		this.getImgPerfilUsuario().setSrc(u.getFotoPerfil());
 
-		this.getImgPerfilUsuario().setHeight("100%");
-		this.getImgPerfilUsuario().setWidth("50%");
+		this.getImgPerfilUsuario().setHeight("150px");
+		this.getImgPerfilUsuario().setWidth("150px");
+		
+		this.getImgPortadaTwitter().setHeight("300px");
+		this.getImgPortadaTwitter().setWidth("500px");
+		
+		
 		
 		this.getButtonBaneados().setVisible(false);
 		this.getButtonNotificaciones().addClickListener(event -> Notificaciones()); 

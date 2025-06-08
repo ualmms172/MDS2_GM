@@ -22,7 +22,7 @@ public class UsuariosBaneados_item extends VistaUsuariosbaneados_item {
 		this.getButtonDesbanear().addClickListener(event -> Desbanearusuario());
 		
 		this.getImgPerfilUsuarioBaneado().setHeight("100%");
-		this.getImgPerfilUsuarioBaneado().setWidth("50%");
+		this.getImgPerfilUsuarioBaneado().setWidth("20%");
 	}
 	
 	

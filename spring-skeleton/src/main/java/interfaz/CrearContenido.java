@@ -8,6 +8,9 @@ public class CrearContenido extends VistaCrearcontenido {
 	
 	public CrearContenido() {
 		
+		this.getImgImagen().setHeight("200px");
+		this.getImgImagen().setWidth("200px");
+		
 		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
 		    String url = event.getValue();
 		    if (url != null && !url.isEmpty()) {

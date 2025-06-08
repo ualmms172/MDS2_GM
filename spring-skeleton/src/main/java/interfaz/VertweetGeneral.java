@@ -22,7 +22,7 @@ public class VertweetGeneral extends VistaVertweetgeneral {
 		_listaTweetsGeneral= item;
 		
 			this.getImgFotoPerfilTweet().setHeight("100%");
-			this.getImgFotoPerfilTweet().setWidth("50%");
+			this.getImgFotoPerfilTweet().setWidth("20%");
 		
 			if(item.t.getContieneTexto()!=null)
 				this.getLabelCuerpoTwet().setText(item.t.getContieneTexto().getTexto());
