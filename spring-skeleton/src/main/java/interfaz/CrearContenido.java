@@ -5,17 +5,6 @@ import com.vaadin.flow.component.html.Div;
 import vistas.VistaCrearcontenido;
 
 public class CrearContenido extends VistaCrearcontenido {
-	//private Label _titulo;
-	//private Label _foto;
-	//private Label _video;
-	//private Label _previsualizacionFoto;
-	//private Label _previsualizacionVideo;
-	//private Label _textoTweet;
-	//private TextField _textoTweetTF;
-	//private TextField _fotoTF;
-	//private TextField _videoTF;
-	//private Button _atras;
-	//private Button _publicar;
 	
 	public CrearContenido() {
 		
@@ -30,7 +19,7 @@ public class CrearContenido extends VistaCrearcontenido {
 		
 		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
 		    String url = event.getValue();
-		    Div videoDiv = this.getImgVideo(); // Aunque el nombre "getImgVideo" puede confundir, si devuelve un Div está bien
+		    Div videoDiv = this.getImgVideo(); 
 
 		    if (url != null && !url.isBlank()) {
 		        String videoId = null;

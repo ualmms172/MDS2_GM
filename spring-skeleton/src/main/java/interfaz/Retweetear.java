@@ -14,9 +14,7 @@ import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class Retweetear extends CrearContenido {
-	//private event _publicarretweet;
-	//private event _mencionar;
-	//private event _usarHashtag;
+
 	public MostrartweetspropiosUsuarioRegistrado_item _mostrartweetspropiosUsuarioRegistrado;
 	public VertweetgeneralUsuarioRegistrado _vertweetgeneralUsuarioRegistrado;
 	
@@ -69,7 +67,7 @@ public class Retweetear extends CrearContenido {
 					 Pantalla.MainView.add(y);
 				 }
 				 else {
-					 //UsuarioRegistrado y = new UsuarioRegistrado((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+
 					 Pantalla.MainView.add(_mostrartweetspropiosUsuarioRegistrado._mostrartweetspropiosUsuarioRegistrado._usuarioregistrado);
 				 }
 			 }
@@ -79,45 +77,8 @@ public class Retweetear extends CrearContenido {
 			
 		});
 		
-//		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
-//		    String url = event.getValue();
-//		    if (url != null && !url.isEmpty()) {
-//		        this.getImgImagen().setSrc(url);
-//		    } else {
-//		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
-//		    }
-//		});
-//		
-//		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
-//		    String url = event.getValue();
-//		    Div videoDiv = this.getImgVideo(); // Aunque el nombre "getImgVideo" puede confundir, si devuelve un Div está bien
-//
-//		    if (url != null && !url.isBlank()) {
-//		        String videoId = null;
-//
-//		        if (url.contains("youtube.com/watch?v=")) {
-//		            int index = url.indexOf("watch?v=") + 8;
-//		            int end = url.indexOf("&", index);
-//		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
-//		        } else if (url.contains("youtu.be/")) {
-//		            int index = url.indexOf("youtu.be/") + 9;
-//		            int end = url.indexOf("?", index);
-//		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
-//		        }
-//
-//		        if (videoId != null && !videoId.isBlank()) {
-//		            String embedUrl = "https://www.youtube.com/embed/" + videoId;
-//		            String iframe = "<iframe width='560' height='315' src='" + embedUrl + "' " +
-//		                            "title='YouTube video player' frameborder='0' " +
-//		                            "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
-//		            videoDiv.getElement().setProperty("innerHTML", iframe);
-//		        } else {
-//		            videoDiv.getElement().setProperty("innerHTML", "");
-//		        }
-//		    } else {
-//		        videoDiv.getElement().setProperty("innerHTML", ""); // Limpia el contenido si el campo está vacío
-//		    }
-//		});
+
+
 
 		
 	}
@@ -180,45 +141,8 @@ public class Retweetear extends CrearContenido {
 			
 		});
 		
-//		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
-//		    String url = event.getValue();
-//		    if (url != null && !url.isEmpty()) {
-//		        this.getImgImagen().setSrc(url);
-//		    } else {
-//		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
-//		    }
-//		});
-//		
-//		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
-//		    String url = event.getValue();
-//		    Div videoDiv = this.getImgVideo(); // Aunque el nombre "getImgVideo" puede confundir, si devuelve un Div está bien
-//
-//		    if (url != null && !url.isBlank()) {
-//		        String videoId = null;
-//
-//		        if (url.contains("youtube.com/watch?v=")) {
-//		            int index = url.indexOf("watch?v=") + 8;
-//		            int end = url.indexOf("&", index);
-//		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
-//		        } else if (url.contains("youtu.be/")) {
-//		            int index = url.indexOf("youtu.be/") + 9;
-//		            int end = url.indexOf("?", index);
-//		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
-//		        }
-//
-//		        if (videoId != null && !videoId.isBlank()) {
-//		            String embedUrl = "https://www.youtube.com/embed/" + videoId;
-//		            String iframe = "<iframe width='560' height='315' src='" + embedUrl + "' " +
-//		                            "title='YouTube video player' frameborder='0' " +
-//		                            "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
-//		            videoDiv.getElement().setProperty("innerHTML", iframe);
-//		        } else {
-//		            videoDiv.getElement().setProperty("innerHTML", "");
-//		        }
-//		    } else {
-//		        videoDiv.getElement().setProperty("innerHTML", ""); // Limpia el contenido si el campo está vacío
-//		    }
-//		});
+
+
 
 		
 	}
@@ -229,7 +153,7 @@ public class Retweetear extends CrearContenido {
 	
 	
 
-	public void Publicarretweet() { //No se si es del todo correcto, he añadido solo el recargar a los MainView existentes (ademas de lo inicial claro)
+	public void Publicarretweet() { 
 		
 		basededatos.Tweet t = null;
 		if(_mostrartweetspropiosUsuarioRegistrado!=null) t = _mostrartweetspropiosUsuarioRegistrado.t;
@@ -303,7 +227,7 @@ public class Retweetear extends CrearContenido {
 		        // Verificar si el video existe haciendo una petición GET al embed
 		        URL url = new URL(embedUrl);
 		        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-		        connection.setRequestMethod("GET"); // HEAD a veces falla con YouTube
+		        connection.setRequestMethod("GET"); 
 		        connection.setConnectTimeout(3000);
 		        connection.setReadTimeout(3000);
 		        int responseCode = connection.getResponseCode();
@@ -314,7 +238,7 @@ public class Retweetear extends CrearContenido {
 		        }
 
 		        // Si llega hasta aquí, el video es válido
-		        // Aquí podrías guardar el video o actualizar la vista
+
 		        video = embedUrl;
 
 		    } catch (Exception e) {
@@ -336,8 +260,17 @@ public class Retweetear extends CrearContenido {
 				}
 				
 		
-		basededatos.UsuarioRegistrado ubd=Interfaz.ur._iUsuarioregistrado.Escribir_Retweet(hash,mencionado,t, texto, foto, video, Interfaz.ur.u);
+		basededatos.Tweet tbd=Interfaz.ur._iUsuarioregistrado.Escribir_Retweet(hash,mencionado,t, Interfaz.ur.u);
 	
+		basededatos.UsuarioRegistrado ubd= null;
+		if(!texto.isBlank()) {
+			ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Texto(texto, tbd);
+		}
+		if(!foto.isBlank() || !video.isBlank()) {
+			ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Multimedia(foto, video, tbd);
+		}
+		
+		
 		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		
 		 Pantalla.MainView.removeAll();
@@ -379,7 +312,7 @@ public class Retweetear extends CrearContenido {
 				 Pantalla.MainView.add(y.Recargar(u));
 			 }
 			 else {
-				 //UsuarioRegistrado y = new UsuarioRegistrado((MainView)Pantalla.MainView,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
+
 				 Pantalla.MainView.add(u);
 			 }
 		 }

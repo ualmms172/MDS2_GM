@@ -6,7 +6,7 @@ public class MostrartweetsUsuarioRegistrado extends MostrartweetspropiosUsuarioR
 	
 	public MostrartweetsUsuarioRegistrado(UsuarioRegistrado usuario) {
 		super(usuario);
-		// TODO Auto-generated constructor stub
+
 	}
 	public MostrartweetsUsuarioRegistrado(VerHashtagUsuarioRegistrado verHashtagUsuarioRegistrado) {
 		super(verHashtagUsuarioRegistrado);
@@ -16,7 +16,7 @@ public class MostrartweetsUsuarioRegistrado extends MostrartweetspropiosUsuarioR
 		super(verperfilgeneralUsuarioRegistrado);
 		}
 	
-	public UsuarioRegistrado _usuarioregistrado; //Usuarioregistrado
+	public UsuarioRegistrado _usuarioregistrado; 
 	public VerHashtagUsuarioRegistrado _verHashtagUsuarioRegistrado;
 	public VerperfilgeneralUsuarioRegistrado _verperfilgeneralUsuarioRegistrado;
 	public Vector<MostrartweetsUsuarioRegistrado_item> _item = new Vector<MostrartweetsUsuarioRegistrado_item>();

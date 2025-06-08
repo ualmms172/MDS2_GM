@@ -11,7 +11,7 @@ public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 	public ComentariosUsuarioRegistrado_item(ListaContenido lista,Comentario c) {
 		super(lista,c);
 		this._comentariosUsuarioRegistrado= (Comentariospropios) lista;
-		// TODO Auto-generated constructor stub
+		
 		this.getButtonBorrar().setVisible(false);
 		this.getButtonMeGusta().setVisible(true);
 		
@@ -39,11 +39,7 @@ public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 	public void Darlikeacomentario() {
 		
 		if(!dado) {
-//		this.getButtonMeGusta().getStyle().set("color", "red");
-//		this.getButtonMeGusta().setText("Quitar");
-//		Comentariospropios la = (Comentariospropios) _lista;
-//		la._item.add(this);
-//		dado=true;
+
 			basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.DarLikeComentario(Interfaz.ur.u, c);
 			UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 			
@@ -52,11 +48,7 @@ public class ComentariosUsuarioRegistrado_item extends Comentariospropios_item {
 		}
 		
 		else {
-//			this.getButtonMeGusta().getStyle().set("color", "gray");
-//			this.getButtonMeGusta().setText("Dar me gusta");
-//			Comentariospropios la = (Comentariospropios) _lista;
-//			la._item.add(this);
-//			dado=false;
+
 				basededatos.UsuarioRegistrado ubd = Interfaz.ur._iUsuarioregistrado.QuitarLikeComentario(Interfaz.ur.u, c);
 				UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 			

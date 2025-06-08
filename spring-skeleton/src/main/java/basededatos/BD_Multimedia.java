@@ -11,19 +11,17 @@ public class BD_Multimedia {
 	public BDPrincipal _bd_prin_mul;
 	public Vector<Multimedia> _contiene_multimedia = new Vector<Multimedia>();
         
-	public UsuarioRegistrado Escribir_Multimedia(String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario,Contenido aContenido) throws PersistentException {
+	public UsuarioRegistrado Escribir_Multimedia(String aUrl_foto, String aUrl_video,Contenido aContenido) throws PersistentException {
 	
 	    PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 	    UsuarioRegistrado autor = null;
 
 	    try {
 	        // Suponiendo que el autor es el usuario con ID 1 (ajusta esto según tu sistema)
-	        autor = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuario.getID()); // ← ajusta si es necesario
+	        autor = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aContenido.getEscritoPor().getID()); // ← ajusta si es necesario
 
-	        // Crear contenido nuevo y asignar autor
 	    
-	        aContenido.setEscritoPor(autor);
-	        ContenidoDAO.save(aContenido);
+	        
 
 	        // Crear objeto Multimedia para la foto
 	        if (aUrl_foto != null && !aUrl_foto.isEmpty()) {
@@ -50,36 +48,13 @@ public class BD_Multimedia {
 	    }
 
 	    MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-	    return autor;
+	    return UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(autor.getORMID());
 		
 		
 
 		
 	}
 
-	public void BorrarMultimedia(Contenido aContenido) throws PersistentException {
-
-	    PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-	    //Administrador admin = null; // Puedes usarlo si tienes la lógica de "quién borra"
-
-	    try {
-	        Multimedia[] elementos = aContenido.contieneMultimedia.toArray();
-
-	        for (Multimedia m : elementos) {
-	            MultimediaDAO.delete(m);
-	        }
-
-	        t.commit();
-	    } catch (Exception e) {
-	        t.rollback();
-	        e.printStackTrace();
-	    }
-
-	    MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-	   // return admin;
-
 	
-	
-	}
 
 }

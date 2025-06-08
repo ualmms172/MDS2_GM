@@ -14,8 +14,7 @@ import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class VerTweetAdministrador extends VertweetGeneral {
-	//private event _borrarTweet;
-	//private Button _borrarTweetB;
+
 	public ListaTweetsAdmin_item _listaTweetsAdmin;
 	public ListaComentariosAdministrador _listaComentariosAdministrador;
 	public VerPerfilAdministrador _verPerfilAdministrador;
@@ -142,28 +141,12 @@ public class VerTweetAdministrador extends VertweetGeneral {
 				
 				else if(x._verTweetAdministrador!=null) {
 					Pantalla.Anterior = x._verTweetAdministrador;
-//					if(x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
-//						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
-//					}
-//					else if(x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
-//						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
-//					}
-//					else {
-//						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador;
-//					}
+
 				}
 				
 				else {
 					Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador;
-//					if(x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
-//						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
-//					}
-//					else if(x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
-//						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
-//					}
-//					else {
-//						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador;
-//					}
+
 				}
 				
 				
@@ -173,23 +156,11 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	});
 	}
 	
-//	public VerTweetAdministrador(VerPerfilAdministrador verPerfilAdministrador) {
-//		super(null);
-//		_verPerfilAdministrador = verPerfilAdministrador; 
-//		this.getButtonComentar().setVisible(false);
-//		this.getButtonMeGusta().setVisible(false);
-//		this.getButtonRetweet().setVisible(false);
-//		
-//		ListaComentariosAdministrador();
-//		this.getImgFotoPerfilTweet().addClickListener(event -> VerPerfilAdministrador()); 
-//		this.getButtonBorrar().addClickListener(event -> BorrarTweet());
-//	}
+
 	
 	
 	public void BorrarTweet() {
 		
-//		Interfaz.ad._iadministrador.BorrarTexto(_listaTweetsAdmin.cont);
-//		Interfaz.ad._iadministrador.BorrarMultimedia(_listaTweetsAdmin.cont);
 		
 		basededatos.Administrador adb=Interfaz.ad._iadministrador.BorrarTweet(this._listaTweetsAdmin.t,Interfaz.ad.a);
 		Administrador a = new Administrador((MainView)Pantalla.MainView,adb);
@@ -258,9 +229,9 @@ public class VerTweetAdministrador extends VertweetGeneral {
 			
 			Pantalla.MainView.add(this._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador.Recargar(a)); //Añadido 27/05/2025
 		}
-		else {//Añadido 27/05/2025
-			Pantalla.MainView.add(a);//Añadido 27/05/2025
-		}//Añadido 27/05/2025
+		else {
+			Pantalla.MainView.add(a);
+		}
 		
 			
 
@@ -269,9 +240,6 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	public void ListaComentariosAdministrador() {
 		_listaComentariosAdministrador = new ListaComentariosAdministrador(this);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_listaComentariosAdministrador);
-		
-//		ListaComentariosAdministrador_item item_tweets = new ListaComentariosAdministrador_item(_listaComentariosAdministrador,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_listaComentariosAdministrador.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
 	}
 	
 	public void VerHashtagAdministrador() {
@@ -288,46 +256,7 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		Pantalla.MainView.removeAll();
 		Pantalla.MainView.add(perfil);
 		  
-//		VerPerfilAdministrador perfil = new VerPerfilAdministrador(this); 
-//		
-//		if(_listaTweetsAdmin != null) {
-//			
-//			
-//			
-//			if(_listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador != null) {
-//				
-//				_listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-//				_listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil);
-//
-//				
-//				
-//			}
-//			
-//			else if(_listaTweetsAdmin._listaTweetsAdmin._administrador != null) {
-//				
-//				
-//				_listaTweetsAdmin._listaTweetsAdmin._administrador.MainView.removeAll();
-//				_listaTweetsAdmin._listaTweetsAdmin._administrador.MainView.add(perfil);
-//		
-//			}
-//			
-//			
-//			else {
-//				
-//				_listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-//				_listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil);
-//			
-//			}
-//		
-//		
-//	   }
-//		
-//		else {
-//			
-//			_verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).removeAll();
-//			_verPerfilAdministrador.getVerticalLayoutVentanaCompleta().as(VerticalLayout.class).add(perfil);
-//
-//		}
+
 		
 	}
 	
@@ -336,11 +265,7 @@ public class VerTweetAdministrador extends VertweetGeneral {
 		ListaTweetsAdmin lt = _listaTweetsAdmin._listaTweetsAdmin;
 		basededatos.Tweet t = Interfaz.ad._iadministrador.ObtenerTweetId(_listaTweetsAdmin.t);
 		if(t==null) _listaTweetsAdmin.eliminado=true;
-//		try {
-//			t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin.t.getORMID());
-//		} catch (PersistentException e) {
-//			_listaTweetsAdmin.eliminado=true;
-//		}
+
 		
 		if(lt._verPerfilAdministrador!=null) {
 			lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
@@ -364,6 +289,8 @@ public class VerTweetAdministrador extends VertweetGeneral {
 	}
 	
 	
+	
+	//Esto se hace ya que en caso de que el tweet que se deberia ver ha sido eliminado entonces se hace un para atras directamente
 	@Override
 	protected void onAttach(AttachEvent attachEvent) {
 	    super.onAttach(attachEvent);
@@ -423,28 +350,12 @@ public class VerTweetAdministrador extends VertweetGeneral {
 				
 				else if(x._verTweetAdministrador!=null) {
 					Pantalla.Anterior = x._verTweetAdministrador;
-//					if(x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
-//						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
-//					}
-//					else if(x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
-//						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
-//					}
-//					else {
-//						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador;
-//					}
+
 				}
 				
 				else {
 					Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador;
-//					if(x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
-//						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
-//					}
-//					else if(x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
-//						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
-//					}
-//					else {
-//						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador;
-//					}
+
 				}
 				
 				

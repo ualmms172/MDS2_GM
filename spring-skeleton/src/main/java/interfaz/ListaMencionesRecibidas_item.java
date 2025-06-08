@@ -4,7 +4,7 @@ import basededatos.Tweet;
 import vistas.VistaListamencionesrecibidas_item;
 
 public class ListaMencionesRecibidas_item extends VistaListamencionesrecibidas_item {
-	//private Label _informacion;
+	
 	public ListaMencionesRecibidas _listaMencionesRecibidas;
 	
 	public Tweet t;

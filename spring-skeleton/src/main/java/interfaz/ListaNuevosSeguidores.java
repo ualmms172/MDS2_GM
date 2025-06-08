@@ -19,7 +19,7 @@ public class ListaNuevosSeguidores extends VistaListanuevosseguidores {
 		basededatos.UsuarioRegistrado[] usuarios = Interfaz.ur.u.seguidoPor.toArray();
 		
 		for(basededatos.UsuarioRegistrado user : usuarios) {
-			
+			//Si el usuario que nos sigue esta baneado entonces no se muestra
 			if(user.getBaneo()!=null && user.getBaneo().after(new Date())) {
 				continue;
 			}

@@ -49,6 +49,8 @@ public class Listatweets extends ListaTweetsGeneral {
 			}
 		}
 		
+		
+		
 		for(Tweet twe : tweets) {
 			
 			if(twe.getEscritoPor().getBaneo()!=null && twe.getEscritoPor().getBaneo().after(new Date())) {
@@ -73,14 +75,14 @@ public class Listatweets extends ListaTweetsGeneral {
 				
 				Tweet retwe = tweet.getRetweeteaA();
 				Listatweets_item retweet = new Listatweets_item(this,retwe);
+				//Se cambia el color para que se note más el tweet retweeteado
 				retweet.getVaadinHorizontalLayout().getStyle().set("background-color", "#e0e0e0");
-			//	retweet.getButtonMeGusta().setVisible(false);
+			
 				retweet.getHorizontalLayoutOpciones().setVisible(false);
 				if(retwe.contieneMultimedia!=null) {
 					retweet.getHorizontalLayoutMultimedia().setVisible(false);
 					retweet.getHorizontalMultimedia().setVisible(false);
 				}
-				//t.getHorizontalLayoutRetweeteadoPor().removeAll();
 				t.getVerticalLayoutEspacioBotones().as(VerticalLayout.class).add(retweet);
 			}
 			

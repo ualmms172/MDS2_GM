@@ -35,7 +35,7 @@ public class BD_Texto {
 	    }
 
 	    MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-	    return autor;
+	    return UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(autor.getORMID());
 		
 		
 		
@@ -43,35 +43,4 @@ public class BD_Texto {
 		
 	}
 
-	public void BorrarTexto(Contenido aContenido) throws PersistentException {
-		
-		
-		 PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-		   // Administrador admin = null;
-
-		    try {
-		        Texto texto = aContenido.getContieneTexto();
-
-		        if (texto != null) {
-		            TextoDAO.delete(texto);
-		        }
-
-		        t.commit();
-		    } catch (Exception e) {
-		        t.rollback();
-		        e.printStackTrace();
-		    }
-
-		    MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		   // return admin;
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}
 }

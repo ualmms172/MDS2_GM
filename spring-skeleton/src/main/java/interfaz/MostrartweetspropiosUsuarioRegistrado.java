@@ -15,7 +15,7 @@ import gallardoMartinez.MainView.Interfaz;
 public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 	public Vector<MostrartweetspropiosUsuarioRegistrado_item> _item = new Vector<MostrartweetspropiosUsuarioRegistrado_item>();
 	
-	public UsuarioRegistrado _usuarioregistrado; //Usuarioregistrado
+	public UsuarioRegistrado _usuarioregistrado; 
 	public VerHashtagUsuarioRegistrado _verHashtagUsuarioRegistrado;
 	public VerperfilgeneralUsuarioRegistrado _verperfilgeneralUsuarioRegistrado;
 	
@@ -34,11 +34,13 @@ public class MostrartweetspropiosUsuarioRegistrado extends ListaTweetsGeneral {
 		
 		for(Tweet twe : tweets) {
 			
+			//Si el usuario esta actualmente baneado se ignora
 			if(twe.getEscritoPor().getBaneo()!=null && twe.getEscritoPor().getBaneo().after(new Date())) {
 				continue;
 			}
 			
 			Tweet tweet=twe;
+			//Se comprueba si es el caso de un retweet sin texto ni multimedia
 			boolean ret=twe.getRetweeteaA()!=null && twe.getContieneTexto()==null && twe.contieneMultimedia.isEmpty();
 			if(ret) {
 				tweet=twe.getRetweeteaA();

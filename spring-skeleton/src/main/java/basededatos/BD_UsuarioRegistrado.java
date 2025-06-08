@@ -1,5 +1,7 @@
 package basededatos;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -37,6 +39,14 @@ public class BD_UsuarioRegistrado {
 		try {
 			usuarios = UsuarioRegistradoDAO.listUsuarioRegistradoByQuery(null, null);
 			if (usuarios != null && usuarios.length > 0) {
+				// Ordenar de mayor a menor número de seguidores (seguidoPor)
+				Arrays.sort(usuarios, new Comparator<UsuarioRegistrado>() {
+					public int compare(UsuarioRegistrado u1, UsuarioRegistrado u2) {
+						int size1 = (u1.seguidoPor != null) ? u1.seguidoPor.size() : 0;
+						int size2 = (u2.seguidoPor != null) ? u2.seguidoPor.size() : 0;
+						return Integer.compare(size2, size1); // Orden descendente
+					}
+				});
 			}
 			t.commit();
 		} catch (Exception e) {

@@ -8,14 +8,11 @@ public class Vertweetajeno extends VertweetgeneralUsuarioRegistrado {
 	
 
 
-	//private event _darlikeatweet;
-	//private Button _meGusta;
-	//public VerTweetUsuarioRegistrado _verTweetUsuarioRegistrado;
+	
 	public boolean dado;
 	
 	public Vertweetajeno(MostrartweetspropiosUsuarioRegistrado_item mostrartweetspropiosUsuarioRegistrado_item) {
 		super(mostrartweetspropiosUsuarioRegistrado_item);
-//		dado = mostrartweetspropiosUsuarioRegistrado_item.t.meGustaPor.contains(Interfaz.ur.u);
 		for(basededatos.UsuarioRegistrado usu : mostrartweetspropiosUsuarioRegistrado_item.t.meGustaPor.toArray()) {
 			if(usu.getID()==Interfaz.ur.u.getID()) {
 				dado=true;

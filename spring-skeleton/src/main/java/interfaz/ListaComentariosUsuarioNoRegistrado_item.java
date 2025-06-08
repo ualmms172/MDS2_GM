@@ -12,7 +12,7 @@ public class ListaComentariosUsuarioNoRegistrado_item extends ListaComentariosGe
 		super(lista,c);
 		
 		_listaComentariosUsuarioNoRegistrado = (ListaComentariosUsuarioNoRegistrado)lista;
-		// TODO Auto-generated constructor stub
+		
 		this.getButtonMeGusta().setVisible(false);
 		this.getButtonBorrar().setVisible(false);
 		

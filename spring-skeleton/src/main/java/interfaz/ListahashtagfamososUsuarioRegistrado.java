@@ -9,14 +9,14 @@ import basededatos.Hashtag;
 import gallardoMartinez.MainView.Interfaz;
 
 public class ListahashtagfamososUsuarioRegistrado extends ListahashtagsgeneralUsuarioRegistrado {
-	public UsuarioRegistrado _usuarioregistrado; //Usuarioregistrado
+	public UsuarioRegistrado _usuarioregistrado; 
 	public Vector<ListahashtagfamososUsuarioRegistrado_item> _item = new Vector<ListahashtagfamososUsuarioRegistrado_item>();
 	
 	public ListahashtagfamososUsuarioRegistrado(UsuarioRegistrado usuario) {
 		
 		_usuarioregistrado  = usuario; 
 		
-		//Imagino que ya estará ordenado por fama?
+		
 		Hashtag[] hashtags = _usuarioregistrado._iUsuarioregistrado.Cargar_Hashtags();
 
 		int n = hashtags.length;

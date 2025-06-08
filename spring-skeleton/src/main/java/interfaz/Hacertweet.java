@@ -15,7 +15,7 @@ public class Hacertweet extends CrearContenido {
 	//private event _publicartweet;
 	//private event _mencionar;
 	//private event _usarHashtag;
-	public UsuarioRegistrado _usuarioregistrado; //Usuarioregistrado
+	public UsuarioRegistrado _usuarioregistrado; 
 	public ListahashtagsUsuarioRegistrado_item _listahashtagsUsuarioRegistrado;
 	
 	public Hacertweet(UsuarioRegistrado usuarioregistrado) {
@@ -30,42 +30,7 @@ public class Hacertweet extends CrearContenido {
 		    this._usuarioregistrado.MainView.add(_usuarioregistrado); 
 		}); 
 		
-//		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
-//		    String url = event.getValue();
-//		    if (url != null && !url.isEmpty()) {
-//		        this.getImgImagen().setSrc(url);
-//		    } else {
-//		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
-//		    }
-//		});
-//		
-//		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
-//			String url = event.getValue();
-//		    Div videoDiv = this.getImgVideo();
-//
-//		    if (url != null && !url.isEmpty()) {
-//		    	 String videoId = "";
-//
-//		    	    if (url.contains("watch?v=")) {
-//		    	        int index = url.indexOf("watch?v=") + 8;
-//		    	        int end = url.indexOf("&", index);
-//		    	        if (end == -1) end = url.length();
-//		    	        videoId = url.substring(index, end);
-//		    	    } else if (url.contains("youtu.be/")) {
-//		    	        int index = url.indexOf("youtu.be/") + 9;
-//		    	        int end = url.indexOf("?", index);
-//		    	        if (end == -1) end = url.length();
-//		    	        videoId = url.substring(index, end);
-//		    	    }
-//		        String embedUrl ="https://www.youtube.com/embed/" + videoId;
-//		        String iframe = "<iframe width='560' height='315' src='" + embedUrl + "' " +
-//		                        "title='YouTube video player' frameborder='0' " +
-//		                        "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
-//		        videoDiv.getElement().setProperty("innerHTML", iframe);
-//		    } else {
-//		        videoDiv.getElement().setProperty("innerHTML", ""); // Limpia el contenido si el campo está vacío
-//		    }
-//		});
+
 		
 	}
 	
@@ -83,53 +48,12 @@ public class Hacertweet extends CrearContenido {
 			Pantalla.MainView.add(_listahashtagsUsuarioRegistrado._listahashtagsUsuarioRegistrado._verlistacompletahashtagUsuarioRegistrado);
 		}); 
 		
-//		this.getTextFieldUrlFoto().addValueChangeListener(event -> {
-//		    String url = event.getValue();
-//		    if (url != null && !url.isEmpty()) {
-//		        this.getImgImagen().setSrc(url);
-//		    } else {
-//		    	this.getImgImagen().setSrc(""); // Limpia la imagen si el campo está vacío
-//		    }
-//		});
-//		
-//		this.getTextFieldTextoVideo().addValueChangeListener(event -> {
-//		    String url = event.getValue();
-//		    Div videoDiv = this.getImgVideo(); // Aunque el nombre "getImgVideo" puede confundir, si devuelve un Div está bien
-//
-//		    if (url != null && !url.isBlank()) {
-//		        String videoId = null;
-//
-//		        if (url.contains("youtube.com/watch?v=")) {
-//		            int index = url.indexOf("watch?v=") + 8;
-//		            int end = url.indexOf("&", index);
-//		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
-//		        } else if (url.contains("youtu.be/")) {
-//		            int index = url.indexOf("youtu.be/") + 9;
-//		            int end = url.indexOf("?", index);
-//		            videoId = (end == -1) ? url.substring(index) : url.substring(index, end);
-//		        }
-//
-//		        if (videoId != null && !videoId.isBlank()) {
-//		            String embedUrl = "https://www.youtube.com/embed/" + videoId;
-//		            String iframe = "<iframe width='560' height='315' src='" + embedUrl + "' " +
-//		                            "title='YouTube video player' frameborder='0' " +
-//		                            "allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
-//		            videoDiv.getElement().setProperty("innerHTML", iframe);
-//		        } else {
-//		            videoDiv.getElement().setProperty("innerHTML", "");
-//		        }
-//		    } else {
-//		        videoDiv.getElement().setProperty("innerHTML", ""); // Limpia el contenido si el campo está vacío
-//		    }
-//		});
+
 
 	}
 	
 	
 	public void Publicartweet() {
-//		UsuarioRegistrado user = new UsuarioRegistrado(this._usuarioregistrado.MainView);
-//		this._usuarioregistrado.MainView.removeAll();
-//		this._usuarioregistrado.MainView.add(user);
 		
 		if (this.getTextFieldCampoTexto().isEmpty() && this.getTextFieldTextoVideo().isEmpty() && this.getTextFieldUrlFoto().isEmpty()) {
             Notification.show("Se debe rellenar al menos un campo para poder tweetear.");
@@ -189,7 +113,7 @@ public class Hacertweet extends CrearContenido {
 		        // Verificar si el video existe haciendo una petición GET al embed
 		        URL url = new URL(embedUrl);
 		        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-		        connection.setRequestMethod("GET"); // HEAD a veces falla con YouTube
+		        connection.setRequestMethod("GET"); 
 		        connection.setConnectTimeout(3000);
 		        connection.setReadTimeout(3000);
 		        int responseCode = connection.getResponseCode();
@@ -200,7 +124,7 @@ public class Hacertweet extends CrearContenido {
 		        }
 
 		        // Si llega hasta aquí, el video es válido
-		        // Aquí podrías guardar el video o actualizar la vista
+		        
 		        video = embedUrl;
 
 		    } catch (Exception e) {
@@ -221,7 +145,15 @@ public class Hacertweet extends CrearContenido {
 			mencionado = this.Mencionar(texto);
 		}
 		
-		ubd=Interfaz.ur._iUsuarioregistrado.Escribir_Tweet(hash,mencionado,texto, foto, video, Interfaz.ur.u);
+		basededatos.Tweet tbd=Interfaz.ur._iUsuarioregistrado.Escribir_Tweet(hash,mencionado, Interfaz.ur.u);
+		
+		if(!texto.isBlank()) {
+			ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Texto(texto, tbd);
+		}
+		if(!foto.isBlank() || !video.isBlank()) {
+			ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Multimedia(foto, video, tbd);
+		}
+		
 		u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		
 		Pantalla.MainView.removeAll();
@@ -233,7 +165,6 @@ public class Hacertweet extends CrearContenido {
 			Pantalla.MainView.add(l);
 		}
 			
-		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
 		
 		
 	}

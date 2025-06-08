@@ -20,14 +20,13 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 	public void ListaTweetsAdmin() {
 		_listaTweetsAdmin = new ListaTweetsAdmin(this);
 		this.getVerticalLayoutListaHashtags().as(VerticalLayout.class).add(_listaTweetsAdmin);
-		
-//		ListaTweetsAdmin_item item_tweets = new ListaTweetsAdmin_item(_listaTweetsAdmin,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
+
 	}
 	
 	public VerHashtagAdministrador(ListaHashtagsgeneralAdministrador_item listaHashtagsgeneralAdministrador) {
+		super(listaHashtagsgeneralAdministrador);
 		_listaHashtagsgeneralAdministrador = listaHashtagsgeneralAdministrador;
-		this.getLabelHashtag().setText(_listaHashtagsgeneralAdministrador.h.getTitulo());
+		
 		ListaTweetsAdmin();
 		
 		this.getButtonAtras().addClickListener(event -> {
@@ -41,8 +40,8 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 	}
 	
 	public VerHashtagAdministrador(ListaTweetsAdmin_item listaTweetsAdmin_item) {
+		super(listaTweetsAdmin_item);
 		_listaTweetsAdmin_item = listaTweetsAdmin_item;
-		this.getLabelHashtag().setText(_listaTweetsAdmin_item.t.getContiene().getTitulo());
 		ListaTweetsAdmin();
 		
 		this.getButtonAtras().addClickListener(event -> {
@@ -100,28 +99,12 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 				
 				else if(x._verTweetAdministrador!=null) {
 					Pantalla.Anterior = x._verTweetAdministrador;
-//					if(x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
-//						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
-//					}
-//					else if(x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
-//						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
-//					}
-//					else {
-//						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador;
-//					}
+
 				}
 				
 				else {
 					Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador;
-//					if(x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
-//						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
-//					}
-//					else if(x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
-//						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
-//					}
-//					else {
-//						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador;
-//					}
+
 				}
 				
 				
@@ -132,8 +115,8 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 	}
 	
 	public VerHashtagAdministrador(VerTweetAdministrador verTweetAdministrador) {
+		super(verTweetAdministrador);
 		_verTweetAdministrador = verTweetAdministrador;
-		this.getLabelHashtag().setText(_verTweetAdministrador._listaTweetsAdmin.t.getContiene().getTitulo());
 		ListaTweetsAdmin();
 		
 		this.getButtonAtras().addClickListener(event -> {
@@ -157,23 +140,17 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 		
 		if(this._listaHashtagsgeneralAdministrador!=null) {
 			basededatos.Hashtag h = Interfaz.ad._iadministrador.ObtenerHashtagId(_listaHashtagsgeneralAdministrador.h);
-//			try {
-//				h = HashtagDAO.loadHashtagByORMID(_listaHashtagsgeneralAdministrador.h.getId_hash());
-//			} catch (PersistentException e) {
-//				e.printStackTrace();
-//			}
+
 			
 			if(this._listaHashtagsgeneralAdministrador instanceof ListaHashtagsFamososAdministrador_item) {
 				ListaHashtagsFamososAdministrador list = new ListaHashtagsFamososAdministrador(log);
 				
 				ListaHashtagsFamososAdministrador_item item = new ListaHashtagsFamososAdministrador_item(list,h);
-				//((ListaHashtagsFamososAdministrador_item) _listaHashtagsgeneralAdministrador)._listaHashtagsFamososAdministrador =list;
 				vista = new VerHashtagAdministrador(item);
 			}
 			else {
 				ListaHashtagsAdministrador list = new ListaHashtagsAdministrador(((ListaHashtagsAdministrador_item) _listaHashtagsgeneralAdministrador)._listaHashtagsAdministrador._verlistaCompletaHashtagsAdmin.Recargar(log));
 				ListaHashtagsFamososAdministrador_item item = new ListaHashtagsFamososAdministrador_item(list,h);
-				//((ListaHashtagsAdministrador_item) _listaHashtagsgeneralAdministrador)._listaHashtagsAdministrador=list;
 				vista = new VerHashtagAdministrador(item);
 			}
 		}
@@ -181,11 +158,6 @@ public class VerHashtagAdministrador extends VerHashtagGeneral {
 			ListaTweetsAdmin lt = _listaTweetsAdmin_item._listaTweetsAdmin;
 			basededatos.Tweet t = Interfaz.ad._iadministrador.ObtenerTweetId(_listaTweetsAdmin_item.t);
 			if(t==null) _listaTweetsAdmin_item.eliminado=true;
-//			try {
-//				t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin_item.t.getORMID());
-//			} catch (PersistentException e) {
-//				_listaTweetsAdmin_item.eliminado=true;
-//			}
 			
 			if(lt._verPerfilAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));

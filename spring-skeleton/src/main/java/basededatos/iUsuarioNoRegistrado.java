@@ -22,7 +22,5 @@ public interface iUsuarioNoRegistrado {
 	
 	public UsuarioRegistrado BuscarUsuarioCorreo(String aCorreo);
 	
-	public Tweet ObtenerTweetId (Tweet aTweet);
 	
-	public Comentario ObtenerComentarioId(Comentario aComentario);
 }

@@ -13,7 +13,7 @@ import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class VerPerfilAdministrador extends VerPerfilGeneral {
-	//private Button _banear;
+
 	public ListaUsuariosGeneralAdministrador_item _listaUsuariosGeneralAdministrador;
 	public ListaTweetsAdmin_item _listaTweetsAdmin_item;
 	public ListaTweetsAdmin _listaTweetsAdmin; 
@@ -21,19 +21,13 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	public ListaComentariosAdministrador_item _listaComentariosAdministrador;
 	public BanearUsuario _banearUsuario;
 	
-//	public boolean mencion;
+
 	
 	public VerPerfilAdministrador(ListaUsuariosGeneralAdministrador_item listaUsuariosGeneralAdministrador) {
 		super(listaUsuariosGeneralAdministrador);
 		_listaUsuariosGeneralAdministrador = listaUsuariosGeneralAdministrador; 
 		
-//		this.getLabelNick().setText(_listaUsuariosGeneralAdministrador.u.getNick());
-//		this.getLabelDescripcion().setText(_listaUsuariosGeneralAdministrador.u.getDescripcion());
-//		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(_listaUsuariosGeneralAdministrador.u.seguidoPor.size()));
-//		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(_listaUsuariosGeneralAdministrador.u.sigueA.size()));
-//		if(_listaUsuariosGeneralAdministrador.u.getFotoFondo()!=null)
-//			this.getImgCabecera().setSrc(_listaUsuariosGeneralAdministrador.u.getFotoFondo());
-//		this.getImgPerfil().setSrc(_listaUsuariosGeneralAdministrador.u.getFotoPerfil());
+
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -61,25 +55,6 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 	public VerPerfilAdministrador(ListaTweetsAdmin_item listaTweetsAdmin,Boolean mencion ) {
 		super(listaTweetsAdmin,mencion);
 		_listaTweetsAdmin_item = listaTweetsAdmin; 
-		
-//		this.mencion=mencion;
-//		
-//		basededatos.UsuarioRegistrado user =null;
-//		
-//		if(mencion) {
-//			 user = _listaTweetsAdmin_item.t.getMencionaA();
-//		}
-//		else {
-//			user = _listaTweetsAdmin_item.t.getEscritoPor();
-//		}
-//		
-//		this.getLabelNick().setText(user.getNick());
-//		this.getLabelDescripcion().setText(user.getDescripcion());
-//		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(user.seguidoPor.size()));
-//		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(user.sigueA.size()));
-//		if(user.getFotoFondo()!=null)
-//			this.getImgCabecera().setSrc(user.getFotoFondo());
-//		this.getImgPerfil().setSrc(user.getFotoPerfil());
 		
 		
 		this.getButtonBloquear().setVisible(false);
@@ -148,28 +123,12 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 				
 				else if(x._verTweetAdministrador!=null) {
 					Pantalla.Anterior = x._verTweetAdministrador;
-//					if(x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
-//						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
-//					}
-//					else if(x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
-//						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
-//					}
-//					else {
-//						Pantalla.Anterior = x._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador;
-//					}
+
 				}
 				
 				else {
 					Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador;
-//					if(x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador!=null) {
-//						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verHashtagAdministrador;
-//					}
-//					else if(x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador!=null) {
-//						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._verPerfilAdministrador;
-//					}
-//					else {
-//						Pantalla.Anterior = x._listaComentariosAdministrador._listaComentariosAdministrador._verTweetAdministrador._listaTweetsAdmin._listaTweetsAdmin._administrador;
-//					}
+
 				}
 				
 				
@@ -185,22 +144,6 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		
 		this.mencion=mencion;
 		
-//		basededatos.UsuarioRegistrado user =null;
-//		
-//		if(mencion) {
-//			 user = _verTweetAdministrador._listaTweetsAdmin.t.getMencionaA();
-//		}
-//		else {
-//			user = _verTweetAdministrador._listaTweetsAdmin.t.getEscritoPor();
-//		}
-//		
-//		this.getLabelNick().setText(user.getNick());
-//		this.getLabelDescripcion().setText(user.getDescripcion());
-//		this.getLabelNumSeguidores().setText("Seguidores : "+String.valueOf(user.seguidoPor.size()));
-//		this.getLabelNumSeguidos().setText("Seguidos : "+String.valueOf(user.sigueA.size()));
-//		if(user.getFotoFondo()!=null)
-//			this.getImgCabecera().setSrc(user.getFotoFondo());
-//		this.getImgPerfil().setSrc(user.getFotoPerfil());
 		
 		this.getButtonBloquear().setVisible(false);
 		this.getButtonEliminarCuenta().setVisible(false);
@@ -280,29 +223,24 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 		_listaTweetsAdmin = new ListaTweetsAdmin(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_listaTweetsAdmin);
 		
-//		ListaTweetsAdmin_item item_tweets = new ListaTweetsAdmin_item(_listaTweetsAdmin,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_listaTweetsAdmin.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
+
 	}
 	
 	public VerPerfilAdministrador Recargar(Administrador log) {
 		VerPerfilAdministrador vista = null;
 		if(this._listaUsuariosGeneralAdministrador!=null) {
 			basededatos.UsuarioRegistrado u = Interfaz.ad._iadministrador.ObtenerUsuarioId(_listaUsuariosGeneralAdministrador.u);
-//			try {
-//				u = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(_listaUsuariosGeneralAdministrador.u.getID());
-//			} catch (PersistentException e) {
-//				e.printStackTrace();
-//			}
+
 			if(this._listaUsuariosGeneralAdministrador instanceof ListaUsuariosFamososAdministrador_item) {
 				ListaUsuariosFamososAdministrador list = new ListaUsuariosFamososAdministrador(log);
 				ListaUsuariosFamososAdministrador_item item = new ListaUsuariosFamososAdministrador_item(list,u);
-				//((ListaUsuariosFamososAdministrador_item) _listaUsuariosGeneralAdministrador)._listaUsuariosFamososAdministrador =list;
+
 				vista = new VerPerfilAdministrador(item);
 			}
 			else {
 				ListaUsuariosAdministrador list = new ListaUsuariosAdministrador(((ListaUsuariosAdministrador_item) _listaUsuariosGeneralAdministrador)._listaUsuariosAdministrador._verListaCompletaUsuariosAdministrador.Recargar(log));
 				ListaUsuariosAdministrador_item item = new ListaUsuariosAdministrador_item(list,u);
-				//((ListaUsuariosAdministrador_item) _listaUsuariosGeneralAdministrador)._listaUsuariosAdministrador=list;
+
 				vista = new VerPerfilAdministrador(item);
 			}
 		}
@@ -310,11 +248,7 @@ public class VerPerfilAdministrador extends VerPerfilGeneral {
 			ListaTweetsAdmin lt = _listaTweetsAdmin_item._listaTweetsAdmin;
 			basededatos.Tweet t = Interfaz.ad._iadministrador.ObtenerTweetId(_listaTweetsAdmin_item.t);
 			if(t==null) _listaTweetsAdmin_item.eliminado=true;
-//			try {
-//				t = TweetDAO.loadTweetByORMID(_listaTweetsAdmin_item.t.getORMID());
-//			} catch (PersistentException e) {
-//				_listaTweetsAdmin_item.eliminado=true; //ESTO SIGNIFICA QUE EL TWEET SE HA BORRADO
-//			}
+
 			if(lt._verPerfilAdministrador!=null) {
 				lt = new ListaTweetsAdmin(lt._verPerfilAdministrador.Recargar(log));
 			}

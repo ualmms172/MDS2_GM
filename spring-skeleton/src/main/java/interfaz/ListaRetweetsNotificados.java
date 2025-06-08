@@ -21,9 +21,11 @@ public class ListaRetweetsNotificados extends VistaListaretweetsnotificados {
 		
 		ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 		
+		//Para cada tweet que haya escrito se muestra todos los retweets
 		for(Contenido c :Interfaz.ur.u.escribe.toArray()) {
 			if(c instanceof Tweet) {
-				tweets.addAll(((Tweet) c).retweeteadoPor.getCollection());
+				for(Tweet twe : ((Tweet)c).retweeteadoPor.toArray())
+					tweets.add(twe);
 			}
 		}
 		

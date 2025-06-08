@@ -6,7 +6,7 @@ import gallardoMartinez.MainView.Pantalla;
 import vistas.VistaVerlistacompletausuariosusuarionoregistrado;
 
 public class VerListaCompletaUsuariosUsuarioNoRegistrado extends VistaVerlistacompletausuariosusuarionoregistrado {
-	//private Label _titulo;
+	
 	public UsuarioNoRegistrado _usuarioNoRegistrado;
 	public ListaUsuariosUsuarionoRegistrado _listaUsuariosUsuarionoRegistrado;
 
@@ -28,7 +28,5 @@ public class VerListaCompletaUsuariosUsuarioNoRegistrado extends VistaVerlistaco
 		_listaUsuariosUsuarionoRegistrado = new ListaUsuariosUsuarionoRegistrado(this);
 		this.getVerticalLayoutListaUsuarios().as(VerticalLayout.class).add(_listaUsuariosUsuarionoRegistrado);
 		
-//		ListaUsuariosUsuarionoRegistrado_item item_tweets = new ListaUsuariosUsuarionoRegistrado_item(_listaUsuariosUsuarionoRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_listaUsuariosUsuarionoRegistrado.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
 	}
 }

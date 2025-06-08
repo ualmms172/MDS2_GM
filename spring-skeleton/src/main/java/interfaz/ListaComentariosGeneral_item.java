@@ -12,7 +12,6 @@ public class ListaComentariosGeneral_item extends ListaContenido_item {
 		
 		
 		
-		// TODO Auto-generated constructor stub
 		this.getButtonRetweet().setVisible(false);
 	}
 

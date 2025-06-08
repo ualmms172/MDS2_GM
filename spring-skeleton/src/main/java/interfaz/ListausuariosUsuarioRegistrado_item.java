@@ -9,7 +9,7 @@ import gallardoMartinez.MainView.Pantalla;
 public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsuarioRegistrado_item {
 	public ListausuariosUsuarioRegistrado_item(ListaUsuariosGeneral lista,basededatos.UsuarioRegistrado u) {
 		super(lista,u);
-		// TODO Auto-generated constructor stub
+
 		_listausuariosUsuarioRegistrado = (ListausuariosUsuarioRegistrado) lista;
 		
 		boolean seguido=false;
@@ -56,13 +56,7 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 		}
 	}
 
-	//private event _seguirUsuario;
-	//private event _dejardeseguirausuario;
-	//private Label _numSeguidores;
-	//private Label _numSeguidos;
-	//private Label _numTweets;
-	//private Label _teSigue;
-	//private Button _seguirUsuarioB;
+
 	public ListausuariosUsuarioRegistrado _listausuariosUsuarioRegistrado;
 	public boolean dado;
 
@@ -81,6 +75,8 @@ public class ListausuariosUsuarioRegistrado_item extends ListaUsuariosGeneralUsu
 		
 	}
 	
+	//Ya que se puede llegar desde un "Para atras" es importante que siempre que se llegue a esta vista se ejecute
+	//Se impide que si se pulsa el boton de seguir pueda activarse el layout
 	@Override
 	protected void onAttach(AttachEvent attachEvent) {
 	    super.onAttach(attachEvent);

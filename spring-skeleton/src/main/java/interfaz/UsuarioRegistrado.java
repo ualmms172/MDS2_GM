@@ -11,20 +11,7 @@ import gallardoMartinez.MainView.Interfaz;
 import gallardoMartinez.MainView.Pantalla;
 
 public class UsuarioRegistrado extends Logueado {
-//	private int _id_user;
-//	private String _descripcion;
-//	private String _fotoPerfil;
-//	private String _fotoFondo;
-//	public Vector<UsuarioRegistrado> _bloqueadoPor = new Vector<UsuarioRegistrado>();
-//	public Vector<UsuarioRegistrado> _bloqueaA = new Vector<UsuarioRegistrado>();
-//	public Vector<UsuarioRegistrado> _seguidoPor = new Vector<UsuarioRegistrado>();
-//	public Vector<UsuarioRegistrado> _sigueA = new Vector<UsuarioRegistrado>();
-	//public BD_UsuarioRegistrado _contenedor_UsuariosRegistrados;
-//	public Vector<Tweet> _mencionadoEn = new Vector<Tweet>();
-//	public baneo _unnamed_baneo_;
-//	public Vector<Contenido> _meGusta = new Vector<Contenido>();
-//	public Vector<Hashtag> _creaHashtag = new Vector<Hashtag>();
-//	public Vector<Contenido> _escribe = new Vector<Contenido>();
+
 	Notificaciones _Notificaciones;
 	VerlistacompletahashtagUsuarioRegistrado _VerlistacompletahashtagUsuarioRegistrado;
 	Hacertweet _Hacertweet;
@@ -65,23 +52,20 @@ public class UsuarioRegistrado extends Logueado {
 
 		_mostrartweetspropiosUsuarioRegistrado = new MostrartweetspropiosUsuarioRegistrado(this);
 		this.getVerticalLayoutInferior().as(VerticalLayout.class).add(_mostrartweetspropiosUsuarioRegistrado);
-//		MostrartweetspropiosUsuarioRegistrado_item item_tweets = new MostrartweetspropiosUsuarioRegistrado_item(_mostrartweetspropiosUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_mostrartweetspropiosUsuarioRegistrado.getVerticalListacontenido().as(VerticalLayout.class).add(item_tweets);
+
 		
 	}
 	
 	public void ListausuariosfamososUsuarioRegistrado() {
 		_listausuariosfamososUsuarioRegistrado = new ListausuariosfamososUsuarioRegistrado(this);
 		this.getHorizontalLayoutListaUsuariosMasFamosos2().add(_listausuariosfamososUsuarioRegistrado);
-//		ListausuariosfamososUsuarioRegistrado_item item_tweets = new ListausuariosfamososUsuarioRegistrado_item(_listausuariosfamososUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_listausuariosfamososUsuarioRegistrado.getVerticalListausuariosgeneral().as(VerticalLayout.class).add(item_tweets);
+
 	}
 	
 	public void ListahashtagfamososUsuarioRegistrado() {
 		_listahashtagfamososUsuarioRegistrado = new ListahashtagfamososUsuarioRegistrado(this);
 		this.getHorizontalLayoutHashtagsMasUsados().add(_listahashtagfamososUsuarioRegistrado);
-//		ListahashtagfamososUsuarioRegistrado_item item_tweets = new ListahashtagfamososUsuarioRegistrado_item(_listahashtagfamososUsuarioRegistrado,null); //AQUÍ HABRA QUE MODIFICAR EL NULL
-//		_listahashtagfamososUsuarioRegistrado.getVerticalListahastagsgeneral().as(VerticalLayout.class).add(item_tweets);
+
 	}
 	
 	public void Notificaciones() {
@@ -105,7 +89,7 @@ public class UsuarioRegistrado extends Logueado {
 	public void Hacertweet() {
 		
 		_Hacertweet = new Hacertweet(this); 
-		//Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);
+
 		MainView.removeAll();
 		MainView.add(_Hacertweet);
 		
@@ -113,7 +97,7 @@ public class UsuarioRegistrado extends Logueado {
 	}
 
 	public void VerlistacompletausuariosUsuarioRegistrado() {
-		// TODO - implement Usuarioregistrado.VerlistacompletausuariosUsuarioRegistrado
+
 		
 		_VerlistacompletausuariosUsuarioRegistrado = new VerlistacompletausuariosUsuarioRegistrado(this); 
 		Pantalla.Anterior = Pantalla.MainView.getComponentAt(0);

@@ -43,18 +43,7 @@ import com.vaadin.flow.component.notification.Notification;
 import gallardoMartinez.MainView;
 
 public class IniciarSesin extends VistaIniciarsesin {
-	//private event _autentificarse;
-	//private Button _iniciarConGoogle;
-	//private Button _recuperarContrase�a;
-	//private Button _atras;
-	//private Button _continuar;
-	//private Label _titulo;
-	//private Label _textoAyudaContrase�a;
-	//private TextField _correoNick;
-	//private TextField _contrasena;
-	//private Image _iconoGoogle;
-	//private Label _correoNickT;
-	//private Label _contrasenaT;
+
 	public UsuarioNoRegistrado _usuarioNoRegistrado;
 	public Gestordecorreo _gestordecorreo;
 	public APIDeGoogle _aPIDeGoogle;
@@ -99,7 +88,6 @@ public class IniciarSesin extends VistaIniciarsesin {
 		Gestordecorreo gestorCorreo = new Gestordecorreo();
 		gestorCorreo.enviarContrasenaPorCorreo(user.getCorreo(), password);
 		
-		//Aqui ya haces que se envie esa contraseña.
 	}
 	
 	
@@ -243,13 +231,6 @@ public class IniciarSesin extends VistaIniciarsesin {
 		
 		
 		
-		//Autentificación Administrador
-		
-	     
-		/*this._usuarioNoRegistrado.MainView.removeAll();
-		Administrador admin = new Administrador(this._usuarioNoRegistrado.MainView); 
-		this._usuarioNoRegistrado.MainView.add(admin);
-	    */
 		
 		
 		
