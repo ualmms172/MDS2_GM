@@ -15,8 +15,9 @@ public class Logueado extends VistaLogueado{
 	this.MainView = MainView;
 	
 	this.getImgPortadaTwitter().setSrc("https://www.lowi.es/blog/wp-content/uploads/2023/10/twitter-X-1000x625.jpeg");
-	this.getImgPortadaTwitter().setWidth("100px");
 	this.getImgPortadaTwitter().setMaxHeight("100px");
+	this.getImgPortadaTwitter().setHeight("300px");
+	this.getImgPortadaTwitter().setWidth("500px");
 	
 	this.getButtonCerrarSesion().addClickListener(event -> Cerrarsesin()); 
 	

@@ -47,8 +47,8 @@ export class VistaLogueado extends LitElement {
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; width: 15%; max-height: 25%;" id="verticalLayout-BaneadoVerperfil">
-     <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; margin-top: var(--lumo-space-l); max-height: 50%;" id="horizontalLayout-Baneados">
-      <vaadin-button tabindex="0" style="flex-grow: 1; align-self: flex-start; Height:30px; width: 200%;" id="button-Baneados">
+     <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; margin-top: var(--lumo-space-l); max-height: 50%; align-self: flex-start;" id="horizontalLayout-Baneados">
+      <vaadin-button tabindex="0" style="flex-grow: 1; align-self: flex-start; Height:30px;" id="button-Baneados">
         Baneados 
       </vaadin-button>
       <img id="img-PerfilUsuario" style="flex-grow: 1; width: 100%; height: 100%; margin-left: var(--lumo-space-s);">
