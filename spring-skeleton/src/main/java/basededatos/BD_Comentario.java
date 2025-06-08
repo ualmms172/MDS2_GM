@@ -24,44 +24,20 @@ public class BD_Comentario {
         	
 	}
 
-        public UsuarioRegistrado Escribir_Comentario(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) throws PersistentException {
+        public Comentario Escribir_Comentario(Tweet aTweet, UsuarioRegistrado aUsuario) throws PersistentException {
             PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-            UsuarioRegistrado autor = null;
+//            UsuarioRegistrado autor = null;
+            Comentario nuevoComentario = null;
 
             try {
-                autor = aUsuario;
+                UsuarioRegistrado autor = aUsuario;
 
                 // Crear el nuevo comentario
-                Comentario nuevoComentario = ComentarioDAO.createComentario();
+                nuevoComentario = ComentarioDAO.createComentario();
                 nuevoComentario.setComentadoEn(aTweet);
                 nuevoComentario.setEscritoPor(autor);
 
-                // Asociar texto si lo hay
-                if (aTexto != null && !aTexto.isEmpty()) {
-                    Texto texto = TextoDAO.createTexto();
-                    texto.setTexto(aTexto);
-                    texto.setPerteneceA(nuevoComentario);
-                    nuevoComentario.setContieneTexto(texto);
-                    TextoDAO.save(texto);
-                }
 
-                // Asociar foto si la hay
-                if (aUrl_foto != null && !aUrl_foto.isEmpty()) {
-                    Multimedia foto = MultimediaDAO.createMultimedia();
-                    foto.setUrl(aUrl_foto);
-                    foto.setFoto(true);
-                    foto.setPerteneceA(nuevoComentario);
-                    MultimediaDAO.save(foto);
-                }
-
-                // Asociar video si lo hay
-                if (aUrl_video != null && !aUrl_video.isEmpty()) {
-                    Multimedia video = MultimediaDAO.createMultimedia();
-                    video.setUrl(aUrl_video);
-                    video.setFoto(false);
-                    video.setPerteneceA(nuevoComentario);
-                    MultimediaDAO.save(video);
-                }
 
                 ComentarioDAO.save(nuevoComentario);
                 UsuarioRegistradoDAO.save(autor);
@@ -74,32 +50,10 @@ public class BD_Comentario {
                 MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
             }
 
-            return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(autor.getID());
+            return ComentarioDAO.loadComentarioByORMID(nuevoComentario.getORMID());
         }
 
 
-	public void BorrarComentarios(Tweet aTweet) throws PersistentException {
-		
-		PersistentTransaction t = null;
-		try {
-			t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-
-			for (Comentario comentario : aTweet.comentarios.toArray()) {
-				ComentarioDAO.delete(comentario);
-			}
-
-			t.commit();
-
-			// Aquí podrías devolver el administrador que ha realizado esta acción si lo conoces
-			//return (Administrador)AdministradorDAO.loadAdministradorByORMID(aAdministrador.getID()); // O cambiar esto por el administrador actual
-		} catch (Exception e) {
-			if (t != null) t.rollback();
-			e.printStackTrace();
-			return ;
-		} finally {
-			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-		}
-	}
 		
 		
 	
@@ -165,20 +119,7 @@ public class BD_Comentario {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
 	}
-		
-	public Comentario ObtenerComentarioId (Comentario aComentario) throws PersistentException {
-		Comentario com = null;
-		
-		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
-		try {
-			com = ComentarioDAO.loadComentarioByORMID(aComentario.getORMID());
-					
-		} catch (Exception e) {
-			t.rollback();
-		}
-
-		return com;
-	}
+	
 		
 		
 		

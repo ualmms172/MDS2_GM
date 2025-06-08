@@ -35,7 +35,7 @@ public class BD_Texto {
 	    }
 
 	    MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
-	    return autor;
+	    return UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(autor.getORMID());
 		
 		
 		

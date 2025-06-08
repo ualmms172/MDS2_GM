@@ -38,10 +38,10 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	    }
 	}
 
-	public UsuarioRegistrado Escribir_Tweet(Hashtag aHashtag, UsuarioRegistrado aUsuarioMencionado, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) {
+	public Tweet Escribir_Tweet(Hashtag aHashtag, UsuarioRegistrado aUsuarioMencionado, UsuarioRegistrado aUsuario) {
 		
 		try {
-	        return _bd_twe.Escribir_Tweet( aHashtag,  aUsuarioMencionado,  aTexto,  aUrl_foto,  aUrl_video,  aUsuario); 
+	        return _bd_twe.Escribir_Tweet( aHashtag,  aUsuarioMencionado,  aUsuario); 
 	    } catch (PersistentException e) {
 	        
 	        System.err.println("Error al escribir el tweet: " + e.getMessage());
@@ -51,9 +51,9 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	    }
 	}
 
-	public UsuarioRegistrado Escribir_Comentario(Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) {
+	public Comentario Escribir_Comentario(Tweet aTweet, UsuarioRegistrado aUsuario) {
 	    try {
-	        return _bd_com.Escribir_Comentario(aTweet, aTexto, aUrl_foto, aUrl_video, aUsuario);
+	        return _bd_com.Escribir_Comentario(aTweet, aUsuario);
 	    } catch (PersistentException e) {
 	        System.err.println("Error al escribir comentario: " + e.getMessage());
 	        e.printStackTrace();
@@ -61,9 +61,9 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 	    }
 	}
 
-	public UsuarioRegistrado Escribir_Retweet(Hashtag aHashtag, UsuarioRegistrado aUsuarioMencionado,Tweet aTweet, String aTexto, String aUrl_foto, String aUrl_video, UsuarioRegistrado aUsuario) {
+	public Tweet Escribir_Retweet(Hashtag aHashtag, UsuarioRegistrado aUsuarioMencionado,Tweet aTweet, UsuarioRegistrado aUsuario) {
 	    try {
-	        return _bd_twe.Escribir_Retweet( aHashtag,  aUsuarioMencionado,aTweet, aTexto, aUrl_foto, aUrl_video, aUsuario);
+	        return _bd_twe.Escribir_Retweet( aHashtag,  aUsuarioMencionado,aTweet, aUsuario);
 	    } catch (PersistentException e) {
 	        System.err.println("Error al escribir retweet: " + e.getMessage());
 	        e.printStackTrace();
@@ -347,6 +347,28 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 			e.printStackTrace();
 		}
 		return hash;
+	}
+	
+	@Override
+	public UsuarioRegistrado Escribir_Texto(String aTexto, Contenido aContenido){
+	    try {
+	        return _bd_tex.Escribir_Texto( aTexto,aContenido);
+	    } catch (PersistentException e) {
+	        System.err.println("Error al escribir texto: " + e.getMessage());
+	        e.printStackTrace();
+	        return null;
+	    }
+	}
+	
+	@Override
+	public UsuarioRegistrado Escribir_Multimedia(String aUrl_foto, String aUrl_video,Contenido aContenido){
+	    try {
+	        return _bd_mul.Escribir_Multimedia( aUrl_foto,aUrl_video,aContenido);
+	    } catch (PersistentException e) {
+	        System.err.println("Error al escribir multimedia: " + e.getMessage());
+	        e.printStackTrace();
+	        return null;
+	    }
 	}
 	
 	

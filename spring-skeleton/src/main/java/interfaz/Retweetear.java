@@ -260,8 +260,17 @@ public class Retweetear extends CrearContenido {
 				}
 				
 		
-		basededatos.UsuarioRegistrado ubd=Interfaz.ur._iUsuarioregistrado.Escribir_Retweet(hash,mencionado,t, texto, foto, video, Interfaz.ur.u);
+		basededatos.Tweet tbd=Interfaz.ur._iUsuarioregistrado.Escribir_Retweet(hash,mencionado,t, Interfaz.ur.u);
 	
+		basededatos.UsuarioRegistrado ubd= null;
+		if(!texto.isBlank()) {
+			ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Texto(texto, tbd);
+		}
+		if(!foto.isBlank() || !video.isBlank()) {
+			ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Multimedia(foto, video, tbd);
+		}
+		
+		
 		UsuarioRegistrado u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		
 		 Pantalla.MainView.removeAll();

@@ -145,7 +145,15 @@ public class Hacertweet extends CrearContenido {
 			mencionado = this.Mencionar(texto);
 		}
 		
-		ubd=Interfaz.ur._iUsuarioregistrado.Escribir_Tweet(hash,mencionado,texto, foto, video, Interfaz.ur.u);
+		basededatos.Tweet tbd=Interfaz.ur._iUsuarioregistrado.Escribir_Tweet(hash,mencionado, Interfaz.ur.u);
+		
+		if(!texto.isBlank()) {
+			ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Texto(texto, tbd);
+		}
+		if(!foto.isBlank() || !video.isBlank()) {
+			ubd = Interfaz.ur._iUsuarioregistrado.Escribir_Multimedia(foto, video, tbd);
+		}
+		
 		u = new UsuarioRegistrado((MainView)Pantalla.MainView,ubd);
 		
 		Pantalla.MainView.removeAll();
