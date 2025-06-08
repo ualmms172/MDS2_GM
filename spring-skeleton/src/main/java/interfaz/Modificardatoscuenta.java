@@ -52,6 +52,16 @@ public class Modificardatoscuenta extends VistaModificardatoscuenta {
 		String fotoPerfil = this.getTextFieldFotoDePerfil().getValue();
 		String fotoFondo = this.getTextFieldFotoDeFondo().getValue();
 		
+		if(descripcion.isBlank() && nick.isBlank() && fotoPerfil.isBlank() && fotoFondo.isBlank()) {
+			Notification.show("Se debe rellenar al menos un campo.");
+			return;
+		}
+		
+		if(Interfaz.nr._iUsuarioNoRegistrado.BuscarUsuario(nick)!=null) {
+			Notification.show("Ya existe un usuario con ese nick.");
+			return;
+		}
+		
 		// Comprobamos que la foto(perfil) lo sea realmente
 		if (!fotoPerfil.isBlank()) {
 			try {

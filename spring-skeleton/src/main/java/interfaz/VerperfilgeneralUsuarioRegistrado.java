@@ -249,7 +249,7 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	        } else {
 	            vista = new VerperfilgeneralUsuarioRegistrado(item,mencion);
 	        }
-	    } else {
+	    } else if(_vertweetgeneralUsuarioRegistrado!=null){
 	        VertweetgeneralUsuarioRegistrado recargado = this._vertweetgeneralUsuarioRegistrado.Recargar(log);
 
 	        if (this instanceof Verperfilpropio) {
@@ -261,6 +261,24 @@ public class VerperfilgeneralUsuarioRegistrado extends VerPerfilGeneral {
 	        } else {
 	            vista = new VerperfilgeneralUsuarioRegistrado(recargado,mencion);
 	        }
+	    }
+	    else if(this._comentariosUsuarioRegistrado!=null) {
+	    	
+	    	Comentariospropios lt = _comentariosUsuarioRegistrado._comentariospropios;
+	    	
+	    	lt = new Comentariospropios(lt._vertweetgeneralUsuarioRegistrado.Recargar(log));
+	    	
+	    	if(_comentariosUsuarioRegistrado instanceof ComentariosUsuarioRegistrado_item) {
+	    		ComentariosUsuarioRegistrado_item item = new ComentariosUsuarioRegistrado_item(lt,_comentariosUsuarioRegistrado.c);
+	    		vista = new Verperfilnobloqueado(item);
+	    	}
+	    	else {
+	    		Comentariospropios_item item = new Comentariospropios_item(lt,_comentariosUsuarioRegistrado.c);
+	    		vista = new Verperfilpropio(item);
+	    	}
+	    }
+	    else {
+	    	vista = new Verperfilpropio(log);
 	    }
 
 	    return vista;

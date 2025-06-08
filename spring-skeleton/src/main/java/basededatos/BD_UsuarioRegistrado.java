@@ -107,10 +107,14 @@ public class BD_UsuarioRegistrado {
 		PersistentTransaction t = MDS12425PFGallardoMartínezPersistentManager.instance().getSession().beginTransaction();
 
 		try {
-			aUsuario.setDescripcion(aDescripcion);
-			aUsuario.setFotoFondo(aUrl_fondo);
-			aUsuario.setFotoPerfil(aUrl_perfil);
-			aUsuario.setNick(aNick);
+			if(!aDescripcion.isBlank())
+				aUsuario.setDescripcion(aDescripcion);
+			if(!aUrl_fondo.isBlank())
+				aUsuario.setFotoFondo(aUrl_fondo);
+			if(!aUrl_perfil.isBlank())
+				aUsuario.setFotoPerfil(aUrl_perfil);
+			if(!aNick.isBlank())
+				aUsuario.setNick(aNick);
 			UsuarioRegistradoDAO.save(aUsuario);
 			t.commit();
 		} catch (Exception e) {
@@ -119,7 +123,7 @@ public class BD_UsuarioRegistrado {
 		} finally {
 			MDS12425PFGallardoMartínezPersistentManager.instance().disposePersistentManager();
 		}
-		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getID());
+		return UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuario.getORMID());
 	}
 
 	public UsuarioRegistrado Registrar_Usuario(String aNick, String aDescripcion, String aUrl_perfil, String aUrl_fondo, String aContrasena,String aCorreo) throws PersistentException {
