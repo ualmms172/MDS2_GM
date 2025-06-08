@@ -214,7 +214,7 @@ public class BDPrincipal implements iUsuarioregistrado, iUsuarioNoRegistrado, iA
 
 	public UsuarioRegistrado Registrar_Usuario(String aNick, String aDescripcion, String aUrl_perfil, String aUrl_fondo, String aContrasena,String aCorreo) {
 	    try {
-	        return _bd_usu.Registrar_Usuario(aNick, aDescripcion, aUrl_perfil, aUrl_perfil, aContrasena, aCorreo);
+	        return _bd_usu.Registrar_Usuario(aNick, aDescripcion, aUrl_perfil, aUrl_fondo, aContrasena, aCorreo);
 	    } catch (PersistentException e) {
 	        System.err.println("Error al registrar usuario: " + e.getMessage());
 	        e.printStackTrace();
